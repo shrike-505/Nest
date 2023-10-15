@@ -1,9 +1,19 @@
 site_name: 现实的荒原
 nav: 
-- 首页: index.md
+- Dolores Dei's Nest: index.md
 - 文章: 
-  - 尺兵: Weapon.md
+  - 痛风: Gaut.md
+  - 故乡: Homesick.md
+  - 正义: Justice.md
+  - 愚者: Fool.md
+  - 羊杂: Gut.md
+  - 花椒: Pepper.md
+  - 富贵: Fortune.md
+  - 蛋白: Protein.md
+  - 烟消: Vanishment.md
+  - 希音: Unspoken.md
   - 硝烟: Gunpowdersmoke.md
+  - 尺兵: Weapon.md
   - 老鼠: Mice.md
 theme: 
   name: material
