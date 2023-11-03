@@ -1,28 +1,37 @@
 site_name: 现实的荒原
+site_author: shrike505
+copyright: Copyright © 2023 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
-- Dolores Dei's Nest: index.md
-- 文章: 
-  - 痛风: Gaut.md
-  - 故乡: Homesick.md
-  - 正义: Justice.md
-  - 愚者: Fool.md
-  - 羊杂: Gut.md
-  - 花椒: Pepper.md
-  - 富贵: Fortune.md
-  - 蛋白: Protein.md
-  - 烟消: Vanishment.md
-  - 希音: Unspoken.md
-  - 硝烟: Gunpowdersmoke.md
-  - 尺兵: Weapon.md
-  - 老鼠: Mice.md
+- Dolores Dei's Homepage: index.md
+- 小说: 
+  - 正义: stories/Justice.md
+  - 愚者: stories/Fool.md
+  - 花椒: stories/Pepper.md
+  - 蛋白: stories/Protein.md
+  - 烟消: stories/Vanishment.md
+  - 硝烟: stories/Gunpowdersmoke.md
+  - 尺兵: stories/Weapon.md
+  - 老鼠: stories/Mice.md
+- 散文: 
+  - 痛风: thoughts/Gaut.md
+  - 故乡: thoughts/Homesick.md
+  - 羊杂: thoughts/Gut.md
+  - 富贵: thoughts/Fortune.md 
+  - 希音: thoughts/Unspoken.md
 theme: 
   name: material
+  language: zh
   palette: 
-    - scheme: default
-      toggle: 
-        icon: material/brightness-7 
-        name: Switch to dark mode
-    - scheme: slate
-      toggle: 
-        icon: material/brightness-4
-        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 夜间模式
+    - media: "(prefers-color-scheme: dark)"
+      primary: teal
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 日间模式
+  features:
+    - navigation.footer
