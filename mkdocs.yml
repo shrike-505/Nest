@@ -35,3 +35,4 @@ theme:
         name: 日间模式
   features:
     - navigation.footer
+  custom_dir: overrides
