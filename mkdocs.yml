@@ -6,6 +6,7 @@ repo_url: https://github.com/shrike-505/shrike-505.github.io/
 copyright: Copyright &copy; 2023 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
 - Dolores Dei's Homepage: index.md
+- 更新记录: changelog.md
 - 小说: 
   - stories/index.md
   - 正义: stories/Justice.md
@@ -14,6 +15,7 @@ nav:
   - 蛋白: stories/Protein.md
   - 烟消: stories/Vanishment.md
   - 硝烟: stories/Gunpowdersmoke.md
+  - 新车: stories/Newcar.md
   - 尺兵: stories/Weapon.md
   - 老鼠: stories/Mice.md
 - 散文: 
@@ -23,6 +25,8 @@ nav:
   - 羊杂: thoughts/Gut.md
   - 富贵: thoughts/Fortune.md 
   - 希音: thoughts/Unspoken.md
+- 教学篇:
+  - tutorials/index.md
 theme: 
   name: material
   favicon: img/PP.png
@@ -39,8 +43,8 @@ theme:
   language: zh
   palette: 
     - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: purple
+      scheme: theme
+      primary: 1bdbe9b0
       toggle:
         icon: material/weather-night
         name: 光芒熄灭了。
@@ -58,3 +62,42 @@ theme:
     - navigation.top
     #- toc.follow
   custom_dir: overrides
+  
+plugins:
+  - changelog
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols  #智能符号
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - css/changelogs.css
+  - css/newcolor.css

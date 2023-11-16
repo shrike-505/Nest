@@ -9,10 +9,9 @@ comments: true
 ***
 你可以在下面的地方找到我！  
   
-[Bilibili](https://space.bilibili.com/164131287/)  
-[知乎](https://www.zhihu.com/people/trixie-83-96)  
-[Github](https://github.com/shrike-505)
-
+#### [My Bilibili](https://space.bilibili.com/164131287/)  
+#### [My Zhihu](https://www.zhihu.com/people/trixie-83-96)  
+#### [My GitHub](https://github.com/shrike-505)
 ***
 
 ## 前言
@@ -20,10 +19,10 @@ comments: true
   
 这里已经上传了我近年来写的所有文章，参差良莠，不一而同。望它们对得起你的时间！  
   
-我最满意的一篇作品：[花椒](https://shrike-505.github.io/stories/Pepper/)  
+我最满意的一篇作品：[花椒](stories/Pepper.md)  
   
-最近更新：[痛风](https://shrike-505.github.io/thoughts/Gaut/)  
+最近更新：[痛风](thoughts/Gaut.md/)  
   
-[从这里开始！](https://shrike-505.github.io/stories/)
+[从这里开始！](stories/index.md)
   
-最近更新于 2023.11.15
+最近更新于 2023.11.17
