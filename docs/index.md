@@ -24,4 +24,6 @@ comments: true
   
 最近更新：[痛风](https://shrike-505.github.io/thoughts/Gaut/)  
   
-2023.11.15 添加评论区功能
+[从这里开始！](https://shrike-505.github.io/stories/)
+  
+最近更新于 2023.11.15

@@ -1,9 +1,13 @@
 site_name: 现实的荒原
 site_author: shrike505
-copyright: Copyright © 2023 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
+site_url: https://shrike-505.github.io/
+repo_name: shrike505
+repo_url: https://github.com/shrike-505/shrike-505.github.io/
+copyright: Copyright &copy; 2023 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
 - Dolores Dei's Homepage: index.md
 - 小说: 
+  - stories/index.md
   - 正义: stories/Justice.md
   - 愚者: stories/Fool.md
   - 花椒: stories/Pepper.md
@@ -13,6 +17,7 @@ nav:
   - 尺兵: stories/Weapon.md
   - 老鼠: stories/Mice.md
 - 散文: 
+  - thoughts/index.md
   - 痛风: thoughts/Gaut.md
   - 故乡: thoughts/Homesick.md
   - 羊杂: thoughts/Gut.md
@@ -20,19 +25,36 @@ nav:
   - 希音: thoughts/Unspoken.md
 theme: 
   name: material
+  favicon: img/PP.png
+  logo: img/PP.png
+  theme:
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+  font:
+   # text: Love Light
+   # text: Sassy Frass
+   # text: Lavishly Yours
+    text: Princess Sofia
   language: zh
   palette: 
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: purple
       toggle:
         icon: material/weather-night
-        name: 夜间模式
+        name: 光芒熄灭了。
     - media: "(prefers-color-scheme: dark)"
-      primary: teal
       scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: 日间模式
+        name: 把火点起来吧。
+
   features:
     - navigation.footer
+    - navigation.path
+    - navigation.indexes
+    - toc.integrate 
+    - navigation.top
+    #- toc.follow
   custom_dir: overrides
