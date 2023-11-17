@@ -1,5 +1,7 @@
 ---
 comments: true
+statistics: true
+changelog: true
 ---
 
 # 这里是 shrike505 的主页
@@ -21,8 +23,32 @@ comments: true
   
 我最满意的一篇作品：[花椒](stories/Pepper.md)  
   
-最近更新：[痛风](thoughts/Gaut.md/)  
+!!! 特别鸣谢
+    [@TonyCrane](https://github.com/TonyCrane)  
+    记录样式与数据统计来自 TonyCrane 老师的 [changelog 插件](https://github.com/TonyCrane/mkdocs-changelog-plugin)与 [statistics 插件](https://github.com/TonyCrane/mkdocs-statistics-plugin)
+    [@HobbitQia](https://github.com/HobbitQia/)  
+    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展（
   
-[从这里开始！](stories/index.md)
-  
-最近更新于 2023.11.17
+## 更新记录
+
+新增文章时间均为 __创作时间__  
+目前共 {{ pages }} 个页面，约 {{ words }} 字
+
+
+### 2023
+{{2023}}
+
+---
+
+### 2022
+{{2022}}
+
+---
+
+### 2021
+{{2021}}
+
+---
+
+### 2020
+{{2020}}

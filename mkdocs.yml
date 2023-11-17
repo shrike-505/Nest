@@ -6,7 +6,6 @@ repo_url: https://github.com/shrike-505/shrike-505.github.io/
 copyright: Copyright &copy; 2023 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
 - Dolores Dei's Homepage: index.md
-- 更新记录: changelog.md
 - 小说: 
   - stories/index.md
   - 正义: stories/Justice.md
@@ -65,6 +64,8 @@ theme:
   
 plugins:
   - changelog
+  - statistics:
+      words_per_minute: 600
 
 markdown_extensions:
   - toc:
