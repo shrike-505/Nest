@@ -65,7 +65,9 @@ theme:
 plugins:
   - changelog
   - statistics:
-      words_per_minute: 600
+      words_per_minute: 350
+  - search
+  - git-revision-date-localized
 
 markdown_extensions:
   - toc:
@@ -102,3 +104,12 @@ markdown_extensions:
 extra_css:
   - css/changelogs.css
   - css/newcolor.css
+
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  social:
+        - icon: material/email
+          link: mailto:<mikamidouya@outlook.com>
+          name: E-mail

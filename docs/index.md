@@ -8,13 +8,6 @@ changelog: true
 
 >德洛丽丝·黛————人道主义，国际主义和福利国家的无罪女王——转身面向你。  
 她手上拖着一只旅行箱，似乎很着急。
-***
-你可以在下面的地方找到我！  
-  
-#### [My Bilibili](https://space.bilibili.com/164131287/)  
-#### [My Zhihu](https://www.zhihu.com/people/trixie-83-96)  
-#### [My GitHub](https://github.com/shrike-505)
-***
 
 ## 前言
 这个博客的功用大致是保存一些文字、想法、教程（如果我真能有那实力），说不定未来它们能变成什么赛博文物。敬请期待未来的内容！  
@@ -24,10 +17,20 @@ changelog: true
 我最满意的一篇作品：[花椒](stories/Pepper.md)  
   
 !!! 特别鸣谢
-    [@TonyCrane](https://github.com/TonyCrane)  
-    记录样式与数据统计来自 TonyCrane 老师的 [changelog 插件](https://github.com/TonyCrane/mkdocs-changelog-plugin)与 [statistics 插件](https://github.com/TonyCrane/mkdocs-statistics-plugin)
-    [@HobbitQia](https://github.com/HobbitQia/)  
-    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展（
+    [**@TonyCrane**](https://github.com/TonyCrane) :fontawesome-brands-github:  
+    记录样式与数据统计来自 TonyCrane 老师的 [changelog 插件](https://github.com/TonyCrane/mkdocs-changelog-plugin)与 [statistics 插件](https://github.com/TonyCrane/mkdocs-statistics-plugin)  
+    [**@HobbitQia**](https://github.com/HobbitQia/) :fontawesome-brands-github:  
+    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展（  
+      
+***
+:fireworks: 你可以在下面的地方找到我！  
+
+#### :fontawesome-brands-bilibili: [My Bilibili](https://space.bilibili.com/164131287/)  
+#### :fontawesome-brands-zhihu: [My Zhihu](https://www.zhihu.com/people/trixie-83-96)  
+#### :fontawesome-brands-github: [My GitHub](https://github.com/shrike-505)
+#### :fontawesome-solid-horse-head: [My Fimtale](https://fimtale.com/u/叁壹肆壹)
+***
+
   
 ## 更新记录
 
