@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "LoveLight";
+    src: url(../fonts/LoveLight-Regular.ttf);
+  }
+@font-face {
+    font-family: "PrincessSofia";
+    src: url(../fonts/PrincessSofia-Regular.ttf);
+}
+p,footer,small{
+    font-family: "PrincessSofia";
+}
+a:link, a:visited {
+    font-family: "LoveLight";
+    /* color: rgb(112, 57, 157); */
+}
+div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4 {
+    font-family: "LoveLight";
+    font-size: 160%;
+}
+h1,
+.md-ellipsis,
+.md-source__repository,
+.timeline {
+    font-family: "PrincessSofia";
+}
+div.changelog-content a:link, div.changelog-content a:visited {
+    /* border: 2px rgb(112, 57, 157);
+    background-color: rgb(246, 199, 244); */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+div.md-footer-meta.md-typeset a {
+    font-family: "PrincessSofia";
+}

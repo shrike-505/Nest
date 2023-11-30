@@ -6,7 +6,7 @@ changelog: true
 
 # 这里是 shrike505 的主页
 
->德洛丽丝·黛————人道主义，国际主义和福利国家的无罪女王——转身面向你。  
+> 德洛丽丝·黛————人道主义，国际主义和福利国家的无罪女王——转身面向你。  
 她手上拖着一只旅行箱，似乎很着急。
 
 ## 前言
@@ -18,7 +18,7 @@ changelog: true
   
 !!! 特别鸣谢
     [**@TonyCrane**](https://github.com/TonyCrane) :fontawesome-brands-github:  
-    记录样式与数据统计来自 TonyCrane 老师的 [changelog 插件](https://github.com/TonyCrane/mkdocs-changelog-plugin)与 [statistics 插件](https://github.com/TonyCrane/mkdocs-statistics-plugin)  
+    记录样式与数据统计来自 TonyCrane 老师的 [changelog](https://github.com/TonyCrane/mkdocs-changelog-plugin) & [statistics](https://github.com/TonyCrane/mkdocs-statistics-plugin)  
     [**@HobbitQia**](https://github.com/HobbitQia/) :fontawesome-brands-github:  
     几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展（  
       

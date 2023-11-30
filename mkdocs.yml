@@ -34,11 +34,11 @@ theme:
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
-  font:
+  #font:(已用CSS实现)
    # text: Love Light
    # text: Sassy Frass
    # text: Lavishly Yours
-    text: Princess Sofia
+   # text: Princess Sofia
   language: zh
   palette: 
     - media: "(prefers-color-scheme: light)"
@@ -104,11 +104,9 @@ markdown_extensions:
 extra_css:
   - css/changelogs.css
   - css/newcolor.css
+  - css/newfonts.css
 
 extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
   social:
         - icon: material/email
           link: mailto:<mikamidouya@outlook.com>
