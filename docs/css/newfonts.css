@@ -6,9 +6,14 @@
     font-family: "PrincessSofia";
     src: url(../fonts/PrincessSofia-Regular.ttf);
 }
-p,footer,small{
-    font-family: "PrincessSofia";
+@font-face {
+    font-family: "unicode";
+    src: url(../fonts/unifont-15.1.04.otf);
 }
+
+
+
+
 a:link, a:visited {
     font-family: "LoveLight";
     /* color: rgb(112, 57, 157); */
@@ -20,7 +25,9 @@ div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visite
 h1,
 .md-ellipsis,
 .md-source__repository,
-.timeline {
+.timeline,
+div.md-footer-meta.md-typeset a,
+footer,small  {
     font-family: "PrincessSofia";
 }
 div.changelog-content a:link, div.changelog-content a:visited {
@@ -28,6 +35,7 @@ div.changelog-content a:link, div.changelog-content a:visited {
     background-color: rgb(246, 199, 244); */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-div.md-footer-meta.md-typeset a {
-    font-family: "PrincessSofia";
+
+#__comments {
+    font-family: "unicode";
 }
