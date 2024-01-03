@@ -4,8 +4,6 @@ statistics: true
 changelog: true
 ---
 
-![](img/steam2023.png)
-
 <blockquote style="font-family:unicode"> 德洛丽丝·黛————人道主义，国际主义和福利国家的无罪女王——转身面向你。<br />她手上拖着一只旅行箱，似乎很着急。</blockquote>
 
 ## 前言
