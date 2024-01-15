@@ -26,6 +26,9 @@ nav:
   - 希音: thoughts/Unspoken.md
 - 教学篇:
   - tutorials/index.md
+- 杂:
+  - others/index.md
+  - 年终总结: others/final.md
 theme: 
   name: material
   favicon: img/PP.png
