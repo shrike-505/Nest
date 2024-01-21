@@ -24,8 +24,8 @@ nav:
   - 羊杂: thoughts/Gut.md
   - 富贵: thoughts/Fortune.md 
   - 希音: thoughts/Unspoken.md
-- 教学篇:
-  - tutorials/index.md
+- 笔记:
+  - CS61A: notes/cs61a.md
 - 杂:
   - others/index.md
   - 年终总结: others/final.md
