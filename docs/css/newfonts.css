@@ -23,7 +23,7 @@ code {
     font-family: "JetBrains Mono";
 }
 
-p {
+html {
     font-family: "LXGW WenKai Screen";
 }
 
@@ -34,8 +34,7 @@ div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visite
 h1,
 .md-ellipsis,
 .md-source__repository,
-.timeline,
-footer,small  {
+.timeline  {
     font-family: "PrincessSofia";
 }
 
