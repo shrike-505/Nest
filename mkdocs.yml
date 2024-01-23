@@ -106,7 +106,7 @@ markdown_extensions:
 extra_css:
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://fonts.proxy.ustclug.org/css2?family=Princess+Sofia&display=swap
-  - https://fonts.googleapis.com/css2?family=Love+Light&display=swap
+  - https://fonts.proxy.ustclug.org/css2?family=Love+Light&display=swap
   - css/changelogs.css
   - css/newcolor.css
   - css/newfonts.css
