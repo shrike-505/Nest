@@ -1,41 +1,22 @@
 @font-face {
-    font-family: "LoveLight";
-    src: url(../fonts/LoveLight-Regular.ttf);
-  }
-@font-face {
-    font-family: "PrincessSofia";
-    src: url(../fonts/PrincessSofia-Regular.ttf);
-}
-@font-face {
     font-family: "unicode";
     src: url(../fonts/unifont-15.1.04.otf);
 }
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url(../fonts/JetBrainsMono-Regular.ttf);
-}
-@font-face {
-    font-family: "LXGW WenKai Screen";
-    src: url(../fonts/LXGWWenKaiMonoScreen.ttf);
-}
 
-code {
-    font-family: "JetBrains Mono";
-}
-
-html {
-    font-family: "LXGW WenKai Screen";
-}
+:root {
+    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+    --md-code-font: "JetBrains Mono";
+  }  
 
 div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4 {
-    font-family: "LoveLight";
+    font-family: "Love Light";
     font-size: 160%;
 }
 h1,
 .md-ellipsis,
 .md-source__repository,
 .timeline  {
-    font-family: "PrincessSofia";
+    font-family: "Princess Sofia";
 }
 
 #__comments {

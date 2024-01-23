@@ -1,7 +1,7 @@
 # CS61A 学习笔记（23Fall）
 
 !!! note 课程资源
-    主页: <https://inst.eecs.berkeley.edu/~cs61a/fa23/>
+    主页: <https://inst.eecs.berkeley.edu/~cs61a/fa23/>  
     教材汉化：<https://composingprograms.netlify.app/>
   
 ## Function Domain & Local/Global Frame  
