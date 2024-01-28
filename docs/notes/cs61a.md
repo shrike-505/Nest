@@ -48,7 +48,7 @@ True
 ''
 ```
 !!! hint
-    Just remember `not <sth>`, `a >(<) b` returns `True` or `False`, other expressions return themselves.
+    Just remember `not <sth>`, `a >(<) b` returns `True` or `False` ( Boolean ), other expressions return themselves.
   
 ## Higher-Order Function
   

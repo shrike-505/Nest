@@ -8,17 +8,9 @@
     --md-code-font: "JetBrains Mono";
   }  
 
-div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4 {
-    font-family: "Love Light";
-    font-size: 160%;
-}
-h1,
+div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4, h1,
 .md-ellipsis,
 .md-source__repository,
 .timeline  {
     font-family: "Princess Sofia";
-}
-
-#__comments {
-    font-family: "unicode";
 }
