@@ -114,3 +114,8 @@ True
 False
 ```  
   
+## Miscellaneous
+
+### Some function details
+
+- `min` and `max`, when there are multiple arguments all have the minimal/maximal value, return the argument which appears first.
