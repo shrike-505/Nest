@@ -114,8 +114,28 @@ True
 False
 ```  
   
+## Sequence
+
+### Dictionary
+
+> Another type of collection, called a dictionary, allows us to store and access values that correspond to given keys.
+
+`dict.keys()` will return a sequence of keys.  
+`dict.values()` will return a sequence of values.
+`dict.items()` will return a sequence of key-value tuples.
+
 ## Miscellaneous
 
-### Some function details
+### Some function/operator details
 
-- `min` and `max`, when there are multiple arguments all have the minimal/maximal value, return the argument which appears first.
+- `min` and `max`, when there are multiple arguments all have the minimal/maximal value, return the argument which appears first.  
+- `in` when used within a dictionary, only considers VALUES.
+```python
+>>> pokemon = {'pikachu': 25, 'dragonair': 148, 'mew': 151}
+>>> 'pikachu' in pokemon
+True
+>>> 25 in pokemon
+False
+>>> 25 in pokemon.values()
+True
+```
