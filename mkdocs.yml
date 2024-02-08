@@ -29,6 +29,7 @@ nav:
 - 杂:
   - others/index.md
   - 年终总结: others/final.md
+  - 暑假指南: others/summer_idle.md
 theme: 
   name: material
   favicon: img/PP.png

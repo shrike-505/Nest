@@ -1,6 +1,10 @@
+---
+comments: true
+---
+
 # CS61A 学习笔记（23Fall）
 
-!!! note 课程资源
+!!! note "课程资源"
     主页: <https://inst.eecs.berkeley.edu/~cs61a/fa23/>  
     教材汉化：<https://composingprograms.netlify.app/>
   
@@ -16,11 +20,8 @@ def f(g):
 f(lambda y: a + y)(a)
 ```
 
-<details>
-<summary>Answer</summary>
-
-4
-</details>  
+??? "Answer"
+    4
   
 ## Short Circuiting 
 
@@ -121,7 +122,7 @@ False
 > Another type of collection, called a dictionary, allows us to store and access values that correspond to given keys.
 
 `dict.keys()` will return a sequence of keys.  
-`dict.values()` will return a sequence of values.
+`dict.values()` will return a sequence of values.  
 `dict.items()` will return a sequence of key-value tuples.
 
 ## Miscellaneous
