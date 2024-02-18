@@ -117,7 +117,17 @@ False
   
 ## Sequence
 
-### Dictionary
+### List (Mutable)
+
+> A list is a sequence of values. In a list, the values can be of any type and **need not** be of the same type as each other.
+
+Useful methods & functions on [Dive into Python3](https://diveintopython3.net/native-datatypes.html#lists)
+
+### Tuple (Immutable)
+
+> A tuple is an ordered collection of values, similar to a list. However, it is not possible to add, remove, or modify values in a tuple.(Immutable)
+
+### Dictionary (Mutable)
 
 > Another type of collection, called a dictionary, allows us to store and access values that correspond to given keys.
 
