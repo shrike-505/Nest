@@ -25,8 +25,17 @@ nav:
   - 富贵: thoughts/Fortune.md 
   - 希音: thoughts/Unspoken.md
 - 笔记:
-  - CS61A: notes/cs61a.md
-  - 线性代数Ⅱ: notes/LinearAlgebra.md
+  - notes/index.md
+  - Computer Science:
+    - CS61A: notes/ComputerScience/cs61a.md
+    - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
+    - 数据结构基础: notes/ComputerScience/FDS.md
+  - 数理:
+    - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
+    - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
+    - 普通物理学Ⅰ: notes/MathematicsAndPhysics/Physics1.md
+    - 常微分方程: notes/MathematicsAndPhysics/ODE.md
+    - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
   - 托福相关: notes/Toefl.md
 - 杂:
   - others/index.md
