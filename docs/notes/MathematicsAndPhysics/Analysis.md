@@ -6,7 +6,8 @@ comments: true
 # 数学分析Ⅱ
 
 > 任课教师：阮火军
-!!! 成绩组成
+
+!!! abstract "成绩组成"
     - 作业+点名 20%  
     - 小测 20%  
     - 期末 60%  
@@ -61,23 +62,11 @@ $$
 $$
 
 ### 级数性质
-线性性：
+线性性：$\sum_{n=1}^{\infty} (\alpha x_n + \beta y_n) = \alpha \sum_{n=1}^{\infty} x_n + \beta \sum_{n=1}^{\infty} y_n$  
+其中级数均**收敛**，$\alpha,\beta$为常数
 
-$$
-\begin{align*}
-&\sum_{n=1}^{\infty} (\alpha x_n + \beta y_n) = \alpha \sum_{n=1}^{\infty} x_n + \beta \sum_{n=1}^{\infty} y_n \\
-&其中级数均收敛，\alpha,\beta为常数
-\end{align*}
-$$
-
-结合性：
-
-$$
-\begin{align*}
-&\underline{收敛}级数和中任意添加括号，其和不变 \\
-&这是因为新级数的部分和数列是原级数的部分和数列的子列
-\end{align*}
-$$
+结合性：**收敛**级数和中任意添加括号，其和不变  
+这是因为新级数的部分和数列是原级数的部分和数列的子列  
 
 一些充分/必要条件：
 
@@ -128,7 +117,7 @@ $$
 
 由比较判别法，可以得到下面两种判别法： 
 
-5. 根式判别法：  
+6. 根式判别法：  
     - 若$\lim_{n \to \infty} \sqrt[n]{x_n} = q$，则  
         - 若$q<1$，$\sum_{n=1}^{\infty} x_n$收敛  
         - 若$q>1$，$\sum_{n=1}^{\infty} x_n$发散   
@@ -136,27 +125,28 @@ $$
             - 因此$x_n$不趋于0，级数发散。
         - 若$q=1$，无法判断
 
-6. 比值判别法：  
+7. 比值判别法：  
     - 若$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = q$，则  
         - 若$q<1$，$\sum_{n=1}^{\infty} x_n$收敛  
         - 若$q>1$，$\sum_{n=1}^{\infty} x_n$发散  
         - 若$q=1$，无法判断
 
-5和6实际上是同一个意思，考虑到$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = \lim_{n \to \infty} {\sqrt[n]{x_n}}$，所以两者是等价的  
+6和7实际上是同一个意思，考虑到$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = \lim_{n \to \infty} {\sqrt[n]{x_n}}$，所以两者是等价的  
 
 ??? 例
     - 判断$\sum_{n=1}^{\infty} n^{2}e^{-n}$的敛散性：  
         $\sqrt[n]{n^{2}e^{-n}} = \sqrt[n]{n^{2}}\sqrt[n]{e^{-n}} = e^{-1}n^{\frac{2}{n}} \rightarrow e^{-1} < 1 (n \rightarrow \infty)$，因此$\sum_{n=1}^{\infty} n^{2}e^{-n}$收敛
     - 判断$\sum_{n=1}^{\infty} \frac{n^n}{3^{n}n!}$的敛散性：  
         $\frac{x_{n+1}}{x_n} = \frac{(n+1)^{n+1}3^{n}n!}{3^{n+1}(n+1)!n^{n}} = \frac{(n+1)^{n}}{3n} \rightarrow \frac{1}{3} < 1 (n \rightarrow \infty)$，因此$\sum_{n=1}^{\infty} \frac{n^n}{3^{n}n!}$收敛
-    - 由于5和6本质一样，注意就题目选择更简单的方法
+    - 由于6和7本质一样，注意就题目选择更简单的方法
 
-7. 积分判别法：  
+8. 积分判别法：  
     - 若$f(x)$在$[1,+\infty)$上连续，且$f(x) \ge 0$，$f(x)$单调递减，则$\sum_{n=1}^{\infty} f(n)$与$\int_{1}^{\infty} f(x)dx$同敛散
 
 #### 交错级数
 定义：级数$\sum_{n=1}^{\infty} (-1)^{n+1}u_n$称为交错级数,其中$u_n \ge 0$  
-8. 交错级数的$Leibniz$判别法：  
+
+9. 交错级数的$Leibniz$判别法：  
     - 若$\{u_n\}$单调递减，且$\lim_{n \to \infty} u_n = 0$，则$\sum_{n=1}^{\infty} (-1)^{n+1}u_n$收敛
 
 ??? 例

@@ -4,7 +4,7 @@ comments: true
 
 # CS61A 学习笔记（23Fall）
 
-!!! note "课程资源"
+!!! abstract "课程资源"
     主页: <https://inst.eecs.berkeley.edu/~cs61a/fa23/>  
     教材汉化：<https://composingprograms.netlify.app/>
   
@@ -133,7 +133,7 @@ False
 >>> b
 [1, 2, 3, 4]
 ```
-??? note "What's going on?"
+??? question "What's going on?"
     `a` and `b` are the **same list**. Recalling the POINTER concept in C, they are both pointing at the same memory address.  
 
 Furthermore we have these:
