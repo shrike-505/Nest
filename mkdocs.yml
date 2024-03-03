@@ -38,7 +38,7 @@ nav:
     - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
   - 托福相关: notes/Toefl.md
 - 随笔:
-    - blog/index.md
+    - casual/index.md
 - 杂:
   - others/index.md
   - 年终总结: others/final.md
@@ -85,9 +85,13 @@ theme:
   
 plugins:
   - blog:
-      blog_dir: blog
+      blog_dir: casual
       archive: false
       post_readtime_words_per_minute: 350
+      post_date_format: full
+      blog_toc: true
+      post_excerpt: required
+      post_excerpt_separator: <!-- more -->
   - changelog
   - statistics:
       words_per_minute: 350
