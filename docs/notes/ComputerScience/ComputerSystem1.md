@@ -17,3 +17,45 @@ comments: true
         - 大程 - Single Cycle CPU 12%  
         - Bonus - TBD 10%  
     - Final 30%
+
+!!! note "课程主页"
+    https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
+
+> 这门课好难啊:sob:
+
+## 一些用到的工具
+SPICE: 模拟电路的in/out  
+logisim: 画电路图，验证功能，将电路转为verilog文件  
+
+## 理论课部分
+Von Neumann架构：I/O System $\leftrightarrows$ CPU $\leftrightarrows$ Memory  
+![Detail](../../img/DetailedVon.png)   
+
+Instructions: 0/1 binaries  
+编译型高级语言 $\underrightarrow{\text{Compiler}}$ 汇编语言 $\underrightarrow{\text{Assembler}}$ 机器语言  
+解释型高级语言 $\underrightarrow{\text{Interpreter}}$ 机器语言  
+
+### 进制转换
+例：$1011.1011_2 = 2^3 + 2^1 + 2^0 + 2^{-1} + 2^{-3} = 11.6875_{10}$
+
+
+## 实验部分
+### lab0
+```verilog
+module main( 
+    I0,
+    I1,
+    I2,
+    O );
+
+   input I0;
+   input I1;
+   input I2;
+   output O;
+   ....
+endmodule
+```
+
+这一段代码表示一个叫做`main`的电路`module`(模块)，先声明I1、I2、I3、O这几个**引脚序列**.之后用input/output说明各个引脚是输入还是输出。  
+`wire wire0`定义一条名为wire0的线路。  
+wire的电气特性：必须被有且仅有一个assign输入，可以有0个或者多个assign输出。  
