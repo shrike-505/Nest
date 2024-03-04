@@ -223,6 +223,9 @@ Useful methods & functions on [Dive into Python3](https://diveintopython3.net/na
 
 ---
 
+## Object-Oriented Programming
+> My Point of View: A way to synthesize some target-centered segments of a whole program to avoid program and, err, maybe enable objects to be defined easier. 
+
 ## Miscellaneous
 
 ### Some function/operator details
