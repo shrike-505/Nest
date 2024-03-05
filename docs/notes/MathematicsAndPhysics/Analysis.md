@@ -156,3 +156,72 @@ $$
         - $\sum_{n=2}^{\infty} \frac{(-1)^{n}\ln n}{n}$
         - $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}n^2}{n^3+1}$
 
+### 绝对收敛与条件收敛
+定义：若$\sum_{n=1}^{\infty} |x_n|$收敛，则$\sum_{n=1}^{\infty} x_n$收敛，称后者绝对收敛（**超级收敛！**）。  
+由$\sum_{k=n+1}^{n+p} x_k \le ||x_{n+1}|+\dots +|x_{n+p}|| \le \epsilon$既得。  
+若$\sum_{n=1}^{\infty} x_n$收敛，而$\sum_{n=1}^{\infty} |x_n|$发散，则称前者条件收敛。  
+
+??? 例
+    - 判断$\sum_{n=1}^{\infty} \frac{x^{n}}{n^p}$的敛散性：  
+      - 利用条件/绝对收敛，令$u_n = abs(\frac{x^{n}}{n^p}) = \frac{|x|^n}{n^p}$  
+      - 利用根式判别法，$\sqrt[n]{u_n} = \frac{|x|}{n^{\frac{p}{n}}} \rightarrow |x| (n \rightarrow \infty)$
+      - 因此，当$|x|<1$时，$\sum_{n=1}^{\infty} \frac{x^{n}}{n^p}$绝对收敛
+      - 当$|x|>1$时，$\frac{x^n}{n^p}\rightarrow \infty$,$\sum_{n=1}^{\infty} \frac{x^{n}}{n^p}$发散
+      - $x = 1$时，原级数为p级数，当$p>1$时绝对收敛，当$p \le 1$时发散
+      - $x = -1$时，原级数为交错级数$\sum_{n=1}^{\infty} \frac{(-1)^{n}}{n^p}$
+        - $p>1$时，级数的绝对值收敛，级数本身由$Liebniz$判别法收敛，因此绝对收敛。
+        - $0< p \le 1$时，级数的绝对值发散，级数本身由$Liebniz$判别法发散，因此条件收敛。
+        - $p \le 0$时，$\frac{(-1)^n}{n^p}$不趋向于0，级数发散
+
+#### 有用的引论
+$Abel变换$:对于数列$a_n$,$b_n$，记$A_n,B_n$分别为其前n项和，  
+则$\sum_{k=1}^{n} a_k b_k = A_n B_n + \sum_{k=1}^{n-1} B_k(a_{k}-a_{k+1})$  
+
+$Abel引理$:记$B^{\ast}=\max \{|B_k|,1 \le k \le n\}, a^{\ast} = \max \{|a_k|,1 \le k \le n\}$  
+上个段落变换后的式子  
+$\le |a_1-a_2||B_1|+|a_2-a_3||B_2|+\dots+|a_{n-1}-a_n||B_{n-1}|+|a_n||B_n|$  
+$\le (|a_1-a_2|+|a_2-a_3|+\dots+|a_{n-1}-a_n|+|a_n|)B^{\ast}$  
+当$a_n$单调时，$a_1 - a_2$,$a_2 - a_3$,$\dots$,$a_{n-1} - a_n$同号。  
+**因此先取绝对值在求和等于先求和再取绝对值。**  
+因此上式 $= (|a_1 - a_n|+|a_n|)B^{\ast} \le 3a^{\ast}B^{\ast}$  
+
+得到引理: 若(1)$a_n$单调，(2)$B_n$为$b_n$前n项和  
+记$B^{\ast}=\max \{|B_k|,1 \le k \le n\}, a^* = \max \{|a_k|,1 \le k \le n\}$，则$\sum_{k=1}^{n} a_k b_k \le 3a^{\ast}B^{\ast}$  
+
+由引论可推出下述定理：
++ Dirichlet判别法：若$\{a_n\}$单调趋于0，$\sum b_n$有界（$b_n$的部分和数列有界），则$\sum_{n=1}^{\infty} a_n b_n$收敛
++ Abel判别法：若$\{a_n\}$单调有界，$\sum b_n$收敛，则$\sum_{n=1}^{\infty} a_n b_n$收敛  
+
+??? 例
+    + 若$a_n$单调递减且趋向于0，求证$\forall x \in [0,2\pi]$，$\sum_{n=1}^{\infty} a_n \sin nx$收敛  
+        - 由$Dirichlet$判别法，只需证明$\sum \sin nx$有界  
+        - (trick-积化和差)对形如$\sin kx$的数列求和，乘上一个$2\sin \frac{x}{2}$，得到$2\sin \frac{x}{2} \sin kx = \cos(k-\frac{1}{2})x-\cos(k+\frac{1}{2})x$  
+        - 因此,$2\sin \frac{x}{2} \sum \sin kx = \sum (\cos (k-\frac{1}{2})x-\cos (k+\frac{1}{2})x) = \cos \frac{x}{2}- \cos (n+\frac{1}{2} )x$
+        - 因此$\forall n \ge 1, |2 \sin \frac{x}{2}\sum \sin kx| = |\cos \frac{x}{2}- \cos (n+\frac{1}{2} )x| \le 2$
+        - 因此$|\sum \sin kx| \le \frac{1}{|\sin \frac{x}{2}|}(有界)$    
+        - 由Dirichlet判别法，$\sum_{n=1}^{\infty} a_n \sin nx$收敛
+    + 若$\sum b_n$收敛，则下述级数都收敛： 
+        - $\sum \frac{b_n}{n^p}$
+        - $\sum \frac{b_n}{\sqrt{n+1}}$
+        - $\sum b_n (1+\frac{1}{n})^n$
+
+#### 绝对收敛与条件收敛的性质
+若$\sum_{n=1}^{\infty} x_n$绝对收敛，则$\sum_{n=1}^{\infty} x_n^{+}$与$\sum_{n=1}^{\infty} x_n^{-}$均绝对收敛。  
+若$\sum_{n=1}^{\infty} x_n$条件收敛，则$\sum_{n=1}^{\infty} x_n^{+}$与$\sum_{n=1}^{\infty} x_n^{-}$均发散。  
+
+### 级数的重排
+定义：设$\varphi$是$N^{\ast}$上的双射，称级数$\sum_{n=1}^{\infty} x_{\varphi(n)}$是级数$\sum_{n=1}^{\infty} x_n$的重排。  
+亦即对级数进行加法交换律。  
+
+定理：若$\sum_{n=1}^{\infty} x_n$绝对收敛，则$\sum_{n=1}^{\infty} x_{\varphi(n)}$也绝对收敛，且其和与原级数相同。  
+
+$Riemann定理$:若$\sum_{n=1}^{\infty} x_n$条件收敛，则一定存在某个重排$\sum_{n=1}^{\infty} x_{\varphi(n)}$，使得其和为任意给定的实数。  
+
+### 级数的乘积
+1. $Cauchy$乘积：$\sum_{n=1}^{\infty} a_n \sum_{n=1}^{\infty} b_n = \sum_{n=1}^{\infty} (a_1 b_n + a_2 b_{n-1} + \dots + a_n b_1)$ (排成矩阵后的第n条对角线上的元素和)  
+2. 正方形乘积：$\sum_{n=1}^{\infty} a_n \sum_{n=1}^{\infty} b_n = \sum_{n=1}^{\infty} (a_1 b_n + a_2 b_n + \dots + a_n b_n +a_n b_{n-1} + \dots + a_n b_1)$(排成矩阵后的第n列到第n行组成的直角上的元素和)  
+
+#### Cauchy定理
+设$\sum a_n$与$\sum b_n$绝对收敛于A,B，  
+则对于由所有乘积$a_i b_j$任意排序再求和得到的级数也绝对收敛，  
+且其和等于AB。

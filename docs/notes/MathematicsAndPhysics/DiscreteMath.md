@@ -43,7 +43,8 @@ dual（对偶）: 将逻辑表达式中的`∧`和`∨`互换，`T`和`F`互换�
 - 吸收律：`p∧(p∨q)` = `p`，`p∨(p∧q)` = `p`  
 
 ### 逻辑恒等式：
-![](../../img/dmlogic.png)
+$p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) \equiv (p \wedge q) \vee (\neg p \wedge \neg q)$  
+![](../../img/dmlog1.png)
 
 ??? 例  
 	对数独方框进行坐标划分
@@ -56,4 +57,13 @@ dual（对偶）: 将逻辑表达式中的`∧`和`∨`互换，`T`和`F`互换�
 
 p NOR($\downarrow$) q: is true when both are false, otherwise false.（对$\vee$取反）  
 p NAND($\mid$) q: is true when either or both are false（有假为假，其余情况为真）（对$\wedge$取反）  
-亦即$p\downarrow q \equiv \neg(p\vee q)$，$p\mid q \equiv \neg(p\wedge q)$
+亦即$p\downarrow q \equiv \neg(p\vee q)$，$p\mid q \equiv \neg(p\wedge q)$  
+
+### 范式
+- 合取范式(Conjunctive Form)：将一个命题公式写成若干个(有限项)合取式的析取式，如$(p∧q)∨(¬p∧q)∨(p∧¬q)∨(¬p∧¬q)$  
+- 析取范式(Disjunctive Form)：将一个命题公式写成若干个(有限项)析取式的合取式，如$(p∨q)∧(¬p∨q)∧(p∨¬q)∧(¬p∨¬q)$
+- 最小项(minterm):所有逻辑变量在各个表达式中出现且只出现一次，再合取
+	- Each minterm is true for exactly **one** assignment.
+	- 性质: 
+    	- $m_1∨m_2∨···∨m_n = True$
+    	- $\forall i,j, m_i \wedge m_j = False$
