@@ -6,20 +6,20 @@ comments: true
 
 > 任课教师：常瑞、吴磊、冯博
 !!! abstract "成绩组成"
-    - 作业 10%
-    - Projects 共60%  
-        - Lab0 - 实验准备 6%  
-        - Lab1 - 多路选择器+七段数码管 10%  
-        - Lab2 - 加减法器 6%  
-        - Lab3 - 时序电路 8%  
-        - Lab4 - 卷积核 8%  
-        - Lab5 - 汇编实现 10%  
-        - 大程 - Single Cycle CPU 12%  
-        - Bonus - TBD 10%  
-    - Final 30%
+	- 作业 10%
+	- Projects 共60%  
+		- Lab0 - 实验准备 6%  
+		- Lab1 - 多路选择器+七段数码管 10%  
+		- Lab2 - 加减法器 6%  
+		- Lab3 - 时序电路 8%  
+		- Lab4 - 卷积核 8%  
+		- Lab5 - 汇编实现 10%  
+		- 大程 - Single Cycle CPU 12%  
+		- Bonus - TBD 10%  
+	- Final 30%
 
 !!! note "课程主页"
-    https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
+	https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
 
 > 这门课好难啊:sob:
 
@@ -43,31 +43,32 @@ Instructions: 0/1 binaries
 $X = X_{n-1}X_{n-2}\dots X_1X_0$  
 无符号整数(unsigned integer)范围: $0 \le X \le 2^n - 1$    
 有符号整数(signed integer)范围: 编码方式不同，有不同的范围  
+
 - 原码(original code)：最高位为符号位，0为正，1为负  
-  - 缺点：0有两种表示，+0和-0，导致可表示的范围减小1
-  - Hardware Complexity
-  - 二进制加法失效
+    - 缺点：0有两种表示，+0和-0，导致可表示的范围减小1
+    - Hardware Complexity
+    - 二进制加法失效
 - 反码(one's complement)：正数的反码与原码相同，负数的反码是对应正数的原码的每一位取反
-  - 优点：二进制加法后，将进位加到最后一位上即可得到正确结果
-  - 缺点：0还是有两种表示，+0和-0
+    - 优点：二进制加法后，将进位加到最后一位上即可得到正确结果
+    - 缺点：0还是有两种表示，+0和-0
 - 补码(two's complement)：正数的补码与原码相同，负数的补码是对应正数的原码的每一位取反，然后加1
-  - 优点：0只有一种表示
-  - 缺点：最小的负数没有对应的正数
-  - 二进制加法后，将进位丢弃即可得到正确结果
-  - 用补码表示的负数的绝对值是对应正数的原码的每一位取反，然后加1
-  - 补码的范围：$-2^{n-1} \le X \le 2^{n-1} - 1$  
+    - 优点：0只有一种表示
+    - 缺点：最小的负数没有对应的正数
+    - 二进制加法后，将进位丢弃即可得到正确结果
+    - 用补码表示的负数的绝对值是对应正数的原码的每一位取反，然后加1
+    - 补码的范围：$-2^{n-1} \le X \le 2^{n-1} - 1$  
 
 !!! note "Modulo Operation"
-    If $A,B,M$ satisfy $A = B + K \times M$, then $A \equiv B \pmod M$
+	If $A,B,M$ satisfy $A = B + K \times M$, then $A \equiv B \pmod M$
 
 ## 实验部分
 ### lab0
 ```verilog
 module main( 
-    I0,
-    I1,
-    I2,
-    O );
+	I0,
+	I1,
+	I2,
+	O );
 
    input I0;
    input I1;

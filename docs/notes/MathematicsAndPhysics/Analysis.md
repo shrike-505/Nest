@@ -80,21 +80,23 @@ $$
 \end{align*}
 $$
 
-### 判别级数收敛的方法 
-1. 定义法，判断${S_n}$是否收敛（略）  
-2. 利用必要条件判断${x_n}$是否收敛于0  
+### 判别级数敛散的方法 
+1. 定义法，判断${S_n}$是否收敛  
+2. 利用必要条件先判断${x_n}$是否收敛于0  
 3. 柯西收敛准则（略）  
+4. 好多判别法  
+5. 收敛+发散=发散，收敛+收敛=收敛
 #### 正项级数专属：
 由于$S_n$单调递增，所以$\sum_{n=1}^{\infty} x_n$收敛的充要条件是$\{S_n\}$有上界
 
-4. 比较判别法（$A$为正数）：  
+1. 比较判别法（$A$为正数）：  
     - 若$\forall n \ge 1, 0 \le x_n \le Ay_n$，且$\sum_{n=1}^{\infty} y_n$收敛，则$\sum_{n=1}^{\infty} x_n$收敛  
     - 大的收敛，小的也收敛
     - 若$\forall n \ge 1, 0 \le x_n \le Ay_n$，且$\sum_{n=1}^{\infty} x_n$发散，则$\sum_{n=1}^{\infty} y_n$发散  
     - 小的发散，大的也发散  
     - 由于修改级数的有限项后级数敛散性不变，因此上述条件可以只对从某个$N_0$后开始的项成立，即$\forall n \ge 1$可以变为$\exists N_0 \ge 0, \forall n \ge N_0$
 
-5. 比较判别法的极限形式：  
+2. 比较判别法的极限形式：  
     - 若$\lim_{n \to \infty} \frac{x_n}{y_n} = l (0 \le l \le +\infty)$，则  
         - 若$0 < l < +\infty$，则$\sum_{n=1}^{\infty} x_n$与$\sum_{n=1}^{\infty} y_n$同敛散
         - 若$l=0$，则$x_n$趋于0的速度更快，充分大项后$x_n$更小，则$\sum_{n=1}^{\infty} y_n$收敛$\Rightarrow \sum_{n=1}^{\infty} x_n$收敛  
@@ -117,7 +119,7 @@ $$
 
 由比较判别法，可以得到下面两种判别法： 
 
-6. 根式判别法：  
+3. 根式判别法：  
     - 若$\lim_{n \to \infty} \sqrt[n]{x_n} = q$，则  
         - 若$q<1$，$\sum_{n=1}^{\infty} x_n$收敛  
         - 若$q>1$，$\sum_{n=1}^{\infty} x_n$发散   
@@ -125,28 +127,28 @@ $$
             - 因此$x_n$不趋于0，级数发散。
         - 若$q=1$，无法判断
 
-7. 比值判别法：  
+4. 比值判别法：  
     - 若$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = q$，则  
         - 若$q<1$，$\sum_{n=1}^{\infty} x_n$收敛  
         - 若$q>1$，$\sum_{n=1}^{\infty} x_n$发散  
         - 若$q=1$，无法判断
 
-6和7实际上是同一个意思，考虑到$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = \lim_{n \to \infty} {\sqrt[n]{x_n}}$，所以两者是等价的  
+3和4实际上是同一个意思，考虑到$\lim_{n \to \infty} \frac{x_{n+1}}{x_n} = \lim_{n \to \infty} {\sqrt[n]{x_n}}$，所以两者是等价的  
 
 ??? 例
     - 判断$\sum_{n=1}^{\infty} n^{2}e^{-n}$的敛散性：  
         $\sqrt[n]{n^{2}e^{-n}} = \sqrt[n]{n^{2}}\sqrt[n]{e^{-n}} = e^{-1}n^{\frac{2}{n}} \rightarrow e^{-1} < 1 (n \rightarrow \infty)$，因此$\sum_{n=1}^{\infty} n^{2}e^{-n}$收敛
     - 判断$\sum_{n=1}^{\infty} \frac{n^n}{3^{n}n!}$的敛散性：  
         $\frac{x_{n+1}}{x_n} = \frac{(n+1)^{n+1}3^{n}n!}{3^{n+1}(n+1)!n^{n}} = \frac{(n+1)^{n}}{3n} \rightarrow \frac{1}{3} < 1 (n \rightarrow \infty)$，因此$\sum_{n=1}^{\infty} \frac{n^n}{3^{n}n!}$收敛
-    - 由于6和7本质一样，注意就题目选择更简单的方法
+    - 由于3和4本质一样，注意就题目选择更简单的方法
 
-8. 积分判别法：  
+5. 积分判别法：  
     - 若$f(x)$在$[1,+\infty)$上连续，且$f(x) \ge 0$，$f(x)$单调递减，则$\sum_{n=1}^{\infty} f(n)$与$\int_{1}^{\infty} f(x)dx$同敛散
 
 #### 交错级数
 定义：级数$\sum_{n=1}^{\infty} (-1)^{n+1}u_n$称为交错级数,其中$u_n \ge 0$  
 
-9. 交错级数的$Leibniz$判别法：  
+1. 交错级数的$Leibniz$判别法：  
     - 若$\{u_n\}$单调递减，且$\lim_{n \to \infty} u_n = 0$，则$\sum_{n=1}^{\infty} (-1)^{n+1}u_n$收敛
 
 ??? 例
@@ -188,9 +190,9 @@ $\le (|a_1-a_2|+|a_2-a_3|+\dots+|a_{n-1}-a_n|+|a_n|)B^{\ast}$
 得到引理: 若(1)$a_n$单调，(2)$B_n$为$b_n$前n项和  
 记$B^{\ast}=\max \{|B_k|,1 \le k \le n\}, a^* = \max \{|a_k|,1 \le k \le n\}$，则$\sum_{k=1}^{n} a_k b_k \le 3a^{\ast}B^{\ast}$  
 
-由引论可推出下述定理：
-+ Dirichlet判别法：若$\{a_n\}$单调趋于0，$\sum b_n$有界（$b_n$的部分和数列有界），则$\sum_{n=1}^{\infty} a_n b_n$收敛
-+ Abel判别法：若$\{a_n\}$单调有界，$\sum b_n$收敛，则$\sum_{n=1}^{\infty} a_n b_n$收敛  
+- 由引论可推出下述定理：
+  + Dirichlet判别法：若$\{a_n\}$单调趋于0，$\sum b_n$有界（$b_n$的部分和数列有界），则$\sum_{n=1}^{\infty} a_n b_n$收敛
+  + Abel判别法：若$\{a_n\}$单调有界，$\sum b_n$收敛，则$\sum_{n=1}^{\infty} a_n b_n$收敛  
 
 ??? 例
     + 若$a_n$单调递减且趋向于0，求证$\forall x \in [0,2\pi]$，$\sum_{n=1}^{\infty} a_n \sin nx$收敛  
@@ -224,4 +226,6 @@ $Riemann定理$:若$\sum_{n=1}^{\infty} x_n$条件收敛，则一定存在某个
 #### Cauchy定理
 设$\sum a_n$与$\sum b_n$绝对收敛于A,B，  
 则对于由所有乘积$a_i b_j$任意排序再求和得到的级数也绝对收敛，  
-且其和等于AB。
+且其和等于AB。 
+
+## 函数列与函数项级数
