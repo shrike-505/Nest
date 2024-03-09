@@ -67,3 +67,21 @@ p NAND($\mid$) q: is true when either or both are false（有假为假，其余�
 	- 性质: 
     	- $m_1∨m_2∨···∨m_n = True$
     	- $\forall i,j, m_i \wedge m_j = False$
+
+## Propositional Functions
+- The statement $P(x)$ is the value of the** Propositional Function** $P$ at $x$.
+    - e.g. P(x)表示$x>0$, 则$P(1)$为$T$，$P(-1)$为$F$, $P(10) \rightarrow P(-1)$为$T$
+
+### Quantifiers
+$\forall x P(x)$: for all x in the domain, P(x) is true.
+$\exists x P(x)$: there exists an x in the domain such that P(x) is true.
+
+- If $P(x)$ denotes the statement $x>0$ and the domain $U$ is all integers, then $\forall x P(x)$ is false, but $\exists x P(x)$ is true.
+-  Given the domain as $\{x_1, x_2, x_3, \cdots, x_n\}$
+    -  $\forall x P(x) = P(x_1) \wedge P(x_2) \wedge P(x_3) \wedge \cdots \wedge P(x_n)$
+    -  $\exists x P(x) = P(x_1) \vee P(x_2) \vee P(x_3) \vee \cdots \vee P(x_n)$
+
+两个量词的优先级高过其他逻辑运算符，如$\forall x P(x) \rightarrow Q(x)$表示$\forall x (P(x) \rightarrow Q(x))$
+
+$\neg \forall x P(x) \equiv \exists x \neg P(x)$
+$\neg \exists x P(x) \equiv \forall x \neg P(x)$

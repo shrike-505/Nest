@@ -103,11 +103,11 @@ n阶微分方程的一般形式：$F(x, y, y', y'', \cdots, y^{(n)}) = 0$
 
 ??? 例
     - 求解伯努利方程:$\frac{dy}{dx} + \frac{y}{x} = a(\ln x)y^2$
-    - 令$z = y^{1-2} = y^{-1}$,则$\frac{dz}{dx} - \frac{z}{x} = -a\ln x$
-    - 于是$P(x) = -\frac{1}{x}$, $Q(x) = -a\ln x$
-    - 代入公式得$z = e^{\int \frac{1}{x}dx}(-\int a\ln x e^{-\int \frac{1}{x}dx}dx + C)$
-    - 积分化简后得到$z = -\frac{1}{2} ax(\ln x)^2 + Cx$
-    - 代回,得$y = \frac{1}{-\frac{1}{2} ax(\ln x)^2 + Cx}$
+        - 令$z = y^{1-2} = y^{-1}$,则$\frac{dz}{dx} - \frac{z}{x} = -a\ln x$
+        - 于是$P(x) = -\frac{1}{x}$, $Q(x) = -a\ln x$
+        - 代入公式得$z = e^{\int \frac{1}{x}dx}(-\int a\ln x e^{-\int \frac{1}{x}dx}dx + C)$
+        - 积分化简后得到$z = -\frac{1}{2} ax(\ln x)^2 + Cx$
+        - 代回,得$y = \frac{1}{-\frac{1}{2} ax(\ln x)^2 + Cx}$
 
 ## 全微分方程
 （我没看懂，很多都是多元函数和偏导的东西，可能会在数分上讲到）  
@@ -117,7 +117,7 @@ n阶微分方程的一般形式：$F(x, y, y', y'', \cdots, y^{(n)}) = 0$
 例如 $xdx+ydy = 0$，等号左侧为 $d(\frac{1}{2}x^2 + \frac{1}{2}y^2)$，因此$\frac{1}{2}x^2 + \frac{1}{2}y^2 = C$ 即为通解。  
 
 $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,y)}{\partial y} = \frac{\partial N(x,y)}{\partial x}$  
-(x的系数对y求导 = y的系数对x求导) 
+(dx的系数对y求导 = dy的系数对x求导) 
 而$u(x,y) = \int_{(0,0)}^{(x,y)} M(x,y)dx + N(x,y)dy$即为微分方程的特解。  
 
 - 求解$u(x,y)$: 从$(0,0)$先积分到$(x,0)$, 再从$(x,0)$积分到$(x,y)$
@@ -132,9 +132,10 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
         - 解法1: 直接求解
             - 此处$M = 3x^{2}+6xy^{2}$, $N = 6x^{2}y+4y^{3}$
             - 而$\frac{\partial M}{\partial y} = 12xy = \frac{\partial N}{\partial x}$, 因此为全微分方程
-            - $u(x) = \int_{(0,0)}^{(x,y)} (3x^{2}+6xy^{2})dx + (6x^{2}y+4y^{3})dy$ 
+            - $u(x,y) = \int_{(0,0)}^{(x,y)} (3x^{2}+6xy^{2})dx + (6x^{2}y+4y^{3})dy$ 
             - $= \int_{0}^{x} 3t^{2}dt + \int_{0}^{y} (6x^{2}s+4s^{3})ds$
             - $= x^{3} + 3x^{2}y^{2} + y^{4}$
+            - 通解就是$u(x,y) = C$, 即$x^{3} + 3x^{2}y^{2} + y^{4} = C$
         - 解法2: 凑全微分
             - 改写方程为$3x^{2} + 4y^{3}dy + 6xy(ydx + xdy) = 0$
             - 凑微分得$d(x^{3} + y^{4}) + 6xyd(xy) = 0$
