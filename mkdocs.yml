@@ -134,6 +134,7 @@ markdown_extensions:
 
 extra_css:
   - https://fonts.font.im/css?family=Gloria+Hallelujah
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - css/changelogs.css
@@ -141,9 +142,13 @@ extra_css:
   - css/newfonts.css
 
 extra_javascript:
-  - javascript/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascript/katex.js 
+  # I've been meditating on the difference between MathJax and KaTeX.
+  # - javascript/mathjax.js
+  # - https://polyfill.io/v3/polyfill.min.js?features=es6
+  # - https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra:
   social:
