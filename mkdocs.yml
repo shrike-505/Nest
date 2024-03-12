@@ -96,7 +96,12 @@ plugins:
   - statistics:
       words_per_minute: 350
   - search
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      enable_creation_date: true
+      locale: zh
+      type: date
+      exclude: 
+        - casual/*
 
 markdown_extensions:
   - toc:
