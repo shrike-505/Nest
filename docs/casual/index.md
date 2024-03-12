@@ -1,6 +1,6 @@
 ---
 nostatistics: true
-comment: true
+comments: true
 ---
 
 

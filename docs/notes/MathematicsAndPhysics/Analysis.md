@@ -229,3 +229,33 @@ $Riemann定理$:若$\sum_{n=1}^{\infty} x_n$条件收敛，则一定存在某个
 且其和等于AB。 
 
 ## 函数列与函数项级数
+定义：$f_1,f_2,\dots,f_n,\dots$是定义在$E$上的函数，  
+则$\{f_n\}$为$E$上的一个函数列。
+$\forall x \in E$，若$\{f_n(x)\}$收敛于$f(x)$，则称$\{f_n\}$收敛于$f$，记为$f_n \rightarrow f$
+
+若$x_0 \in E$，所有$\{f_n(x_0)\}$都收敛于$f(x_0)$，则称$\{f_n\}$在$x_0$处收敛于$f(x_0)$，记为$f_n \rightarrow f(x_0)$  
+点集$\{x \in E \mid \{f_n(x)\} 收敛\}$称为$\{f_n\}$的收敛域  
+
+点态收敛：$\forall x \in D, \forall \epsilon > 0, \exists N(\epsilon ,x) > 0, 当n>N(\epsilon ,x)时，有|f_n(x)-f(x)|<\epsilon$  
+一致收敛：$\forall \epsilon > 0, \exists N(\epsilon) > 0(与x无关), 当n>N(\epsilon)时，有|f_n(x)-f(x)|<\epsilon$，记为$f_n \rightrightarrows f$  
+不一致收敛：$\exists \epsilon_0 > 0, \forall N > 0, \exists n>N, 使得|f_n(x)-f(x)| \ge \epsilon_0$
+一致收敛必定点态收敛。
+
+??? 例
+    - 证明$f_n(x) = x^n 在[0,1]$不一致收敛  
+        - $f(x) = \lim_{n \to \infty} x^n = \begin{cases} 0 & x \in [0,1) \\ 1 & x = 1 \end{cases}$
+        - 取$\epsilon_0 = \frac{1}{2}$，则$\forall N > 0$, 令$n = N+1$, 令$x = \sqrt[n](\frac{1}{2})$
+        - 则$|f_n(x)-f(x)| = \frac{1}{2} \ge \epsilon_0$
+    - 而这个函数在$[0,1-\delta],\forall \delta \in (0,1)$上一致收敛
+        - $\forall x \in [0,1-\delta], |f_n(x)-f(x)| = x^n \le (1-\delta)^n \le (1-\delta)^N = \epsilon (取N=\frac{\ln \epsilon}{\ln (1-\delta)})$
+
+### 柯西收敛准则（典中典）
+定义：$\{f_n\}$在$E$上一致收敛的充要条件是$\forall \epsilon > 0, \exists N(\epsilon) > 0, 当m,n>N(\epsilon)时，有|f_n(x)-f_m(x)|<\epsilon$  
+由此可推出另一充要条件：记$\sup_{x \in E} |f_n(x)-f(x)| = M_{n}$，则$\{f_n\}$在$E$上一致收敛的充要条件是$\lim_{n \to \infty} M_{n} = 0$
+
+??? 例
+    - 判断$f_n(x) = nxe^{-nx^2}$在$R$上的一致收敛性
+    - （配凑$nx^2$）$\lim_{n \to \infty} nxe^{-nx^2} = \frac{1}{x} \lim_{n \to \infty} \frac{nx^2}{e^{nx^2}} = \frac{1}{x} 0 = 0$
+    - 因此极限函数$f(x) = 0$,$f_n(x)-f(x) = f_n(x)$  
+    - 求导得$f_n'(x) = ne^{-nx^2}(1-2nx^2)$，令$f_n'(x) = 0$得$x = \frac{1}{\sqrt{2n}}$，此为最大值点
+    - 则$M_n = f_n(\frac{1}{\sqrt{2n}})$，不趋于0.

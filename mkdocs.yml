@@ -90,7 +90,6 @@ plugins:
       post_readtime_words_per_minute: 350
       post_date_format: full
       blog_toc: true
-      post_excerpt: required
       post_excerpt_separator: <!-- more -->
   - changelog
   - statistics:
@@ -102,6 +101,7 @@ plugins:
       type: date
       exclude: 
         - casual/*
+        - index.md
 
 markdown_extensions:
   - toc:
