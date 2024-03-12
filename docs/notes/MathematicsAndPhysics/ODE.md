@@ -5,6 +5,7 @@ comments: true
 # 常微分方程
 
 > 任课教师：王伟
+> 这课讲的很浅，好像难度也不大
 
 !!! note "UsefulLinks"
     [Cheatsheet by Xecades](https://note.xecades.xyz/math/ma/cheatsheet/)  
@@ -111,6 +112,7 @@ n阶微分方程的一般形式：$F(x, y, y', y'', \cdots, y^{(n)}) = 0$
 
 ## 全微分方程
 （我没看懂，很多都是多元函数和偏导的东西，可能会在数分上讲到）  
+
 将微分方程化为$M(x,y)dx + N(x,y)dy = 0$的形式，若$\exists u(x,y)$使得$du(x,y) = M(x,y)dx + N(x,y)dy$，则称为全微分方程。  
 则$u(x,y) = C$即为微分方程的通解。  
 
@@ -120,8 +122,11 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
 (dx的系数对y求导 = dy的系数对x求导) 
 而$u(x,y) = \int_{(0,0)}^{(x,y)} M(x,y)dx + N(x,y)dy$即为微分方程的特解。  
 
-- 求解$u(x,y)$: 从$(0,0)$先积分到$(x,0)$, 再从$(x,0)$积分到$(x,y)$
-- (路径积分)
+- 解法1：
+    - 求解$u(x,y)$: 从$(0,0)$先积分到$(x,0)$, 再从$(x,0)$积分到$(x,y)$
+    - (路径积分)
+- 解法2:
+    - 凑全微分（技巧性较强）
 
 !!! note "凑全微分"
     我估计不久后会搬到数分Ⅱ笔记里
@@ -137,7 +142,7 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
             - $= x^{3} + 3x^{2}y^{2} + y^{4}$
             - 通解就是$u(x,y) = C$, 即$x^{3} + 3x^{2}y^{2} + y^{4} = C$
         - 解法2: 凑全微分
-            - 改写方程为$3x^{2} + 4y^{3}dy + 6xy(ydx + xdy) = 0$
+            - 改写方程为$3x^{2}dx + 4y^{3}dy + 6xy(ydx + xdy) = 0$
             - 凑微分得$d(x^{3} + y^{4}) + 6xyd(xy) = 0$
             - 也就是$d(x^{3} + y^{4} + 3x^{2}y^{2}) = 0$
             - 得通解$x^{3} + y^{4} + 3x^{2}y^{2} = C$

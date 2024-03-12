@@ -61,6 +61,10 @@ $X = X_{n-1}X_{n-2}\dots X_1X_0$
 !!! note "Modulo Operation"
 	If $A,B,M$ satisfy $A = B + K \times M$, then $A \equiv B \pmod M$
 
+???+ 浮点数的表示（IEEE 754 Standard）
+	![](../../img/float.png)
+	s表示正负，exp表示
+
 ## 实验部分
 ### lab0
 ```verilog

@@ -231,7 +231,7 @@ Useful methods & functions on [Dive into Python3](https://diveintopython3.net/na
 ### Some function/operator details
 
 - `min` and `max`, when there are multiple arguments all have the minimal/maximal value, return the argument which appears first.  
-- `in` when used within a dictionary, only considers VALUES.
+- `in` when used within a dictionary, only considers KEYS.
 ```python
 >>> pokemon = {'pikachu': 25, 'dragonair': 148, 'mew': 151}
 >>> 'pikachu' in pokemon
