@@ -99,6 +99,7 @@ plugins:
       enable_creation_date: true
       locale: zh
       type: date
+      timezone: Asia/Shanghai
       exclude: 
         - casual/*
         - index.md

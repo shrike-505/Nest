@@ -21,8 +21,6 @@ comments: true
 !!! note "课程主页"
 	https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
 
-> 这门课好难啊:sob:
-
 ## 一些用到的工具
 SPICE: 模拟电路的in/out  
 logisim: 画电路图，验证功能，将电路转为verilog文件  
@@ -66,6 +64,9 @@ $X = X_{n-1}X_{n-2}\dots X_1X_0$
 	s表示正负，exp表示
 
 ## 实验部分
+
+> 多看课程网站吧，这课神必的不行。
+
 ### lab0
 ```verilog
 module main( 
@@ -85,3 +86,50 @@ endmodule
 这一段代码表示一个叫做`main`的电路`module`(模块)，先声明I1、I2、I3、O这几个**引脚序列**.之后用input/output说明各个引脚是输入还是输出。  
 `wire wire0`定义一条名为wire0的线路。  
 wire的电气特性：必须被有且仅有一个assign输入，可以有0个或者多个assign输出。  
+
+运算符：`&`表示与，`|`表示或，`^`表示异或，`~`表示非。
+
+`assign`语句用于给wire赋值。如`assign wire0 = I0 & I1;`表示wire0的值为I0和I1的与，`assign O = ~wire0;`表示O的值为wire0的非。
+
+### lab1
+#### 二选一多路选择器
+$O = S \cdot I_0 + \overline{S} \cdot I_1$  
+其中，$S$为选择信号，$I_0$和$I_1$为输入信号，$O$为输出信号。  
+点乘号表示逻辑与，加号表示逻辑或，横线表示逻辑非。  
+
+使用代码实现：  
+```verilog
+module mux2to1(
+	input I0,
+	input I1,
+	input S,
+	output O
+	);
+	assign O = S & I0 | ~S & I1;
+endmodule
+```
+
+#### 四选一多路选择器
+$O = \overline{S_1} \cdot \overline{S_0} \cdot I_0 + S_0 \cdot \overline{S_1} \cdot I_1 + \overline{S_0} \cdot S_1 \cdot I_2 + S_1 \cdot S_0 \cdot I_3$  
+
+实现：使用三个二选一多路选择器实现。（封装两个二选一多路选择器模块）  
+$Mux(I0, I1, S) = S \cdot I_1 + \overline{S} \cdot I_0$  
+$O = Mux(Mux(I_0, I_1, S_0), Mux(I_2, I_3, S_0), S_1)$  
+
+```verilog
+module mux4to1(
+	input I0,
+	input I1,
+	input I2,
+	input I3,
+	input S0,
+	input S1,
+	output O
+	);
+	wire w1, w2;
+	mux2to1 Mux1(I0, I1, S0, w1);
+	mux2to1 Mux2(I2, I3, S0, w2);
+	mux2to1 Mux3(w1, w2, S1, O);
+endmodule
+```
+
