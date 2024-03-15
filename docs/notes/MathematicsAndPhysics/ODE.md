@@ -150,3 +150,46 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
         - 分离一下，得$\cos x dx + \frac{1}{y}dy + \frac{ydx-xdy}{y^{2}} = 0$
         - 凑微分得$d(\sin x + \ln |y| - \frac{x}{y}) = 0$
         - 得通解$\sin x + \ln |y| - \frac{x}{y} = C$
+
+- 解法3: 积分因子
+    - 若微分方程不是全微分方程，可以乘以一个函数$\mu(x,y)$，使得$\mu(x,y)M(x,y)dx + \mu(x,y)N(x,y)dy = 0$是全微分方程
+    - 之后在按照解全微分方程的方法来解
+    - 不过找积分因子较有技巧性，看看例子
+
+??? 例
+    - 求解$ydx+(x+x^2 y^2 )dy = 0$
+    - 改写为$ydx+xdy+x^2 y^2 dy = 0$
+    - 两边同乘$\mu(x,y) = (xy)^{-2}$（我不到怎么发现的）
+    - 得$\frac{d(xy)}{(xy)^2} + dy = 0$
+    - $\rightarrow d(-\frac{1}{xy} + y) = 0$
+
+## 高阶ode
+### 可降阶的二阶ode
+1. $y^n = f(x)$
+   - 解法：直接积分n次
+   - 较为简单，注意每次积分都要加上常数
+
+2. $y'' = f(x,y')$ (无$y$)
+   - 解法：令$y' = p$, 则$y'' = p'$, 于是原方程化为一阶方程$p' = f(x,p)$
+
+??? 例
+    - 求解$(1+x^2)y'' = 2xy'$  
+        - 令$y' = p$, 则$y'' = p'$, 于是原方程化为一阶方程$p' = \frac{2xp}{1+x^2}$
+        - 分离变量得$\frac{dp}{p} = \frac{2xdx}{1+x^2}$
+        - 两边积分得$\ln |p| = \ln |1+x^2| + C$
+        - 代回得$p = C(1+x^2)$
+        - 再**对x积分**一次得$y = C_1(x+\frac{1}{3} x^3) + C_2$
+
+3. $y'' = f(y,y')$ (无$x$)
+   - 解法：令$y' = p$, 则$y'' = \frac{dp}{dx} = \frac{dp}{dy} \frac{dy}{dx} = p\frac{dp}{dy}$, 于是原方程化为一阶方程$p\frac{dp}{dy} = f(y,p)$
+   - 这里将p看作y的函数，也即自变量是y，因变量是p
+
+??? 例
+    - 求解$yy'' - (y')^2 = 0$
+        - 令$y' = p$, 则$y'' = p \frac{dp}{dy}$
+        - 原方程化为$yp \frac{dp}{dy} - p^2 = 0$
+        - 分离变量得$\frac{dp}{p} = \frac{dy}{y}$
+        - 两边积分得$\ln |p| = \ln |y| + C$
+        - 代回得$p = y' = \frac{dy}{dx} = C_1 y$
+        - 注意这个是关于$y$和$x$的ode，分离变量得$\frac{dy}{y} = C_1 dx$
+        - 积分化简得到$y=C_2 e^{C_1 x}$
