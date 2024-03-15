@@ -166,10 +166,12 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
 ## 高阶ode
 ### 可降阶的二阶ode
 1. $y^n = f(x)$
+
    - 解法：直接积分n次
    - 较为简单，注意每次积分都要加上常数
 
 2. $y'' = f(x,y')$ (无$y$)
+
    - 解法：令$y' = p$, 则$y'' = p'$, 于是原方程化为一阶方程$p' = f(x,p)$
 
 ??? 例
@@ -181,6 +183,7 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
         - 再**对x积分**一次得$y = C_1(x+\frac{1}{3} x^3) + C_2$
 
 3. $y'' = f(y,y')$ (无$x$)
+
    - 解法：令$y' = p$, 则$y'' = \frac{dp}{dx} = \frac{dp}{dy} \frac{dy}{dx} = p\frac{dp}{dy}$, 于是原方程化为一阶方程$p\frac{dp}{dy} = f(y,p)$
    - 这里将p看作y的函数，也即自变量是y，因变量是p
 
