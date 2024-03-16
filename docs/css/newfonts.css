@@ -1,10 +1,5 @@
-@font-face {
-    font-family: "unicode";
-    src: url(../fonts/unifont-15.1.04.otf);
-}
-
 :root {
-    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+    --md-text-font: "JetBrains Mono", "Noto Serif SC"; 
     --md-code-font: "JetBrains Mono";
   }  
 

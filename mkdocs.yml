@@ -139,6 +139,7 @@ markdown_extensions:
       generic: true
 
 extra_css:
+  - https://fonts.font.im/css2?family=Noto+Serif+SC
   - https://fonts.font.im/css?family=Gloria+Hallelujah
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
