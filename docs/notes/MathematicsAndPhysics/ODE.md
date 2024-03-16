@@ -173,6 +173,7 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
 2. $y'' = f(x,y')$ (无$y$)
 
    - 解法：令$y' = p$, 则$y'' = p'$, 于是原方程化为一阶方程$p' = f(x,p)$
+   - 注意这里的p仍然是x的函数，即$p' = \frac{dp}{dx}$
 
 ??? 例
     - 求解$(1+x^2)y'' = 2xy'$  
