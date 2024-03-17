@@ -50,6 +50,20 @@ theme:
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
+    admonition:
+      info: fontawesome/solid/anchor
+      note: fontawesome/solid/pen-nib
+      abstract: fontawesome/solid/list
+      tip: fontawesome/solid/lightbulb
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: material/alien
+      danger: fontawesome/solid/virus
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/link
+
   #font:(已用CSS实现)
    # text: Love Light
    # text: Sassy Frass
@@ -147,6 +161,7 @@ extra_css:
   - css/changelogs.css
   - css/newcolor.css
   - css/newfonts.css
+  - css/newadmonitions.css
 
 extra_javascript:
   - javascript/katex.js 
