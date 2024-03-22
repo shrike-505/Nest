@@ -154,7 +154,10 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
 - 解法3: 积分因子
     - 若微分方程不是全微分方程，可以乘以一个函数$\mu(x,y)$，使得$\mu(x,y)M(x,y)dx + \mu(x,y)N(x,y)dy = 0$是全微分方程
     - 之后在按照解全微分方程的方法来解
-    - 不过找积分因子较有技巧性，看看例子
+        - 若$M(x,y)dx + N(x,y)dy = 0$满足$\frac{1}{N} (\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}) = f(x)$(只和x有关)
+        - 则积分因子$\mu(x) = e^{\int f(x)dx}$
+        - 若$M(x,y)dx + N(x,y)dy = 0$满足$\frac{1}{M} (\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}) = g(y)$
+        - 则积分因子$\mu(y) = e^{\int g(y)dy}$
 
 ??? 例
     - 求解$ydx+(x+x^2 y^2 )dy = 0$
@@ -197,3 +200,54 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
         - 代回得$p = y' = \frac{dy}{dx} = C_1 y$
         - 注意这个是关于$y$和$x$的ode，分离变量得$\frac{dy}{y} = C_1 dx$
         - 积分化简得到$y=C_2 e^{C_1 x}$
+
+### 二阶线性ode
+定义函数的线性相关性：  
+若存在不全为零的常数$k_1,k_2,\cdots,k_n$使得$k_1y_1(x) + k_2y_2(x) + \cdots + k_ny_n(x) = 0$，则称$y_1,y_2,\cdots,y_n$线性相关。  
+n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。  
+
+一般形式：$y'' + P(x)y' + Q(x)y = f(x)$（$f(x)=0$时为齐次，否则为非齐次）  
+有如下性质：
+
+1. 若$y_1(x),y_2(x)$是齐次方程的两个解，则$C_1y_1(x) + C_2y_2(x)$也是齐次方程的解
+2. 若$y_1(x),y_2(x)$是齐次方程的两个特解，且线性无关，则齐次方程的通解为$y = C_1y_1(x) + C_2y_2(x)$
+   1. 推论：n阶齐次线性ode的n个特解的线性组合是通解
+
+??? 例
+    $y'' + y = 0$的特解为$y_1 = \sin x, y_2 = \cos x$  
+    则$y = C_1\sin x + C_2\cos x$是通解
+
+3. 若$y^* (x)$是（非齐次）$y'' + P(x)y' + Q(x)y = f(x)$的一个特解，$Y(x)$是（对应的齐次方程）$y'' + P(x)y' + Q(x)y = 0$的通解，则$y = Y(x) + y^* (x)$是非齐次方程的通解
+
+??? 例
+    $y''+y=x$特解为$y^* = x$, 而$Y = C_1\sin x + C_2\cos x$  
+    则$y = C_1\sin x + C_2\cos x + x$是通解
+
+4. $y_1^{*}$和$y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x)$和$y'' + P(x)y' + Q(x)y = f_2(x)$的特解，则$y_1^{*} + y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x) + f_2(x)$的特解
+
+#### 常系数齐次解法
+一般形式：$y'' + py' + qy = 0$(p,q为常数)  
+注意到这表示$y,y',y''$的线性组合为0，考虑指数函数$y = e^{rx}$，代入方程得$r^2 + pr + q = 0$，即对应的特征方程，只需取满足该方程的r.  
+
+1. $p^2 - 4q>0$ 时，有两根$r_1 \neq r_2$
+   1. 则两特解$y_1 = e^{r_1 x}, y_2 = e^{r_2 x}$
+   2. 通解为$y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$
+2. $p^2 - 4q = 0$ 时，有两根$r_1 = r_2 = r$
+   1. 通解为$y = (C_1 + C_2 x) e^{r x}$
+3. $p^2 - 4q < 0$ 时，有两复根$r_{1,2} = \alpha \pm i\beta$
+   1. 通解为$y = e^{\alpha x}(C_1 \cos \beta x + C_2 \sin \beta x)$
+4. 推论：$y^{(n)} + p_1 y^{(n-1)} + \cdots + p_n y = 0$的特征方程为$r^n + p_1 r^{n-1} + \cdots + p_n = 0$
+   1. 在复数范围内有n个根，把下面的几个对应通解加起来
+   2. $k$重实根$r$对应$e^{rx} (C_0, C_1 x, \cdots, C_{k-1} x^{k-1})$
+   3. $k$重虚根$\alpha \pm \beta i$对应$[(a_0 + a_1 x + \cdots + a_{k-1} x^{k-1})\cos \beta x + (b_0 + b_1 x + \cdots + b_{k-1} x^{k-1})\sin \beta x]e^{\alpha x}$
+   4. 上述$a_i, b_i, C_i$为任意常数
+??? 例
+    - 求解$y'' - 2y' - 3y = 0$
+        - 特征方程为$r^2 - 2r - 3 = 0$, 解得$r_1 = 3, r_2 = -1$
+        - 通解为$y = C_1 e^{3x} + C_2 e^{-x}$
+    - 求解$y'' - 4y' + 4y = 0$
+        - 特征方程为$r^2 - 4r + 4 = 0$, 解得$r = 2$
+        - 通解为$y = (C_1 + C_2 x) e^{2x}$
+    - 求解$y^{(4)} - 2y''' + 5y'' = 0$
+        - 特征方程为$r^4 - 2r^3 + 5r^2 = 0$, 解得$r = 0, 0, 1 \pm 2i$
+        - 通解为$y = C_1 + C_2 x + e^x(C_3 \cos 2x + C_4 \sin 2x)$

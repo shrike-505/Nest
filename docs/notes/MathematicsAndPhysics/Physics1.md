@@ -35,3 +35,9 @@ $\vec{a}_{cm} = \frac{\sum m_i\vec{a}_i}{\sum m_i}$
 
 #### 质心动能
 柯尼希定理：质点系的动能等于质心动能加上每个质点**相对**质心的动能之和，即$E = E_{cm} + \sum E_{k,i-cm}$
+
+## Rotational Motion
+$\tau = I\alpha$  
+其中$\tau$为力矩，$I$为转动惯量，$\alpha$为角加速度  
+$I = \sum m_i r_i^2$  
+即将刚体看作许多质点集合
