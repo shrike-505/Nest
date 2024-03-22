@@ -298,3 +298,44 @@ $\forall x \in E$，若$\{f_n(x)\}$收敛于$f(x)$，则称$\{f_n\}$收敛于$f$
 
 - 可微性：幂级数的和函数在其收敛区间内可导，且导函数为逐项求导，求导后收敛半径不变
     - 推论：取$a=0$, $b=x$，得$\sum_{n=0}^{\infty} a_n x^n$的和函数的导函数为$\sum_{n=0}^{\infty} a_n n x^{n-1}$
+
+### 幂级数展开
+设$f$是$\sum a_n (x-x_0)^n$在(x_0 - r,x_0 + r)上的和函数，则$f$在该区间任意阶可导，且$f^{(k)}(x) = n(n-1) \cdots (n-k+1)a_n(x-x_0)^{n-k}$    
+代入$x = x_0$, 得到$f^{(k)}(x_0) = k!a_k$，因此$a_k = \frac{f^{(k)}(x_0)}{k!}$，这说明幂级数各项的系数由和函数在$x_0$的各阶导数决定  
+
+得泰勒级数：$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$，$x_0 = 0$时称为麦克劳林级数
+
+- 此时有Lagrange余项：$R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}$，$\xi \in (0,x)$, 
+- 积分型余项：$R_n(x) = \int_{0}^{x} \frac{(x-t)^n}{n!}f^{(n+1)}(t)dt$
+- Cauchy余项：$R_n(x) = \frac{1}{n!} f^{(n+1)}(\theta x)(1-\theta)^n x^{n+1}$，$\theta \in (0,1)$
+
+定理（判断和函数的存在性）：
+
+- 若$\exists M > 0, \forall x \in (x_0 - r,x_0 + r)$, 当$n$充分大时有$|f^{(n)}(x)| \le M$，则$\forall x \in (x_0 - r,x_0 + r)$, $f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$
+
+??? 常见幂级数展开
+    - $(1+x)^{\alpha} = 1 + \sum \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}x^n$，$|x|<1$
+    - 令$\alpha = -1$，得$\frac{1}{1+x} = \sum (-1)^n x^n$，$|x|<1$
+    - 对上式逐项求积分，得$\ln(1+x) = \sum \frac{(-1)^{n}}{n+1}x^{n+1}$，$x \in (-1,1]$
+    - 用$x^2$替换$x$，得$\frac{1}{1+x^2} = \sum (-1)^n x^{2n}$，$|x|<1$
+    - 逐项积分得到$\arctan x = \sum \frac{(-1)^n}{2n+1}x^{2n+1}$，$|x| \le 1$
+    - 令$\alpha = -\frac{1}{2}$，得$\frac{1}{\sqrt{1+x}} = 1+ \sum \frac{(-1)^n(2n-1)!!}{(2n)!!}x^n$，$|x|<1$
+    - 用$-x^2$代替$x$，得$\frac{1}{\sqrt{1-x^2}} = 1+ \sum \frac{(2n-1)!!}{(2n)!!}x^{2n}$，$|x|<1$
+    - 逐项积分得到$\arcsin x = \sum \frac{(2n-1)!!}{(2n)!!} \frac{x^{2n+1}}{2n+1}$，$|x| \le 1$
+
+??? 例
+    - 求$f(x) = \frac{1}{x^2}$在$x = 1$处展开
+        - 注意到与$\frac{1}{x}$的关系
+        - $\frac{1}{x} = \frac{1}{1+(x-1)} = \sum (-1)^n (x-1)^n$，$|x-1|<1$
+        - 求导，$\frac{1}{x^2} = \sum_{n=1}^{\infty} (-1)^{n-1} n(x-1)^{n-1}$，$|x-1|<1$
+
+## Fourier级数
+### 三角级数
+定义：形如$\frac{a_0}{2} + \sum_{n=1}^{\infty} (a_n \cos nx + b_n \sin nx)$的级数称为三角级数  
+
+性质：(1)周期性：$T = \frac{2\pi}{n}$  
+(2) 正交性：$\int_{-\pi}^{\pi} \cos nx \cos mx dx = \int_{-\pi}^{\pi} \sin nx \sin mx dx = \pi \delta_{nm} (\delta_{nm}=1,n=m;=0,n \ne m)$  
+
+### Fourier
+若$f$以$2\pi$为周期，傅里叶系数$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx$，$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx dx$  
+以$a_n,b_n$为系数的三角级数称为$f$的Fourier级数
