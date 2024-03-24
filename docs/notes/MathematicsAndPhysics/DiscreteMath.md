@@ -84,4 +84,16 @@ $\exists x P(x)$: there exists an x in the domain such that P(x) is true.
 两个量词的优先级高过其他逻辑运算符，如$\forall x P(x) \rightarrow Q(x)$表示$\forall x (P(x) \rightarrow Q(x))$  
 
 $\neg \forall x P(x) \equiv \exists x \neg P(x)$  
-$\neg \exists x P(x) \equiv \forall x \neg P(x)$
+$\neg \exists x P(x) \equiv \forall x \neg P(x)$】
+
+## 0-1矩阵
+对0-1矩阵(只含0,1的矩阵)A,B，有如下定义  
+矩阵并/交：要求大小一样，得到矩阵的每一元素都是A和B中对应位置元素的并/交  
+矩阵的Boolean product: $A \odot B = \{c_{ij}\}$  
+
+- 其中要求A的列数等于B的行数（和矩阵乘法一样）
+- 假设$A_{m \times k} = \{a_{ij}\}，B_{k \times n} = \{b_{ij}\}，则C_{m \times n} = \{c_{ij}\}$
+- $c_{ij} = (a_{i1} \wedge b_{1j}) \vee (a_{i2} \wedge b_{2j}) \vee \cdots \vee (a_{ik} \wedge b_{kj})$
+
+Boolean power: $A^{[k]} = A \odot A \odot \cdots \odot A$  
+定义：$A^{[0]} = E$
