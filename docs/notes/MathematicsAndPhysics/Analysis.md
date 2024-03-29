@@ -13,17 +13,6 @@ comments: true
     - 期末 60%  
   
 ## 上下极限
-定义：
-
-$$
-\begin{align*}
-&如果给定数列\{x_n\}满足\\
-&(1)\forall \epsilon > 0，\exists N > 0，当n>N时，使得x_n<a+\epsilon \\
-&(2)\forall \epsilon > 0, \forall N > 0, \exists n>N, 使得x_n>a-\epsilon \\
-&则称a为数列\{x_n\}的上极限，记为\lim_{n \to \infty} \sup x_n = a \\
-\end{align*}
-$$
-
 结论：(1)有界数列必有上极限  
 (2)若$\{x_n\}$存在发散于 $+\infty$ 的子列，则$\lim_{n \to \infty} \sup x_n = +\infty$
 

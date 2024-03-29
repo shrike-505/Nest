@@ -97,3 +97,9 @@ $\neg \exists x P(x) \equiv \forall x \neg P(x)$】
 
 Boolean power: $A^{[k]} = A \odot A \odot \cdots \odot A$  
 定义：$A^{[0]} = E$
+
+## 算法
+[停机程序(Halting Problem)：判断一个程序是否会停机](https://www.zhihu.com/question/20081359)  
+
+- 大O: $f = O(g)$, 则$f<kg$ (kg为f上限（最差情况）)
+- 大$\Omega$: $f = \Omega(g)$, 则$f>kg$ (kg为f下限（最好情况）)

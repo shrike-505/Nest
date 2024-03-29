@@ -39,8 +39,10 @@ $\vec{a}_{cm} = \frac{\sum m_i\vec{a}_i}{\sum m_i}$
 ## Rotational Motion
 $\tau = I\alpha$(类比$F = ma$)  
 其中$\tau$为力矩，$I$为转动惯量，$\alpha$为角加速度  
-$I = \sum m_i r_i^2 = \int r^2 dm$, 取决于物体旋转轴的位置和方向  
+$I = \sum m_i r_i^2 = \int r^2 dm$, 与物体旋转轴的位置有关  
 将刚体看作许多质点集合  
 
 由此可表示转动物体的动能：$E_k = \frac{1}{2}I\omega^2$($\omega$为角速度)  
-与动能定理：$\sum W = \int_{\theta_i}^{\theta_f} \sum \tau d\theta = \int_{\omega_i}^{\omega_f} I\omega d\omega = \frac{1}{2}I\omega_f^2 - \frac{1}{2}I\omega_i^2$
+与动能定理：$\sum W = \int_{\theta_i}^{\theta_f} \sum \tau d\theta = \int_{\omega_i}^{\omega_f} I\omega d\omega = \frac{1}{2}I\omega_f^2 - \frac{1}{2}I\omega_i^2$  
+
+平行轴定理：$I = I_{cm} + Mh^2$

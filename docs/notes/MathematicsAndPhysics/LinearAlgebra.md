@@ -91,4 +91,17 @@ $$
 - $T$是满的当且仅当$T^*$是单的
 - $T$是单的当且仅当$T^*$是满的
 
-$T$是单射当且仅当$\ker T = \{0\}$(常用于证明单射)
+$T$是单射当且仅当$\ker T = \{0\}$(常用于证明单射)  
+$\lambda$是$T$的特征值 $\Leftrightarrow$ $T - \lambda I$不是单射，也不是满射
+
+## 不变子空间 
+若$U$是$V$的子空间，若存在线性映射$T$，$\forall \xi \in U$, 有$T( \xi ) \in U$, 则U为V的不变子空间.  
+可知，若V可被直和分解为$V = V_1 \oplus V_2 \oplus \cdots \oplus V_n$ 且$V_i$均为$V$的不变子空间，那么$\forall v \in V$, 都有$Tv = Tv_1 + Tv_2 + \cdots + Tv_n , v_i \in V_i$  
+那么$T$对应的矩阵为准对角矩阵，当每个子空间的维数为1时，矩阵为对角阵。  
+
+定理：$V$有不变子空间，当且仅当$T$有特征值。  
+
+定义特征空间$E(\lambda, T) = null (T - \lambda I)$  
+于是$T$有$m$个不同的特征值$\lambda_1, \lambda_2, \cdots, \lambda_m$。假设$dim V = n$, 则$m \leq n$, 任意两个$E(\lambda_i, T)$和$E(\lambda_j, T)$交集为空。
+
+- $m = n$时，$T$对应的矩阵为对角阵，$V$可被直和分解为$E(\lambda_1, T) \oplus E(\lambda_2, T) \oplus \cdots \oplus E(\lambda_m, T)$

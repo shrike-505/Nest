@@ -223,7 +223,7 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
     $y''+y=x$特解为$y^* = x$, 而$Y = C_1\sin x + C_2\cos x$  
     则$y = C_1\sin x + C_2\cos x + x$是通解
 
-4. $y_1^{*}$和$y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x)$和$y'' + P(x)y' + Q(x)y = f_2(x)$的特解，则$y_1^{*} + y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x) + f_2(x)$的特解
+4. (叠加原理) $y_1^{*}$和$y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x)$和$y'' + P(x)y' + Q(x)y = f_2(x)$的特解，则$y_1^{*} + y_2^{*}$是$y'' + P(x)y' + Q(x)y = f_1(x) + f_2(x)$的特解
 
 #### 常系数齐次解法
 一般形式：$y'' + py' + qy = 0$(p,q为常数)  
@@ -251,3 +251,50 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
     - 求解$y^{(4)} - 2y''' + 5y'' = 0$
         - 特征方程为$r^4 - 2r^3 + 5r^2 = 0$, 解得$r = 0, 0, 1 \pm 2i$
         - 通解为$y = C_1 + C_2 x + e^x(C_3 \cos 2x + C_4 \sin 2x)$
+
+#### 常系数非齐次解法
+非齐次通解 = 齐次通解 + 非齐次特解  
+一般形式：$y'' + py' + qy = f(x)$, 特征方程依旧是$r^2 + pr + q = 0$  
+探讨如下两类$f(x)$  
+
+1. $f(x) = e^{\lambda x} P_m(x)$, $P_m(x)$是m次多项式
+    1. 设特解为$y^* = e^{\lambda x} Q(x)$, 代入方程得$Q(x)$满足$Q'' + (2\lambda + p)Q' + (\lambda^2 + p\lambda + q) = P_m(x)$  
+    2. $\lambda$不是特征根时，$Q(x)$为m次多项式，特解为$y^* = e^{\lambda x} Q(x)$
+    3. $\lambda$为特征方程的单根，$Q(x)$为$(m+1)$次多项式，特解为$y^* = xe^{\lambda x} Q(x)$
+    4. $\lambda$为特征方程的重根，$Q(x)$为$(m+2)$次多项式，特解为$y^* = x^2 e^{\lambda x} Q(x)$
+
+??? 例
+    - 求$y'' + 4y' +3y = x$的一个特解  
+        - 特征方程为$r^2 + 4r + 3 = 0$, 解得$r_1 = -1, r_2 = -3$  
+        - 此时$f(x) = x = xe^{0x}$, 即$P_m(x) = x, \lambda = 0$
+        - $\lambda$不是特征根，$Q(x)$为一次多项式（与$f(x)$次数一样），设$y^* = b_0 x + b_1$
+        - 代入方程得$4b_0 + 3b_0 x + 3b_1 = x$, 比较系数有$b_0 = \frac{1}{3}, b_1 = -\frac{4}{9}$
+        - 因此特解为$y^* = \frac{1}{3} x - \frac{4}{9}$
+    - 求解$y'' -4y' +4y = (6x-2)e^{2x}$
+        - 特征方程为$r^2 - 4r + 4 = 0$, 解得$r = 2$
+        - 于是齐次方程通解为$Y = (C_1 + C_2 x) e^{2x}$
+        - 此时$f(x) = (6x-2)e^{2x}$, $P_m(x) = 6x-2, \lambda = 2$
+        - $\lambda$是二重根，$Q(x)$次数比$f(x)$高两次，设特解为$y^* = x^2 (b_0 + b_1 x)e^{2x}$
+        - 代入原方程化简得$6b_0 x + 2b_1 = 6x-2$, 比较系数得$b_0 = 1, b_1 = -1$
+        - 特解为$y^* = x^2 (x - 1)e^{2x}$
+        - 于是通解为$y = （C_1 + C_2 x）e^{2x} + x^2 (x - 1)e^{2x}$
+
+2. $f(x) = e^{\lambda x}[P_l (x) \cos \omega x + P_n (x) \sin \omega x]$
+    1. 设特解为$y^* = x^k e^{\lambda x}[Q_m (x) \cos \omega x + Q_m (x) \sin \omega x]$(推导过程略)
+    2. 其中$m = \max(l,n)$
+    3. 若$\lambda \pm i\omega$不是特征根, 则$k = 0$
+    4. 若$\lambda \pm i\omega$是特征单根, 则$k = 1$
+
+??? 例
+    - 求$y'' - y = 10e^{2x} \cos x$的一个特解
+        - 则$P_l (x) = 10, P_n (x) = 0, \lambda = 2, \omega = 1, m = \max(l,n) = 0$
+        - 且$\lambda \pm i\omega = 2 \pm i$显然不是特征根，因此$k = 0$
+        - 设特解为$y^* = e^{2x} (a \ cos x + b \ sin x)$
+        - 代入原方程化简得$(2a+4b) \ cos x + (2b-4a) \ sin x = 10 \ cos x$, 比较系数得$a = 1, b = 2$
+        - 特解为$y^* = e^{2x} (cos x + 2 sin x)$
+    - 求$y'' + y = x \cos 2x$的一个特解
+        - 则$P_l (x) = x, P_n (x) = 0, \lambda = 0, \omega = 2, m = \max(l,n) = 1$
+        - 且$\lambda \pm i\omega = \pm 2i$显然不是特征根，因此$k = 0$
+        - 设特解为$y^* = (ax + b)\cos 2x + (cx + d)\sin 2x$
+        - 代入原方程化简得$(-3ax-3b+4c) \cos 2x + (-3cx-3d-4a) \sin 2x = x \cos 2x$, 比较系数得$a = -\frac{1}{3}, b = c = 0, d = \frac{4}{9}$
+        - 则特解为$y^* = -\frac{1}{3} x \cos 2x + \frac{4}{9} \sin 2x$
