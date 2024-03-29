@@ -5,7 +5,8 @@ comments: true
 # 常微分方程
 
 > 任课教师：王伟
-> 这课讲的很浅，好像难度也不大
+> ~~这课讲的很浅，好像难度也不大~~
+> 疑似小测后开始上强度了（
 
 !!! note "UsefulLinks"
     [Cheatsheet by Xecades](https://note.xecades.xyz/math/ma/cheatsheet/)  
@@ -258,16 +259,15 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
 探讨如下两类$f(x)$  
 
 1. $f(x) = e^{\lambda x} P_m(x)$, $P_m(x)$是m次多项式
-    1. 设特解为$y^* = e^{\lambda x} Q(x)$, 代入方程得$Q(x)$满足$Q'' + (2\lambda + p)Q' + (\lambda^2 + p\lambda + q) = P_m(x)$  
-    2. $\lambda$不是特征根时，$Q(x)$为m次多项式，特解为$y^* = e^{\lambda x} Q(x)$
-    3. $\lambda$为特征方程的单根，$Q(x)$为$(m+1)$次多项式，特解为$y^* = xe^{\lambda x} Q(x)$
-    4. $\lambda$为特征方程的重根，$Q(x)$为$(m+2)$次多项式，特解为$y^* = x^2 e^{\lambda x} Q(x)$
+    1. $\lambda$不是特征根时，$Q(x)$为m次多项式，特解为$y^* = e^{\lambda x} q_m(x)$
+    2. $\lambda$为特征方程的单根，$Q(x)$为$(m+1)$次多项式，特解为$y^* = xe^{\lambda x} q_m(x)$
+    3. $\lambda$为特征方程的重根，$Q(x)$为$(m+2)$次多项式，特解为$y^* = x^2 e^{\lambda x} q_m(x)$
 
 ??? 例
     - 求$y'' + 4y' +3y = x$的一个特解  
         - 特征方程为$r^2 + 4r + 3 = 0$, 解得$r_1 = -1, r_2 = -3$  
         - 此时$f(x) = x = xe^{0x}$, 即$P_m(x) = x, \lambda = 0$
-        - $\lambda$不是特征根，$Q(x)$为一次多项式（与$f(x)$次数一样），设$y^* = b_0 x + b_1$
+        - $\lambda$不是特征根，$Q(x)$为一次多项式（与$P_m(x)$次数一样），设$y^* = b_0 x + b_1$
         - 代入方程得$4b_0 + 3b_0 x + 3b_1 = x$, 比较系数有$b_0 = \frac{1}{3}, b_1 = -\frac{4}{9}$
         - 因此特解为$y^* = \frac{1}{3} x - \frac{4}{9}$
     - 求解$y'' -4y' +4y = (6x-2)e^{2x}$
@@ -280,10 +280,10 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
         - 于是通解为$y = （C_1 + C_2 x）e^{2x} + x^2 (x - 1)e^{2x}$
 
 2. $f(x) = e^{\lambda x}[P_l (x) \cos \omega x + P_n (x) \sin \omega x]$
-    1. 设特解为$y^* = x^k e^{\lambda x}[Q_m (x) \cos \omega x + Q_m (x) \sin \omega x]$(推导过程略)
+    1. 设特解为$y^* = x^k e^{\lambda x}[Q_m (x) \cos \omega x + R_m (x) \sin \omega x]$(推导过程略)
     2. 其中$m = \max(l,n)$
     3. 若$\lambda \pm i\omega$不是特征根, 则$k = 0$
-    4. 若$\lambda \pm i\omega$是特征单根, 则$k = 1$
+    4. 若$\lambda \pm i\omega$是(一对)特征根, 则$k = 1$
 
 ??? 例
     - 求$y'' - y = 10e^{2x} \cos x$的一个特解
