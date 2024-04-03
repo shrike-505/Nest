@@ -327,4 +327,47 @@ $\forall x \in E$，若$\{f_n(x)\}$收敛于$f(x)$，则称$\{f_n\}$收敛于$f$
 
 ### Fourier
 若$f$以$2\pi$为周期，傅里叶系数$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx$，$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx dx$  
-以$a_n,b_n$为系数的三角级数称为$f$的Fourier级数
+以$a_n,b_n$为系数的三角级数称为$f$的Fourier级数  
+
+Bessel不等式：$\frac{a_0^2}{2} + \sum_{n=1}^{\infty} (a_n^2 + b_n^2) \le \frac{1}{\pi} \int_{-\pi}^{\pi} f^2(x) dx$
+
+一些推论：
+
+- $f$在$[-\pi,\pi]$上可积, 则$\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = 0$
+- $f$在$[0,\pi]$上可积，则$\lim_{n \to \infty} \int_{0}^{\pi} f(x) \sin (n+\frac{1}{2}) x dx = 0$
+
+#### Fourier级数的收敛性
+**（最看不懂的一集）** 若$f$在$[-\pi, \pi]$按段光滑（有连续导数），则$\forall x \in [-\pi, \pi]$，Fourier级数收敛于$\frac{f(x+0)+f(x-0)}{2}$  
+
+??? 例
+    - 求$f(x) = \begin{cases} 1 & -\pi \le x < 0 \\ 0 & 0 \le x \le \pi \end{cases}$的Fourier级数与其和
+        - $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx = \frac{1}{\pi} \int_{-\pi}^{0} \cos nx dx = \begin{cases} 0 & n \ge 1 \\ 1 & n = 0 \end{cases}$
+        - $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx dx = \frac{(-1)^{n} - 1}{n \pi}$
+        - 于是$f \sim \frac{1}{2} + \sum_{n=1}^{\infty} \frac{(-1)^{n} - 1}{n \pi} \sin nx$
+        - 由于$f$在$[-\pi,\pi]$上按段光滑，因此$x \in (-\pi, 0)$时级数收敛于1，$x \in (0, \pi)$时级数收敛于0，$x = 0, \pm \pi$时级数收敛于$\frac{f(x+0)+f(x-0)}{2} = 0$
+
+#### 变式
+对于周期为$2T$的函数，令$x = \frac{T}{\pi} t$, 则$a_n = \frac{1}{T} \int_{-T}^{T} f(x) \cos \frac{n \pi}{T} x dx$，$b_n = \frac{1}{T} \int_{-T}^{T} f(x) \sin \frac{n \pi}{T} x dx$  
+$a_0 = \frac{1}{T} \int_{-T}^{T} f(x) dx$，$f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} (a_n \cos \frac{n \pi}{T} x + b_n \sin \frac{n \pi}{T} x)$
+
+性质：$\frac{a_0}{2} + \sum_{n=1}^{\infty} (a_n \cos \frac{n \pi}{T} x + b_n \sin \frac{n \pi}{T} x)$是某个在$[-T,T]$上可积函数的Fourier级数的必要条件是$\sum_{n=1}^{\infty} (a_n^2 + b_n^2)$收敛
+
+## 内积空间
+定义：$x$是$E$的
+
+- 内点：$\exists \delta > 0, s.t. U(x,\delta) \subset E$, 内点必属于E
+- 外点：$\exists \delta > 0, s.t. U(x,\delta) \cap E = \emptyset$, 外点必不属于E
+- 边界点：$\forall \delta > 0, U(x,\delta) \cap E \ne \emptyset, U(x,\delta) \cap E^c \ne \emptyset$, 边界点可能属于E，可能不属于E
+- 聚点：$\forall \delta > 0, \mathring{U}(x,\delta) \cap E \ne \emptyset$($U(x,\delta)$中有E的无穷个点), 聚点可能属于E，可能不属于E
+- 孤立点：$\exists \delta > 0, s.t. U(x,\delta) \cap E = \{x\}$, 孤立点必属于E且不是聚点
+
+$E$的内点集记为$E^{\circ}$(E的**内部**)，边界点集记为$\partial E$(E的**边界**)，聚点集记为$E'$，$E$的闭包记为$\bar{E}$，$E$的补集记为$E^c$
+
+??? 例
+    - 在$R$上探讨$E = [0,1)$的各种点集
+        - $E^{\circ} = (0,1)$，$\partial E = \{0,1\}$，$E' = [0,1]$
+
+开集：$E$的每一点都是$E$的内点，即$E = E^{\circ}$  
+闭集：$E$的每一个聚点都属于$E$，即$E = \bar{E}$  
+
+定理：$E$是闭集的充要条件是$E^c$是开集

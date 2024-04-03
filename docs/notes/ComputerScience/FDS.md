@@ -16,6 +16,7 @@ comments: true
       - 排序
       - Hash 
 
-!!! 懒得写了先抄前人的智慧
-    Q神:https://note.hobbitqia.cc/ds/algorithm/  
-    Tonycrane:https://note.tonycrane.cc/cs/algorithm/ds/  
+这课真感觉看前人的智慧就行
+
+- Q神:https://note.hobbitqia.cc/ds/algorithm/  
+- Tonycrane:https://note.tonycrane.cc/cs/algorithm/ds/  

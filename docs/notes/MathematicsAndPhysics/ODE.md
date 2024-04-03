@@ -240,7 +240,7 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
 4. 推论：$y^{(n)} + p_1 y^{(n-1)} + \cdots + p_n y = 0$的特征方程为$r^n + p_1 r^{n-1} + \cdots + p_n = 0$
     1. 在复数范围内有n个根，把下面的几个对应通解加起来
     2. $k$重实根$r$对应$e^{rx} (C_0 + C_1 x + \cdots + C_{k-1} x^{k-1})$
-    3. $k$重虚根$\alpha \pm \beta i$对应$[(a_0 + a_1 x + \cdots + a_{k-1} x^{k-1})\cos \beta x + (b_0 + b_1 x + \cdots + b_{k-1} x^{k-1})\sin \beta x]e^{\alpha x}$
+    3. $k$对虚根$\alpha \pm \beta i$对应$[(a_0 + a_1 x + \cdots + a_{k-1} x^{k-1})\cos \beta x + (b_0 + b_1 x + \cdots + b_{k-1} x^{k-1})\sin \beta x]e^{\alpha x}$
     4. 上述$a_i, b_i, C_i$为任意常数
 ??? 例
     - 求解$y'' - 2y' - 3y = 0$

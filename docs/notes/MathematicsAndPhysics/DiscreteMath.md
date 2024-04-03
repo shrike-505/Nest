@@ -84,7 +84,7 @@ $\exists x P(x)$: there exists an x in the domain such that P(x) is true.
 两个量词的优先级高过其他逻辑运算符，如$\forall x P(x) \rightarrow Q(x)$表示$\forall x (P(x) \rightarrow Q(x))$  
 
 $\neg \forall x P(x) \equiv \exists x \neg P(x)$  
-$\neg \exists x P(x) \equiv \forall x \neg P(x)$】
+$\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
 ## 0-1矩阵
 对0-1矩阵(只含0,1的矩阵)A,B，有如下定义  
@@ -103,3 +103,25 @@ Boolean power: $A^{[k]} = A \odot A \odot \cdots \odot A$
 
 - 大O: $f = O(g)$, 则$f<kg$ (kg为f上限（最差情况）)
 - 大$\Omega$: $f = \Omega(g)$, 则$f>kg$ (kg为f下限（最好情况）)
+
+## 数论
+### 同余
+$a \equiv b \pmod{m} \Leftrightarrow m|(a-b) \Leftarrow \exists k \in \mathbb{Z}, a-b=mk$  
+(不带括号的mod) $a \mod b =$ a除以b的余数  
+
+### 进制转换
+- 十进制转n进制：除n取余数，商再除以n，直到商为0，然后逆序排列余数
+- n进制转十进制：$a_na_{n-1} \cdots a_1a_0 = a_n \times n^n + a_{n-1} \times n^{n-1} + \cdots + a_1 \times n + a_0$
+- 八进制转二进制：将每一位八进制数转化为三位的二进制数，然后拼接就行
+    - 如: $3_8 = 011_2$,$(276)_8 = (010 \space 111 \space 110)_2$
+- 十六进制转二进制：将每一位十六进制数转化为四位的二进制数，然后拼接就行
+	- 如: $A_{16} = 1010_2$,$(A7F)_{16} = (1010 \space 0111 \space 1111)_2$
+- 二进制转八进制：从右起三位三位分段，最左端不足三位在左边补0，接着拼接对应的八进制数
+	- 如: $(1001111111)_2 = (001 \space 001 \space 111 \space 111)_2 = (1177)_8$
+- 二进制转十六进制：与上面类似，不过要分段为4位
+	- 如: $(10101110100)_2 = (0101 \space 0111 \space 0100)_2 = (574)_{16}$
+
+### GCD(最大公约数)
+![](DM1.png)  
+$ab = gcd(a,b) \times lcm(a,b)$  
+辗转相除法：$gcd(a,b) = gcd(b,a \mod b)$

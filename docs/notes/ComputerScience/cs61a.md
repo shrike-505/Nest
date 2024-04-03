@@ -226,6 +226,43 @@ Useful methods & functions on [Dive into Python3](https://diveintopython3.net/na
 ## Object-Oriented Programming
 > My Point of View: A way to synthesize some target-centered segments of a whole program to avoid program and, err, maybe enable objects to be defined easier. 
 
+Hard to explain, just try more examples.  
+
+Class Attributes: Something communal to all instances of a class, like `eat` for all `Pet` instances.  
+Instance Attributes: Something unique to each instance, like `name` for each `Pet` instance.
+
+## String Representation
+
+`__repr__` when invoked on an object, ignores its Instance Attribute, and only calls the Class Attribute `__repr__`.  
+```python
+def repr(x):
+    return type(x).__repr__(x)
+```
+
+## Memorization
+A way to store the results of expensive function calls and return the cached result when the same inputs occur again.
+
+```python
+def memo(f):
+    cache = {}
+    def memoized(n):
+        if n not in cache:
+            cache[n] = f(n)
+        return cache[n]
+    return memoized
+```
+
+## Linked List
+```python
+class Link:
+    empty = ()
+    def __init__(self, first, rest=empty):
+        assert rest is Link.empty or isinstance(rest, Link)
+        self.first = first
+        self.rest = rest
+```
+Notice the rest and the first are both possible to be a Link instance.
+
 ## Miscellaneous
 
 ### Some function/operator details
@@ -241,3 +278,5 @@ False
 >>> 25 in pokemon.values()
 True
 ```
+
+- If class A inherits from class B and a is an instance of A, then `isinstance(a, B)` is `True`, but `type(a) == B` is `False`.

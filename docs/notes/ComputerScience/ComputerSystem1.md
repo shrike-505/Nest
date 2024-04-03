@@ -24,6 +24,7 @@ comments: true
 ## 一些用到的工具
 SPICE: 模拟电路的in/out  
 logisim: 画电路图，验证功能，将电路转为verilog文件  
+verilator: 小仿一真
 
 ## 理论课部分
 Von Neumann架构：I/O System $\leftrightarrows$ CPU $\leftrightarrows$ Memory  
