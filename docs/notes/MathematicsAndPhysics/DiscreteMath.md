@@ -67,6 +67,16 @@ p NAND($\mid$) q: is true when either or both are false（有假为假，其余�
 	- 性质: 
     	- $m_1∨m_2∨···∨m_n = True$
     	- $\forall i,j, m_i \wedge m_j = False$
+    	- 给定$x,y,z$三个变量，$j$为$m_j$对应的下标（十进制），二进制记为$b_j$，则$b_j$中的1对应的位置不变，0对应的位置取反，最后合取即可得到$m_j$
+			![](DM2.png)（梗来源：系统1）
+
+- 最大项(maxterm):所有逻辑变量在各个表达式中出现且只出现一次，再析取
+	- Each maxterm is false for exactly **one** assignment.
+	- 性质: 
+		- $M_1∧M_2∧···∧M_n = False$
+		- $\forall i,j, M_i \vee M_j = True$
+		- 类似的，这里是1对应的位置取反，0对应的位置不变，最后析取即可得到$M_j$
+			![](DM3.png)（梗来源：系统1）
 
 ## Propositional Functions
 - The statement $P(x)$ is the value of the** Propositional Function** $P$ at $x$.
