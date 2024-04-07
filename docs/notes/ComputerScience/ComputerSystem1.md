@@ -148,3 +148,10 @@ module mux4to1(
 endmodule
 ```
 
+### lab2 - 加减法器
+#### 全加减器
+N位二进制的加减法是$\mod 2^N$下的加减法。  
+![](Sys1.png)   
+
+??? a的解释
+	![](Sys2.png)
