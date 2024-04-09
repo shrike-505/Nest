@@ -12,34 +12,7 @@ comments: true
     - 小测 20%  
     - 期末 60%  
   
-## 上下极限
-结论：(1)有界数列必有上极限  
-(2)若$\{x_n\}$存在发散于 $+\infty$ 的子列，则$\lim_{n \to \infty} \sup x_n = +\infty$
-
-一个弱化一点的情况：  
-对于有界数列，其收敛子列(由$Weierstrass$定理知必存在收敛子列)的极限值组成集合$E=\{ \xi \mid \xi = \lim_{n \to \infty} x_{n_k} \}$  
-那么$\max E = \lim_{n \to \infty} \sup x_n$  
-事实上，此时$\max E= \sup E$  
-除此之外，对任意数列，E中还包含$\{x_n\}$的发散子列的非正常极限(亦即$\pm \infty$)  
-此时$\lim_{n \to \infty} \sup x_n = \sup E$
-
-### 性质：
-$\forall$ 上极限存在的$\{x_n\}$,$\{y_n\}$，成立下述关系：   
-(1)$\lim_{n \to \infty} \sup (x_n+y_n) \leq \lim_{n \to \infty} \sup x_n + \lim_{n \to \infty} \sup y_n \\$  
-(2)$若\forall n \ge 1都存在x_n \le y_n,则\lim_{n \to \infty} \sup x_n \leq \lim_{n \to \infty} \sup y_n 且 \lim_{n \to \infty} \inf x_n \leq \lim_{n \to \infty} \inf y_n$  
-(3)$\alpha>0时，\lim_{n \to \infty} \sup \alpha x_n = \alpha \lim_{n \to \infty} \sup x_n$  
-(4)$\{x_n\}$收敛或发散至$\pm \infty$ 的充要条件是$\lim_{n \to \infty} \sup x_n = \lim_{n \to \infty} \inf x_n$  
-
 ## 级数
-### 定义部分和数列
-$$
-\begin{align*}
-&设\{x_n\}是数列，\{S_n\}是其部分和数列，即S_n=x_1+x_2+...+x_n \\
-&令n\to \infty,则\{S_n\}的极限称为级数\sum_{n=1}^{\infty} x_n的和，记为\sum_{n=1}^{\infty} x_n \\
-&\{S_n\}收敛的必要条件是\{x_n\}收敛
-\end{align*}
-$$
-
 ### 重要级数
 $$
 \begin{align*}

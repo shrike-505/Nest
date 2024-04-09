@@ -46,3 +46,12 @@ $I = \sum m_i r_i^2 = \int r^2 dm$, 与物体旋转轴的位置有关
 与动能定理：$\sum W = \int_{\theta_i}^{\theta_f} \sum \tau d\theta = \int_{\omega_i}^{\omega_f} I\omega d\omega = \frac{1}{2}I\omega_f^2 - \frac{1}{2}I\omega_i^2$  
 
 平行轴定理：$I = I_{cm} + Mh^2$
+
+### 角动量
+$L = I\omega = r \times p$  
+![](Physics12.png)
+
+## 简谐运动
+定义$\omega = \sqrt{\frac{k}{m}}$
+
+则$x = Acos(\omega t + \phi)$
