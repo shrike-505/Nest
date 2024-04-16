@@ -367,8 +367,15 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
         - 代回得$u = -\frac{1}{2} x^2 - x + C_1 e^x + C_2$
         - $y = ux = -\frac{1}{2} x^3 - x^2 + C_1 x e^x + C_2 x$
 
+### 一种特殊方程
+![](ODE2.png)  
+![](ODE3.png)
+
+??? 例
+    ![](ODE4.png)
+
 ## 常系数线性ode组
-使用消元法
+### 消元法
 ??? 例
     - 求解$\begin{cases} \frac{dy}{dx} = 3y-2z ① \\ \frac{dz}{dx} = 2y-z ② \end{cases}$
         - 由②得$y = \frac{1}{2}(\frac{dz}{dx} + z)$
@@ -378,3 +385,27 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
         - 通解为$z = C_1 e^x + C_2 x e^x$
         - 代回②得$y = \frac{1}{2}(\frac{dz}{dx} + z) = \frac{1}{2}C_2 e^x + C_1 e^x + C_2 x e^x$
         - 注意最后代入时只能代入②, 不能代入①，否则会引入新的不确定常数
+
+
+### 特征根
+一般形式：$\frac{d\bold{x}}{dt} = A\bold{x}$, 其中$\bold{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$, $A$为$n \times n$矩阵  
+特征方程为$|A - \lambda I| = 0$，解得$\lambda_1, \lambda_2, \cdots, \lambda_n$  
+而$(A - \lambda_i I)\bold{x_i} = \bold{0}$, 解得$\bold{x_1}, \bold{x_2}, \cdots, \bold{x_n}$
+则$\bold{x} = C_1 \bold{x_1} e^{\lambda_1 t} + C_2 \bold{x_2} e^{\lambda_2 t} + \cdots + C_n \bold{x_n} e^{\lambda_n t}$是通解
+
+??? 例
+    ![](ODE6.png)
+    ![](ODE7.png)
+    ![](ODE8.png)
+
+!!! 若特征根为复数
+    Euler公式：$e^{i\theta} = \cos \theta + i \sin \theta$
+    ![](ODE5.png)
+
+??? 例
+    ![](ODE9.png)
+    ![](ODE10.png)
+    ![](ODE11.png)
+
+### 定理
+设$\bold{x_1}(t), \bold{x_2}(t), \cdots, \bold{x_n}(t)$是齐次线性方程组$\frac{d\bold{x}}{dt} = A\bold{x}$的解，则$\bold{x}(t) = \sum_{i=1}^{n} C_i \bold{x_i}(t)$是通解

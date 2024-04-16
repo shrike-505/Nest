@@ -105,3 +105,40 @@ $\lambda$是$T$的特征值 $\Leftrightarrow$ $T - \lambda I$不是单射，也�
 于是$T$有$m$个不同的特征值$\lambda_1, \lambda_2, \cdots, \lambda_m$。假设$dim V = n$, 则$m \leq n$, 任意两个$E(\lambda_i, T)$和$E(\lambda_j, T)$交集为空。
 
 - $m = n$时，$T$对应的矩阵为对角阵，$V$可被直和分解为$E(\lambda_1, T) \oplus E(\lambda_2, T) \oplus \cdots \oplus E(\lambda_m, T)$
+
+??? 算子不变性与上三角矩阵
+    - 设$T \in \mathcal{L}(V)$，$v_1, v_2, \cdots, v_n$是$V$的一组基，则下列条件等价：
+        - T关于这组基的矩阵是上三角矩阵
+        - $\forall j = 1, 2, \cdots, n$，$span\{v_1, v_2, \cdots, v_j\}$是$T$的不变子空间
+        - $\forall j = 1, 2, \cdots, n$，$T_{v_j} \in span\{v_1, v_2, \cdots, v_j\}$
+
+### 上三角矩阵
+$T$是可逆的当且仅当某组基下$T$的上三角矩阵的对角元全不为0。  
+有限维复线性空间$V$上的线性映射$T \in \mathcal{L}(V)$必能在$V$的一组基下表示为上三角矩阵。  
+对这组基运用格拉姆-施密特正交化方法后得到的规范正交基下，$T$的矩阵也为上三角矩阵。
+
+## 内积空间
+正交分解：设$u$,$v \in V$且$v \neq 0$，令$c = \frac{<u,v>}{<v,v>}$，$w = u - cv$，则$w$与$v$正交。  
+
+对规范正交基$e_1, e_2, \cdots, e_n$，$a_i \in F$有$||a_1 e_1 + a_2 e_2 + \cdots + a_n e_n||^2 = |a_1|^2 + |a_2|^2 + \cdots + |a_n|^2$  
+
+??? 用规范正交基表示向量
+    $v = \sum_{i=1}^{n} <v, e_i>e_i$且$||v||^2 = \sum_{i=1}^{n} |<v, e_i>|^2$
+
+范数: $||v|| = \sqrt{<v, v>}$
+
+向量用规范正交基线性表示时具有特殊的表示：$v = <v, e_1>e_1 + <v, e_2>e_2 + \cdots + <v, e_n>e_n$
+
+同时，$||v||^2 = |<v, e_1>|^2 + |<v, e_2>|^2 + \cdots + |<v, e_n>|^2$
+
+### Gram-Schmidt正交化
+设$V$是内积空间，$v_1, v_2, \cdots, v_n$是$V$的一组基，$w_1 = v_1, w_2, w_3, \cdots, w_n$是由$v_1, v_2, \cdots, v_n$通过Gram-Schmidt正交化得到的向量组，满足：  
+$w_1 = v_1$  
+$w_2 = v_2 - \frac{<v_2, w_1>}{<w_1, w_1>}w_1$  
+$w_3 = v_3 - \frac{<v_3, w_1>}{<w_1, w_1>}w_1 - \frac{<v_3, w_2>}{<w_2, w_2>}w_2$  
+$\cdots$  
+$w_n = v_n - \frac{<v_n, w_1>}{<w_1, w_1>}w_1 - \frac{<v_n, w_2>}{<w_2, w_2>}w_2 - \cdots - \frac{<v_n, w_{n-1}>}{<w_{n-1}, w_{n-1}>}w_{n-1}$  
+
+### 正交补
+有限维内积空间$V$满足$V = U \oplus U^{\perp}$  
+正交投影：设$U$是$V$的子空间，$v \in V$，$u \in U$，$w \in U^{\perp}$，有如下表示：$v = u + w$，定义$P_U(v) = u$为$V$上的正交投影。

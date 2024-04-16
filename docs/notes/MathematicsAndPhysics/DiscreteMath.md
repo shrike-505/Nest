@@ -135,3 +135,8 @@ $a \equiv b \pmod{m} \Leftrightarrow m|(a-b) \Leftarrow \exists k \in \mathbb{Z}
 ![](DM1.png)  
 $ab = gcd(a,b) \times lcm(a,b)$  
 辗转相除法：$gcd(a,b) = gcd(b,a \mod b)$
+
+## 计数方法
+### 鸽巢原理
+- 如果n个物品放入m个盒子，且$n>m$，则至少有一个盒子中至少有两个物品
+- Generalized Pigeonhole Principle: 如果n个物品放入k个盒子，至少有一个盒子中至少有$\lceil \frac{n}{k} \rceil$个物品

@@ -15,3 +15,9 @@ $y_1 = Softmax(t_1)$
 $y_2 = Softmax(t_2)$
 
 loss = $-\sum_{i=1}^{n} y_i log(\hat{y_i})$
+
+## Machine Learning
+- 数据集
+- 参数
+- 模型
+- 损失函数
