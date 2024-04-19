@@ -142,3 +142,52 @@ $w_n = v_n - \frac{<v_n, w_1>}{<w_1, w_1>}w_1 - \frac{<v_n, w_2>}{<w_2, w_2>}w_2
 ### 正交补
 有限维内积空间$V$满足$V = U \oplus U^{\perp}$  
 正交投影：设$U$是$V$的子空间，$v \in V$，$u \in U$，$w \in U^{\perp}$，有如下表示：$v = u + w$，定义$P_U(v) = u$为$V$上的正交投影。
+
+## 内积空间上的算子
+### 伴随算子
+设$V$是内积空间，$T \in \mathcal{L}(V, W)$, T的伴随算子由下面这个条件唯一确认：$\forall v \in V , w \in W, <Tv, w> = <v, T^*w>$
+
+??? 例
+    定义$T: R^3 \to R^2$为$T(x_1, x_2, x_3) = (x_2 + 3x_3, 2x_1)$，求$T^*$  
+    解：$T*$是从$R^2$到$R^3$的线性映射，取定$w = (y_1, y_2)$，则有$<(x_1 ,x_2, x_3), T^*(y_1, y_2)> = <T(x_1, x_2, x_3), (y_1, y_2)>$  
+    $RHS = <(x_2 + 3x_3, 2x_1), (y_1, y_2)> = x_2y_1 + 3x_3y_1 + 2x_1y_2$  
+    $= <(x_1, x_2, x_3), (2y_2, y_1, 3y_1)>$(化为与LHS一样的形式)  
+    于是$T^*(y_1, y_2) = (2y_2, y_1, 3y_1)$
+
+伴随的一些性质：
+
+- $(T^*)^* = T$
+- $(ST)^* = T^* S^*$
+- $(T + S)^* = T^* + S^*$
+- $(\lambda T)^* = \overline{\lambda} T^*$
+- $null T^* = (\text{range} T)^{\perp}$
+- $\text{range} T^* = (\text{null} T)^{\perp}$
+- $\text{null} T = (\text{range} T^*)^{\perp}$
+- $\text{range} T = (\text{null} T^*)^{\perp}$
+
+#### 伴随算子的矩阵
+若$T \in \mathcal{L}(V, W)$，$V$和$W$是有限维内积空间，$V$和$W$的规范正交基分别为$e_1, e_2, \cdots, e_n$和$f_1, f_2, \cdots, f_m$  
+且$(T(e_1), T(e_2), \cdots, T(e_n)) = (f_1, f_2, \cdots, f_m)A$，$(T^*(f_1), T^*(f_2), \cdots, T^*(f_m)) = (e_1, e_2, \cdots, e_n)B$  
+则$B = \overline{A^T}$  
+
+### 自伴随算子
+若$T \in \mathcal{L}(V)$，且$T^* = T$，则$T$是自伴随算子。即$\forall v, w \in V, <Tv, w> = <v, Tw>$  
+于是$A = \overline{A^T}$
+
+- 自伴随算子的本征值是实数
+- 复内积空间上，若$\forall v \in V, <Tv, v> = 0$，则$T = 0$
+- 复内积空间上，T是自伴随算子当且仅当$\forall v \in V, <Tv, v> \in R$
+- 若T是自伴算子，则$\forall v \in V, <Tv, v> = 0 \Leftrightarrow T = 0$
+
+### 正规算子
+若$T \in \mathcal{L}(V)$，且$T^*T = TT^*$，则$T$是正规算子。
+
+- T是正规的当且仅当$\forall v, ||Tv|| = ||T^*v||$
+- 正规算子T与其伴随算子T*有相同的本征向量
+- 若T是正规算子，则T对应不同本征值的本征向量正交
+
+#### 正规算子的性质
+- 复谱定理
+    - $F = C, T \in \mathcal{L}(V)$是**正规**算子$\Leftrightarrow$存在V的规范正交基$e_1, e_2, \cdots, e_n$，使得$T$在这组基下的矩阵是对角矩阵$\Leftrightarrow$V有一个由T的本征向量组成的规范正交基
+- 实谱定理
+    - $F = R, T \in \mathcal{L}(V)$是**自伴**算子$\Leftrightarrow$存在V的规范正交基$e_1, e_2, \cdots, e_n$，使得$T$在这组基下的矩阵是对角矩阵$\Leftrightarrow$V有一个由T的本征向量组成的规范正交基

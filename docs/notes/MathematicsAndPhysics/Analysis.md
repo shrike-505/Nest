@@ -367,3 +367,11 @@ $E$的内点集记为$E^{\circ}$(E的**内部**)，边界点集记为$\partial E
     - 试证$f(x,y) = \begin{cases} \frac{xy(x^2 - y^2)}{x^2+y^2} & (x,y) \ne (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$在$(0,0)$处极限为0
         - $|f(x,y)-0| \le |xy| \le \frac{x^2+y^2}{2}$
         - 因此取$\delta = \sqrt{\epsilon}$即可
+
+### 全微分
+$f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0) = A \Delta x + B \Delta y + o(\sqrt{\Delta x^2 + \Delta y^2}), (\Delta x,\Delta y) \to (0,0)$  
+$A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,y_0)$，$A$称为$f$在$(x_0,y_0)$处的偏导数$\frac{\partial f}{\partial x}$，$B$称为$f$在$(x_0,y_0)$处的偏导数$\frac{\partial f}{\partial y}$  
+$\frac{\partial f}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x}$，$\frac{\partial f}{\partial y} = \lim_{\Delta y \to 0} \frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y}$  
+
+- 可微必要条件：$f$在$(x_0,y_0)$处可微，则$f$在$(x_0,y_0)$处连续
+- 可微充分条件：$f$在$(x_0,y_0)$处偏导数存在且连续，则$f$在$(x_0,y_0)$处可微
