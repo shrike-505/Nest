@@ -55,3 +55,25 @@ $L = I\omega = r \times p$
 定义$\omega = \sqrt{\frac{k}{m}}$
 
 则$x = Acos(\omega t + \phi)$
+
+### 阻尼振动
+$F_{\text{damping}} = -bv$  
+$x = Ae^{-\frac{b}{2m}t}cos(\omega t + \phi)$
+$\omega = \sqrt{\frac{k}{m} - \frac{b^2}{4m^2}}$  
+
+### 受迫振动
+$x = A'e*{-\frac{b}{2m}t}cos(\omega' t + \phi') + Acos(\omega t + \phi)$
+
+## 波动
+
+- 横波：波动方向与波传播方向垂直
+- 纵波：波动方向与波传播方向平行
+
+透射与反射：![](Physics13.png)
+
+$f(x,t) = f(x-vt)$或$f(x,t) = f(x+vt)$，正号代表波向右传播，负号代表波向左传播
+波动方程：$\frac{\partial^2 u}{\partial t^2} = v^2\frac{\partial^2 u}{\partial x^2}$，其中$v$为波速，$u$为波函数，$x$为波传播方向，$t$为时间
+
+### 声波
+$I = \frac{P}{A} = \frac{1}{2}\rho v (\omega s_{max})^2$($\rho$为介质密度，$v$为声速，$\omega$为角频率，$s_{max}$为最大位移  
+$I$为声强，$P$为声功率，$A$为声波通过的面积
