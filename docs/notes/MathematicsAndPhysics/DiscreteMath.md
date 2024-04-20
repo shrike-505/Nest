@@ -60,8 +60,8 @@ p NAND($\mid$) q: is true when either or both are false（有假为假，其余�
 亦即$p\downarrow q \equiv \neg(p\vee q)$，$p\mid q \equiv \neg(p\wedge q)$  
 
 ### 范式
-- 合取范式(Conjunctive Form)：将一个命题公式写成若干个(有限项)合取式的析取式，如$(p∧q)∨(¬p∧q)∨(p∧¬q)∨(¬p∧¬q)$  
-- 析取范式(Disjunctive Form)：将一个命题公式写成若干个(有限项)析取式的合取式，如$(p∨q)∧(¬p∨q)∧(p∨¬q)∧(¬p∨¬q)$
+- 析取范式(Disjunctive Form)：将一个命题公式写成若干个(有限项)合取式的析取式，如$(p∧q)∨(¬p∧q)∨(p∧¬q)∨(¬p∧¬q)$  
+- 合取范式(Conjunctive Form)：将一个命题公式写成若干个(有限项)析取式的合取式，如$(p∨q)∧(¬p∨q)∧(p∨¬q)∧(¬p∨¬q)$
 - 最小项(minterm):所有逻辑变量在各个表达式中出现且只出现一次，再合取
 	- Each minterm is true for exactly **one** assignment.
 	- 性质: 
