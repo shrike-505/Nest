@@ -1,4 +1,4 @@
----
+<!-- ---
 comments: true
 ---
 
@@ -358,7 +358,7 @@ $E$的内点集记为$E^{\circ}$(E的**内部**)，边界点集记为$\partial E
 - $\lim_{m \to \infty} \text{diam} E_m = 0$($\text{diam} E_m = \sup \{ |x-y| \mid x,y \in E_m \}$)
 
 开覆盖：若$E$的每一点都在开集的并集中，则称开集的并集为$E$的开覆盖  
-紧集：若$E$的任意开覆盖都有有限子覆盖，则称$E$为紧集
+紧集：若$E$的任意开覆盖都有有限子覆盖，则称$E$为紧集 -->
 
 ## 多元函数
 重极限：类似极限，此时点$x$落在点$x_0$附近的邻域内，每个分量都在各个方向上对应分量的邻域内
@@ -371,7 +371,21 @@ $E$的内点集记为$E^{\circ}$(E的**内部**)，边界点集记为$\partial E
 ### 全微分
 $f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0) = A \Delta x + B \Delta y + o(\sqrt{\Delta x^2 + \Delta y^2}), (\Delta x,\Delta y) \to (0,0)$  
 $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,y_0)$，$A$称为$f$在$(x_0,y_0)$处的偏导数$\frac{\partial f}{\partial x}$，$B$称为$f$在$(x_0,y_0)$处的偏导数$\frac{\partial f}{\partial y}$  
-$\frac{\partial f}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x}$，$\frac{\partial f}{\partial y} = \lim_{\Delta y \to 0} \frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y}$  
 
+- $\frac{\partial f}{\partial x} = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x, y_0) - f(x_0, y_0)}{\Delta x}$
+- $\frac{\partial f}{\partial y} = \lim_{\Delta y \to 0} \frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y}$  
 - 可微必要条件：$f$在$(x_0,y_0)$处可微，则$f$在$(x_0,y_0)$处连续
 - 可微充分条件：$f$在$(x_0,y_0)$处偏导数存在且连续，则$f$在$(x_0,y_0)$处可微
+
+复合函数链式求导：$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}$，$\frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial y}$
+
+??? 例
+    - $z = \arctan (xy), y = e^{x}$, 求$\frac{dz}{dx}$
+        - $\frac{dz}{dx} = \frac{\partial z}{\partial x} \frac{dx}{dx} + \frac{\partial z}{\partial y} \frac{dy}{dx}$
+
+### 方向导数
+若$\vec{v}$为单位向量，$\vec{v}=(v_1,v_2)$, 定义$f$在$(x_0,y_0)$处沿$\vec{v}$方向的方向导数为$\frac{\partial f}{\partial \vec{v}} = \lim_{t \to 0+} \frac{f(x_0 + tv_1, y_0 + tv_2) - f(x_0,y_0)}{t}$
+
+对于$\forall \vec{v} = (v_1,v_2) \ne (0,0)$，对其进行单位化，得到$\vec{v'} = \frac{\vec{v}}{|\vec{v}|} = (v_1',v_2')$，此时$\frac{\partial f}{\partial \vec{v'}} = \frac{\partial f}{\partial x} v_1' + \frac{\partial f}{\partial y} v_2'$
+
+注意到上述表达式$\frac{\partial f}{\partial \vec{v}} = (f_x (x_0,y_0), f_y (x_0,y_0)) \cdot (v_1,v_2) = (f_x (x_0, y_0), f_y (x_0, y_0) \cdot \vec{v})$，记向量$(f_x (x_0, y_0), f_y (x_0, y_0))$为$f$在该点的**梯度** $(\text{grad} f(x_0, y_0))$
