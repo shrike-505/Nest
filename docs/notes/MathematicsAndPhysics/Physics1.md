@@ -71,9 +71,35 @@ $x = A'e*{-\frac{b}{2m}t}cos(\omega' t + \phi') + Acos(\omega t + \phi)$
 
 透射与反射：![](Physics13.png)
 
-$f(x,t) = f(x-vt)$或$f(x,t) = f(x+vt)$，正号代表波向右传播，负号代表波向左传播
-波动方程：$\frac{\partial^2 u}{\partial t^2} = v^2\frac{\partial^2 u}{\partial x^2}$，其中$v$为波速，$u$为波函数，$x$为波传播方向，$t$为时间
+Destructive Interference: $\Delta x = (n + \frac{1}{2})\lambda$  
+Constructive Interference: $\Delta x = n\lambda$  
+（$\Delta x$为定点到两波源的距离差）
+
+
+$f(x,t) = f(x-vt)$或$f(x,t) = f(x+vt)$，正号代表波向左传播，负号代表波向右传播
+波动方程：$\frac{\partial^2 u}{\partial t^2} = v^2\frac{\partial^2 u}{\partial x^2}$，其中$v$为波速，$u$为波函数，$x$为波传播方向，$t$为时间  
+
+波速：$v = \frac{\lambda}{T} = \lambda f = \sqrt{\frac{F}{\sigma}}$($\lambda$为波长，$T$为周期，$f$为频率，$F$为张力，$\sigma$为线密度（单位长度的质量）)
 
 ### 声波
 $I = \frac{P}{A} = \frac{1}{2}\rho v (\omega s_{max})^2$($\rho$为介质密度，$v$为声速，$\omega$为角频率，$s_{max}$为最大位移  
 $I$为声强，$P$为声功率，$A$为声波通过的面积
+
+## 相对论
+### Lorentz Transformation
+B关于A的速度为$v$.对于某个事件，A系中的坐标为$(x,t)$，B系中的坐标为$(x',t')$  
+则$x' = \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}}$,$t' = \frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}}$  
+注意到当$v \ll c$时，Lorentz Transformation 退化为 Galilean Transformation   
+
+### 速度变换
+令$\Delta x = x_2 - x_1$,$\Delta t = t_2 - t_1$  
+则$\Delta x' = \frac{\Delta x - v\Delta t}{\sqrt{1-\frac{v^2}{c^2}}}$,$\Delta t' = \frac{\Delta t - \frac{v}{c^2}\Delta x}{\sqrt{1-\frac{v^2}{c^2}}}$  
+定义
+
+- $v = \frac{\Delta x}{\Delta t}$ 为物体在A系中的速度
+- $w = \frac{\Delta x'}{\Delta t'}$ 为物体在B系中的速度
+- $u$ 为B相对于A的速度  
+
+则$\frac{\Delta x'}{\Delta t'} = \frac{\Delta x - v\Delta t}{\Delta t - \frac{v}{c^2}\Delta x} \underrightarrow{\Delta t \to 0} \frac{dx}{dt} = w = \frac{v - u}{1 - \frac{uv}{c^2}}$
+
+则也可得到$v = \frac{u + w}{1 + \frac{uw}{c^2}}$
