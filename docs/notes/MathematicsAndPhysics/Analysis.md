@@ -1,4 +1,4 @@
-<!-- ---
+---
 comments: true
 ---
 
@@ -358,7 +358,7 @@ $E$的内点集记为$E^{\circ}$(E的**内部**)，边界点集记为$\partial E
 - $\lim_{m \to \infty} \text{diam} E_m = 0$($\text{diam} E_m = \sup \{ |x-y| \mid x,y \in E_m \}$)
 
 开覆盖：若$E$的每一点都在开集的并集中，则称开集的并集为$E$的开覆盖  
-紧集：若$E$的任意开覆盖都有有限子覆盖，则称$E$为紧集 -->
+紧集：若$E$的任意开覆盖都有有限子覆盖，则称$E$为紧集
 
 ## 多元函数
 重极限：类似极限，此时点$x$落在点$x_0$附近的邻域内，每个分量都在各个方向上对应分量的邻域内
@@ -389,3 +389,14 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 对于$\forall \vec{v} = (v_1,v_2) \ne (0,0)$，对其进行单位化，得到$\vec{v'} = \frac{\vec{v}}{|\vec{v}|} = (v_1',v_2')$，此时$\frac{\partial f}{\partial \vec{v'}} = \frac{\partial f}{\partial x} v_1' + \frac{\partial f}{\partial y} v_2'$
 
 注意到上述表达式$\frac{\partial f}{\partial \vec{v}} = (f_x (x_0,y_0), f_y (x_0,y_0)) \cdot (v_1,v_2) = (f_x (x_0, y_0), f_y (x_0, y_0) \cdot \vec{v})$，记向量$(f_x (x_0, y_0), f_y (x_0, y_0))$为$f$在该点的**梯度** $(\text{grad} f(x_0, y_0))$
+
+### 计算极值/最值
+1. 先求驻点：$\frac{\partial f}{\partial x} = 0, \frac{\partial f}{\partial y} = 0$
+2. 求二阶导数矩阵：$H = \begin{bmatrix} f_{xx} & f_{xy} \\ f_{xy} & f_{yy} \end{bmatrix}$
+3. 代入各个驻点的$x$, $y$，求$det H = f_{xx} f_{yy} - f_{xy} f_{xy}$
+   1. 若$det H > 0$，$f_{xx} > 0$，则为极小值
+   2. 若$det H > 0$，$f_{xx} < 0$，则为极大值
+   3. 若$det H < 0$，则不为极值点
+   4. 若$det H = 0$，则无法判断，需要令某个变量固定于某点或某条直线，对驻点周围的函数值正负进行分析
+4. 若要求最值，还需考虑边界上的取值，此时一般化为单元函数
+5. 若$f$在$D$上连续，$D$为闭区域，$f$在$D$上有界，则$f$在$D$上有最大值和最小值

@@ -140,3 +140,35 @@ $ab = gcd(a,b) \times lcm(a,b)$
 ### 鸽巢原理
 - 如果n个物品放入m个盒子，且$n>m$，则至少有一个盒子中至少有两个物品
 - Generalized Pigeonhole Principle: 如果n个物品放入k个盒子，至少有一个盒子中至少有$\lceil \frac{n}{k} \rceil$个物品
+
+## Advanced Counting Techniques
+
+### 特征根法求解递推序列
+（类似[高阶线性齐次常微分方程](https://shrike505.cc/notes/MathematicsAndPhysics/ODE/#ode_6)）
+
+#### 一阶齐次
+$a_n = c_1 a_{n-1} + \cdots + c_k a_{n-k}$  
+
+- 求解特征方程![](DM8.png)  
+- 单根$r_1, r_2, \cdots, r_k$，则通解中含有$\alpha_1 r_1^n + \cdots + \alpha_k r_k^n$, $\alpha_1, \cdots, \alpha_k$由初始条件决定(任意常数)
+- k重根$r$，则通解中含有$\alpha_1 r^n + \alpha_2 n r^n + \cdots + \alpha_k n^{k-1} r^n$, $\alpha_1, \cdots, \alpha_k$由初始条件决定(任意常数)
+
+#### 一阶非齐次
+$a_n = c_1 a_{n-1} + \cdots + c_k a_{n-k} + f(n)$
+
+- 求解齐次版本的特征方程，求出齐次通解，再求出（猜出）一个特解，通解就是齐次通解加上特解
+
+### 生成函数
+${a_0, a_1, a_2, \cdots}$的生成函数为$f(x) = a_0 + a_1x + a_2x^2 + \cdots = \sum_{i=0}^{\infty} a_ix^i$  
+${a_0, a_1, a_2, \cdots , a_n}$的生成函数为$f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$ (记$a_{n+1} = a_{n+2} = \cdots = 0$)
+
+??? 常见生成函数
+	![](DM4.png)  
+	![](DM5.png)
+
+??? 利用生成函数解决问题
+	![](DM6.png)  
+	![](DM7.png)
+
+### Inclusion-Exclusion Principle
+$|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j \le n} |A_i \cap A_j| + \sum_{1 \le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|$

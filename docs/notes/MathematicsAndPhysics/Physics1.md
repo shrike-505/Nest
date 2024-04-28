@@ -52,7 +52,7 @@ $L = I\omega = r \times p$
 ![](Physics12.png)
 
 ## 简谐运动
-定义$\omega = \sqrt{\frac{k}{m}}$
+定义$\omega = \sqrt{\frac{k}{m}}$，其中$k$为弹簧的劲度系数
 
 则$x = Acos(\omega t + \phi)$
 
@@ -62,7 +62,7 @@ $x = Ae^{-\frac{b}{2m}t}cos(\omega t + \phi)$
 $\omega = \sqrt{\frac{k}{m} - \frac{b^2}{4m^2}}$  
 
 ### 受迫振动
-$x = A'e*{-\frac{b}{2m}t}cos(\omega' t + \phi') + Acos(\omega t + \phi)$
+$x = A'e^{-\frac{b}{2m}t}cos(\omega' t + \phi') + Acos(\omega t + \phi)$
 
 ## 波动
 
