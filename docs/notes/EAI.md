@@ -21,3 +21,6 @@ loss = $-\sum_{i=1}^{n} y_i log(\hat{y_i})$
 - 参数
 - 模型
 - 损失函数
+
+## 卷积
+<https://www.bilibili.com/video/BV1Vd4y1e7pj/>
