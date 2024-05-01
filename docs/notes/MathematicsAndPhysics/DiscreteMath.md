@@ -172,3 +172,7 @@ ${a_0, a_1, a_2, \cdots , a_n}$的生成函数为$f(x) = a_0 + a_1x + a_2x^2 + \
 
 ### Inclusion-Exclusion Principle
 $|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j \le n} |A_i \cap A_j| + \sum_{1 \le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|$
+
+!!! eg "常用：k=2, 3"
+	- $|A \cup B| = |A| + |B| - |A \cap B|$
+	- $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$

@@ -42,14 +42,18 @@ $\tau = I\alpha$(类比$F = ma$)
 $I = \sum m_i r_i^2 = \int r^2 dm$, 与物体旋转轴的位置有关  
 将刚体看作许多质点集合  
 
+??? 常见几何体转动惯量
+    ![](Physics14.png)
+
 由此可表示转动物体的动能：$E_k = \frac{1}{2}I\omega^2$($\omega$为角速度)  
 与动能定理：$\sum W = \int_{\theta_i}^{\theta_f} \sum \tau d\theta = \int_{\omega_i}^{\omega_f} I\omega d\omega = \frac{1}{2}I\omega_f^2 - \frac{1}{2}I\omega_i^2$  
 
-平行轴定理：$I = I_{cm} + Mh^2$
+平行轴定理：$I = I_{cm} + Mh^2$，其中$I_{cm}$为以质心为轴的转动惯量，$h$为质心到新转轴的距离
 
 ### 角动量
 $L = I\omega = r \times p$  
-![](Physics12.png)
+![](Physics12.png)  
+角动量守恒：要求外力矩为0，即$\tau_{\text{ext}} = 0$
 
 ## 简谐运动
 定义$\omega = \sqrt{\frac{k}{m}}$，其中$k$为弹簧的劲度系数
@@ -79,12 +83,22 @@ Constructive Interference: $\Delta x = n\lambda$
 $f(x,t) = f(x-vt)$或$f(x,t) = f(x+vt)$，正号代表波向左传播，负号代表波向右传播
 波动方程：$\frac{\partial^2 u}{\partial t^2} = v^2\frac{\partial^2 u}{\partial x^2}$，其中$v$为波速，$u$为波函数，$x$为波传播方向，$t$为时间  
 
-波速：$v = \frac{\lambda}{T} = \lambda f = \sqrt{\frac{F}{\sigma}}$($\lambda$为波长，$T$为周期，$f$为频率，$F$为张力，$\sigma$为线密度（单位长度的质量）)
+通解为$y(x,t) = Acos(kx - \omega t + \phi)$，其中$k = \frac{2\pi}{\lambda}$，$\omega = 2\pi f$，$\phi$为初相位
+
+
+波速：$v = \frac{\lambda}{T} = \lambda f = \sqrt{\frac{F}{\sigma}}$($\lambda$为波长，$T$为周期，$f$为频率，$F$为张力，$\sigma$为线密度（单位长度的质量）)  
+
+驻波：两个波源频率相同，波长相同，波速相同，波源间距为半波长的整数倍
 
 ### 声波
 $I = \frac{P}{A} = \frac{1}{2}\rho v (\omega s_{max})^2$($\rho$为介质密度，$v$为声速，$\omega$为角频率，$s_{max}$为最大位移  
 $I$为声强，$P$为声功率，$A$为声波通过的面积
 
+#### 多普勒效应
+观测者靠近声源，频率增大；远离声源，频率减小
+
+- 声源运动，观测者静止：$f = \frac{f_0}{1 \pm \frac{v_s}{v}}$，其中$f$为观测到的频率，$f_0$为声源发出的频率，$v_s$为声源速度，$v$为声速
+- 声源静止，观测者运动：$f = f_0(1 \pm \frac{v_o}{v})$，其中$v_o$为观测者速度
 ## 相对论
 ### Lorentz Transformation
 B关于A的速度为$v$.对于某个事件，A系中的坐标为$(x,t)$，B系中的坐标为$(x',t')$  
