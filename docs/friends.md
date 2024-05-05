@@ -1,3 +1,8 @@
+---
+    comments: true
+    nostatistics: true
+---
+
 ::cards::
 
 - title: 备用

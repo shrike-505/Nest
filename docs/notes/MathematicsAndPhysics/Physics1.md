@@ -103,7 +103,7 @@ $I$为声强，$P$为声功率，$A$为声波通过的面积
 ### Lorentz Transformation
 B关于A的速度为$v$.对于某个事件，A系中的坐标为$(x,t)$，B系中的坐标为$(x',t')$  
 则$x' = \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}}$,$t' = \frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}}$  
-注意到当$v \ll c$时，Lorentz Transformation 退化为 Galilean Transformation   
+注意到当$v \ll c$时，Lorentz Transformation 退化为 Galilean Transformation: $x' = x - vt$,$t' = t$
 
 ### 速度变换
 令$\Delta x = x_2 - x_1$,$\Delta t = t_2 - t_1$  

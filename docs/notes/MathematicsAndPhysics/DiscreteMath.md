@@ -118,7 +118,28 @@ Boolean power: $A^{[k]} = A \odot A \odot \cdots \odot A$
 ### 同余
 $a \equiv b \pmod{m} \Leftrightarrow m|(a-b) \Leftarrow \exists k \in \mathbb{Z}, a-b=mk$  
 (不带括号的mod) $a \mod b =$ a除以b的余数  
+于是有
 
+- $a \equiv b \pmod{m} \Leftrightarrow a \mod m = b \mod m$
+- 若$a \equiv b \pmod{m}$，则$a^k \equiv b^k \pmod{m}$
+
+#### 线性同余方程
+$ax \equiv b \pmod{m}$  
+定义 inverse of a modulo m: $\overline{a} a \equiv 1 \pmod{m}$，则$\overline{a}$ is the inverse of a modulo m  
+
+- 若$a$与$m$互质且$m>1$，则$a$模$m$的逆元存在
+
+??? 例(Finding inverses)
+	- Find an inverse of 7 modulo 234 
+		- $234 = 33 \times 7 + 3$
+		- $7 = 2 \times 3 + 1$
+		- $1 = 7 - 2 \times 3 = 7 - 2 \times (234 - 33 \times 7) = 67 \times 7 - 2 \times 234$(这一步要把所有出现过的余数用上一行式子带进去，把1表示为7和234的线性组合)
+		- 则上一步中7的裴蜀系数$6$即为7模234的逆元
+		- 与此同时所有与6模234同余的数都是7的逆元，如$6+234k$
+
+1. 中国剩余定理(CRT)：若$m_1, m_2, \cdots, m_k$两两互质，则同余方程组$x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}, \cdots, x \equiv a_k \pmod{m_k}$有唯一解
+2. 费马小定理：若$p$为素数，$a$与$p$互质，则$a^{p-1} \equiv 1 \pmod{p}$
+    1. 更进一步，$\forall a \in \mathbb{Z}, a^p \equiv a \pmod{p}$ 
 ### 进制转换
 - 十进制转n进制：除n取余数，商再除以n，直到商为0，然后逆序排列余数
 - n进制转十进制：$a_na_{n-1} \cdots a_1a_0 = a_n \times n^n + a_{n-1} \times n^{n-1} + \cdots + a_1 \times n + a_0$
@@ -135,6 +156,18 @@ $a \equiv b \pmod{m} \Leftrightarrow m|(a-b) \Leftarrow \exists k \in \mathbb{Z}
 ![](DM1.png)  
 $ab = gcd(a,b) \times lcm(a,b)$  
 辗转相除法：$gcd(a,b) = gcd(b,a \mod b)$
+```python
+def gcd(a, b):
+	while b:
+		a, b = b, a % b
+	return a
+```
+??? 例
+	- Find the gcd of 252 and 105
+		- $252 = 2 \times 105 + 42$
+		- $105 = 2 \times 42 + 21$
+		- $42 = 2 \times 21 + 0$
+		- So, gcd(252, 105) = 21
 
 ## 计数方法
 ### 鸽巢原理
