@@ -407,3 +407,8 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 
 !!! note "$dy/dx$和$\partial y / \partial x$的区别"
     前者表示y的自变量只有x，后者对应多元函数
+
+??? 例
+    - 有方程组$\begin{cases} u = f(ux, v+y) \\ v = g(u-x, v^{2}y) \end{cases}$，求其确定的隐函数的偏导$\frac{\partial u}{\partial x}$, $\frac{\partial v}{\partial x}$
+        - 在两个方程两侧对$x$求导，得到$\frac{\partial u}{\partial x} = f_1 (\frac{\partial u}{\partial x} x + u) + f_2 (\frac{\partial v}{\partial x})$, $\frac{\partial v}{\partial x} = g_1 (\frac{\partial u}{\partial x} - 1) + g_2 (2vy \frac{\partial v}{\partial x})$
+        - 解方程组得到$\frac{\partial u}{\partial x}$, $\frac{\partial v}{\partial x}$
