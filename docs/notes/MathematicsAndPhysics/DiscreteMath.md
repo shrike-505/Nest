@@ -137,6 +137,22 @@ $ax \equiv b \pmod{m}$
 		- 则上一步中7的裴蜀系数$6$即为7模234的逆元
 		- 与此同时所有与6模234同余的数都是7的逆元，如$6+234k$
 
+求解方程$ax \equiv b \pmod{m}$
+
+- 若$d = gcd(a,m)$不整除$b$，则无解
+- First find an inverse of $a$ modulo $m$ (using the Euclidean algorithm)
+- 等式两边乘上该逆元，得到$x \equiv \overline{a}b \pmod{m}$
+
+??? 例(Solving linear congruences)
+	- 解$4x \equiv 5 \pmod{9}$
+    	- Find inverse of 4 modulo 9:
+        	- $9 = 2 \times 4 + 1$
+        	- $1 = 9 - 2 \times 4$
+        	- 因此逆元为-2
+      	- Solve the equation:
+        	- $-2 \times 4x \equiv -2 \times 5 \pmod{9}$
+        	- $x \equiv -10 \pmod{9}$
+
 1. 中国剩余定理(CRT)：若$m_1, m_2, \cdots, m_k$两两互质，则同余方程组$x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}, \cdots, x \equiv a_k \pmod{m_k}$有唯一解
 2. 费马小定理：若$p$为素数，$a$与$p$互质，则$a^{p-1} \equiv 1 \pmod{p}$
     1. 更进一步，$\forall a \in \mathbb{Z}, a^p \equiv a \pmod{p}$ 
