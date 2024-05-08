@@ -58,7 +58,9 @@ $L = I\omega = r \times p$
 ## 简谐运动
 定义$\omega = \sqrt{\frac{k}{m}}$，其中$k$为弹簧的劲度系数
 
-则$x = Acos(\omega t + \phi)$
+则$x = Acos(\omega t + \phi)$  
+$v = -A\omega sin(\omega t + \phi)$ 
+$a = -A\omega^2 cos(\omega t + \phi)$
 
 ### 阻尼振动
 $F_{\text{damping}} = -bv$  
