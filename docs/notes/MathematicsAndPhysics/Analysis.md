@@ -412,3 +412,20 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
     - 有方程组$\begin{cases} u = f(ux, v+y) \\ v = g(u-x, v^{2}y) \end{cases}$，求其确定的隐函数的偏导$\frac{\partial u}{\partial x}$, $\frac{\partial v}{\partial x}$
         - 在两个方程两侧对$x$求导，得到$\frac{\partial u}{\partial x} = f_1 (\frac{\partial u}{\partial x} x + u) + f_2 (\frac{\partial v}{\partial x})$, $\frac{\partial v}{\partial x} = g_1 (\frac{\partial u}{\partial x} - 1) + g_2 (2vy \frac{\partial v}{\partial x})$
         - 解方程组得到$\frac{\partial u}{\partial x}$, $\frac{\partial v}{\partial x}$
+
+### 隐函数在几何中的运用
+#### 曲线
+曲线$\begin{cases} F(x,y,z) = 0 \\ G(x,y,z) = 0 \end{cases}$在$P_0 = (x_0, y_0, z_0)$处的切线为$\frac{x-x_0}{\frac{\partial (F, G)}{\partial (y,z)}(P_0)} = \frac{y-y_0}{\frac{\partial (F, G)}{\partial (z,x)}(P_0)} = \frac{z-z_0}{\frac{\partial (F, G)}{\partial (x,y)}(P_0)}$, 其中$\frac{\partial (F, G)}{\partial (y,z)} = \left |\begin{array}{cccc}
+\frac{\partial F}{\partial y} & \frac{\partial F}{\partial z} \\
+\frac{\partial G}{\partial y} & \frac{\partial G}{\partial z} \\
+\end{array}\right|$
+
+法平面方程为$(x-x_0) \frac{\partial (F, G)}{\partial (y,z)}(P_0) + (y-y_0) \frac{\partial (F, G)}{\partial (z,x)}(P_0) + (z-z_0) \frac{\partial (F, G)}{\partial (x,y)}(P_0) = 0$
+
+#### 曲面
+曲面$F(x,y,z)=0$在$P_0 = (x_0, y_0, z_0)$处的
+
+- 切平面：$F_x (x_0, y_0, z_0) (x-x_0) + F_y (x_0, y_0, z_0) (y-y_0) + F_z (x_0, y_0, z_0) (z-z_0) = 0$
+- 法向量：$\lambda = (F_x (x_0, y_0, z_0), F_y (x_0, y_0, z_0), F_z (x_0, y_0, z_0)) = grad F(x_0, y_0, z_0)$
+- 法线方程：$\frac{x-x_0}{F_x (x_0, y_0, z_0)} = \frac{y-y_0}{F_y (x_0, y_0, z_0)} = \frac{z-z_0}{F_z (x_0, y_0, z_0)}$
+    - 若$F_i (P_0) = 0$,$i = x,y,z$，则单独有一方程$i = 0$

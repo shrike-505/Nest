@@ -129,7 +129,7 @@ $ax \equiv b \pmod{m}$
 
 - 若$a$与$m$互质且$m>1$，则$a$模$m$的逆元存在
 
-??? 例(Finding inverses)
+??? note "例(Finding inverses)"
 	- Find an inverse of 7 modulo 234 
 		- $234 = 33 \times 7 + 3$
 		- $7 = 2 \times 3 + 1$
@@ -143,7 +143,7 @@ $ax \equiv b \pmod{m}$
 - First find an inverse of $a$ modulo $m$ (using the Euclidean algorithm)
 - 等式两边乘上该逆元，得到$x \equiv \overline{a}b \pmod{m}$
 
-??? 例(Solving linear congruences)
+??? note "例(Solving linear congruences)"
 	- 解$4x \equiv 5 \pmod{9}$
     	- Find inverse of 4 modulo 9:
         	- $9 = 2 \times 4 + 1$
@@ -154,8 +154,24 @@ $ax \equiv b \pmod{m}$
         	- $x \equiv -10 \pmod{9}$
 
 1. 中国剩余定理(CRT)：若$m_1, m_2, \cdots, m_k$两两互质，则同余方程组$x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}, \cdots, x \equiv a_k \pmod{m_k}$有唯一解
+
+	??? 例
+		- Solve the system of congruences:
+			- $x \equiv 1 \pmod{5}$
+			- $x \equiv 2 \pmod{6}$
+			- $x \equiv 3 \pmod{7}$
+     	- 首先有$x = 5k+1$
+     	- 则$5k+1 = 2 \pmod{6}$
+     	- 两边加4，$5k+5 = 0 \pmod{6}$
+     	- 于是$k = -1 \pmod{6} = 6j-1$
+     	- 代入$x = 5(6j-1)+1 = 30j-4 = 3 \pmod{7}$
+     	- 则$30j = 0 \pmod{7}$, $j =  7r$
+     	- 代入得$x = 30(7r)-4 = 210r-4$
+     	- 即$x \equiv -4 \pmod{210}$
+
 2. 费马小定理：若$p$为素数，$a$与$p$互质，则$a^{p-1} \equiv 1 \pmod{p}$
     1. 更进一步，$\forall a \in \mathbb{Z}, a^p \equiv a \pmod{p}$ 
+3. 伪素数：若一个合数$n$满足$a^{n-1} \equiv 1 \pmod{n}$，则称$n$为伪素数
 ### 进制转换
 - 十进制转n进制：除n取余数，商再除以n，直到商为0，然后逆序排列余数
 - n进制转十进制：$a_na_{n-1} \cdots a_1a_0 = a_n \times n^n + a_{n-1} \times n^{n-1} + \cdots + a_1 \times n + a_0$
