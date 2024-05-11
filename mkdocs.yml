@@ -120,6 +120,13 @@ plugins:
       exclude: 
         - casual/*
         - index.md
+  - file-filter:
+      filter_nav: true # default value
+      metadata_property: labels
+      exclude_tag:
+        - test
+  - macros
+  - tags:
 
 markdown_extensions:
   - toc:
@@ -155,6 +162,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - neoteroi.cards
+  - hbfm.inline_coloring
 
 extra_css:
   - https://fonts.font.im/css2?family=Noto+Serif+SC

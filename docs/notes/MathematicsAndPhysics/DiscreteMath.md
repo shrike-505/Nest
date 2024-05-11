@@ -134,8 +134,8 @@ $ax \equiv b \pmod{m}$
 		- $234 = 33 \times 7 + 3$
 		- $7 = 2 \times 3 + 1$
 		- $1 = 7 - 2 \times 3 = 7 - 2 \times (234 - 33 \times 7) = 67 \times 7 - 2 \times 234$(这一步要把所有出现过的余数用上一行式子带进去，把1表示为7和234的线性组合)
-		- 则上一步中7的裴蜀系数$6$即为7模234的逆元
-		- 与此同时所有与6模234同余的数都是7的逆元，如$6+234k$
+		- 则上一步中7的裴蜀系数$67$即为7模234的逆元
+		- 与此同时所有与67模234同余的数都是7的逆元，如$67+234k$
 
 求解方程$ax \equiv b \pmod{m}$
 
@@ -205,6 +205,24 @@ def gcd(a, b):
 ### 鸽巢原理
 - 如果n个物品放入m个盒子，且$n>m$，则至少有一个盒子中至少有两个物品
 - Generalized Pigeonhole Principle: 如果n个物品放入k个盒子，至少有一个盒子中至少有$\lceil \frac{n}{k} \rceil$个物品
+### 排列组合
+- 排列(permutation): 从n个元素中取r个元素，有$P(n,r) = \frac{n!}{(n-r)!}$种排列
+- 组合(combination): 从n个元素中取r个元素，有$C(n,r) = \frac{n!}{r!(n-r)!}$种组合
+
+Pascal's Identity: $C(n,k) = C(n-1,k-1) + C(n-1,k)$
+
+??? note "find the next greater permutation of a string"
+	1. Find the greatest index i such that s[i] < s[i+1]. If no such index exists, the permutation is the last permutation.
+	2. Find the greatest index j > i such that s[j] > s[i]. Such a j must exist, since i+1 is such an index.
+	3. Swap s[i] with s[j].
+	4. Reverse the order of all of the elements after index i (not including i) till the last element.  
+	https://stackoverflow.com/questions/1622532/algorithm-to-find-next-greater-permutation-of-a-given-string/  
+	https://math.stackexchange.com/questions/4421688/what-is-the-next-permutation-of-1342
+
+??? note "find the next greater r-permutation"
+	n 为元素个数，r 为排列长度  
+	找到最后一个使$a_i != n - r + i$的位置，替换为$a_i + 1$，后面的位置由$a_j$替换为$a_i + j - i$，$j > i$  
+	https://homepage.math.uiowa.edu/~sokratov/2008m150/genrcomb.pdf
 
 ## Advanced Counting Techniques
 
@@ -241,3 +259,7 @@ $|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j 
 !!! eg "常用：k=2, 3"
 	- $|A \cup B| = |A| + |B| - |A \cap B|$
 	- $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$
+
+## Relations
+### 二元关系
+集合A上有$2^{|A|^2}$个二元关系

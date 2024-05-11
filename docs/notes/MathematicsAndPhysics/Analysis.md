@@ -420,7 +420,11 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 \frac{\partial G}{\partial y} & \frac{\partial G}{\partial z} \\
 \end{array}\right|$
 
+若某个行列式为0，则单独有一方程令其对应位置的变量为$i_0, i = x,y,z$即可
+
 法平面方程为$(x-x_0) \frac{\partial (F, G)}{\partial (y,z)}(P_0) + (y-y_0) \frac{\partial (F, G)}{\partial (z,x)}(P_0) + (z-z_0) \frac{\partial (F, G)}{\partial (x,y)}(P_0) = 0$
+
+特别的，若曲线可被表示为$\begin{cases} y = y(x) \\ z = z(x) \end{cases}$，则切向量为$(1, y'(x), z'(x))$，切线为$\frac{x-x_0}{1} = \frac{y-y_0}{y'(x_0)} = \frac{z-z_0}{z'(x_0)}$，法平面方程为$(x-x_0) + (y-y_0) y'(x_0) + (z-z_0) z'(x_0) = 0$
 
 #### 曲面
 曲面$F(x,y,z)=0$在$P_0 = (x_0, y_0, z_0)$处的
@@ -428,4 +432,4 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 - 切平面：$F_x (x_0, y_0, z_0) (x-x_0) + F_y (x_0, y_0, z_0) (y-y_0) + F_z (x_0, y_0, z_0) (z-z_0) = 0$
 - 法向量：$\lambda = (F_x (x_0, y_0, z_0), F_y (x_0, y_0, z_0), F_z (x_0, y_0, z_0)) = grad F(x_0, y_0, z_0)$
 - 法线方程：$\frac{x-x_0}{F_x (x_0, y_0, z_0)} = \frac{y-y_0}{F_y (x_0, y_0, z_0)} = \frac{z-z_0}{F_z (x_0, y_0, z_0)}$
-    - 若$F_i (P_0) = 0$,$i = x,y,z$，则单独有一方程$i = 0$
+    - 若$F_i (P_0) = 0$,$i = x,y,z$，则单独有一方程$i = i_0$
