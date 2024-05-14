@@ -263,3 +263,64 @@ $|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j 
 ## Relations
 ### 二元关系
 集合A上有$2^{|A|^2}$个二元关系
+
+??? 一道逆天小测/作业
+	![](DM9.png)  
+	![](DM10.png)
+
+- Reflexive: $\forall a \in A, (a,a) \in R$
+    - e.g. $R_1 = \{(a, b)|a \le b\}$, $R_2 = \{(a, b)|a = b\}$
+- Symmetric: $\forall a, b \in A, (a, b) \in R \rightarrow (b, a) \in R$
+	- e.g. $R_1 = \{(a, b)|a + b \le 3\}$, $R_2 = \{(a, b)|a = b\}$
+- Antisymmetric: $\forall a, b \in A, (a, b) \in R \wedge (b, a) \in R \rightarrow a = b$
+	- e.g. $R_1 = \{(a, b)|a \le b\}$, $R_2 = \{(a, b)|a = b\}$
+- Transitive: $\forall a, b, c \in A, (a, b) \in R \wedge (b, c) \in R \rightarrow (a, c) \in R$
+	- e.g. $R_1 = \{(a, b)|a \le b\}$, $R_2 = \{(a, b)|a = b\}$
+	- $R$是传递的当且仅当$R^n \subseteq R$
+
+关系的复合：$R \circ S = \{(a, c)|\exists b \in A, (a, b) \in R \wedge (b, c) \in S\}$，类似复合函数，可将第一个分量看作自变量，第二个分量看作因变量
+
+??? 例
+	- $R = \{(1, 2), (2, 3), (3, 4)\}, S = \{(2, 3), (3, 4), (4, 5), (3,8)\}$
+	- $S \circ R = \{(1, 3), (2, 4), (3, 5), (2, 8)\}$（就是找R的第二个分量和S的第一个分量相等的元素再拼接）
+
+### 关系的表达
+- 关系矩阵：$R = \{(a, b)|a \in A, b \in B\}$，$R$的关系矩阵是一个$|A| \times |B|$的矩阵，$r_{ij} = 1$表示$(a_i, b_j) \in R$，$r_{ij} = 0$表示$(a_i, b_j) \notin R$
+    - $R$是自反的当且仅当对角线上的元素都是1
+    - $R$是对称的当且仅当$r_{ij} = r_{ji}$
+    - $R$是反对称的当且仅当当$i \ne j$时$r_{ij} = 0$或$r_{ji} = 0$
+    - $R_2 \circ R_1$的关系矩阵是$M_1 \odot M_2$, $odot$为矩阵的Boolean product
+    - 关系取并/交，矩阵对应位置取并/交；关系取反，矩阵取反
+- 关系图：有向图$R$中顶点$a_i$到$a_j$有一条边当且仅当$(a_i, a_j) \in R$
+    - $R$是自反的当且仅当每个顶点有一条边指向自己
+    - $R$是对称的当且仅当若$a_i$到$a_j$有一条边，则$a_j$到$a_i$也有一条边
+    - $R$是反对称的当且仅当若$a_i \ne a_j$且$a_i$到$a_j$有一条边，则$a_j$到$a_i$没有边
+    - $R$是传递的当且仅当若$a_i$到$a_j$和$a_j$到$a_k$有边，则$a_i$到$a_k$有边
+
+定义关系的逆：$R^{-1} = \{(b, a)|(a, b) \in R\}$
+
+!!! note "求逆与逆的性质"
+	![](DM11.png)  
+	![](DM12.png)
+
+### 偏序
+
+- 偏序：关系$R$是偏序的当且仅当$R$是自反、反对称、传递的，表示为弯一点的$\le$
+    - 可比性：在一个偏序关系下，若$a \le b$或$b \le a$，则称$a$和$b$是可比的，e.g. $(\mathbb{Z^+}, \mid)$中，$2 \nmid 3$，$3 \nmid 2$，则$2$和$3$不可比
+- 全序：关系$R$是全序的当且仅当$R$是偏序且每个元素都可比
+- 良序：关系$R$是良序的当且仅当$R$是全序且每个非空子集都有最小元素
+
+## 图
+一堆概念：https://oi-wiki.org/graph/concept/  
+一个节点到自身的自环，若为无向图，贡献两个度；若为有向图，贡献一个出度和一个入度。  
+
+- 无向图中，$2|E| = \sum_{v \in V} deg(v)$
+- 有向图中，$\sum_{v \in V} deg^-(v) = \sum_{v \in V} deg^+(v) = |E|$
+
+Complete graph: 每对不同的顶点之间都有且仅有一条边。  
+
+圈(cycle): $\{(v_1, \cdots , v_n),(v_1, v_2), (v_2, v_3), \cdots, (v_{n-1}, v_n), (v_n, v_1)\}$  
+
+Wheel: $\{Cycle, v_{new}, (v_{new}, v_1), (v_{new}, v_2), \cdots, (v_{new}, v_n)\}$  
+
+Bipartite graph: 顶点集可以分为两个互不相交的子集，使得每条边的两个端点分别属于这两个子集。

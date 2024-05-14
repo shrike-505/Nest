@@ -16,7 +16,7 @@ comments: true
       - 排序
       - Hash 
 
-前人的智慧足够详细
+多看前人智慧
 
 - Q神:https://note.hobbitqia.cc/ds/algorithm/  
 - Tonycrane:https://note.tonycrane.cc/cs/algorithm/ds/  
@@ -69,4 +69,53 @@ class Heap {
 - 删除最小元：删除根节点，将最后一个节点放到空位，和两个子节点比较，和大于其/小于其的子节点交换，直到满足堆的性质
 
 ## 图
+挺抽象的这块，FDS离散各讲了一遍还是没咋懂
 ### Dijkstra
+核心代码差不多长下面这样（梗来源：FDS Project 3）  
+
+```c
+void Dijkstra(int source){
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        vis[i] = 0; // initialize all vertices as not visited
+    }
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        dist[i] = INF; // initialize the distance of all vertices as INF
+    }
+    dist[source] = 0;
+    for(int i = 1; i<=nVertices; i++){
+        int minDis = INF; // initialize the minimum distance as INF
+        int minVertex = -1; // initialize the vertex with the minimum distance as -1
+        for(int j = 1; j<=nVertices; j++){
+            if(!vis[j] && dist[j] < minDis){
+                minVertex = j; // find the vertex with the minimum distance
+                minDis = dist[j];
+            }
+        }
+        if(minVertex == -1){
+            break; // no vertex is found, break the loop, end the algorithm
+        }
+        vis[minVertex] = 1;
+        for(int j = 1; j<=nVertices; j++){
+            if(!vis[j] && graph[minVertex][j] < INF && dist[minVertex] + graph[minVertex][j] < dist[j]){
+                // if some vertex is not visited and the distance from the source to the vertex is shorter than the current distance
+                dist[j] = dist[minVertex] + graph[minVertex][j]; 
+                // update the distance
+            }
+        }
+    }
+
+}
+```
+执行算法后得到的`dist[i]`就是从源点到i号端点的最短距离
+
+## 排序
+### 堆排序
+```
+func Heapsort(array, N){
+    BuildHeap(H)
+    for i in (0,N):
+        TmpH[i]=DeleteMin(H)
+    for i in (0,N):
+        H[i] = TmpH[i]
+}
+```
