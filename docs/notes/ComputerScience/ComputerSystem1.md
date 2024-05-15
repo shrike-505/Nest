@@ -21,10 +21,8 @@ comments: true
 !!! note "课程主页"
 	https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
 
-## 一些用到的工具
-SPICE: 模拟电路的in/out  
-logisim: 画电路图，验证功能，将电路转为verilog文件  
-verilator: 小仿一真
+## 超级有用
+[从0开始的Verilog体验](https://hdlbits.01xz.net/wiki/Main_Page)
 
 ## 理论课部分
 Von Neumann架构：I/O System $\leftrightarrows$ CPU $\leftrightarrows$ Memory  
@@ -83,7 +81,7 @@ $n$个变量对应的K-map是一个$2^n$个元素的表格，每个元素对应�
 ??? 例
 	![](CS1.png)
 
-!!! note"作业"
+!!! note "作业"
 	[纸质作业可供复习](cs1hw1.pdf)(疑似有错)
 
 ## 实验部分
