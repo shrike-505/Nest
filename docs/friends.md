@@ -5,9 +5,10 @@
 
 ::cards::
 
-- title: 备用
-  content: Lorem ipsum dolor sit amet.
-  image: img/PP.png
+- title: PampasEagle
+  content: Quadratic Reciprocity.
+  image: img/Pampaseagle.jpg
+  url: https://pampaseagle1.github.io/
 
 ::/cards::
 
