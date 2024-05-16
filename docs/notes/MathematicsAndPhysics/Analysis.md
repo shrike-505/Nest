@@ -450,3 +450,8 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 因此对更高维度的积分，可以先对某一维度积分，再对下一维度积分，以此类推，并且视简便情况调整积分次序  
 
 - Lebesgue定理（弱化ver. : $f$是$[a,b]\times [c,d]$上的有界函数，$f$的间断点集的面积为0，则$f$在$[a,b]\times [c,d]$上可积）
+
+### 二重积分的换元
+$D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v)$, $y = \psi(u,v)$，则$\iint_{D^*} f(x,y) dxdy = \iint_{D} f(\varphi(u,v), \psi(u,v)) |\frac{\partial (x,y)}{\partial (u,v)}| dudv$ （注意这里Jacobi行列式外面套了层绝对值）
+
+特别的，命$x = r \cos \theta$, $y = r \sin \theta$，则$\iint_{D^*} f(x,y) dxdy = \iint_{D} f(r \cos \theta, r \sin \theta) r dr d\theta$
