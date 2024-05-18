@@ -23,7 +23,7 @@ nav:
   - 痛风: thoughts/Gaut.md
   - 故乡: thoughts/Homesick.md
   - 羊杂: thoughts/Gut.md
-  - 富贵: thoughts/Fortune.md 
+  - 富贵: thoughts/Fortune.md
   - 希音: thoughts/Unspoken.md
 - 笔记:
   - notes/index.md
@@ -44,6 +44,8 @@ nav:
   - others/index.md
   - 年终总结: others/final.md
   - 暑假指南: others/summer_idle.md
+  - Typst备忘录: others/TypstMemo.md
+- 标签: tags.md
 - 友谊是魔法！: friends.md
 
 theme: 
@@ -126,7 +128,8 @@ plugins:
       exclude_tag:
         - test
   - macros
-  - tags
+  - tags:
+      tags_file: tags.md
 
 markdown_extensions:
   - toc:
