@@ -127,7 +127,6 @@ plugins:
       metadata_property: labels
       exclude_tag:
         - test
-  - macros
   - tags:
       tags_file: tags.md
 

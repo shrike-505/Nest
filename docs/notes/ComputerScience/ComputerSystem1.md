@@ -1,5 +1,7 @@
 ---
 comments: true
+tags:
+	- 大一下
 ---
 
 # 计算机系统Ⅰ

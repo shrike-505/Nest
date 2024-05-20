@@ -1,5 +1,7 @@
 ---
 comments: true
+tags:
+	- 大一下
 ---
 
 # 离散数学
@@ -220,9 +222,10 @@ Pascal's Identity: $C(n,k) = C(n-1,k-1) + C(n-1,k)$
 	https://math.stackexchange.com/questions/4421688/what-is-the-next-permutation-of-1342
 
 ??? note "find the next greater r-permutation"
-	n 为元素个数，r 为排列长度  
-	找到最后一个使$a_i != n - r + i$的位置，替换为$a_i + 1$，后面的位置由$a_j$替换为$a_i + j - i$，$j > i$  
-	https://homepage.math.uiowa.edu/~sokratov/2008m150/genrcomb.pdf
+	给定的原集合和r-permutation从小到大排列，记为二进制形式$n_0 n_1 \cdots n_{r-1}$，其中若r-permutation中的元素为原集合中的第i个元素，则$n_i = 1$，否则为0。next greater r-permutation的二进制形式就是上述二进制数加1，然后将其转化为集合形式即可。  
+	例：Find the next 5-combination of the set $\{1, 2, 3, 4, 5, 6, 7, 8, 9\}$ after $\{1, 3, 5, 7, 9\}$.  
+	二进制形式为$101010101$，加1得到$101010110$，转化为集合形式即为$\{1, 3, 5, 7, 8\}$  
+	(Credit to Way2Hungry)
 
 ## Advanced Counting Techniques
 
@@ -264,7 +267,7 @@ $|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j 
 ### 二元关系
 集合A上有$2^{|A|^2}$个二元关系
 
-??? 一道逆天小测/作业
+??? note "一道逆天小测/作业"
 	![](DM9.png)  
 	![](DM10.png)
 
@@ -317,10 +320,81 @@ $|A_1 \cup A_2 \cup \cdots \cup A_n| = \sum_{i=1}^{n} |A_i| - \sum_{1 \le i < j 
 - 无向图中，$2|E| = \sum_{v \in V} deg(v)$
 - 有向图中，$\sum_{v \in V} deg^-(v) = \sum_{v \in V} deg^+(v) = |E|$
 
-Complete graph: 每对不同的顶点之间都有且仅有一条边。  
+- 对任意图$G$，度数为奇数的顶点数为偶数
+-  the degree of a vertex in a simple graph is at most 1 less than the number of vertices
 
-圈(cycle): $\{(v_1, \cdots , v_n),(v_1, v_2), (v_2, v_3), \cdots, (v_{n-1}, v_n), (v_n, v_1)\}$  
+Complete graph($K_n$): 每对不同的顶点之间都有且仅有一条边。
 
-Wheel: $\{Cycle, v_{new}, (v_{new}, v_1), (v_{new}, v_2), \cdots, (v_{new}, v_n)\}$  
+- n个顶点的完全图有$\frac{n(n-1)}{2}$条边
+- 每个顶点的度为$n-1$
+
+圈(cycle)($C_n$): $\{(v_1, \cdots , v_n),(v_1, v_2), (v_2, v_3), \cdots, (v_{n-1}, v_n), (v_n, v_1)\}$  
+
+Wheel($W_n$): $\{Cycle, v_{new}, (v_{new}, v_1), (v_{new}, v_2), \cdots, (v_{new}, v_n)\}$  
+
+n-Cube($Q_n$): 顶点集为所有n位二进制数（$Q_n$有$2^n$个顶点），两个顶点之间有边当且仅当它们的二进制表示有且仅有一位不同
 
 Bipartite graph: 顶点集可以分为两个互不相交的子集，使得每条边的两个端点分别属于这两个子集。
+
+- 也就意味着任何一个子集中的顶点互不相连
+- 定理：简单图是Bipartite的当且仅当有可能对其顶点进行染色，使得任意一条边的两个端点都颜色不同
+
+Complete bipartite graph: 分成的两个顶点子集中，对一个子集中任何一个顶点，另一个子集中的所有顶点都与之相连。
+
+- 记作$K_{m,n}$，其中$m$和$n$分别为两个子集的顶点数
+
+正则(Regular)图：每个顶点的度都相同，n-正则图即每个顶点的度为n
+
+- 注意到$K_{m,n}$在$m = n$时是正则图
+
+### Matching
+- Matching: 一个边集，其中任意两条边都不邻接（没有共同顶点）
+    - Maximum matching: 边数最多的匹配
+    - 完全匹配(Complete matching): 对于二分为$(V_1, V_2)$的二分图，若每个$V_1$中的顶点都是匹配$M$中的一个顶点，则称$M$为完全匹配（从$V_1$到$V_2$）
+
+Hall's theorem: 二分图$G = (V ,E)$二分为$(V_1, V_2)$有一个从$V_1$到$V_2$的完全匹配当且仅当对于$V_1$的任意子集$A$，$|N(A)| \ge |A|$，其中$N(A)$元素为$A$中的顶点的邻居
+
+### 子图
+$G= (V, E) , H= (W, F)$
+
+- 子图(Subgraph)($H \subseteq G$): $W \subseteq V, F \subseteq E$
+- Proper subgraph: $G \ne H, H \subseteq G$
+- 生成图(Spanning subgraph): $W = V, F \subseteq E$ (端点不变，边集缩小)
+- $G$关于端点集$W$的诱导子图(Induced subgraph): 图$U = (W, F)$，其中$F$包含的边是$E$中连接$W$中的两个顶点的边
+
+### 图的表示
+- 邻接矩阵
+    - 对多边图，$a_{ij}$表示顶点$v_i$到$v_j$的边数
+- incidence matrix: 行为顶点，列为边，$a_{ij} = 1$表示顶点$v_i$与边$e_j$相连
+    - 无向图的每一列中1成对出现代表边，单独一个1就是该点处的自环
+
+### Isomorphism
+同构：存在双射使得映射前后顶点的相邻关系不变
+
+- 同构中的不变量（可用于判断非同构）
+    - 顶点数，边数，对应点的度、路径
+    - 是否为环、轮、完全图、二分图
+    - 同构当且仅当有相同长度的环路
+
+### 路径
+- 定理：从$v_i$到$v_j$的长度为$r$的路径数量为$A^r_{ij}$，其中$A^r_{ij}$为邻接矩阵的第$r$次幂$(i,j)$位置上的元素（这里的幂就是普通矩阵乘法）
+
+- cut vertex(ariculation point): 从图中去掉这个点后，图不再连通（导致更多连通部分的出现）
+- cut edge(bridge): 从图中去掉这条边后，图不再连通
+
+- 强连通：有向图中任意两个顶点$a,b$之间都有从$a$到$b$和从$b$到$a$的路径
+- 弱连通：有向图中去掉所有边的方向后，得到的无向图是连通的
+
+!!! note "欧拉回路与欧拉路径"
+	- 欧拉回路(Eulerian circuit): 通过图中每条边一次且仅一次的回路（一笔画，起点终点相同）
+	- 欧拉路径(Eulerian path): 通过图中每条边一次且仅一次的路径（一笔画）
+	- 无向连通（多）图有欧拉circuit当且仅当每个顶点的度数都是偶数
+	- 连通（多）图有非欧拉circuit的欧拉path当且仅当有且仅有两个顶点的度数是奇数，且这两个顶点就是路径的起点和终点
+	??? extra "有向图的情况"
+		![](DM13.png)
+
+!!! note "哈密顿回路与哈密顿路径"
+	- 哈密顿回路(Hamiltonian circuit): 通过图中每个顶点一次且仅一次的回路（除了起始点，也就是终点）
+	- 哈密顿路径(Hamiltonian path): 通过图中每个顶点一次且仅一次的路径（有点儿不一样的一笔画）
+    	- Dirac's theorem: 若$G$是一个简单图，$|V| \ge 3$，且$G$中每个顶点的度数都至少为$\frac{|V|}{2}$，则$G$有哈密顿回路
+    	- Ore's theorem: 若$G$是一个简单图，$|V| \ge 3$，且$\forall v, u \in V(G)$且$v$,$u$不相邻，有$deg(u)+deg(v) \ge |V|$，则$G$有哈密顿回路
