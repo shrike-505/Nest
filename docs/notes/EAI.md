@@ -1,7 +1,7 @@
 ---
-   comments: true
-   tags:
-	- 大一下
+comments: true
+tags: 
+    - 大一下
 ---
 
 # 嵌入式人工智能精品课

@@ -122,11 +122,6 @@ plugins:
       exclude: 
         - casual/*
         - index.md
-  - file-filter:
-      filter_nav: true # default value
-      metadata_property: labels
-      exclude_tag:
-        - test
   - tags:
       tags_file: tags.md
 

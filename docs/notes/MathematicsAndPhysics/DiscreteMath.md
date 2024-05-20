@@ -1,7 +1,7 @@
 ---
 comments: true
-tags:
-	- 大一下
+tags: 
+    - 大一下
 ---
 
 # 离散数学

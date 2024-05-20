@@ -1,6 +1,0 @@
----
-    comments: true
-    nostatistics: true
- 
----
-
