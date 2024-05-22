@@ -159,7 +159,8 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - neoteroi.cards
-  - hbfm.inline_coloring
+  # - hbfm.inline_coloring
+  # - hbfm.inline_list
 
 extra_css:
   - https://fonts.font.im/css2?family=Noto+Serif+SC
