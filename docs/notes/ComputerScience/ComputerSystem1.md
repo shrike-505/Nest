@@ -173,6 +173,13 @@ N位二进制的加减法是$\mod 2^N$下的加减法。
 史
 
 ### lab5 - riscvs汇编
-https://blog.csdn.net/m0_62730135/article/details/126799687  
+快速入门：https://blog.csdn.net/m0_62730135/article/details/126799687  
 
-https://note.tonycrane.cc/cs/pl/riscv/unprivileged/
+学长笔记：https://note.tonycrane.cc/cs/pl/riscv/unprivileged/
+
+函数返回值默认存在a0寄存器中，`jr ra`就能返回，`ret`也能返回。
+
+`sd a0, x(sp)`：memory[sp+x] = a0  
+`ld a0, x(sp)`：a0 = memory[sp+x]
+
+编译器优化：https://oi-wiki.org/lang/optimizations/
