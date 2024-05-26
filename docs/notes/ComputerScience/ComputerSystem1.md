@@ -5,7 +5,7 @@ tags:
 ---
 
 > FLY, BITCH
-
+> 一想到这逆天课还要上两学期我就头疼
 # 计算机系统Ⅰ
 
 > 任课教师：常瑞、吴磊、冯博
@@ -94,32 +94,34 @@ $n$个变量对应的K-map是一个$2^n$个元素的表格，每个元素对应�
 ISA(Instruction Set Architecture)是指令集架构，是计算机硬件与软件之间的接口。  
 通俗来讲就是，规定了寄存器个数，可运行的指令，哪些寄存器是干啥的，数据的单位类型和占据的大小（比特字节字这种）等等。设计者只要设计满足这些特性的程序，都可以在这种架构的计算机上运行。
 
-## 实验部分
-### lab0
+## Verilog补天
+### Basic
 ```verilog
 module main( 
-	I0,
-	I1,
-	I2,
-	O );
-
-   input I0;
-   input I1;
-   input I2;
-   output O;
-   ....
+	input I0,
+	input I1,
+	input I2,
+	output O );
+	// rest of the code
 endmodule
 ```
 
-这一段代码表示一个叫做`main`的电路`module`(模块)，先声明I1、I2、I3、O这几个**引脚序列**.之后用input/output说明各个引脚是输入还是输出。  
-`wire wire0`定义一条名为wire0的线路。  
+这一段代码表示一个叫做`main`的电路`module`(模块)，先声明I1、I2、I3、O这几个输入/输出的**引脚序列**。注意`main`后小括号里只能放输入输出引脚，可以类比函数，只关心它的输入是哪些。  
 wire的电气特性：必须被有且仅有一个assign输入，可以有0个或者多个assign输出。  
 
-运算符：`&`表示与，`|`表示或，`^`表示异或，`~`表示非。
+运算符：`&`表示按位与，`|`表示按位或，`^`表示异或，`~`表示非。
 
-`assign`语句用于给wire赋值。如`assign wire0 = I0 & I1;`表示wire0的值为I0和I1的与，`assign O = ~wire0;`表示O的值为wire0的非。
+如果没声明过一个变量a的类型，直接有`assign a = I0`，a默认为wire，可以在文件头加上``default_nettype none`来查找这个错误。
 
-### lab1
+### Vectors
+类似数组，`wire [3:0] a = 4b'1011;`声明四根“捆在一块的线”，相当于一个位宽为4的二进制数  
+如果这时候直接`assign b = a`，b默认是1bit的wire，导致隐式转换，b被赋值为a的最低位1。
+
+还可以写二维数组，`wire [3:0] a [1:0]`表明有两个unpacked element，每个element都是一个4bit的wire。
+
+用`{变量1,变量2, ...}`创建位宽为其元素之和的向量，因此变量需要指明位宽，如`{4'b1011, 4'b1100}`是合法的，但`{11, 12}`是不合法的。
+
+位数较小赋值给位数较大，先填充低位，高位补0。位数较大赋值给位数较小，优先保留低位，高位舍弃。
 #### 二选一多路选择器
 $O = S \cdot I_0 + \overline{S} \cdot I_1$  
 其中，$S$为选择信号，$I_0$和$I_1$为输入信号，$O$为输出信号。  
@@ -174,6 +176,7 @@ N位二进制的加减法是$\mod 2^N$下的加减法。
 
 ### lab5 - riscvs汇编
 快速入门：https://blog.csdn.net/m0_62730135/article/details/126799687  
+https://zhuanlan.zhihu.com/p/502146080
 
 学长笔记：https://note.tonycrane.cc/cs/pl/riscv/unprivileged/
 

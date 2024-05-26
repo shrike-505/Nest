@@ -26,3 +26,6 @@ loss = $-\sum_{i=1}^{n} y_i log(\hat{y_i})$
 
 ## 卷积
 <https://www.bilibili.com/video/BV1Vd4y1e7pj/>
+
+## 嵌入式
+MCU(Micro Controller Unit)（微控制器）：集成了CPU、内存、外设、时钟等功能的芯片。
