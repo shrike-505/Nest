@@ -37,6 +37,7 @@ nav:
     - 普通物理学Ⅰ: notes/MathematicsAndPhysics/Physics1.md
     - 常微分方程: notes/MathematicsAndPhysics/ODE.md
     - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
+  - CTF: notes/CTF.md
   - 托福相关: notes/Toefl.md
 - 随笔:
     - casual/index.md
