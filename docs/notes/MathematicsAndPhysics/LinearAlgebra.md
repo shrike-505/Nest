@@ -166,33 +166,41 @@ $w_n = v_n - \frac{<v_n, w_1>}{<w_1, w_1>}w_1 - \frac{<v_n, w_2>}{<w_2, w_2>}w_2
 - $(ST)^* = T^* S^*$
 - $(T + S)^* = T^* + S^*$
 - $(\lambda T)^* = \overline{\lambda} T^*$
-- $null T^* = (\text{range} T)^{\perp}$
+- $\text{null} T^* = (\text{range} T)^{\perp}$
 - $\text{range} T^* = (\text{null} T)^{\perp}$
 - $\text{null} T = (\text{range} T^*)^{\perp}$
 - $\text{range} T = (\text{null} T^*)^{\perp}$
+- $\lambda$是$T$的特征值 $\Leftrightarrow$ $\overline{\lambda}$是$T^*$的特征值
+- $U$是$V$在$T$下的不变子空间 $\Leftrightarrow$ $U^{\perp}$是$V$在$T^*$下的不变子空间
 
 #### 伴随算子的矩阵
 若$T \in \mathcal{L}(V, W)$，$V$和$W$是有限维内积空间，$V$和$W$的规范正交基分别为$e_1, e_2, \cdots, e_n$和$f_1, f_2, \cdots, f_m$  
 且$(T(e_1), T(e_2), \cdots, T(e_n)) = (f_1, f_2, \cdots, f_m)A$，$(T^*(f_1), T^*(f_2), \cdots, T^*(f_m)) = (e_1, e_2, \cdots, e_n)B$  
-则$B = \overline{A^T}$  
+则$B = \overline{A^T}$    
+换句话说，在各自出发空间的标准正交基下，算子与其伴随算子互为共轭转置（可根据这个求伴随算子）。
 
 ### 自伴随算子
 若$T \in \mathcal{L}(V)$，且$T^* = T$，则$T$是自伴随算子。即$\forall v, w \in V, <Tv, w> = <v, Tw>$  
 于是$A = \overline{A^T}$
 
-- 自伴随算子的本征值是实数
+- 自伴随算子有本征值，且是实数
 - 复内积空间上，若$\forall v \in V, <Tv, v> = 0$，则$T = 0$
 - 复内积空间上，T是自伴随算子当且仅当$\forall v \in V, <Tv, v> \in R$
 - 若T是自伴算子，则$\forall v \in V, <Tv, v> = 0 \Leftrightarrow T = 0$
+- $U$是$V$在$T$下的不变子空间 $\Leftrightarrow$ $U^{\perp}$也是$V$在$T$下的不变子空间
 
+一个特殊的自伴算子：$\forall T \in \mathcal{L}(V)$，$T T^* - T^* T$是自伴的对其取伴随后运用上面的性质即证。
 ### 正规算子
 若$T \in \mathcal{L}(V)$，且$T^*T = TT^*$，则$T$是正规算子。
 
 - T是正规的当且仅当$\forall v, ||Tv|| = ||T^*v||$
-- 正规算子T与其伴随算子T*有相同的本征向量
+- 在伴随算子与原算子本征值共轭的基础上，正规算子与其伴随算子对应这对本征值有相同的本征向量
 - 若T是正规算子，则T对应不同本征值的本征向量正交
+- $T$对应矩阵$A$满足$A \overline{A^T} = \overline{A^T} A$
+- 若$T$正规，则$T - \lambda I$也正规
+- $\text{null} T = \text{null} T^* = (\text{range} T)^{\perp}$，把null和range互换位置也成立
 
-#### 正规算子的性质
+#### 正规/伴随算子的性质
 - 复谱定理
     - $F = C, T \in \mathcal{L}(V)$是**正规**算子$\Leftrightarrow$存在V的规范正交基$e_1, e_2, \cdots, e_n$，使得$T$在这组基下的矩阵是对角矩阵$\Leftrightarrow$V有一个由T的本征向量组成的规范正交基
 - 实谱定理

@@ -125,6 +125,7 @@ plugins:
         - index.md
   - tags:
       tags_file: tags.md
+  - print-site
 
 markdown_extensions:
   - toc:
