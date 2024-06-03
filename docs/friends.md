@@ -10,6 +10,11 @@
   image: img/Pampaseagle.jpg
   url: https://pampaseagle1.github.io/
 
+- title: memset0
+  content: mem 的小站
+  image: img/mem0.png
+  url: https://mem.ac/
+
 ::/cards::
 
 ???+ quote "友链样式"
