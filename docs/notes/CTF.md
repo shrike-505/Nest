@@ -19,8 +19,20 @@
 ciphey -t TEXT  
 ciphey -f FILE
 ```
+隐写判断（样板戏轮流上）:
 
-md5:
+- winhex/010editor #查看文件编码
+- exiftool FILE #看exif信息
+- strings FILE
+- binwalk -e FILE
+- stegsolve.jar
+- foremost FILE
+- zsteg -a FILE (png or bmp)
+- steghide extract -sf FILE (jpg) -p PASSWORD 
+- python \lsb.py extract file.png
+- [stegdetect](https://blog.csdn.net/weixin_43921596/article/details/86654754)
+
+### md5
 ```python
 import hashlib
 def md5_encrypt(data):
@@ -29,6 +41,7 @@ def md5_encrypt(data):
     return md5.hexdigest()
 ```
 
+### Base家族
 ### python socket 网络编程  
 ```python
 import socket
