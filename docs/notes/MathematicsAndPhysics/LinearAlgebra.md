@@ -95,8 +95,10 @@ $$
 - $T$是满的当且仅当$T^*$是单的
 - $T$是单的当且仅当$T^*$是满的
 
-$T$是单射当且仅当$\ker T = \{0\}$(常用于证明单射)  
-$\lambda$是$T$的特征值 $\Leftrightarrow$ $T - \lambda I$不是单射，也不是满射
+$T$是单射当且仅当$\ker T = \{0\}$（$\dim \ker T = 0$）(常用于证明单射)    
+$T$是满射：$\text{Im} T = W$
+$\lambda$是$T$的特征值 $\Leftrightarrow$ $T - \lambda I$不是单射，也不是满射  
+有限维向量空间上的算子$T$可逆 $\Leftrightarrow$ $T$是单射 $\Leftrightarrow$ $T$是满射
 
 ## 不变子空间 
 若$U$是$V$的子空间，若存在线性映射$T$，$\forall \xi \in U$, 有$T( \xi ) \in U$, 则U为V的不变子空间.  

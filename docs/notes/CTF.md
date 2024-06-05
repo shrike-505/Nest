@@ -54,3 +54,15 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   # create socket
 s.connect((HOST, PORT)) # connect to server
 ```
 然后使用 `s.send(MESSAGE)` 和 `s.recv(MESSAGE)` 进行数据传输，返回为bytes类型。
+
+## 杂项
+!!! extra "Overviews"
+    记录一些做题时碰到的小技巧/知识
+
+用vim写文件的时候，会自动在当前文件下生成一个`.<filename>.swp`（存有编辑信息，相当于实时备份），如果有意外退出的情况就不怕没保存了。正常`:wq`就会把这个临时文件删除。~~你们vim真是太安全了~~    
+再次打开vim时使用`vim -r <filename>`就可以把临时文件恢复为原文件。
+
+Linux安装：
+
+- .deb: `sudo dpkg -i <package>.deb`
+- .tar.gz: `tar -zxvf <package>.tar.gz` -> `./configure` -> `sudo make` -> `make install`
