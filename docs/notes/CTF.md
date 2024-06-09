@@ -21,6 +21,7 @@ ciphey -f FILE
 ```
 隐写判断（样板戏轮流上）:
 
+- 文件头尾判断：https://www.cnblogs.com/bravexiaoxi/articles/File_Header_Footer.html
 - winhex/010editor #查看文件编码
 - exiftool FILE #看exif信息
 - strings FILE
