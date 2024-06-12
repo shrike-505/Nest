@@ -388,7 +388,7 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 ### 方向导数
 若$\vec{v}$为单位向量，$\vec{v}=(v_1,v_2)$, 定义$f$在$(x_0,y_0)$处沿$\vec{v}$方向的方向导数为$\frac{\partial f}{\partial \vec{v}} = \lim_{t \to 0+} \frac{f(x_0 + tv_1, y_0 + tv_2) - f(x_0,y_0)}{t}$
 
-对于$\forall \vec{v} = (v_1,v_2) \ne (0,0)$，对其进行单位化，得到$\vec{v'} = \frac{\vec{v}}{|\vec{v}|} = (v_1',v_2')$，此时$\frac{\partial f}{\partial \vec{v'}} = \frac{\partial f}{\partial x} v_1' + \frac{\partial f}{\partial y} v_2'$
+对于$\forall \vec{v} = (v_1,v_2) \ne (0,0)$，对其进行单位化，得到$\vec{v'} = \frac{\vec{v}}{|\vec{v}|} = (v_1',v_2')$，则$\frac{\partial f}{\partial \vec{v}} = \frac{\partial f}{\partial x} v_1' + \frac{\partial f}{\partial y} v_2'$
 
 注意到上述表达式$\frac{\partial f}{\partial \vec{v}} = (f_x (x_0,y_0), f_y (x_0,y_0)) \cdot (v_1,v_2) = (f_x (x_0, y_0), f_y (x_0, y_0) \cdot \vec{v})$，记向量$(f_x (x_0, y_0), f_y (x_0, y_0))$为$f$在该点的**梯度** $(\text{grad} f(x_0, y_0))$
 
@@ -422,6 +422,8 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 \frac{\partial G}{\partial y} & \frac{\partial G}{\partial z} \\
 \end{array}\right|$
 
+对于平面曲线$F(x,y) = 0$，切向量为$(F_y (x_0, y_0), -F_x (x_0, y_0))$，外侧法向量为$(F_x (x_0, y_0), F_y (x_0, y_0))$，内侧在两个分量前加负号
+
 若某个行列式为0，则单独有一方程令其对应位置的变量为$i_0, i = x,y,z$即可
 
 法平面方程为$(x-x_0) \frac{\partial (F, G)}{\partial (y,z)}(P_0) + (y-y_0) \frac{\partial (F, G)}{\partial (z,x)}(P_0) + (z-z_0) \frac{\partial (F, G)}{\partial (x,y)}(P_0) = 0$
@@ -447,8 +449,10 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 - 推论：一元函数$f(x), g(y)$分别在$[a, b]$, $[c,d]$可积，则$\iint_{[a,b]\times [c,d]} f(x)g(y) dxdy = \int_{a}^{b} f(x) dx \cdot \int_{c}^{d} g(y) dy$
 
 ??? 例
-    ![](Ana2.png)
-
+    ![](Ana2.png)  
+    $\Omega$为球体$x^2 + y^2 + z^2 \le R^2$，$x^2 + y^2 + z^2 \le 2Rz$的公共部分，求$\iiint_{\Omega} z^2 dxdydz$  
+    先对与$xy$平面平行的圆积分，得到原式等于$\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy$，其中$\Omega_{z}$为交集部分被平行于$xy$的平面所截的圆  
+    由于$\Omega_{z}$为圆，因此$\iint_{\Omega_{z}} dxdy = \pi (x^2 + y^2)$，在$z \in [0,\frac{R}{2}]$时，$x^2 + y^2 \le 2Rz - z^2$，在$z \in [\frac{R}{2}, R]$时，$x^2 + y^2 \le R^2 - z^2$，因此$\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy = \int_{0}^{\frac{R}{2}} z^2 \pi (2Rz - z^2) dz + \int_{\frac{R}{2}}^{R} z^2 \pi (R^2 - z^2) dz$
 因此对更高维度的积分，可以先对某一维度积分，再对下一维度积分，以此类推，并且视简便情况调整积分次序  
 
 - Lebesgue定理（弱化ver. : $f$是$[a,b]\times [c,d]$上的有界函数，$f$的间断点集的面积为0，则$f$在$[a,b]\times [c,d]$上可积）
@@ -457,3 +461,50 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v)$, $y = \psi(u,v)$，则$\iint_{D^*} f(x,y) dxdy = \iint_{D} f(\varphi(u,v), \psi(u,v)) |\frac{\partial (x,y)}{\partial (u,v)}| dudv$ （注意这里Jacobi行列式外面套了层绝对值）
 
 特别的，命$x = r \cos \theta$, $y = r \sin \theta$，则$\iint_{D^*} f(x,y) dxdy = \iint_{D} f(r \cos \theta, r \sin \theta) r dr d\theta$
+
+??? 例
+    - 求$\iint_{D} (x+y) dxdy$，其中$D$为$x^2 + y^2 = x + y$的内部
+        - 圆心为$(\frac{1}{2}, \frac{1}{2})$，半径为$\frac{\sqrt{2}}{2}$，因此令$x = \frac{1}{2} + r \cos \theta$, $y = \frac{1}{2} + r \sin \theta$, $r \in [0, \frac{\sqrt{2}}{2}]$, $\theta \in [0, 2\pi]$
+        - 原式 $= \int_{0}^{2\pi} d \theta \int_{0}^{\frac{\sqrt{2}}{2}} (1 + r \cos \theta +r \sin \theta) r dr$
+
+!!! note "球坐标变换"
+    球坐标：$\begin{cases} x = r \sin \varphi \cos \theta \\ y = r \sin \varphi \sin \theta \\ z = r \cos \varphi \end{cases}$，$r \in [0, +\infty)$, $\theta \in [0, 2\pi]$, $\varphi \in [0, \pi]$  
+    此时$dx dy dz = r^2 \sin \varphi dr d\varphi d\theta$（总是先对$r$积分，再对$\varphi$积分，最后对$\theta$积分）
+
+!!! note "柱坐标变换"
+    柱坐标：$\begin{cases} x = r \cos \theta \\ y = r \sin \theta \\ z = z \end{cases}$，$r \in [0, +\infty)$, $\theta \in [0, 2\pi]$, $z \in (-\infty, +\infty)$  
+    此时$dx dy dz = r dr d\theta dz$（总是先对$r$积分，再对$\theta$积分，最后对$z$积分）
+## 曲线积分（快速补天）
+第一类曲线积分（对弧长积分）：形如$\int_{L} f(x,y) ds$，若$f(x,y)=1$，则为曲线的长度  
+弧微分$ds = \sqrt{dx^2 + dy^2} = \sqrt{1 + y'(x)^2} dx$
+第二类曲线积分（对坐标积分）：形如$\int_{L} P(x,y,z) dx + Q(x,y,z) dy + R(x,y,z) dz$  
+
+### 第一类
+
+- 参数方程：$x = x(t), y = y(t), z = z(t)$，$a \le t \le b$，则$\int_{L} f(x,y,z) ds = \int_{a}^{b} f(x(t), y(t), z(t)) \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2} dt$ （先参数化后划为定积分）
+- 平面曲线$y=y(x)$，$a \le x \le b$ ：$\int_{L} f(x,y) ds = \int_{a}^{b} f(x, y(x)) \sqrt{1 + y'(x)^2} dx$,要求$y(x)$在$[a,b]$连续可导
+- 平面曲线$r = r(\theta)$，$\alpha \le \theta \le \beta$：$\int_{L} f(x,y) ds = \int_{\alpha}^{\beta} f(r(\theta) \cos \theta, r(\theta) \sin \theta) \sqrt{r'(\theta)^2 + r(\theta)^2} d\theta$
+- 对称性与轮换性
+
+### 第二类
+对向量值函数在曲线某一方向上的积分（ref：变力做功）（因此被积函数是向量，积分变元也是向量）,形如$\int_{C} \overrightarrow{A} d \overrightarrow{s}$，其中$\overrightarrow{A} = P \overrightarrow{i} + Q \overrightarrow{j} + R \overrightarrow{k}$
+
+- 与第一类的关系：$| \int_{C} \overrightarrow{A} d \overrightarrow{s} | = | \int_{C} \overrightarrow{A} \cdot \overrightarrow{T} ds |$，其中$\overrightarrow{T}$为曲线的单位切向量
+- ![](Ana3.png)
+- 在$d$谁的时候，就把前面式子里所有其他的变量都换成用谁表示的形式，然后分段定积分，对应上下界为谁的起点和终点
+
+## 曲面积分
+第一类曲面积分：形如$\iint_{\Sigma} f(x,y,z) dS$，$f=1$时为曲面的面积  
+第二类曲面积分：形如$\iint_{\Sigma} P(x,y,z) dx + Q(x,y,z) dy + R(x,y,z) dz$
+
+### 第一类
+光滑曲面$\Sigma$由参数方程$\overrightarrow{r}(u,v) = (x(u,v), y(u,v), z(u,v))$定义
+
+- 若$f$在$\Omega$连续，则$\iint_{\Sigma} f(x,y,z) dS = \iint_{D} f(x(u,v), y(u,v), z(u,v)) |\overrightarrow{r}_u \times \overrightarrow{r}_v| dudv$，注意等号后面这个积分是二重积分，在$uv$平面上
+- 若$\Sigma$由$z = z(x,y)$定义，则$\iint_{\Sigma} f(x,y,z) dS = \iint_{D} f(x,y,z(x,y)) \sqrt{1 + z_x^2 + z_y^2} dxdy$
+
+??? 例
+    - 求$\iint_{\Sigma} \sqrt{\frac{x^2}{a^4} + \frac{y^2}{b^4} +\frac{z^2}{c^4}} dS$, $\Sigma$为$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
+        - 利用球坐标变换，$x = a \sin \varphi \cos \theta$, $y = b \sin \varphi \sin \theta$, $z = c \cos \varphi$，$0 \le \varphi \le \pi$, $0 \le \theta \le 2\pi$
+        - $\overrightarrow{r_{\varphi}} \times \overrightarrow{r_{\theta}} = \bigg| \begin{array}{ccc} \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\ a \cos \varphi \cos \theta & b \cos \varphi \sin \theta & -c \sin \varphi \\ -a \sin \varphi \sin \theta & b \sin \varphi \cos \theta & 0 \end{array} \bigg| = abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}}$
+        - 原式$ = \int_{0}^{2\pi} d \theta \int_{0}^{\pi} abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}} d \varphi$
