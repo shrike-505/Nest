@@ -121,6 +121,17 @@ B关于A的速度为$v$.对于某个事件，A系中的坐标为$(x,t)$，B系�
 则$\frac{\Delta x'}{\Delta t'} = \frac{\Delta x - v\Delta t}{\Delta t - \frac{v}{c^2}\Delta x} \underrightarrow{\Delta t \to 0} \frac{dx}{dt} = w = \frac{v - u}{1 - \frac{uv}{c^2}}$
 
 则也可得到$v = \frac{u + w}{1 + \frac{uw}{c^2}}$
+#### 能量与动量
+$K = \frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}} - mc^2$（动能）
+$p = \frac{mu}{\sqrt{1-\frac{u^2}{c^2}}}$
 
 ## 热
 均方根速率：$v_{rms} = \sqrt{\frac{3kT}{m}}$，其中$k$为玻尔兹曼常数，$T$为温度，$m$为质量，$v_{rms}$为分子速率的均方根值
+
+$k_B = \frac{R}{N_A} = 1.38 \times 10^{-23} J/K$  
+于是$PV = nRT = Nk_BT$
+
+对于真实情况下的气体，van der Waals方程：$(P + \frac{aN^2}{V^2})(V - Nb) = Nk_BT$，其中$a$为分子间吸引力系数，$b$为分子体积
+### 热力学第一定律
+功：$W = \int_{V_i}^{V_f} PdV$  
+![](Physics15.png)
