@@ -11,7 +11,7 @@
 `#import "a": b`相当于`import b from a`
 
 ## 画图
-!!! info"注意"
+!!! info "注意"
     最好把`canvas`或者`diagram`包在一个`figure`里，既可以设置多个属性，又方便调整位置
 ### cetz
 可看manual
@@ -92,23 +92,25 @@
 ```
 把图片塞进文字里，图文并茂啊嗯
 ```typst
-#wrap-content(image("../docs/img/PP.png", fit: "stretch"),columns:(40%,50%))[My name is Pinkie Pie (Hello!)\
-And I am here to say (How ya doin'?)\
-I'm gonna make you smile and I will brighten up your day\
-It doesn't matter now (What's up?)\
-If you are sad or blue (Howdy!)\
-'Cause cheering up my friends is just what Pinkie's here to do\
-'Cause I love to make you smile, smile, smile\
-Yes I do\
-It fills my heart with sunshine all the while\
-Yes it does 
-From these happy friends of mine\
-I like to see you grin (Awesome!)\
-I love to see you beam (Rock on!)\
-The corners of your mouth turned up is always Pinkie's dream (Hoof bump!)\
-But if you're kind of worried\
-And your face has made a frown\
-I'll work real hard and do my best to turn that sad frown upside down]
+#wrap-content(image("../docs/img/PP.png", fit: "stretch"),columns:(40%,50%))[
+	My name is Pinkie Pie (Hello!)\
+	And I am here to say (How ya doin'?)\
+	I'm gonna make you smile and I will brighten up your day\
+	It doesn't matter now (What's up?)\
+	If you are sad or blue (Howdy!)\
+	'Cause cheering up my friends is just what Pinkie's here to do\
+	'Cause I love to make you smile, smile, smile\
+	Yes I do\
+	It fills my heart with sunshine all the while\
+	Yes it does 
+	From these happy friends of mine\
+	I like to see you grin (Awesome!)\
+	I love to see you beam (Rock on!)\
+	The corners of your mouth turned up is always Pinkie's dream (Hoof bump!)\
+	But if you're kind of worried\
+	And your face has made a frown\
+	I'll work real hard and do my best to turn that sad frown upside down
+]
 ```
 ![](typ4.png)  
 已知问题：会和`image`的`weight`,`height`冲突；脱离图片范围后换行会失效（如上图）  

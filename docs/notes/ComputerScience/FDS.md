@@ -121,3 +121,6 @@ func Heapsort(array, N){
         H[i] = TmpH[i]
 }
 ```
+
+## Hash
+速通了：https://www.hello-algo.com/chapter_hashing/
