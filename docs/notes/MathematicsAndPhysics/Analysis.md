@@ -404,8 +404,7 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 5. 若$f$在$D$上连续，$D$为闭区域，$f$在$D$上有界，则$f$在$D$上有最大值和最小值
 
 ### 隐函数
-求导：$F(x,y) = 0$，则$\frac{dy}{dx} = -\frac{F_x}{F_y}$  
-实际上是对方程（组）的等号两侧对$x$求导，然后解方程（组）
+存在定理：$F(x_0,y_0) = 0$，$F_x, F_y$连续，$F_y(x_0,y_0) \neq 0$，则在$(x_0,y_0)$的小邻域内，有$y=f(x)$，且$\frac{dy}{dx} = -\frac{F_x}{F_y}$  
 
 !!! note "$dy/dx$和$\partial y / \partial x$的区别"
     前者表示y的自变量只有x，后者对应多元函数
@@ -420,13 +419,16 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 曲线$\begin{cases} F(x,y,z) = 0 \\ G(x,y,z) = 0 \end{cases}$在$P_0 = (x_0, y_0, z_0)$处的切线为$\frac{x-x_0}{\frac{\partial (F, G)}{\partial (y,z)}(P_0)} = \frac{y-y_0}{\frac{\partial (F, G)}{\partial (z,x)}(P_0)} = \frac{z-z_0}{\frac{\partial (F, G)}{\partial (x,y)}(P_0)}$, 其中$\frac{\partial (F, G)}{\partial (y,z)} = \left |\begin{array}{cccc}
 \frac{\partial F}{\partial y} & \frac{\partial F}{\partial z} \\
 \frac{\partial G}{\partial y} & \frac{\partial G}{\partial z} \\
-\end{array}\right|$
+\end{array}\right|$，若某个行列式为0，则单独有一方程令其对应位置的变量为$i_0, i = x,y,z$即可
 
-对于平面曲线$F(x,y) = 0$，切向量为$(F_y (x_0, y_0), -F_x (x_0, y_0))$，外侧法向量为$(F_x (x_0, y_0), F_y (x_0, y_0))$，内侧在两个分量前加负号
-
-若某个行列式为0，则单独有一方程令其对应位置的变量为$i_0, i = x,y,z$即可
 
 法平面方程为$(x-x_0) \frac{\partial (F, G)}{\partial (y,z)}(P_0) + (y-y_0) \frac{\partial (F, G)}{\partial (z,x)}(P_0) + (z-z_0) \frac{\partial (F, G)}{\partial (x,y)}(P_0) = 0$
+
+对于平面曲线$F(x,y) = 0$，切向量为$(F_y (x_0, y_0), -F_x (x_0, y_0))$，外侧法向量为$(F_x (x_0, y_0), F_y (x_0, y_0))$，内侧在两个分量前加负号  
+
+切线为$F_x (x_0, y_0) (x-x_0) + F_y (x_0, y_0) (y-y_0) = 0$，
+法线方程为$F_y (x_0, y_0) (x-x_0) - F_x (x_0, y_0) (y-y_0) = 0$
+
 
 特别的，若曲线可被表示为$\begin{cases} y = y(x) \\ z = z(x) \end{cases}$，则切向量为$(1, y'(x), z'(x))$，切线为$\frac{x-x_0}{1} = \frac{y-y_0}{y'(x_0)} = \frac{z-z_0}{z'(x_0)}$，法平面方程为$(x-x_0) + (y-y_0) y'(x_0) + (z-z_0) z'(x_0) = 0$
 
@@ -476,7 +478,7 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
     此时$dx dy dz = r dr d\theta dz$（总是先对$r$积分，再对$\theta$积分，最后对$z$积分）
 ## 曲线积分（快速补天）
 第一类曲线积分（对弧长积分）：形如$\int_{L} f(x,y) ds$，若$f(x,y)=1$，则为曲线的长度  
-弧微分$ds = \sqrt{dx^2 + dy^2} = \sqrt{1 + y'(x)^2} dx$
+弧微分$ds = \sqrt{dx^2 + dy^2} = \sqrt{1 + y'(x)^2} dx$  
 第二类曲线积分（对坐标积分）：形如$\int_{L} P(x,y,z) dx + Q(x,y,z) dy + R(x,y,z) dz$  
 
 ### 第一类
@@ -492,6 +494,10 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
 - 与第一类的关系：$| \int_{C} \overrightarrow{A} d \overrightarrow{s} | = | \int_{C} \overrightarrow{A} \cdot \overrightarrow{T} ds |$，其中$\overrightarrow{T}$为曲线的单位切向量
 - ![](Ana3.png)
 - 在$d$谁的时候，就把前面式子里所有其他的变量都换成用谁表示的形式，然后分段定积分，对应上下界为谁的起点和终点
+- Green公式：$P(x,y),Q(x,y)$在$D$上**有一阶连续偏导数**，则$\int_{C} Pdx + Qdy = \iint_{D} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy$，$C$为$D$的边界，方向为正向
+    - 定义正向：沿边界行走时，区域在左侧，对于一般的类多边形区域，为逆时针
+- 曲线积分与路径无关：![](Ana4.png)
+- 若与路径无关，则有Newton-Leibniz公式：$\int_{C} Pdx + Qdy = u(B) - u(A)$，其中$u$为$P$的一个原函数，积分为第二类曲线积分
 
 ## 曲面积分
 第一类曲面积分：形如$\iint_{\Sigma} f(x,y,z) dS$，$f=1$时为曲面的面积  
@@ -507,4 +513,31 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
     - 求$\iint_{\Sigma} \sqrt{\frac{x^2}{a^4} + \frac{y^2}{b^4} +\frac{z^2}{c^4}} dS$, $\Sigma$为$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
         - 利用球坐标变换，$x = a \sin \varphi \cos \theta$, $y = b \sin \varphi \sin \theta$, $z = c \cos \varphi$，$0 \le \varphi \le \pi$, $0 \le \theta \le 2\pi$
         - $\overrightarrow{r_{\varphi}} \times \overrightarrow{r_{\theta}} = \bigg| \begin{array}{ccc} \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\ a \cos \varphi \cos \theta & b \cos \varphi \sin \theta & -c \sin \varphi \\ -a \sin \varphi \sin \theta & b \sin \varphi \cos \theta & 0 \end{array} \bigg| = abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}}$
-        - 原式$ = \int_{0}^{2\pi} d \theta \int_{0}^{\pi} abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}} d \varphi$
+        - 原式 $= \int_{0}^{2\pi} d \theta \int_{0}^{\pi} abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}} d \varphi$
+
+### 第二类
+曲面$\Sigma : z = z(x,y)$法向量（向上）为$\overrightarrow{n} = \frac{(-z_x, -z_y, 1)}{\sqrt{1 + z_x^2 + z_y^2}}$，向下则取负
+
+法向量的三个分量记作$\cos \alpha, \cos \beta, \cos \gamma$  
+得计算公式：$\iint_{\Sigma} Pdydz + Qdzdx + Rdxdy = \iint_{\Sigma} (P \cos \alpha + Q \cos \beta + R \cos \gamma) dS$，等号右侧为第一类曲面积分
+
+球面外法向量为$\overrightarrow{n} = (\frac{x}{r}, \frac{y}{r}, \frac{z}{r})$
+
+??? 例
+    计算$\iint_{\Sigma} xdydz + ydzdx + zdxdy$，其中$\Sigma : x^2 + y^2 + z^2 = a^2 (a > 0)$方向向外  
+    外法向量为$\overrightarrow{n} = (\frac{x}{a}, \frac{y}{a}, \frac{z}{a})$，则$\cos \alpha = \frac{x}{a}, \cos \beta = \frac{y}{a},\cos \gamma = \frac{z}{a}$，原式 $= \frac{1}{a}\iint_{\Sigma} (x^2 + y^2 + z^2) dS = \frac{1}{a} \iint_{\Sigma} a^2 dS = a \iint_{\Sigma} dS = a \cdot 4 \pi a^2 = 4 \pi a^3$
+
+对形如$\iint_{\Sigma} R(x,y,z)dxdy$的第二类曲面积分（$\Sigma : z = z(x,y)$），可投影到xy平面上积分，即$\iint_{\Sigma} R(x,y,z)dxdy = \pm \iint_{D_{xy}} R(x,y,z(x,y)) dxdy$，$\Sigma$为上侧时取正，下侧时取负
+
+同理，投到zx平面时，取右侧为正，左侧为负，投到yz平面时，取前侧为正，后侧为负
+
+参数平面：![](Ana5.png)
+
+转为单面积：![](Ana6.png)
+
+Stokes公式：![](Ana7.png)  
+![](Ana8.png)
+等号左侧为第二类曲面积分，右侧为第二类曲线积分
+
+Gauss公式：空间闭区域$\Omega$由分片光滑的闭曲面$\Sigma$围成，$\Sigma$取外侧，函数$P(x,y,z),Q(x,y,z),R(x,y,z)$在$\Omega$上有连续一阶偏导，则有  
+$\iint_{\Sigma} Pdydz + Qdzdx + Rdxdy = \iiint_{\Omega} (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dxdydz$

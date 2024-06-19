@@ -121,9 +121,23 @@ B关于A的速度为$v$.对于某个事件，A系中的坐标为$(x,t)$，B系�
 则$\frac{\Delta x'}{\Delta t'} = \frac{\Delta x - v\Delta t}{\Delta t - \frac{v}{c^2}\Delta x} \underrightarrow{\Delta t \to 0} \frac{dx}{dt} = w = \frac{v - u}{1 - \frac{uv}{c^2}}$
 
 则也可得到$v = \frac{u + w}{1 + \frac{uw}{c^2}}$
+
+长度收缩：$L' = L_0 \sqrt{(1-\frac{u^2}{c^2})}$
+
+时间膨胀：$\Delta t' = \frac{\Delta t_0}{\sqrt{(1-\frac{u^2}{c^2})}}$
+
+
 #### 能量与动量
+质速关系：$m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}$
+
+
 $K = \frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}} - mc^2$（动能）
-$p = \frac{mu}{\sqrt{1-\frac{u^2}{c^2}}}$
+
+$K_1 = m_0 c^2$ （静止能量）  
+
+总能量：$E = K + K_1 = \frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}} = mc^2$
+
+$p = \frac{m_0 u}{\sqrt{1-\frac{u^2}{c^2}}}$
 
 ## 热
 均方根速率：$v_{rms} = \sqrt{\frac{3kT}{m}}$，其中$k$为玻尔兹曼常数，$T$为温度，$m$为质量，$v_{rms}$为分子速率的均方根值
