@@ -140,12 +140,48 @@ $K_1 = m_0 c^2$ （静止能量）
 $p = \frac{m_0 u}{\sqrt{1-\frac{u^2}{c^2}}}$
 
 ## 热
-均方根速率：$v_{rms} = \sqrt{\frac{3kT}{m}}$，其中$k$为玻尔兹曼常数，$T$为温度，$m$为质量，$v_{rms}$为分子速率的均方根值
+均方根速率：$v_{rms} = \sqrt{\frac{3kT}{m}}$，其中$k$为玻尔兹曼常数，$T$为温度，$m$为质量
+
+最概然速率：$v_{mp} = \sqrt{\frac{2kT}{m}}$
+
+平均速率：$v_{avg} = \sqrt{\frac{8kT}{\pi m}}$
+
+$R = 8.31J/(mol \cdot K)$
 
 $k_B = \frac{R}{N_A} = 1.38 \times 10^{-23} J/K$  
 于是$PV = nRT = Nk_BT$
 
+线性膨胀：$\Delta L = \alpha L \Delta T$  
+体积膨胀：$\Delta V = \beta V \Delta T$  
+$\beta = 3\alpha$
+
 对于真实情况下的气体，van der Waals方程：$(P + \frac{aN^2}{V^2})(V - Nb) = Nk_BT$，其中$a$为分子间吸引力系数，$b$为分子体积
+
+两个温度分别为T1，T2的热库通过截面积为S的细杆热传递（T1>T2），热传递速率$\frac{dQ}{dT} = -kS \frac{T1-T2}{L}$，$k$为杆材料的热传导率，$T1 \rightarrow T2$时有$\frac{dQ}{dT} = -kS \frac{dT}{dx}$
+
+分子动能$E_k = \frac{1}{2} m v^2 = \frac{3}{2} k_B T$，对于大量处于某一温度的分子（宏观上已被视为气体），其速度不全为v，而是服从麦克斯韦-玻尔兹曼分布：$f(v) = 4\pi (\frac{m}{2\pi k_B T})^{3/2} v^2 e^{-\frac{mv^2}{2k_B T}}$
+
+平均碰撞次数：$z = n_v \pi d^2 vt$  
+平均自由程：$l = \frac{k_B T}{\sqrt{2} \pi d^2 p}$
 ### 热力学第一定律
-功：$W = \int_{V_i}^{V_f} PdV$  
+$dU = \Delta Q - PdV$
+
+功：$W = \int_{V_i}^{V_f} PdV$    
+气体从$(P_1, V_1)$到$(P_2, V_2)$的功（等温）：$W = \int_{V_1}^{V_2} PdV = \int_{V_1}^{V_2} \frac{nRT}{V}dV = nRTln\frac{V_2}{V_1}$
+
+定义$c = \frac{dQ}{dT}$  
+等容摩尔热容：$C_v = \frac{i}{2}R$，其中$i$为自由度  
+等压摩尔热容：$C_p = C_v + R$  
+则定义：$\gamma = \frac{C_p}{C_v} = \frac{i+2}{i}$
+
+绝热过程中：$PV^{\gamma} = C$，$W_{A\rightarrow B} = \frac{P_A V_A - P_B V_B}{\gamma - 1}$
+
+卡诺热机效率：$\eta = 1 - \frac{T_2}{T_1}$，其中$T_1$为高温，$T_2$为低温  
+制冷系数：$\frac{1}{\eta} - e = 1$
+
 ![](Physics15.png)
+
+### Entropy
+$ds = \frac{dQ}{T}$，要求$Q$是可逆过程中的热量
+
+等温过程$S_2 - S_1 = nR \ln \frac{V_2}{V_1}$

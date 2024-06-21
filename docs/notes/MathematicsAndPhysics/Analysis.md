@@ -302,7 +302,9 @@ $\forall x \in E$，若$\{f_n(x)\}$收敛于$f(x)$，则称$\{f_n\}$收敛于$f$
 
 ### Fourier
 若$f$以$2\pi$为周期，傅里叶系数$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx$，$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx dx$  
-以$a_n,b_n$为系数的三角级数称为$f$的Fourier级数  
+以$a_n,b_n$为系数的三角级数称为$f$的Fourier级数    
+
+奇函数的$a_n = 0$，偶函数的$b_n = 0$
 
 Bessel不等式：$\frac{a_0^2}{2} + \sum_{n=1}^{\infty} (a_n^2 + b_n^2) \le \frac{1}{\pi} \int_{-\pi}^{\pi} f^2(x) dx$
 
@@ -384,6 +386,12 @@ $A \Delta x + B \Delta y$称为$f$在$(x_0,y_0)$处的全微分，记为$df(x_0,
 ??? 例
     - $z = \arctan (xy), y = e^{x}$, 求$\frac{dz}{dx}$
         - $\frac{dz}{dx} = \frac{\partial z}{\partial x} \frac{dx}{dx} + \frac{\partial z}{\partial y} \frac{dy}{dx}$
+
+### Taylor公式
+命$\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$，则$f(x,y) = f(x_0,y_0) + (\Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y})f(x_0,y_0) + \frac{1}{2!} (\Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y})^2 f(x_0,y_0) + \cdots + \frac{1}{n!} (\Delta x \frac{\partial}{\partial x} + \Delta y \frac{\partial}{\partial y})^n f(x_0,y_0) + 0(\rho^n)$
+
+### 中值定理
+$f(x_0 + h, y_0 + k) - f(x_0, y_0) = h \frac{\partial f}{\partial x} (x_0 + \theta h, y_0 + \theta k) + k \frac{\partial f}{\partial y} (x_0 + \theta h, y_0 + \theta k)$，$\theta \in (0,1)$
 
 ### 方向导数
 若$\vec{v}$为单位向量，$\vec{v}=(v_1,v_2)$, 定义$f$在$(x_0,y_0)$处沿$\vec{v}$方向的方向导数为$\frac{\partial f}{\partial \vec{v}} = \lim_{t \to 0+} \frac{f(x_0 + tv_1, y_0 + tv_2) - f(x_0,y_0)}{t}$
@@ -501,13 +509,14 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
 
 ## 曲面积分
 第一类曲面积分：形如$\iint_{\Sigma} f(x,y,z) dS$，$f=1$时为曲面的面积  
-第二类曲面积分：形如$\iint_{\Sigma} P(x,y,z) dx + Q(x,y,z) dy + R(x,y,z) dz$
+第二类曲面积分：形如$\iint_{\Sigma} P(x,y,z) dydz + Q(x,y,z) dzdx + R(x,y,z) dxdy$
 
 ### 第一类
 光滑曲面$\Sigma$由参数方程$\overrightarrow{r}(u,v) = (x(u,v), y(u,v), z(u,v))$定义
 
 - 若$f$在$\Omega$连续，则$\iint_{\Sigma} f(x,y,z) dS = \iint_{D} f(x(u,v), y(u,v), z(u,v)) |\overrightarrow{r}_u \times \overrightarrow{r}_v| dudv$，注意等号后面这个积分是二重积分，在$uv$平面上
 - 若$\Sigma$由$z = z(x,y)$定义，则$\iint_{\Sigma} f(x,y,z) dS = \iint_{D} f(x,y,z(x,y)) \sqrt{1 + z_x^2 + z_y^2} dxdy$
+    - $D$为$\Sigma$在$xy$平面上的投影区域
 
 ??? 例
     - 求$\iint_{\Sigma} \sqrt{\frac{x^2}{a^4} + \frac{y^2}{b^4} +\frac{z^2}{c^4}} dS$, $\Sigma$为$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$
@@ -516,7 +525,7 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
         - 原式 $= \int_{0}^{2\pi} d \theta \int_{0}^{\pi} abc \sin \varphi \sqrt{\frac{\cos^2 \theta \sin^2 \varphi}{a^2} + \frac{\sin^2 \theta \sin^2 \varphi}{b^2} + \frac{\cos^2 \varphi}{c^2}} d \varphi$
 
 ### 第二类
-曲面$\Sigma : z = z(x,y)$法向量（向上）为$\overrightarrow{n} = \frac{(-z_x, -z_y, 1)}{\sqrt{1 + z_x^2 + z_y^2}}$，向下则取负
+曲面$\Sigma : z = z(x,y)$单位化后的法向量（向上）为$\overrightarrow{n} = \frac{(-z_x, -z_y, 1)}{\sqrt{1 + z_x^2 + z_y^2}}$，向下则取负
 
 法向量的三个分量记作$\cos \alpha, \cos \beta, \cos \gamma$  
 得计算公式：$\iint_{\Sigma} Pdydz + Qdzdx + Rdxdy = \iint_{\Sigma} (P \cos \alpha + Q \cos \beta + R \cos \gamma) dS$，等号右侧为第一类曲面积分
