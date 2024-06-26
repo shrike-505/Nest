@@ -225,10 +225,9 @@ Pascal's Identity: $C(n,k) = C(n-1,k-1) + C(n-1,k)$
 	https://math.stackexchange.com/questions/4421688/what-is-the-next-permutation-of-1342
 
 ??? note "find the next greater r-permutation"
-	给定的原集合和r-permutation从小到大排列，记为二进制形式$n_0 n_1 \cdots n_{r-1}$，其中若r-permutation中的元素为原集合中的第i个元素，则$n_i = 1$，否则为0。next greater r-permutation的二进制形式就是上述二进制数加1，然后将其转化为集合形式即可。  
-	例：Find the next 5-combination of the set $\{1, 2, 3, 4, 5, 6, 7, 8, 9\}$ after $\{1, 3, 5, 7, 9\}$.  
-	二进制形式为$101010101$，加1得到$101010110$，转化为集合形式即为$\{1, 3, 5, 7, 8\}$  
-	(Credit to Way2Hungry)
+	给定的原集合和r-permutation从小到大排列，从r-permutation的尾部开始向前找，找到第一个与原集合对应位置数不等的位置，把位置上的数加1，后面每个位置的数依次加一。  
+	如：给定集合{1,2,3,4,5,6,7,8,9,10}，7-permutation为{1,2,3,4,6,9,10}，从后往前对应，10=10, 9=9, 6!=8，因此6+1得7，填入原位置，后面跟上8, 9即得{1,2,3,4,7,8,9}。
+	(Credit to Hehe & Way2Hungry)
 
 ## Advanced Counting Techniques
 
