@@ -15,6 +15,11 @@
   image: img/mem0.png
   url: https://mem.ac/
 
+- title: 打工战士
+  content: 一切都是命运石之门的选择
+  image: img/dgzs.jpg
+  url: https://zjyinzju.github.io/
+
 ::/cards::
 
 ???+ quote "友链样式"
