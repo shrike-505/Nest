@@ -58,4 +58,4 @@ changelog: true
     [**@TonyCrane**](https://github.com/TonyCrane) :fontawesome-brands-github:  
     记录样式与数据统计来自 TonyCrane 老师的 [changelog](https://github.com/TonyCrane/mkdocs-changelog-plugin) & [statistics](https://github.com/TonyCrane/mkdocs-statistics-plugin)  
     [**@HobbitQia**](https://github.com/HobbitQia/) :fontawesome-brands-github:  
-    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展（  
+    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展。大 Q 是超级好的学长！
