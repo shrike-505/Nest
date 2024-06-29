@@ -27,4 +27,5 @@ jobs:
       - run: pip install mkdocs-material 
       - run: pip install mkdocs-changelog-plugin
       - run: pip install neoteroi-mkdocs
+      - run: pip install mkdocs-statistics-plugin
       - run: mkdocs gh-deploy --force
