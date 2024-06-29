@@ -25,5 +25,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
+      - run: pip install mkdocs-changelog-plugin
       - run: pip install neoteroi-mkdocs
       - run: mkdocs gh-deploy --force
