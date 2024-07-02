@@ -22,7 +22,7 @@
 
 - title: Kailqq
   content: Man!
-  image: img/kailqq.jpg
+  image: img/kailqq.png
   url: https://www.kailqq.cc/
 
 ::/cards::
