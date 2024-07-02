@@ -20,6 +20,11 @@
   image: img/dgzs.jpg
   url: https://zjyinzju.github.io/
 
+- title: Kailqq
+  content: Man!
+  image: img/kailqq.jpg
+  url: https://www.kailqq.cc/
+
 ::/cards::
 
 ???+ quote "友链样式"
