@@ -12,6 +12,61 @@
     https://hello-ctf.com/  
     https://courses.zjusec.com/
 
+## Web
+!!! extra "Web基础"
+    课程slides: https://cubicy.notion.site/2024-Web-4d50db2d026c4fffb76bfebdc1f9d553  
+    箱神辅学slide: https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec6/#/  
+    MDN Web Docs: https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work
+
+### 基础
+Web = Client + Server  
+
+- Client: 浏览器
+    - 可视化(HTML/CSS/JS)
+    - 交互(JS)
+    - 缓存(Cookie)
+    - 安全性
+- Server: 1 or 多台服务器
+    - 处理请求
+    - 前后端、数据库
+    - 安全性（403 Forbbiden）
+
+数据交换：数据包->路由器->不同IP  
+**D**omain **N**ame **S**ystem: 记录域名映射到的IP地址/其他域名/其他东西
+
+Proxy: 
+
+- 正向：假装进入内网
+- 反向：代理商穿透内网，佯装内网把数据返回出来
+
+Cookie: 客户端储存用户在服务器上的数据，用于识别用户身份，下次带着cookie就不用再输密码啦  
+Session: 和cookie差不多，不过是在服务器端临时储存  
+
+### php
+我擦，没听懂
+### SQL
+我擦，也没听懂
+
+!!! 地址栏输入一个url回车后发生了什么（纯抄的）
+    - DNS解析（域名解析）：
+        浏览器会首先检查本地缓存中是否有该网址对应的IP地址。
+        如果没有，它会向DNS服务器发送请求，查询该网址的IP地址。
+        DNS服务器返回该网址对应的IP地址给浏览器。
+    - 建立TCP连接：
+        浏览器使用前面得到的IP地址，通过TCP/IP协议与目标服务器建立连接。
+        这包括三次握手过程：客户端发送SYN包，服务器返回SYN-ACK包，客户端再发送ACK包确认连接。
+    - 发送HTTP请求：
+        建立连接后，浏览器会发送一个HTTP请求到服务器。这个请求包含了请求方法（如GET或POST）、请求的资源路径以及一些头信息（如浏览器类型、可接受的文件类型等）。
+    - 服务器处理请求并返回响应：
+        服务器接收到请求后，会处理该请求，查找请求的资源（如HTML文件、图片、视频等）。
+        服务器会将找到的资源以及一些头信息（如内容类型、内容长度等）打包成HTTP响应，返回给浏览器。
+    - 浏览器接收响应并渲染页面：
+        浏览器接收到服务器返回的HTTP响应后，会解析响应的头信息和内容。
+        如果内容是HTML文件，浏览器会解析HTML并根据其中的指令（如加载CSS文件、执行JavaScript脚本等）进行渲染。
+        浏览器会逐步构建DOM树和CSSOM树，并根据它们生成渲染树，最后将内容绘制到屏幕上。
+    - 加载资源：
+        如果HTML文件中包含了其他资源（如图片、CSS、JavaScript等），浏览器会根据需要发送额外的HTTP请求来加载这些资源。
+        这些资源加载完成后，浏览器会继续渲染页面，更新显示内容。 整个过程通常在短时间内完成，以确保用户能够快速看到网页内容。
 
 ## Misc
 ### 解码工具
