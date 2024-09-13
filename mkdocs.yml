@@ -20,6 +20,7 @@ nav:
   - 老鼠: stories/Mice.md
 - 散文: 
   - thoughts/index.md
+  - 回声: thoughts/Echo.md
   - 痛风: thoughts/Gaut.md
   - 故乡: thoughts/Homesick.md
   - 羊杂: thoughts/Gut.md
@@ -31,12 +32,15 @@ nav:
     - CS61A: notes/ComputerScience/cs61a.md
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 数据结构基础: notes/ComputerScience/FDS.md
+    - 高级数据结构: notes/ComputerScience/ADS.md
   - 数理:
     - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
     - 普通物理学Ⅰ: notes/MathematicsAndPhysics/Physics1.md
     - 常微分方程: notes/MathematicsAndPhysics/ODE.md
     - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
+    - 概率论: notes/MathematicsAndPhysics/Probability.md
+    - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
   - CTF: notes/CTF.md
   - 托福相关: notes/Toefl.md
 - 随笔:
@@ -178,7 +182,7 @@ extra_css:
 
 extra_javascript:
   - javascript/katex.js 
-  # I've been meditating on the difference between MathJax and KaTeX.
+  # KaTeX更快，MathJaX支持更多东西并且不能复制，看你的需要咯
   # - javascript/mathjax.js
   # - https://polyfill.io/v3/polyfill.min.js?features=es6
   # - https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
