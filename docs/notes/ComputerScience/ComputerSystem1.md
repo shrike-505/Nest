@@ -8,7 +8,6 @@ tags:
 > 一想到这逆天课还要上两学期我就头疼
 # 计算机系统Ⅰ
 
-> 任课教师：常瑞、吴磊、冯博
 !!! abstract "成绩组成"
 	- 作业 10%
 	- Projects 共60%  
@@ -19,13 +18,13 @@ tags:
 		- Lab4 - 卷积核 8%  
 		- Lab5 - 汇编实现 10%  
 		- 大程 - Single Cycle CPU 12%  
-		- Bonus - TBD 10%  
+		- Bonus - Multi-Cycle CPU 10% 
 	- Final 30%
 
 !!! note "课程主页"
 	https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/
 
-## 超级有用
+
 [从0开始的Verilog体验](https://hdlbits.01xz.net/wiki/Main_Page)
 
 ## 理论课部分

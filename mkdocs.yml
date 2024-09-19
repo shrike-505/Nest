@@ -29,7 +29,6 @@ nav:
 - 笔记:
   - notes/index.md
   - Computer Science:
-    - CS61A: notes/ComputerScience/cs61a.md
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 数据结构基础: notes/ComputerScience/FDS.md
     - 高级数据结构: notes/ComputerScience/ADS.md
@@ -41,8 +40,11 @@ nav:
     - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
     - 概率论: notes/MathematicsAndPhysics/Probability.md
     - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
-  - CTF: notes/CTF.md
-  - 托福相关: notes/Toefl.md
+  - CTF101: notes/CTF.md
+  - Language:
+    - Python - CS61A: notes/Language/cs61a.md
+    - 托福: notes/Toefl.md
+    - Verilog - HDLBits: notes/Language/Verilog.md
 - 随笔:
     - casual/index.md
 - 杂:
