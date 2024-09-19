@@ -43,7 +43,7 @@ nav:
   - CTF101: notes/CTF.md
   - Language:
     - Python - CS61A: notes/Language/cs61a.md
-    - 托福: notes/Toefl.md
+    - 托福: notes/Language/Toefl.md
     - Verilog - HDLBits: notes/Language/Verilog.md
 - 随笔:
     - casual/index.md
