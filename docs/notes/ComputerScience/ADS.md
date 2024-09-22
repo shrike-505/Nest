@@ -46,6 +46,28 @@
         插入建树就行，记得每次插入后如果有失衡就立刻旋转，选B。
  -->
 
+```c
+Node RightRotate(Node UnbalancedNode){
+    Node Child = UnbalancedNode->LeftChild;
+    Node GrandChild = Child->RightChild;
+    Child->RightChild = UnbalancedNode;
+    UnbalancedNode->LeftChild = GrandChild;
+    Update(UnbalancedNode);
+    Update(Child);
+    return Child;
+}
+
+Node LeftRotate(Node UnbalancedNode){
+    Node Child = UnbalancedNode->RightChild;
+    Node GrandChild = Child->LeftChild;
+    Child->LeftChild = UnbalancedNode;
+    UnbalancedNode->RightChild = GrandChild;
+    Update(UnbalancedNode);
+    Update(Child);
+    return Child;
+}
+```
+
 ## Splay树
 是二叉搜索树的一种：
 
@@ -85,3 +107,24 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 令$\hat{c_i} - c_i = Credit_i = \Phi(D_i) - \Phi(D_{i-1})$
 
 其中$\Phi(D_i)$为第`i`次操作后该结构的“势能”（是该结构的某个特性的函数，如一棵树的节点个数或高度，一个栈的元素个数等），规定$\Phi(D_0)=0$。
+
+## 红黑树
+哨兵化：所有无子节点的子节点都变为无键值的NIL节点，将NIL节点视为叶子，这在性质5里很有用。
+
+拥有一个颜色Attribute的Balanced Binary Search Tree，满足以下五个条件：
+
+1. 每个节点是红色或黑色
+2. 根节点是黑色
+3. 每个叶子和NIL节点是黑色
+4. 每个红色节点的两个子节点都是黑色
+5. 从任一节点到其子树中每个叶节点（或NIL）的所有路径都包含相同数目的黑色节点
+
+定义黑高度：从某节点到叶子/NIL节点的黑色节点数目是该节点的黑高(Black Height)。BH(Tree) = BH(root)。  
+定义内/外部节点：NIL节点是外部节点，非NIL节点是内部节点。
+
+- Lemma：一棵有n个内部节点的红黑树的高度至多为$2\ln(n+1)$
+
+### 插入
+注意：插入的节点颜色永远是红色
+
+## B+树
