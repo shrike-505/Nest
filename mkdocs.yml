@@ -28,8 +28,11 @@ nav:
   - 希音: thoughts/Unspoken.md
 - 笔记:
   - notes/index.md
+  - AI:
+    - 数据分析与机器学习: notes/AI/DAML.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
+    - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
     - 数据结构基础: notes/ComputerScience/FDS.md
     - 高级数据结构: notes/ComputerScience/ADS.md
   - 数理:
@@ -44,11 +47,13 @@ nav:
     - Python - CS61A: notes/Language/cs61a.md
     - Verilog - HDLBits: notes/Language/Verilog.md # I hate you.
     - 托福: notes/Language/Toefl.md
+    - Fimpp: notes/Language/fimpp.md
   - CTF101: notes/CTF.md
 - 随笔:
     - casual/index.md
 - 杂:
   - others/index.md
+  - 记念: others/Quote.md
   - 年终总结: others/final.md
   - 暑假指南: others/summer_idle.md
   - Typst备忘录: others/TypstMemo.md
