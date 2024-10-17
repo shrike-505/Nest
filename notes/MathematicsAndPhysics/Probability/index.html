@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../img/PP.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1851,10 +1851,32 @@
 <li><span class="arithmatex">\(\int_{-\infty}^{+\infty}f(x)dx = 1\)</span></li>
 <li><span class="arithmatex">\(P(X \in B) = \int_{B}f(x)dx\)</span></li>
 </ol>
-<p>则<span class="arithmatex">\(X ~ f(x)\)</span>。</p>
 <div class="admonition defination">
 <p class="admonition-title">分布函数</p>
-<p><span class="arithmatex">\(F(x) = P(X \leq x) = \int_{-\infty}^{x}f(t)dt\)</span></p>
+<p>称 <span class="arithmatex">\(F(x) = P(\xi \leq x)\)</span> 为随机变量<span class="arithmatex">\(\xi(\omega)\)</span>的分布函数。</p>
+<ul>
+<li>具有以下性质：<ul>
+<li><span class="arithmatex">\(P(a \leq \xi \leq b) = F(b) - F(a)\)</span></li>
+<li>单调不减性：<span class="arithmatex">\(a \leq b \Rightarrow F(a) \leq F(b)\)</span></li>
+<li><span class="arithmatex">\(F(-\infty) = 0, F(+\infty) = 1\)</span></li>
+<li>右连续性：<span class="arithmatex">\(\lim_{x \to x_0^+}F(x) = F(x_0)\)</span></li>
+<li><span class="arithmatex">\(F(x)=\int_{-\infty}^{x}f(t)dt\)</span></li>
+</ul>
+</li>
+</ul>
+<details class="example">
+<summary>example</summary>
+<ul>
+<li>在三角形<span class="arithmatex">\(ABC\)</span>内任取一点<span class="arithmatex">\(P\)</span>，<span class="arithmatex">\(P\)</span>到<span class="arithmatex">\(BC\)</span>的距离为<span class="arithmatex">\(\xi\)</span>，求<span class="arithmatex">\(\xi\)</span>的分布函数。<ul>
+<li>设BC边上高为<span class="arithmatex">\(h\)</span>，<span class="arithmatex">\(x \leq 0\)</span>时，<span class="arithmatex">\(F(x) = 0\)</span>；<span class="arithmatex">\(0 \leq x \leq h\)</span>时，在三角形内作平行于BC的DE，其与BC的距离为<span class="arithmatex">\(x\)</span>，则<span class="arithmatex">\(\{\xi \leq x\}\)</span>表示点P落在梯形DECB内。</li>
+<li><img alt="" src="../image-7.png" /></li>
+<li><span class="arithmatex">\(P(\xi \leq x) = \frac{S_{DECB}}{S_{ABC}} = 1 - (1-\frac{x}{h})^2\)</span></li>
+<li><span class="arithmatex">\(x \geq h\)</span>时，<span class="arithmatex">\(F(x) = 1\)</span></li>
+<li>则<span class="arithmatex">\(F(x) = \begin{cases} 0 &amp; x \leq 0 \\ 1-(1-\frac{x}{h})^2 &amp; 0 \leq x \leq h \\ 1 &amp; x \geq h \end{cases}\)</span></li>
+</ul>
+</li>
+</ul>
+</details>
 </div>
 <ul>
 <li>常见的连续型随机变量：<ul>
@@ -1873,7 +1895,9 @@
 </li>
 <li>正态分布<ul>
 <li><span class="arithmatex">\(X\)</span>取实数，<span class="arithmatex">\(f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></li>
-<li><span class="arithmatex">\(P(a \leq X \leq b) = \int_{a}^{b}f(x)dx\)</span></li>
+<li>记为<span class="arithmatex">\(N(\mu,\sigma^2)\)</span></li>
+<li>对标准正态分布，<span class="arithmatex">\(\mu = 0, \sigma = 1\)</span>，则<span class="arithmatex">\(P(X \leq x) = \Phi(x)\)</span></li>
+<li>对于一般的<span class="arithmatex">\(\xi\)</span> ~ <span class="arithmatex">\(N(\mu,\sigma^2)\)</span>，记<span class="arithmatex">\(Z = \frac{\xi - \mu}{\sigma}\)</span>，则<span class="arithmatex">\(Z\)</span> ~ <span class="arithmatex">\(N(0,1)\)</span>, <span class="arithmatex">\(P(\xi \leq x) = \Phi(\frac{x-\mu}{\sigma})\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1907,7 +1931,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月12日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月18日</span>
   </span>
 
     
@@ -2075,7 +2099,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       

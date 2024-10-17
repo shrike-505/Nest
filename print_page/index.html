@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../img/PP.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1966,7 +1966,7 @@
 <hr />
 <h2 id="index-_2">更新记录<a class="headerlink" href="#index-_2" title="Permanent link">&para;</a></h2>
 <p>新增文章时间均为 <strong>创作时间</strong><br />
-目前共 55 个页面，约 86550 字，413 行代码。  </p>
+目前共 57 个页面，约 87558 字，413 行代码。  </p>
 <h3 id="index-2024">2024<a class="headerlink" href="#index-2024" title="Permanent link">&para;</a></h3>
 <div style="position: relative">
   <div class="timeline-wrapper">
@@ -5877,10 +5877,32 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 <li><span class="arithmatex">\(\int_{-\infty}^{+\infty}f(x)dx = 1\)</span></li>
 <li><span class="arithmatex">\(P(X \in B) = \int_{B}f(x)dx\)</span></li>
 </ol>
-<p>则<span class="arithmatex">\(X ~ f(x)\)</span>。</p>
 <div class="admonition defination">
 <p class="admonition-title">分布函数</p>
-<p><span class="arithmatex">\(F(x) = P(X \leq x) = \int_{-\infty}^{x}f(t)dt\)</span></p>
+<p>称 <span class="arithmatex">\(F(x) = P(\xi \leq x)\)</span> 为随机变量<span class="arithmatex">\(\xi(\omega)\)</span>的分布函数。</p>
+<ul>
+<li>具有以下性质：<ul>
+<li><span class="arithmatex">\(P(a \leq \xi \leq b) = F(b) - F(a)\)</span></li>
+<li>单调不减性：<span class="arithmatex">\(a \leq b \Rightarrow F(a) \leq F(b)\)</span></li>
+<li><span class="arithmatex">\(F(-\infty) = 0, F(+\infty) = 1\)</span></li>
+<li>右连续性：<span class="arithmatex">\(\lim_{x \to x_0^+}F(x) = F(x_0)\)</span></li>
+<li><span class="arithmatex">\(F(x)=\int_{-\infty}^{x}f(t)dt\)</span></li>
+</ul>
+</li>
+</ul>
+<details class="example">
+<summary>example</summary>
+<ul>
+<li>在三角形<span class="arithmatex">\(ABC\)</span>内任取一点<span class="arithmatex">\(P\)</span>，<span class="arithmatex">\(P\)</span>到<span class="arithmatex">\(BC\)</span>的距离为<span class="arithmatex">\(\xi\)</span>，求<span class="arithmatex">\(\xi\)</span>的分布函数。<ul>
+<li>设BC边上高为<span class="arithmatex">\(h\)</span>，<span class="arithmatex">\(x \leq 0\)</span>时，<span class="arithmatex">\(F(x) = 0\)</span>；<span class="arithmatex">\(0 \leq x \leq h\)</span>时，在三角形内作平行于BC的DE，其与BC的距离为<span class="arithmatex">\(x\)</span>，则<span class="arithmatex">\(\{\xi \leq x\}\)</span>表示点P落在梯形DECB内。</li>
+<li><img alt="" src="../notes/MathematicsAndPhysics/image-7.png" /></li>
+<li><span class="arithmatex">\(P(\xi \leq x) = \frac{S_{DECB}}{S_{ABC}} = 1 - (1-\frac{x}{h})^2\)</span></li>
+<li><span class="arithmatex">\(x \geq h\)</span>时，<span class="arithmatex">\(F(x) = 1\)</span></li>
+<li>则<span class="arithmatex">\(F(x) = \begin{cases} 0 &amp; x \leq 0 \\ 1-(1-\frac{x}{h})^2 &amp; 0 \leq x \leq h \\ 1 &amp; x \geq h \end{cases}\)</span></li>
+</ul>
+</li>
+</ul>
+</details>
 </div>
 <ul>
 <li>常见的连续型随机变量：<ul>
@@ -5899,7 +5921,9 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 </li>
 <li>正态分布<ul>
 <li><span class="arithmatex">\(X\)</span>取实数，<span class="arithmatex">\(f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></li>
-<li><span class="arithmatex">\(P(a \leq X \leq b) = \int_{a}^{b}f(x)dx\)</span></li>
+<li>记为<span class="arithmatex">\(N(\mu,\sigma^2)\)</span></li>
+<li>对标准正态分布，<span class="arithmatex">\(\mu = 0, \sigma = 1\)</span>，则<span class="arithmatex">\(P(X \leq x) = \Phi(x)\)</span></li>
+<li>对于一般的<span class="arithmatex">\(\xi\)</span> ~ <span class="arithmatex">\(N(\mu,\sigma^2)\)</span>，记<span class="arithmatex">\(Z = \frac{\xi - \mu}{\sigma}\)</span>，则<span class="arithmatex">\(Z\)</span> ~ <span class="arithmatex">\(N(0,1)\)</span>, <span class="arithmatex">\(P(\xi \leq x) = \Phi(\frac{x-\mu}{\sigma})\)</span></li>
 </ul>
 </li>
 </ul>
@@ -5915,7 +5939,7 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 </blockquote>
 <h1 id="notes-mathematicsandphysics-physics2-iih">普通物理学Ⅱ（H）<a class="headerlink" href="#notes-mathematicsandphysics-physics2-iih" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 270 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 322 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：王业伍</p>
@@ -5943,8 +5967,25 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 </div>
 <p>Gauss 定理和库仑定律求电场强度：</p>
 <p><img alt="" src="../notes/MathematicsAndPhysics/image-6.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">小测题！</p>
+</div>
 <h3 id="notes-mathematicsandphysics-physics2-_2">电势<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_2" title="Permanent link">&para;</a></h3>
-<p>半径为R，带电量q的均匀带电球壳（r&gt;R）：<span class="arithmatex">\(U(r) = \int_r^{\infty} \frac{kq}{r^2} dr = \frac{kq}{r}\)</span>。</p></section><h1 class='nav-section-title-end'>Ended: 数理</h1>
+<p>半径为R，带电量q的均匀带电球壳（r&gt;R）：<span class="arithmatex">\(U(r) = \int_r^{\infty} \frac{kq}{r^2} dr = \frac{kq}{r}\)</span>。</p>
+<p>TBD</p>
+<h3 id="notes-mathematicsandphysics-physics2-_3">电容<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_3" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(C = \frac{q}{U} = 4\pi \varepsilon_0 r\)</span>。</p>
+<ul>
+<li>平行板：</li>
+<li><img alt="" src="../notes/MathematicsAndPhysics/image-8.png" /></li>
+<li>圆柱形电容：</li>
+<li><img alt="" src="../notes/MathematicsAndPhysics/image-9.png" /></li>
+<li>球状电容：</li>
+<li><img alt="" src="../notes/MathematicsAndPhysics/image-10.png" /></li>
+</ul>
+<p>并联总电容：<span class="arithmatex">\(C = \Sigma C_i\)</span>。串联总电容：<span class="arithmatex">\(\frac{1}{C} = \Sigma \frac{1}{C_i}\)</span>。</p>
+<p>!!! example '例'
+    <img alt="" src="../notes/MathematicsAndPhysics/image-11.png" /></p></section><h1 class='nav-section-title-end'>Ended: 数理</h1>
                         <h2 class='nav-section-title' id='section-language'>
                             Language <a class='headerlink' href='#section-language' title='Permanent link'>↵</a>
                         </h2>
@@ -6308,10 +6349,11 @@ Notice the rest and the first are both possible to be a Link instance.</p>
 </div>
 <h1 id="notes-language-toefl-_1">托福阅读<a class="headerlink" href="#notes-language-toefl-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 166 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 172 个字 </p>
 </div>
 <h2 id="notes-language-toefl-reading">Reading<a class="headerlink" href="#notes-language-toefl-reading" title="Permanent link">&para;</a></h2>
 <p>通过上下文中带有并列或转折意义的连词推测词义</p>
+<p>Cloud nine: extremely happy or satisfied</p>
 <h2 id="notes-language-toefl-listening">Listening<a class="headerlink" href="#notes-language-toefl-listening" title="Permanent link">&para;</a></h2>
 <h3 id="notes-language-toefl-_2">做笔记相关：<a class="headerlink" href="#notes-language-toefl-_2" title="Permanent link">&para;</a></h3>
 <p>地名、人名、文章标题、课程名称、课题研究方向、论文名称。<br />
@@ -6797,7 +6839,7 @@ fit: str,
     <script id="__config" type="application/json">{"base": "/", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       
