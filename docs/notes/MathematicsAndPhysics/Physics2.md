@@ -38,6 +38,26 @@ Gauss 定理和库仑定律求电场强度：
 
 ![](image-6.png)
 
+!!! note "小测题！"
+    
+
 ### 电势
 
 半径为R，带电量q的均匀带电球壳（r>R）：$U(r) = \int_r^{\infty} \frac{kq}{r^2} dr = \frac{kq}{r}$。
+
+TBD
+
+### 电容
+$C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
+
+- 平行板：
+  - ![](image-8.png)
+- 圆柱形电容：
+  - ![](image-9.png)
+- 球状电容：
+  - ![](image-10.png)
+
+并联总电容：$C = \Sigma C_i$。串联总电容：$\frac{1}{C} = \Sigma \frac{1}{C_i}$。
+
+!!! example '例'
+    ![](image-11.png)

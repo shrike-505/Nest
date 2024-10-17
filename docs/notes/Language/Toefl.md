@@ -16,6 +16,8 @@ tags:
 
 通过上下文中带有并列或转折意义的连词推测词义
 
+Cloud nine: extremely happy or satisfied
+
 ## Listening
 
 ### 做笔记相关：

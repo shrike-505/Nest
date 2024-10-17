@@ -24,3 +24,7 @@ $TP_{max} = \lim_{n\to\infty} \frac{n}{T} = \frac{1}{\Delta t_0}$
 定义加速比（Speedup/SP）：$S = \frac{Exetime_{non-pipe}}{Exetime_{pipe}} = \frac{nm\Delta t_0}{(m+n-1)\Delta t_0} = \frac{n}{n+m-1}$
 
 效率$E = \frac{SP}{m} = TP \cdot \Delta t_0$
+
+### 非线性流水线
+
+[看这篇文章](https://blog.csdn.net/rizero/article/details/106740895)
