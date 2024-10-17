@@ -55,10 +55,23 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
 2. $\int_{-\infty}^{+\infty}f(x)dx = 1$
 3. $P(X \in B) = \int_{B}f(x)dx$
 
-则$X ~ f(x)$。
-
 !!! defination "分布函数"
-    $F(x) = P(X \leq x) = \int_{-\infty}^{x}f(t)dt$
+    称 $F(x) = P(\xi \leq x)$ 为随机变量$\xi(\omega)$的分布函数。
+
+    - 具有以下性质：
+        - $P(a \leq \xi \leq b) = F(b) - F(a)$
+        - 单调不减性：$a \leq b \Rightarrow F(a) \leq F(b)$
+        - $F(-\infty) = 0, F(+\infty) = 1$
+        - 右连续性：$\lim_{x \to x_0^+}F(x) = F(x_0)$
+        - $F(x)=\int_{-\infty}^{x}f(t)dt$
+    ??? example "example"
+        
+        - 在三角形$ABC$内任取一点$P$，$P$到$BC$的距离为$\xi$，求$\xi$的分布函数。
+            - 设BC边上高为$h$，$x \leq 0$时，$F(x) = 0$；$0 \leq x \leq h$时，在三角形内作平行于BC的DE，其与BC的距离为$x$，则$\{\xi \leq x\}$表示点P落在梯形DECB内。
+            - ![](image-7.png)
+            - $P(\xi \leq x) = \frac{S_{DECB}}{S_{ABC}} = 1 - (1-\frac{x}{h})^2$
+            - $x \geq h$时，$F(x) = 1$
+            - 则$F(x) = \begin{cases} 0 & x \leq 0 \\ 1-(1-\frac{x}{h})^2 & 0 \leq x \leq h \\ 1 & x \geq h \end{cases}$
 
 - 常见的连续型随机变量：
     - 均匀分布
@@ -72,7 +85,9 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
         - 无记忆性：$P(X \gt s+t|X \gt s) = P(X \gt t)$
     - 正态分布
         - $X$取实数，$f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
-        - $P(a \leq X \leq b) = \int_{a}^{b}f(x)dx$
+        - 记为$N(\mu,\sigma^2)$
+        - 对标准正态分布，$\mu = 0, \sigma = 1$，则$P(X \leq x) = \Phi(x)$
+        - 对于一般的$\xi$ ~ $N(\mu,\sigma^2)$，记$Z = \frac{\xi - \mu}{\sigma}$，则$Z$ ~ $N(0,1)$, $P(\xi \leq x) = \Phi(\frac{x-\mu}{\sigma})$
 
 ### 一般随机变量
 
