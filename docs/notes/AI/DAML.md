@@ -1,6 +1,6 @@
 # Data Analysis and Machine Learning
 
-!!! note 'Overview'
+!!! note "Overview"
     国际化拔尖人才培养课程：数据分析与机器学习。  
     "Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
 
