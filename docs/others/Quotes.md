@@ -1,3 +1,7 @@
+---
+    comments: true
+---
+
 # 记念
 
 > Credit to [Yu](https://zjyinzju.github.io/%E8%AE%B0%E5%BF%B5/), recalling my whim to gathering quotes, again.
@@ -7,7 +11,7 @@
     使用分割线以区分来自不同创作者的内容。
 
 有一次，父亲告诉我，年轻时他很喜欢晚春的黄昏，感觉世界正向无尽之处延展，野火烧亮每一道深渊。他说的想必是更年轻的时候——真正的年轻，你不会在意现实中暗藏的任何棱角，受伤也不过是诸多体验的一种。
-<p align=right>三三 《晚春》</p>
+<p align=right>三三《晚春》</p>
 
 ---
 
@@ -17,7 +21,7 @@
 “我不信这个，我没有信仰，我就信人死灯灭。”  
 “如果没灭呢，就是换了一灯座儿。”  
 
-<p align=right>双雪涛 《天吾手记》</p>
+<p align=right>双雪涛《天吾手记》</p>
 
 ---
 
