@@ -49,4 +49,45 @@ Learning: Improvement.
     - Association: People who read this book also read...
     - Email spam classification
 
-## Lec2: Tidy Data
+## Lec2: Computational Thinking & Tidy Data
+
+> If there is no action, there is no value.
+
+### 计算思维
+
+四个方面：
+
+- Decomposition: Divide and Conquer
+- Abstraction: Separate the "What" from the "How"
+- Recognition: Look for similarities between problems
+- Generalization: Adapt previous solutions to new problems
+- Computation: How to express solution unambiguously
+
+### Abstraction
+
+~~CS61A讲过了（~~
+
+> This is the approach of stratified design, the notion that a complex system should be structured as a sequence of levels that are described using a sequence of languages.   -- Abelson and Sussman
+
+即复杂的系统在设计/阐述时应该被分层，每一层用不同的语言描述。
+
+e.g. Internet的七层结构，Git分为Porcelain（面向用户）和Plumbing（Core Git）两层。
+
+### EFFECTIVE VISUALIZATION
+
+Tidy Data: 数据的组织格式，使得数据更容易被处理。（例如用表格）
+
+!!! note "e.g."
+    即便是表格也有messy的，如下图，蓝色表格对人类来说是更可读的，而绿色（Tidy Ver.）对计算机更友好。  
+    ![](DAML3.png)
+
+
+Data Analysis中注意的三个属性：
+
+- Variable: 和编程语言中的变量不同，这里指的是**可以被测量的性质或量**
+- Value: 某个时刻测量Variable的结果
+- Observation:  The values of several variables measured under similar conditions.
+
+### RESHAPING DATAFRAMES
+
++ Column headers are values, not variable names 
