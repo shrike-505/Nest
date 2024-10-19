@@ -8,6 +8,26 @@
 
 # 计算机系统 Ⅱ
 
+## RISC-V Assembly
+（其实是系统一的东西）32位指令
+
+- Opcode: 操作码，用于识别指令类型
+- rs1: the first register source operand
+- rs2: the second register source operand
+- rd: the register destination operand
+- funct3/7: （从Opcode的指令类型中）确定特定的指令
+- imm: immediate value or address
+
+![](CS2.png)
+
+寄存器与内存：
+
+![](CS3.png)
+
+一些例子：
+
+![](CS4.png)
+
 ## Pipelining
 
 通过Overlapping的方式，将多个指令的多个阶段同时进行，以提高CPU的效率。
