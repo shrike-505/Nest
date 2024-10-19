@@ -1770,7 +1770,7 @@
 使用分割线以区分来自不同创作者的内容。</p>
 </details>
 <p>有一次，父亲告诉我，年轻时他很喜欢晚春的黄昏，感觉世界正向无尽之处延展，野火烧亮每一道深渊。他说的想必是更年轻的时候——真正的年轻，你不会在意现实中暗藏的任何棱角，受伤也不过是诸多体验的一种。</p>
-<p align=right>三三 《晚春》</p>
+<p align=right>三三《晚春》</p>
 
 <hr />
 <p>“不管怎么说，蒋不凡，如果有那玩意的话，我们是不是得下地狱？大帅，张学良都在地狱里等着我们呐。”  <br />
@@ -1778,7 +1778,7 @@
 “我问你呐。”<br />
 “我不信这个，我没有信仰，我就信人死灯灭。”<br />
 “如果没灭呢，就是换了一灯座儿。”  </p>
-<p align=right>双雪涛 《天吾手记》</p>
+<p align=right>双雪涛《天吾手记》</p>
 
 <hr />
 <p>The Figurines Won't Win Her Back: they do nothing.</p>
@@ -1829,6 +1829,53 @@
 
 
 
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="shrike-505/shrike-505.github.io"
+        data-repo-id="R_kgDOKfuSyA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKfuSyM4Ca9sf"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
