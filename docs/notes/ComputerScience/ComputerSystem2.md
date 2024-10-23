@@ -48,3 +48,40 @@ $TP_{max} = \lim_{n\to\infty} \frac{n}{T} = \frac{1}{\Delta t_0}$
 ### 非线性流水线
 
 [看这篇文章](https://blog.csdn.net/rizero/article/details/106740895)
+
+## Operating System
+### ELF
+
+C程序编译为可执行文件的四个过程：
+
+- 预处理 —— 宏展开
+- 编译 —— 源代码转为汇编
+- 汇编 —— 汇编转为机器码
+- 链接 —— 将多个目标文件链接为一个可执行文件，链接库
+
+最终的可执行文件包含一个 crt(C runtime)，这个 crt 内会调用 main 函数。
+
+ELF - Executable and Linkable Format 二进制文件内包含如下段（Section）：
+
+- .text: 代码段
+- .rodata: read only 数据段
+- .data: 数据段
+- .bss: 未初始化数据段
+
+!!! note "Quiz"
+    ```c
+    // 如下均定义/声明在全局作用域
+    int a = 1; // 存储在.data段
+    int b; // 存储在.bss段
+    const int c = 2; // 存储在.rodata段
+    ```
+
+#### Memory Layout 内存布局
+
+![](CS5.png)
+
+在二进制文件运行时的内存布局。
+
+注意 stack 从高地址向低地址增长，heap 从低地址向高地址增长。
+
+![](CS6.png)

@@ -33,4 +33,10 @@ The Figurines Won't Win Her Back: they do nothing.
 
 You don't have to take him down. He's already down.
 
-<p align=right><i>Disco Elysium</i>, ZA/UM</p>
+Welcome to the wake-up club, brother.
+
+我是人类的革命公仆。我会解放人类，废除阶级制度。我会让死人复活。
+
+好吧，我这么说只是为了结束这次的讨论:从理论上讲，如果我是一个失足小青年——如果我已经走上了这条路——那我觉得两种声明中，‘弱水三千只取一尿饮’是比较有力的那个。
+
+<p align=right><i>Disco Elysium</i>, ZA/UM （轻语工作室 译）</p>
