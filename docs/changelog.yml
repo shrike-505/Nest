@@ -1,7 +1,15 @@
 - "2024":
+  - "2024.10.29":
+    - newart:
+        text: 🛣️连霍 —— 西极道九千九百里。
+        href: /stories/G30
+  - "2024.10.15":
+    - newpage:
+        text: 更新国际化课程笔记：数据分析与机器学习
+        href: /notes/AI/DAML
   - "2024.9.16":
     - newpage:
-        text: 更新HDLBits题解
+        text: 更新 HDLBits 题解
         href: /notes/Language/Verilog
   - "2024.9.13":
     - newart:
@@ -9,7 +17,7 @@
         href: /thoughts/Echo
   - "2024.7.20":
     - newpage:
-        text: CTF笔记堂堂完结
+        text: CTF 笔记堂堂完结
         href: /notes/CTF
   - "2024.5.11":
     - function: 添加了一些插件
