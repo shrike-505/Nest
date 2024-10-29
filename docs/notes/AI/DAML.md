@@ -91,3 +91,42 @@ Data Analysis中注意的三个属性：
 ### RESHAPING DATAFRAMES
 
 + Column headers are values, not variable names 
+
+![](DAML4.png)
+
+## Lec 3: Reshape Data - Introduction to Visualization
+
+> Creativity, Curiosity, and Compassion
+
+!!! example "e.g."
+    Subway Map: put you in other's shoes.  
+
+Data gathered: About Movies.  
+![alt text](DAML5.png)
+
+面对这些数据，我们可以提出很多问题，例如：性别不同的人分别喜欢看什么电影？年龄对电影评价的影响如何？等等。然后可以造一个Tidy的表格：
+
+| MovieID | Title | Male_Rating | Female_Rating | Diff |
+
+### Effective Mapping
+
+Types of Data:
+
+![](DAML6.png)
+
+- N(Normals)
+    - Operation: =, !=
+    - e.g.: 邮政编码，血型，瞳孔颜色，种族，政党
+    - 根本无法量化的特性
+- O(Ordered)
+    - Operation: =, !=, >(<)(=)
+    - e.g.: "Low/High/Medium Income Level". 满意程度（高，中，低）
+    - 具有分级（Order）的大致范围
+- Q(Interval - Location of zero arbitrary - 0 只是一个标记点，实则也是一个该量的值)
+    - Operation: =, !=, >(<)(=), -
+    - e.g.: temperature（摄氏度与华氏度）, pH, SAT score
+- Q(Ratio - Location of 0 fixed - 0 代表该量的完全缺失)
+    - Operation: =, !=, >(<)(=), -, /
+    - e.g.: Physical measurements(mass, length, 开尔文温度)
+    - 换句话说，不存在负数（？）
+
