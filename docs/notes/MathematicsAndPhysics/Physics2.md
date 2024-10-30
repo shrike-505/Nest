@@ -48,7 +48,7 @@ Gauss 定理和库仑定律求电场强度：
 TBD
 
 ### 电容
-$C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
+半径为$r$的孤立球形导体：$C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
 
 - 平行板：
   - ![](image-8.png)
@@ -59,5 +59,58 @@ $C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
 
 并联总电容：$C = \Sigma C_i$。串联总电容：$\frac{1}{C} = \Sigma \frac{1}{C_i}$。
 
-!!! example '例'
+!!! example "例"
     ![](image-11.png)
+
+介电体处于电场中时，会在内部产生极化电荷，从而减小电场强度。极化电场$E_p = \frac{E}{k_e}$。$k_e$称为相对介电常数（Relative dielectric constant）。
+
+有了介电体后，电容变为$C = k_e \varepsilon_0 \frac{S}{d}$。
+
+![](image-12.png)
+
+考虑真空中两个由无数电偶极子组成的平行圆板，如上图所示，定义$\overrightarrow{P} = \frac{\Sigma \overrightarrow{p}}{V}$（$\overrightarrow{p}$为电偶极矩，$\Delta V$ 为囊括的体积），则有$\overrightarrow{P} = \varepsilon_0 \chi_e \overrightarrow{E}$，其中$\chi_e$为电极化率。
+
+#### 介电质中的Gauss 定理
+TBD，以及电位移矢量的内容。
+
+!!! example "例"
+    ![](image-13.png)  
+    求这个具有两层介电体的电容以及表面的电荷密度。
+
+### 电流
+电流定义：$I = \frac{dq}{dt}$。
+
+电流密度：$\overrightarrow{j} = \frac{dI}{dS} \overrightarrow{n}$。
+
+得到电荷守恒：
+
+![](image-14.png)
+
+若 $\frac{dq}{dt} = 0$，则上式为0.
+
+平均而言，电流中电子以**漂移速度**$v_d$运动，$I = neSv_d$，则有$\overrightarrow{j} = - ne\overrightarrow{v_d}$。
+
+#### 欧姆定律
+![](image-15.png)
+这里的$\sigma$为电导率，$\rho$为电阻率，$\sigma = \frac{1}{\rho}$。
+
+#### 基尔霍夫定律
+
+- Junction定律：$i = \Sigma i_k$。
+- Loop定律：在闭合回路中， $\Sigma U_k = \Sigma \epsilon_k + \Sigma i R_k = 0$。
+
+!!! example "例"
+    ![](image-16.png)  
+    注意这里i1 i2 i3的方向是自己假设的，然后运用基尔霍夫定律进行计算就行了。
+
+#### RC电路
+结合了电容和电阻的电路。
+
+- 充电时：![](image-17.png)
+- 放电时：![](image-18.png)
+
+### 磁场
+
+高中就不会的霍尔效应：
+
+![](image-19.png)

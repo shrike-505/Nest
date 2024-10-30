@@ -249,3 +249,26 @@ How to Merge(递归版本):
 ### 二项堆的操作
 
 TBD
+
+## 回溯
+TBD
+### α-β剪枝
+
+Alpha 剪枝是指对于 min 结点，如果其兄弟结点的值比当前结点的值大，那么就不再搜索当前结点的子结点；Beta 剪枝是指对于 max 结点，如果其兄弟结点的值比当前结点的值小，那么就不再搜索当前结点的子结点。
+
+!!! note "一道作业题"
+    ![](ADS3.png)
+
+## 分治
+TBD
+
+### Master Theorem 主定理
+主定理适用于求解如下递归式算法的时间复杂度：$T(n) = aT(\frac{n}{b}) + f(n)$
+
+那么
+
+- 若对于某个大于0的常数 $\epsilon$ 有 $f(n) = O(n^{log_b{a}-\epsilon})$，那么 $T(n) = \Theta(n^{log_b{a}})$
+- 若 $f(n) = \Theta(n^{log_b{a}})$，那么 $T(n) = \Theta(n^{log_b{a}} \log n)$
+- 若对于某个大于0的常数 $\epsilon$ 有 $f(n) = \Omega(n^{log_b{a}+\epsilon})$，且对于某个常数 $c < 1$ 和所有足够大的 $n$ 有 $a f(\frac{n}{b}) \leq c f(n)$，那么 $T(n) = \Theta(f(n))$
+
+![](ADS4.png)
