@@ -125,11 +125,16 @@ And I will always, always, always #answer it.
 ```
 ![](typ3.png)
 
-image: `image(
-str,
-format: autostr,
-width: autorelative,
-height: autorelative,
-alt: nonestr,
-fit: str,
-) -> content`
+`image`函数怎么用: 
+```
+image(
+	str,
+	format: autostr,
+	width: autorelative,
+	height: autorelative,
+	alt: nonestr,
+	fit: str,
+) -> content
+```
+
+Table Decoration: https://typst.app/docs/guides/table-guide/
