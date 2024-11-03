@@ -76,6 +76,22 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
     const int c = 2; // 存储在.rodata段
     ```
 
+- Static linking
+    - All needed code is packed in single binary, leading to large binary
+    - `_start` is executed after evecve system call
+    - ![](Sys7.png)
+- Dynamic linking
+    - Reuse libraries to reduce ELF file size
+    - Howto resolve library calls?
+        - It is the loader who resolves lib calls.
+    - Entry point 是 loader
+
+![](Sys8.png)
+
+![](Sys9.png)
+
+`_libc_start_main`: Setup environment and stack, then call main
+
 #### Memory Layout 内存布局
 
 ![](CS5.png)
@@ -85,3 +101,89 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 注意 stack 从高地址向低地址增长，heap 从低地址向高地址增长。
 
 ![](CS6.png)
+
+存储在Memory中的数据，基本单元是Byte，每个数据都被一个地址标记。
+
+> DMA(Direct Memory Access)：设备直接访问内存，不经过CPU。
+
+### OS Structure
+操作系统是一种“Resource Allocator and Abstracter”，它管理硬件资源，提供抽象接口。
+
+![](Sys3.png)
+
+### Event
+Event 分为 Interrupt - 由硬件引起，Exception - 由软件引起。
+
+一些指令会被限制：只有OS能够执行它们（Privileged Instructions），CPU是如何判断当前状态能否执行这些指令的？
+
+- All modern processors support (at least) two modes of execution:
+    - User mode: In this mode protected instructions cannot be executed
+    - Kernel mode: In this mode all instructions can be executed
+    - User code executes in user mode
+    - OS code executes in kernel mode
+    - The mode is indicated by a status bit in a protected control register
+        - The CPU checks this bit before executing a protected instruction
+
+![](Sys4.png)
+
+Event是操作流中“不被预期”的情况，CPU会根据Event的类型，调用相应的Handler。
+
+- An event stops execution, changes mode, and changes context 
+- The kernel defines a handlerfor each event type
+
+OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
+
+特殊的 Event：
+
+- System Call - 会导致Trap -> System Call Handler
+    - 发生于User Mode下需要执行Privileged Instructions的情况
+        - e.g., to create a process, write to disk, read from the network card
+        - 每种ISA都有自己的System Call
+        - ![](Sys6.png)
+        - 为什么`printf`需要SysCall `libc_write`？
+            - 打印到终端这种Device I/O需要 Kernel Mode (Privileged Instructions)
+- Timer Interrupt - 会导致Regularly Interrupt -> Timer Interrupt Handler
+
+![](Sys5.png)
+
+### System Call
+
+`strace`可以查看程序的System Call。
+
+https://www.cnblogs.com/machangwei-8/p/10388883.html
+
+Types of System Calls:
+
+- Process control
+    - create process, terminate process
+    - end, abort
+    - load, execute
+    - get process attributes, set process attributes
+    - wait for time
+    - wait event, signal event
+    - allocate and free memory
+    - Dump memory if error
+    - Debuggerfor determining bugs, single step execution
+    - Locks for managing access to shared data between processes
+- File management
+    - create file, delete fileopen, close fileread, write, reposition
+    - get and set file attributes
+- Device management
+    - request device, release device
+    - read, write, repositionget device attributes, set device attributes
+    - logically attach or detach devices
+- Information maintenance
+    - get time or date, set time or date
+    - get system data, set system data
+    - get and set process, file, or device attributes
+- Communications
+    - create, delete communication connection
+    - send, receive messages if message passing model to host nameor process name
+        - From client to server
+    - Shared-memory model create and gain access to memory regions
+    - transfer status information
+    - attach and detach remote devices
+- Protection
+    - Control access to resources
+    - Get and set permissions
+    - Allow and deny user access
