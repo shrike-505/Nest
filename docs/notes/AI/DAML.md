@@ -1,7 +1,7 @@
 # Data Analysis and Machine Learning
 
 !!! note "Overview"
-    国际化拔尖人才培养课程：数据分析与机器学习。  
+    国际化拔尖人才培养课程：数据分析与机器学习。讲得很浅。  
     "Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
 
 
@@ -91,6 +91,7 @@ Data Analysis中注意的三个属性：
 ### RESHAPING DATAFRAMES
 
 + Column headers are values, not variable names 
++ Row headers are Observations.
 
 ![](DAML4.png)
 
@@ -129,4 +130,46 @@ Types of Data:
     - Operation: =, !=, >(<)(=), -, /
     - e.g.: Physical measurements(mass, length, 开尔文温度)
     - 换句话说，不存在负数（？）
+
+## Lec 4: Overview of Machine Learning
+
+Value Proposition (end-to-end)
+
+- Pain Point
+- Problem Formulation (measure the pain)
+- Solution Development
+- Deployment
+- Evaluation (reduction in pain)
+- Maintenance / Sustainability
+
+### Measurement of learning
+
+用P表示对某程序的表现衡量，定义经历E和某类任务T，则$P(T,E+\Delta) > P(T,E)$。
+
+ML TASKS:
+
+- Classification / Regression
+  - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
+- Clustering
+  - group a bunch of entities that share common features
+- Optimization
+  - from amongst a set of alternatives pick the “best” while balancing competing value metrics
+- Forecasting
+  - based on the past, forecast the future
+- Recommendation
+  - based on prior behavior rank order candidate preferences
+- Association
+  - identify which items co-occur e.g., bread and peanut butter
+
+### Types of Learning
+- Supervised Learning
+  - We know both the input and the output
+  - 'Teacher'
+- Unsupervised Learning
+  - We only know the input
+- Reinforcement
+  - We know what is desired (correct) and what is not desired
+  - the ‘credit/blame assignment’ problem
+
+### Supervised Learning(监督学习)
 
