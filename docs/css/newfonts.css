@@ -1,7 +1,7 @@
 :root {
-    --md-text-font: "JetBrains Mono", "Noto Serif SC"; 
-    --md-code-font: "JetBrains Mono";
-  }  
+    --md-text-font: "Noto Serif", "Noto Serif SC"; 
+    --md-code-font: "Victor Mono";
+}  
 
 div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4, h1,
 .md-ellipsis,
