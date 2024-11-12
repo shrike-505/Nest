@@ -10,6 +10,9 @@
 
 > 任课教师：王业伍
 
+!!! note "Links"
+    不好，有神：https://www.kailqq.cc/NOTE/Physics/
+
 ## 电磁学
 电偶极子：一对间距为$d$，电荷量为$q$的异号电荷构成的偶极子。  
 电偶极矩：$\overrightarrow{p}=q \overrightarrow{d}$。
@@ -37,8 +40,6 @@
 Gauss 定理和库仑定律求电场强度：
 
 ![](image-6.png)
-
-!!! note "小测题！"
     
 
 ### 电势
@@ -143,3 +144,20 @@ $\oint \overrightarrow{B} \cdot d\overrightarrow{l} = \mu_0 I$。
 ### 法拉第电磁感应定律
 
 定义磁通量：$\Phi = \int \overrightarrow{B} \cdot d\overrightarrow{A}$。
+
+# 小测部分
+
+## 第一次小测
+
+[实心带电球体静电能](https://chiichen.github.io/notes/College-Physics/Formula-Derivation/Electrostatic-energy-of-a-solid-charged-sphere.html#_3-%E9%9D%99%E7%94%B5%E8%83%BD)
+
+## 第二次小测
+
+![](image-22.png)
+
+已知这样的一对非平行极板，求其电容，其中上板横向纵向长度 $a, b$, 上板最低点与下板距离 $d$，最高点与下板距离 $d+h$ 已知，$h<<d$
+
+??? note "解"
+    先定义一下上板倾角为 $\theta$，下板横向长为 $x$。则由于 $d$ 很小，倾角趋于0，有近似 $\tan \theta = \sin \theta = \frac{h}{a}$，那么取下板沿 $x$ 方向很小的一截 $dx$，这一截的下板面积是 $bdx$，且近似与上板平行（上板平行重合的这一小截也视作面积是 $bdx$，则由平行极板电容公式 $C = \frac{\epsilon_0 A}{d}$，得到$dC=\frac{\epsilon_0 bdx}{d+\tan \theta x}$  
+    直接对 $x$ 从0到 $a$ 积分，  
+    得到 $C = \int_0^a \frac{\epsilon_0 bdx}{d+\frac{h}{a} x} = \frac {\epsilon_0 a b}{h} \cdot \ln \frac{h+d}{d}$

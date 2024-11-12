@@ -25,6 +25,11 @@
   image: img/kailqq.png
   url: https://www.kailqq.cc/
 
+- title: JazZyzJ
+  content: 滚烫的人生 即使辛苦
+  image: img/jazz.jpg
+  url: https://jazzyzj.github.io/
+
 ::/cards::
 
 ???+ quote "友链样式"
