@@ -177,8 +177,10 @@ markdown_extensions:
   # - hbfm.inline_list
 
 extra_css:
-  - https://fonts.font.im/css2?family=Noto+Serif+SC
-  - https://fonts.font.im/css?family=Gloria+Hallelujah
+  - https://fonts.loli.net/css2?family=Noto+Serif
+  - https://fonts.loli.net/css2?family=Victor+Mono
+  - https://fonts.loli.net/css2?family=Noto+Serif+SC
+  - https://fonts.loli.net/css2?family=Gloria+Hallelujah&display=swap
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
