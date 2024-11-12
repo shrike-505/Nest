@@ -114,3 +114,32 @@ TBD，以及电位移矢量的内容。
 高中就不会的霍尔效应：
 
 ![](image-19.png)
+
+磁场是非保守场，所以没有势能的概念。
+
+#### Biot-Savart 定律
+定义电流元$Id\overrightarrow{l}$，则该电流元产生的磁场大小为$d\overrightarrow{B} = \frac{\mu_0}{4\pi} \frac{Id\overrightarrow{l} \times \overrightarrow{r}}{r^3}$。
+
+则有$\overrightarrow{B} = \int d\overrightarrow{B} = \frac{\mu_0}{4\pi} \int \frac{Id\overrightarrow{l} \times \overrightarrow{r}}{r^3}$。
+
+$\mu_0 = 4\pi \times 10^{-7} \mathrm{T \cdot m/A}$。
+
+只适用于恒定电流。
+
+- 真空直导线：$B = \frac{\mu_0 I}{2\pi d}$，其中$d$为导线到点的距离。
+  - ![](image-20.png)
+- 电流圆环：$B = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$。
+  - ![](image-21.png)
+
+<https://blog.csdn.net/weixin_45864618/article/details/106672456>
+
+#### 安培环路定理
+$\oint \overrightarrow{B} \cdot d\overrightarrow{l} = \mu_0 I$。
+
+在恒定电流的磁场中，磁感应强度沿任何闭合路径一周的线积分（即环路积分），等于闭合路径内所包围并穿过的电流的代数和的$\mu_0$倍
+
+<https://zhuanlan.zhihu.com/p/142376701>
+
+### 法拉第电磁感应定律
+
+定义磁通量：$\Phi = \int \overrightarrow{B} \cdot d\overrightarrow{A}$。

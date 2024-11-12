@@ -1,7 +1,8 @@
 # Data Analysis and Machine Learning
 
 !!! note "Overview"
-    国际化拔尖人才培养课程：数据分析与机器学习。讲得很浅。  
+    国际化拔尖人才培养课程：数据分析与机器学习。讲得很浅，连写代码的任务都没有。
+
     "Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
 
 
@@ -148,18 +149,21 @@ Value Proposition (end-to-end)
 
 ML TASKS:
 
-- Classification / Regression
+- **Classification / Regression**
   - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
-- Clustering
+- **Clustering**
   - group a bunch of entities that share common features
-- Optimization
+- **Optimization**
   - from amongst a set of alternatives pick the “best” while balancing competing value metrics
-- Forecasting
+- **Forecasting**
   - based on the past, forecast the future
-- Recommendation
+- **Recommendation**
   - based on prior behavior rank order candidate preferences
-- Association
+- **Association**
   - identify which items co-occur e.g., bread and peanut butter
+
+如何评判ML TASKS完成的好坏？（mea
+1. 需要确定评判的指标（e.g.
 
 ### Types of Learning
 - Supervised Learning
@@ -171,5 +175,23 @@ ML TASKS:
   - We know what is desired (correct) and what is not desired
   - the ‘credit/blame assignment’ problem
 
-### Supervised Learning(监督学习)
+Pull out features from data, and then feed them into a **model**.
 
+Two phases of ML:
+1. Training (with training data)
+2. Testing (with testing data)
+
+## Lec 5: Evaluating a Classifier
+
+### Cross-Validation AND DATA LEAKAGE
+#### Cross-Validation
+没太听懂这块，这个Cross-Validation是用来减少“运气”对结果的影响，to measure authentic learning.
+
+![](DAML7.png)
+#### Data Leakage
+Leakage: Testing data has overlapped with training data.
+
+The twain shall never meet.
+
+### cLASSIFIER EVALUATION
+![](DAML8.png)

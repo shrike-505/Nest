@@ -94,3 +94,85 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
 ??? example "example"
     $P(X=0) = \frac{1}{2}$  
     $P(X>x) = \frac{1}{2} e^{-x}, x \geq 0$
+
+## 随机向量
+
+给定概率空间$(\Omega, \mathcal{F}, P)$，定义在其上的随机向量$\xi = (\xi_1,\xi_2,\cdots,\xi_n)$，其中$\xi_i$是定义在$(\Omega, \mathcal{F}, P)$上的随机变量。
+
+### 离散型随机向量
+假定$X$取值为$x_1,x_2,\cdots,x_n$，$Y$取值为$y_1,y_2,\cdots,y_m$，则记$P(X=x_i,Y=y_j) = p_{ij}, i,j = 1,2...$。
+
+有$\Sigma p_{ij} = 1$，$p_{ij} \geq 0$。
+#### 联合分布
+$P(X<x,Y<y) = \Sigma_{i:x_i<x,j:y_j<y}p_{ij}$
+#### 边际分布
+$X,Y$的分布可由$p_{ij}$得到。
+
+$P(X=x_i) = p_{i\cdot} = \Sigma_{j=1}^{\infty}p_{ij}$，且$\Sigma p_{i\cdot} = 1$
+
+类似可得Y
+
+!!! note "联合分布与边际分布"
+    - 联合分布：$P(X=x_i,Y=y_j) = p_{ij}$
+    - 边际分布：$P(X=x_i) = p_{i\cdot}$
+    - 边际分布由联合分布唯一确定，但边际分布不能唯一决定联合分布。
+
+#### 条件分布
+给定$X=x_i$的情况下，$Y$可取值$y_1,y_2,\cdots$
+
+概率为$P(Y=y_j|X=x_i) = \frac{P(X=x_i,Y=y_j)}{P(X=x_i)} = \frac{p_{ij}}{p_{i\cdot}}$
+
+条件分布列$Y|X = x_i ~ \begin{cases} y_1 & y_2 & \cdots \\ \frac{p_{i1}}{p_{i\cdot}} & \frac{p_{i2}}{p_{i\cdot}} & \cdots \end{cases}$
+
+类似可得$X|Y = y_j$
+
+#### 独立性
+
+假设$(X,Y)$是如上所述的独立性随机向量，若$\forall i,j$有$P(X=x_i,Y=y_j) = P(X=x_i)P(Y=y_j)$，则称$(X,Y)$是独立的。
+
+### 连续型随机向量
+
+给定概率空间$(\Omega, \mathcal{F}, P)$，$(X,Y)$是定义在其上的随机向量，若存在$p(x,y) \ge 0$使得$\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(x,y)dxdy = 1$，且对于任何Borel集$A,B$有$P(X \in A, Y \in B) = \int_{A}\int_{B}p(x,y)dxdy$，则称$(X,Y)$是连续型随机向量，具有密度函数$p(x,y)$。
+
+特别的，对任意$x,y \in R$，$P(X<x,Y<y) = \int_{-\infty}^{x}\int_{-\infty}^{y}p(u,v)dudv$。
+#### 边际分布
+显然，若$(X,Y)$是连续型随机向量，则$X,Y$也是连续型随机变量，其边际分布为$p_X(x) = \int_{-\infty}^{+\infty}p(x,y)dy$，$p_Y(y) = \int_{-\infty}^{+\infty}p(x,y)dx$。
+
+同样也有，联合分布唯一决定边际分布，但边际分布不能唯一决定联合分布。
+
+!!! note "例"
+    - 矩形上的均匀分布
+        - 假设矩形$(a,b) \times (c,d)$，如果随机向量$(X,Y)$具有密度函数$p(x,y) = \begin{cases} \frac{1}{(b-a)(d-c)} & a \leq x \leq b, c \leq y \leq d \\ 0 & \text{其他} \end{cases}$，则称$(X,Y)$在矩形上服从均匀分布。
+        - 于是有$P(X<x) = P(X<x,Y<\infty) = \int_{-\infty}^{x}\int_{-\infty}^{+\infty}p(u,v)dudv = \int_{a}^{x}\int_{c}^{d}\frac{1}{(b-a)(d-c)}dudv = \begin{cases} 0 & x \leq a \\ \frac{x-a}{b-a} & a \leq x \leq b \\ 1 & x \geq b \end{cases}$
+        - 因此$X$是$(a,b)$上的均匀分布，$Y$是$(c,d)$上的均匀分布。
+    - 联合正态分布
+        - 若$(X,Y)$具有密度函数$p(x,y) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]}$，则称$(X,Y)$服从联合正态分布。$(X,Y)$~$N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$
+        - 边际分布：经过计算，$X$~$p_X(x) = \int_{-\infty}^{+\infty}p(x,y)dy = \frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}$，$Y$同理。
+
+#### 条件分布
+TBD
+### 随机向量的计算与变换
+TBD
+
+### 极值随机变量
+假设$X_1,X_2,\cdots,X_n$是随机变量，对$\omega \in \Omega$，将$X_1(\omega),X_2(\omega),\cdots,X_n(\omega)$进行排序，得到$X_{(1)}(\omega) \leq X_{(2)}(\omega) \leq \cdots \leq X_{(n)}(\omega)$，则称$X_{(1)},X_{(2)},\cdots,X_{(n)}$是次序随机变量，其中$X_{(1)}$称为极小值，$X_{(n)}$称为极大值，$X_{(k)}$称为第k小值。
+#### 极值分布
+![](PT1.png)
+![](PT2.png)
+![](PT3.png)
+
+## 数学期望
+- 离散型随机变量：$E(X) = \sum_{i=1}^{\infty}x_i P(X=x_i)$
+    - 退化分布：$E(X) = x_0$
+    - 两点分布：$E(X) = p$
+    - 二项分布：$E(X) = np$
+    - Possion分布：$E(X) = \lambda$
+    - 几何分布($P(X=k) = p(1-p)^{k-1}$)：$E(X) = \frac{1}{p}$
+
+## 方差
+
+## 协方差
+
+## 矩
+
+## 特征函数
