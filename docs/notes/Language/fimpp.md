@@ -11,6 +11,9 @@
     [一位吧友的分享](https://tieba.baidu.com/p/5254060140)  
     [Online Interpreter Fimsharp](https://fimsharp.netlify.app/)  
 
+FIM++(with the name mimicking C\+\+)，是一种esoteric language（[蛋疼的编程语言](https://www.zhihu.com/question/19756886/answer/13078616)），由[EQD](https://www.equestriadaily.com/2012/10/editorial-fim-pony-programming-language.html)上的这位神人创造。
+
+
 ## Examples
 
 ### Hello World

@@ -237,6 +237,8 @@ SysCall的类型：
 
 进程是一个正在执行的程序的实例，例如说一个ELF加载到内存中，开始执行。
 
+> a unit of resource allocation and protection
+
 对于同一个Program的不同Process，它们的
 
 - .text段是相同的（Size & Content）
@@ -249,12 +251,14 @@ SysCall的类型：
 - 每个进程有且仅有一个PCB。
     - 在新进程创建时，OS会为其分配一个PCB
     - 在进程终止时，OS会回收PCB
-- 存储这些：
+- 存储这些 Process 的 META data：
     - Process State - Running, waiting, ready, etc.
     - Program Counter - Address of next instruction
     - CPU Registers - Contents of all process-centric registers
     - Blah blah blah...
     - ![](Sys10.png)
+
+On Linux: PCB is `task_struct`
 
 ### Process State
 As a process executes, it changes state. The state of a process is defined in part by the current activity of that process.
@@ -307,8 +311,13 @@ As a process executes, it changes state. The state of a process is defined in pa
 - ![](Sys14.png)
 - `exec*`后，若执行成功，原进程的ELF会被替换，原进程**直接终止**，也没有返回值；若没有执行成功，则返回报错信息，原进程**继续执行**。
 
+### Process Termination
 #### wait()
 ![](Sys15.png)
+#### exit()
+一个进程通过`exit()`的SysCall来终止自己，接收一个参数（exit/return code）
+
+- 进程终止后，进程占用的资源会被回收
 
 ### Signals
 
@@ -333,6 +342,51 @@ As a process executes, it changes state. The state of a process is defined in pa
     ```
 
 ### Zombie Process
-TBD
+
+子进程死亡后，它的父进程会接收到通知去执行一些清理操作，如释放内存之类。然而，若父进程并未察觉到子进程死亡，子进程就会进入到“ 僵尸(zombie)”状态。从父进程角度看，子进程仍然存在，即使子进程实际上已经死亡。
+
+Zombie 会占用其 PCB，不会占用CPU，但会占用内存。
+
+A zombie lingers on until: 
+
+- its parent has called wait() for the child, or
+- its parent dies
+
+![](Sys16.png)
+
 ### Orphan Process
-TBD
+
+父进程运行结束，但子进程还在运行（未运行结束）的子进程就称为孤儿进程（Orphan Process）。孤儿进程最终会被 init 进程（pid 为 1）所收养，并由 init 进程对它们完成状态收集工作。
+
+孤儿进程是没有父进程的进程，为避免孤儿进程退出时无法释放所占用的资源而变为僵尸进程，进程号为 1 的 init 进程将会接受这些孤儿进程，这一过程也被称为“收养”。init 进程就好像是一个孤儿院，专门负责处理孤儿进程的善后工作。每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init 进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束了其生命周期的时候，init 进程就会出面处理它的一切善后工作。因此孤儿进程并不会有什么危害。
+
+> When a child exits, a SIGCHLD signal is sent to the parent.
+> init process handles child termination with a handler for SIGCHLD that calls wait().
+
+### Process Scheduling
+为了使CPU迅速地切换到下一个进程，**Process scheduler** 在 Ready 的进程中选择下一个在 Core 上运行的进程。
+
+维护两个 Scheduling Queue：
+
+- Ready queue 
+    - set of all processes residing in main memory, ready and waiting to execute 
+- Wait queues 
+    - set of processes waiting for an event (i.e. I/O)
+- 进程在不同的 Queue 中频繁 Transfer，因此需要用 List 实现。
+
+```C
+struct list_head{
+    struct list_head *next,*prev;
+};
+```
+
+![](Sys17.png)
+
+#### Context Switch
+> 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。
+
+当CPU从一个进程切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
+
+- Context of a process is represented in the PCB
+- Switch 时，System 并不进行什么操作
+
