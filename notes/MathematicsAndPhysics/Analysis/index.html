@@ -3250,7 +3250,7 @@
 <h2 id="_28">重积分<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">积分中值定理</p>
-<p><img alt="" src="../Ana1.png" /></p>
+<p><img alt="" src="../assets/Ana1.png" /></p>
 </div>
 <p>使用累次积分计算：<span class="arithmatex">\(\iint_{D} f(x,y) dxdy = \int_{a}^{b} (\int_{c}^{d} f(x,y) dy) dx\)</span><br />
 也就是先对<span class="arithmatex">\(y\)</span>积分，再对<span class="arithmatex">\(x\)</span>积分，次序可以颠倒</p>
@@ -3259,7 +3259,7 @@
 </ul>
 <details class="例">
 <summary>例</summary>
-<p><img alt="" src="../Ana2.png" /><br />
+<p><img alt="" src="../assets/Ana2.png" /><br />
 <span class="arithmatex">\(\Omega\)</span>为球体<span class="arithmatex">\(x^2 + y^2 + z^2 \le R^2\)</span>，<span class="arithmatex">\(x^2 + y^2 + z^2 \le 2Rz\)</span>的公共部分，求<span class="arithmatex">\(\iiint_{\Omega} z^2 dxdydz\)</span><br />
 先对与<span class="arithmatex">\(xy\)</span>平面平行的圆积分，得到原式等于<span class="arithmatex">\(\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy\)</span>，其中<span class="arithmatex">\(\Omega_{z}\)</span>为交集部分被平行于<span class="arithmatex">\(xy\)</span>的平面所截的圆<br />
 由于<span class="arithmatex">\(\Omega_{z}\)</span>为圆，因此<span class="arithmatex">\(\iint_{\Omega_{z}} dxdy = \pi (x^2 + y^2)\)</span>，在<span class="arithmatex">\(z \in [0,\frac{R}{2}]\)</span>时，<span class="arithmatex">\(x^2 + y^2 \le 2Rz - z^2\)</span>，在<span class="arithmatex">\(z \in [\frac{R}{2}, R]\)</span>时，<span class="arithmatex">\(x^2 + y^2 \le R^2 - z^2\)</span>，因此<span class="arithmatex">\(\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy = \int_{0}^{\frac{R}{2}} z^2 \pi (2Rz - z^2) dz + \int_{\frac{R}{2}}^{R} z^2 \pi (R^2 - z^2) dz\)</span></p>
@@ -3306,13 +3306,13 @@
 <p>对向量值函数在曲线某一方向上的积分（ref：变力做功）（因此被积函数是向量，积分变元也是向量）,形如<span class="arithmatex">\(\int_{C} \overrightarrow{A} d \overrightarrow{s}\)</span>，其中<span class="arithmatex">\(\overrightarrow{A} = P \overrightarrow{i} + Q \overrightarrow{j} + R \overrightarrow{k}\)</span></p>
 <ul>
 <li>与第一类的关系：<span class="arithmatex">\(| \int_{C} \overrightarrow{A} d \overrightarrow{s} | = | \int_{C} \overrightarrow{A} \cdot \overrightarrow{T} ds |\)</span>，其中<span class="arithmatex">\(\overrightarrow{T}\)</span>为曲线的单位切向量</li>
-<li><img alt="" src="../Ana3.png" /></li>
+<li><img alt="" src="../assets/Ana3.png" /></li>
 <li>在<span class="arithmatex">\(d\)</span>谁的时候，就把前面式子里所有其他的变量都换成用谁表示的形式，然后分段定积分，对应上下界为谁的起点和终点</li>
 <li>Green公式：<span class="arithmatex">\(P(x,y),Q(x,y)\)</span>在<span class="arithmatex">\(D\)</span>上<strong>有一阶连续偏导数</strong>，则<span class="arithmatex">\(\int_{C} Pdx + Qdy = \iint_{D} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy\)</span>，<span class="arithmatex">\(C\)</span>为<span class="arithmatex">\(D\)</span>的边界，方向为正向<ul>
 <li>定义正向：沿边界行走时，区域在左侧，对于一般的类多边形区域，为逆时针</li>
 </ul>
 </li>
-<li>曲线积分与路径无关：<img alt="" src="../Ana4.png" /></li>
+<li>曲线积分与路径无关：<img alt="" src="../assets/Ana4.png" /></li>
 <li>若与路径无关，则有Newton-Leibniz公式：<span class="arithmatex">\(\int_{C} Pdx + Qdy = u(B) - u(A)\)</span>，其中<span class="arithmatex">\(u\)</span>为<span class="arithmatex">\(P\)</span>的一个原函数，积分为第二类曲线积分</li>
 </ul>
 <h2 id="_33">曲面积分<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
@@ -3350,10 +3350,10 @@
 </details>
 <p>对形如<span class="arithmatex">\(\iint_{\Sigma} R(x,y,z)dxdy\)</span>的第二类曲面积分（<span class="arithmatex">\(\Sigma : z = z(x,y)\)</span>），可投影到xy平面上积分，即<span class="arithmatex">\(\iint_{\Sigma} R(x,y,z)dxdy = \pm \iint_{D_{xy}} R(x,y,z(x,y)) dxdy\)</span>，<span class="arithmatex">\(\Sigma\)</span>为上侧时取正，下侧时取负</p>
 <p>同理，投到zx平面时，取右侧为正，左侧为负，投到yz平面时，取前侧为正，后侧为负</p>
-<p>参数平面：<img alt="" src="../Ana5.png" /></p>
-<p>转为单面积：<img alt="" src="../Ana6.png" /></p>
-<p>Stokes公式：<img alt="" src="../Ana7.png" /><br />
-<img alt="" src="../Ana8.png" />
+<p>参数平面：<img alt="" src="../assets/Ana5.png" /></p>
+<p>转为单面积：<img alt="" src="../assets/Ana6.png" /></p>
+<p>Stokes公式：<img alt="" src="../assets/Ana7.png" /><br />
+<img alt="" src="../assets/Ana8.png" />
 等号左侧为第二类曲面积分，右侧为第二类曲线积分</p>
 <p>Gauss公式：空间闭区域<span class="arithmatex">\(\Omega\)</span>由分片光滑的闭曲面<span class="arithmatex">\(\Sigma\)</span>围成，<span class="arithmatex">\(\Sigma\)</span>取外侧，函数<span class="arithmatex">\(P(x,y,z),Q(x,y,z),R(x,y,z)\)</span>在<span class="arithmatex">\(\Omega\)</span>上有连续一阶偏导，则有<br />
 <span class="arithmatex">\(\iint_{\Sigma} Pdydz + Qdzdx + Rdxdy = \iiint_{\Omega} (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dxdydz\)</span></p>
@@ -3379,7 +3379,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月14日</span>
   </span>
 
     
