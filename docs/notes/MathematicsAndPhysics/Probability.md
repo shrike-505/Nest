@@ -68,7 +68,7 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
         
         - 在三角形$ABC$内任取一点$P$，$P$到$BC$的距离为$\xi$，求$\xi$的分布函数。
             - 设BC边上高为$h$，$x \leq 0$时，$F(x) = 0$；$0 \leq x \leq h$时，在三角形内作平行于BC的DE，其与BC的距离为$x$，则$\{\xi \leq x\}$表示点P落在梯形DECB内。
-            - ![](image-7.png)
+            - ![](./assets/PT0.png)
             - $P(\xi \leq x) = \frac{S_{DECB}}{S_{ABC}} = 1 - (1-\frac{x}{h})^2$
             - $x \geq h$时，$F(x) = 1$
             - 则$F(x) = \begin{cases} 0 & x \leq 0 \\ 1-(1-\frac{x}{h})^2 & 0 \leq x \leq h \\ 1 & x \geq h \end{cases}$
@@ -157,9 +157,9 @@ TBD
 ### 极值随机变量
 假设$X_1,X_2,\cdots,X_n$是随机变量，对$\omega \in \Omega$，将$X_1(\omega),X_2(\omega),\cdots,X_n(\omega)$进行排序，得到$X_{(1)}(\omega) \leq X_{(2)}(\omega) \leq \cdots \leq X_{(n)}(\omega)$，则称$X_{(1)},X_{(2)},\cdots,X_{(n)}$是次序随机变量，其中$X_{(1)}$称为极小值，$X_{(n)}$称为极大值，$X_{(k)}$称为第k小值。
 #### 极值分布
-![](PT1.png)
-![](PT2.png)
-![](PT3.png)
+![](./assets/PT1.png)
+![](./assets/PT2.png)
+![](./assets/PT3.png)
 
 ## 数学期望
 - 离散型随机变量：$E(X) = \sum_{i=1}^{\infty}x_i P(X=x_i)$

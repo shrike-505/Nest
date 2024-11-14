@@ -84,10 +84,10 @@ $n$个变量对应的K-map是一个$2^n$个元素的表格，每个元素对应�
 尽可能画一个大的框，框中元素个数为$2^n(n\ge 1)$
 
 ??? 例
-	![](CS1.png)
+	![](./assets/CS1.png)
 
 !!! note "作业"
-	[纸质作业可供复习](cs1hw1.pdf)(疑似有错)
+	[纸质作业可供复习](./assets/cs1hw1.pdf)(疑似有错)
 
 ### ISA
 ISA(Instruction Set Architecture)是指令集架构，是计算机硬件与软件之间的接口。  

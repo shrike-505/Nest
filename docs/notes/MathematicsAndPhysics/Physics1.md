@@ -22,7 +22,7 @@ tags:
 保守力的做功等于对应势能的增量，即$W = -\Delta U$
 ### Center of Mass(CM)
 $x_{cm} = \frac{m_1x_1 + m_2x_2 + \cdots + m_nx_n}{m_1 + m_2 + \cdots + m_n}$  
-![](Physics11.png)
+![](./assets/Physics11.png)
 对于含有大量微粒的系统，其质心由求和转变为积分  
 $x_{cm} = \lim_{\Delta m \to 0} \frac{\sum x_i \Delta m_i}{M} = \frac{\int xdm}{M}$
 
@@ -45,7 +45,7 @@ $I = \sum m_i r_i^2 = \int r^2 dm$, 与物体旋转轴的位置有关
 将刚体看作许多质点集合  
 
 ??? 常见几何体转动惯量
-    ![](Physics14.png)
+    ![](./assets/Physics14.png)
 
 由此可表示转动物体的动能：$E_k = \frac{1}{2}I\omega^2$($\omega$为角速度)  
 与动能定理：$\sum W = \int_{\theta_i}^{\theta_f} \sum \tau d\theta = \int_{\omega_i}^{\omega_f} I\omega d\omega = \frac{1}{2}I\omega_f^2 - \frac{1}{2}I\omega_i^2$  
@@ -54,7 +54,7 @@ $I = \sum m_i r_i^2 = \int r^2 dm$, 与物体旋转轴的位置有关
 
 ### 角动量
 $L = I\omega = r \times p$  
-![](Physics12.png)  
+![](./assets/Physics12.png)  
 角动量守恒：要求外力矩为0，即$\tau_{\text{ext}} = 0$
 
 ## 简谐运动
@@ -77,7 +77,7 @@ $x = A'e^{-\frac{b}{2m}t}cos(\omega' t + \phi') + Acos(\omega t + \phi)$
 - 横波：波动方向与波传播方向垂直
 - 纵波：波动方向与波传播方向平行
 
-透射与反射：![](Physics13.png)
+透射与反射：![](./assets/Physics13.png)
 
 Destructive Interference: $\Delta x = (n + \frac{1}{2})\lambda$  
 Constructive Interference: $\Delta x = n\lambda$  
@@ -179,7 +179,7 @@ $dU = \Delta Q - PdV$
 卡诺热机效率：$\eta = 1 - \frac{T_2}{T_1}$，其中$T_1$为高温，$T_2$为低温  
 制冷系数：$\frac{1}{\eta} - e = 1$
 
-![](Physics15.png)
+![](./assets/Physics15.png)
 
 ### Entropy
 $ds = \frac{dQ}{T}$，要求$Q$是可逆过程中的热量

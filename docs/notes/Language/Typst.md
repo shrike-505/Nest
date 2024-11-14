@@ -71,7 +71,7 @@
 	//位置会被其他diagram影响
 )
 ```
-![](typ5.png)
+![](./assets/typ5.png)
 ## 排版
 ### numblex
 导入：
@@ -80,10 +80,10 @@
 ```
 
 在`enum`类中设置`numbering`属性可以设置列表的编号格式：  
-![](typ1.png)
+![](./assets/typ1.png)
 
 但是如果想让外层不带括号，内层带括号（什么离散普物），就可以用numblex，做到给每一层都单独设置编号格式：  
-![](typ2.png)
+![](./assets/typ2.png)
 
 ### warp-content
 这也有manual看的，嚯嚯嚯
@@ -112,7 +112,7 @@
 	I'll work real hard and do my best to turn that sad frown upside down
 ]
 ```
-![](typ4.png)  
+![](./assets/typ4.png)  
 已知问题：会和`image`的`weight`,`height`冲突；脱离图片范围后换行会失效（如上图）  
 用`columns:(a%,b%)`设置图片和文字的比例
 ## 杂
@@ -123,7 +123,7 @@
 You have a vast vast soul \
 And I will always, always, always #answer it.
 ```
-![](typ3.png)
+![](./assets/typ3.png)
 
 `image`函数怎么用: 
 ```

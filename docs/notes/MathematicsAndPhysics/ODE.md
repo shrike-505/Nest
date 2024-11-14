@@ -133,7 +133,7 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
 
 !!! note "凑全微分"
     我估计不久后会搬到数分Ⅱ笔记里
-    ![](ODE1.png)
+    ![](./assets/ODE1.png)
 
 ??? 例
     - 求解$(3x^{2}+6xy^{2})dx + (6x^{2}y+4y^{3})dy = 0$
@@ -370,11 +370,11 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
         - $y = ux = -\frac{1}{2} x^3 - x^2 + C_1 x e^x + C_2 x$
 
 ### 一种特殊方程
-![](ODE2.png)  
-![](ODE3.png)
+![](./assets/ODE2.png)  
+![](./assets/ODE3.png)
 
 ??? 例
-    ![](ODE4.png)
+    ![](./assets/ODE4.png)
 
 ## 常系数线性ode组
 ### 消元法
@@ -396,18 +396,18 @@ n = 2时，若$\frac{y_2(x)}{y_1(x)}$是常数，则线性相关。
 则$\bold{x} = C_1 \bold{x_1} e^{\lambda_1 t} + C_2 \bold{x_2} e^{\lambda_2 t} + \cdots + C_n \bold{x_n} e^{\lambda_n t}$是通解
 
 ??? 例
-    ![](ODE6.png)
-    ![](ODE7.png)
-    ![](ODE8.png)
+    ![](./assets/ODE6.png)
+    ![](./assets/ODE7.png)
+    ![](./assets/ODE8.png)
 
 !!! 若特征根为复数
     Euler公式：$e^{i\theta} = \cos \theta + i \sin \theta$
-    ![](ODE5.png)
+    ![](./assets/ODE5.png)
 
 ??? 例
-    ![](ODE9.png)
-    ![](ODE10.png)
-    ![](ODE11.png)
+    ![](./assets/ODE9.png)
+    ![](./assets/ODE10.png)
+    ![](./assets/ODE11.png)
 
 ### 定理
 设$\bold{x_1}(t), \bold{x_2}(t), \cdots, \bold{x_n}(t)$是齐次线性方程组$\frac{d\bold{x}}{dt} = A\bold{x}$的解，则$\bold{x}(t) = \sum_{i=1}^{n} C_i \bold{x_i}(t)$是通解

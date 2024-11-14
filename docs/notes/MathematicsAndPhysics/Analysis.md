@@ -451,7 +451,7 @@ $f(x_0 + h, y_0 + k) - f(x_0, y_0) = h \frac{\partial f}{\partial x} (x_0 + \the
 ## 重积分
 
 !!! note "积分中值定理"
-    ![](Ana1.png)
+    ![](./assets/Ana1.png)
 
 使用累次积分计算：$\iint_{D} f(x,y) dxdy = \int_{a}^{b} (\int_{c}^{d} f(x,y) dy) dx$  
 也就是先对$y$积分，再对$x$积分，次序可以颠倒
@@ -459,7 +459,7 @@ $f(x_0 + h, y_0 + k) - f(x_0, y_0) = h \frac{\partial f}{\partial x} (x_0 + \the
 - 推论：一元函数$f(x), g(y)$分别在$[a, b]$, $[c,d]$可积，则$\iint_{[a,b]\times [c,d]} f(x)g(y) dxdy = \int_{a}^{b} f(x) dx \cdot \int_{c}^{d} g(y) dy$
 
 ??? 例
-    ![](Ana2.png)  
+    ![](./assets/Ana2.png)  
     $\Omega$为球体$x^2 + y^2 + z^2 \le R^2$，$x^2 + y^2 + z^2 \le 2Rz$的公共部分，求$\iiint_{\Omega} z^2 dxdydz$  
     先对与$xy$平面平行的圆积分，得到原式等于$\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy$，其中$\Omega_{z}$为交集部分被平行于$xy$的平面所截的圆  
     由于$\Omega_{z}$为圆，因此$\iint_{\Omega_{z}} dxdy = \pi (x^2 + y^2)$，在$z \in [0,\frac{R}{2}]$时，$x^2 + y^2 \le 2Rz - z^2$，在$z \in [\frac{R}{2}, R]$时，$x^2 + y^2 \le R^2 - z^2$，因此$\int_{0}^{R} z^2 dz \iint_{\Omega_{z}} dxdy = \int_{0}^{\frac{R}{2}} z^2 \pi (2Rz - z^2) dz + \int_{\frac{R}{2}}^{R} z^2 \pi (R^2 - z^2) dz$
@@ -500,11 +500,11 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
 对向量值函数在曲线某一方向上的积分（ref：变力做功）（因此被积函数是向量，积分变元也是向量）,形如$\int_{C} \overrightarrow{A} d \overrightarrow{s}$，其中$\overrightarrow{A} = P \overrightarrow{i} + Q \overrightarrow{j} + R \overrightarrow{k}$
 
 - 与第一类的关系：$| \int_{C} \overrightarrow{A} d \overrightarrow{s} | = | \int_{C} \overrightarrow{A} \cdot \overrightarrow{T} ds |$，其中$\overrightarrow{T}$为曲线的单位切向量
-- ![](Ana3.png)
+- ![](./assets/Ana3.png)
 - 在$d$谁的时候，就把前面式子里所有其他的变量都换成用谁表示的形式，然后分段定积分，对应上下界为谁的起点和终点
 - Green公式：$P(x,y),Q(x,y)$在$D$上**有一阶连续偏导数**，则$\int_{C} Pdx + Qdy = \iint_{D} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy$，$C$为$D$的边界，方向为正向
     - 定义正向：沿边界行走时，区域在左侧，对于一般的类多边形区域，为逆时针
-- 曲线积分与路径无关：![](Ana4.png)
+- 曲线积分与路径无关：![](./assets/Ana4.png)
 - 若与路径无关，则有Newton-Leibniz公式：$\int_{C} Pdx + Qdy = u(B) - u(A)$，其中$u$为$P$的一个原函数，积分为第二类曲线积分
 
 ## 曲面积分
@@ -540,12 +540,12 @@ $D$为$uv$平面上的区域，$D^*$为$xy$平面上的区域，$x = \varphi(u,v
 
 同理，投到zx平面时，取右侧为正，左侧为负，投到yz平面时，取前侧为正，后侧为负
 
-参数平面：![](Ana5.png)
+参数平面：![](./assets/Ana5.png)
 
-转为单面积：![](Ana6.png)
+转为单面积：![](./assets/Ana6.png)
 
-Stokes公式：![](Ana7.png)  
-![](Ana8.png)
+Stokes公式：![](./assets/Ana7.png)  
+![](./assets/Ana8.png)
 等号左侧为第二类曲面积分，右侧为第二类曲线积分
 
 Gauss公式：空间闭区域$\Omega$由分片光滑的闭曲面$\Sigma$围成，$\Sigma$取外侧，函数$P(x,y,z),Q(x,y,z),R(x,y,z)$在$\Omega$上有连续一阶偏导，则有  

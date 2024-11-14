@@ -130,7 +130,7 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 ### 插入
 只能插入红色节点
 
-![](image.png)
+![](./assets/ADS0.png)
 
 === "Case -1"
     插入节点为根节点，直接涂黑
@@ -223,10 +223,10 @@ Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并�
 
 
 How to Merge(递归版本):  
-![](ADS1.png)
+![](./assets/ADS1.png)
 
 非递归版本：  
-![](ADS2.png)
+![](./assets/ADS2.png)
 
 ### 斜堆
 
@@ -257,12 +257,14 @@ TBD
 Alpha 剪枝是指对于 min 结点，如果其兄弟结点的值比当前结点的值大，那么就不再搜索当前结点的子结点；Beta 剪枝是指对于 max 结点，如果其兄弟结点的值比当前结点的值小，那么就不再搜索当前结点的子结点。
 
 !!! note "一道作业题"
-    ![](ADS3.png)
+    ![](./assets/ADS3.png)
 
 ## 分治
+
 TBD
 
 ### Master Theorem 主定理
+
 主定理适用于求解如下递归式算法的时间复杂度：$T(n) = aT(\frac{n}{b}) + f(n)$
 
 那么
@@ -271,4 +273,4 @@ TBD
 - 若 $f(n) = \Theta(n^{log_b{a}})$，那么 $T(n) = \Theta(n^{log_b{a}} \log n)$
 - 若对于某个大于0的常数 $\epsilon$ 有 $f(n) = \Omega(n^{log_b{a}+\epsilon})$，且对于某个常数 $c < 1$ 和所有足够大的 $n$ 有 $a f(\frac{n}{b}) \leq c f(n)$，那么 $T(n) = \Theta(f(n))$
 
-![](ADS4.png)
+![](./assets/ADS4.png)

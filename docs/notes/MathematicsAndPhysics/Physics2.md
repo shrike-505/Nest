@@ -19,27 +19,27 @@
 
 ### Flux 通量
 
-![](image.png)
+![](./assets/image.png)
 
 立体角：$d\overrightarrow{A} = r^2 d\Omega$，等号左侧为面积微元，也等于 $dA \cdot \overrightarrow{n}$，其中 $\overrightarrow{n}$ 为单位法向量。
 
-![](image-2.png)
+![](./assets/image-2.png)
 
 #### Gauss 定理
 电通量：$\Phi = \int \overrightarrow{E} \cdot d\overrightarrow{A} = \frac{\Sigma q}{\varepsilon_0}$，其中$q$为闭合曲面内包含的电荷量。
 
 !!! example "例"
     1. 无限长均匀带电线（$L \gt \gt R$的圆柱），线密度为$\lambda$，求距其轴心$r$处的电场强度。  
-        ![](image-3.png)  
+        ![](./assets/image-3.png)  
         选取r处长为$h$的圆柱面，此时所有面积微元处的电场强度大小是一样的，则有$E \cdot 2\pi rh = \frac{\lambda h}{\varepsilon_0}$，所以$E = \frac{\lambda}{2\pi \varepsilon_0 r}$。
     2. 无限大带电平面
-        ![](image-4.png)
+        ![](./assets/image-4.png)
     3. 均匀带电球壳
-        ![](image-5.png)
+        ![](./assets/image-5.png)
 
 Gauss 定理和库仑定律求电场强度：
 
-![](image-6.png)
+![](./assets/image-6.png)
     
 
 ### 电势
@@ -52,22 +52,22 @@ TBD
 半径为$r$的孤立球形导体：$C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
 
 - 平行板：
-  - ![](image-8.png)
+  - ![](./assets/image-8.png)
 - 圆柱形电容：
-  - ![](image-9.png)
+  - ![](./assets/image-9.png)
 - 球状电容：
-  - ![](image-10.png)
+  - ![](./assets/image-10.png)
 
 并联总电容：$C = \Sigma C_i$。串联总电容：$\frac{1}{C} = \Sigma \frac{1}{C_i}$。
 
 !!! example "例"
-    ![](image-11.png)
+    ![](./assets/image-11.png)
 
 介电体处于电场中时，会在内部产生极化电荷，从而减小电场强度。极化电场$E_p = \frac{E}{k_e}$。$k_e$称为相对介电常数（Relative dielectric constant）。
 
 有了介电体后，电容变为$C = k_e \varepsilon_0 \frac{S}{d}$。
 
-![](image-12.png)
+![](./assets/image-12.png)
 
 考虑真空中两个由无数电偶极子组成的平行圆板，如上图所示，定义$\overrightarrow{P} = \frac{\Sigma \overrightarrow{p}}{V}$（$\overrightarrow{p}$为电偶极矩，$\Delta V$ 为囊括的体积），则有$\overrightarrow{P} = \varepsilon_0 \chi_e \overrightarrow{E}$，其中$\chi_e$为电极化率。
 
@@ -75,7 +75,7 @@ TBD
 TBD，以及电位移矢量的内容。
 
 !!! example "例"
-    ![](image-13.png)  
+    ![](./assets/image-13.png)  
     求这个具有两层介电体的电容以及表面的电荷密度。
 
 ### 电流
@@ -85,14 +85,14 @@ TBD，以及电位移矢量的内容。
 
 得到电荷守恒：
 
-![](image-14.png)
+![](./assets/image-14.png)
 
 若 $\frac{dq}{dt} = 0$，则上式为0.
 
 平均而言，电流中电子以**漂移速度**$v_d$运动，$I = neSv_d$，则有$\overrightarrow{j} = - ne\overrightarrow{v_d}$。
 
 #### 欧姆定律
-![](image-15.png)
+![](./assets/image-15.png)
 这里的$\sigma$为电导率，$\rho$为电阻率，$\sigma = \frac{1}{\rho}$。
 
 #### 基尔霍夫定律
@@ -101,20 +101,20 @@ TBD，以及电位移矢量的内容。
 - Loop定律：在闭合回路中， $\Sigma U_k = \Sigma \epsilon_k + \Sigma i R_k = 0$。
 
 !!! example "例"
-    ![](image-16.png)  
+    ![](./assets/image-16.png)  
     注意这里i1 i2 i3的方向是自己假设的，然后运用基尔霍夫定律进行计算就行了。
 
 #### RC电路
 结合了电容和电阻的电路。
 
-- 充电时：![](image-17.png)
-- 放电时：![](image-18.png)
+- 充电时：![](./assets/image-17.png)
+- 放电时：![](./assets/image-18.png)
 
 ### 磁场
 
 高中就不会的霍尔效应：
 
-![](image-19.png)
+![](./assets/image-19.png)
 
 磁场是非保守场，所以没有势能的概念。
 
@@ -128,9 +128,9 @@ $\mu_0 = 4\pi \times 10^{-7} \mathrm{T \cdot m/A}$。
 只适用于恒定电流。
 
 - 真空直导线：$B = \frac{\mu_0 I}{2\pi d}$，其中$d$为导线到点的距离。
-  - ![](image-20.png)
+  - ![](./assets/image-20.png)
 - 电流圆环：$B = \frac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$。
-  - ![](image-21.png)
+  - ![](./assets/image-21.png)
 
 <https://blog.csdn.net/weixin_45864618/article/details/106672456>
 
@@ -153,7 +153,7 @@ $\oint \overrightarrow{B} \cdot d\overrightarrow{l} = \mu_0 I$。
 
 ## 第二次小测
 
-![](image-22.png)
+![](./assets/image-22.png)
 
 已知这样的一对非平行极板，求其电容，其中上板横向纵向长度 $a, b$, 上板最低点与下板距离 $d$，最高点与下板距离 $d+h$ 已知，$h<<d$
 

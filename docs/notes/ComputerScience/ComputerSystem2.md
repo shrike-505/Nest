@@ -9,9 +9,10 @@
 # 计算机系统 Ⅱ
 
 !!! note "Links"
-    https://note.tonycrane.cc/cs/pl/riscv/privileged/
+    <https://note.tonycrane.cc/cs/pl/riscv/privileged/>
 
 ## RISC-V Assembly
+
 （其实是系统一的东西）32位指令
 
 - Opcode: 操作码，用于识别指令类型
@@ -21,15 +22,15 @@
 - funct3/7: （从Opcode的指令类型中）确定特定的指令
 - imm: immediate value or address
 
-![](CS2.png)
+![](./assets/CS2.png)
 
 寄存器与内存：
 
-![](CS3.png)
+![](./assets/CS3.png)
 
 一些例子：
 
-![](CS4.png)
+![](./assets/CS4.png)
 
 ## Pipelining
 
@@ -82,28 +83,28 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 - Static linking
     - All needed code is packed in single binary, leading to large binary
     - `_start` is executed after evecve system call
-    - ![](Sys7.png)
+    - ![](./assets/Sys7.png)
 - Dynamic linking
     - Reuse libraries to reduce ELF file size
     - Howto resolve library calls?
         - It is the loader who resolves lib calls.
     - Entry point 是 loader
 
-![](Sys8.png)
+![](./assets/Sys8.png)
 
-![](Sys9.png)
+![](./assets/Sys9.png)
 
 `_libc_start_main`: Setup environment and stack, then call main
 
 #### Memory Layout 内存布局
 
-![](CS5.png)
+![](./assets/CS5.png)
 
 在二进制文件运行时的内存布局。
 
 注意 stack 从高地址向低地址增长，heap 从低地址向高地址增长。
 
-![](CS6.png)
+![](./assets/CS6.png)
 
 存储在Memory中的数据，基本单元是Byte，每个数据都被一个地址标记。
 
@@ -112,7 +113,7 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 ### OS Structure
 操作系统是一种“Resource Allocator and Abstracter”，它管理硬件资源，提供抽象接口。
 
-![](Sys3.png)
+![](./assets/Sys3.png)
 
 UI: CLI -> GUI -> Touchscreen...
 
@@ -165,7 +166,7 @@ Event 分为 Interrupt - 由硬件引起，Exception - 由软件引起。
     - The mode is indicated by a status bit in a protected control register
         - The CPU checks this bit before executing a protected instruction
 
-![](Sys4.png)
+![](./assets/Sys4.png)
 
 Event是操作流中“不被预期”的情况，CPU会根据Event的类型，调用相应的Handler。
 
@@ -180,12 +181,12 @@ OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
     - 发生于User Mode下需要执行Privileged Instructions的情况
         - e.g., to create a process, write to disk, read from the network card
         - 每种ISA都有自己的System Call
-        - ![](Sys6.png)
+        - ![](./assets/Sys6.png)
         - 为什么`printf`需要SysCall `libc_write`？
             - 打印到终端这种Device I/O需要 Kernel Mode (Privileged Instructions)
 - Timer Interrupt - 会导致Regularly Interrupt -> Timer Interrupt Handler
 
-![](Sys5.png)
+![](./assets/Sys5.png)
 
 ### System Call
 
@@ -256,7 +257,7 @@ SysCall的类型：
     - Program Counter - Address of next instruction
     - CPU Registers - Contents of all process-centric registers
     - Blah blah blah...
-    - ![](Sys10.png)
+    - ![](./assets/Sys10.png)
 
 On Linux: PCB is `task_struct`
 
@@ -268,7 +269,7 @@ As a process executes, it changes state. The state of a process is defined in pa
 - Waiting: The process is waiting for some event to occur.
 - Ready: The process is waiting to be assigned to a processor.
 - Terminated: The process has finished execution.
-- ![](Sys11.png)
+- ![](./assets/Sys11.png)
 
 ### Process Creation
 一个进程可能会产生多个进程，于是形成一个进程树，ppid是某节点父进程的pid。
@@ -279,8 +280,8 @@ As a process executes, it changes state. The state of a process is defined in pa
 - 返回给子进程的是0
 
 ???+ info "Quiz"
-    ![](Sys12.png)  
-    ![](Sys13.png)  
+    ![](./assets/Sys12.png)  
+    ![](./assets/Sys13.png)  
     下面这张图里，每次`fork()`会给当前每个进程都创建一个子进程，所以第一次`fork()`后有两个进程，第二次`fork()`后有四个进程。  
     ```c
     int main(int argc, char* arg[]){
@@ -308,12 +309,12 @@ As a process executes, it changes state. The state of a process is defined in pa
 
 - 其余的`exec*()`函数类似，但不是SysCall
 - `exec*()` replaces the current process image with a new process image
-- ![](Sys14.png)
+- ![](./assets/Sys14.png)
 - `exec*`后，若执行成功，原进程的ELF会被替换，原进程**直接终止**，也没有返回值；若没有执行成功，则返回报错信息，原进程**继续执行**。
 
 ### Process Termination
 #### wait()
-![](Sys15.png)
+![](./assets/Sys15.png)
 #### exit()
 一个进程通过`exit()`的SysCall来终止自己，接收一个参数（exit/return code）
 
@@ -352,7 +353,7 @@ A zombie lingers on until:
 - its parent has called wait() for the child, or
 - its parent dies
 
-![](Sys16.png)
+![](./assets/Sys16.png)
 
 ### Orphan Process
 
@@ -380,7 +381,7 @@ struct list_head{
 };
 ```
 
-![](Sys17.png)
+![](./assets/Sys17.png)
 
 #### Context Switch
 > 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。

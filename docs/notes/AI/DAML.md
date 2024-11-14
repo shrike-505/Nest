@@ -24,7 +24,7 @@ Class Core, Ultimate Goal: Info System is all about **adding value** to organiza
 
 Machine Learning永远不会孤立存在，一般发生于某种business context下，用于添加value，例如说医院预测预约者失约的概率。（个人理解：强调实际用途？）因此面对ML问题，从value的角度思考。
 
-![](DAML1.png)
+![](./assets/DAML1.png)
 
 如图，从数据中提取Value的过程，其中Visualize（可视化）代表Data Analysis，Modeling（建模）代表Machine Learning。
 
@@ -38,7 +38,7 @@ Process when solving a problem:
 - Invention: WHAT CAN I DO?
 
 ### Tools
-![](DAML2.png)
+![](./assets/DAML2.png)
 
 ~~"Matplotlib is too low-level"~~
 
@@ -80,7 +80,7 @@ Tidy Data: 数据的组织格式，使得数据更容易被处理。（例如用
 
 !!! note "e.g."
     即便是表格也有messy的，如下图，蓝色表格对人类来说是更可读的，而绿色（Tidy Ver.）对计算机更友好。  
-    ![](DAML3.png)
+    ![](./assets/DAML3.png)
 
 
 Data Analysis中注意的三个属性：
@@ -94,7 +94,7 @@ Data Analysis中注意的三个属性：
 + Column headers are values, not variable names 
 + Row headers are Observations.
 
-![](DAML4.png)
+![](./assets/DAML4.png)
 
 ## Lec 3: Reshape Data - Introduction to Visualization
 
@@ -104,7 +104,7 @@ Data Analysis中注意的三个属性：
     Subway Map: put you in other's shoes.  
 
 Data gathered: About Movies.  
-![alt text](DAML5.png)
+![alt text](./assets/DAML5.png)
 
 面对这些数据，我们可以提出很多问题，例如：性别不同的人分别喜欢看什么电影？年龄对电影评价的影响如何？等等。然后可以造一个Tidy的表格：
 
@@ -114,7 +114,7 @@ Data gathered: About Movies.
 
 Types of Data:
 
-![](DAML6.png)
+![](./assets/DAML6.png)
 
 - N(Normals)
     - Operation: =, !=
@@ -187,11 +187,13 @@ Two phases of ML:
 #### Cross-Validation
 没太听懂这块，这个Cross-Validation是用来减少“运气”对结果的影响，to measure authentic learning.
 
-![](DAML7.png)
+![](./assets/DAML7.png)
 #### Data Leakage
 Leakage: Testing data has overlapped with training data.
 
 The twain shall never meet.
 
 ### cLASSIFIER EVALUATION
-![](DAML8.png)
+![](./assets/DAML8.png)
+
+形似倒排索引那一课的表格。
