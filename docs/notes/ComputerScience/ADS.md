@@ -10,26 +10,24 @@
 > 任课教师：杨洋
 
 !!! note "Reference"
-    OI wiki: https://oi-wiki.org/ds/  
-    https://note.shad0wash.cc/cs/ads/
+    OI wiki: <https://oi-wiki.org/ds/>  
+    <https://note.shad0wash.cc/cs/ads/>
 
 ## AVL树
+
 是二叉搜索树的一种：
 
 - 平衡因子（BF: Balance Factor）：某节点左子树的高度减去右子树的高度
 - AVL树：任意节点的平衡因子只能是-1、0、1
 - 不满足条件时，通过旋转操作进行调整，形成AVL树
-    - 旋转：将某个节点“提起来”，另一侧节点与其的父子关系便颠倒，同时节点本身的某个子节点也易父
-        - RR, LL, RL, LR
-        - LL,RR一般是对失衡节点的子节点转上去
-        - RL,LR一般是对失衡节点的孙子节点转上去（转两次）
-        - 具体可见[这里的](https://www.hello-algo.com/chapter_tree/avl_tree/#752-avl)图像展示
+  - 旋转：将某个节点“提起来”，另一侧节点与其的父子关系便颠倒，同时节点本身的某个子节点也易父
+    - RR, LL, RL, LR
+    - LL,RR一般是对失衡节点的子节点转上去
+    - RL,LR一般是对失衡节点的孙子节点转上去（转两次）
+    - 具体可见[这里的](https://www.hello-algo.com/chapter_tree/avl_tree/#752-avl)图像展示
 
-
-
-???+ note "例题" 
+???+ note "例题"
     Insert 2, 1, 4, 5, 9, 3, 6, 7 into an initially empty AVL tree.  Which one of the following statements is FALSE?
-
 
     A. 4 is the root
 
@@ -44,7 +42,6 @@
     
     ??? key-point "Answer"
         插入建树就行，记得每次插入后如果有失衡就立刻旋转，选B。
-
 
 ```c
 Node RightRotate(Node UnbalancedNode){
@@ -68,7 +65,10 @@ Node LeftRotate(Node UnbalancedNode){
 }
 ```
 
+AVL 树的搜索、插入和删除操作的时间复杂度为 $O(logn)$。
+
 ## Splay树
+
 是二叉搜索树的一种：
 
 - 每访问一个节点，将其旋转到根节点，会使树的高度降低。
@@ -78,7 +78,7 @@ Node LeftRotate(Node UnbalancedNode){
 - zig-zag: 访问节点的父节点不是根，且访问节点、父节点、祖父节点不在同一条链上时，需要两次旋转（沿父节点-访问节点旋转，再沿祖父节点-访问节点旋转）（这是因为第一次旋转后访问节点便与原祖父节点有了一条关系边）
 
 ???+ note "有关旋转的一道作业题"
-    https://ms.ntub.edu.tw/~spade/teaching/x-DS2005/DS-04-23.pdf
+    <https://ms.ntub.edu.tw/~spade/teaching/x-DS2005/DS-04-23.pdf>
 
 ## 摊还分析
 
@@ -92,7 +92,6 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 
 `pop`和`push`一次cost为1，`multi_pop`一次cost为k。
 
-
 ### 聚合法
 
 进行连续`n`次操作（如上述三种操作），最坏的操作序列的总cost为`Tn`，则摊还时间为`Tn/n`。
@@ -104,13 +103,14 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 ### 核算法
 
 ### 势能法
+
 令$\hat{c_i} - c_i = Credit_i = \Phi(D_i) - \Phi(D_{i-1})$
 
 其中$\Phi(D_i)$为第`i`次操作后该结构的“势能”（是该结构的某个特性的函数，如一棵树的节点个数或高度，一个栈的元素个数等），规定$\Phi(D_0)=0$。
 
 ## 红黑树
 
-> 超标小工具：https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+> 超标小工具：<https://www.cs.usfca.edu/~galles/visualization/RedBlack.html>
 
 哨兵化：所有无子节点的子节点都变为无键值的NIL节点，将NIL节点视为叶子，这在性质5里很有用。
 
@@ -128,6 +128,7 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 - Lemma：一棵有n个内部节点的红黑树的高度至多为$2\ln(n+1)$
 
 ### 插入
+
 只能插入红色节点
 
 ![](./assets/ADS0.png)
@@ -158,7 +159,6 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
 
 TBD
 
-
 ## B+树
 
 B阶B+树满足以下性质：
@@ -171,14 +171,25 @@ B阶B+树满足以下性质：
    1. 若根为叶，则$1 \leq \text{根元素数目} \leq B$
 5. In-Node 存储的第$i$个值$e_i$是该Node的第$i+1$个子树的叶子中的最小值
 
-TBD
+B+树的深度为$O(\lceil \log_{\lceil \frac{B}{2} \rceil} n \rceil)$，其中$n$为元素个数。
+
+### 操作
+
+$n$个元素的B+树高度为$h$，则：
+
+1. 分裂（核心操作）：B+ 树的核心在于其分裂操作。可以把M 的限制看做对连出去的边数的限制，叶子节点相当于是连出去至多 M 条节点—数据的边，这样可以把非叶节点和叶子节点的情况统一看待。当某个节点已经连出去 M 条边，需要塞第M+1 条边的时候，需要分裂。分裂会产生一个和原节点同级的节点，就在原节点的右侧。原节点的前⌈(M+1)/2⌉ 个孩子还属于自己，剩下的 ⌊(M+1)/2⌋ 个孩子需要交给新创建的节点。如果分裂的过程中，导致父节点也超出了M 的限制，就需要对父节点也进行分裂，以此类推。如果父节点已经是根节点，就创建一个新根再进行分裂，此时树高会增加 1，其他情况下树高不会改变。（Credit: <https://mem.ac>）
+2. 搜索：$O(\log n)$
+3. 插入/删除：$O(\frac{B}{\log B} \log n)$
+
+具体操作见：<https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/Lec02>
 
 ## 倒排索引
 
 Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并且以链表的形式进行存储，每个关键字对应一个链表，链表中存储了包含这个关键字的文档的编号，出现的位置以及次数。  
 查询关键字可用 hash table 或 Search Tree，search tree 查询速度较慢，但进行范围查询较为容易；hash table 查询速度较快，但是进行范围查询相对困难。  
 搜索的性能衡量指标有两个：召回率和准确率。召回率是指检索到的相关文档数与系统中所有相关文档数的比值，准确率是指检索到的相关文档数与检索到的文档总数的比值。
-|  | Relevant | Irrelevant |
+
+| TableOf | Relevant | Irrelevant |
 | --- | --- | --- |
 | Retrieved | $R_R$ | $I_R$ |
 | Not Retrieved | $R_N$ | $I_N$ |
@@ -194,6 +205,7 @@ Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并�
         “召回率就是，宁可错杀一千绝不放过一个。” -- yy老师
 
 ## 左式堆与斜堆
+
 ### 左式堆
 
 回忆普通二叉堆的性质：
@@ -204,6 +216,7 @@ Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并�
 2. FindMin：直接返回根结点即可，时间 O(1)。
 3. DeleteMin：直接用完全二叉树的最后一个元素顶替根结点，然后 percolate down 找到新根结点的归宿，时间 O(log n)。
 4. BuildHeap：即对 n 个元素建堆存储。这是一个比较特别的操作，最原始的方法就是连续插入 n次，但这样时间复杂度为 O(n log n)，所以我们要有更好的手段。我们的方法是：无需管序性质，直接任意插入这 n 个值，然后从完全二叉树倒数第二排有孩子的结点开始，往前依次检查是否有违反序性质的，有就 percolate down 到正确的位置，循环直到根结点也调整完毕为止，可以验证这样的算法复杂度为 O(n)，具体可见数据结构基础的教材与 PPT。
+
 - 除此之外，我们还有一些操作，这些操作在 Dijkstra 算法加速等场景中可能有应用，因此也展开介绍：
     1. DecreaseKey/IncreaseKey：非常简单，直接用 percolate up/down 实现即可。
     2. Delete：用 DecreaseKey 把 key 降低到最低，percolate up 到根结点后调用 DeleteMin 即可。
@@ -211,7 +224,7 @@ Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并�
 为了进行 merge 操作，使得 merge 更快，引入了左式堆。
 
 - 定义$NPL(x)$：x到一个孩子不足两个的节点的最短路径长，于是只有一个孩子或者叶子的节点的$NPL$为0，且定义$NPL(NULL)=-1$。
-    - 从而$NPL(X) = 1 + \min(NPL(LeftChild), NPL(RightChild))$
+  - 从而$NPL(X) = 1 + \min(NPL(LeftChild), NPL(RightChild))$
 - 左式堆：每个节点的左孩子的$NPL$大于等于右孩子的$NPL$。
 - 定理：在右路径上有 r 个结点的左式堆必然至少有 $2^r − 1$ 个结点（右路径指从根结点出发一路找右孩子直到找到叶子的路径）。
 
@@ -220,7 +233,7 @@ Recall 邻接表，倒排索引当中包含了所有文档中的关键字，并�
 1. Merge：核心操作
 2. Insert：看作一个节点和一个左式堆的 merge
 3. DeleteMin：删去根节点，然后 merge 左右子树
-
+4. Delete: 删去该节点，然后 merge 左右子树，然后 Bottom-up 递归调整 NPL
 
 How to Merge(递归版本):  
 ![](./assets/ADS1.png)
@@ -230,8 +243,19 @@ How to Merge(递归版本):
 
 ### 斜堆
 
+斜堆(skew heap)也叫自适应堆(self-adjusting heap)，它是左式堆的一个变种。通常用来实现优先队列，支持插入，删除，合并操作，并且均摊复杂度都为$O(\log n)$。
 
+斜堆在结构上没什么特殊要求，只需要是一颗二叉树，并且结点满足堆序即可。
 
+#### 操作
+
+1. Merge
+   - 如果一个空斜堆与一个非空斜堆合并，返回左右子树互换的非空斜堆。
+   - 如果两个斜堆都非空，那么比较两个根结点，将较小的根结点的右孩子对应的子堆和另一个堆去合并，合并得到的新子堆的根结点作为新的右孩子。
+   - 将当前根结点的左右孩子互换位置。
+   - 迭代版本的合并类似上面左式堆的那张图，不过在Step 2要变成Swap Right paths中每个节点的左右子树（从下往上）。
+
+插入和删除和左式堆一样。
 
 ## 二项堆
 
@@ -248,10 +272,17 @@ How to Merge(递归版本):
 
 ### 二项堆的操作
 
-TBD
+1. FindMin: 直接遍历所有树,注意到对于一个有$n$个结点的二项堆，最多有$\log n$棵树，因此时间复杂度为$O(\log n)$
+2. Merge: 类比二进制数的竖式加法，确定合并二项树的顺序，时间复杂度为$O(\log n)$
+3. DeleteMin: 先 FindMin 找到最小根节点，去除此根节点所在的二项树，剩余二项树记为新的二项堆$R$。对这个二项树，删除根节点后，其留下的孩子们视作一个新的二项堆$S$，然后将$S$和$R$合并。时间复杂度为$O(\log n)$
+
+!!! note "各种堆的操作时间复杂度"
+    ![Heaps](./assets/ADS5.jpg)
 
 ## 回溯
+
 TBD
+
 ### α-β剪枝
 
 Alpha 剪枝是指对于 min 结点，如果其兄弟结点的值比当前结点的值大，那么就不再搜索当前结点的子结点；Beta 剪枝是指对于 max 结点，如果其兄弟结点的值比当前结点的值小，那么就不再搜索当前结点的子结点。
@@ -273,4 +304,29 @@ TBD
 - 若 $f(n) = \Theta(n^{log_b{a}})$，那么 $T(n) = \Theta(n^{log_b{a}} \log n)$
 - 若对于某个大于0的常数 $\epsilon$ 有 $f(n) = \Omega(n^{log_b{a}+\epsilon})$，且对于某个常数 $c < 1$ 和所有足够大的 $n$ 有 $a f(\frac{n}{b}) \leq c f(n)$，那么 $T(n) = \Theta(f(n))$
 
-![](./assets/ADS4.png)
+![Lemma](./assets/ADS4.png)
+
+!!! note "Lemma"
+    $$
+    T(N) = aT(N/b) + \Theta (N^k \log^{p} N), a \geq 1, b \geq 1, p \geq 0 \\
+    \textrm{We will have:} \\
+    T(N) = \Omicron(N^{\log_{b}a}), \textrm{ if } a \gt b^k \\
+    T(N) = \Omicron(N^k \log^{p} N), \textrm{ if } a \lt b^k \\
+    T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
+    $$
+
+    - 关于主定理的记忆：$a$是divide把问题分成子问题的个数，$b$是子问题的规模，$\Theta (N^k \log^{p} N)$是合并的复杂度
+    - 需要比较的是$aT(N/b)$项和$\Theta (N^k \log^{p} N)$谁占据主导地位，类似于极限的抓大头原则
+    - 如果说$aT(N/b)$占据主导地位，那么总的时间复杂度只需要考虑分割的过程，$T = \Omicron(\sum_{h = 0}^{\log_{b}N}a^{\log_{b}N - h}) = \Omicron(N^{\log_{b}a})$，是在背不出就记得分母上的值在对数中放在底上，无论哪种情况，都有N的几次方
+    - 如果说合并$\Theta (N^k \log^{p} N)$占据主导地位，那么总的时间复杂度一定是单次合并的复杂度这个数量级的（合并次数是常数）
+    - 如果说两者同样重要，仍然是合并的过程更占主导，但是需要补偿给切分的过程一个指数
+
+    Credit: [ADS面向40分斩杀线复习 by Klee1453](https://github.com/Klee1453/ads-geq-40)
+
+## 动态规划
+
+也就是记忆化搜索。
+
+## 贪心
+
+TBD
