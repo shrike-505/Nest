@@ -115,6 +115,17 @@
 ![](./assets/typ4.png)  
 已知问题：会和`image`的`weight`,`height`冲突；脱离图片范围后换行会失效（如上图）  
 用`columns:(a%,b%)`设置图片和文字的比例
+## gentle-clues
+```typst
+#import "@preview/gentle-clues:1.0.0": *
+```
+
+预定义的块：  
+![gentleclues](./assets/typ6.png)
+
+
+看Manual！
+
 ## 杂
 `repeat`函数返回一个无限重复，顶到页面最右侧的字符串，可以用来做填写处
 ```typst
