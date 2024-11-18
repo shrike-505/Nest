@@ -4,7 +4,7 @@
         - 大二上笔记
 ---
 
-> 唯二真史
+> 这辈子有了
 
 # 普通物理学Ⅱ（H）
 
@@ -145,13 +145,17 @@ $\oint \overrightarrow{B} \cdot d\overrightarrow{l} = \mu_0 I$。
 
 定义磁通量：$\Phi = \int \overrightarrow{B} \cdot d\overrightarrow{A}$。
 
-# 小测部分
+TBD
+### 电感
+TBD
 
-## 第一次小测
+## 小测部分
+
+### 第一次小测
 
 [实心带电球体静电能](https://chiichen.github.io/notes/College-Physics/Formula-Derivation/Electrostatic-energy-of-a-solid-charged-sphere.html#_3-%E9%9D%99%E7%94%B5%E8%83%BD)
 
-## 第二次小测
+### 第二次小测
 
 ![](./assets/image-22.png)
 

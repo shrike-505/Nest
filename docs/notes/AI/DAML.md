@@ -150,30 +150,30 @@ Value Proposition (end-to-end)
 ML TASKS:
 
 - **Classification / Regression**
-  - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
+    - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
 - **Clustering**
-  - group a bunch of entities that share common features
+    - group a bunch of entities that share common features
 - **Optimization**
-  - from amongst a set of alternatives pick the “best” while balancing competing value metrics
+    - from amongst a set of alternatives pick the “best” while balancing competing value metrics
 - **Forecasting**
-  - based on the past, forecast the future
+    - based on the past, forecast the future
 - **Recommendation**
-  - based on prior behavior rank order candidate preferences
+    - based on prior behavior rank order candidate preferences
 - **Association**
-  - identify which items co-occur e.g., bread and peanut butter
+    - identify which items co-occur e.g., bread and peanut butter
 
 如何评判ML TASKS完成的好坏？（mea
 1. 需要确定评判的指标（e.g.
 
 ### Types of Learning
 - Supervised Learning
-  - We know both the input and the output
-  - 'Teacher'
+    - We know both the input and the output
+    - 'Teacher'
 - Unsupervised Learning
-  - We only know the input
+    - We only know the input
 - Reinforcement
-  - We know what is desired (correct) and what is not desired
-  - the ‘credit/blame assignment’ problem
+    - We know what is desired (correct) and what is not desired
+    - the ‘credit/blame assignment’ problem
 
 Pull out features from data, and then feed them into a **model**.
 

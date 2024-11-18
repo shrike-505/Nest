@@ -385,9 +385,21 @@ struct list_head{
 
 #### Context Switch
 > 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。
+> ZJU-SYS2-FA24
 
-当CPU从一个进程切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
+当CPU从一个进程（实则是线程Thread）切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
 
 - Context of a process is represented in the PCB
 - Switch 时，System 并不进行什么操作
 
+1. 在两个Kernel线程中的上下文切换
+    - 寄存器在什么时候/哪里保存？
+    - where: 保存在PCB中，即`cpu_context`
+    - when: 在`context_switch()`中，即在`cpu_switch_to()`中
+2. 在两个用户线程中的上下文切换
+    - 令人感叹的是，上下文切换**必须**在内核态中进行
+    - User的寄存器在什么时候/哪里保存？
+    - when: kernel_entry; where: 每个线程的kernel stack中
+    - Kernel的寄存器在什么时候/哪里保存？
+    - when: `cpu_switch_to()`; where: `cpu_context`
+    - ![](./assets/Sys18.png)
