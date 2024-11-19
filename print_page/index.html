@@ -2141,7 +2141,7 @@
 <hr />
 <h2 id="index-_2">更新记录<a class="headerlink" href="#index-_2" title="Permanent link">&para;</a></h2>
 <p>新增文章时间均为 <strong>创作时间</strong><br />
-目前共 58 个页面，约 101522 字，439 行代码。  </p>
+目前共 58 个页面，约 101681 字，440 行代码。  </p>
 <h3 id="index-2024">2024<a class="headerlink" href="#index-2024" title="Permanent link">&para;</a></h3>
 <div style="position: relative">
   <div class="timeline-wrapper">
@@ -3518,31 +3518,49 @@
 <p>用P表示对某程序的表现衡量，定义经历E和某类任务T，则<span class="arithmatex">\(P(T,E+\Delta) &gt; P(T,E)\)</span>。</p>
 <p>ML TASKS:</p>
 <ul>
-<li><strong>Classification / Regression</strong></li>
+<li><strong>Classification / Regression</strong><ul>
 <li>assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)</li>
-<li><strong>Clustering</strong></li>
+</ul>
+</li>
+<li><strong>Clustering</strong><ul>
 <li>group a bunch of entities that share common features</li>
-<li><strong>Optimization</strong></li>
+</ul>
+</li>
+<li><strong>Optimization</strong><ul>
 <li>from amongst a set of alternatives pick the “best” while balancing competing value metrics</li>
-<li><strong>Forecasting</strong></li>
+</ul>
+</li>
+<li><strong>Forecasting</strong><ul>
 <li>based on the past, forecast the future</li>
-<li><strong>Recommendation</strong></li>
+</ul>
+</li>
+<li><strong>Recommendation</strong><ul>
 <li>based on prior behavior rank order candidate preferences</li>
-<li><strong>Association</strong></li>
+</ul>
+</li>
+<li><strong>Association</strong><ul>
 <li>identify which items co-occur e.g., bread and peanut butter</li>
+</ul>
+</li>
 </ul>
 <p>如何评判ML TASKS完成的好坏？（mea
 1. 需要确定评判的指标（e.g.</p>
 <h3 id="notes-ai-daml-types-of-learning">Types of Learning<a class="headerlink" href="#notes-ai-daml-types-of-learning" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Supervised Learning</li>
+<li>Supervised Learning<ul>
 <li>We know both the input and the output</li>
 <li>'Teacher'</li>
-<li>Unsupervised Learning</li>
+</ul>
+</li>
+<li>Unsupervised Learning<ul>
 <li>We only know the input</li>
-<li>Reinforcement</li>
+</ul>
+</li>
+<li>Reinforcement<ul>
 <li>We know what is desired (correct) and what is not desired</li>
 <li>the ‘credit/blame assignment’ problem</li>
+</ul>
+</li>
 </ul>
 <p>Pull out features from data, and then feed them into a <strong>model</strong>.</p>
 <p>Two phases of ML:
@@ -3742,7 +3760,7 @@ wire的电气特性：必须被有且仅有一个assign输入，可以有0个或
 </blockquote>
 <h1 id="notes-computerscience-computersystem2-ii">计算机系统 Ⅱ<a class="headerlink" href="#notes-computerscience-computersystem2-ii" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2956 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 25 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 20 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3089 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 25 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 21 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Links</p>
@@ -4127,13 +4145,31 @@ init process handles child termination with a handler for SIGCHLD that calls wai
 <p><img alt="" src="../notes/ComputerScience/assets/Sys17.png" /></p>
 <h4 id="notes-computerscience-computersystem2-context-switch">Context Switch<a class="headerlink" href="#notes-computerscience-computersystem2-context-switch" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。</p>
+<p>由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。
+ZJU-SYS2-FA24</p>
 </blockquote>
-<p>当CPU从一个进程切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。</p>
+<p>当CPU从一个进程（实则是线程Thread）切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。</p>
 <ul>
 <li>Context of a process is represented in the PCB</li>
 <li>Switch 时，System 并不进行什么操作</li>
-</ul></section><section class="print-page" id="notes-computerscience-fds"><nav class='md-tags'><span class='md-tag'>大一下笔记</span></nav><h1 id="_1">数据结构基础<a class="headerlink" href="#notes-computerscience-fds-_1" title="Permanent link">&para;</a></h1>
+</ul>
+<ol>
+<li>在两个Kernel线程中的上下文切换<ul>
+<li>寄存器在什么时候/哪里保存？</li>
+<li>where: 保存在PCB中，即<code>cpu_context</code></li>
+<li>when: 在<code>context_switch()</code>中，即在<code>cpu_switch_to()</code>中</li>
+</ul>
+</li>
+<li>在两个用户线程中的上下文切换<ul>
+<li>令人感叹的是，上下文切换<strong>必须</strong>在内核态中进行</li>
+<li>User的寄存器在什么时候/哪里保存？</li>
+<li>when: kernel_entry; where: 每个线程的kernel stack中</li>
+<li>Kernel的寄存器在什么时候/哪里保存？</li>
+<li>when: <code>cpu_switch_to()</code>; where: <code>cpu_context</code></li>
+<li><img alt="" src="../notes/ComputerScience/assets/Sys18.png" /></li>
+</ul>
+</li>
+</ol></section><section class="print-page" id="notes-computerscience-fds"><nav class='md-tags'><span class='md-tag'>大一下笔记</span></nav><h1 id="_1">数据结构基础<a class="headerlink" href="#notes-computerscience-fds-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 459 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 51 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
@@ -4250,7 +4286,7 @@ init process handles child termination with a handler for SIGCHLD that calls wai
 <h2 id="notes-computerscience-fds-hash">Hash<a class="headerlink" href="#notes-computerscience-fds-hash" title="Permanent link">&para;</a></h2>
 <p>速通了：<a href="https://www.hello-algo.com/chapter_hashing/">https://www.hello-algo.com/chapter_hashing/</a></p></section><section class="print-page" id="notes-computerscience-ads"><nav class='md-tags'><span class='md-tag'>大二上笔记</span></nav><h1 id="_1">高级数据结构与算法分析<a class="headerlink" href="#notes-computerscience-ads-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3905 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 19 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3918 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 19 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：杨洋</p>
@@ -4558,7 +4594,11 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
 <h2 id="notes-computerscience-ads-_20">动态规划<a class="headerlink" href="#notes-computerscience-ads-_20" title="Permanent link">&para;</a></h2>
 <p>也就是记忆化搜索。</p>
 <h2 id="notes-computerscience-ads-_21">贪心<a class="headerlink" href="#notes-computerscience-ads-_21" title="Permanent link">&para;</a></h2>
-<p>TBD</p></section><h1 class='nav-section-title-end'>Ended: Computer Science</h1>
+<p>TBD</p>
+<h2 id="notes-computerscience-ads-np-complete">NP Complete<a class="headerlink" href="#notes-computerscience-ads-np-complete" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
+<p><img alt="" src="../notes/ComputerScience/assets/ADS6.png" /></p>
+<p>yy老师你说的是中文吗？</p></section><h1 class='nav-section-title-end'>Ended: Computer Science</h1>
                         <h2 class='nav-section-title' id='section-数理'>
                             数理 <a class='headerlink' href='#section-数理' title='Permanent link'>↵</a>
                         </h2>
@@ -6958,11 +6998,11 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 <h2 id="notes-mathematicsandphysics-probability-_21">协方差<a class="headerlink" href="#notes-mathematicsandphysics-probability-_21" title="Permanent link">&para;</a></h2>
 <h2 id="notes-mathematicsandphysics-probability-_22">矩<a class="headerlink" href="#notes-mathematicsandphysics-probability-_22" title="Permanent link">&para;</a></h2>
 <h2 id="notes-mathematicsandphysics-probability-_23">特征函数<a class="headerlink" href="#notes-mathematicsandphysics-probability-_23" title="Permanent link">&para;</a></h2></section><section class="print-page" id="notes-mathematicsandphysics-physics2"><nav class='md-tags'><span class='md-tag'>大二上笔记</span></nav><blockquote>
-<p>唯二真史</p>
+<p>这辈子有了</p>
 </blockquote>
 <h1 id="notes-mathematicsandphysics-physics2-iih">普通物理学Ⅱ（H）<a class="headerlink" href="#notes-mathematicsandphysics-physics2-iih" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1159 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 21 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1164 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 21 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：王业伍</p>
@@ -7071,10 +7111,13 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 <p><a href="https://zhuanlan.zhihu.com/p/142376701">https://zhuanlan.zhihu.com/p/142376701</a></p>
 <h3 id="notes-mathematicsandphysics-physics2-_9">法拉第电磁感应定律<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_9" title="Permanent link">&para;</a></h3>
 <p>定义磁通量：<span class="arithmatex">\(\Phi = \int \overrightarrow{B} \cdot d\overrightarrow{A}\)</span>。</p>
-<h1 id="notes-mathematicsandphysics-physics2-_10">小测部分<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_10" title="Permanent link">&para;</a></h1>
-<h2 id="notes-mathematicsandphysics-physics2-_11">第一次小测<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_11" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
+<h3 id="notes-mathematicsandphysics-physics2-_10">电感<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_10" title="Permanent link">&para;</a></h3>
+<p>TBD</p>
+<h2 id="notes-mathematicsandphysics-physics2-_11">小测部分<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_11" title="Permanent link">&para;</a></h2>
+<h3 id="notes-mathematicsandphysics-physics2-_12">第一次小测<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_12" title="Permanent link">&para;</a></h3>
 <p><a href="https://chiichen.github.io/notes/College-Physics/Formula-Derivation/Electrostatic-energy-of-a-solid-charged-sphere.html#_3-%E9%9D%99%E7%94%B5%E8%83%BD">实心带电球体静电能</a></p>
-<h2 id="notes-mathematicsandphysics-physics2-_12">第二次小测<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_12" title="Permanent link">&para;</a></h2>
+<h3 id="notes-mathematicsandphysics-physics2-_13">第二次小测<a class="headerlink" href="#notes-mathematicsandphysics-physics2-_13" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../notes/MathematicsAndPhysics/assets/image-22.png" /></p>
 <p>已知这样的一对非平行极板，求其电容，其中上板横向纵向长度 <span class="arithmatex">\(a, b\)</span>, 上板最低点与下板距离 <span class="arithmatex">\(d\)</span>，最高点与下板距离 <span class="arithmatex">\(d+h\)</span> 已知，<span class="arithmatex">\(h&lt;&lt;d\)</span></p>
 <details class="note">
@@ -7477,7 +7520,7 @@ Notice the rest and the first are both possible to be a Link instance.</p>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#notes-language-fimpp-__codelineno-0-5"></a>Your faithful student, Twilight Sparkle.
 </code></pre></div></section><section class="print-page" id="notes-language-typst"><h1 id="notes-language-typst-typst">Typst备忘录<a class="headerlink" href="#notes-language-typst-typst" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 374 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 69 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 382 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 70 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">记录一下用typst写东西时碰到的问题</p>
@@ -7582,23 +7625,29 @@ Notice the rest and the first are both possible to be a Link instance.</p>
 <img alt="" src="../notes/Language/assets/typ4.png" /><br />
 已知问题：会和<code>image</code>的<code>weight</code>,<code>height</code>冲突；脱离图片范围后换行会失效（如上图）<br />
 用<code>columns:(a%,b%)</code>设置图片和文字的比例</p>
+<h2 id="notes-language-typst-gentle-clues">gentle-clues<a class="headerlink" href="#notes-language-typst-gentle-clues" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#notes-language-typst-__codelineno-6-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/gentle-clues:1.0.0&quot;: *
+</code></pre></div>
+<p>预定义的块：<br />
+<img alt="gentleclues" src="../notes/Language/assets/typ6.png" /></p>
+<p>看Manual！</p>
 <h2 id="notes-language-typst-_4">杂<a class="headerlink" href="#notes-language-typst-_4" title="Permanent link">&para;</a></h2>
 <p><code>repeat</code>函数返回一个无限重复，顶到页面最右侧的字符串，可以用来做填写处
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#notes-language-typst-__codelineno-6-1"></a><span class="kd">#let</span><span class="w"> </span>answer = [#box(width: 1fr,repeat(&quot;_&quot;))] //用box可以让它不换行
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#notes-language-typst-__codelineno-6-2"></a><span class="c1">//如果后面还有内容就把内容顶到最右边</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#notes-language-typst-__codelineno-6-3"></a>You have a vast vast soul \
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#notes-language-typst-__codelineno-6-4"></a>And I will always, always, always #answer it.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#notes-language-typst-__codelineno-7-1"></a><span class="kd">#let</span><span class="w"> </span>answer = [#box(width: 1fr,repeat(&quot;_&quot;))] //用box可以让它不换行
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#notes-language-typst-__codelineno-7-2"></a><span class="c1">//如果后面还有内容就把内容顶到最右边</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#notes-language-typst-__codelineno-7-3"></a>You have a vast vast soul \
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#notes-language-typst-__codelineno-7-4"></a>And I will always, always, always #answer it.
 </code></pre></div>
 <img alt="" src="../notes/Language/assets/typ3.png" /></p>
 <p><code>image</code>函数怎么用: 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#notes-language-typst-__codelineno-7-1"></a>image(
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#notes-language-typst-__codelineno-7-2"></a>    str,
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#notes-language-typst-__codelineno-7-3"></a>    format: autostr,
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#notes-language-typst-__codelineno-7-4"></a>    width: autorelative,
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#notes-language-typst-__codelineno-7-5"></a>    height: autorelative,
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#notes-language-typst-__codelineno-7-6"></a>    alt: nonestr,
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#notes-language-typst-__codelineno-7-7"></a>    fit: str,
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#notes-language-typst-__codelineno-7-8"></a>) -&gt; content
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#notes-language-typst-__codelineno-8-1"></a>image(
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#notes-language-typst-__codelineno-8-2"></a>    str,
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#notes-language-typst-__codelineno-8-3"></a>    format: autostr,
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#notes-language-typst-__codelineno-8-4"></a>    width: autorelative,
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#notes-language-typst-__codelineno-8-5"></a>    height: autorelative,
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#notes-language-typst-__codelineno-8-6"></a>    alt: nonestr,
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#notes-language-typst-__codelineno-8-7"></a>    fit: str,
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#notes-language-typst-__codelineno-8-8"></a>) -&gt; content
 </code></pre></div></p>
 <p>Table Decoration: <a href="https://typst.app/docs/guides/table-guide/">https://typst.app/docs/guides/table-guide/</a></p></section><h1 class='nav-section-title-end'>Ended: Language</h1><section class="print-page" id="notes-ctf"><nav class='md-tags'><span class='md-tag'>大一下笔记</span></nav><h1 id="ctf101">CTF101<a class="headerlink" href="#notes-ctf-ctf101" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
