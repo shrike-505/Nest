@@ -330,3 +330,10 @@ TBD
 ## 贪心
 
 TBD
+
+## NP Complete
+TBD
+
+![](./assets/ADS6.png)
+
+yy老师你说的是中文吗？
