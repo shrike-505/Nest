@@ -58,6 +58,7 @@ nav:
   - 记念: others/Quotes.md
   - 年终总结: others/final.md
   - 暑假指南: others/summer_idle.md
+  - Helix 学习日志：others/Helix.md
 - 标签: tags.md
 - 友谊是魔法！: friends.md
 
@@ -203,4 +204,4 @@ extra:
   social:
         - icon: material/email
           link: mailto:<mikamidouya@outlook.com>
-          name: E-mail
+          name: Email
