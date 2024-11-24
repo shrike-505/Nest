@@ -63,7 +63,7 @@ TBD
 !!! example "例"
     ![](./assets/GP-11.png)
 
-#### 极化
+### 极化
 
 介电体处于电场中时，会在内部产生极化电荷，从而减小电场强度。极化电场$E_p = \frac{E}{k_e}$。$k_e$称为相对介电常数（Relative dielectric constant）。
 
@@ -71,10 +71,39 @@ TBD
 
 ![](./assets/GP-12.png)
 
-考虑真空中两个由无数电偶极子组成的平行圆板，如上图所示，定义$\overrightarrow{P} = \frac{\Sigma \overrightarrow{p}}{V}$（$\overrightarrow{p}$为电偶极矩，$\Delta V$ 为囊括的体积），则有$\overrightarrow{P} = \varepsilon_0 \chi_e \overrightarrow{E}$，其中$\chi_e$为电极化率。
+考虑真空中两个由无数电偶极子组成的平行圆板，如上图所示，定义极化强度矢量$\overrightarrow{P} = \frac{\Sigma \overrightarrow{p}}{V}$（$\overrightarrow{p}$为电偶极矩，$\Delta V$ 为囊括的体积），则有$\overrightarrow{P} = \varepsilon_0 \chi_e \overrightarrow{E}$，其中$\chi_e$为电极化率。
 
-#### 介电质中的Gauss 定理
-TBD，以及电位移矢量的内容。
+$\chi_e + 1 = k_e$
+
+有$\iint P dA = \Sigma_{out} q' = -\Sigma_{in} q'$
+
+极化强度矢量与闭合曲面的内积积分等于该曲面表面的束缚电荷，等于该曲面内部电荷的相反数(外面有多少正的，里面就有多少负的)
+
+这里的$q'$是极化电荷！所以这个不是高斯定理。
+
+同时有面电荷密度$\sigma' = P \cdot n$，等于极化强度矢量在法向上的分量；由夹角来控制正负。
+
+#### 介电质中的 Gauss 定理
+
+（照抄<kailqq.cc>）
+
+考虑一个正电荷$q_0$放在电介质中，其周围会产生极化电荷$q'$
+
+由正宗的高斯定理得到 $\iint E d A = \frac{q_0 + q'}{\epsilon_0}$ 
+
+而由极化电荷和强度矢量的性质有 $\iint P d A = -q'$
+
+代入得到$\epsilon_0 \iint E dA = q_0 - \iint P d A$
+
+尝试表示$q_0$：$q_0 = \iint (\epsilon_0 E + P) dA$
+
+于是定义$D = \epsilon_0 E + P$为电位移矢量
+
+这说明电位移矢量与闭合曲面内积面积分等于该曲面内的**自由电荷**（非极化）之和
+
+
+
+![](./assets/gp27.png)
 
 !!! example "例"
     ![](./assets/GP-13.png)  
@@ -170,7 +199,8 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 
 动生电动势：$\varepsilon = \int_a^b (\overrightarrow{v} \times \overrightarrow{B}) \cdot d\overrightarrow{l}$。
 
-TBD
+发电机：$\Phi = BLS \cos \omega t$，$\varepsilon = \omega BLS \sin \omega t$。
+
 ### 电感
 #### 自感
 
@@ -194,8 +224,39 @@ TBD
 
 存储能量：$E = \frac{1}{2} L i^2$
 
+![](./assets/gp29.png)
+
 #### 互感
-TBD
+
+考虑两个共轴（轴长为$l$）的，匝数分别为$N_1, N_2$的，横截面半径都为$r$的线圈，通过线圈1的电流$i_1$产生的磁通量为$\mu_0 \frac{N_1}{l} i_1 \pi r^2$
+
+则通过线圈2的磁通量为$\Phi_{21} = \mu_0 \frac{N_1 N_2}{l} i_1 \pi r^2$
+
+线圈2产生的互感电动势为$\varepsilon_{21} = -\frac{d\Phi_{21}}{dt} = -\mu_0 \frac{N_1 N_2}{l} \pi r^2 \frac{di_1}{dt}$
+
+将此式写成$\varepsilon_{21} = -M_{21} \frac{di_1}{dt}$，其中$M_{21} = \mu_0 \frac{N_1 N_2}{l} \pi r^2$为互感系数。
+
+同理，可得线圈1产生的互感电动势为$\varepsilon_{12} = -M_{12} \frac{di_2}{dt}$，其中$M_{12} = \mu_0 \frac{N_1 N_2}{l} \pi r^2$。
+
+也就是说，$M_{12} = M_{21} = M$，也就是互感系数。
+
+#### 磁化
+
+通电螺线管中插入铁磁材料，可以使得自感系数增大：$L = k_m L_0$，其中$k_m$被称为磁导率。
+
+原本杂乱无章的分子磁矩会受到磁场的作用，使得磁矩方向趋于一致，朝向磁场方向，在宏观上相当于在材料外围产生了一个电流$i'$
+
+定义磁化强度矢量$M$为单位体积内磁矩矢量和$M = \frac{\Sigma \mu}{V}$
+
+类比电学中的极化，其满足$\int M dl = \Sigma_{in} i'$
+
+![](./assets/gp28.png)
+
+则由环路定理 $\int B dl = \mu_0 \Sigma (i_0 + i') = \mu_0 \Sigma i_0 + \mu_0 \int M dl$
+
+也就是$\int (\frac{B}{\mu_0} - M) dl = \Sigma i_0$
+
+定义磁场强度：$H = \frac{B}{\mu_0} - M$
 
 ## 小测部分
 
