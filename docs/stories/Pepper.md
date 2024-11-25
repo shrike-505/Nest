@@ -78,6 +78,9 @@ comments: true
 
 >__典谟训诰[成功]__：[牵挂最多人的幽灵，她仍将和我在一起。](https://music.163.com/#/song?id=1456445961)
 
+??? success "**典谟训诰[成功]**"
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1837818274&auto=1&height=66"></iframe>
+
 >__平心定气[失败]__：别哭，兄弟。大家都难受，权当她凭空不见了，改嫁了，被洪水淹死了，被火车碾死了，被雪埋葬了，消弭在你奔涌的脑海中了。可就是别当她继续存在了，这感觉已经变味了。好吧，你肯定不信。
 
 <br><center>[耶哥蕊特](https://asoiaf.huijiwiki.com/wiki/%E8%80%B6%E5%93%A5%E8%95%8A%E7%89%B9)：我好像有点印象了。</center><br>
@@ -125,6 +128,9 @@ comments: true
 >__内陆帝国[成功]__：我们保持着距离相拥，头上是雾霭，脚下是雾霭的平面镜成像。我的脚步无师自通，而你熟稔地引领我盘旋。灯光将我们摇曳的影子刻入冰面与大地，刻入这尊有着近百亿年历史的古老星球中。
 
 >__典谟训诰[成功]__：[我来自多米力高威威维利星！](https://music.163.com/#/song?id=1837818274)
+
+??? success "**典谟训诰[成功]**"
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1837818274&auto=1&height=66"></iframe>
 
 >__内陆帝国[成功]__：我们大声谈笑，路过的风也为咱俩的欢乐驻足。你说红色象征热情奔放与速度，我说我最爱吃纳宝帝的芝士奶酪味威化饼干，你说诗经里的风雅颂美得难以言喻，我说参变分离是解决导数不等式证明的不二法门。
 
@@ -178,13 +184,16 @@ comments: true
 
 <br><center>德洛莉丝•黛：一个幽灵。</center><br>
 
->__典谟训诰[成功]__：一个\*什么*的幽灵？
+>__典谟训诰[成功]__：一个\*什么\*的幽灵？
 
 <center><b>十月八日，寒露。在那片雪白车灯中，我看见你的身体，单薄而绵密，像一片打湿的餐巾。你像四维世界的造物，长，宽，高，时间，迷茫在时间尺度上纵横蔓延，贯穿你*短暂*的一生。走一步看一步，你终于莅临了这命中注定的分岔路口。</b></center><br>
 
 >__回乐烽前[成功]__：昏暗的病房里，气若游丝的老人微阖双目，眼泪穿梭着皱纹的千沟万壑。他念叨着：“你们怎么办，只有天知道。”
 
 >__典谟训诰[成功]__：[只道时间是疗伤的良药，谁料如今成害病的粕糟？](https://music.163.com/#/song?id=1837817429)
+
+??? success "**典谟训诰[成功]**"
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1837817429&auto=1&height=66"></iframe>
 
 [1.投身她浩渺的怀抱。](G30.md)
 
