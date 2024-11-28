@@ -61,3 +61,11 @@ Welcome to the wake-up club, brother.
 午后的日光之下，整片大区域轰鸣着:旧木屋组成一张黑色棋盘，里面生活着 80，000 条生命，还有层层叠叠的烟囱。一眼望去全是容易失火的建筑物——从大街到 41 分局，再到嵌入在大雪纷飞地平线上的布吉街...... 你闭上双眼，听见狗在吠叫。一个孤独的女人坐在工厂窗户旁边，梦想着陨石撞击这个星球。圣杰罗姆路上，一枚方形子弹滑入方形枪膛。旧南城里，一个没有眼睑的男人在微笑。春天来了。到时间了。
 
 <p align=right><i>Disco Elysium</i>（轻语工作室 译）, ZA/UM</p>
+
+Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.
+
+<p align=right>G.K. Chesterton by way of Neil Gaiman, Coraline</p>
+
+书页不像IDE窗口那么宽，所以每一个字符都很珍贵。
+
+<p align=right><i>Crafting Interpreters</i>, Robert Nystrom</p>
