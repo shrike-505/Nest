@@ -52,13 +52,13 @@ nav:
     - Typst备忘录: notes/Language/Typst.md
   - CTF101: notes/CTF.md
 - 随笔:
-    - casual/index.md
+  - casual/index.md
 - 杂:
   - others/index.md
   - 记念: others/Quotes.md
   - 年终总结: others/final.md
   - 暑假指南: others/summer_idle.md
-  - Helix 学习日志：others/Helix.md
+  - Helix 学习日志: others/Helix.md
 - 标签: tags.md
 - 友谊是魔法！: friends.md
 
