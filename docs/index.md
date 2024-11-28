@@ -16,8 +16,7 @@ changelog: true
 ***
 :fireworks: 你可以在下面的地方找到我！  
 
-#### :fontawesome-brands-bilibili: [My Bilibili](https://space.bilibili.com/164131287/)  
-#### :fontawesome-brands-zhihu: [My Zhihu](https://www.zhihu.com/people/trixie-83-96)  
+#### :fontawesome-brands-bilibili: [My Bilibili](https://space.bilibili.com/164131287/)
 #### :fontawesome-brands-github: [My GitHub](https://github.com/shrike-505)
 #### :fontawesome-solid-horse-head: [My Fimtale](https://fimtale.com/u/叁壹肆壹)
 ***
