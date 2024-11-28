@@ -403,3 +403,185 @@ struct list_head{
     - Kernel的寄存器在什么时候/哪里保存？
     - when: `cpu_switch_to()`; where: `cpu_context`
     - ![](./assets/Sys18.png)
+
+### CPU Scheduling
+
+- 定义：操作系统决定哪个进程在CPU上运行，要运行多久
+- 使用 dispatcher 进行切换
+  - A component of the OS that’s used to switch between processes
+
+#### IO burst
+
+大多数进程的执行时间是由CPU burst和IO burst交替组成的。
+
+因此进程可以分为两类：
+
+- IO bound 进程
+  - 大多数时间等待IO
+  - 包含许多短小的CPU burst
+  - e.g. /bin/cp
+- CPU bound 进程
+  - 大多数时间在CPU上运行
+  - IO burst很短很短（如果有的话）
+  - e.g. /bin/gcc
+
+#### CPU Scheduler（CPU调度器）
+
+操作系统跟踪进程的状态，在 CPU 空闲时选择下一个进程运行。
+
+调度可分为两类
+
+- Preemptive Scheduling（可抢占式调度）
+  - 进程即使在正常执行时，也可以被抢占
+  - Easy for CPU to handle, most of modern choices.
+- Non-preemptive Scheduling（非抢占式调度）
+  - 进程只能在执行完毕或者等待IO时才能被抢占（hold CPU until it's willing to give it up）
+
+那么调度发生在什么时候？
+
+![](./assets/Sys19.png)
+
+#### Scheduling Objectives
+
+- 最大化 CPU 利用率
+- 最大化吞吐量
+- 最小化等待时间
+- 最小化周转时间（Turnaround time）
+  - Time from process creation to completion
+- 最小化响应时间
+  - Time from process creation to first response
+
+### Process Scheduling
+为了使CPU迅速地切换到下一个进程，**Process scheduler** 在 Ready 的进程中选择下一个在 Core 上运行的进程。
+
+维护两个 Scheduling Queue：
+
+- Ready queue 
+    - set of all processes residing in main memory, ready and waiting to execute 
+- Wait queues 
+    - set of processes waiting for an event (i.e. I/O)
+- 进程在不同的 Queue 中频繁 Transfer，因此需要用 List 实现。
+
+```C
+struct list_head{
+    struct list_head *next,*prev;
+};
+```
+
+![](./assets/Sys17.png)
+
+#### Dispatcher
+
+Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至Kernel态，保存当前进程的PCB，加载新进程的PCB。
+
+- Dispatch Latency: Time it takes for the dispatcher to stop one process and start another running
+
+#### Scheduling Criteria
+
+- CPU Utilization
+- Throughput
+- Turnaround Time: **Finsh Time - Arrival Time**
+- Waiting Time: **Start Time - Arrival Time**
+- Response Time
+
+#### Scheduling Algorithms
+
+- FCFS (First-Come, First-Served)
+- SJF (Shortest Job First)
+- Round Robin
+- Priority Scheduling
+- Multilevel Queue Scheduling
+- Multilevel Feedback Queue Scheduling
+
+这里要画图了！注意 Burst Time 可看作执行时间。
+
+??? info "FCFS"
+    - First-Come, First-Served
+    - Non-preemptive
+    - Easy to understand and implement
+    - Poor in performance: 长进程会导致短进程等待时间过长
+    - Burst Time: P1: 24, P2: 3, P3: 3，这里展示一下以`123`的顺序执行的情况，会发现比`321`的情况要差很多
+    - ![](./assets/Sys20.png)
+
+??? info "SJF"
+    - 理论上的最佳方案
+    - 可分为两类：Non-preemptive SJF, Preemptive SJF
+    - Non-preemptive SJF
+        - 选择最短的 **总的** Burst 时间
+        - ![](./assets/Sys21.png)
+    - Preemptime SJF
+        - 选择最短的 **剩余 Burst 时间**
+        - ![](./assets/Sys22.png)
+        - 这里 turnaround time 是一样的，还是完成时间减去 Arrival Time；对于 Waitng Time，会出现图里 P1 P2 这种分段执行的，这时 Waiting Time 就要分成两部分：从 Arrive 到第一次执行的时间间隔，再加上每次执行的结束时间到下次执行的开始时间的间隔
+    - 但是很难知道每个进程的 Burst Time
+    - 可以通过已发生过的 CPU Burst 预测
+
+??? info "Round Robin"
+    - Preemptive
+    - 定义一个时间片（Time Quantum）：作为每个进程每次持续的最长时间
+    - 除非只剩下一个 READY 进程，否则，一个进程最多执行一个时间片长度后就得把 CPU 使用权交给另一个 READY 进程。
+    - Ready Queue 是 First-IN-First-OUT
+    - Scheduling:
+        - 从 Ready Queue 中选出第一个进程
+        - 设置计时器，在一个时间片长度后中断进程
+        - Dispatch 该进程
+    - ![](./assets/Sys25.png)
+    - 因此对时间片的选取很重要：长 or 短？
+        - 短时间片
+            - 响应时间/互动率很好！但是额外开销太大了：因为 Dispatch 时 Context Switch 太多太耗时。
+        - 长时间片
+            - 响应时间很差，额外开支变少了：时间片很长很长时就变成 FCFS 型了
+
+??? info "Priority Scheduling"
+    - Non-Preemptive or Preemptive
+    - 为每个进程定义一个优先级（一个数字）
+    - 也即把 Ready Queue 利用为一个优先队列
+    - 优先级高的（一般是数字小的）先执行
+    - 其实优先级取“预测的下一次 Burst TIme”时就是SJF
+    - ![](./assets/Sys23.png)
+    - 来看一个优先级调度和 Round Robin 的综合
+    - ![](./assets/Sys24.png)
+    - Problem：低优先级的进程总会被抢占，几乎永不执行（Starvation）
+    - Solution：Increase the priority of a process as it **ages**.
+
+??? info "Multilevel Queue"
+    - ready queue 被分成多个队列
+    - 比如分成交互性队列和批处理队列
+    - 一个进程会被永久地分到一个队列中
+    - 每个队列可以使用不同的 Scheduling Algorithm
+      - 例如，高交互性的进程队列可以使用 RR 算法，低交互的批处理队列可以使用 FCFS 算法
+    - 队列之间也可以进行调度
+
+??? info "Multilevel Feedback Queues"
+    类似 Multilevel Queue，但是进程可以在不同队列之间移动。
+
+    给交互性、I/O intensive 的进程更高的调度优先级
+
+    最最常见的调度算法
+
+## IPC(Inter-Process Communication)
+
+进程间通信是指两个或多个进程之间交换信息的机制。
+
+进程可以通过通信进行”合作“，例如说文件这类信息在不同进程中的共享，或者说对同一个任务的 Multi-processing。
+
+!!! example "Chrome Browser"
+    Chrome浏览器使用进程隔离，每个标签页都是一个进程，这样一个标签页崩溃不会影响其他标签页。
+
+    - Browser Process: 管理所有的标签页，UI，硬盘和网络的IO
+    - Renderer Process: 每个标签页一个进程，负责渲染页面，读取HTML & CSS，加载JS。
+      - 在一个沙盒里运行，限制了对系统的访问
+    - Plugin Process: 每个插件一个进程，如Flash Player
+
+### Models of IPC
+
+- 共享内存（Shared Memory）
+  - ![Shared Memory](./assets/Sys26.png)
+  - low-overhead: almost no SysCall
+  - One process creates a shared memory segment
+  - Processes can then “attach” it to their address spaces
+  - 两个进程单独地访问共享内存
+- Message Passing
+  - ![Message Passing](./assets/Sys27.png)
+  - high-overhead: 需要通过System Call进入Kernel态获取Message
+  - 每次的Message很小
