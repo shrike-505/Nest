@@ -384,13 +384,13 @@ struct list_head{
 ![](./assets/Sys17.png)
 
 #### Context Switch
-> 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。
+> 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。  
 > ZJU-SYS2-FA24
 
 当CPU从一个进程（实则是线程Thread）切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
 
 - Context of a process is represented in the PCB
-- Switch 时，System 并不进行什么操作
+- Switch 时，System 本身并不进行什么操作
 
 1. 在两个Kernel线程中的上下文切换
     - 寄存器在什么时候/哪里保存？
@@ -585,3 +585,85 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
   - ![Message Passing](./assets/Sys27.png)
   - high-overhead: 需要通过System Call进入Kernel态获取Message
   - 每次的Message很小
+  - 创造一个邮筒（Mailbox），通过邮筒发送与接收消息，摧毁邮筒
+  - Blocking or Non-blocking
+    - Blocking(同步)：发送者在信息被接收前一直Block，接收者在信息到达前一直Block
+    - Non-blocking(异步)：发送者持续发消息，接收者接收一条有效信息或者空消息
+  - 这里有一个 Buffering 的概念：
+    - Queue of messages attached to the link.
+    - Implemented in one of three ways
+      1. Zero capacity – no messages are queued on a link.  
+        Sender must wait for receiver
+      2. Bounded capacity – finite length of n messages  
+        Sender must wait if link full
+      3. Unbounded capacity – infinite length   
+        Sender never waits
+- Pipe
+  - Ordinary Pipe
+    - 一个进程写，一个进程读
+    - 一般是父子进程间通信
+    - 进程外无法访问
+    - 进程产生者写到`fd[1]`的 write-end，进程产生者读取`fd[0]`的 read-end
+    - 因此是单向的
+    - On Windows: Anonymous Pipe
+  - Named Pipe
+    - 两个进程之间通信
+    - 通过文件系统
+    - 双向
+    - 有名管道是一种特殊类型的文件，它允许无关的进程之间进行通信
+    - 与无名管道不同，有名管道有一个路径名与之关联，以`mkfifo()`创建
+
+## Thread
+
+### Process vs Thread
+
+线程是进程的一个 Execution Unit，一个进程可以包含多个线程。每个线程有自己的 Stack 和 PC，但是共享 Data Section、Heap 和 Code Section。
+
+- Single-threaded Process
+  - 一个进程只有一个线程
+- Multi-threaded Process
+  - 一个进程有多个线程
+
+使用线程的优势：
+
+- Economical
+  - 创建线程比创建进程开销更少（Code Section、Data Section、Heap 已经被加载）
+- Resource Sharing
+  - 线程本身就是共享资源的
+  - No more need for IPC
+- Responsiveness
+- Scalability
+  - 一个进程中的多个线程可以并行执行，提高效率
+
+劣势：
+
+- 独立性差
+  - 一个线程崩溃会导致**整个进程**崩溃
+  - 很难知道是哪个线程出了问题
+
+### Thread Model
+
+- Many-to-one
+  - TBD
+- One-to-one
+  - TBD
+- Many-to-many
+  - TBD
+- Two-level
+  - 可多对多，可一对一
+
+### Thread Library
+
+TBD
+
+### Signal for Thread
+
+在多线程进程中，一个 Signal 发送出去会有多种情况
+
+TBD
+
+### Linux Thread
+
+使用 `clone()` 的 SysCall 来创建线程。
+
+TBD
