@@ -197,3 +197,91 @@ The twain shall never meet.
 ![](./assets/DAML8.png)
 
 形似倒排索引那一课的表格。
+
+## Lec 6: Decision Trees
+
+决策树每个节点是一个问题，节点的每个子节点是一个答案，最终叶子节点是一个决策。
+
+Good Decision Tree: Wide and Shallow.
+
+建树方法：Brutal Force & Greedy Algorithm.
+
+### Recursive Partitioning
+
+![Recursive Partitioning](./assets/DAML9.png)
+
+对于每个predictor variable，选择一个value，然后根据这个value的值将数据分为两部分，然后在purity达到最大时递归。
+
+这个 Split 的过程就可以用 Decision Tree 来表示，分成的几部分就用几个叶子节点表示，最终得到一个可用于 Classification 的 Decision Tree。
+
+### Purity
+
+- Misclassification Error Rate: $1 - max(p1, p2, ..., pk)$
+- GINI: $1 - (p1^2 + p2^2 + ... + pk^2)$（If the partition is fully homogeneous, GINI = 0）
+- Entropy: $-p1log(p1) - p2log(p2) - ... - pklog(pk)$
+- $p_k$ 是在每个决策后的数据集（即每个叶子节点）中，随机挑选一个数据，其属于第k类的概率。
+- 一组父子关系（也就是一次Split）的GINI Index就是所有子节点GINI Index的加权平均。
+- 叶子节点的GINI Index越小，说明这个叶子节点的数据越纯，如果降为0，说明这个叶子节点的数据完全纯净（全部属于同一类）。
+
+!!! example "eg"
+    ![GINIeg](./assets/DAML10.png)
+
+### Random Forest
+
+在建森林时的随机性：
+
+- Bagging: 从原始数据集中随机抽取一部分数据，然后用这部分数据建立一个决策树。
+  - 经验上取2/3的数据
+- Feature: 从所有的特征中随机选取一部分特征，然后用这部分特征建立一个决策树。
+  - 经验上取$\sqrt{p}$个特征
+
+### Ensemble Learning
+
+以 error rate 而言，Learner 可以被分为 Strong, Bad, Weak.
+
+Ensemble Learning: 通过组合多个 Weak Learner 来构建一个 Strong Learner。
+
+!!! example "eg"
+    以这个判断垃圾邮件的 Classifier 为例，我们仅有的特征是 `Lottery`（彩票）和 `Sale` 这两个词在邮件中出现的次数。我们要对这个 Classifier 建一个决策树。  
+    ![Ensemble](./assets/DAML11.png)  
+    ![Ensemble2](./assets/DAML12.png)  
+    这里`value`的两个分量就是当前节点对应情况下的 Spam/Ham 个数。
+
+### Bagging(Bootstrap Aggregating)
+
+从原始数据集（Observations）中随机抽取一部分数据，然后用这部分数据建立一个决策树（Weak Learner）。
+
+Weak Learner 通过投票（VOTE）合成 Strong Learner。（从图像上讲，如果某一区域被超过一半的决策树判断为 Spam，那么这个区域就鉴定为 Spam）
+
+这里的 Vote 可以理解为加权投票，即每个决策树的权重不同。
+
+![Bagging](./assets/DAML13.png)
+
+### Boosting
+
+#### AdaBoost(Adaptive Boosting)
+
+为每个数据点赋予一个权重，每次建树（即 Weak Learner）时，对于错误鉴定的数据点，增加其权重，在此基础上接着新建 Weak Learner 与决策树。
+
+![AdaBoost](./assets/DAML14.png)
+
+类似 Bagging 的投票，这里需要评判每个 Weak Learner 的权重。
+
+使用 `log-odds(accuarcy)` 函数，根据 Learner 的准确率评判每个 Weak Learner 的权重：
+
+- $log-odds(accuarcy) = log(\frac{accuarcy}{1-accuarcy})$
+- ![AdaBoost1](./assets/DAML15.png)
+
+### Sciktlearn-demo
+
+概率论基础知识：
+
+![Probability](./assets/DAML16.png)
+
+使用 MNIST 数据集，对数字进行鉴别。
+
+每个数字是一个 28x28 符号组成的图片，共有 784 个 feature，每个特征是一个格子里的符号。
+
+## Lec 7: Recommender System: User-based and Item-based
+
+
