@@ -4,7 +4,7 @@ tags:
     - 大一下笔记
 ---
 
-> FLY, BITCH
+> FLY, BITCH  
 > 一想到这逆天课还要上两学期我就头疼
 # 计算机系统Ⅰ
 
@@ -165,10 +165,10 @@ endmodule
 ### lab2 - 加减法器
 #### 全加减器
 N位二进制的加减法是$\mod 2^N$下的加减法。  
-![](Sys1.png)   
+![](./assets/Sys1.png)   
 
 ??? a的解释
-	![](Sys2.png)
+	![](./assets/Sys2.png)
 
 ### lab3 - 时序电路
 史
