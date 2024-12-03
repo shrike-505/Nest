@@ -1,9 +1,9 @@
 ---
 comments: true
 ---
-
 # 花椒
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Princess+Sofia&weight=600&size=30&pause=700&color=9821B5&center=true&multiline=true&repeat=false&width=1070&height=160&lines=The+Greatest+Innocence+%E2%80%93+Her+colours+are+silver%2C+white%2C+and+apricot.;And+when+you+think+her+name%2C+Dolores%2C+stomach+acid+rises+to+the+back+of+your+throat+and+it+hurts.;--+you+see+a+flash+silver%2C+a+wreath%2C+an+airport+bag.+And+blonde+hair%2C+you+don't+know+why.;Another+choice%2C+perhaps%3F)](https://git.io/typing-svg)
 
 >__五感发达[成功]__：什么味道？一丝渐强，像乐曲合奏时循序渐进地加进新的乐器。
 
