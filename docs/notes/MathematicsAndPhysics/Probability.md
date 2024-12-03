@@ -10,7 +10,7 @@
 
 !!! note "成绩组成"
     - 点名+作业：20%
-    - 期中：20%
+    - 小测：20%
     - 期末：60%
 
 ## 几何概型
@@ -168,11 +168,75 @@ TBD
     - 二项分布：$E(X) = np$
     - Possion分布：$E(X) = \lambda$
     - 几何分布($P(X=k) = p(1-p)^{k-1}$)：$E(X) = \frac{1}{p}$
+- 连续型随机变量：$E(X) = \int_{-\infty}^{+\infty}xf(x)dx$
+    - 均匀分布：$E(X) = \frac{a+b}{2}$
+    - 指数分布：$E(X) = \frac{1}{\lambda}$
+    - 正态分布：$E(X) = 0$
+
+### 数学期望性质
+
+- $E(aX+b) = aE(X)+b$
+- $E(X+Y) = E(X) + E(Y)$
 
 ## 方差
 
+$Var(X) = E((X-E(X))^2)$（定义）$= E(X^2) - E^2 (X)$
+
+- 二项分布：$Var(X) = np(1-p)$
+- Possion分布：$Var(X) = \lambda$
+- 均匀分布：$Var(X) = \frac{(b-a)^2}{12}$
+- 指数分布：$Var(X) = \frac{1}{\lambda^2}$
+- 正态分布：$Var(X) = \sigma^2$
+
+### 方差性质
+
+- $Var(aX+b) = a^2Var(X)$
+- $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$，其中$Cov(X,Y) = E(XY) - E(X)E(Y)$（协方差），若$X,Y$独立，则$Cov(X,Y) = 0$，$Var(X+Y) = Var(X) + Var(Y)$
+
+!!! note "Chebyshev不等式"
+    对任意随机变量$X$，有$P(|X-E(X)| \gt \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}$
+
 ## 协方差
+- 定义均值向量：$\vec{\mu} = (EX, EY)$
+- 协方差：$Cov(X,Y) = E((X-E(X))(Y-E(Y))) = E(XY) - E(X)E(Y)$
+
+!!! note "柯西施瓦兹不等式"
+    TBD
+
+### 协方差矩阵
+
+TBD（PPT 54-68）
+
+### 全期望公式
+
+$E(E(X|Y)) = E(X)$，以及$E(E(Y|X)) = E(Y)$
+
+证明：
+
+![全期望公式证明](./assets/PT4.png)
 
 ## 矩
 
+- $k$阶原点矩：$E(X^k)$
+- $k$阶中心矩：$E((X-E(X))^k)$
+
+常见的一些分布的矩：
+
+- $X$ ~ $N(0,\sigma^2): E(x^{2k}) = (2k-1)!!\sigma^{2k}$
+- $X$ ~ $P(\lambda): E(X^k) = \lambda^k$
+
 ## 特征函数
+
+- 定义：$\varphi(t) = E(e^{itX}) = E \cos(tX) + iE \sin(tX), t \in R$
+- 若$X$ ~ $F(x)$，则$\varphi(t) = \int_{-\infty}^{+\infty}e^{itx}f(x)dx = \int_{-\infty}^{+\infty}e^{itx}dF(x)$
+
+### 性质
+
+- $\varphi(0) = 1$
+- $|\varphi(t)| \leq 1 = \varphi(0)$
+- $\varphi(-t) = \overline{\varphi(t)}$
+- $\varphi(t)$在$R$上一致连续
+
+令$\varphi_X(t) = E(e^{itX})$，则有：$E(e^{it(aX+c)}) = e^{itc}\varphi_X(at)$
+
+若$X,Y$独立，则$Z = X+Y$的特征函数为$\varphi_Z(t) = \varphi_X(t)\varphi_Y(t)$，可推广到N个独立随机变量。
