@@ -258,6 +258,105 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 
 定义磁场强度：$H = \frac{B}{\mu_0} - M$
 
+## 光学
+
+!!! note "notation"
+    - $p$：原物体大小
+    - $I$：像大小
+    - $c$：光速
+    - $\lambda'$：波长
+    - $\theta_i$：入射角
+    - $\theta_r$：反射角
+    - $u$：物距
+    - $v$：像距
+    - $r$：（球面镜）半径
+
+### Intro: 光的本质
+
+- 波动性：$d \sin \theta = m \lambda$，此时相长干涉。
+- 粒子性：$\frac{c'}{c} = \frac{p'}{p} = \frac{\lambda'}{\lambda} = \frac{\sin \theta_i}{\sin \theta_r}$（折射时）
+
+- 反射定律：$\theta_i = \theta_r$
+- 折射定律：$n_1 \sin \theta_i = n_2 \sin \theta_r$
+- 折射率：$n = \frac{c}{v}$
+
+全内反射：$n_1 \sin \theta_c = n_2 \sin 90^\circ$，得到$\sin \theta_c = \frac{n_2}{n_1}$，其中$\theta_c$为临界角，此时折射光线全部消失，只有反射光线。
+
+### 费马原理
+
+简单理解为 $\frac{dt}{dx} = 0$
+
+- 反射定律的证明：
+
+![反射定律](./assets/gp30.png)
+
+- 折射定律证明：
+
+![折射定律](./assets/gp31.png)
+
+!!! note "球面镜反射等式"
+    ![球面镜](./assets/gp32.png)
+
+    - 通过焦点的光线反射后平行于平面
+    - 平行于平面的光线反射后通过焦点
+    - 通过曲率中心（Center of Curvature）的光线原路反射回去
+    - 射向平面与球面镜交点的光线满足**反射定律**
+
+!!! note "球面镜折射等式"
+    ![球面镜折射](./assets/gp33.png)
+
+
+!!! example "例子"
+    一个物体在物距为$u$处沿轴向一个球面反射镜以$V_0$速度运动，球面镜半径为$R$，求像的运动速度$V$。
+
+    - 由$\frac{1}{u} + \frac{1}{v} = \frac{1}{f} = \frac{2}{R}$，得到$v = \frac{1}{\frac{2}{R} - \frac{1}{u}}$（注意这个是小写$v$是像距！）
+    - 于是有$V = \frac{dv}{dt} = \frac{dv}{du} \frac{du}{dt} = - \frac{\frac{1}{u^2}}{(\frac{2}{R} - \frac{1}{u})^2} \frac{du}{dt} = -(\frac{R}{2u-R})^{2} V_0$
+
+### 惠更斯原理
+
+- 波前（Wavefront）：相位相同的点的集合
+- 子波（Wavelet）：波前上的每一点都可以看作是一个次波源，次波源发出的波称为子波
+
+可以解释点光源以球面发散，从而解释了光的衍射
+
+!!! definition "prequisite"
+    如果光波在介质中传播时，波长为$\lambda$，传播距离为$r$，则其相位等于$\phi = 2 \pi \frac{r}{\lambda}$    
+    介质中波长 $\lambda_n = \frac{\lambda}{n}$，期中$n$为介质折射率，于是上式变为$\phi = 2 \pi \frac{nr}{\lambda}$    
+    定义光程（Optical Path）：$L = nr$，则有$\phi = \frac{2\pi}{\lambda} L$ （于是$r$为光在介质中传播的几何距离） 
+
+### 干涉（Interference）
+
+两束光 $I_1, I_2$ 相遇，总强度为$I = I_1 + I_2 + 2 <E_1 \cdot E_2>$
+
+- 干涉时，$2 <E_1 \cdot E_2> = 0$
+- 不干涉时，$2 <E_1 \cdot E_2> \neq 0$
+
+这三种情况下不干涉：
+
+![不干涉](./assets/gp34.png)
+
+于是得到相干条件：
+
+1. 频率相同
+2. 振动方向相同
+3. 相位差恒定
+
+!!! example "双缝干涉"
+    note：光强与振幅的平方成正比  
+    ![双缝干涉](./assets/gp35.png)
+
+#### 半波损失
+
+> Credit to <https://zhuanlan.zhihu.com/p/550675894>
+
+- $\delta = \delta_0 - \frac{\lambda}{2}$
+- 当光从光疏到光密质，正入射及掠入射时反射光均有半波损。
+- 当光从光密到光疏质，正入射时反射光无半波损（掠入射时发生全反射） 。
+- ![半波损失](./assets/gp36.png)
+
+!!! example "例1"
+    ![例1](./assets/gp37.png)
+
 ## 小测部分
 
 ### 第一次小测
@@ -266,7 +365,7 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 
 ### 第二次小测
 
-![](./assets/GP-22.png)
+![第二次小测](./assets/GP-22.png)
 
 已知这样的一对非平行极板，求其电容，其中上板横向纵向长度 $a, b$, 上板最低点与下板距离 $d$，最高点与下板距离 $d+h$ 已知，$h<<d$
 
@@ -274,3 +373,4 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
     先定义一下上板倾角为 $\theta$，下板横向长为 $x$。则由于 $d$ 很小，倾角趋于0，有近似 $\tan \theta = \sin \theta = \frac{h}{a}$，那么取下板沿 $x$ 方向很小的一截 $dx$，这一截的下板面积是 $bdx$，且近似与上板平行（上板平行重合的这一小截也视作面积是 $bdx$，则由平行极板电容公式 $C = \frac{\epsilon_0 A}{d}$，得到$dC=\frac{\epsilon_0 bdx}{d+\tan \theta x}$  
     直接对 $x$ 从0到 $a$ 积分，  
     得到 $C = \int_0^a \frac{\epsilon_0 bdx}{d+\frac{h}{a} x} = \frac {\epsilon_0 a b}{h} \cdot \ln \frac{h+d}{d}$
+
