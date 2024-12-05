@@ -10,28 +10,24 @@
         <meta name="author" content="shrike505">
       
       
-        <link rel="canonical" href="https://shrike505.cc/notes/ComputerScience/FDS/">
+        <link rel="canonical" href="https://shrike505.cc/notes/AI/CV/CS231N/">
       
       
-        <link rel="prev" href="../ComputerSystem2/">
       
       
-        <link rel="next" href="../ADS/">
-      
-      
-      <link rel="icon" href="../../../img/PP.png">
+      <link rel="icon" href="../../../../img/PP.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
-        <title>数据结构基础 - 现实的荒原</title>
+        <title>Stanford CS231n: CNN for Visual Recognition - 现实的荒原</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,23 +87,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings1.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings1.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings2.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings2.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings3.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings3.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings4.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings4.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings5.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings5.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-enum-headings6.css">
+      <link rel="stylesheet" href="../../../../css/print-site-enum-headings6.css">
     
-      <link rel="stylesheet" href="../../../css/print-site.css">
+      <link rel="stylesheet" href="../../../../css/print-site.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-material.css">
+      <link rel="stylesheet" href="../../../../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../../css/timeline.css">
+      <link rel="stylesheet" href="../../../../css/timeline.css">
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif">
     
@@ -123,17 +119,17 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="../../../css/changelogs.css">
+      <link rel="stylesheet" href="../../../../css/changelogs.css">
     
-      <link rel="stylesheet" href="../../../css/newcolor.css">
+      <link rel="stylesheet" href="../../../../css/newcolor.css">
     
-      <link rel="stylesheet" href="../../../css/newfonts.css">
+      <link rel="stylesheet" href="../../../../css/newfonts.css">
     
-      <link rel="stylesheet" href="../../../css/newadmonitions.css">
+      <link rel="stylesheet" href="../../../../css/newadmonitions.css">
     
-      <link rel="stylesheet" href="../../../css/cards.css">
+      <link rel="stylesheet" href="../../../../css/cards.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -159,7 +155,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#stanford-cs231n-cnn-for-visual-recognition" class="md-skip">
           跳转至
         </a>
       
@@ -175,9 +171,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="现实的荒原" class="md-header__button md-logo" aria-label="现实的荒原" data-md-component="logo">
+    <a href="../../../.." title="现实的荒原" class="md-header__button md-logo" aria-label="现实的荒原" data-md-component="logo">
       
-  <img src="../../../img/PP.png" alt="logo">
+  <img src="../../../../img/PP.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -194,7 +190,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据结构基础
+              Stanford CS231n: CNN for Visual Recognition
             
           </span>
         </div>
@@ -307,9 +303,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="现实的荒原" class="md-nav__button md-logo" aria-label="现实的荒原" data-md-component="logo">
+    <a href="../../../.." title="现实的荒原" class="md-nav__button md-logo" aria-label="现实的荒原" data-md-component="logo">
       
-  <img src="../../../img/PP.png" alt="logo">
+  <img src="../../../../img/PP.png" alt="logo">
 
     </a>
     现实的荒原
@@ -336,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,7 +392,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../stories/" class="md-nav__link ">
+            <a href="../../../../stories/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -429,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/G30/" class="md-nav__link">
+      <a href="../../../../stories/G30/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -450,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Curse/" class="md-nav__link">
+      <a href="../../../../stories/Curse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -471,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Justice/" class="md-nav__link">
+      <a href="../../../../stories/Justice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -492,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Fool/" class="md-nav__link">
+      <a href="../../../../stories/Fool/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Pepper/" class="md-nav__link">
+      <a href="../../../../stories/Pepper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -534,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Protein/" class="md-nav__link">
+      <a href="../../../../stories/Protein/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Vanishment/" class="md-nav__link">
+      <a href="../../../../stories/Vanishment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Gunpowdersmoke/" class="md-nav__link">
+      <a href="../../../../stories/Gunpowdersmoke/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -597,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Newcar/" class="md-nav__link">
+      <a href="../../../../stories/Newcar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Weapon/" class="md-nav__link">
+      <a href="../../../../stories/Weapon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Mice/" class="md-nav__link">
+      <a href="../../../../stories/Mice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -697,7 +693,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../thoughts/" class="md-nav__link ">
+            <a href="../../../../thoughts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -730,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Echo/" class="md-nav__link">
+      <a href="../../../../thoughts/Echo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -751,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Gaut/" class="md-nav__link">
+      <a href="../../../../thoughts/Gaut/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -772,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Homesick/" class="md-nav__link">
+      <a href="../../../../thoughts/Homesick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -793,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Gut/" class="md-nav__link">
+      <a href="../../../../thoughts/Gut/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -814,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Fortune/" class="md-nav__link">
+      <a href="../../../../thoughts/Fortune/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -835,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Unspoken/" class="md-nav__link">
+      <a href="../../../../thoughts/Unspoken/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,8 +856,6 @@
       
   
   
-    
-  
   
   
     
@@ -884,16 +878,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -910,7 +904,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             笔记
@@ -965,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/DAML/" class="md-nav__link">
+      <a href="../../DAML/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,10 +985,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1009,11 +1001,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1027,7 +1019,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -1041,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ComputerSystem1/" class="md-nav__link">
+      <a href="../../../ComputerScience/ComputerSystem1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ComputerSystem2/" class="md-nav__link">
+      <a href="../../../ComputerScience/ComputerSystem2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1080,30 +1072,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    数据结构基础
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../ComputerScience/FDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,116 +1084,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      树
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      堆/优先队列（很神奇的一种结构）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="堆/优先队列（很神奇的一种结构）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      操作
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      图
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="图">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dijkstra" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dijkstra
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      排序
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="排序">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      堆排序
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hash
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1234,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/" class="md-nav__link">
+      <a href="../../../ComputerScience/ADS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1314,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/LinearAlgebra/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/LinearAlgebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1335,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Analysis/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Physics1/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Physics1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1377,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/ODE/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/ODE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/DiscreteMath/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/DiscreteMath/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Probability/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Probability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1440,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Physics2/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Physics2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/cs61a/" class="md-nav__link">
+      <a href="../../../Language/cs61a/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1537,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Verilog/" class="md-nav__link">
+      <a href="../../../Language/Verilog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1558,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Toefl/" class="md-nav__link">
+      <a href="../../../Language/Toefl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1579,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/fimpp/" class="md-nav__link">
+      <a href="../../../Language/fimpp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1600,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Typst/" class="md-nav__link">
+      <a href="../../../Language/Typst/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1668,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SummerCourses/CTF/" class="md-nav__link">
+      <a href="../../../SummerCourses/CTF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1584,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../casual/" class="md-nav__link ">
+            <a href="../../../../casual/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1783,7 +1645,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../others/" class="md-nav__link ">
+            <a href="../../../../others/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1816,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/Quotes/" class="md-nav__link">
+      <a href="../../../../others/Quotes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1837,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/final/" class="md-nav__link">
+      <a href="../../../../others/final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1858,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/summer_idle/" class="md-nav__link">
+      <a href="../../../../others/summer_idle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1879,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/Helix/" class="md-nav__link">
+      <a href="../../../../others/Helix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1907,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
+      <a href="../../../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1927,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../friends/" class="md-nav__link">
+      <a href="../../../../friends/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1960,104 +1822,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      树
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      堆/优先队列（很神奇的一种结构）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="堆/优先队列（很神奇的一种结构）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      操作
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      图
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="图">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dijkstra" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dijkstra
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      排序
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="排序">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      堆排序
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hash
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2069,138 +1833,16 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-<nav class="md-tags" >
-  
-    
-    
-    
-      <a href="../../../tags/#" class="md-tag">大一下笔记</a>
-    
-  
-</nav>
-
 
   
   
 
 
-<h1 id="_1">数据结构基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="stanford-cs231n-cnn-for-visual-recognition">Stanford CS231n: CNN for Visual Recognition<a class="headerlink" href="#stanford-cs231n-cnn-for-visual-recognition" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 459 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 51 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
 </div>
-<blockquote>
-<p>任课教师：陈超超</p>
-</blockquote>
-<div class="admonition 课程内容">
-<p class="admonition-title">课程内容</p>
-<ul>
-<li>结构</li>
-<li>线性结构</li>
-<li>树</li>
-<li>图</li>
-<li>栈与队列</li>
-<li>算法</li>
-<li>排序</li>
-<li>Hash </li>
-</ul>
-</div>
-<p>多看前人智慧</p>
-<ul>
-<li>Q神:<a href="https://note.hobbitqia.cc/ds/algorithm/">https://note.hobbitqia.cc/ds/algorithm/</a>  </li>
-<li>Tonycrane:<a href="https://note.tonycrane.cc/cs/algorithm/ds/">https://note.tonycrane.cc/cs/algorithm/ds/</a>  </li>
-</ul>
-<h2 id="_2">树<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="o">*</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="o">*</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>Inorder:左根右</li>
-<li>Preorder:根左右</li>
-<li>Postorder:左右根</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">//用数列模拟树：注意到中序遍历二叉搜索树即得到递增数列，于是让中序遍历的操作变为对数组赋值</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">tree</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nodes</span><span class="p">[</span><span class="n">pos</span><span class="o">++</span><span class="p">];</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="c1">//此时tree数组递增</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="_3">堆/优先队列（很神奇的一种结构）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Heap</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="c1">//线性存储堆的元素</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="c1">//堆中元素个数</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span><span class="c1">//堆的容量</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
-</code></pre></div>
-最大树：根节点最大，所有子节点小于其父节点<br />
-最小树：根节点最小，所有子节点大于其父节点<br />
-完全二叉树：除了最后一层，其他层都是满的，最后一层从左到右排列（不一定排满）<br />
-堆就是完全二叉树，且所有节点被存储在线性结构中，并且满足堆的性质：最大堆（树）或最小堆（树），一般Heap[0]存放哨兵<br />
-    - 注意完全二叉树不等同于满二叉树，后者要求所有叶子节点都在同一层</p>
-<p>由于堆是完全二叉树，所以深度为<span class="arithmatex">\(h\)</span>的堆节点个数在<span class="arithmatex">\(2^h\)</span>到<span class="arithmatex">\(2^{h+1}-1\)</span>之间，所以堆的高度为<span class="arithmatex">\(\lfloor \log_2(N) \rfloor\)</span><br />
-下标为<span class="arithmatex">\(i\)</span>的节点的父节点为<span class="arithmatex">\(\lfloor i/2 \rfloor\)</span>，左子节点为<span class="arithmatex">\(2i\)</span>，右子节点为<span class="arithmatex">\(2i+1\)</span></p>
-<h3 id="_4">操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>插入：插入到最后，然后和父节点比较，直到满足堆的性质</li>
-<li>删除最小元：删除根节点，将最后一个节点放到空位，和两个子节点比较，和大于其/小于其的子节点交换，直到满足堆的性质</li>
-</ul>
-<h2 id="_5">图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>挺抽象的这块，FDS离散各讲了一遍还是没咋懂</p>
-<h3 id="dijkstra">Dijkstra<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h3>
-<p>核心代码差不多长下面这样（梗来源：FDS Project 3）  </p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Dijkstra</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">source</span><span class="p">){</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_VERTICES</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// initialize all vertices as not visited</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_VERTICES</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INF</span><span class="p">;</span><span class="w"> </span><span class="c1">// initialize the distance of all vertices as INF</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">dist</span><span class="p">[</span><span class="n">source</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">nVertices</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minDis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INF</span><span class="p">;</span><span class="w"> </span><span class="c1">// initialize the minimum distance as INF</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minVertex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="c1">// initialize the vertex with the minimum distance as -1</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;=</span><span class="n">nVertices</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">minDis</span><span class="p">){</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                </span><span class="n">minVertex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">// find the vertex with the minimum distance</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                </span><span class="n">minDis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">minVertex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">){</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// no vertex is found, break the loop, end the algorithm</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="n">vis</span><span class="p">[</span><span class="n">minVertex</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;=</span><span class="n">nVertices</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">minVertex</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">INF</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">dist</span><span class="p">[</span><span class="n">minVertex</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">minVertex</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                </span><span class="c1">// if some vertex is not visited and the distance from the source to the vertex is shorter than the current distance</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                </span><span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">[</span><span class="n">minVertex</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">minVertex</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"> </span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                </span><span class="c1">// update the distance</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="p">}</span>
-</code></pre></div>
-执行算法后得到的<code>dist[i]</code>就是从源点到i号端点的最短距离</p>
-<h2 id="_6">排序<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="_7">堆排序<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>func Heapsort(array, N){
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    BuildHeap(H)
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    for i in (0,N):
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        TmpH[i]=DeleteMin(H)
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    for i in (0,N):
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        H[i] = TmpH[i]
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>}
-</code></pre></div>
-<h2 id="hash">Hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h2>
-<p>速通了：<a href="https://www.hello-algo.com/chapter_hashing/">https://www.hello-algo.com/chapter_hashing/</a></p>
+<p>TBD</p>
 
 
 
@@ -2223,7 +1865,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月6日</span>
   </span>
 
     
@@ -2233,7 +1875,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年2月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月6日</span>
   </span>
 
     
@@ -2311,44 +1953,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../ComputerSystem2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 计算机系统Ⅱ">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                计算机系统Ⅱ
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../ADS/" class="md-footer__link md-footer__link--next" aria-label="下一页: 高级数据结构">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                高级数据结构
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2388,14 +1992,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../../../js/print-site.js"></script>
+        <script src="../../../../js/print-site.js"></script>
       
-        <script src="../../../javascript/katex.js"></script>
+        <script src="../../../../javascript/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
