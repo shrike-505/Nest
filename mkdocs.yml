@@ -50,7 +50,8 @@ nav:
     - 托福: notes/Language/Toefl.md
     - Fimpp: notes/Language/fimpp.md
     - Typst备忘录: notes/Language/Typst.md
-  - CTF101: notes/CTF.md
+  - 短学期:
+    - CTF101: notes/SummerCourses/CTF.md
 - 随笔:
   - casual/index.md
 - 杂:

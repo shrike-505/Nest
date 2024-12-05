@@ -617,7 +617,9 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 
 ### Process vs Thread
 
-线程是进程的一个 Execution Unit，一个进程可以包含多个线程。每个线程有自己的 Stack 和 PC，但是共享 Data Section、Heap 和 Code Section。
+线程是进程的一个 Execution Unit，一个进程可以包含多个线程。每个线程有自己的 Stack 和 PC, Regs，但是共享 Data Section、Heap 和 Code Section。
+
+![Thread](./assets/Sys28.png)
 
 - Single-threaded Process
   - 一个进程只有一个线程
@@ -644,11 +646,15 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 ### Thread Model
 
 - Many-to-one
-  - TBD
+  - 多个User Thread映射到一个Kernel Thread
+  - 无法很好利用多核架构
+  - 一个User Thread阻塞会导致整个进程阻塞
 - One-to-one
-  - TBD
+  - 一个User Thread映射到一个Kernel Thread
+  - Create a new user thread requires work from kernel
 - Many-to-many
-  - TBD
+  - 多个User Thread映射到多个Kernel Thread
+  - 如果一个User Thread阻塞，Kernel 创造出一个新的 Kernel Thread，避免整个进程阻塞
 - Two-level
   - 可多对多，可一对一
 
@@ -664,6 +670,25 @@ TBD
 
 ### Linux Thread
 
-使用 `clone()` 的 SysCall 来创建线程。
+使用 `clone()` 的 SysCall 来创建线程。有如下 flag 可选
 
-TBD
+- `CLONE_VM`: 共享内存空间
+- `CLONE_FS`: 共享文件系统信息
+- `CLONE_FILES`: 共享文件描述符
+- `CLONE_SIGHAND`: 共享信号处理程序
+
+与此同时，Linux 下 `task_struct` 存储的是**线程**的 PCB，进程的 PCB 是 **Leader Thread** 的 PCB。
+
+## Synchronization
+
+!!! example "Race Condition"
+    由于 Thread A B 运行的 `counter = counter+1` 实则是多行指令（寄存器内加1，写回寄存器），因此在 Thread A 读完运算完还没有写回的时候，被 Interrupt，转为 Thread B，Thread B 读取时，读到的是初始的 `counter` 值，运算后再写回，再由 Thread A 写回，得到的 `counter` 就只加了1.  
+    !!! success "解决方案"
+        Critical Section: 一段“**原子性**”的代码，同一时间段只能有一个线程在运行。  
+        ```c
+        while(1){
+            entry_section()
+                Critical Section
+            end_section()
+                remainder section
+        }

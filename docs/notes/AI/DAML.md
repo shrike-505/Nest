@@ -1,7 +1,7 @@
 # Data Analysis and Machine Learning
 
 !!! note "Overview"
-    国际化拔尖人才培养课程：数据分析与机器学习。讲得很浅，连写代码的任务都没有。
+    国际化拔尖人才培养课程：机器学习在数据分析和自然语言处理中的应用。讲得很浅，类似通识课的难度，连写代码的任务都没有。
 
     "Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
 
@@ -284,4 +284,56 @@ Weak Learner 通过投票（VOTE）合成 Strong Learner。（从图像上讲，
 
 ## Lec 7: Recommender System: User-based and Item-based
 
+- Apply Machine Learning: How?
+  - 第一步是分辨利益相关者（Stakeholder）：Producer, Consumer, Manager
+  - 考虑这些利益相关者的价值主张（Value Proposition）
+  - Use specific method/task
+    - Classification ... and so on
 
+这一节课就探讨一下 Recommendation 的实际原理。
+
+!!! example "intro"
+    The Long Tail Effect:
+
+    - Small number of best-selling products
+    - Large number of products selling in small quantities
+
+### Recommendation method
+
+- Hand Curated (人工推荐)
+  - 人工推荐，例如“大家都在看”
+  - 实则是没有考虑到当前用户的 Preference
+- Simple Aggregation （简易聚合）
+  - 例如 Amazon 的“Customers who bought this item also bought...”
+  - 仅仅是根据购买记录进行推荐 
+- Personalized
+
+### Collaborative Filtering
+
+#### Distance/Similarity Metrics
+
+$sim(u, v) = \frac{1}{1 + d(u, v)}$
+
+- Euclidean Distance
+- Manhattan Distance
+- Pearson Coefficient
+- Tanimoto Coefficient
+- Jaccard Distance (Similarity of sets): $\frac{A \cap B}{A \cup B}$
+
+#### User-based
+
+可使用：User Rating Matrix
+
+- 横坐标是 Item，纵坐标是 User
+- 每个格子是 User 对 Item 的评分
+
+![User-based](./assets/DAML17.png)
+
+#### Item-based
+
+- 横坐标是需要被推荐的 Item，纵坐标是已经被评分的 Item
+- TBD
+
+#### Content-based
+
+TBD
