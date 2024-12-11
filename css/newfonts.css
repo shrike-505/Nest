@@ -1,6 +1,6 @@
 :root {
     --md-text-font: "JetBrains Mono", "Noto Serif SC"; 
-    --md-code-font: "Victor Mono";
+    --md-code-font: "Victor Mono", "LXGW WenKai Screen";
 }  
 
 div.admonition.特别鸣谢 > p a:link, div.admonition.特别鸣谢 > p a:visited, article.md-content__inner.md-typeset>h4, h1,
