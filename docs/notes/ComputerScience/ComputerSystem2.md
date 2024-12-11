@@ -9,11 +9,11 @@
 # 计算机系统 Ⅱ
 
 !!! note "Links"
-    <https://note.tonycrane.cc/cs/pl/riscv/privileged/>
+	<https://note.tonycrane.cc/cs/pl/riscv/privileged/>
 
 ## RISC-V Assembly
 
-（其实是系统一的东西）32位指令
+（其实是系统一的东西）32 位指令
 
 - Opcode: 操作码，用于识别指令类型
 - rs1: the first register source operand
@@ -42,6 +42,7 @@ $TP = \frac{n}{T} \lt TP_{max}$且$T = (m+n-1) \times \Delta t_0$，其中$m$为
 $TP_{max} = \lim_{n\to\infty} \frac{n}{T} = \frac{1}{\Delta t_0}$
 
 ### Solve Bottleneck
+
 1. Subdivide the task
 2. Repetition
 
@@ -54,6 +55,7 @@ $TP_{max} = \lim_{n\to\infty} \frac{n}{T} = \frac{1}{\Delta t_0}$
 [看这篇文章](https://blog.csdn.net/rizero/article/details/106740895)
 
 ## Operating System
+
 ### ELF
 
 C程序编译为可执行文件的四个过程：
@@ -74,21 +76,31 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 
 !!! note "Quiz"
     ```c
-    // 如下均定义/声明在全局作用域
-    int a = 1; // 存储在.data段
-    int b; // 存储在.bss段
-    const int c = 2; // 存储在.rodata段
+    
+        // 如下均定义/声明在全局作用域
+    
+        int a = 1; // 存储在.data段
+    
+        int b; // 存储在.bss段
+    
+        const int c = 2; // 存储在.rodata段
     ```
+    
+    
 
 - Static linking
-    - All needed code is packed in single binary, leading to large binary
-    - `_start` is executed after evecve system call
-    - ![](./assets/Sys7.png)
+
+  - All needed code is packed in single binary, leading to large binary
+  - `_start` is executed after evecve system call
+  - ![](./assets/Sys7.png)
+
 - Dynamic linking
-    - Reuse libraries to reduce ELF file size
-    - Howto resolve library calls?
-        - It is the loader who resolves lib calls.
-    - Entry point 是 loader
+
+  - Reuse libraries to reduce ELF file size
+  - Howto resolve library calls?
+    - It is the loader who resolves lib calls.
+  - Entry point 是 loader
+
 
 ![](./assets/Sys8.png)
 
@@ -111,66 +123,76 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 > DMA(Direct Memory Access)：设备直接访问内存，不经过CPU。
 
 ### OS Structure
+
 操作系统是一种“Resource Allocator and Abstracter”，它管理硬件资源，提供抽象接口。
 
 ![](./assets/Sys3.png)
 
 UI: CLI -> GUI -> Touchscreen...
 
-
 - 简单结构 Simple Structure
-    - MS-DOS
-    - 不区分用户和内核态
-    - 用户程序、操作系统程序、驱动程序都运行在同一个地址空间，可以互相操作
+  - MS-DOS
+  - 不区分用户和内核态
+  - 用户程序、操作系统程序、驱动程序都运行在同一个地址空间，可以互相操作
+
 - 整体结构 Monolithic Structure
-    - Unix
-    - 有区分用户和内核态
-    - 操作系统程序运行在内核态，用户程序运行在用户态
-    - 用户程序通过系统调用访问内核态
-    - 内核态程序给用户态程序接口来提供服务
+  - Unix
+  - 有区分用户和内核态
+  - 操作系统程序运行在内核态，用户程序运行在用户态
+  - 用户程序通过系统调用访问内核态
+  - 内核态程序给用户态程序接口来提供服务
+
 - 微内核结构 Microkernel Structure
-    - Mach, Minix...
-    - 防止内核态程序过于复杂，漏洞概率更大
-    - 尽可能多地将内核代码移动到用户态中
-    - 内核只提供最基本的服务，其他服务通过进程间通信实现：更稳定
-    - 将操作系统的功能分为多个独立的进程
-    - 可移植性更好
+  - Mach, Minix...
+  - 防止内核态程序过于复杂，漏洞概率更大
+  - 尽可能多地将内核代码移动到用户态中
+  - 内核只提供最基本的服务，其他服务通过进程间通信实现：更稳定
+  - 将操作系统的功能分为多个独立的进程
+  - 可移植性更好
+
 - 模块化结构 Modular Structure
-    - Linux (Modular + Monolithic)
-    - 将内核分为多个模块（loadable kernel module），每个模块负责一个特定的功能
-    - 模块可以动态加载和卸载
-    - 保持了微内核结构的优点，同时减少了进程间通信的开销
+  - Linux (Modular + Monolithic)
+  - 将内核分为多个模块（loadable kernel module），每个模块负责一个特定的功能
+  - 模块可以动态加载和卸载
+  - 保持了微内核结构的优点，同时减少了进程间通信的开销
+
 - 外核结构 Exokernel Structure
-    - 外内核则进行更少的抽象，来让用户程序可以有更多控制物理资源的可能
-    - 内核只进行物理资源的分配和保护，而资源的使用、管理都由用户程序自己决定
-    - 用户程序可以直接访问硬件资源，自己实现操作系统的功能
+  - 外内核则进行更少的抽象，来让用户程序可以有更多控制物理资源的可能
+  - 内核只进行物理资源的分配和保护，而资源的使用、管理都由用户程序自己决定
+  - 用户程序可以直接访问硬件资源，自己实现操作系统的功能
+
 - 层级结构 Layered Structure
-    - 为了提高模块化结构的性能，将模块分为多个层次
-    - 最底层权限最高，为硬件
-    - 每个层次只能调用比自己低的层次，不能调用比自己高的层次
-    - 例如，文件系统、网络协议栈等
+  - 为了提高模块化结构的性能，将模块分为多个层次
+  - 最底层权限最高，为硬件
+  - 每个层次只能调用比自己低的层次，不能调用比自己高的层次
+  - 例如，文件系统、网络协议栈等
+
 - 混合结构 Hybrid Structure
-    - 结合了多种结构的优点
-    - 例如，Windows NT, Apple Mac OS X
+  - 结合了多种结构的优点
+  - 例如，Windows NT, Apple Mac OS X
+
 
 ### Event
+
 Event 分为 Interrupt - 由硬件引起，Exception - 由软件引起。
 
 一些指令会被限制：只有OS能够执行它们（Privileged Instructions），CPU是如何判断当前状态能否执行这些指令的？
 
 - All modern processors support (at least) two modes of execution:
-    - User mode: In this mode protected instructions cannot be executed
-    - Kernel mode: In this mode all instructions can be executed
-    - User code executes in user mode
-    - OS code executes in kernel mode
-    - The mode is indicated by a status bit in a protected control register
-        - The CPU checks this bit before executing a protected instruction
+  - User mode: In this mode protected instructions cannot be executed
+  - Kernel mode: In this mode all instructions can be executed
+  - User code executes in user mode
+  - OS code executes in kernel mode
+  - The mode is indicated by a status bit in a protected control register
+    - The CPU checks this bit before executing a protected instruction
+
+
 
 ![](./assets/Sys4.png)
 
 Event是操作流中“不被预期”的情况，CPU会根据Event的类型，调用相应的Handler。
 
-- An event stops execution, changes mode, and changes context 
+- An event stops execution, changes mode, and changes context
 - The kernel defines a handlerfor each event type
 
 OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
@@ -178,12 +200,12 @@ OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
 特殊的 Event：
 
 - System Call - 会导致Trap -> System Call Handler
-    - 发生于User Mode下需要执行Privileged Instructions的情况
-        - e.g., to create a process, write to disk, read from the network card
-        - 每种ISA都有自己的System Call
-        - ![](./assets/Sys6.png)
-        - 为什么`printf`需要SysCall `libc_write`？
-            - 打印到终端这种Device I/O需要 Kernel Mode (Privileged Instructions)
+  - 发生于User Mode下需要执行Privileged Instructions的情况
+    - e.g., to create a process, write to disk, read from the network card
+    - 每种ISA都有自己的System Call
+    - ![](./assets/Sys6.png)
+    - 为什么`printf`需要SysCall `libc_write`？
+      - 打印到终端这种Device I/O需要 Kernel Mode (Privileged Instructions)
 - Timer Interrupt - 会导致Regularly Interrupt -> Timer Interrupt Handler
 
 ![](./assets/Sys5.png)
@@ -194,7 +216,7 @@ OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
 
 `strace`可以查看程序的System Call。
 
-https://www.cnblogs.com/machangwei-8/p/10388883.html
+[https://www.cnblogs.com/machangwei-8/p/10388883.html](https://www.cnblogs.com/machangwei-8/p/10388883.html)
 
 SysCall的类型：
 
@@ -209,9 +231,11 @@ SysCall的类型：
     - Dump memory if error
     - Debuggerfor determining bugs, single step execution
     - Locks for managing access to shared data between processes
+
 - File management
     - create file, delete fileopen, close fileread, write, reposition
     - get and set file attributes
+
 - Device management
     - request device, release device
     - read, write, repositionget device attributes, set device attributes
@@ -220,6 +244,7 @@ SysCall的类型：
     - get time or date, set time or date
     - get system data, set system data
     - get and set process, file, or device attributes
+
 - Communications
     - create, delete communication connection
     - send, receive messages if message passing model to host nameor process name
@@ -227,10 +252,12 @@ SysCall的类型：
     - Shared-memory model create and gain access to memory regions
     - transfer status information
     - attach and detach remote devices
+
 - Protection
     - Control access to resources
     - Get and set permissions
     - Allow and deny user access
+
 
 ### System Service
 
@@ -247,21 +274,25 @@ SysCall的类型：
 - Stack和Heap两者都不同
 
 ### Process Control Block
+
 也称为Task Control Block，是操作系统用来管理进程的数据结构，存储每个进程的信息。
 
 - 每个进程有且仅有一个PCB。
-    - 在新进程创建时，OS会为其分配一个PCB
-    - 在进程终止时，OS会回收PCB
+  - 在新进程创建时，OS会为其分配一个PCB
+  - 在进程终止时，OS会回收PCB
+
 - 存储这些 Process 的 META data：
-    - Process State - Running, waiting, ready, etc.
-    - Program Counter - Address of next instruction
-    - CPU Registers - Contents of all process-centric registers
-    - Blah blah blah...
-    - ![](./assets/Sys10.png)
+  - Process State - Running, waiting, ready, etc.
+  - Program Counter - Address of next instruction
+  - CPU Registers - Contents of all process-centric registers
+  - Blah blah blah...
+  - ![](./assets/Sys10.png)
+
 
 On Linux: PCB is `task_struct`
 
 ### Process State
+
 As a process executes, it changes state. The state of a process is defined in part by the current activity of that process.
 
 - New: The process is being created.
@@ -272,6 +303,7 @@ As a process executes, it changes state. The state of a process is defined in pa
 - ![](./assets/Sys11.png)
 
 ### Process Creation
+
 一个进程可能会产生多个进程，于是形成一个进程树，ppid是某节点父进程的pid。
 
 `fork()`是一个SysCall，用于创建一个新的进程，新进程是调用进程的副本（各状态初始完全一致地复制过去），但是有不同的pid，Resource Utilization初始化为0。
@@ -280,20 +312,22 @@ As a process executes, it changes state. The state of a process is defined in pa
 - 返回给子进程的是0
 
 ???+ info "Quiz"
-    ![](./assets/Sys12.png)  
-    ![](./assets/Sys13.png)  
     下面这张图里，每次`fork()`会给当前每个进程都创建一个子进程，所以第一次`fork()`后有两个进程，第二次`fork()`后有四个进程。  
+    ![](./assets/Sys13.png)
+    ![](./assets/Sys12.png)
+
     ```c
-    int main(int argc, char* arg[]){
-        fork();
-        if(fork())
-        {
+        int main(int argc, char* arg[]){
             fork();
+            if(fork())
+            {
+                fork();
+            }
+            fork();
+    
         }
-        fork();
-    }
     ```
-    这段代码会产生多少个进程？ ——12个
+    上面这段代码会产生多少个进程？ ——12个
 
     - (1) 第一行`fork()`后，有两个进程（Original进程和它fork出来的子进程）
     - (2) 第二行在if后括号中的`fork()`后，有四个进程
@@ -306,16 +340,19 @@ As a process executes, it changes state. The state of a process is defined in pa
 
 `execve()`是一个SysCall，v stands for `argv`（命令行参数），e stands for `envp`（环境变量）。
 
-
 - 其余的`exec*()`函数类似，但不是SysCall
 - `exec*()` replaces the current process image with a new process image
 - ![](./assets/Sys14.png)
 - `exec*`后，若执行成功，原进程的ELF会被替换，原进程**直接终止**，也没有返回值；若没有执行成功，则返回报错信息，原进程**继续执行**。
 
 ### Process Termination
+
 #### wait()
+
 ![](./assets/Sys15.png)
+
 #### exit()
+
 一个进程通过`exit()`的SysCall来终止自己，接收一个参数（exit/return code）
 
 - 进程终止后，进程占用的资源会被回收
@@ -326,21 +363,24 @@ As a process executes, it changes state. The state of a process is defined in pa
 
 - 异步事件，程序必须处理
 - SIGKILL和SIGSTOP不能被捕获或忽略（for security reasons）
-    - 总能Kill进程）
+    - 总能Kill进程
+
 
 !!! note "demo: kill a infinite loop with SIGINT forbidden"
-    ```c
-    #include<signal.h>
-    #include<stdio.h>
-    void handler(int sig){
-        fprintf(stdout,”I don’t want to die!\n”);
-        return;
-    }
-    main(){
-        signal(SIGINT, handler);
-        while(1);// infinite loop
-    }
-    ```
+  	```c
+		#include<signal.h>
+		#include<stdio.h>
+		void handler(int sig){
+			fprintf(stdout,”I don’t want to die!\n”);
+			return;
+		}
+		main(){
+			signal(SIGINT, handler);
+			while(1);// infinite loop
+		}
+	```
+	
+    
 
 ### Zombie Process
 
@@ -348,7 +388,7 @@ As a process executes, it changes state. The state of a process is defined in pa
 
 Zombie 会占用其 PCB，不会占用CPU，但会占用内存。
 
-A zombie lingers on until: 
+A zombie lingers on until:
 
 - its parent has called wait() for the child, or
 - its parent dies
@@ -362,17 +402,21 @@ A zombie lingers on until:
 孤儿进程是没有父进程的进程，为避免孤儿进程退出时无法释放所占用的资源而变为僵尸进程，进程号为 1 的 init 进程将会接受这些孤儿进程，这一过程也被称为“收养”。init 进程就好像是一个孤儿院，专门负责处理孤儿进程的善后工作。每当出现一个孤儿进程的时候，内核就把孤儿进程的父进程设置为 init ，而 init 进程会循环地 wait() 它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束了其生命周期的时候，init 进程就会出面处理它的一切善后工作。因此孤儿进程并不会有什么危害。
 
 > When a child exits, a SIGCHLD signal is sent to the parent.
-> init process handles child termination with a handler for SIGCHLD that calls wait().
+  
+init process handles child termination with a handler for SIGCHLD that calls wait().
 
 ### Process Scheduling
+
 为了使CPU迅速地切换到下一个进程，**Process scheduler** 在 Ready 的进程中选择下一个在 Core 上运行的进程。
 
 维护两个 Scheduling Queue：
 
-- Ready queue 
-    - set of all processes residing in main memory, ready and waiting to execute 
-- Wait queues 
+- Ready queue
+    - set of all processes residing in main memory, ready and waiting to execute
+
+- Wait queues
     - set of processes waiting for an event (i.e. I/O)
+
 - 进程在不同的 Queue 中频繁 Transfer，因此需要用 List 实现。
 
 ```C
@@ -384,8 +428,9 @@ struct list_head{
 ![](./assets/Sys17.png)
 
 #### Context Switch
+
 > 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。  
-> ZJU-SYS2-FA24
+ZJU-SYS2-FA24
 
 当CPU从一个进程（实则是线程Thread）切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
 
@@ -396,19 +441,23 @@ struct list_head{
     - 寄存器在什么时候/哪里保存？
     - where: 保存在PCB中，即`cpu_context`
     - when: 在`context_switch()`中，即在`cpu_switch_to()`中
+
 2. 在两个用户线程中的上下文切换
     - 令人感叹的是，上下文切换**必须**在内核态中进行
-    - User的寄存器在什么时候/哪里保存？
-    - when: kernel_entry; where: 每个线程的kernel stack中
-    - Kernel的寄存器在什么时候/哪里保存？
+    - User context 在什么时候/哪里保存？
+    - when: kernel_entry; where: 每个线程的 kernel stack 中，确切说是`pt_regs`结构体内
+    - Kernel context 在什么时候/哪里保存？
     - when: `cpu_switch_to()`; where: `cpu_context`
+	- ![Switch1](./assets/Sys29.png)
     - ![](./assets/Sys18.png)
+
 
 ### CPU Scheduling
 
 - 定义：操作系统决定哪个进程在CPU上运行，要运行多久
 - 使用 dispatcher 进行切换
-  - A component of the OS that’s used to switch between processes
+    - A component of the OS that’s used to switch between processes
+
 
 #### IO burst
 
@@ -417,13 +466,15 @@ struct list_head{
 因此进程可以分为两类：
 
 - IO bound 进程
-  - 大多数时间等待IO
-  - 包含许多短小的CPU burst
-  - e.g. /bin/cp
+    - 大多数时间等待IO
+    - 包含许多短小的CPU burst
+    - e.g. /bin/cp
+
 - CPU bound 进程
-  - 大多数时间在CPU上运行
-  - IO burst很短很短（如果有的话）
-  - e.g. /bin/gcc
+    - 大多数时间在CPU上运行
+    - IO burst很短很短（如果有的话）
+    - e.g. /bin/gcc
+
 
 #### CPU Scheduler（CPU调度器）
 
@@ -432,10 +483,12 @@ struct list_head{
 调度可分为两类
 
 - Preemptive Scheduling（可抢占式调度）
-  - 进程即使在正常执行时，也可以被抢占
-  - Easy for CPU to handle, most of modern choices.
+	- 进程即使在正常执行时，也可以被抢占
+	- Easy for CPU to handle, most of modern choices.
+
 - Non-preemptive Scheduling（非抢占式调度）
-  - 进程只能在执行完毕或者等待IO时才能被抢占（hold CPU until it's willing to give it up）
+    - 进程只能在执行完毕或者等待IO时才能被抢占（hold CPU until it's willing to give it up）
+
 
 那么调度发生在什么时候？
 
@@ -447,19 +500,28 @@ struct list_head{
 - 最大化吞吐量
 - 最小化等待时间
 - 最小化周转时间（Turnaround time）
-  - Time from process creation to completion
+
+    - Time from process creation to completion
+
 - 最小化响应时间
-  - Time from process creation to first response
+
+    - Time from process creation to first response
+
 
 ### Process Scheduling
+
 为了使CPU迅速地切换到下一个进程，**Process scheduler** 在 Ready 的进程中选择下一个在 Core 上运行的进程。
 
 维护两个 Scheduling Queue：
 
-- Ready queue 
-    - set of all processes residing in main memory, ready and waiting to execute 
-- Wait queues 
+- Ready queue
+
+    - set of all processes residing in main memory, ready and waiting to execute
+
+- Wait queues
+
     - set of processes waiting for an event (i.e. I/O)
+
 - 进程在不同的 Queue 中频繁 Transfer，因此需要用 List 实现。
 
 ```C
@@ -497,67 +559,91 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 
 ??? info "FCFS"
     - First-Come, First-Served
+      
     - Non-preemptive
+      
     - Easy to understand and implement
+      
     - Poor in performance: 长进程会导致短进程等待时间过长
+      
     - Burst Time: P1: 24, P2: 3, P3: 3，这里展示一下以`123`的顺序执行的情况，会发现比`321`的情况要差很多
+      
     - ![](./assets/Sys20.png)
 
 ??? info "SJF"
     - 理论上的最佳方案
     - 可分为两类：Non-preemptive SJF, Preemptive SJF
-    - Non-preemptive SJF
-        - 选择最短的 **总的** Burst 时间
-        - ![](./assets/Sys21.png)
-    - Preemptime SJF
-        - 选择最短的 **剩余 Burst 时间**
-        - ![](./assets/Sys22.png)
-        - 这里 turnaround time 是一样的，还是完成时间减去 Arrival Time；对于 Waitng Time，会出现图里 P1 P2 这种分段执行的，这时 Waiting Time 就要分成两部分：从 Arrive 到第一次执行的时间间隔，再加上每次执行的结束时间到下次执行的开始时间的间隔
-    - 但是很难知道每个进程的 Burst Time
-    - 可以通过已发生过的 CPU Burst 预测
+        - Non-preemptive SJF
+            - 选择最短的 **总的** Burst 时间
+            - ![](./assets/Sys21.png)
+        - Preemptime SJF
+            - 选择最短的 **剩余 Burst 时间**
+            - ![](./assets/Sys22.png)
+            - 这里 turnaround time 是一样的，还是完成时间减去 Arrival Time；对于 Waitng Time，会出现图里 P1 P2 这种分段执行的，这时 Waiting Time 就要分成两部分：从 Arrive 到第一次执行的时间间隔，再加上每次执行的结束时间到下次执行的开始时间的间隔 
+            - 但是很难知道每个进程的 Burst Time
+            - 可以通过已发生过的 CPU Burst 预测
 
 ??? info "Round Robin"
+  
     - Preemptive
+      
     - 定义一个时间片（Time Quantum）：作为每个进程每次持续的最长时间
+      
     - 除非只剩下一个 READY 进程，否则，一个进程最多执行一个时间片长度后就得把 CPU 使用权交给另一个 READY 进程。
+      
     - Ready Queue 是 First-IN-First-OUT
+      
     - Scheduling:
+      
         - 从 Ready Queue 中选出第一个进程
+          
         - 设置计时器，在一个时间片长度后中断进程
+          
         - Dispatch 该进程
-    - ![](./assets/Sys25.png)
+      
+    - ![](./assets/Sys25.png)      
     - 因此对时间片的选取很重要：长 or 短？
+      
         - 短时间片
+          
             - 响应时间/互动率很好！但是额外开销太大了：因为 Dispatch 时 Context Switch 太多太耗时。
+      
         - 长时间片
+          
             - 响应时间很差，额外开支变少了：时间片很长很长时就变成 FCFS 型了
 
 ??? info "Priority Scheduling"
     - Non-Preemptive or Preemptive
     - 为每个进程定义一个优先级（一个数字）
-    - 也即把 Ready Queue 利用为一个优先队列
+        - 也即把 Ready Queue 利用为一个优先队列
     - 优先级高的（一般是数字小的）先执行
     - 其实优先级取“预测的下一次 Burst TIme”时就是SJF
-    - ![](./assets/Sys23.png)
+    - ![](./assets/Sys23.png)      
     - 来看一个优先级调度和 Round Robin 的综合
-    - ![](./assets/Sys24.png)
+        - ![](./assets/Sys24.png)
     - Problem：低优先级的进程总会被抢占，几乎永不执行（Starvation）
-    - Solution：Increase the priority of a process as it **ages**.
+        - Solution：Increase the priority of a process as it **ages**.
 
 ??? info "Multilevel Queue"
-    - ready queue 被分成多个队列
-    - 比如分成交互性队列和批处理队列
-    - 一个进程会被永久地分到一个队列中
-    - 每个队列可以使用不同的 Scheduling Algorithm
-      - 例如，高交互性的进程队列可以使用 RR 算法，低交互的批处理队列可以使用 FCFS 算法
-    - 队列之间也可以进行调度
+	
+	- ready queue 被分成多个队列
+	
+	- 比如分成交互性队列和批处理队列
+	
+	- 一个进程会被永久地分到一个队列中
+	
+	- 每个队列可以使用不同的 Scheduling Algorithm
+	
+	- 例如，高交互性的进程队列可以使用 RR 算法，低交互的批处理队列可以使用 FCFS 算法
+	
+	- 队列之间也可以进行调度
 
 ??? info "Multilevel Feedback Queues"
-    类似 Multilevel Queue，但是进程可以在不同队列之间移动。
+	类似 Multilevel Queue，但是进程可以在不同队列之间移动。
 
-    给交互性、I/O intensive 的进程更高的调度优先级
+	给交互性、I/O intensive 的进程更高的调度优先级
 
-    最最常见的调度算法
+	最最常见的调度算法
 
 ## IPC(Inter-Process Communication)
 
@@ -566,52 +652,62 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 进程可以通过通信进行”合作“，例如说文件这类信息在不同进程中的共享，或者说对同一个任务的 Multi-processing。
 
 !!! example "Chrome Browser"
-    Chrome浏览器使用进程隔离，每个标签页都是一个进程，这样一个标签页崩溃不会影响其他标签页。
+  
+	Chrome浏览器使用进程隔离，每个标签页都是一个进程，这样一个标签页崩溃不会影响其他标签页。
 
-    - Browser Process: 管理所有的标签页，UI，硬盘和网络的IO
-    - Renderer Process: 每个标签页一个进程，负责渲染页面，读取HTML & CSS，加载JS。
-      - 在一个沙盒里运行，限制了对系统的访问
-    - Plugin Process: 每个插件一个进程，如Flash Player
+	- Browser Process: 管理所有的标签页，UI，硬盘和网络的IO
+	- Renderer Process: 每个标签页一个进程，负责渲染页面，读取HTML & CSS，加载JS。
+	- 在一个沙盒里运行，限制了对系统的访问
+	- Plugin Process: 每个插件一个进程，如Flash Player
 
 ### Models of IPC
 
 - 共享内存（Shared Memory）
-  - ![Shared Memory](./assets/Sys26.png)
-  - low-overhead: almost no SysCall
-  - One process creates a shared memory segment
-  - Processes can then “attach” it to their address spaces
-  - 两个进程单独地访问共享内存
+
+    - ![](./assets/Sys26.png)
+    - low-overhead: almost no SysCall
+    - One process creates a shared memory segment
+    - Processes can then “attach” it to their address spaces
+    - 两个进程单独地访问共享内存
+
 - Message Passing
-  - ![Message Passing](./assets/Sys27.png)
-  - high-overhead: 需要通过System Call进入Kernel态获取Message
-  - 每次的Message很小
-  - 创造一个邮筒（Mailbox），通过邮筒发送与接收消息，摧毁邮筒
-  - Blocking or Non-blocking
-    - Blocking(同步)：发送者在信息被接收前一直Block，接收者在信息到达前一直Block
-    - Non-blocking(异步)：发送者持续发消息，接收者接收一条有效信息或者空消息
-  - 这里有一个 Buffering 的概念：
-    - Queue of messages attached to the link.
-    - Implemented in one of three ways
-      1. Zero capacity – no messages are queued on a link.  
-        Sender must wait for receiver
-      2. Bounded capacity – finite length of n messages  
-        Sender must wait if link full
-      3. Unbounded capacity – infinite length   
-        Sender never waits
+
+    - ![](./assets/Sys27.png)
+    - high-overhead: 需要通过System Call进入Kernel态获取Message
+    - 每次的Message很小
+    - 创造一个邮筒（Mailbox），通过邮筒发送与接收消息，摧毁邮筒
+    - Blocking or Non-blocking
+        - Blocking(同步)：发送者在信息被接收前一直Block，接收者在信息到达前一直Block
+        - Non-blocking(异步)：发送者持续发消息，接收者接收一条有效信息或者空消息
+
+    - 这里有一个 Buffering 的概念：
+
+        - Queue of messages attached to the link.
+        - Implemented in one of three ways
+
+            1. Zero capacity – no messages are queued on a link.  
+               Sender must wait for receiver
+            2. Bounded capacity – finite length of n messages  
+               Sender must wait if link full
+            3. Unbounded capacity – infinite length  
+               Sender never waits
+
+
+
 - Pipe
-  - Ordinary Pipe
-    - 一个进程写，一个进程读
-    - 一般是父子进程间通信
-    - 进程外无法访问
-    - 进程产生者写到`fd[1]`的 write-end，进程产生者读取`fd[0]`的 read-end
-    - 因此是单向的
-    - On Windows: Anonymous Pipe
-  - Named Pipe
-    - 两个进程之间通信
-    - 通过文件系统
-    - 双向
-    - 有名管道是一种特殊类型的文件，它允许无关的进程之间进行通信
-    - 与无名管道不同，有名管道有一个路径名与之关联，以`mkfifo()`创建
+    - Ordinary Pipe
+        - 一个进程写，一个进程读
+        - 一般是父子进程间通信
+        - 进程外无法访问
+        - 进程产生者写到`fd[1]`的 write-end，进程产生者读取`fd[0]`的 read-end
+        - 因此是单向的
+        - On Windows: Anonymous Pipe
+    - Named Pipe
+        - 两个进程之间通信
+        - 通过文件系统
+        - 双向
+        - 有名管道是一种特殊类型的文件，它允许无关的进程之间进行通信
+        - 与无名管道不同，有名管道有一个路径名与之关联，以`mkfifo()`创建
 
 ## Thread
 
@@ -619,54 +715,70 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 
 线程是进程的一个 Execution Unit，一个进程可以包含多个线程。每个线程有自己的 Stack 和 PC, Regs，但是共享 Data Section、Heap 和 Code Section。
 
-![Thread](./assets/Sys28.png)
+**简单来说，线程是执行单元，进程是资源管理单元**
+
+![](./assets/Sys28.png)
 
 - Single-threaded Process
-  - 一个进程只有一个线程
+
+    - 一个进程只有一个线程
+
 - Multi-threaded Process
-  - 一个进程有多个线程
+
+    - 一个进程有多个线程
+
 
 使用线程的优势：
 
 - Economical
-  - 创建线程比创建进程开销更少（Code Section、Data Section、Heap 已经被加载）
+
+    - 创建线程比创建进程开销更少（Code Section、Data Section、Heap 已经被加载）
+
 - Resource Sharing
-  - 线程本身就是共享资源的
-  - No more need for IPC
+
+    - 线程本身就是共享资源的
+    - No more need for IPC
+
 - Responsiveness
 - Scalability
-  - 一个进程中的多个线程可以并行执行，提高效率
+
+    - 一个进程中的多个线程可以并行执行，提高效率
+
 
 劣势：
 
 - 独立性差
-  - 一个线程崩溃会导致**整个进程**崩溃
-  - 很难知道是哪个线程出了问题
+
+    - 一个线程崩溃会导致**整个进程**崩溃
+    - 很难知道是哪个线程出了问题
+
 
 ### Thread Model
 
 - Many-to-one
-  - 多个User Thread映射到一个Kernel Thread
-  - 无法很好利用多核架构
-  - 一个User Thread阻塞会导致整个进程阻塞
+
+    - 多个User Thread映射到一个Kernel Thread
+    - 无法很好利用多核架构
+    - 一个User Thread阻塞会导致整个进程阻塞
+
 - One-to-one
-  - 一个User Thread映射到一个Kernel Thread
-  - Create a new user thread requires work from kernel
+
+	- 一个User Thread映射到一个Kernel Thread
+	- Create a new user thread requires work from kernel
+
 - Many-to-many
-  - 多个User Thread映射到多个Kernel Thread
-  - 如果一个User Thread阻塞，Kernel 创造出一个新的 Kernel Thread，避免整个进程阻塞
+
+    - 多个User Thread映射到多个Kernel Thread
+    - 如果一个User Thread阻塞，Kernel 创造出一个新的 Kernel Thread，避免整个进程阻塞
+
 - Two-level
-  - 可多对多，可一对一
+
+	- 可多对多，可一对一
+
 
 ### Thread Library
 
-TBD
-
-### Signal for Thread
-
-在多线程进程中，一个 Signal 发送出去会有多种情况
-
-TBD
+Some demos
 
 ### Linux Thread
 
@@ -677,18 +789,141 @@ TBD
 - `CLONE_FILES`: 共享文件描述符
 - `CLONE_SIGHAND`: 共享信号处理程序
 
-与此同时，Linux 下 `task_struct` 存储的是**线程**的 PCB，进程的 PCB 是 **Leader Thread** 的 PCB。
+与此同时，Linux 下 `task_struct` 存储的是**线程**的 TCB，进程的 PCB 是 **Leader Thread** 的 TCB。(不存在 PCB 了）
+
+同时一个 Process 可由单个线程+一个地址组成，也可以是多个线程+一个地址。
+
+### Thread Mapping
+
+一个 Task 可以在 User Mode 下执行线程，此时使用 User Code & User Stack，也可以在 Kernel Mode 下执行（例如调用个 Syscall），使用 Kernel Code & Kernel Stack
+
+???+ example "eg"
+	User code: printf(...)
+	Kernel code: write(...)
 
 ## Synchronization
 
 !!! example "Race Condition"
-    由于 Thread A B 运行的 `counter = counter+1` 实则是多行指令（寄存器内加1，写回寄存器），因此在 Thread A 读完运算完还没有写回的时候，被 Interrupt，转为 Thread B，Thread B 读取时，读到的是初始的 `counter` 值，运算后再写回，再由 Thread A 写回，得到的 `counter` 就只加了1.  
+	由于 Thread A B 运行的 `counter = counter+1` 实则是多行指令（寄存器内加1，写回寄存器），因此在 Thread A 读完运算完还没有写回的时候，被 Interrupt，转为 Thread B，Thread B 读取时，读到的是初始的 `counter` 值，运算后再写回，再由 Thread A 写回，得到的 `counter` 就只加了1.
     !!! success "解决方案"
-        Critical Section: 一段“**原子性**”的代码，同一时间段只能有一个线程在运行。  
-        ```c
-        while(1){
-            entry_section()
-                Critical Section
-            end_section()
-                remainder section
-        }
+    	Critical Section: 一段“**原子性**”的代码，同一时间段只能有一个线程在运行。
+    	```c
+    	while(1){
+    		entry_section()  
+    			Critical Section  
+    		end_section()  
+    			remainder section  
+    	}
+    	```
+    ??? info "如何构建 Critical Section"
+    	- Mutual Exclusion: 在同⼀时刻，最多只有⼀个线程可以执⾏临界区
+    	- Progress: 当没有线程在执⾏临界区代码时，必须在申请进⼊临界区的线程中选择⼀个线程，允许其执⾏临界区代码，保证程序执⾏的进展
+    	- Bounded Waiting: 当⼀个进程申请进⼊临界区后，必须在有限的时间内获得许可并进⼊临界区，不能⽆限等待
+
+Peterson's Algorithm: 两个线程的 Mutual Exclusion（只适用于两个线程）
+
+- 假设 Load 和 Store 是原子操作（不可被中断）
+- 两个进程共享下面这两个变量作为属性：
+    - `flag[2]`: 进程是否准备好进入临界区
+    - `int turn`: 轮到哪个进程进入临界区
+    - 伪代码如下
+
+![Peterson](./assets/Sys30.png)
+
+但是 Peterson 没有看起来那么万能，一是因为只适用两个线程，二是因为可能会导致处理器或编译器对\*看起来无害\*的操作指令进行**重排序**
+
+- 这在单线程进程里无所谓
+- 多线程里可能会导致非预期的结果！
+
+!!! example "e.g."
+    两个线程共享下面两个变量：
+    ```c
+    bool flag = false;
+    int x = 0;
+    ```
+    现在线程1执行
+    ```c
+    while(!flag);
+    printf("%d\n", x);
+    ```
+    线程2执行
+    ```c
+    x = 100;
+    flag = true;
+    ```
+    最后的结果是什么？
+    ??? success "解答"
+        - 我们预期的结果是输出100，但结果可能不是这样！
+        - 重排序可能导致 `flag = true` 先执行，`x = 100` 后执行
+    !!! question "那咋办"
+        引入内存屏障（Memory Barrier）来防止重排序
+
+        - 一句指令，使内存中所有的变化全部传播到所有其他处理器
+        - 现在只需要在线程1，2的两条语句之间加上`memory_barrier`即可
+
+### 硬件支持
+
+我们有硬件的指令来支持同步：
+
+#### Test-and-Set
+
+设置并返回初始值，原子操作
+
+```c
+bool test_set (bool *target)
+{
+    bool rv = *target;
+    *target = TRUE;
+    return rv:
+}
+```
+TBD
+
+#### Compare-and-Swap
+
+```c
+int compare_and_swap(int *value, int expected, int new_value)
+{
+    int temp = *value;
+    if (*value == expected)
+    *value = new_value;
+    return temp;
+}
+```
+
+TBD
+
+### 原子性变量
+
+TBD
+
+### Mutex Lock
+
+TBD
+
+### Semaphore
+
+TBD
+
+## Deadlock
+
+两个或多个进程互相等待对方释放资源，导致所有进程都无法继续执行。
+
+### Priority Inversion
+
+如果高优先级的进程等待低优先级的进程的 Lock，亦即，**被低优先级进程抢占了**
+
+!!! info "Solution"
+    - 优先级继承
+        - 短暂地提高低优先级进程的优先级
+
+### Condition Variable
+
+诶，我们直接定义一个条件变量，让所有线程都等待这个条件变量的信号，这样就不会出现死锁了！
+
+```C
+While (condition == false)
+    wait(condition_variable);
+
+// Remainder Section
+```
