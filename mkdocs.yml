@@ -1,8 +1,8 @@
 site_name: 现实的荒原
 site_author: shrike505
-site_url: https://shrike505.cc/
+site_url: https://nest.shrike505.cc/
 repo_name: shrike505
-repo_url: https://github.com/shrike-505/shrike-505.github.io/
+repo_url: https://github.com/shrike-505/Nest
 copyright: Copyright &copy; 2024 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
 - shrike505's blog: index.md
@@ -30,6 +30,7 @@ nav:
 - 笔记:
   - notes/index.md
   - AI:
+    - 人工智能引论: notes/AI/AIY.md
     - 数据分析与机器学习: notes/AI/DAML.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
@@ -41,7 +42,7 @@ nav:
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
     - 普通物理学Ⅰ: notes/MathematicsAndPhysics/Physics1.md
     - 常微分方程: notes/MathematicsAndPhysics/ODE.md
-    - 离散数学: notes/MathematicsAndPhysics/DiscreteMath.md
+    - 离散数学理论基础: notes/MathematicsAndPhysics/DiscreteMath.md
     - 概率论: notes/MathematicsAndPhysics/Probability.md
     - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
   - Language:
@@ -52,8 +53,6 @@ nav:
     - Typst备忘录: notes/Language/Typst.md
   - 短学期:
     - CTF101: notes/SummerCourses/CTF.md
-- 随笔:
-  - casual/index.md
 - 杂:
   - others/index.md
   - 记念: others/Quotes.md
@@ -118,13 +117,14 @@ theme:
   custom_dir: overrides
   
 plugins:
-  - blog:
-      blog_dir: casual
-      archive: false
-      post_readtime_words_per_minute: 350
-      post_date_format: full
-      blog_toc: true
-      post_excerpt_separator: <!-- more -->
+#   - blog:
+#       blog_dir: casual
+#       archive: false
+#       post_readtime_words_per_minute: 350
+#       post_date_format: full
+#       blog_toc: true
+#       post_excerpt_separator: <!-- more -->
+# blog switched to eridanus.shrike505.cc
   - changelog
   - statistics:
       words_per_minute: 350
@@ -206,3 +206,6 @@ extra:
         - icon: material/email
           link: mailto:<mikamidouya@outlook.com>
           name: Email
+        - icon: material/home
+          link: https://shrike505.cc/
+          name: HomePage
