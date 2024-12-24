@@ -43,9 +43,13 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
 - Possion分布
     - $X$取非负整数，$P(X=k) = \frac{\lambda^k}{k!}e^{-\lambda}$
     - 用于描述单位时间内某事件发生的次数
+- 下面两种分布都在成功概率为$p$的伯努利试验中使用
 - 二项分布
     - $X$取非负整数，$P(X=k) = C_n^k p^k(1-p)^{n-k}$
     - 用于描述$n$次独立重复试验中成功次数的分布
+- 几何分布
+    - $X$取非负整数，$P(X=k) = p(1-p)^{k-1}$
+    - 用于描述$n$次伯努利试验中第$k$次才得到第一次成功的概率
 
 
 ### 连续型随机变量
@@ -183,6 +187,7 @@ TBD
 $Var(X) = E((X-E(X))^2)$（定义）$= E(X^2) - E^2 (X)$
 
 - 二项分布：$Var(X) = np(1-p)$
+- 几何分布：$Var(X) = \frac{1-p}{p^2}$
 - Possion分布：$Var(X) = \lambda$
 - 均匀分布：$Var(X) = \frac{(b-a)^2}{12}$
 - 指数分布：$Var(X) = \frac{1}{\lambda^2}$
@@ -240,3 +245,23 @@ $E(E(X|Y)) = E(X)$，以及$E(E(Y|X)) = E(Y)$
 令$\varphi_X(t) = E(e^{itX})$，则有：$E(e^{it(aX+c)}) = e^{itc}\varphi_X(at)$
 
 若$X,Y$独立，则$Z = X+Y$的特征函数为$\varphi_Z(t) = \varphi_X(t)\varphi_Y(t)$，可推广到N个独立随机变量。
+
+## 概率极限理论
+
+以下三个定理（伯努利大数定律，中心极限定理，Poisson 极限定理）只涉及伯努利试验：
+
+### 伯努利大数定律
+
+!!! definition "大数律"
+    若$S_n$ ~ $B(n,p)$，则$n \to \infty$时，$\frac{S_n}{n} \to p$。
+
+伯努利大数律：$P(\omega: |\frac{S_n(\omega)}{n} - p| \gt \varepsilon) \to 0, n \to \infty$
+
+- 这解释了频率接近概率的现象
+- 引入了依概率收敛的概念
+    - ![依概率收敛](./assets/PT5.png)
+
+### 拉普拉斯中心极限定理
+
+### Poisson 极限定理
+

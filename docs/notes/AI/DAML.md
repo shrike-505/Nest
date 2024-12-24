@@ -1,12 +1,9 @@
 # Data Analysis and Machine Learning
 
 !!! note "Overview"
-  
-国际化拔尖人才培养课程：机器学习在数据分析和自然语言处理中的应用。讲得很浅，类似通识课的难度，连写代码的任务都没有。
+    国际化拔尖人才培养课程：机器学习在数据分析和自然语言处理中的应用。讲得很浅，类似通识课的难度，连写代码的任务都没有。
 
-````
-"Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
-````
+    > "Eighty percent will be course lessons, and twenty percent will be life lessons."  -- Raja Sooriamurthi
 
 ## Lec 1: Introduction
 
@@ -51,11 +48,11 @@ Learning: Improvement.
 
 !!! example "eg"
   
-- Recommendation System: Netflix
-  
-- Association: People who read this book also read...
-  
-- Email spam classification
+    - Recommendation System: Netflix
+      
+    - Association: People who read this book also read...
+      
+    - Email spam classification
 
 ## Lec2: Computational Thinking & Tidy Data
 
@@ -87,10 +84,9 @@ Tidy Data: 数据的组织格式，使得数据更容易被处理。（例如用
 
 !!! note "e.g."
   
-即便是表格也有messy的，如下图，蓝色表格对人类来说是更可读的，而绿色（Tidy Ver.）对计算机更友好。  
+    即便是表格也有messy的，如下图，蓝色表格对人类来说是更可读的，而绿色（Tidy Ver.）对计算机更友好。  
 
-
-![](./assets/DAML3.png)
+    ![](./assets/DAML3.png)
 
 Data Analysis中注意的三个属性：
 
@@ -111,16 +107,15 @@ Data Analysis中注意的三个属性：
 
 !!! example "e.g."
   
-Subway Map: put you in other's shoes.
+    Subway Map: put you in other's shoes.
 
-Data gathered: About Movies.  
+    Data gathered: About Movies.  
 
+    ![](./assets/DAML5.png)
 
-![](./assets/DAML5.png)
+    面对这些数据，我们可以提出很多问题，例如：性别不同的人分别喜欢看什么电影？年龄对电影评价的影响如何？等等。然后可以造一个Tidy的表格：
 
-面对这些数据，我们可以提出很多问题，例如：性别不同的人分别喜欢看什么电影？年龄对电影评价的影响如何？等等。然后可以造一个Tidy的表格：
-
-| MovieID | Title | Male_Rating | Female_Rating | Diff |
+    | MovieID | Title | Male_Rating | Female_Rating | Diff |
 
 ### Effective Mapping
 
@@ -130,26 +125,26 @@ Types of Data:
 
 - N(Normals)
 
-  - Operation: =, !=
-  - e.g.: 邮政编码，血型，瞳孔颜色，种族，政党
-  - 根本无法量化的特性
+    - Operation: =, !=
+    - e.g.: 邮政编码，血型，瞳孔颜色，种族，政党
+    - 根本无法量化的特性
 
 - O(Ordered)
 
-  - Operation: =, !=, >(<)(=)
-  - e.g.: "Low/High/Medium Income Level". 满意程度（高，中，低）
-  - 具有分级（Order）的大致范围
+    - Operation: =, !=, >(<)(=)
+    - e.g.: "Low/High/Medium Income Level". 满意程度（高，中，低）
+    - 具有分级（Order）的大致范围
 
 - Q(Interval - Location of zero arbitrary - 0 只是一个标记点，实则也是一个该量的值)
 
-  - Operation: =, !=, >(<)(=), -
-  - e.g.: temperature（摄氏度与华氏度）, pH, SAT score
+    - Operation: =, !=, >(<)(=), -
+    - e.g.: temperature（摄氏度与华氏度）, pH, SAT score
 
 - Q(Ratio - Location of 0 fixed - 0 代表该量的完全缺失)
 
-  - Operation: =, !=, >(<)(=), -, /
-  - e.g.: Physical measurements(mass, length, 开尔文温度)
-  - 换句话说，不存在负数（？）
+    - Operation: =, !=, >(<)(=), -, /
+    - e.g.: Physical measurements(mass, length, 开尔文温度)
+    - 换句话说，不存在负数（？）
 
 
 ## Lec 4: Overview of Machine Learning
@@ -171,27 +166,27 @@ ML TASKS:
 
 - **Classification / Regression**
 
-  - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
+    - assign a label (classification) or numerical value (regression) to an unknown entity based on a set of features and known labels (or numerical values)
 
 - **Clustering**
 
-  - group a bunch of entities that share common features
+    - group a bunch of entities that share common features
 
 - **Optimization**
 
-  - from amongst a set of alternatives pick the “best” while balancing competing value metrics
+    - from amongst a set of alternatives pick the “best” while balancing competing value metrics
 
 - **Forecasting**
 
-  - based on the past, forecast the future
+    - based on the past, forecast the future
 
 - **Recommendation**
 
-  - based on prior behavior rank order candidate preferences
+    - based on prior behavior rank order candidate preferences
 
 - **Association**
 
-  - identify which items co-occur e.g., bread and peanut butter
+    - identify which items co-occur e.g., bread and peanut butter
 
 
 如何评判ML TASKS完成的好坏？（mea
@@ -202,17 +197,17 @@ ML TASKS:
 
 - Supervised Learning
 
-  - We know both the input and the output
-  - 'Teacher'
+    - We know both the input and the output
+    - 'Teacher'
 
 - Unsupervised Learning
 
-  - We only know the input
+    - We only know the input
 
 - Reinforcement
 
-  - We know what is desired (correct) and what is not desired
-  - the ‘credit/blame assignment’ problem
+    - We know what is desired (correct) and what is not desired
+    - the ‘credit/blame assignment’ problem
 
 
 Pull out features from data, and then feed them into a **model**.
@@ -281,11 +276,11 @@ Good Decision Tree: Wide and Shallow.
 
 - Bagging: 从原始数据集中随机抽取一部分数据，然后用这部分数据建立一个决策树。
 
-  - 经验上取2/3的数据
+    - 经验上取2/3的数据
 
 - Feature: 从所有的特征中随机选取一部分特征，然后用这部分特征建立一个决策树。
 
-  - 经验上取$\sqrt{p}$个特征
+    - 经验上取$\sqrt{p}$个特征
 
 
 ### Ensemble Learning
@@ -296,18 +291,13 @@ Ensemble Learning: 通过组合多个 Weak Learner 来构建一个 Strong Learne
 
 !!! example "eg"
   
-以这个判断垃圾邮件的 Classifier 为例，我们仅有的特征是 `Lottery`（彩票）和 `Sale` 这两个词在邮件中出现的次数。我们要对这个 Classifier 建一个决策树。  
+    以这个判断垃圾邮件的 Classifier 为例，我们仅有的特征是 `Lottery`（彩票）和 `Sale` 这两个词在邮件中出现的次数。我们要对这个 Classifier 建一个决策树。  
 
+    ![](./assets/DAML11.png)
 
-![](./assets/DAML11.png)
-
-  
-
-
-![](./assets/DAML12.png)
-
-  
-这里`value`的两个分量就是当前节点对应情况下的 Spam/Ham 个数。
+    ![](./assets/DAML12.png)
+    
+    这里`value`的两个分量就是当前节点对应情况下的 Spam/Ham 个数。
 
 ### Bagging(Bootstrap Aggregating)
 
@@ -346,36 +336,34 @@ Weak Learner 通过投票（VOTE）合成 Strong Learner。（从图像上讲，
 
 - Apply Machine Learning: How?
 
-  - 第一步是分辨利益相关者（Stakeholder）：Producer, Consumer, Manager
-  - 考虑这些利益相关者的价值主张（Value Proposition）
-  - Use specific method/task
+    - 第一步是分辨利益相关者（Stakeholder）：Producer, Consumer, Manager
+    - 考虑这些利益相关者的价值主张（Value Proposition）
+    - Use specific method/task
 
-    - Classification ... and so on
+        - Classification ... and so on
 
 
 
 这一节课就探讨一下 Recommendation 的实际原理。
 
 !!! example "intro"
-  
-The Long Tail Effect:
 
-````
-- Small number of best-selling products
-- Large number of products selling in small quantities
-````
+    The Long Tail Effect:
+
+    - Small number of best-selling products
+    - Large number of products selling in small quantities
 
 ### Recommendation method
 
 - Hand Curated (人工推荐)
 
-  - 人工推荐，例如“大家都在看”
-  - 实则是没有考虑到当前用户的 Preference
+    - 人工推荐，例如“大家都在看”
+    - 实则是没有考虑到当前用户的 Preference
 
 - Simple Aggregation （简易聚合）
 
-  - 例如 Amazon 的“Customers who bought this item also bought...”
-  - 仅仅是根据购买记录进行推荐
+    - 例如 Amazon 的“Customers who bought this item also bought...”
+    - 仅仅是根据购买记录进行推荐
 
 - Personalized
 
@@ -421,7 +409,6 @@ Drawback：Item 必须是 Users 共有的，例如说都看过一部电影，这
 ## Lec 8
 
 
-
 ### Alternating Least Squares
 
 TBD
@@ -431,3 +418,29 @@ TBD
 - 迭代一段时间后停止
 - 迭代一定次数后停止
 - 计算每次迭代后与实际值的差距，当差距小于某个阈值时（或者误差不再减小了）停止
+
+## Lec 9: Optimization (Genetic Algorithm)
+
+!!! note "Intro: CSP"
+    **约束满足问题**：我们被提供：
+
+    - 一系列变量
+    - 每个变量的取值范围
+    - 一系列**约束**限制了这些变量的取值
+
+    我们需要求得：
+
+    - 每个变量合适的取值，使得所有的约束条件都被满足
+
+    一些变种问题
+
+    - 这样的取值（解）是否存在
+    - 找到一些解
+    - 找到所有解
+    - 在某个条件下，找到最优解
+
+与 Constraint Satisfaction Problem 不同，Optimization Problem 还需要进行解的 质量评估（Quality Measure），有时会要求一个评估函数（Evaluation Function）。
+
+### 真实案例：拍卖车的最佳分配
+
+

@@ -4,7 +4,7 @@
         - 大二上笔记
 ---
 
-> 这辈子有了
+> 全家丝光的课
 
 # 普通物理学Ⅱ（H）
 
@@ -323,6 +323,7 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
     如果光波在介质中传播时，波长为$\lambda$，传播距离为$r$，则其相位等于$\phi = 2 \pi \frac{r}{\lambda}$    
     介质中波长 $\lambda_n = \frac{\lambda}{n}$，期中$n$为介质折射率，于是上式变为$\phi = 2 \pi \frac{nr}{\lambda}$    
     定义光程（Optical Path）：$L = nr$，则有$\phi = \frac{2\pi}{\lambda} L$ （于是$r$为光在介质中传播的几何距离） 
+    则光程差（Optical Path Difference）：$\Delta L = n_1 r_1 - n_2 r_2$，则有相位差 $\Delta \phi = \frac{2\pi}{\lambda} \Delta L$  
 
 ### 干涉（Interference）
 
@@ -345,6 +346,13 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
     note：光强与振幅的平方成正比  
     ![双缝干涉](./assets/gp35.png)
 
+杨式双缝干涉中的常用公式：
+
+![双缝干涉公式](./assets/gp38.png)
+
+!!! example "例1"
+    ![例1](./assets/gp37.png)
+
 #### 半波损失
 
 > Credit to <https://zhuanlan.zhihu.com/p/550675894>
@@ -354,8 +362,30 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 - 当光从光密到光疏质，正入射时反射光无半波损（掠入射时发生全反射） 。
 - ![半波损失](./assets/gp36.png)
 
-!!! example "例1"
-    ![例1](./assets/gp37.png)
+## 量子力学
+### 黑体
+### 光电效应
+
+- 光电效应：光照射到金属表面，金属表面会发射电子
+- $hf = E_{km} + A = \frac{1}{2} m v^2 + A$，其中$A$为金属的功函数
+- 即，携带能量为$hf$的光子，击中金属后转化为电子，没有时间延迟。
+- ![光电效应](./assets/gp39.png)
+
+### 康普顿散射
+
+- 光子与电子碰撞后，光子的波长会变长，电子的动能会增加
+    - 光子：$E = hf$, $p = \frac{hf}{c} = \frac{h}{\lambda}$
+    - 电子：$E = m_{0}c^2$, $p = mv$
+- 碰撞时，能量守恒：$hf + m_{0}c^2 = mc^2 + hf'$
+- 动量守恒：
+    - X: $\frac{hf}{c} = \frac{hf'}{c} \cos \phi + mv \cos \theta$
+    - Y: $0 = \frac{hf}{c} \sin \phi - mv \sin \theta$
+- 由此可以解出$\lambda' - \lambda = \frac{h}{m_{0}c}(1 - \cos \phi)$
+- $\phi$为光子偏离原方向的散射角，$\theta$为电子偏离原方向的散射角
+
+### 物质波
+### 矩阵力学
+### 波动力学
 
 ## 小测部分
 
@@ -373,4 +403,3 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
     先定义一下上板倾角为 $\theta$，下板横向长为 $x$。则由于 $d$ 很小，倾角趋于0，有近似 $\tan \theta = \sin \theta = \frac{h}{a}$，那么取下板沿 $x$ 方向很小的一截 $dx$，这一截的下板面积是 $bdx$，且近似与上板平行（上板平行重合的这一小截也视作面积是 $bdx$，则由平行极板电容公式 $C = \frac{\epsilon_0 A}{d}$，得到$dC=\frac{\epsilon_0 bdx}{d+\tan \theta x}$  
     直接对 $x$ 从0到 $a$ 积分，  
     得到 $C = \int_0^a \frac{\epsilon_0 bdx}{d+\frac{h}{a} x} = \frac {\epsilon_0 a b}{h} \cdot \ln \frac{h+d}{d}$
-

@@ -448,3 +448,45 @@ State_flipping{
 - 问题：在一个图中，每一个边都有一个正的权值，将图划分为两个集合，使得跨越两个集合的边的权值最大
 - 这个问题可以转化为霍普菲尔德神经网络问题，点分别赋值为-1或者1（集合A和集合B），因为都是最大化好边权重和。
 - 近似比：2，即局部最优解大于等于全局最优解的一半
+
+## 并行算法
+
+### PRAM模型
+
+Parallel Random Access Machine，随机存取并行机器。
+
+按处理器划分
+
+```c
+for P_i, 1 <= i <= n do
+    B(0,i) = A(i)
+    for h = 1 to log n do
+        if i <= n/2^h then
+            B(h,i) = B(h-1,2i-1) + B(h-1,2i)
+        else stay idle
+    for i = 1: output B(log n,1);for i>1: stay idle
+```
+
+Work-Depth模型
+
+```c
+for P_i, 1 <= i <= n pardo
+    B(0,i) = A(i)
+for h = 1 to log n do
+    for P_i, i <= n/2^h pardo
+        B(h,i) = B(h-1,2i-1) + B(h-1,2i)
+    else stay idle
+for i = 1 pardo
+    output B(log n,1)
+```
+
+- EREW：不允许同时读和同时写；
+- CREW：允许同时读但不允许同时写的PRAM模型；
+- CRCW：允许同时读和同时写的PRAM模型
+- C: Concurrent，R: Read，E: Exclusive，W: Write
+
+## 外部排序
+
+在内存里访问`a[i]`只需要$O(1)$时间，而在磁盘上更慢。
+
+- 迭代次数：$1+\log{N/M}$，其中 $N$ 是数据个数，$M$ 是内存大小
