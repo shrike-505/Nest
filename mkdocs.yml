@@ -183,9 +183,9 @@ extra_css:
   - https://fonts.loli.net/css2?family=Victor+Mono
   - https://fonts.loli.net/css2?family=Noto+Serif+SC
   - https://fonts.loli.net/css2?family=Gloria+Hallelujah&display=swap
+  - https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css
+  - https://cdn.bootcdn.net/ajax/libs/juliamono/0.056/juliamono.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - css/changelogs.css
   - css/newcolor.css
   - css/newfonts.css
