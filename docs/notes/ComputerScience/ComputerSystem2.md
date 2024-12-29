@@ -157,6 +157,16 @@ Solution：
 
 ## 冲突与中断
 
+我感觉不考
+
+## Computer Architecture 计算机体系结构
+
+冯诺依曼架构：I/O System <-> CPU <-> Memory
+
+存储在内存中的数据，基本单元是Byte，每个数据都被一个**地址**标记，一台机器上所有的地址的位数是一样的。
+
+当一个程序加载到内存中，它的地址空间（Address Space）分为两部分：Code 和 Data。
+
 ## Operating System 操作系统
 
 ### ELF 概述
@@ -174,7 +184,7 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 
 - .text: 代码段
 - .rodata: read only 数据段
-- .data: 数据段
+- .data: 初始化数据段
 - .bss: 未初始化数据段
 
 !!! note "Quiz"
@@ -188,22 +198,17 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
     
         const int c = 2; // 存储在.rodata段
     ```
-    
-    
 
 - Static linking
-
     - All needed code is packed in single binary, leading to large binary
     - `_start` is executed after evecve system call
     - ![](./assets/Sys7.png)
 
 - Dynamic linking
-
     - Reuse libraries to reduce ELF file size
     - Howto resolve library calls?
         - It is the loader who resolves lib calls.
     - Entry point 是 loader
-
 
 ![](./assets/Sys8.png)
 
@@ -221,7 +226,9 @@ ELF - Executable and Linkable Format 二进制文件内包含如下段（Section
 
 ![](./assets/CS6.png)
 
-存储在Memory中的数据，基本单元是Byte，每个数据都被一个地址标记。
+!!! note "可能的考点（来自复习课）"
+    - 线程可以共享 Heap，但不共享 Stack，为什么？
+        - Stack 里含有返回地址等信息，不适合共享
 
 > DMA(Direct Memory Access)：设备直接访问内存，不经过CPU。
 
@@ -284,12 +291,16 @@ Event 分为 Interrupt - 由硬件引起，Exception - 由软件引起。
 - All modern processors support (at least) two modes of execution:
     - User mode: In this mode protected instructions cannot be executed
     - Kernel mode: In this mode all instructions can be executed
-    - User code executes in user mode
-    - OS code executes in kernel mode
+    - User code executes in user mode (**e.g., application code**)
+    - Kernel code executes in kernel mode (**e.g., OS code**)
     - The mode is indicated by a status bit in a protected control register
         - The CPU checks this bit before executing a protected instruction
 
-
+!!! note "可能的考点（来自复习课）"
+    - 狭义操作系统：Kernel Mode  
+    - 广义操作系统：Kernel Mode + 一部分 User Mode
+    - User code executes in user mode (**e.g., application code**)
+    - Kernel code executes in kernel mode (**e.g., OS code**)
 
 ![](./assets/Sys4.png)
 
@@ -313,9 +324,17 @@ OS Code running: Boot -> Wait for Event -> Event Handler -> Return to Wait
 
 ![](./assets/Sys5.png)
 
-### System Call 系统调用
+### System Call 系统调用（重点）
 
-每个Syscall有自己的Syscall Number，通过这个Number来调用Syscall，这个Number就是 Syscall Table 的索引，OS对具体的Syscall不感兴趣，只根据Number跳到Kernel中对应的Handler。
+System Call 是**操作系统**提供给**用户程序**的**接口**（interface），用于访问操作系统的服务。
+
+每个 Syscall 有自己的 Syscall Number，通过这个 Number 来调用 Syscall，这个 Number 就是 Syscall Table 的索引，OS 对具体的 Syscall 不感兴趣，只根据 Number 跳到 Kernel 中对应的 Handler。
+
+!!! note "可能的考点（来自复习课）"
+    - System Call 中是否存在 Context Switch？
+        - 存在。
+    - Kernel Stack 和 User Stack 的区别？
+        - Kernel Stack 大小固定，还含有 PCB 的指针信息
 
 `strace`可以查看程序的System Call。
 
@@ -361,8 +380,16 @@ SysCall的类型：
     - Get and set permissions
     - Allow and deny user access
 
+!!! note "可能的考点（来自复习课）"
+    - `kernel_entry` 在 Syscall 时被调用，用于保存 User Space 的寄存器信息
+    - `ret_to_user` 在 Syscall 结束时被调用，用于恢复 User Space 的寄存器信息，把控制流交还给 User Space
 
 ### System Service 系统服务
+
+!!! note "可能的考点（来自复习课）"
+    - 动态链接和静态链接的区别和优劣？
+        - 静态链接：所有的库都被打包进可执行文件，文件较大
+        - 动态链接：只有一个 loader，运行时运行`ld.so`，解析符号表，加载库，文件较小
 
 ## Process 进程
 
@@ -376,7 +403,11 @@ SysCall的类型：
 - .data段的Size是相同的，但Content可能不同
 - Stack和Heap两者都不同
 
-### Process Control Block 进程控制块 PCB
+!!! note "可能的考点（来自复习课）"
+    - 进程是 a unit of resource allocation and protection
+    - 线程是 a unit of execution
+
+### Process Control Block 进程控制块 PCB（重点）
 
 也称为Task Control Block，是操作系统用来管理进程的数据结构，存储每个进程的信息。
 
@@ -387,10 +418,9 @@ SysCall的类型：
 - 存储这些 Process 的 META data：
   - Process State - Running, waiting, ready, etc.
   - Program Counter - Address of next instruction
-  - CPU Registers - Contents of all process-centric registers
+  - CPU Registers - Values of all process-centric registers
   - Blah blah blah...
   - ![](./assets/Sys10.png)
-
 
 On Linux: PCB is `task_struct`
 
@@ -413,6 +443,10 @@ As a process executes, it changes state. The state of a process is defined in pa
 
 - 返回给父进程的是新进程的pid
 - 返回给子进程的是0
+
+!!! note "可能的考点（来自复习课）"
+    - 为什么`fork()`可以返回两个值？
+        - 这是其拷贝了两份 User Space Context
 
 ???+ info "Quiz"
     下面这张图里，每次`fork()`会给当前每个进程都创建一个子进程，所以第一次`fork()`后有两个进程，第二次`fork()`后有四个进程。  
@@ -485,13 +519,13 @@ As a process executes, it changes state. The state of a process is defined in pa
 	
 ### Zombie Process 僵尸进程
 
-子进程死亡后，它的父进程会接收到通知去执行一些清理操作，如释放内存之类。然而，若父进程并未察觉到子进程死亡，子进程就会进入到“ 僵尸(zombie)”状态。从父进程角度看，子进程仍然存在，即使子进程实际上已经死亡。
+子进程死亡后，它的父进程会接收到通知去执行一些清理操作，如释放内存之类。然而，若父进程并未察觉到子进程死亡（**没有回收其PCB**），子进程就会进入到“ 僵尸(zombie)”状态。从父进程角度看，子进程仍然存在，即使子进程实际上已经死亡。
 
 Zombie 会占用其 PCB，不会占用CPU，但会占用内存。
 
 A zombie lingers on until:
 
-- its parent has called wait() for the child, or
+- its parent has handled SIGCHLD (which calls wait() for the child), or
 - its parent dies
 
 ![](./assets/Sys16.png)
@@ -528,10 +562,10 @@ struct list_head{
 
 ![](./assets/Sys17.png)
 
-#### Context Switch 上下文切换
+#### Context Switch 上下文切换（重点）
 
 > 由于在处理 trap 时，有可能会改变系统的状态。所以在真正处理 trap 之前，我们有必要对系统的当前状态进行保存，在处理完成之后，我们再将系统恢复至原先的状态，就可以确保之前的程序继续正常运行。这里的系统状态通常是指寄存器，这些寄存器也叫做 CPU 的上下文（context）。  
-ZJU-SYS2-FA24
+> ZJU-SYS2-FA24
 
 当CPU从一个进程（实则是线程Thread）切换到另一个进程时，需要保存当前进程的状态，并加载新进程的已保存的状态，这就是上下文切换。
 
@@ -546,10 +580,11 @@ ZJU-SYS2-FA24
 2. 在两个用户线程中的上下文切换
     - 令人感叹的是，上下文切换**必须**在内核态中进行
     - User context 在什么时候/哪里保存？
-    - when: kernel_entry; where: 每个线程的 kernel stack 中，确切说是`pt_regs`结构体内
+    - when: kernel_entry; where: 每个线程（per thread）的 kernel stack 中，确切说是`pt_regs`结构体内
     - Kernel context 在什么时候/哪里保存？
     - when: `cpu_switch_to()`; where: `cpu_context`
 	- ![Switch1](./assets/Sys29.png)
+	- 下面是一个俩 User 线程的上下文切换的例子
     - ![](./assets/Sys18.png)
 
 
@@ -660,15 +695,10 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 
 ??? info "FCFS"
     - First-Come, First-Served
-      
     - Non-preemptive
-      
     - Easy to understand and implement
-      
     - Poor in performance: 长进程会导致短进程等待时间过长
-      
     - Burst Time: P1: 24, P2: 3, P3: 3，这里展示一下以`123`的顺序执行的情况，会发现比`321`的情况要差很多
-      
     - ![](./assets/Sys20.png)
 
 ??? info "SJF"
@@ -821,35 +851,25 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 ![](./assets/Sys28.png)
 
 - Single-threaded Process
-
     - 一个进程只有一个线程
-
 - Multi-threaded Process
-
     - 一个进程有多个线程
 
 
 使用线程的优势：
 
 - Economical
-
     - 创建线程比创建进程开销更少（Code Section、Data Section、Heap 已经被加载）
-
 - Resource Sharing
-
     - 线程本身就是共享资源的
     - No more need for IPC
-
 - Responsiveness
 - Scalability
-
     - 一个进程中的多个线程可以并行执行，提高效率
-
 
 劣势：
 
-- 独立性差
-
+- 隔离性（isolation）差
     - 一个线程崩溃会导致**整个进程**崩溃
     - 很难知道是哪个线程出了问题
 
@@ -857,25 +877,18 @@ Dispatcher 把CPU的选择交给被 Scheduler 选中的进程，包括切换至K
 ### Thread Model 线程模型
 
 - Many-to-one
-
     - 多个User Thread映射到一个Kernel Thread
     - 无法很好利用多核架构
     - 一个User Thread阻塞会导致整个进程阻塞
-
 - One-to-one
-
 	- 一个User Thread映射到一个Kernel Thread
 	- Create a new user thread requires work from kernel
-
+	- 开销大
 - Many-to-many
-
     - 多个User Thread映射到多个Kernel Thread
     - 如果一个User Thread阻塞，Kernel 创造出一个新的 Kernel Thread，避免整个进程阻塞
-
 - Two-level
-
 	- 可多对多，可一对一
-
 
 ### Thread Library 线程库
 
@@ -890,7 +903,7 @@ Some demos
 - `CLONE_FILES`: 共享文件描述符
 - `CLONE_SIGHAND`: 共享信号处理程序
 
-与此同时，Linux 下 `task_struct` 存储的是**线程**的 TCB，进程的 PCB 是 **Leader Thread** 的 TCB。(不存在 PCB 了）
+与此同时，Linux 下 `task_struct` 存储的是**线程**的 TCB，进程的 PCB 是 **Leader Thread** 的 TCB。（不存在 PCB 了）
 
 同时一个 Process 可由单个线程+一个地址组成，也可以是多个线程+一个地址。
 
@@ -900,10 +913,8 @@ Some demos
 
 ???+ example "eg"
 	执行 `printf()` 时，会调用 `write()`，`write()` 是一个 SysCall，因此会进入 Kernel Mode，此时会切换到 Kernel Stack，Kernel Code。
-
-    User code: printf(...)
-
-	Kernel code: write(...)
+    - User code: printf(...)
+	- Kernel code: write(...)
 
 ## Synchronization 同步
 
@@ -919,7 +930,7 @@ Some demos
     			remainder section  
     	}
     	```
-    ??? info "如何构建 Critical Section aka Synchronization 的解决方案需要满足的条件"
+    ??? info "构建 Critical Section aka Synchronization 的解决方案需要满足的条件"
     	- Mutual Exclusion: 在同⼀时刻，最多只有⼀个线程可以执⾏临界区
     	- Progress: 当没有线程在执⾏临界区代码时，必须在申请进⼊临界区的线程中选择⼀个线程，允许其执⾏临界区代码，保证程序执⾏的进展
     	- Bounded Waiting: 当⼀个进程申请进⼊临界区后，必须在有限的时间内获得许可并进⼊临界区，不能⽆限等待
@@ -960,12 +971,13 @@ Peterson's Algorithm: 两个线程的 Mutual Exclusion（只适用于两个线�
         - 我们预期的结果是输出100，但结果可能不是这样！
         - 重排序可能导致 `flag = true` 先执行，`x = 100` 后执行
     !!! question "那咋办"
-        引入内存屏障（Memory Barrier）来防止重排序
-
-        - 一句指令，使内存中所有的变化全部传播到所有其他处理器
-        - 现在只需要在线程1，2的两条语句之间加上`memory_barrier`即可
+        - 引入内存屏障（Memory Barrier）来防止重排序
+            - 一句指令，使内存中所有的变化全部传播到所有其他处理器
+            - 现在只需要在线程1，2的两条语句之间加上`memory_barrier`即可
 
 ### 硬件支持
+
+> 这一块智云只有半小时有声音，这不炸了吗
 
 我们有硬件的指令来支持同步：
 
@@ -980,8 +992,17 @@ bool test_set (bool *target)
     *target = TRUE;
     return rv:
 }
+
+// 实现一个 lock(shared variable)
+do {
+    while (test_set(&lock)); // 如果一个线程先把 lock 设置为 TRUE，那么其他线程到这一行就等待住了
+    // Critical Section
+    lock = FALSE;
+    // Remainder Section
+} while (TRUE);
 ```
-TBD
+
+满足互斥，Progress，但是不满足 Bounded Waiting
 
 #### Compare-and-Swap
 
@@ -993,19 +1014,44 @@ int compare_and_swap(int *value, int expected, int new_value)
         *value = new_value;
     return temp;
 }
+
+// 还是实现一个线程共享的 lock
+do {
+    while (compare_and_swap(&lock, 0, 1) != 0);
+    // Critical Section
+    lock = 0;
+    // Remainder Section
+} while (TRUE);
 ```
 
-TBD
+### Atomic Variable 原子性变量
 
-### 原子性变量
+通过上面两种硬件支持的方法，我们可以实现一个原子性变量
 
-TBD
+### Mutex Lock 互斥锁 or Spin Lock
 
-### Mutex Lock 互斥锁
+利用上面两个函数，可以构造这种用于解决同步的**软件**方案，先`acquire`锁，再`release`锁（两个函数调用都得是原子操作），需要"busy waiting"。
 
-TBD
+```c
+func acquire(){
+    while(!available); // busy waiting (spin)
+    available = false;
+}
+
+func release(){
+    available = true;
+}
+```
+
+自旋太多了！导致 CPU 利用率低。引入 `yield` 函数，让出 CPU 给其他线程。（moving from running state to sleeping zZZ）
+
+- How to implement?
+    - Add a queue
+    - When the lock is locked, change process’s state to SLEEP, add to the queue, and call schedule()
 
 ### Semaphore 信号量
+
+`yield` 下的 Mutex Lock 还是利用率太低了！
 
 ```c
 struct semaphore {
@@ -1013,6 +1059,7 @@ struct semaphore {
     struct list_head* waiting_queue;
 };
 ```
+摆了
 
 ## Deadlock 死锁
  
@@ -1136,10 +1183,6 @@ do {
 !!! extra "变种"
     - Reader First
     - Writer First
-
-#### Dining-Philosophers Problem 哲学家就餐问题
-
-TBD
 
 ### Deadlock 发生的条件
 
