@@ -1,5 +1,6 @@
 ---
-nostatistics: true
+    nostatistics: true
+    comments: true
 ---
 
 # 年终总结合集
@@ -16,3 +17,7 @@ nostatistics: true
 ## 2024
 
 ![duolingo2024](../img/duolingo2024.jpg)
+![netease2024](../img/netease2024.jpg)
+![bilibili2024](../img/bilibili2024.jpg)
+![qq2024](../img/qq2024.jpg)
+![bbdc2024](../img/bbdc2024.jpg)
