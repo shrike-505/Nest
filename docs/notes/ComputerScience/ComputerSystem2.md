@@ -4,7 +4,7 @@
         - 大二上笔记
 ---
 
-> No...
+> Can u feel it?
 
 # 计算机系统 Ⅱ
 
@@ -31,7 +31,7 @@
 
 !!! note "Practice"
     D = A * B - (A + C * B)
-    ??? note "Stack"
+    ??? success "Stack"
         ```asm
         push A
         push B
@@ -44,7 +44,7 @@
         sub
         pop D
         ```
-    ??? note "Accumulater"
+    ??? success "Accumulater"
         ```asm
         load B
         mul C
@@ -55,9 +55,9 @@
         sub D
         store D
         ```
-    ??? note "Register-Memory"
+    ??? success "Register-Memory"
         ```asm
-        ; 提供指令：add/sub/mul/load/store Reg, data
+        # 提供指令：add/sub/mul/load/store Reg, data
         load R1, A
         mul R1, B
         load R2, C
@@ -67,9 +67,9 @@
         mul R1, D
         store R1, D
         ```
-    ??? note "Load-Store"
-        ; 提供指令 add/sub/mul RegDest, Reg1, Reg2; load/store Reg, &Mem
+    ??? success "Load-Store"
         ```asm
+        # 提供指令 add/sub/mul RegDest, Reg1, Reg2; load/store Reg, &Mem
         load R1, &A
         load R2, &B
         load R3, &C
@@ -154,6 +154,31 @@ Solution：
 ## Multiple Issue 多发射
 
 为了改进指令级别的并行（ILP, Instruction Level Parallelism），除了加深流水线外，还可以同时发射多条指令。
+
+- 静态多发射：编译器把多条指令打包到“issue slots”中
+    - 编译器探测并避免冲突
+- 动态多发射：CPU解析指令流，选出多发射的指令
+    - 编译器可以通过重排指令来提高多发射的效率
+- CPU 在运行时解决冲突
+
+下面是三种多发射的处理器：
+
+### Superscalar 超标量
+
+- 每个时钟周期发射的指令不固定，最多可达$n$条。（称为$n$-issue）
+- 可以静态由编译器指定，或动态由Tomasulo算法决定
+
+### VLIW (Very Long Instruction Word) 超长指令字
+
+- 每个时钟周期的指令数是固定的，但是每条指令包含一条长指令或是指令 packet
+
+### Super-Pipeline 超流水线
+
+- 每个流水间阶段都被进一步细分，同一时钟周期内的多条指令可以 time-shared
+- For a super-pipelined computer that can flow out n instructions per clock cycle, one instruction is flowed out every 1/n clock cycle
+
+!!! note "上述几种的时空图如下"
+    ![多发射](./assets/Sys34.png)
 
 ## 冲突与中断
 
