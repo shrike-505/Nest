@@ -13,6 +13,9 @@
     - 小测：20%
     - 期末：60%
 
+!!! success "Ref"
+    <https://www.kailqq.cc/NOTE/Probability/>
+
 ## 几何概型
 
 样本空间$\Omega$含有不可数个基本事件的结果，每个事件的概率为0。同时$\Omega$是$R^n$的可测区域，事件$A$是$\Omega$的可测子集。
@@ -104,12 +107,17 @@ $LHS = \sum_{i=1}^{m}P(A_i) - \sum_{i \ne j}^{m}P(A_i \cap A_j)+\cdots + (-1)^{m
 给定概率空间$(\Omega, \mathcal{F}, P)$，定义在其上的随机向量$\xi = (\xi_1,\xi_2,\cdots,\xi_n)$，其中$\xi_i$是定义在$(\Omega, \mathcal{F}, P)$上的随机变量。
 
 ### 离散型随机向量
+
 假定$X$取值为$x_1,x_2,\cdots,x_n$，$Y$取值为$y_1,y_2,\cdots,y_m$，则记$P(X=x_i,Y=y_j) = p_{ij}, i,j = 1,2...$。
 
 有$\Sigma p_{ij} = 1$，$p_{ij} \geq 0$。
+
 #### 联合分布
+
 $P(X<x,Y<y) = \Sigma_{i:x_i<x,j:y_j<y}p_{ij}$
+
 #### 边际分布
+
 $X,Y$的分布可由$p_{ij}$得到。
 
 $P(X=x_i) = p_{i\cdot} = \Sigma_{j=1}^{\infty}p_{ij}$，且$\Sigma p_{i\cdot} = 1$
@@ -120,6 +128,12 @@ $P(X=x_i) = p_{i\cdot} = \Sigma_{j=1}^{\infty}p_{ij}$，且$\Sigma p_{i\cdot} = 
     - 联合分布：$P(X=x_i,Y=y_j) = p_{ij}$
     - 边际分布：$P(X=x_i) = p_{i\cdot}$
     - 边际分布由联合分布唯一确定，但边际分布不能唯一决定联合分布。
+
+!!! note "卷积公式"
+    假设$X,Y$相互独立，密度函数分别为$f_X(x),f_Y(y)$，则$Z = X+Y$的密度函数为$f_Z(z) = \int_{-\infty}^{+\infty}f_X(x)f_Y(z-x)dx$
+
+!!! note "e.g."
+    ![example](./assets/PT6.png)
 
 #### 条件分布
 给定$X=x_i$的情况下，$Y$可取值$y_1,y_2,\cdots$
@@ -139,7 +153,9 @@ $P(X=x_i) = p_{i\cdot} = \Sigma_{j=1}^{\infty}p_{ij}$，且$\Sigma p_{i\cdot} = 
 给定概率空间$(\Omega, \mathcal{F}, P)$，$(X,Y)$是定义在其上的随机向量，若存在$p(x,y) \ge 0$使得$\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(x,y)dxdy = 1$，且对于任何Borel集$A,B$有$P(X \in A, Y \in B) = \int_{A}\int_{B}p(x,y)dxdy$，则称$(X,Y)$是连续型随机向量，具有密度函数$p(x,y)$。
 
 特别的，对任意$x,y \in R$，$P(X<x,Y<y) = \int_{-\infty}^{x}\int_{-\infty}^{y}p(u,v)dudv$。
+
 #### 边际分布
+
 显然，若$(X,Y)$是连续型随机向量，则$X,Y$也是连续型随机变量，其边际分布为$p_X(x) = \int_{-\infty}^{+\infty}p(x,y)dy$，$p_Y(y) = \int_{-\infty}^{+\infty}p(x,y)dx$。
 
 同样也有，联合分布唯一决定边际分布，但边际分布不能唯一决定联合分布。
@@ -181,10 +197,20 @@ TBD
 
 - $E(aX+b) = aE(X)+b$
 - $E(X+Y) = E(X) + E(Y)$
+- 对于独立的$X,Y$，其乘积期望等于期望乘积：$E(XY) = E(X)E(Y)$
 
 ## 方差
 
-$Var(X) = E((X-E(X))^2)$（定义）$= E(X^2) - E^2 (X)$
+$Var(X) = E((X-E(X))^2)$（定义）$= E(X^2) - E^2 (X)$（平方的期望-期望的平方）
+
+- 由此可以得到一种计算“平方的期望”的方法：$E(X^2) = E^2 (X) + Var(X)$
+
+!!! example "例题"
+    - 证明：如果$X,Y$独立，那么$Var(XY) = Var(X)Var(Y) + Var(X)E^2 (Y) + Var(Y)E^2 (X)$
+        - $Var(XY) = E(X^2 Y^2) - E^2(XY)$
+        - $= E(X^2)E(Y^2)$（由于$X,Y$独立，其平方也独立）$- E^2(X)E^2(Y)$
+        - $= (E^2 (X) + Var(X))(E^2 (Y) + Var(Y)) - E^2(X)E^2(Y)$
+        - $= Var(X)Var(Y) + Var(X)E^2 (Y) + Var(Y)E^2 (X)$
 
 - 二项分布：$Var(X) = np(1-p)$
 - 几何分布：$Var(X) = \frac{1-p}{p^2}$
@@ -196,21 +222,34 @@ $Var(X) = E((X-E(X))^2)$（定义）$= E(X^2) - E^2 (X)$
 ### 方差性质
 
 - $Var(aX+b) = a^2Var(X)$
-- $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$，其中$Cov(X,Y) = E(XY) - E(X)E(Y)$（协方差），若$X,Y$独立，则$Cov(X,Y) = 0$，$Var(X+Y) = Var(X) + Var(Y)$
+- $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$，其中$Cov(X,Y) = E(XY) - E(X)E(Y)$（协方差）
+- 对于独立的$X,Y$，$Cov(X,Y) = 0$，于是和的方差等于方差之和$Var(X+Y) = Var(X) + Var(Y)$
 
 !!! note "Chebyshev不等式"
     对任意随机变量$X$，有$P(|X-E(X)| \gt \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}$
 
-## 协方差
+## 协方差和相关系数
+
+都是对于两个随机变量的概念
+
 - 定义均值向量：$\vec{\mu} = (EX, EY)$
-- 协方差：$Cov(X,Y) = E((X-E(X))(Y-E(Y))) = E(XY) - E(X)E(Y)$
+- 协方差：$Cov(X,Y) = E[(X-E(X))(Y-E(Y))] = E(XY) - E(X)E(Y)$
+    - $Cov(X,X) = Var(X)$
+    - $Cov(X,c) = 0$
+    - $Cov(aX,bY) = abCov(X,Y)$
+    - $Cov(X_1 + X_2, Y) = Cov(X_1,Y) + Cov(X_2,Y)$
+- 相关系数：$\rho_{XY} = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$
+    - 性质：
+    - ![相关系数性质](./assets/PT7.png)
 
 !!! note "柯西施瓦兹不等式"
-    TBD
+    $E[|X-E(X)||Y-E(Y)|] \leq \sqrt{E^2 [X-E(X)] E^2 [Y-E(Y)]}$
 
 ### 协方差矩阵
 
-TBD（PPT 54-68）
+若$X,Y$的方差存在，定义$\Sigma = \begin{pmatrix}Var(X) \space Cov(X,Y)\\Cov(X,Y) \space Var(Y)\end{pmatrix}$为协方差矩阵
+
+我们知道如果$X,Y$独立，那么$Cov(X,Y) = 0$，但是反过来就不成立了，那么如果反过来，$Cov(X,Y) = 0$，称$X,Y$不相关。
 
 ### 全期望公式
 

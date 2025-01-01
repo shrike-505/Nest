@@ -258,17 +258,14 @@ Good Decision Tree: Wide and Shallow.
 ### Purity
 
 - Misclassification Error Rate: $1 - max(p1, p2, ..., pk)$
-- GINI（基尼系数）: $1 - (p1^2 + p2^2 + ... + pk^2)$（If the partition is fully homogeneous, GINI = 0）
+- GINI（基尼系数）: $1 - (p1^2 + p2^2 + ... + pk^2)$（If the partition is fully homogeneous, $GINI = 0$）
+    - 一组父子关系（也就是一次Split）的GINI Index就是所有子节点GINI Index的加权平均。（权重为子节点数据集的大小占比）
+    - 叶子节点的GINI Index越小，说明这个叶子节点的数据越纯，如果降为0，说明这个叶子节点的数据完全纯净（全部属于同一类）。
 - Entropy: $-p1log(p1) - p2log(p2) - ... - pklog(pk)$
 - $p_k$ 是在每个决策后的数据集（即每个叶子节点）中，随机挑选一个数据，其属于第k类的概率。
-- 一组父子关系（也就是一次Split）的GINI Index就是所有子节点GINI Index的加权平均。（权重为子节点数据集的大小占比）
-- 叶子节点的GINI Index越小，说明这个叶子节点的数据越纯，如果降为0，说明这个叶子节点的数据完全纯净（全部属于同一类）。
 
 !!! example "eg"
-  
-
-
-![](./assets/DAML10.png)
+    ![](./assets/DAML10.png)
 
 ### Random Forest
 

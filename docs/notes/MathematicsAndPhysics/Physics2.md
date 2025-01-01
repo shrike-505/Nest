@@ -46,8 +46,6 @@ Gauss 定理和库仑定律求电场强度：
 
 半径为R，带电量q的均匀带电球壳（r>R）：$U(r) = \int_r^{\infty} \frac{kq}{r^2} dr = \frac{kq}{r}$。
 
-TBD
-
 ### 电容
 半径为$r$的孤立球形导体：$C = \frac{q}{U} = 4\pi \varepsilon_0 r$。
 
