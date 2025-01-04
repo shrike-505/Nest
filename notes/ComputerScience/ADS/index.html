@@ -2977,13 +2977,17 @@
 <p>斜堆(skew heap)也叫自适应堆(self-adjusting heap)，它是左式堆的一个变种。通常用来实现优先队列，支持插入，删除，合并操作，并且均摊复杂度都为<span class="arithmatex">\(O(\log n)\)</span>。</p>
 <p>斜堆在结构上没什么特殊要求，只需要是一颗二叉树，并且结点满足堆序即可。</p>
 <h4 id="_15">操作<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<ol>
-<li>Merge
-   - 如果一个空斜堆与一个非空斜堆合并，返回左右子树互换的非空斜堆。
-   - 如果两个斜堆都非空，那么比较两个根结点，将较小的根结点的右孩子对应的子堆和另一个堆去合并，合并得到的新子堆的根结点作为新的右孩子。
-   - 将当前根结点的左右孩子互换位置。
-   - 迭代版本的合并类似上面左式堆的那张图，不过在Step 2要变成Swap Right paths中每个节点的左右子树（从下往上）。</li>
-</ol>
+<ul>
+<li>Merge<ul>
+<li>如果一个空斜堆与一个非空斜堆合并，返回左右子树互换的非空斜堆。<ul>
+<li>如果两个斜堆都非空，那么比较两个根结点，将较小的根结点的右孩子对应的子堆和另一个堆去合并，合并得到的新子堆的根结点作为新的右孩子。</li>
+<li>将当前根结点的左右孩子互换位置。</li>
+</ul>
+</li>
+<li>迭代版本的合并类似上面左式堆的那张图，不过在Step 2要变成Swap Right paths中每个节点的左右子树（从下往上）。</li>
+</ul>
+</li>
+</ul>
 <p>插入和删除和左式堆一样。</p>
 <h2 id="_16">二项堆<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>二项堆是一个由<span class="arithmatex">\(K\)</span>个二项树<span class="arithmatex">\(B_k, B_{k-1}, ... , B_0\)</span>组成的森林。</p>
@@ -3238,7 +3242,7 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月24日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月5日</span>
   </span>
 
     
