@@ -10,8 +10,10 @@
 
 > 任课教师：王业伍
 
-!!! note "Ref"
-    不好，有神：https://www.kailqq.cc/NOTE/Physics/
+!!! note "Ref & Credit"
+    不好，有神：https://www.kailqq.cc/NOTE/Physics/  
+    配享太庙：https://savia7582.github.io/Exterior/Physics/2/  
+    一天入门半学期：https://space.bilibili.com/522385498/upload/video/
 
 ## 电磁学
 电偶极子：一对间距为$d$，电荷量为$q$的异号电荷构成的偶极子。  
@@ -256,6 +258,10 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 
 定义磁场强度：$H = \frac{B}{\mu_0} - M$
 
+### 麦克斯韦方程组
+
+![Maxwell](./assets/gp50.png)
+
 ## 光学
 
 !!! note "notation"
@@ -348,42 +354,185 @@ $\overrightarrow{P_m} = I \overrightarrow{S}$，其中$I$为电流，$\overright
 
 ![双缝干涉公式](./assets/gp38.png)
 
+（这是什么？我打算直接默写）$I = I_0 \frac{sin^2 \alpha}{\alpha^2} cos^2 \beta$，其中$\alpha = \frac{\pi a \sin \theta}{\lambda}, \beta = \frac{\pi d \sin \theta}{\lambda}$
+
+这里第 $n$ 级明纹就代 $k = n$，第 $n$ 级暗纹就代 $k = n - 1$（只有这里要取 $k = n - 1$，其他所有涉及 $k$ 的地方都是 $k = n$）
+
 !!! example "例1"
-    ![例1](./assets/gp37.png)
+    ![例1](./assets/gp37.png)  
 
 #### 半波损失
 
 > Credit to <https://zhuanlan.zhihu.com/p/550675894>
 
-- $\delta = \delta_0 - \frac{\lambda}{2}$
+- $\delta = \delta_0 + \frac{\lambda}{2}$，原光程加上半波损失
+- $\Delta \phi = \frac{2\pi}{\lambda} \Delta \delta = \pi$
 - 当光从光疏到光密质，正入射及掠入射时反射光均有半波损。
 - 当光从光密到光疏质，正入射时反射光无半波损（掠入射时发生全反射） 。
 - ![半波损失](./assets/gp36.png)
 
+#### 薄膜干涉
+
+![薄膜干涉](./assets/gp40.png)
+
+经过一系列推导，①②两束光的光程差 $\delta' = 2 n_2 d \cos \gamma + (\frac{\lambda}{2})$
+
+考虑半波损失后，根据 $n_1, n_2,n_3$ 的相对大小，对①②光的光程选择加不加 $\frac{\lambda}{2}$（$n_1 > n_2 > n_3$ 或者 $n_1 < n_2 < n_3$ 的时候，光程差不加半波损失；$n_1 > n_2 < n_3$ 或者 $n_1 < n_2 > n_3$ 的时候，光程差加半波损失）
+
+这里的波长指的是真空中波长，如果要用介质中波长要换算：$\lambda = n \lambda_n$
+
+#### 等厚干涉
+
+公式和薄膜干涉是一样的，考虑 $n > 1$ 的劈尖，劈棱处（最薄的地方）的光程差为 $\delta = 2 n d \cos \gamma + \frac{\lambda}{2}$，这里 $d = 0$，由于近似垂直入射所以 $\cos \gamma = 1$，所以 $\delta = \frac{\lambda}{2}$，是半波长奇数倍，因此劈尖处是暗纹。
+
+- 第 $k$ 级暗纹处的厚度
+    - 对于第 $k$ 级暗纹，其厚度记为 $d_k$，则 $\delta = 2 n d_k + \frac{\lambda}{2} = (2k + 1) \frac{\lambda}{2}$，解得 $d_k = \frac{k \lambda}{2n}$
+- 相邻暗纹的厚度差
+    - $\Delta d = d_{k+1} - d_k = \frac{\lambda}{2n}$
+- 相邻条纹间距（在劈尖上表面）
+    - $L = \frac{\Delta d}{\sin \theta} = \frac{\lambda}{2 n \sin \theta} = \frac{\lambda}{2 n \theta}$
+    - 由此得到 $\theta = \frac{\lambda}{2 n L}$
+- 劈尖上表面移动（或旋转）时，$d_k$ 的大小不变
+
+#### 牛顿环
+
+依旧利用 $\delta = 2 n d + \frac{\lambda}{2} = 明暗纹公式$ 推导，过程见：<https://www.kailqq.cc/NOTE/Physics/light/?h=%E7%89%9B%E9%A1%BF#_22>
+
+- 第 $k$ 级明/暗环处的半径
+    - 记圆凸镜半径为 $R$
+    - 暗环：$r_k = \sqrt{\frac{k \lambda R}{n_2}}$，$n_2$ 为圆凸镜和底下长方题之间的介质折射率，一般是空气，取 $n_2 = 1$
+    - 明环：$r_k = \sqrt{\frac{(k - \frac{1}{2}) \lambda R}{n_2}}$
+
+### 衍射（Diffraction）
+#### 夫琅和费衍射
+
+这里采用菲涅尔半波带法判断得到的是明纹还是暗纹
+
+- 两个波源的光程差：$\delta = a \sin \theta$，可分为偶数个半波带时为暗纹，奇数个半波带时为明纹
+- **和干涉是反过来的**！因此中央是明纹（Bright fringe），其宽度为 $\frac{2 \lambda f}{a}$，$f$ 为透镜到右侧屏幕的距离（一般就是焦距）
+- 第 $k$ 级暗纹距离中央的距离为 $x_k = k \frac{\lambda f}{a}$（$\delta = a \sin \theta = a \tan \theta = a \frac{x_k}{f} = k \lambda$）
+- ![flhfys](./assets/gp42.png)
+
+!!! note "圆孔衍射"
+    - 第一级暗纹衍射角 $\theta_1 = 1.22 \frac{\lambda}{D}$，$D$为圆孔直径
+        - 于是第一级暗纹距中央：$x = f \theta_1 = 1.22 f \frac{\lambda0}{D}$
+
+#### 光栅
+
+- 光栅常数：$d = a + b$，$a$ 为光栅上的透光缝宽度，$b$ 为光栅上的不透光缝宽度
+- 光栅的每个缝形成各自的单缝衍射
+- 缝与缝之间形成多缝干涉
+- 相邻两缝的光程差：$\delta = (a+b) \sin \theta$
+    - 明纹条件：$\delta = k \lambda$
+    - 暗纹条件（暗纹由各缝射出的衍射光因干涉相消形成）
+        - $Nd \sin \theta = k' \lambda$，$k'$不为$N$的整数倍
+
+!!! note "缺级"
+    - 由于衍射影响，在该出现明纹的地方不再出现明纹
+        - 在干涉导致的明纹处：$(a+b) \sin \phi = k \lambda$
+        - 在衍射导致的暗纹(min)处：$a \sin \phi = k' \lambda$
+    - 联立得到 $k = \frac{a+b}{a} k'$，此时缺级
+
+Dispersion: $D = \frac{\Delta \theta}{\Delta \lambda} = \frac{k}{d \cos \theta}$
+
+分辨本领（在某级恰好能分辨的两条谱线的平均波长$\lambda$与其波长差$\Delta \lambda$的比值）：$R = \frac{\lambda}{\Delta \lambda} = kN$（此时波长差是最小的！）
+
+光强：$I = I_0 \frac{sin^2 \alpha}{\alpha^2} \frac{\sin^2 N \beta}{\sin^2 \beta}$，这里依旧是$\alpha = \frac{\pi a \sin \theta}{\lambda}, \beta = \frac{\pi d \sin \theta}{\lambda}$
+
+- 于是此时可以由这个推出明暗纹公式
+    - ![明暗纹公式](./assets/gp43.png)
+
+Width of the maximum: $\delta \theta = \frac{\lambda}{Nd \cos \theta}$
+
+!!! note "晶体衍射 Brag 公式"
+    $2d \sin \theta = nλ$  
+    其中d是晶格常数，θ是入射角，
+
+### 偏振(Polarization)
+
+马吕斯定律：$I = I_0 \cos^2 \theta$，电矢量 $E = E_0 \cos \theta$，其中$\theta$为光的偏振角，例如说检偏器和偏振片的夹角
+
+布儒斯特角：入射角和反射角和为$90^{\circ}$时，**反射光**为完全偏振光。（折射光是部分偏振光）
+
+即 $tan \theta_{入射} = \frac{n_2}{n_1}$
+
 ## 量子力学
-### 黑体
+### 黑体辐射
+
+- 单色辐出度 Spectral emittance
+    - 单位时间、单位表面积上发射的波长在$\lambda$ 到$λ +d \lambda$范围内的辐射能为$dM_λ$ ，则 $M_{\lambda}(T) = \frac{d M_{\lambda}}{d \lambda}$（$T$ 和 $\lambda$ 的函数）
+- 辐射出射度 total intensity
+    - 单位时间、单位表面积上发射全波长范围内的辐射能
+    - $M(T) = \int_0^{\inf} M_{\lambda}(T)d \lambda$
+- Stefan-Boltzmann 定律
+    - $M_B(T) = \sigma T^4$，$\sigma = 5.67 \times 10^{-8} W/(m^2 K^4)$
+- Wien 位移定律
+    - $T \lambda_m = b$，其中 $\lambda_m$ 是某温度下单色辐出度最大对应的波长（曲线峰值），$b = 2.898 \times 10^{-3} m K$
+- 普朗克辐射定律：$M(\lambda, T) = \frac{2 \pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h \nu}{k T}} - 1}$
+    - 两种特殊情况：
+        - ![普朗克辐射定律](./assets/gp44.png)
+
 ### 光电效应
 
+- $p = \frac{h}{\lambda}$, $E = h \nu, m = \frac{h \nu}{c^2}$
 - 光电效应：光照射到金属表面，金属表面会发射电子
-- $hf = E_{km} + A = \frac{1}{2} m v^2 + A$，其中$A$为金属的功函数
-- 即，携带能量为$hf$的光子，击中金属后转化为电子，没有时间延迟。
+- $h \nu = E_{km} + A = \frac{1}{2} m v^2 + A$，其中$A$为金属的逸出功
+- 即，携带能量为$h \nu$的光子，击中金属后转化为电子，没有时间延迟。
+- 遏制电压（加遏止电压时光电流为0）：$U = \frac{E_{km}}{e} = \frac{h \mu - A}{e}$
+- 截止频率：$h \nu_0 = A$
 - ![光电效应](./assets/gp39.png)
 
 ### 康普顿散射
 
+推导过程如下
+
 - 光子与电子碰撞后，光子的波长会变长，电子的动能会增加
-    - 光子：$E = hf$, $p = \frac{hf}{c} = \frac{h}{\lambda}$
+    - 光子：$E = h \nu$, $p = \frac{h \nu}{c} = \frac{h}{\lambda}$
     - 电子：$E = m_{0}c^2$, $p = mv$
-- 碰撞时，能量守恒：$hf + m_{0}c^2 = mc^2 + hf'$
+- 碰撞时，能量守恒：$h \nu + m_{0}c^2 = mc^2 + hf'$
 - 动量守恒：
-    - X: $\frac{hf}{c} = \frac{hf'}{c} \cos \phi + mv \cos \theta$
-    - Y: $0 = \frac{hf}{c} \sin \phi - mv \sin \theta$
+    - X: $\frac{h \nu}{c} = \frac{hf'}{c} \cos \phi + mv \cos \theta$
+    - Y: $0 = \frac{h \nu}{c} \sin \phi - mv \sin \theta$
 - 由此可以解出$\lambda' - \lambda = \frac{h}{m_{0}c}(1 - \cos \phi)$
 - $\phi$为光子偏离原方向的散射角，$\theta$为电子偏离原方向的散射角
 
 ### 物质波
-### 矩阵力学
-### 波动力学
+
+同样有$E = h \nu$, $p = \frac{h \nu}{c} = \frac{h}{\lambda}$
+
+!!! note "不确定性关系"
+    $\Delta x \Delta p_x \ge \frac{h}{4 \pi}$  
+    $\Delta E \Delta t \ge \frac{h}{4 \pi}$
+
+### 波函数和概率密度
+
+- 约化普朗克常数：$\hbar = \frac{h}{2 \pi}$
+
+$\Psi (x,t) = \psi_0 e^{i(kx-\omega t)}$  
+$\Psi^* (x,t) = \psi_0^* e^{-i(kx-\omega t)}$  
+$P(x) = \Psi \Psi^*$
+
+!!! note "算符定义"
+    - 动量算符：$p = -i \hbar \frac{\partial}{\partial x}$
+    - 能量算符：$E = i \hbar \frac{\partial}{\partial t}$
+
+!!! note "薛定谔方程"
+    - 一维含时：$E \Psi = i \hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + U \Psi$，其中$U$为势能
+    - 若势能不随时间变化，则可以化为一维定态：
+        - ![一维定态薛定谔](./assets/gp46.png)
+
+!!! note "一维势阱"
+    - ![一维势阱](./assets/gp45.png)
+    - $ P(x) = \frac{2}{a} \sin^2 \frac{n \pi}{a} x$
+    - ![Yiweisj](./assets/gp47.png)
+
+### 氢原子结构
+
+- 能量量子化：$E_n = \frac{E_1}{n^2} = - \frac{1}{n} \frac{me^4}{8 \epsilon_0^2 h^2}$
+- 电子跃迁：
+    - ![电子跃迁](./assets/gp48.png)
+- 三个量子数：
+    - ![量子数](./assets/gp49.png)
 
 ## 小测部分
 
