@@ -62,10 +62,23 @@ Welcome to the wake-up club, brother.
 
 <p align=right><i>Disco Elysium</i>（轻语工作室 译）, ZA/UM</p>
 
+---
+
 Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.
 
 <p align=right>G.K. Chesterton by way of Neil Gaiman, Coraline</p>
 
+---
+
 书页不像IDE窗口那么宽，所以每一个字符都很珍贵。
 
 <p align=right><i>Crafting Interpreters</i>, Robert Nystrom</p>
+
+---
+
+山崖复远望  
+仓皇 无告 不回的河流  
+平原不可见  
+晦暗 无声 未知的存亡
+
+<p align=right>万能青年旅店《山雀》</p>
