@@ -3138,7 +3138,7 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
 <li>从一个可行的解开始，通过在邻域内搜索，找到一个更好的解</li>
 <li>无法找到更好的解时，停止搜索</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Start</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">feasible</span> <span class="n">solution</span> <span class="n">S</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Start</span> <span class="kn">from</span><span class="w"> </span><span class="nn">a</span> <span class="n">feasible</span> <span class="n">solution</span> <span class="n">S</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">MinCost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">S</span><span class="s1">&#39; = search(N(S))</span>
@@ -3170,7 +3170,7 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
 <li>邻域:=选择一条不好的边，选一个<strong>顶点</strong>取反（Stabe-filpping Algorithm）</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">State_flipping</span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">Start</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">arbitrary</span> <span class="n">configuration</span> <span class="n">S</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">Start</span> <span class="kn">from</span><span class="w"> </span><span class="nn">an</span> <span class="n">arbitrary</span> <span class="n">configuration</span> <span class="n">S</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">while</span> <span class="n">S</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">stable</span><span class="p">:</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">u</span> <span class="o">=</span> <span class="n">Get</span> <span class="n">a</span> <span class="n">unsatisfied</span> <span class="n">Vertex</span> <span class="ow">in</span> <span class="n">S</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">u</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="o">-</span><span class="n">u</span><span class="o">.</span><span class="n">state</span>

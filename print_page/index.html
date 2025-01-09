@@ -2153,7 +2153,7 @@
 <hr />
 <h2 id="index-_2">更新记录<a class="headerlink" href="#index-_2" title="Permanent link">&para;</a></h2>
 <p>新增文章时间均为 <strong>创作时间</strong><br />
-目前共 56 个页面，约 116823 字，720 行代码。  </p>
+目前共 56 个页面，约 117061 字，720 行代码。  </p>
 <h3 id="index-2024">2024<a class="headerlink" href="#index-2024" title="Permanent link">&para;</a></h3>
 <div style="position: relative">
   <div class="timeline-wrapper">
@@ -3451,7 +3451,7 @@
 </blockquote>
 <h1 id="notes-ai-aiy-_1">人工智能引论<a class="headerlink" href="#notes-ai-aiy-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2895 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3091 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <blockquote>
 <p>AI导？网安导！<br />
@@ -3581,12 +3581,20 @@
 <h3 id="notes-ai-aiy-_11">对抗搜索<a class="headerlink" href="#notes-ai-aiy-_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>一方最大化某个利益，另一方最小化某个利益。</li>
-<li>MiniMax</li>
-<li>Alpha-Beta 剪枝</li>
+<li>MiniMax 搜索<ul>
+<li>需要遍历游戏树中所有节点</li>
+</ul>
+</li>
+<li>Alpha-Beta 剪枝<ul>
+<li>节点先后次序会影响剪枝效率</li>
+<li>Alpha和Beta初始值分别为负无穷大和正无穷大</li>
+</ul>
+</li>
 </ul>
 <h3 id="notes-ai-aiy-_12">蒙特卡洛树搜索<a class="headerlink" href="#notes-ai-aiy-_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>使用<strong>上限置信区间算法</strong>：为每个动作的奖励期望计算一个估计范围，优先采用估计范围上限较高的动作。</li>
+<li>选举、扩展、模拟、反向传播</li>
 </ul>
 <h2 id="notes-ai-aiy-_13">机器学习<a class="headerlink" href="#notes-ai-aiy-_13" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3620,7 +3628,8 @@
 <h3 id="notes-ai-aiy-_15">线性回归<a class="headerlink" href="#notes-ai-aiy-_15" title="Permanent link">&para;</a></h3>
 <p>呃呃呃</p>
 <h3 id="notes-ai-aiy-_16">逻辑回归<a class="headerlink" href="#notes-ai-aiy-_16" title="Permanent link">&para;</a></h3>
-<p>呃呃呃</p>
+<p><span class="arithmatex">\(f(p) = \ln \frac{p}{1-p}\)</span></p>
+<p>logistic函数：<span class="arithmatex">\(g(z) = \frac{1}{1+e^{-z}}\)</span>, <span class="arithmatex">\(g(z)\)</span>的值域为<span class="arithmatex">\((0,1)\)</span>，<span class="arithmatex">\(z = w^T x + b\)</span>。</p>
 <h3 id="notes-ai-aiy-_17">决策树<a class="headerlink" href="#notes-ai-aiy-_17" title="Permanent link">&para;</a></h3>
 <ul>
 <li>正实例：产生正值决策的实例</li>
@@ -3683,10 +3692,11 @@
 <li>前后两次迭代中，聚类质心基本保持不变</li>
 </ul>
 </li>
+<li>最终得到局部最优解</li>
 </ul>
 </div>
 <h3 id="notes-ai-aiy-_19">主成分分析<a class="headerlink" href="#notes-ai-aiy-_19" title="Permanent link">&para;</a></h3>
-<p>主成分分析是一种特征降维方法</p>
+<p>PCA（主成分分析） 是一种降维方法，它要求降维后的结果能够尽量保留原始数据的方差（即数据的原有结构）。PCA通过找到数据的主成分（即数据中方差最大的方向）来进行降维，使得降维后的数据尽量能保留原数据的主要信息和结构。</p>
 <div class="admonition example">
 <p class="admonition-title">期望最大化（expectation maximization, EM）</p>
 <p>EM算法是一种重要的用于解决含有隐变量（latent variable）问题的参数估计方法。</p>
@@ -3713,6 +3723,7 @@
 分类层：输出识别分类的置信度值</p>
 <h2 id="notes-ai-aiy-_24">强化学习<a class="headerlink" href="#notes-ai-aiy-_24" title="Permanent link">&para;</a></h2>
 <p><img alt="强化学习中的概念" src="../notes/AI/assets/aiy5.png" /></p>
+<p>在强化学习中，通过策略评估，策略优化的迭代，来学习得到最佳策略</p>
 <h2 id="notes-ai-aiy-_25">人工智能博弈<a class="headerlink" href="#notes-ai-aiy-_25" title="Permanent link">&para;</a></h2>
 <h2 id="notes-ai-aiy-or">可能考 or 考过了的题<a class="headerlink" href="#notes-ai-aiy-or" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -6266,7 +6277,7 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
 <li>从一个可行的解开始，通过在邻域内搜索，找到一个更好的解</li>
 <li>无法找到更好的解时，停止搜索</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-computerscience-ads-__codelineno-1-1"></a><span class="n">Start</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">feasible</span> <span class="n">solution</span> <span class="n">S</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-computerscience-ads-__codelineno-1-1"></a><span class="n">Start</span> <span class="kn">from</span><span class="w"> </span><span class="nn">a</span> <span class="n">feasible</span> <span class="n">solution</span> <span class="n">S</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#notes-computerscience-ads-__codelineno-1-2"></a><span class="n">MinCost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#notes-computerscience-ads-__codelineno-1-3"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#notes-computerscience-ads-__codelineno-1-4"></a>    <span class="n">S</span><span class="s1">&#39; = search(N(S))</span>
@@ -6298,7 +6309,7 @@ T(N) = \Omicron(N^k \log^{p + 1} N), \textrm{ if } a = b^k
 <li>邻域:=选择一条不好的边，选一个<strong>顶点</strong>取反（Stabe-filpping Algorithm）</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#notes-computerscience-ads-__codelineno-2-1"></a><span class="n">State_flipping</span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-computerscience-ads-__codelineno-2-2"></a>    <span class="n">Start</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">arbitrary</span> <span class="n">configuration</span> <span class="n">S</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-computerscience-ads-__codelineno-2-2"></a>    <span class="n">Start</span> <span class="kn">from</span><span class="w"> </span><span class="nn">an</span> <span class="n">arbitrary</span> <span class="n">configuration</span> <span class="n">S</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#notes-computerscience-ads-__codelineno-2-3"></a>    <span class="k">while</span> <span class="n">S</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">stable</span><span class="p">:</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#notes-computerscience-ads-__codelineno-2-4"></a>        <span class="n">u</span> <span class="o">=</span> <span class="n">Get</span> <span class="n">a</span> <span class="n">unsatisfied</span> <span class="n">Vertex</span> <span class="ow">in</span> <span class="n">S</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#notes-computerscience-ads-__codelineno-2-5"></a>        <span class="n">u</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="o">-</span><span class="n">u</span><span class="o">.</span><span class="n">state</span>
@@ -8143,7 +8154,7 @@ p NAND(<span class="arithmatex">\(\mid\)</span>) q: 与非，有假时为假，�
 <p><img alt="" src="../notes/MathematicsAndPhysics/assets/DM1.png" /><br />
 <span class="arithmatex">\(ab = gcd(a,b) \times lcm(a,b)\)</span><br />
 辗转相除法：<span class="arithmatex">\(gcd(a,b) = gcd(b,a \mod b)\)</span>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notes-mathematicsandphysics-discretemath-__codelineno-0-1"></a><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notes-mathematicsandphysics-discretemath-__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#notes-mathematicsandphysics-discretemath-__codelineno-0-2"></a>    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#notes-mathematicsandphysics-discretemath-__codelineno-0-3"></a>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#notes-mathematicsandphysics-discretemath-__codelineno-0-4"></a>    <span class="k">return</span> <span class="n">a</span>
@@ -8557,9 +8568,12 @@ p NAND(<span class="arithmatex">\(\mid\)</span>) q: 与非，有假时为假，�
 <h4 id="notes-mathematicsandphysics-discretemath-_31">最小生成树<a class="headerlink" href="#notes-mathematicsandphysics-discretemath-_31" title="Permanent link">&para;</a></h4>
 <p>找到一张有权图的生成树，使得所有边的权值之和最小</p>
 <p>Prim: 令<span class="arithmatex">\(T\)</span>含图中最短权边，从1到n-2，添加与<span class="arithmatex">\(T\)</span>中的顶点相连的最短权边（不成回路），如果最短边成环，就找倒数第二短的，以此类推，直到所有顶点都在<span class="arithmatex">\(T\)</span>中<br />
-Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不成环就加入，否则不加入</p></section><section class="print-page" id="notes-mathematicsandphysics-probability"><nav class='md-tags'><span class='md-tag'>大二上笔记</span></nav><h1 id="h">概率论（H）<a class="headerlink" href="#notes-mathematicsandphysics-probability-h" title="Permanent link">&para;</a></h1>
+Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不成环就加入，否则不加入</p></section><section class="print-page" id="notes-mathematicsandphysics-probability"><nav class='md-tags'><span class='md-tag'>大二上笔记</span></nav><blockquote>
+<p>绝版史课来了</p>
+</blockquote>
+<notes-mathematicsandphysics-probability-h1 id="notes-mathematicsandphysics-probability-h">概率论（H）<a class="headerlink" href="#notes-mathematicsandphysics-probability-h" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2016 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 8 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2022 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 8 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：苏中根</p>
@@ -9402,7 +9416,7 @@ Kruskal: 按权值从小到大排序边，依次加入，如果加入的边不�
 <li>What will the following code fragment print?</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notes-language-cs61a-__codelineno-0-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#notes-language-cs61a-__codelineno-0-2"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#notes-language-cs61a-__codelineno-0-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#notes-language-cs61a-__codelineno-0-3"></a>    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#notes-language-cs61a-__codelineno-0-4"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">g</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#notes-language-cs61a-__codelineno-0-5"></a><span class="n">f</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="n">a</span><span class="p">)</span>
@@ -9445,9 +9459,9 @@ In other conditions, e.g <code>x or(and) y</code>, both arguments are considered
 <p>A wonderful (but painful) example:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#notes-language-cs61a-__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="c1"># If Python displays &lt;function...&gt;, type Function, if it errors type Error, if it displays nothing type Nothing</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-language-cs61a-__codelineno-2-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">cake</span><span class="p">():</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-language-cs61a-__codelineno-2-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">cake</span><span class="p">():</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#notes-language-cs61a-__codelineno-2-3"></a><span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;beets&#39;</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#notes-language-cs61a-__codelineno-2-4"></a><span class="o">...</span>    <span class="k">def</span> <span class="nf">pie</span><span class="p">():</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#notes-language-cs61a-__codelineno-2-4"></a><span class="o">...</span>    <span class="k">def</span><span class="w"> </span><span class="nf">pie</span><span class="p">():</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#notes-language-cs61a-__codelineno-2-5"></a><span class="o">...</span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sweets&#39;</span><span class="p">)</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#notes-language-cs61a-__codelineno-2-6"></a><span class="o">...</span>        <span class="k">return</span> <span class="s1">&#39;cake&#39;</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#notes-language-cs61a-__codelineno-2-7"></a><span class="o">...</span>    <span class="k">return</span> <span class="n">pie</span>
@@ -9471,9 +9485,9 @@ In other conditions, e.g <code>x or(and) y</code>, both arguments are considered
 <blockquote>
 <p><strong>Curry</strong> : transforming a function that takes <strong>multiple arguments</strong> into a function that takes <strong>a single argument</strong> and returns another function that takes the next argument, and so on, until all arguments have been supplied.  </p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-language-cs61a-__codelineno-3-1"></a><span class="k">def</span> <span class="nf">curry2</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#notes-language-cs61a-__codelineno-3-2"></a>    <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#notes-language-cs61a-__codelineno-3-3"></a>        <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-language-cs61a-__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">curry2</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#notes-language-cs61a-__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#notes-language-cs61a-__codelineno-3-3"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#notes-language-cs61a-__codelineno-3-4"></a>            <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#notes-language-cs61a-__codelineno-3-5"></a>        <span class="k">return</span> <span class="n">h</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#notes-language-cs61a-__codelineno-3-6"></a>    <span class="k">return</span> <span class="n">g</span>
@@ -9483,7 +9497,7 @@ In other conditions, e.g <code>x or(and) y</code>, both arguments are considered
 <p>Firstly <code>curry2</code> takes a function <code>f</code> as argument (<code>f</code> takes 2 arguments), returning a fuction <code>g</code>. As for <code>g</code>, it defines <code>h</code>, which returns an output of <code>f</code>, and returns a function h.</p>
 </div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#notes-language-cs61a-__codelineno-4-1"></a><span class="n">mymax</span> <span class="o">=</span> <span class="n">curry2</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#notes-language-cs61a-__codelineno-4-2"></a><span class="k">def</span> <span class="nf">comparexwith3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#notes-language-cs61a-__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">comparexwith3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#notes-language-cs61a-__codelineno-4-3"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">mymax</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition success">
@@ -9526,7 +9540,7 @@ In other conditions, e.g <code>x or(and) y</code>, both arguments are considered
 </code></pre></div></p>
 <hr />
 <h3 id="notes-language-cs61a-a-filter-question">A filter question<a class="headerlink" href="#notes-language-cs61a-a-filter-question" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#notes-language-cs61a-__codelineno-8-1"></a><span class="k">def</span> <span class="nf">wrong_filter</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#notes-language-cs61a-__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">wrong_filter</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#notes-language-cs61a-__codelineno-8-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Filters lst with condition using mutation.</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#notes-language-cs61a-__codelineno-8-3"></a><span class="sd">    &gt;&gt;&gt; original_list = [5, -1, 2, 0]</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#notes-language-cs61a-__codelineno-8-4"></a><span class="sd">    &gt;&gt;&gt; filter(lambda x: x % 2 == 0, original_list)</span>
@@ -9537,7 +9551,7 @@ In other conditions, e.g <code>x or(and) y</code>, both arguments are considered
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#notes-language-cs61a-__codelineno-8-9"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#notes-language-cs61a-__codelineno-8-10"></a>            <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#notes-language-cs61a-__codelineno-8-11"></a>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#notes-language-cs61a-__codelineno-8-12"></a><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#notes-language-cs61a-__codelineno-8-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#notes-language-cs61a-__codelineno-8-13"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Filters lst with condition using mutation.</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#notes-language-cs61a-__codelineno-8-14"></a><span class="sd">    &gt;&gt;&gt; original_list = [5, -1, 2, 0]</span>
 <a id="__codelineno-8-15" name="__codelineno-8-15" href="#notes-language-cs61a-__codelineno-8-15"></a><span class="sd">    &gt;&gt;&gt; filter(lambda x: x % 2 == 0, original_list)</span>
@@ -9596,23 +9610,23 @@ Thus every element of every location is checked.</p>
 Instance Attributes: Something unique to each instance, like <code>name</code> for each <code>Pet</code> instance.</p>
 <h2 id="notes-language-cs61a-string-representation">String Representation<a class="headerlink" href="#notes-language-cs61a-string-representation" title="Permanent link">&para;</a></h2>
 <p><code>__repr__</code> when invoked on an object, ignores its Instance Attribute, and only calls the Class Attribute <code>__repr__</code>.<br />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#notes-language-cs61a-__codelineno-11-1"></a><span class="k">def</span> <span class="nf">repr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#notes-language-cs61a-__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">repr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#notes-language-cs61a-__codelineno-11-2"></a>    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="notes-language-cs61a-memorization">Memorization<a class="headerlink" href="#notes-language-cs61a-memorization" title="Permanent link">&para;</a></h2>
 <p>A way to store the results of expensive function calls and return the cached result when the same inputs occur again.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#notes-language-cs61a-__codelineno-12-1"></a><span class="k">def</span> <span class="nf">memo</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#notes-language-cs61a-__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">memo</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#notes-language-cs61a-__codelineno-12-2"></a>    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#notes-language-cs61a-__codelineno-12-3"></a>    <span class="k">def</span> <span class="nf">memoized</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#notes-language-cs61a-__codelineno-12-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">memoized</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#notes-language-cs61a-__codelineno-12-4"></a>        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#notes-language-cs61a-__codelineno-12-5"></a>            <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#notes-language-cs61a-__codelineno-12-6"></a>        <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#notes-language-cs61a-__codelineno-12-7"></a>    <span class="k">return</span> <span class="n">memoized</span>
 </code></pre></div>
 <h2 id="notes-language-cs61a-linked-list">Linked List<a class="headerlink" href="#notes-language-cs61a-linked-list" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#notes-language-cs61a-__codelineno-13-1"></a><span class="k">class</span> <span class="nc">Link</span><span class="p">:</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#notes-language-cs61a-__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Link</span><span class="p">:</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#notes-language-cs61a-__codelineno-13-2"></a>    <span class="n">empty</span> <span class="o">=</span> <span class="p">()</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#notes-language-cs61a-__codelineno-13-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#notes-language-cs61a-__codelineno-13-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#notes-language-cs61a-__codelineno-13-4"></a>        <span class="k">assert</span> <span class="n">rest</span> <span class="ow">is</span> <span class="n">Link</span><span class="o">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">Link</span><span class="p">)</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#notes-language-cs61a-__codelineno-13-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#notes-language-cs61a-__codelineno-13-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span>
@@ -9795,63 +9809,63 @@ Notice the rest and the first are both possible to be a Link instance.</p>
 </div>
 <h3 id="notes-language-typst-cetz">cetz<a class="headerlink" href="#notes-language-typst-cetz" title="Permanent link">&para;</a></h3>
 <p>可看manual
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notes-language-typst-__codelineno-0-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/cetz:0.2.2&quot;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#notes-language-typst-__codelineno-0-2"></a><span class="nv">#import</span><span class="w"> </span>cetz.draw: * //导入画画用的所有函数
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notes-language-typst-__codelineno-0-1"></a><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/cetz:0.2.2&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#notes-language-typst-__codelineno-0-2"></a><span class="kn">#import</span><span class="w"> </span><span class="nv">cetz</span><span class="p">.</span><span class="nv">draw</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="c1">//导入画画用的所有函数</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#notes-language-typst-__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#notes-language-typst-__codelineno-0-4"></a><span class="kd">#let</span><span class="w"> </span>graph = x =&gt; cetz.canvas(x) //创建画布，canvas接收一个大括号包起来的一堆绘画函数
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#notes-language-typst-__codelineno-0-4"></a><span class="kd">#let</span><span class="w"> </span><span class="nv">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nv">cetz</span><span class="p">.</span><span class="nf">canvas</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="w"> </span><span class="c1">//创建画布，canvas接收一个大括号包起来的一堆绘画函数</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#notes-language-typst-__codelineno-0-5"></a><span class="c1">//必须在画布上画，不然不会显示</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#notes-language-typst-__codelineno-0-6"></a><span class="kd">#let</span><span class="w"> </span>node = (coord, name, location) =&gt; {
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#notes-language-typst-__codelineno-0-7"></a><span class="w">    </span>circle(coord, name: name, radius: 0.5) //画圆，具体参数看manual
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#notes-language-typst-__codelineno-0-8"></a><span class="w">    </span>content(coord, name, anchor: location) //写字，字的位置由location决定
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#notes-language-typst-__codelineno-0-9"></a>} 
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#notes-language-typst-__codelineno-0-10"></a><span class="kd">#let</span><span class="w"> </span>edge = (start, end) =&gt; line(start, end)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#notes-language-typst-__codelineno-0-6"></a><span class="kd">#let</span><span class="w"> </span><span class="nv">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">coord</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">location</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#notes-language-typst-__codelineno-0-7"></a><span class="w">    </span><span class="nf">circle</span><span class="p">(</span><span class="nv">coord</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">radius</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="c1">//画圆，具体参数看manual</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#notes-language-typst-__codelineno-0-8"></a><span class="w">    </span><span class="nf">content</span><span class="p">(</span><span class="nv">coord</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">anchor</span><span class="p">:</span><span class="w"> </span><span class="nv">location</span><span class="p">)</span><span class="w"> </span><span class="c1">//写字，字的位置由location决定</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#notes-language-typst-__codelineno-0-9"></a><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#notes-language-typst-__codelineno-0-10"></a><span class="err">#</span><span class="kd">let</span><span class="w"> </span><span class="nv">edge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">start</span><span class="p">,</span><span class="w"> </span><span class="nv">end</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nf">line</span><span class="p">(</span><span class="nv">start</span><span class="p">,</span><span class="w"> </span><span class="nv">end</span><span class="p">)</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#notes-language-typst-__codelineno-0-11"></a><span class="c1">//缺点就在这，得自己定义函数</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#notes-language-typst-__codelineno-0-12"></a><span class="c1">//Credit to Xecades，这几个函数是他写的</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#notes-language-typst-__codelineno-0-13"></a><span class="nf">#graph</span><span class="p">({</span><span class="w">    </span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#notes-language-typst-__codelineno-0-14"></a><span class="w">    </span>node((0, 0), &quot;A&quot;, &quot;south&quot;)
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#notes-language-typst-__codelineno-0-15"></a><span class="w">    </span>node((1, 1), &quot;B&quot;, &quot;north&quot;)
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#notes-language-typst-__codelineno-0-16"></a><span class="w">    </span>edge(&quot;A&quot;, &quot;B&quot;) //or edge((0, 0), (1, 1))
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#notes-language-typst-__codelineno-0-17"></a>})
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#notes-language-typst-__codelineno-0-14"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;south&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#notes-language-typst-__codelineno-0-15"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;north&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#notes-language-typst-__codelineno-0-16"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">//or edge((0, 0), (1, 1))</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#notes-language-typst-__codelineno-0-17"></a><span class="p">})</span>
 </code></pre></div>
 可用的anchor: <code>north</code>等四个，<code>north-west</code>等四个  </p>
 <p>利用<code>set-style</code>设置各个函数的默认参数，比如<code>set-style(line: (stroke:(thickness: 0.1pt)))</code>，这样就不用每次在<code>line</code>里单独设置了。（要在<code>canvas</code>里设置）</p>
 <h3 id="notes-language-typst-fletcher">fletcher<a class="headerlink" href="#notes-language-typst-fletcher" title="Permanent link">&para;</a></h3>
 <p>感觉比cetz更好用，把形状综合在了函数的参数里，可看manual
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-language-typst-__codelineno-1-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/fletcher:0.5.0&quot;: diagram, node, edge //几个函数
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-language-typst-__codelineno-1-1"></a><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/fletcher:0.5.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="nv">diagram</span><span class="p">,</span><span class="w"> </span><span class="nv">node</span><span class="p">,</span><span class="w"> </span><span class="nv">edge</span><span class="w"> </span><span class="c1">//几个函数</span>
 </code></pre></div>
 还在为cetz没法画两个点间方向相反的两条边，需要手动定义画点画边函数烦恼吗？
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#notes-language-typst-__codelineno-2-1"></a><span class="nf">#diagram</span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-language-typst-__codelineno-2-2"></a><span class="w">    </span>let (a,b,c,d) = ((-2,0), (0.6,0), (-2,1.7), (0.6,1.7)),
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#notes-language-typst-__codelineno-2-3"></a><span class="w">    </span>node(a, &quot;A&quot;, stroke: 1pt), //stroke表示边框粗细
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#notes-language-typst-__codelineno-2-4"></a><span class="w">    </span>node(b, [B], stroke: 1pt),
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#notes-language-typst-__codelineno-2-5"></a><span class="w">    </span>node(c, [C], stroke: 1pt),
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#notes-language-typst-__codelineno-2-6"></a><span class="w">    </span>node(d, [D], stroke: 1pt),
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#notes-language-typst-__codelineno-2-7"></a><span class="w">    </span>edge(b, a, bend: -10deg,&quot;-|&gt;&quot;), //bend表示弯曲程度，正负数弯的方向不同
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#notes-language-typst-__codelineno-2-8"></a><span class="w">    </span>edge(a, b, bend: -10deg,&quot;-|&gt;&quot;),
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#notes-language-typst-__codelineno-2-9"></a><span class="w">    </span>edge(a, c, &quot;-|&gt;&quot;),
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#notes-language-typst-__codelineno-2-10"></a><span class="w">    </span>edge(b, d, &quot;-|&gt;&quot;, label: &quot;WOW&quot;), //label:边上的文字
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#notes-language-typst-__codelineno-2-11"></a><span class="w">    </span>edge(d, a, &quot;-|&gt;&quot;),
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#notes-language-typst-__codelineno-2-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="nv">b</span><span class="p">,</span><span class="nv">c</span><span class="p">,</span><span class="nv">d</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mf">1.7</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">1.7</span><span class="p">)),</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#notes-language-typst-__codelineno-2-3"></a><span class="w">    </span><span class="nf">node</span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span><span class="w"> </span><span class="c1">//stroke表示边框粗细</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#notes-language-typst-__codelineno-2-4"></a><span class="w">    </span><span class="nf">node</span><span class="p">(</span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>B<span class="p">],</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#notes-language-typst-__codelineno-2-5"></a><span class="w">    </span><span class="nf">node</span><span class="p">(</span><span class="nv">c</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>C<span class="p">],</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#notes-language-typst-__codelineno-2-6"></a><span class="w">    </span><span class="nf">node</span><span class="p">(</span><span class="nv">d</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>D<span class="p">],</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#notes-language-typst-__codelineno-2-7"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nv">bend</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="nv">deg</span><span class="p">,</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">//bend表示弯曲程度，正负数弯的方向不同</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#notes-language-typst-__codelineno-2-8"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="nv">bend</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="nv">deg</span><span class="p">,</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">),</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#notes-language-typst-__codelineno-2-9"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nv">c</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">),</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#notes-language-typst-__codelineno-2-10"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="nv">d</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WOW&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">//label:边上的文字</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#notes-language-typst-__codelineno-2-11"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">d</span><span class="p">,</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">),</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#notes-language-typst-__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#notes-language-typst-__codelineno-2-13"></a><span class="w">    </span>node((2,3), [_Point to D_]),
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#notes-language-typst-__codelineno-2-14"></a><span class="w">    </span>edge(d,[默认上一个node直接指向传入的node], &quot;-|&gt;&quot;), 
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#notes-language-typst-__codelineno-2-13"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="p">[</span><span class="ge">_Point to D_</span><span class="p">]),</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#notes-language-typst-__codelineno-2-14"></a><span class="w">    </span><span class="nf">edge</span><span class="p">(</span><span class="nv">d</span><span class="p">,[</span>默认上一个node直接指向传入的node<span class="p">],</span><span class="w"> </span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">),</span><span class="w"> </span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#notes-language-typst-__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#notes-language-typst-__codelineno-2-16"></a><span class="w">    </span>node((0,3), &quot;Hello&quot;, stroke: 1pt),
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#notes-language-typst-__codelineno-2-17"></a><span class="w">    </span>node-corner-radius: 10pt, //对整个diagram全局设置，不因为放在某个node前后而有所不同
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#notes-language-typst-__codelineno-2-18"></a><span class="w">    </span>node((0,3.5), &quot;Hello&quot;, stroke: 1pt),
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#notes-language-typst-__codelineno-2-16"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#notes-language-typst-__codelineno-2-17"></a><span class="w">    </span><span class="nv">node-corner-radius</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="kr">pt</span><span class="p">,</span><span class="w"> </span><span class="c1">//对整个diagram全局设置，不因为放在某个node前后而有所不同</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#notes-language-typst-__codelineno-2-18"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">3.5</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span>
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#notes-language-typst-__codelineno-2-19"></a>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#notes-language-typst-__codelineno-2-20"></a><span class="w">    </span>edge((4,0), (4,1), (5,1), (3,0), &quot;-|&gt;&quot;, `poly`), //一笔能拐好多弯
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#notes-language-typst-__codelineno-2-21"></a>)
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#notes-language-typst-__codelineno-2-20"></a><span class="w">    </span><span class="nf">edge</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="nv">poly</span><span class="err">`</span><span class="p">),</span><span class="w"> </span><span class="c1">//一笔能拐好多弯</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#notes-language-typst-__codelineno-2-21"></a><span class="p">)</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#notes-language-typst-__codelineno-2-22"></a><span class="nf">#diagram</span><span class="p">(</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#notes-language-typst-__codelineno-2-23"></a><span class="w">    </span>node((0,5), &quot;2nd Diagram&quot;, stroke: 1pt), 
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#notes-language-typst-__codelineno-2-23"></a><span class="w">    </span><span class="nf">node</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;2nd Diagram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">stroke</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">pt</span><span class="p">),</span><span class="w"> </span>
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#notes-language-typst-__codelineno-2-24"></a><span class="w">    </span><span class="c1">//另一个diagram中元素不会被其他diagram规定的style影响</span>
 <a id="__codelineno-2-25" name="__codelineno-2-25" href="#notes-language-typst-__codelineno-2-25"></a><span class="w">    </span><span class="c1">//位置会被其他diagram影响</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#notes-language-typst-__codelineno-2-26"></a>)
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#notes-language-typst-__codelineno-2-26"></a><span class="p">)</span>
 </code></pre></div>
 <img alt="" src="../notes/Language/assets/typ5.png" /></p>
 <h2 id="notes-language-typst-_3">排版<a class="headerlink" href="#notes-language-typst-_3" title="Permanent link">&para;</a></h2>
 <h3 id="notes-language-typst-numblex">numblex<a class="headerlink" href="#notes-language-typst-numblex" title="Permanent link">&para;</a></h3>
 <p>导入：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-language-typst-__codelineno-3-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/numblex:0.1.0&quot;: numblex //一般就用这个函数
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-language-typst-__codelineno-3-1"></a><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/numblex:0.1.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="nv">numblex</span><span class="w"> </span><span class="c1">//一般就用这个函数</span>
 </code></pre></div></p>
 <p>在<code>enum</code>类中设置<code>numbering</code>属性可以设置列表的编号格式：<br />
 <img alt="" src="../notes/Language/assets/typ1.png" /></p>
@@ -9859,44 +9873,44 @@ Notice the rest and the first are both possible to be a Link instance.</p>
 <img alt="" src="../notes/Language/assets/typ2.png" /></p>
 <h3 id="notes-language-typst-warp-content">warp-content<a class="headerlink" href="#notes-language-typst-warp-content" title="Permanent link">&para;</a></h3>
 <p>这也有manual看的，嚯嚯嚯
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#notes-language-typst-__codelineno-4-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/wrap-it:0.1.0&quot;: wrap-content
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#notes-language-typst-__codelineno-4-1"></a><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/wrap-it:0.1.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="nv">wrap-content</span>
 </code></pre></div>
 把图片塞进文字里，图文并茂啊嗯
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#notes-language-typst-__codelineno-5-1"></a><span class="nv">#wrap</span>-content(image(&quot;../docs/img/PP.png&quot;, fit: &quot;stretch&quot;),columns:(40%,50%))[
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#notes-language-typst-__codelineno-5-2"></a><span class="w">    </span>My name is Pinkie Pie (Hello!)\
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#notes-language-typst-__codelineno-5-3"></a><span class="w">    </span>And I am here to say (How ya doin&#39;?)\
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#notes-language-typst-__codelineno-5-4"></a><span class="w">    </span>I&#39;m gonna make you smile and I will brighten up your day\
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#notes-language-typst-__codelineno-5-5"></a><span class="w">    </span>It doesn&#39;t matter now (What&#39;s up?)\
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#notes-language-typst-__codelineno-5-6"></a><span class="w">    </span>If you are sad or blue (Howdy!)\
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#notes-language-typst-__codelineno-5-7"></a><span class="w">    </span>&#39;Cause cheering up my friends is just what Pinkie&#39;s here to do\
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#notes-language-typst-__codelineno-5-8"></a><span class="w">    </span>&#39;Cause I love to make you smile, smile, smile\
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#notes-language-typst-__codelineno-5-9"></a><span class="w">    </span>Yes I do\
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#notes-language-typst-__codelineno-5-10"></a><span class="w">    </span>It fills my heart with sunshine all the while\
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#notes-language-typst-__codelineno-5-11"></a><span class="w">    </span>Yes it does 
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#notes-language-typst-__codelineno-5-12"></a><span class="w">    </span>From these happy friends of mine\
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#notes-language-typst-__codelineno-5-13"></a><span class="w">    </span>I like to see you grin (Awesome!)\
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#notes-language-typst-__codelineno-5-14"></a><span class="w">    </span>I love to see you beam (Rock on!)\
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#notes-language-typst-__codelineno-5-15"></a><span class="w">    </span>The corners of your mouth turned up is always Pinkie&#39;s dream (Hoof bump!)\
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#notes-language-typst-__codelineno-5-16"></a><span class="w">    </span>But if you&#39;re kind of worried\
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#notes-language-typst-__codelineno-5-17"></a><span class="w">    </span>And your face has made a frown\
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#notes-language-typst-__codelineno-5-18"></a><span class="w">    </span>I&#39;ll work real hard and do my best to turn that sad frown upside down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#notes-language-typst-__codelineno-5-1"></a><span class="nf">#wrap-content</span><span class="p">(</span><span class="nf">image</span><span class="p">(</span><span class="s2">&quot;../docs/img/PP.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">fit</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stretch&quot;</span><span class="p">),</span><span class="nv">columns</span><span class="p">:(</span><span class="m">40</span><span class="kr">%</span><span class="p">,</span><span class="m">50</span><span class="kr">%</span><span class="p">))[</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#notes-language-typst-__codelineno-5-2"></a><span class="w">    </span>My<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span>Pinkie<span class="w"> </span>Pie<span class="w"> </span>(Hello!)<span class="p">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#notes-language-typst-__codelineno-5-3"></a><span class="w">    </span>And<span class="w"> </span>I<span class="w"> </span>am<span class="w"> </span>here<span class="w"> </span>to<span class="w"> </span>say<span class="w"> </span>(How<span class="w"> </span>ya<span class="w"> </span>doin&#39;?)<span class="p">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#notes-language-typst-__codelineno-5-4"></a><span class="w">    </span>I&#39;m<span class="w"> </span>gonna<span class="w"> </span>make<span class="w"> </span>you<span class="w"> </span>smile<span class="w"> </span>and<span class="w"> </span>I<span class="w"> </span>will<span class="w"> </span>brighten<span class="w"> </span>up<span class="w"> </span>your<span class="w"> </span>day<span class="p">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#notes-language-typst-__codelineno-5-5"></a><span class="w">    </span>It<span class="w"> </span>doesn&#39;t<span class="w"> </span>matter<span class="w"> </span>now<span class="w"> </span>(What&#39;s<span class="w"> </span>up?)<span class="p">\</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#notes-language-typst-__codelineno-5-6"></a><span class="w">    </span>If<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>sad<span class="w"> </span>or<span class="w"> </span>blue<span class="w"> </span>(Howdy!)<span class="p">\</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#notes-language-typst-__codelineno-5-7"></a><span class="w">    </span>&#39;Cause<span class="w"> </span>cheering<span class="w"> </span>up<span class="w"> </span>my<span class="w"> </span>friends<span class="w"> </span>is<span class="w"> </span>just<span class="w"> </span>what<span class="w"> </span>Pinkie&#39;s<span class="w"> </span>here<span class="w"> </span>to<span class="w"> </span>do<span class="p">\</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#notes-language-typst-__codelineno-5-8"></a><span class="w">    </span>&#39;Cause<span class="w"> </span>I<span class="w"> </span>love<span class="w"> </span>to<span class="w"> </span>make<span class="w"> </span>you<span class="w"> </span>smile,<span class="w"> </span>smile,<span class="w"> </span>smile<span class="p">\</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#notes-language-typst-__codelineno-5-9"></a><span class="w">    </span>Yes<span class="w"> </span>I<span class="w"> </span>do<span class="p">\</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#notes-language-typst-__codelineno-5-10"></a><span class="w">    </span>It<span class="w"> </span>fills<span class="w"> </span>my<span class="w"> </span>heart<span class="w"> </span>with<span class="w"> </span>sunshine<span class="w"> </span>all<span class="w"> </span>the<span class="w"> </span>while<span class="p">\</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#notes-language-typst-__codelineno-5-11"></a><span class="w">    </span>Yes<span class="w"> </span>it<span class="w"> </span>does<span class="w"> </span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#notes-language-typst-__codelineno-5-12"></a><span class="w">    </span>From<span class="w"> </span>these<span class="w"> </span>happy<span class="w"> </span>friends<span class="w"> </span>of<span class="w"> </span>mine<span class="p">\</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#notes-language-typst-__codelineno-5-13"></a><span class="w">    </span>I<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>you<span class="w"> </span>grin<span class="w"> </span>(Awesome!)<span class="p">\</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#notes-language-typst-__codelineno-5-14"></a><span class="w">    </span>I<span class="w"> </span>love<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>you<span class="w"> </span>beam<span class="w"> </span>(Rock<span class="w"> </span>on!)<span class="p">\</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#notes-language-typst-__codelineno-5-15"></a><span class="w">    </span>The<span class="w"> </span>corners<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>mouth<span class="w"> </span>turned<span class="w"> </span>up<span class="w"> </span>is<span class="w"> </span>always<span class="w"> </span>Pinkie&#39;s<span class="w"> </span>dream<span class="w"> </span>(Hoof<span class="w"> </span>bump!)<span class="p">\</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#notes-language-typst-__codelineno-5-16"></a><span class="w">    </span>But<span class="w"> </span>if<span class="w"> </span>you&#39;re<span class="w"> </span>kind<span class="w"> </span>of<span class="w"> </span>worried<span class="p">\</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#notes-language-typst-__codelineno-5-17"></a><span class="w">    </span>And<span class="w"> </span>your<span class="w"> </span>face<span class="w"> </span>has<span class="w"> </span>made<span class="w"> </span>a<span class="w"> </span>frown<span class="p">\</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#notes-language-typst-__codelineno-5-18"></a><span class="w">    </span>I&#39;ll<span class="w"> </span>work<span class="w"> </span>real<span class="w"> </span>hard<span class="w"> </span>and<span class="w"> </span>do<span class="w"> </span>my<span class="w"> </span>best<span class="w"> </span>to<span class="w"> </span>turn<span class="w"> </span>that<span class="w"> </span>sad<span class="w"> </span>frown<span class="w"> </span>upside<span class="w"> </span>down
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#notes-language-typst-__codelineno-5-19"></a><span class="p">]</span>
 </code></pre></div>
 <img alt="" src="../notes/Language/assets/typ4.png" /><br />
 已知问题：会和<code>image</code>的<code>weight</code>,<code>height</code>冲突；脱离图片范围后换行会失效（如上图）<br />
 用<code>columns:(a%,b%)</code>设置图片和文字的比例</p>
 <h2 id="notes-language-typst-gentle-clues">gentle-clues<a class="headerlink" href="#notes-language-typst-gentle-clues" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#notes-language-typst-__codelineno-6-1"></a><span class="nv">#import</span><span class="w"> </span>&quot;@preview/gentle-clues:1.0.0&quot;: *
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#notes-language-typst-__codelineno-6-1"></a><span class="kn">#import</span><span class="w"> </span><span class="s2">&quot;@preview/gentle-clues:1.0.0&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
 </code></pre></div>
 <p>预定义的块：<br />
 <img alt="gentleclues" src="../notes/Language/assets/typ6.png" /></p>
 <p>看Manual！</p>
 <h2 id="notes-language-typst-_4">杂<a class="headerlink" href="#notes-language-typst-_4" title="Permanent link">&para;</a></h2>
 <p><code>repeat</code>函数返回一个无限重复，顶到页面最右侧的字符串，可以用来做填写处
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#notes-language-typst-__codelineno-7-1"></a><span class="kd">#let</span><span class="w"> </span>answer = [#box(width: 1fr,repeat(&quot;_&quot;))] //用box可以让它不换行
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#notes-language-typst-__codelineno-7-1"></a><span class="kd">#let</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nf">#box</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="kr">fr</span><span class="p">,</span><span class="nf">repeat</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">))]</span><span class="w"> </span><span class="c1">//用box可以让它不换行</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#notes-language-typst-__codelineno-7-2"></a><span class="c1">//如果后面还有内容就把内容顶到最右边</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#notes-language-typst-__codelineno-7-3"></a>You have a vast vast soul \
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#notes-language-typst-__codelineno-7-4"></a>And I will always, always, always #answer it.
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#notes-language-typst-__codelineno-7-3"></a>You<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>vast<span class="w"> </span>vast<span class="w"> </span>soul<span class="w"> </span><span class="p">\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#notes-language-typst-__codelineno-7-4"></a>And<span class="w"> </span>I<span class="w"> </span>will<span class="w"> </span>always,<span class="w"> </span>always,<span class="w"> </span>always<span class="w"> </span><span class="nv">#answer</span><span class="w"> </span>it.
 </code></pre></div>
 <img alt="" src="../notes/Language/assets/typ3.png" /></p>
 <p><code>image</code>函数怎么用: 
@@ -10006,8 +10020,8 @@ Session: 和cookie差不多，不过是在服务器端临时储存  </p>
 <li><a href="https://blog.csdn.net/weixin_43921596/article/details/86654754">stegdetect</a></li>
 </ul>
 <h3 id="notes-summercourses-ctf-md5">md5<a class="headerlink" href="#notes-summercourses-ctf-md5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-summercourses-ctf-__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">hashlib</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#notes-summercourses-ctf-__codelineno-1-2"></a><span class="k">def</span> <span class="nf">md5_encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#notes-summercourses-ctf-__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#notes-summercourses-ctf-__codelineno-1-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">md5_encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#notes-summercourses-ctf-__codelineno-1-3"></a>    <span class="n">md5</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#notes-summercourses-ctf-__codelineno-1-4"></a>    <span class="n">md5</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#notes-summercourses-ctf-__codelineno-1-5"></a>    <span class="k">return</span> <span class="n">md5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -10074,7 +10088,7 @@ Session: 和cookie差不多，不过是在服务器端临时储存  </p>
 如上C代码模拟了一个用于echo东西的cmd，我们可以输入"wolegeshaogang&amp;&amp;ls"，这样在输出外会执行ls命令（利用sh的语法）。</p>
 <h2 id="notes-summercourses-ctf-python">python的一些包<a class="headerlink" href="#notes-summercourses-ctf-python" title="Permanent link">&para;</a></h2>
 <h3 id="notes-summercourses-ctf-socket">socket<a class="headerlink" href="#notes-summercourses-ctf-socket" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-summercourses-ctf-__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">socket</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#notes-summercourses-ctf-__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#notes-summercourses-ctf-__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#notes-summercourses-ctf-__codelineno-3-3"></a><span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;IP Address&quot;</span>  <span class="c1"># IP address</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#notes-summercourses-ctf-__codelineno-3-4"></a><span class="n">PORT</span> <span class="o">=</span> <span class="n">PORTNUMBER</span>   <span class="c1"># Port number</span>
@@ -10103,7 +10117,7 @@ Session: 和cookie差不多，不过是在服务器端临时储存  </p>
                         <section class="print-page" id="others"><h1 id="others-_1">杂<a class="headerlink" href="#others-_1" title="Permanent link">&para;</a></h1>
 <p>随便扔一些东西！</p></section><section class="print-page" id="others-quotes"><h1 id="others-quotes-_1">记念<a class="headerlink" href="#others-quotes-_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1331 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1367 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <blockquote>
 <p>Credit to <a href="https://zjyinzju.github.io/%E8%AE%B0%E5%BF%B5/">Yu</a>, recalling my whim to gathering quotes, again.</p>
@@ -10146,11 +10160,20 @@ Session: 和cookie差不多，不过是在服务器端临时储存  </p>
 <p>午后的日光之下，整片大区域轰鸣着:旧木屋组成一张黑色棋盘，里面生活着 80，000 条生命，还有层层叠叠的烟囱。一眼望去全是容易失火的建筑物——从大街到 41 分局，再到嵌入在大雪纷飞地平线上的布吉街...... 你闭上双眼，听见狗在吠叫。一个孤独的女人坐在工厂窗户旁边，梦想着陨石撞击这个星球。圣杰罗姆路上，一枚方形子弹滑入方形枪膛。旧南城里，一个没有眼睑的男人在微笑。春天来了。到时间了。</p>
 <p align=right><i>Disco Elysium</i>（轻语工作室 译）, ZA/UM</p>
 
+<hr />
 <p>Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.</p>
 <p align=right>G.K. Chesterton by way of Neil Gaiman, Coraline</p>
 
+<hr />
 <p>书页不像IDE窗口那么宽，所以每一个字符都很珍贵。</p>
-<p align=right><i>Crafting Interpreters</i>, Robert Nystrom</p></section><section class="print-page" id="others-final"><h1 id="others-final-_1">年终总结合集<a class="headerlink" href="#others-final-_1" title="Permanent link">&para;</a></h1>
+<p align=right><i>Crafting Interpreters</i>, Robert Nystrom</p>
+
+<hr />
+<p>山崖复远望<br />
+仓皇 无告 不回的河流<br />
+平原不可见<br />
+晦暗 无声 未知的存亡</p>
+<p align=right>万能青年旅店《山雀》</p></section><section class="print-page" id="others-final"><h1 id="others-final-_1">年终总结合集<a class="headerlink" href="#others-final-_1" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Overview</p>
 <p>放一些常用软件的年终总结，聊表纪念（自2023年开始）</p>
