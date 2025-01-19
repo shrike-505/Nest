@@ -441,3 +441,52 @@ TBD
 ### 真实案例：拍卖车的最佳分配
 
 ## Lec 10: Summary
+
+## Research 1
+
+```py
+def one_hot_encoding(nominals):
+    '''
+    Convert a set of nominals to a set of binary variables
+    one_hot_encoding(['alpha','beta', 'gamma'] -> 
+    [['alpha', [1, 0, 0]], ['beta', [0, 1, 0]], ['gamma', [0, 0, 1]]]
+    '''
+    return [[word, [1 if nominals.index(word)==i else 0 for i in range(len(nominals))]] for word in nominals]
+    
+one_hot_encoding(['alpha','beta', 'gamma'])
+# >>> [['alpha', [1, 0, 0]], ['beta', [0, 1, 0]], ['gamma', [0, 0, 1]]]
+```
+
+混淆矩阵（Confusion Matrix）：
+
+- True Positive（TP）：真正类。样本的真实类别是正类，并且模型识别的结果也是正类。
+- False Negative（FN）：假负类。样本的真实类别是正类，但是模型将其识别为负类。
+- False Positive（FP）：假正类。样本的真实类别是负类，但是模型将其识别为正类。
+- True Negative（TN）：真负类。样本的真实类别是负类，并且模型将其识别为负类。 
+
+```python
+def confusion_matrix( actual, predicted):
+    '''
+    Given the actual values and predicted values generate a confusion matrix
+               Actual
+   Predicted   TN  FP
+               FN  TP
+ 
+        [[ TN  FP] [ FN  TP]]    
+    '''
+    TN = 0
+    FN = 0
+    TP = 0
+    FP = 0
+    assert len(actual)==len(predicted)
+    for i in range(len(actual)):
+        if actual[i]==1 and predicted[i]==1:
+            TP+=1
+        elif actual[i]==1 and predicted[i]==0:
+            FN+=1
+        elif actual[i]==0 and predicted[i]==0:
+            TN+=1
+        elif actual[i]==0 and predicted[i]==1:
+            FP+=1
+    return [[TN, FP], [FN, TP]]
+```
