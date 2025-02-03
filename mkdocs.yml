@@ -5,7 +5,7 @@ repo_name: shrike505
 repo_url: https://github.com/shrike-505/Nest
 copyright: Copyright &copy; 2024 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
-- shrike505's blog: index.md
+- shrike505's Nest: index.md
 - 小说:
   - stories/index.md
   - 连霍: stories/G30.md
@@ -32,11 +32,16 @@ nav:
   - AI:
     - 人工智能引论: notes/AI/AIY.md
     - 数据分析与机器学习: notes/AI/DAML.md
+    - 自然语言处理相关:
+      - notes/AI/NLP/index.md
+      - CS224N: notes/AI/NLP/CS224N.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
+    - 计算机系统Ⅲ: notes/ComputerScience/ComputerSystem3.md
     - 数据结构基础: notes/ComputerScience/FDS.md
     - 高级数据结构: notes/ComputerScience/ADS.md
+    - Crafting Interpreters: notes/ComputerScience/CraftingInterpreters.md
   - 数理:
     - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
@@ -48,9 +53,10 @@ nav:
   - Language:
     - Python - CS61A: notes/Language/cs61a.md
     - Verilog - HDLBits: notes/Language/Verilog.md # I hate you.
+    - C++ - OOP: notes/Language/Cpp.md
     - 托福: notes/Language/Toefl.md
     - Fimpp: notes/Language/fimpp.md
-    - Typst备忘录: notes/Language/Typst.md
+    - Typst 备忘录: notes/Language/Typst.md
   - 短学期:
     - CTF101: notes/SummerCourses/CTF.md
 - 杂:
@@ -60,7 +66,7 @@ nav:
   - 暑假指南: others/summer_idle.md
   - Helix 学习日志: others/Helix.md
 - 标签: tags.md
-- 友谊是魔法！: friends.md
+- 友谊是魔法: friends.md
 
 theme: 
   name: material
@@ -109,7 +115,7 @@ theme:
     # - navigation.path
     # - toc.integrate 
     - navigation.top
-    # - navigation.tabs
+    - navigation.tabs
     # - navigation.tabs.sticky
     # - toc.follow
     # - header.autohide
@@ -164,8 +170,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.smartsymbols  
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tasklist:
