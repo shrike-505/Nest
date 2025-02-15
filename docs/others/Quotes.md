@@ -4,7 +4,7 @@
 
 # 记念
 
-> Credit to [Yu](https://zjyinzju.github.io/%E8%AE%B0%E5%BF%B5/), recalling my whim to gathering quotes, again.
+> Credit to [Yu](https://zjyinzju.github.io/other/%E8%AE%B0%E5%BF%B5/), recalling my whim to gathering quotes, again.
 
 ??? 引言
     阅读小说/散文/歌词/诗等这类基于文本的艺术作品，在很久以前，QQ尚有一个叫做随心贴的功能的时候，我很喜欢将其中有点意思的语句记录下来。可惜随心贴作古时，哑然无言，怅然若失，那些珠玑字句也都消弭于脑海。今个儿才想起来我还在万维网上有个这块地皮，遂新开一界面，留备新的记录。  
