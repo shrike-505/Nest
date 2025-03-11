@@ -52,7 +52,7 @@ nav:
     - 概率论: notes/MathematicsAndPhysics/Probability.md
     - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
   - 文艺学:
-    - 文学理论: notes/Literature/LiteratureTheory.md
+    # - 文学理论: notes/Literature/LiteratureTheory.md
     - 语言学基础: notes/Literature/BasicLinguistics.md
   - Language:
     - Python - CS61A: notes/Language/cs61a.md

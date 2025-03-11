@@ -10,6 +10,10 @@
 
 ??? note "课后作业"
     - [HW1](./assets/3230105892_高玮轩_第一次课后练习.pdf)
+    - [HW2](./assets/3230105892_高玮轩_第二次课后练习.pdf)
+    - [HW3](./assets/3230105892_高玮轩_第三次课后练习.pdf)
+
+> i cannot read these
 
 ## Lec1: Introduction
 
@@ -42,7 +46,72 @@
 4. 溯因推理
     - 观察现象寻找合理解释
 5. 关于论证的推理
+    - 论辩图怎么画
 
 ### AIL的主要研究方向
 
 what is this
+
+## Lec2: 知识的表示与推理
+
+### 知识表示语言
+
+- **表示**：用一个集合的元素来表示一个集合的元素
+    - 一种表示知识的语言由**初始符号列表**和**语法规则**组成
+- 公式表示：$\{\neg, \land, \lor, (, )\}$
+- 有向图表示：$G = \{V, E\}$
+
+用特定符号语言描述的公式或结构，由我们对公式/结构中的元素所做的不同解释，可表示现实世界中的不同知识。
+
+### 推理
+
+- 符号级推理：形式上的计算
+    - 一阶逻辑中最基本的规则是**肯定前件式**（MP规则）：$a \rightarrow b, a \vdash b$，$\vdash$ 表示**形式可推演关系**。
+- 知识级推理：推理的前提与结论在语义上的映射关系
+    - 在经典演绎推理中表现为**语义蕴涵关系**：若 $a \models b$，则当前提 $a$ 为真，结论 $b$ 为真
+    - 在论证推理中，不一定是语义蕴含，需要建立的是从论证图到可接受的论证集合的映射关系
+
+### 推理系统的特性
+
+- 系统内特性：一个逻辑系统内部各个成分具有的特定性质，如演绎系统中，包括有效的语义蕴涵模式、正确的推理形式等。
+- 系统元特性：
+    - 完备性：给定前提集合 $\Gamma$，若其语义蕴含（$\models$）公式 $A$，那么从形式上可以从 $\Gamma$ 推出 $A$（$\vdash$）。
+    - 可靠性：给定前提集合 $\Gamma$，若其可从形式推出（$\vdash$）公式 $A$，那么其语义蕴含（$\models$）公式 $A$。
+
+## Lec3: 命题逻辑
+
+!!! defination "命题公式"
+    1. 命题符号（就是用个字母表示的命题）是公式（原子公式）。
+    2. 若 $A$ 是公式，则 $\neg A, (A \land B), (A \lor B), (A \rightarrow B), (A \leftrightarrow B)$ 也是公式。
+    3. 有限次使用 1 和 2 的规则，得到的都是公式。
+
+联结词：$\neg, \land, \lor, \rightarrow, \leftrightarrow$
+
+真假赋值：对命题符号赋予真假值（即一个函数，定义域是命题符号集合，值域是 $\{0, 1\}$（感觉就是命题的真假））
+
+![真假](./assets/ail1.png)
+
+!!! defination "逻辑推论"
+    给定一组命题公式集合 $\Phi$ 和一个命题公式 $\phi$，则 $\phi$ 是 $\Phi$ 的逻辑推论，当且仅当 $\forall v, \Phi^v = 1 \Rightarrow \phi^v = 1$，记作 $\Phi \models \phi$。
+
+    类似蕴涵式，如果 $\Phi^v = 0$，则 $\phi^v$的取值无所谓
+
+    $\Phi$ 是空集合时，$\models \phi$ 当且仅当 $\phi$ 是永真式。（此时也称 $\phi$ 具有有效性）
+
+??? note "推论"
+    - $ϕ$ 是可满足的 当且仅当 $¬ϕ$ 不是有效的；
+    - $ϕ$ 是有效的 当且仅当 $¬ϕ$ 不是可满足的。
+        - 这两个很显然，可以构想一个真值表
+    - 即可以通过检验一个公式的可满足性来判断这个公式的有效性。
+
+### 逻辑推论
+
+若 $\Phi \models \phi$ 且 $\phi \models \Phi$，则称 $\Phi$ 和 $\phi$ 是等价的，记作 $\Phi \equiv(|=|) \phi$。
+
+!!! note "常见的语义等价"
+    - $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$
+    - $p \rightarrow q \equiv \neg p \lor q$
+    - 德摩根定律：$\neg (p \land q) \equiv \neg p \lor \neg q$，$\neg (p \lor q) \equiv \neg p \land \neg q$
+
+!!! note "定理"
+    给定 $\phi \equiv \psi$，则 $\phi$ 是 $\varphi$ 的一部分。把 $\varphi$ 中的 $\phi$ 替换为 $\psi$ 得到 $\varphi'$，则 $\varphi \equiv \varphi'$
