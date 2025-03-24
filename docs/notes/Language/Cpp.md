@@ -86,3 +86,12 @@ a = 20; // illegal
         - `char const* q` 大概率同理（可能因为不同编译器解释不同）
     - `const char* p = "hello";` `*p` 是一个 const char，于是 `*p = 'x'` 会报错
 
+### Stash
+
+- Typeless container
+- 存储相同类型的对象
+- 使用类型的大小初始化
+
+### Deconstructor
+
+当对象 Go out of scope 时，调用析构函数

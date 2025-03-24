@@ -90,16 +90,21 @@ RAW/WAR/WAW 导致数据冲突，需要使用动态调度重排指令顺序
         - 指令处于 IS/RO/EX/WB 的哪个阶段
     - Functional Unit Status
         - 每个功能单元（Functional Unit）是否被占用，有九种状态
-            - Busy: Indicates whether the unit is busy or not
-            - Op: Operation to perform in the unit (e.g., + or –)
-            - Fi: Destination register
-            - Fj, Fk: Source-register numbers
-            - Qj, Qk: Functional units producing source registers Fj, Fk
-            - Rj, Rk: Flags indicating when Fj, Fk are **ready and not yet read**.
+            - Busy: 显示该单元是否被占用
+            - Op: 该单元执行的操作 (e.g., + or –)
+            - Fi: 目的寄存器
+            - Fj, Fk: 源寄存器
+            - Qj, Qk: 如果源寄存器没准备好部件该向哪里要数据（$Q_j$ 和 $Q_k$ 对应 $R_j$ 和 $R_k$）
+            - Rj, Rk: Flags indicating when Fj, Fk are **ready and not yet read**，寄存器中的数据被读取后置为 No
     - Register Result Status
-        - 显示哪个 FU 会写这个寄存器
+        - 显示哪个 FU **正准备写入**这个寄存器
     - ![Scoreboard](./assets/Sys37.png)
-    - TBD
+    - 具体看[这个文章](https://zhuanlan.zhihu.com/p/496078836)吧，感觉比两个老师讲的都好（
+    - 要点（摘自上面的文章）：
+        - 一条指令能否发射，一看是否有功能部件空闲可用，这个信息包含在功能状态中；二看指令要写的寄存器是否正要被别的指令写，这个信息包含在寄存器状态中，观察这个信息是为了解决 WAW 冒险。
+        - 一条指令能否读数，要看记分牌是否提示源寄存器不可读，如果不可读，就说明该寄存器将要被别的前序指令改写，现在的指令要等待前序指令写回，观察这个信息是为了解决 RAW 冒险。
+        - 一条指令一旦读数完成，就必然可以进行运算，运算可以是多周期的，在第一个周期结束时应该改写功能状态，表明自己不再需要读寄存器。
+        - 一条指令能否写回，要看是否有指令需要读即将被改写的这个寄存器，具体一点来说，就是要观察标记 Yes 的 Rj、Rk 对应的寄存器里是否有当前指令的目的寄存器，如果有，就说明有指令需要读取寄存器的旧值，这样一来我们就要等指令读完旧值之后再写回，观察这个信息是为了解决 WAR 冒险。
 
 !!! note "Tomasulo Algo"
     TBD
@@ -113,9 +118,11 @@ Exception vs. Interrupt
 
 TBD
 
-### Hardware Support: Reorder Buffer(ROB)
+### Hardware based Speculation: Reorder Buffer(ROB)
 
-以先来先出的顺序（就是被发射的顺序）存储 uncommitted 指令
+以先来先出的顺序（就是被发射的顺序）存储 uncommitted 指令，使指令执行完成的顺序也按发射的顺序来。
+
+结果先写到 reorder buffer，在 buffer 里按照指令流出的顺序以此写回寄存器。因此我们在每个指令后面加上一个 commit 状态，当前面的指令都 commit 之后才能 commit。
 
 - 4 Fields
     - Inst Type
@@ -129,9 +136,76 @@ TBD
     - Issue - Get inst from FP Op Queue
     - Execute - operate on operands
     - Write Result - finish execution
-        - 写入 CDB（Common Data Bus），通知所有正在等待的 FU 和 ROB，将 Reservation Station 标记为 Available
+        - 写入 CDB（Common Data Bus 数据广播总线），通知所有正在等待的 FU 和 ROB，将 Reservation Station 标记为 Available
     - Commit - update reg with reorder result
 
 ### 多发射 MultiIssue
 
 见 [系统2笔记](./ComputerSystem2.md#multiple-issue-多发射)
+
+为了使 CPI < 1，需要在一个时钟内完成多条指令
+
+## Memory Hierarchy
+
+实际上，CPU 执行一条指令的时间远远短于访问内存的时间，即计算机的运行速度受限于 Memory Bandwidth & Latency
+
+- Latency: 单次访问内存的时间
+- Bandwidth: 也即带宽，单位时间内能访问的次数
+    - 如果占比 $m$ 的指令需要访问内存，则平均每条指令需要访问 $1 + m$ 次内存（对 N 条指令，首先要 N 次访问 I-cache，然后 mN 次访问 D-cache）
+
+令人感叹的是，容量变大，访问时间就会变少；带宽变大，硬件 Cost 也会越大，于是采用 **Memory Hierarchy** 来缓解这些问题
+
+这里先介绍内存的两个特征：局部性
+
+- 时间局部性（Temporal Locality）
+    - 一旦访问了某个地址，很可能在不久的将来再次访问
+- 空间局部性（Spatial Locality）
+    - 一旦访问了某个地址，很可能在附近的地址也会被访问
+
+利用局部性，Present the user with as much memory as is available in the cheapest technology. Provide access at the speed offered by the fastest technology.
+
+### Cache
+
+!!! note "USEFUL LINK"
+    https://zhuanlan.zhihu.com/p/482651908
+
+    抄了很多
+
+地址从 Core 中流出后，最先碰到 Memory Hierarchy 的最高层：Cache
+
+small and fast
+
+- Unified Cache: 一起存储指令和数据，需要的硬件少，但是访问速度慢
+- Split Cache: 分开存储指令和数据（I-cache 和 D-cache），访问速度快，但是硬件复杂
+
+![Modern Cache](./assets/Sys38.png)
+
+#### Cache Performance
+
+- Cache Hit/Miss
+    - Hit: 在 Cache 中找到了所需的数据
+    - Miss: 没有找到，需要从更低一层的 Memory Hierarchy 中读取
+
+### Block/Line
+
+cache容量较小，所以数据需要按照一定的规则从主存映射到cache。一般把主存和cache分割成一定大小的块，这个块在主存中称为data block，在cache中称为cache line。举个例子，块大小为1024个字节，那么data block和cache line都是1024个字节。当把主存和cache分割好之后，我们就可以把data block放到cache line中，而这个“放”的规则一般有三种，分别是“直接映射”、“组相联”和“全相联”。
+
+- Direct Mapped
+    - 直接映射采用“取模”的方式进行一对一映射：如果cache中共有8个cache line，那么0、8、16、24...号data block会被映射到0号cache line中，同理1、9、17....号data block会被映射到1号cache line中
+    - 这里 Cache Line 具有 Tag 和 Data 两部分，Tag 用于识别存储的是主存中的哪个 Data Block，Data 用于存储数据
+
+!!! note "4 Questions for Cache Design"
+    - Where can a block be placed in the Upper/Main Memory?
+        - 即 Block 的放置问题
+        - 直接映射（Direct Mapped）
+            - 地址对 Block 数取模，结果作为 Block 的 Index
+        - 全相连、组相连
+    - How is a block found in the Upper/Main Memory?
+        - Block 的识别问题
+        - 使用 Tag
+    - Which block should be replaced on a miss?
+        - Block 的替换问题
+        - LRU、FIFO、Random
+    - What happens on a write?
+        - 写策略问题
+        - Write-through、Write-back (both with write Buffer)

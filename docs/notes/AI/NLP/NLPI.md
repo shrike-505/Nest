@@ -1,5 +1,7 @@
 ---
     comments: true
+    tags:
+        - 大二下笔记
 ---
 
 # 自然语言处理导论
@@ -29,3 +31,5 @@ ML = Looking for a Function
             - 分布表示（Distributional Representation）：使用一个词向量表示词，利用神经网络降维
             - Word2Vec：对 one-hot 进行两层神经网络（Input Layer -> Hidden Layer -> Output Layer），最终得到一个词向量。
             - ![word2vec](../assets/nlp2.png)
+
+## 卷积神经网络

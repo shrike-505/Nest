@@ -96,3 +96,11 @@ Fairy tales are more than true: not because they tell us that dragons exist, but
 故闻《蓼萧》之篇，则知泽及四海也；闻《禾黍》之咏，则知时和岁丰也；闻《北风》之诗，则知威虐及人也；闻《硕鼠》之刺，则知重敛於下也；闻「广袖高髻」之谣，则知风俗之奢荡也；闻「谁其获者妇与姑」之言，则知征役之废业也。故国风之盛衰，由斯而见也；王政之得失，由斯而闻也；人情之哀乐，由斯而知也。
 
 <p align=right>白居易《策林六十九·采诗以补察时政》</p>
+
+---
+
+"My name is Lyra Heartstrings, and you will not remember me. You won't even remember this conversation. Just like with everypony else I've ever met, everything I do or say will be forgotten. Every letter I've written will appear blank; every piece of evidence I've left behind will end up missing. I'm stuck here in Ponyville because of the same curse that has made me so forgettable. Still, that doesn't stop me from doing the one thing that I love: making music. If my melodies find their way into your heart, then there is still hope for me. If I can't prove that I exist, I can at least prove that my love for each and every one of you exists. Please, listen to my story, my symphony, for it is me."
+
+“小马们都是要做些什么，才可以被铭记。我靠弹音乐——你靠拯救全国。”我举杯示意，微笑道，“说到底咱俩都一样的。”
+
+<p align=right><i>Background Pony</i>,  shortskirtsandexplosions</p>
