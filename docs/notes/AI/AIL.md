@@ -8,13 +8,18 @@
 
 > 任课教师：廖备水
 
+!!! note "Reference"
+    我抄了很多：<https://tekhnec.github.io/categories/>
+
 ??? note "课后作业"
     - [HW1](./assets/3230105892_高玮轩_第一次课后练习.pdf)
     - [HW2](./assets/3230105892_高玮轩_第二次课后练习.pdf)
     - [HW3](./assets/3230105892_高玮轩_第三次课后练习.pdf)
     - [HW4](./assets/3230105892_高玮轩_第四次课后练习.pdf)
+    - [HW5](./assets/3230105892_高玮轩_第五次课后练习.pdf)
+    - [HW6](./assets/3230105892_高玮轩_第六次课后练习.pdf)
 
-> i cannot read these
+> 这些文字，我看不懂
 
 ## Lec1: Introduction
 
@@ -192,4 +197,60 @@ $[p, q]$ 与 $[\neg p, r]$ 消解得到 $[q, r]$，类比即 $p \lor \neg p \equ
 !!! definition "代换"
     代换 $\theta$ 是一个有限的对子集合 $\{x_1/t_1, x_2/t_2, \cdots, x_n/t_n\}$，其中 $x_i$ 是变元，$t_i$ 是项。代换 $\theta$ 作用于公式 $\phi$，得到 $\phi\theta$，是将 $\phi$ 中的所有自由变元 $x_i$ 替换为 $t_i$ 得到的公式。
 
+!!! note "第六周课上例题"
+    - 将下列命题转化为一阶语言
+    - 这朵牡丹是红的
+        - 论域：全体牡丹，个体 c：这朵牡丹 $Mudan(c) \land Red(c)$
+    - 张先生和李女士的丈夫是同事
+        - $Colleague(张, Husband(李))$
+    - 任何安全事故都有其原因
+        - 论域：全体安全事故，$Accident^v \subseteq D$, $Reason^v \subseteq D \times D$, $\forall x (Accident(x) \rightarrow \exists y Reason(y, x))$
+    - 任何安全事故都有共同原因
+        - $\exists y \forall x (Accident(x) \rightarrow Reason(y, x))$
+    - 一个人如果有私心，总难免把有些工作弄糟
+    - 尽管有人自私，但未必所有人都自私
+
 ### 语义
+
+#### 消解原理
+
+!!! definition "前束范式"
+    称一阶逻辑公式 $ϕ$ 为前束范式，当且仅当它有如下的形式：
+
+    $Q_1 x_1 Q_2 x_2 \cdots Q_n x_n ϕ′$
+
+    其中, $Q_1 ⋯ Q_n$ 是量词 $∀$ 或 $∃$；$x_1, ⋯ x_n$ 是变元；$ϕ′$ 是不含量词的公式。称 $Q_1 x_1 ⋯ Q_n x_n$ 为前束词，$ϕ′$ 为母式。前束范式的母式可以进一步变换为合取范式或析取范式。
+
+    有关如何把一阶逻辑公式转化为前束范式，可见：<https://hanshuliang.blog.csdn.net/article/details/108848579>
+
+类似命题逻辑，要把公式转化为等价的子句形式。
+
+对包含自由变元的子句进行消解时，如果子句都是**全称量化**的，则可以去掉量词（e.g. $\forall x \forall y (F(x) \rightarrow H(x,y))$ 可简化为 $F(x) \rightarrow H(x,y)$）。
+
+!!! note "推演规则"
+    给定两个字句 $c_1 \lor \{L_1\}$ 和 $c_2 \lor \{\overline{L_2}\}$，如果它们没有公共变元，且存在一个代换 $\theta$ 使得 $L_1 \theta = L_2 \theta$,那么可以推出子句 $(c_1 \lor c_2) \theta$，$\theta$ 是 $L_1$ 和 $L_2$ 的合一。
+
+对于包含**存在量词**的公式，可把该存在量词所管辖的变元变成确定的个体，表示该确定个体的项被称为斯科伦常元；表示受限制的该确定个体的函词被称为斯科伦函词。（就是把 $exists xF(x)$ 变成 $F(a)$，$a$ 就是满足原公式的常元）
+
+## Lec 5: 知识图谱与描述逻辑
+
+知识一般有一定的结构，利用三元组 prop{ind, Prop, Val} 来表示知识，分别是主动宾
+
+可以把这种知识表示为一个有向图，其中对顶点 ind 到 Prop 的有向边标记为 Val，形成的图叫做语义网络。
+
+!!! example "知识图谱"
+    ![知识图谱](./assets/ail6.png)
+
+描述逻辑中，区分 TBox（术语框）和 ABox（断言框），前者描述概念层次的语句，后者描述实例层次的语句。
+
+### ALC 语法
+
+三元组 $\{N_C, N_R, N_I\}$，其中 $N_C$ 是概念符号集合，$N_R$ 是角色符号集合，$N_I$ 是个体名集合。
+
+!!! example "ALC"
+    在描述逻辑 ALC 中，有两个概念 Male, Female，一个角色 hasChild，那么
+    
+    - Person = Male or Female
+    - Mother = exists hasChild.T and Female
+    - Childless = not has Child.T
+    - Grandmother = Female and exists hasChild.(exists hasChild.T)

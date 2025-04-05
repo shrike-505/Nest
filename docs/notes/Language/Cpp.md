@@ -95,3 +95,11 @@ a = 20; // illegal
 ### Deconstructor
 
 当对象 Go out of scope 时，调用析构函数
+
+!!! note "Initialization vs. assignment"
+    - `Student::Student(string n) { name = n;}` : Assignment(Inside Constructor)
+    - `Student::Student(string n) : name(n) {}` : Initialization(Before Constructor)
+
+## Lec3
+
+### 拷贝

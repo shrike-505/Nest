@@ -1,7 +1,5 @@
 ---
     comments: true 
-    tags:
-        - 大二下笔记
 ---
 
 # 文学理论

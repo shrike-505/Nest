@@ -8,6 +8,9 @@
 
 > 任课教师：吴磊、周亚金
 
+!!! note "Homework"
+    - [HW1](./assets/3230105892_sys3_hw1.pdf)
+
 ## 量化研究
 
 !!! note "Amdahl's Law"
@@ -193,19 +196,127 @@ cache容量较小，所以数据需要按照一定的规则从主存映射到cac
 - Direct Mapped
     - 直接映射采用“取模”的方式进行一对一映射：如果cache中共有8个cache line，那么0、8、16、24...号data block会被映射到0号cache line中，同理1、9、17....号data block会被映射到1号cache line中
     - 这里 Cache Line 具有 Tag 和 Data 两部分，Tag 用于识别存储的是主存中的哪个 Data Block，Data 用于存储数据
+    - 缺陷：当连续访问0，8，0，8，0，8...时，在第二次访问到0号 data block 时，cache line 早就被清空，替换成 8 号 data block，于是会导致 cache miss
+- 全相联
+    - 主存中任何一个 Data Block 都可以映射到 Cache 中的任何一个 Cache Line
+    - Cache 中的一行含有 Tag、Data，Tag 即为主存块的块号
+- 组相联
+    - ![组相联](./assets/Sys39.png)
+    - Cache 几行几行分为一组，组间直接映射，组内全相联
 
 !!! note "4 Questions for Cache Design"
     - Where can a block be placed in the Upper/Main Memory?
         - 即 Block 的放置问题
-        - 直接映射（Direct Mapped）
-            - 地址对 Block 数取模，结果作为 Block 的 Index
-        - 全相连、组相连
+        - 就是上面阐述的三种方法
     - How is a block found in the Upper/Main Memory?
         - Block 的识别问题
-        - 使用 Tag
+        - 使用 Tag/Block
+        - Index 位数 $= \log_2(\#sets)(in \space set-associative \space cache) or \log_2(\#blocks)(in \space direct-mapped \space cache)$
+        - Offset 位数 $= \log_2(size \space of \space block)$
+        - Tag 位数 $= Address \space Size - Index \space bits - Offset \space bits$
     - Which block should be replaced on a miss?
         - Block 的替换问题
-        - LRU、FIFO、Random
+        - LRU、FIFO、Random 算法
+        - TBD
     - What happens on a write?
         - 写策略问题
         - Write-through、Write-back (both with write Buffer)
+        - TBD
+    - I'll finish this at the end of the semester :(
+
+## 主存 Main Memory
+
+### 地址绑定 Address Binding
+
+回顾源代码到执行起来的过程：
+
+- 每个变量都有自己的 symbolic address
+- 编译器把这些符号转换为可重定位地址（relocatable address）
+    - e.g. "14 bytes from the beginning of this module"
+- 链接器把可重定位地址转换为绝对地址（absolute address）
+    - e.g. "0x0505"
+
+逻辑地址 vs. 物理地址，你知道吗？
+
+- 逻辑地址：由 CPU 生成的地址
+- 物理地址：内存中实际的地址
+
+因此 CPU 访问内存时，需要一个部件来将逻辑地址转换为物理地址，这个部件就是 MMU（Memory Management Unit）.
+
+最简单的 MMU 设置了一个 Relocation Register，存储逻辑地址和物理地址之间的偏移量。
+
+- 物理地址 = 逻辑地址 + Relocation Register
+
+动态加载：不需要一次性把一个 Program 里的所有 Code, Data 都加载到内存中，而是根据需要来加载。
+
+动态链接：Refer to Sys2
+
+### 连续分配 Contiguous Allocation
+
+主存要同时供给 User Program 和 OS 使用，因此需要高效分配有限的资源，可采用连续分配
+
+- 每个进程在内存中占据一个连续的区域
+- Relocation Reg 用于保护用户进程间不互干扰，也阻止用户进程修改 Kernel Code & Data
+- Base register contains value of smallest physical address
+- Limit register contains range of logical addresses – each logical 
+address must be less than the limit register
+
+![Contiguous Allocation](./assets/Sys41.png)
+
+### Fragmentation
+
+设想进程请求一个大小为 n 的 Memory Block，有下述三种选择方案
+
+- First Fit
+    - 从第一个 Large Enough 的 Block 开始分配
+- Best Fit
+    - 从最小的 Large Enough 的 Block 开始分配
+    - 需要遍历所有的 Block
+- Worst Fit
+    - 从最大的 Block 开始分配
+    - 需要遍历所有的 Block
+
+Fragmentation 是这三个方案的重大阻碍
+
+- 外部碎片化
+    - 在已分配出去的 Memory Blocks 的间隙中存在未利用的内存，这些内存总和是足够供给 Request 的，但是 **not contiguous**
+    - 可被压缩（Compaction）削弱影响
+        - 把未利用的内存合并成一个 Block
+    - Another solution: Paging
+- 内部碎片化
+    - 分配出去的 Memory Block 大于 Request 的大小，导致未利用的内存
+
+### 分页 Paging
+
+一个进程的物理地址空间可能是不连续的，每当有物理内存可用时，就会分配给进程，因此需要考虑
+
+- 避免外部碎片化
+- 避免 Varying sized memory chunks
+
+采用分页的方法：
+
+- 物理内存分为固定大小的块，称为页框 Page Frame（大小是 2 的整数次幂）
+- 逻辑地址空间分为相同大小的页 Page
+
+这样一来，为了跑一个 N 页的进程，需要在内存里找到 N 个 Free 的 Page Frame，再加载程序
+
+再建立一个页表 Page Table，用于将逻辑地址转换为物理地址
+
+逻辑地址被分化为页号和页内偏移量，页号用来索引页表，页表存储了每一页的物理地址
+
+偏移量用来索引 page/frame，与 frame number 结合后得到物理地址
+
+m 位的逻辑地址，page size 为 n 位
+
+| page number | page offset |
+| --- | --- |
+| p | d |
+| m-n bits | n bits |
+
+![Paging](./assets/Sys42.png)
+
+!!! note "分页后不存在外部碎片化"
+    但是有内部碎片化。
+    
+    - worst case internal fragmentation: 1 frame – 1 byte
+    - average internal fragmentation: 1 / 2 frame size
