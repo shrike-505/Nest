@@ -1653,6 +1653,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paging" class="md-nav__link">
     <span class="md-ellipsis">
       分页 Paging
@@ -2728,6 +2737,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paging" class="md-nav__link">
     <span class="md-ellipsis">
       分页 Paging
@@ -2772,7 +2790,7 @@
 
 <h1 id="iii">计算机系统 Ⅲ<a class="headerlink" href="#iii" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3161 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3276 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：吴磊、周亚金</p>
@@ -3086,7 +3104,7 @@
 <li>逻辑地址：由 CPU 生成的地址</li>
 <li>物理地址：内存中实际的地址</li>
 </ul>
-<p>因此 CPU 访问内存时，需要一个部件来将逻辑地址转换为物理地址，这个部件就是 MMU（Memory Management Unit）.</p>
+<p>因此 CPU 访问内存时，需要一个部件来将逻辑地址（在运行时）转换为物理地址，这个部件就是 MMU（Memory Management Unit）.</p>
 <p>最简单的 MMU 设置了一个 Relocation Register，存储逻辑地址和物理地址之间的偏移量。</p>
 <ul>
 <li>物理地址 = 逻辑地址 + Relocation Register</li>
@@ -3096,15 +3114,18 @@
 <h3 id="contiguous-allocation">连续分配 Contiguous Allocation<a class="headerlink" href="#contiguous-allocation" title="Permanent link">&para;</a></h3>
 <p>主存要同时供给 User Program 和 OS 使用，因此需要高效分配有限的资源，可采用连续分配</p>
 <ul>
-<li>每个进程在内存中占据一个连续的区域</li>
+<li>每个进程在内存中占据一个连续的区域（我们需要确保进程能且只能访问其地址空间里的地址）</li>
 <li>Relocation Reg 用于保护用户进程间不互干扰，也阻止用户进程修改 Kernel Code &amp; Data</li>
 <li>Base register contains value of smallest physical address</li>
-<li>Limit register contains range of logical addresses – each logical 
-address must be less than the limit register</li>
+<li>Limit register contains range of logical addresses（相当于进程所占的空间大小，不能超过这个值） – each logical address must be less than the limit register<ul>
+<li>注意加载 Base 和 Limit Reg 的指令是特权级的</li>
+</ul>
+</li>
+<li>优势在于具有 built-in 的保护机制（Limit）、更快的 Execution Time、更快的 Context Switch、不需要 Relocation、Partition 可以自由暂停开始</li>
 </ul>
 <p><img alt="Contiguous Allocation" src="../assets/Sys41.png" /></p>
 <h3 id="fragmentation">Fragmentation<a class="headerlink" href="#fragmentation" title="Permanent link">&para;</a></h3>
-<p>设想进程请求一个大小为 n 的 Memory Block，有下述三种选择方案</p>
+<p>设想进程请求一个大小为 n 的 Memory Block，在 Partition 时有下述三种选择方案</p>
 <ul>
 <li>First Fit<ul>
 <li>从第一个 Large Enough 的 Block 开始分配</li>
@@ -3123,7 +3144,7 @@ address must be less than the limit register</li>
 </ul>
 <p>Fragmentation 是这三个方案的重大阻碍</p>
 <ul>
-<li>外部碎片化<ul>
+<li>外部碎片化（出现于 Variable Partition Allocation）<ul>
 <li>在已分配出去的 Memory Blocks 的间隙中存在未利用的内存，这些内存总和是足够供给 Request 的，但是 <strong>not contiguous</strong></li>
 <li>可被压缩（Compaction）削弱影响<ul>
 <li>把未利用的内存合并成一个 Block</li>
@@ -3132,11 +3153,13 @@ address must be less than the limit register</li>
 <li>Another solution: Paging</li>
 </ul>
 </li>
-<li>内部碎片化<ul>
+<li>内部碎片化（出现于 Fixed Partition Allocation）<ul>
 <li>分配出去的 Memory Block 大于 Request 的大小，导致未利用的内存</li>
 </ul>
 </li>
 </ul>
+<h3 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h3>
+<p>TBD</p>
 <h3 id="paging">分页 Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h3>
 <p>一个进程的物理地址空间可能是不连续的，每当有物理内存可用时，就会分配给进程，因此需要考虑</p>
 <ul>
@@ -3202,7 +3225,7 @@ address must be less than the limit register</li>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月5日 13:59:27">2025年4月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月16日 19:06:02">2025年4月16日</span>
   </span>
 
     
