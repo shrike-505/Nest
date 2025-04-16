@@ -8,6 +8,9 @@
 
 > 任课教师：许威威
 
+!!! note "Links"
+    <https://tree.45gfg9.net/lcppthw/construct/>
+
 ## Lec1
 
 c(onstruc)tor: 构造函数，函数名和类名相同
@@ -86,6 +89,28 @@ a = 20; // illegal
         - `char const* q` 大概率同理（可能因为不同编译器解释不同）
     - `const char* p = "hello";` `*p` 是一个 const char，于是 `*p = 'x'` 会报错
 
+```c++
+struct S {
+  void f() { std::cout << "non-const\n"; }
+  void f() const { std::cout << "const\n"; }
+};
+
+int main() {
+  S a;
+  const S b;
+
+  a.f(); // non-const
+  b.f(); // const
+
+  const S *ps = &b;
+  ps->f(); // const
+}
+// <https://tree.45gfg9.net/lcppthw/construct/#const>
+```
+
+`const` 成员函数影响 `this` 的类型
+
+
 ### Stash
 
 - Typeless container
@@ -104,8 +129,32 @@ a = 20; // illegal
 
 ### Static
 
-静态成员变量由整个 Class 共享，非静态成员变量由每个对象拥有
+静态成员变量/函数由整个 Class 共享，非静态成员变量/函数由每个对象拥有，且静态成员变量必须在类外部被定义一次（类内部的 `static <type> <name>;` 只是声明）
+
+```c++
+struct rectangle {
+  static int count;
+  double width;
+  double height;
+
+  rectangle(double w, double h) : width {w}, height {h} {
+    count++;
+  }
+
+  ~rectangle() {
+    this->count--;
+  }
+};
+int rectangle::count = 0; // must!
+
+int main() {
+  rectangle c1 {3, 4};
+  std::cout << rectangle::count << "\n"; // 1
+  rectangle c2 {5, 6};
+  std::cout << c2.count << "\n"; // 2
+}
+// <https://tree.45gfg9.net/lcppthw/construct/#static>
+```
 
 ### 拷贝构造函数
 
-```

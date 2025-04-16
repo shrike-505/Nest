@@ -159,7 +159,7 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
     === "Case 1"
         找到其后继节点，将其值复制到当前节点，删除后继节点
 
-TBD
+~~TBD~~ 不补了
 
 ## B+树
 
@@ -283,8 +283,6 @@ How to Merge(递归版本):
 
 ## 回溯
 
-TBD
-
 ### α-β剪枝
 
 Alpha 剪枝是指对于 min 结点，如果其兄弟结点的值比当前结点的值大，那么就不再搜索当前结点的子结点；Beta 剪枝是指对于 max 结点，如果其兄弟结点的值比当前结点的值小，那么就不再搜索当前结点的子结点。
@@ -293,8 +291,6 @@ Alpha 剪枝是指对于 min 结点，如果其兄弟结点的值比当前结点
     ![](./assets/ADS3.png)
 
 ## 分治
-
-TBD
 
 ### Master Theorem 主定理
 
@@ -330,8 +326,6 @@ TBD
 也就是记忆化搜索。
 
 ## 贪心
-
-TBD
 
 ## NP问题
 

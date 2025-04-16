@@ -408,8 +408,6 @@ Drawback：Item 必须是 Users 共有的，例如说都看过一部电影，这
 
 ### Alternating Least Squares
 
-TBD
-
 何时停止迭代？有下面三种情况：
 
 - 迭代一段时间后停止

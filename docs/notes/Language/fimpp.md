@@ -25,5 +25,3 @@ Today I learned how to say hello.
 That's all about how to say hello.
 Your faithful student, Twilight Sparkle.
 ```
-
-TBD

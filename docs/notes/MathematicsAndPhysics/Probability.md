@@ -172,9 +172,8 @@ $P(X=x_i) = p_{i\cdot} = \Sigma_{j=1}^{\infty}p_{ij}$，且$\Sigma p_{i\cdot} = 
         - 边际分布：经过计算，$X$~$p_X(x) = \int_{-\infty}^{+\infty}p(x,y)dy = \frac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}$，$Y$同理。
 
 #### 条件分布
-TBD
+
 ### 随机向量的计算与变换
-TBD
 
 ### 极值随机变量
 假设$X_1,X_2,\cdots,X_n$是随机变量，对$\omega \in \Omega$，将$X_1(\omega),X_2(\omega),\cdots,X_n(\omega)$进行排序，得到$X_{(1)}(\omega) \leq X_{(2)}(\omega) \leq \cdots \leq X_{(n)}(\omega)$，则称$X_{(1)},X_{(2)},\cdots,X_{(n)}$是次序随机变量，其中$X_{(1)}$称为极小值，$X_{(n)}$称为极大值，$X_{(k)}$称为第k小值。

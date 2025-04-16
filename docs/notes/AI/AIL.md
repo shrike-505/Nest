@@ -252,5 +252,30 @@ $[p, q]$ 与 $[\neg p, r]$ 消解得到 $[q, r]$，类比即 $p \lor \neg p \equ
     
     - Person = Male or Female
     - Mother = exists hasChild.T and Female
-    - Childless = not has Child.T
+    - Childless = not hasChild.T
     - Grandmother = Female and exists hasChild.(exists hasChild.T)
+
+    ![ALC例题](./assets/ail8.png)
+
+表算法：
+
+![表算法](./assets/ail7.png)
+
+## Lec 6: 缺省逻辑
+
+**通常情况**下，如果 $\phi$ 为真，那么 $\psi$ 为真；这里的“通常情况”说明这一规则并非在任何情况下都成立，于是引入缺省规则表示例外的情况。
+
+### 缺省规则
+
+$\frac{\phi : \psi}{\eta}$，其中 $\psi$ 称为缺省条件，$\eta$ 称为缺省结论。
+
+解释为：
+
+- 如果可以证明 $\phi$，且 $\psi$ 是一致的，那么可以推出 $\eta$。
+- 如果可以证明 $\phi$，且不能证明 $\neg \psi$，那么可以推出 $\eta$。
+- 如果可以证明 $\phi$，且例外 $\neg \psi$ 并未发生，那么可以推出 $\eta$。
+
+!!! definition "缺省理论"
+    一个缺省理论是一个二元组 $T = {W, D}$，其中 $W$ 是一阶逻辑公式集合，用于表示已知的或约定的事实；$D$ 是可数的缺省规则集合，用于表示缺省的知识。
+
+## Lec 7:

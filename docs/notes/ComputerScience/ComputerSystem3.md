@@ -241,7 +241,7 @@ cache容量较小，所以数据需要按照一定的规则从主存映射到cac
 - 逻辑地址：由 CPU 生成的地址
 - 物理地址：内存中实际的地址
 
-因此 CPU 访问内存时，需要一个部件来将逻辑地址转换为物理地址，这个部件就是 MMU（Memory Management Unit）.
+因此 CPU 访问内存时，需要一个部件来将逻辑地址（在运行时）转换为物理地址，这个部件就是 MMU（Memory Management Unit）.
 
 最简单的 MMU 设置了一个 Relocation Register，存储逻辑地址和物理地址之间的偏移量。
 
@@ -255,17 +255,18 @@ cache容量较小，所以数据需要按照一定的规则从主存映射到cac
 
 主存要同时供给 User Program 和 OS 使用，因此需要高效分配有限的资源，可采用连续分配
 
-- 每个进程在内存中占据一个连续的区域
+- 每个进程在内存中占据一个连续的区域（我们需要确保进程能且只能访问其地址空间里的地址）
 - Relocation Reg 用于保护用户进程间不互干扰，也阻止用户进程修改 Kernel Code & Data
 - Base register contains value of smallest physical address
-- Limit register contains range of logical addresses – each logical 
-address must be less than the limit register
+- Limit register contains range of logical addresses（相当于进程所占的空间大小，不能超过这个值） – each logical address must be less than the limit register
+    - 注意加载 Base 和 Limit Reg 的指令是特权级的
+- 优势在于具有 built-in 的保护机制（Limit）、更快的 Execution Time、更快的 Context Switch、不需要 Relocation、Partition 可以自由暂停开始
 
 ![Contiguous Allocation](./assets/Sys41.png)
 
 ### Fragmentation
 
-设想进程请求一个大小为 n 的 Memory Block，有下述三种选择方案
+设想进程请求一个大小为 n 的 Memory Block，在 Partition 时有下述三种选择方案
 
 - First Fit
     - 从第一个 Large Enough 的 Block 开始分配
@@ -278,13 +279,17 @@ address must be less than the limit register
 
 Fragmentation 是这三个方案的重大阻碍
 
-- 外部碎片化
+- 外部碎片化（出现于 Variable Partition Allocation）
     - 在已分配出去的 Memory Blocks 的间隙中存在未利用的内存，这些内存总和是足够供给 Request 的，但是 **not contiguous**
     - 可被压缩（Compaction）削弱影响
         - 把未利用的内存合并成一个 Block
     - Another solution: Paging
-- 内部碎片化
+- 内部碎片化（出现于 Fixed Partition Allocation）
     - 分配出去的 Memory Block 大于 Request 的大小，导致未利用的内存
+
+### Segmentation
+
+TBD
 
 ### 分页 Paging
 

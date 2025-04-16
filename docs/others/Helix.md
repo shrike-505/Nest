@@ -23,8 +23,6 @@ sudo apt install helix
 
 ## 主题与外观
 
-TBD
-
 ## LSP
 
 ## 快捷键
