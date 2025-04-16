@@ -58,9 +58,9 @@ nav:
     - Python - CS61A: notes/Language/cs61a.md
     - Verilog - HDLBits: notes/Language/Verilog.md # I hate you.
     - C++ - OOP: notes/Language/Cpp.md
-    - Sugarcube - Twine: notes/Language/Sugarcube.md
+    # - Sugarcube - Twine: notes/Language/Sugarcube.md
     - 托福: notes/Language/Toefl.md
-    - Fimpp: notes/Language/fimpp.md
+    # - Fimpp: notes/Language/fimpp.md
     - Typst 备忘录: notes/Language/Typst.md
   - 短学期:
     - CTF101: notes/SummerCourses/CTF.md
@@ -69,7 +69,7 @@ nav:
   - 记念: others/Quotes.md
   - 年终总结: others/final.md
   - 暑假指南: others/summer_idle.md
-  - Helix 学习日志: others/Helix.md
+  # - Helix 学习日志: others/Helix.md
 - 标签: tags.md
 - 友谊是魔法: friends.md
 

@@ -129,7 +129,9 @@ int main() {
 
 ### Static
 
-静态成员变量/函数由整个 Class 共享，非静态成员变量/函数由每个对象拥有，且静态成员变量必须在类外部被定义一次（类内部的 `static <type> <name>;` 只是声明）
+已知：当 static 修饰全局变量时，限制该变量的作用域为当前文件；当 static 修饰局部变量时，表示该变量的生命周期为整个程序运行期间。
+
+static 还可以修饰成员变量，静态成员变量/函数由整个 Class 共享，非静态成员变量/函数由每个对象拥有，且静态成员变量必须在类外部被定义一次（类内部的 `static <type> <name>;` 只是声明）
 
 ```c++
 struct rectangle {
@@ -158,3 +160,73 @@ int main() {
 
 ### 拷贝构造函数
 
+声明长这样：`T::T(const T& t);`
+
+C++ 会提供一个默认的拷贝构造函数，拷贝对象的每个成员变量（memberwise copy），但是如果成员变量是指针类型，则只会拷贝指针的值（即地址），而不是指针所指向的内容
+– Copies each member variable
+    - Good for numbers, objects, arrays
+– Copies each pointer
+    - Data may become shared!
+
+拷贝函数何时被调用？
+
+- 在对象被 call by value 时，例如被传入函数参数时
+- 在被赋值为另一个对象时
+    - `T t2; T t1 = t2;`
+- 在返回对象时，例如 `T rtsomething(){T t1("1"); return t1;} T whoami = rtsomething();`
+
+### namespace
+
+命名空间就是“更高级层面的”隔离，包含逻辑上的一组类、函数、变量
+
+```c++
+// Mylib.h
+namespace MyLib {
+    void foo();
+    class Cat {
+    public:
+        void Meow();
+    };
+}
+```
+
+用 using namespace \<name\> 可以引入命名空间中的所有内容，但是可能导致命名冲突
+
+可以用 `nameplace short = WhatALongNameplaceName;` 来 alias 一个很长的命名空间
+
+!!! note "Nameplace Composition"
+    用于合并命名空间，还可以解决命名冲突。
+
+    ```c++
+    namespace first { 
+      void x(); 
+      void y(); 
+    } 
+    namespace second { 
+      void y(); 
+      void z(); 
+    }
+    
+    nameplace Mine {
+        using namespace first;
+        using namespace second;
+        using first::y(); // 解决命名冲突
+        ...
+    }
+    ```
+
+可以在多个文件里给同一个命名空间添加内容
+
+```c++
+// lib1.h
+namespace X {
+    void foo();
+}
+
+// lib2.h
+namespace X {
+    void bar();
+}
+
+// 于是 X 有两个函数了
+```
