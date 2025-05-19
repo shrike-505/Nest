@@ -16,11 +16,11 @@
         <link rel="prev" href="../ComputerSystem2/">
       
       
-        <link rel="next" href="../FDS/">
+        <link rel="next" href="../ADS/">
       
       
       <link rel="icon" href="../../../img/PP.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1257,8 +1257,6 @@
           
         
       
-        
-      
     
     
     
@@ -1286,11 +1284,6 @@
 
             </a>
             
-              
-              <label class="md-nav__link " for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
@@ -1302,29 +1295,6 @@
             
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AI/NLP/NLPI/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    自然语言处理导论
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1351,8 +1321,6 @@
   
     
     
-      
-        
       
         
       
@@ -1635,9 +1603,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#contiguous-allocation" class="md-nav__link">
+  <a href="#contiguous-allocationpartition-allocation" class="md-nav__link">
     <span class="md-ellipsis">
-      连续分配 Contiguous Allocation
+      连续分配 Contiguous Allocation（Partition Allocation）
     </span>
   </a>
   
@@ -1668,6 +1636,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="分页 Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-support-for-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Support for Paging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级页表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashed-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hashed Page Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverted-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverted Page Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1675,33 +1694,169 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟内存 Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存 Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demand-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demand Paging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-creation-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      File creation(), open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      VFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录实现 Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-block-alloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘分配 Disk Block Alloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mass-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mass Storage 大容量存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mass Storage 大容量存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disk-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Systems
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../FDS/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    数据结构基础
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1759,8 +1914,6 @@
       
         
       
-        
-      
     
     
     
@@ -1794,29 +1947,6 @@
             数学&物理学
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/LinearAlgebra/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    线性代数Ⅱ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -2644,9 +2774,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#contiguous-allocation" class="md-nav__link">
+  <a href="#contiguous-allocationpartition-allocation" class="md-nav__link">
     <span class="md-ellipsis">
-      连续分配 Contiguous Allocation
+      连续分配 Contiguous Allocation（Partition Allocation）
     </span>
   </a>
   
@@ -2677,10 +2807,220 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="分页 Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-support-for-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Support for Paging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级页表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Sharing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashed-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hashed Page Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverted-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverted Page Table
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟内存 Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="虚拟内存 Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demand-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demand Paging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-creation-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      File creation(), open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      VFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录实现 Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-block-alloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘分配 Disk Block Alloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mass-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mass Storage 大容量存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mass Storage 大容量存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disk-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Systems
+    </span>
+  </a>
   
 </li>
       
@@ -2715,7 +3055,7 @@
 
 <h1 id="iii">计算机系统 Ⅲ<a class="headerlink" href="#iii" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3276 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3622 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 18 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：吴磊、周亚金</p>
@@ -3036,10 +3376,10 @@
 </ul>
 <p>动态加载：不需要一次性把一个 Program 里的所有 Code, Data 都加载到内存中，而是根据需要来加载。</p>
 <p>动态链接：Refer to Sys2</p>
-<h3 id="contiguous-allocation">连续分配 Contiguous Allocation<a class="headerlink" href="#contiguous-allocation" title="Permanent link">&para;</a></h3>
+<h3 id="contiguous-allocationpartition-allocation">连续分配 Contiguous Allocation（Partition Allocation）<a class="headerlink" href="#contiguous-allocationpartition-allocation" title="Permanent link">&para;</a></h3>
 <p>主存要同时供给 User Program 和 OS 使用，因此需要高效分配有限的资源，可采用连续分配</p>
 <ul>
-<li>每个进程在内存中占据一个连续的区域（我们需要确保进程能且只能访问其地址空间里的地址）</li>
+<li>每个进程在内存中占据一个连续的区域（一个 Partition）（我们需要确保进程能且只能访问其地址空间里的地址）</li>
 <li>Relocation Reg 用于保护用户进程间不互干扰，也阻止用户进程修改 Kernel Code &amp; Data</li>
 <li>Base register contains value of smallest physical address</li>
 <li>Limit register contains range of logical addresses（相当于进程所占的空间大小，不能超过这个值） – each logical address must be less than the limit register<ul>
@@ -3084,20 +3424,23 @@
 </li>
 </ul>
 <h3 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h3>
-<p>TBD</p>
+<p>(由于 Limit Reg 大小可变，这是 Flexible Partition Allocation，不存在内部碎片化，但是存在外部碎片化)</p>
+<p>逻辑地址被分为 <Segmentation Number, Offset>，再用数组实现一个 Segmentation Table，其中每一行存储了 Segment 的 Base 和 Limit，以及 Permission Bits</p>
+<p>Seg Number 实际上是 Table 的索引，逻辑地址通过索引查找到表中对应的 Entry，Offset 先与 Limit 比较，若大于 Limit 就会发生 Segmentation Fault；否则就加上 Base 得到物理地址（还含有一步和 Perm 的比较）</p>
 <h3 id="paging">分页 Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h3>
-<p>一个进程的物理地址空间可能是不连续的，每当有物理内存可用时，就会分配给进程，因此需要考虑</p>
+<p>基本思想就是把进程的逻辑地址空间分为固定大小的块（而不是移动已有进程的地址空间）</p>
+<p>每当有物理内存可用时，就会分配给进程，因此需要考虑</p>
 <ul>
 <li>避免外部碎片化</li>
 <li>避免 Varying sized memory chunks</li>
 </ul>
 <p>采用分页的方法：</p>
 <ul>
-<li>物理内存分为固定大小的块，称为页框 Page Frame（大小是 2 的整数次幂）</li>
-<li>逻辑地址空间分为相同大小的页 Page</li>
+<li><strong>物理地址</strong>分为固定大小的块，称为页框 <strong>Frame</strong>（大小是 2 的整数次幂）</li>
+<li><strong>逻辑地址</strong>分为相同大小的页 <strong>Page</strong></li>
 </ul>
 <p>这样一来，为了跑一个 N 页的进程，需要在内存里找到 N 个 Free 的 Page Frame，再加载程序</p>
-<p>再建立一个页表 Page Table，用于将逻辑地址转换为物理地址</p>
+<p>再建立一个页表 Page Table，用于将逻辑地址映射为物理地址</p>
 <p>逻辑地址被分化为页号和页内偏移量，页号用来索引页表，页表存储了每一页的物理地址</p>
 <p>偏移量用来索引 page/frame，与 frame number 结合后得到物理地址</p>
 <p>m 位的逻辑地址，page size 为 n 位</p>
@@ -3105,7 +3448,7 @@
 <thead>
 <tr>
 <th>page number</th>
-<th>page offset</th>
+<th>page offset within page</th>
 </tr>
 </thead>
 <tbody>
@@ -3119,15 +3462,262 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Structure of Page Table</p>
+<ul>
+<li>根据 Page Size 先确定 n 的大小：<ul>
+<li>Page Size = 2^n</li>
+</ul>
+</li>
+<li>例：<ul>
+<li>Page Size = 4KB = 2^12 bits</li>
+<li>n = 12</li>
+<li>默认 32 位地址 m = 32</li>
+<li>页号位数 = m - n = 32 - 12 = 20</li>
+</ul>
+</li>
+</ul>
+</div>
 <p><img alt="Paging" src="../assets/Sys42.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">分页后不存在外部碎片化</p>
-<p>但是有内部碎片化。</p>
+<p>但是有内部碎片化（但仅在最后一个 Frame）</p>
 <ul>
 <li>worst case internal fragmentation: 1 frame – 1 byte</li>
 <li>average internal fragmentation: 1 / 2 frame size</li>
+<li>Frame Size 大：PTB Entry 数量更少</li>
+<li>Frame Size 小：内部碎片化更少了</li>
 </ul>
 </div>
+<h4 id="hardware-support-for-paging">Hardware Support for Paging<a class="headerlink" href="#hardware-support-for-paging" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Page Table Base Register (PTBR)<ul>
+<li>存储页表的 Base （物理地址）</li>
+</ul>
+</li>
+<li>Page Table Length Register (PTLR)<ul>
+<li>存储页表的长度（即页表中有多少个 Entry）</li>
+</ul>
+</li>
+</ul>
+<p>那么我们每次翻译逻辑地址的时候就要经过两层 Memory Access（第一次根据页号访问页表，第二次根据页表中的物理地址访问内存），这就导致了性能的下降
+- 解决方案：TLB（Translation Lookaside Buffer）
+    - TLB 是一个 Cache，存储了最近访问的 Page Number
+    - 如果 TLB 中有这个 Page Number，就不用访问页表了
+    - 如果页号不在 TLB 中，就要更新一行 TLB 的 Entry（通过 Accessing Page Table）</p>
+<div class="admonition definition">
+<p class="admonition-title">Effective Access Time (EAT)</p>
+<p><span class="arithmatex">\(EAT = (1 - p)(Memory \space access \space time) + p(2 * Memory \space access \space time)\)</span></p>
+<ul>
+<li>原理就是如果 TLB miss，就需要两次的访存时间</li>
+<li><span class="arithmatex">\(p\)</span> 为 TLB miss rate</li>
+</ul>
+</div>
+<p>Memory Protection: 为每个 Entry 设置一个 Valid Bit，表示这 Page 是否有一个有效的 Frame</p>
+<h4 id="_4">多级页表<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><img alt="多级页表" src="../assets/Sys46.png" /></p>
+<h4 id="page-sharing">Page Sharing<a class="headerlink" href="#page-sharing" title="Permanent link">&para;</a></h4>
+<p>以一个 Program 跑了三次为例，形成三个进程，每个进程有四个 Page，那么理应需要 12 个 Frame</p>
+<p><img alt="Page Sharing" src="../assets/Sys43.png" /></p>
+<p>但可见只用了 6 个 Frame，.text 段（ed123）是只读，所以共享的，而 .data 段是可读可写的，是每个进程私有的</p>
+<div class="admonition note">
+<p class="admonition-title">计算 pgtbl 的大小</p>
+<ul>
+<li>32 位系统，内存为 4 GB(2^32 bit)，假设 Page Size 为 4 KB</li>
+<li>4 GB / 4 KB = 1 M entries<ul>
+<li>Offset 位数 = <span class="arithmatex">\(\log_2(4K) = 12\)</span> bits</li>
+<li>Index 位数 = <span class="arithmatex">\(\log_2(4 KB/ 4B(32bits Addr)) = 10\)</span> bits </li>
+</ul>
+</li>
+<li>每个 entry（一行）占 4 bytes（32 bits）</li>
+<li>则 pgtbl 的大小为 1 M * 4 B= 4 MB</li>
+<li>注意页表需要在内存中<strong>物理连续</strong></li>
+<li><img alt="U的解说" src="../assets/Sys48.png" /></li>
+</ul>
+</div>
+<h4 id="hashed-page-table">Hashed Page Table<a class="headerlink" href="#hashed-page-table" title="Permanent link">&para;</a></h4>
+<p>Virtual Page 被哈希为 Frame</p>
+<p><img alt="Hashed Pt" src="../assets/Sys44.png" /></p>
+<h4 id="inverted-page-table">Inverted Page Table<a class="headerlink" href="#inverted-page-table" title="Permanent link">&para;</a></h4>
+<p>是进程号pid 到 Physical Frame 的映射</p>
+<p>每一行（entry）对应一个进程&amp;一个 Frame</p>
+<div class="admonition note">
+<p class="admonition-title">Swapping</p>
+<ul>
+<li>进程可以暂时被 Swap 到磁盘上，释放内存空间（跑的&amp;上下文切换略慢）</li>
+</ul>
+</div>
+<details class="note">
+<summary>Page Table Quiz</summary>
+<p><img alt="Page Table Quiz" src="../assets/Sys45.png" /></p>
+<details class="answer">
+<summary>Answer</summary>
+<ul>
+<li>见上方“计算 pgtbl 的大小”（PGSIZE 默认 4 KB），大小为 4 MB</li>
+<li>第一层是 4 KB，第二层是 4 MB</li>
+<li>二级页表中某些页表使用不到，不用分配空间</li>
+<li>
+<ol>
+<li>0xf2015202 = 1111001000 | 0000010101 | 001000000010(分割成 10 bits + 10 bits + 12 bits)</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>TBD</li>
+</ol>
+</li>
+</ul>
+</details>
+</details>
+<p><img alt="Page Table Quiz2" src="../assets/Sys47.png" /></p>
+<div class="highlight"><pre><span></span><code>??? answer &quot;Answer&quot;
+- 32 bit
+    - Offset = $\log_2(64KB) = 16$ bits
+    - Page Index = $\log_2(64KB/4B)$ = 14 bits
+    - Others = 32 - 16 - 14 = 2 bits
+- 64 bit
+    - Offset = $\log_2(64KB) = 16$ bits
+    - Page Index = $\log_2(64KB/8B)$ = 13 bits
+    - For 39-bit VA
+        - Others = 39 - 16 - 13 = 10 bits
+    - For 48-bit VA
+        - Others = 48 - 16 - 13 = 19 bits
+</code></pre></div>
+<h2 id="virtual-memory">虚拟内存 Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">&para;</a></h2>
+<h3 id="demand-paging">Demand Paging<a class="headerlink" href="#demand-paging" title="Permanent link">&para;</a></h3>
+<p>一般来说，对某个 Program 而言，并非所有 code 和 data 都会被用到，因此我们需要 Partially Loading 的能力（因此 Program 的大小可以大于 Physical Memory 的大小，因为只要每次 Load 的部分小于 PM 就行）</p>
+<ul>
+<li>好处是可以并行运行多个进程，需要的I/O也减少了</li>
+<li>虚拟内存只有 Range 的概念，其大小可以比实际的物理内存大</li>
+</ul>
+<p>TBD: Where am I?</p>
+<h2 id="file-system">File System<a class="headerlink" href="#file-system" title="Permanent link">&para;</a></h2>
+<h3 id="file-system-layers">File system layers<a class="headerlink" href="#file-system-layers" title="Permanent link">&para;</a></h3>
+<h3 id="file-system-implementation">File system implementation<a class="headerlink" href="#file-system-implementation" title="Permanent link">&para;</a></h3>
+<p>On-disk structure, in-memory structure</p>
+<h3 id="file-creation-open">File creation(), open()<a class="headerlink" href="#file-creation-open" title="Permanent link">&para;</a></h3>
+<h3 id="vfs">VFS<a class="headerlink" href="#vfs" title="Permanent link">&para;</a></h3>
+<h3 id="directory">目录实现 Directory<a class="headerlink" href="#directory" title="Permanent link">&para;</a></h3>
+<p>目录包含文件名和文件元信息的映射关系（可用线性表/哈希表实现）</p>
+<ul>
+<li>线性表容易实现，但是查找时间长</li>
+<li>哈希表查找时间短，可能存在碰撞</li>
+</ul>
+<h3 id="disk-block-alloc">硬盘分配 Disk Block Alloc<a class="headerlink" href="#disk-block-alloc" title="Permanent link">&para;</a></h3>
+<p>TBD</p>
+<ul>
+<li>连续分配</li>
+<li>Linked Alloc</li>
+<li>Indexed Alloc</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>以一个包含 Inode，bitmap，superblock 的文件系统为例</p>
+<ul>
+<li>Inode 索引节点，存储文件的一些信息，一个文件对应一个 Inode</li>
+</ul>
+<p><img alt="Inode" src="../assets/Sys49.png" /></p>
+<ul>
+<li>
+<p>Bitmap 索引 Inode 和 data block</p>
+</li>
+<li>
+<p>SuperBlock 包含这个文件系统的一些信息：含有多少 Inode/Datablock，Inode Table/Data 从哪里开始，以及一个魔法数字</p>
+</li>
+</ul>
+<p>Read <code>(root)/foo/bar</code></p>
+<p><img alt="read" src="../assets/Sys50.png" /></p>
+<p>Write <code>/foo/bar</code></p>
+<p><img alt="write" src="../assets/Sys51.png" /></p>
+<p>在 read /foo data 时，发现不存在 bar 文件，于是有一个创建的过程（修改 inode bitmap，我的理解是先标明文件的创建），在修改 bar 的 inode 后还要 write foo 的 inode（因为这个目录或者说文件也被修改了，新增了一个子文件）</p>
+<h4 id="crash">Crash<a class="headerlink" href="#crash" title="Permanent link">&para;</a></h4>
+<p>我们发现 Write 的时候 Bitmap, inode, Datablock 都会被修改，如果只有其中一两个被修改了，还有一两类没有被修改（或者说修改过程失败了），就会导致 Garbage Data 之类的 Crash</p>
+<p>Solution 1: 日志 Journaling - 对三者的修改先写入一个 Journal（顺序是 Transaction-begin, pending datas, transaction-end），再进行 Checkpoint 的过程：用 Journal 覆写文件系统。</p>
+<p>这样只会在 Journal 阶段 Crash，如果写失败直接重写就行了</p>
+<p>Solution 2: 在解决方案 1 的基础上，在写完 Journal 后对 Transaction 添加一个 Commit 的操作</p>
+<h3 id="mass-storage">Mass Storage 大容量存储<a class="headerlink" href="#mass-storage" title="Permanent link">&para;</a></h3>
+<p>磁盘 Magnetic Disk</p>
+<p><img alt="Disk" src="../assets/Sys52.png" /></p>
+<ul>
+<li>Positioning Time<ul>
+<li>指把 Disk Arm 移动到正确的 Sector 的时间</li>
+<li>包含 Seek Time 和 Rotational Latency<ul>
+<li>Seek Time: Disk Arm 移动到正确的 Cylinder 的时间</li>
+<li>Rotational Latency: 正确的 Sector 旋转到 Disk Head 下的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Average Access Time<ul>
+<li>Average Seek Time + Average Rotational Latency</li>
+</ul>
+</li>
+<li>Average I/O Time<ul>
+<li>Average Access Time + Data/Transfer Rate + controller overhead</li>
+</ul>
+</li>
+</ul>
+<p>SSD 固态硬盘</p>
+<ul>
+<li>
+<p>没有运动的单元，因此没有 Seek Time 和 Rotational Latency，读写更快</p>
+</li>
+<li>
+<p>以 Page 为单元存储信息，若干 Page 组成一个 Block</p>
+</li>
+<li>
+<p>无法覆写内容（需要写入另一个 Page，然后把 Old Page 标记为无效），那么会导致 Pages 最后混合着有效和无效的 Page：控制器维护一个表 Flash translation layer table，当无效的页个数到达某一阈值后执行 Garbage Collection::free 无效的页空间（为 GC 设计并留存了一些额外（over-provisioning）的空间）</p>
+</li>
+</ul>
+<p>Magnetic Tape</p>
+<ul>
+<li>容量大，访问慢，存储数据时间久</li>
+</ul>
+<p>Network-Attached Storage</p>
+<ul>
+<li>用户可远程访问服务器上的 FS</li>
+</ul>
+<p>Storage Area Network</p>
+<h4 id="disk-scheduling">Disk Scheduling<a class="headerlink" href="#disk-scheduling" title="Permanent link">&para;</a></h4>
+<p>目标是最小化 Seek Time（与磁头移动距离成正比）</p>
+<p>Algos：</p>
+<ul>
+<li>FCFS<ul>
+<li>先进入 Queue 的先访问</li>
+<li>每个 request 的访问可能性是一样的，且不会导致饥饿</li>
+<li>但是并没有最小化 Seek Time</li>
+</ul>
+</li>
+<li>SSTF(Shortest Seek Time 1<sup>st</sup>)<ul>
+<li>离当前磁头最近（Seektime最短）的先访问</li>
+<li>优势是减少了 Avg Response Time，提高了吞吐量</li>
+<li>但需要提前计算 Seektime 的开销，且如果某个 Request 离得特别远，会导致 Starvation</li>
+</ul>
+</li>
+<li>SCAN<ul>
+<li>电梯算法，磁头先向 Disk 一端移动，再向另一端移动</li>
+<li>吞吐量高、Low Variance of Response Time</li>
+<li>但对于 Request 刚刚访问过的位置，需要等待很长时间</li>
+<li><img alt="SCAN" src="../assets/Sys53.png" /></li>
+</ul>
+</li>
+<li>C(ircular)-SCAN<ul>
+<li>在 SCAN 基础上，在磁头移动到一端的时候，立刻瞬移到 Disk 另一端</li>
+</ul>
+</li>
+<li>(C)-LOOK<ul>
+<li>对 (C)-SCAN 的改进 ，具体表现为磁头移动的终点不是 <strong>Disk 的两端</strong>，而是 Queue 里最偏远的 Request</li>
+<li>对于 I/O 很多的文件系统效果很好</li>
+</ul>
+</li>
+</ul>
+<h4 id="raid">RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h4>
+<p>Redundant Array of Inexpensive Disks</p>
+<p>通过冗余性确保可靠性，疑似是备份</p>
+<p>RAID 0：把数据平分，存在两个 Disk 上</p>
+<p>RAID 1：把一个 Disk 的数据复制一份存在另一个 Disk 上</p>
+<p>可用于检测/恢复于 <strong>data failure</strong>，但是 <strong>data corruption</strong> 不行</p>
+<h2 id="io-systems">I/O Systems<a class="headerlink" href="#io-systems" title="Permanent link">&para;</a></h2>
+<p>I/O devices is the way computer to interact with user and other systems</p>
 
 
 
@@ -3150,7 +3740,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月16日 19:06:02">2025年4月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月20日 00:27:28">2025年5月20日</span>
   </span>
 
     
@@ -3259,13 +3849,13 @@
         
         
           
-          <a href="../FDS/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构基础">
+          <a href="../ADS/" class="md-footer__link md-footer__link--next" aria-label="下一页: 高级数据结构">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数据结构基础
+                高级数据结构
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3325,10 +3915,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
