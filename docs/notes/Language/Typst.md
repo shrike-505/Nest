@@ -27,7 +27,7 @@
 } 
 #let edge = (start, end) => line(start, end)
 //缺点就在这，得自己定义函数
-//Credit to Xecades，这几个函数是他写的
+//Credit to Xecades
 #graph({	
 	node((0, 0), "A", "south")
 	node((1, 1), "B", "north")

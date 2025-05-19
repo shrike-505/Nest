@@ -108,7 +108,7 @@ int main() {
 // <https://tree.45gfg9.net/lcppthw/construct/#const>
 ```
 
-`const` 成员函数影响 `this` 的类型
+`const` 出现在函数参数列表后说明这个函数影响 `this` 的类型，且不会改变任何成员变量
 
 
 ### Stash
@@ -229,4 +229,117 @@ namespace X {
 }
 
 // 于是 X 有两个函数了
+```
+
+### 抽象基类
+
+抽象基类是一个包含纯虚函数的类，不能被实例化。纯虚函数是没有实现（body）只有 interface 的虚函数，必须在派生类中实现。
+
+## 运算符重载
+
+`+	-	*	/	%	^	&	|	~ =	<	>	+=	-=	*=	/=	%= ^=	&=	|=	<<	>>	>>=	<<=	== !=	<=	>=	!	&&	||	++	-- ,	->*	->	()	[]` 可以重载
+
+`.	.*	::	?: sizeof	typeid static_cast   dynamic_cast   const_cast  reinterpret_cast` 不行
+
+```c++
+class Integer { 
+public: 
+  Integer( int n = 0 ) : i(n) {} 
+  const Integer operator+(const Integer& n) const{ 
+      return Integer(i + n.i); 
+  } 
+  ...  
+private: 
+   int i; 
+};
+
+Integer x(1), y(5), z;
+// z = x + y //ok
+// z = x + 3 //ok
+// z = 3 + x // illegal
+
+const Integer& Integer::operator++() { 
+    *this += 1;      // increment 
+    return *this;    // fetch 
+}  
+// int argument not used so leave unnamed so 
+// won't get compiler warnings 
+const Integer Integer::operator++( int ){ 
+    Integer old( *this );   // fetch 
+    ++(*this);              // increment 
+    return old;             // return  
+}
+
+```
+
+!!! note "recall const"
+    ![./assets/oop2.png](./assets/oop2.png)
+
+
+全局写的有关一个类的运算符重载函数应当被设置为这个类的 friend，因为其要访问类的所有属性
+
+!!! note "类型转换 ops 的重载"
+    ```
+    X::operator T ()
+        –Operator name	is any type	descriptor
+        –No	explicit arguments
+        –No	return	type
+        –Compiler will use it as a type conversion from X to T
+    ```
+
+
+## Template
+
+### 模板函数
+
+### 模板类
+
+```c++
+template <typename T>
+
+class Rmqc {
+    ...
+}
+```
+
+这样定义之后，注意 `Rmqc` 并不能算是一个**类**（只是一个模板），而 `Rmqc<int>` 才是一个（被实例化的）类
+
+可以看出来模板是更高级别的一层抽象，类是模板的实例化，对象又是类的实例
+
+这就解释了在继承时：
+
+```c++
+// 非模板类继承于模板类，需要实例化模板（确定typename）
+
+template <typename T>
+class Base {
+    ...
+}
+
+class Derived : public Base<int> {
+    ...
+}
+
+// 模板类继承于非模板类，直接继承
+
+class Base {
+    ...
+}
+
+template <typename T>
+class Derived : public Base {
+    
+}
+
+// 模板类继承于模板类，不用实例化模板，但要注明 typename T
+
+template <typename T>
+class Base {
+    ...   
+}
+
+template <typename T>
+class Derived : public Base<T> {
+    ...
+}
 ```

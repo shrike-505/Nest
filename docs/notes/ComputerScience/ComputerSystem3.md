@@ -251,11 +251,11 @@ cache容量较小，所以数据需要按照一定的规则从主存映射到cac
 
 动态链接：Refer to Sys2
 
-### 连续分配 Contiguous Allocation
+### 连续分配 Contiguous Allocation（Partition Allocation）
 
 主存要同时供给 User Program 和 OS 使用，因此需要高效分配有限的资源，可采用连续分配
 
-- 每个进程在内存中占据一个连续的区域（我们需要确保进程能且只能访问其地址空间里的地址）
+- 每个进程在内存中占据一个连续的区域（一个 Partition）（我们需要确保进程能且只能访问其地址空间里的地址）
 - Relocation Reg 用于保护用户进程间不互干扰，也阻止用户进程修改 Kernel Code & Data
 - Base register contains value of smallest physical address
 - Limit register contains range of logical addresses（相当于进程所占的空间大小，不能超过这个值） – each logical address must be less than the limit register
@@ -289,23 +289,29 @@ Fragmentation 是这三个方案的重大阻碍
 
 ### Segmentation
 
-TBD
+(由于 Limit Reg 大小可变，这是 Flexible Partition Allocation，不存在内部碎片化，但是存在外部碎片化)
+
+逻辑地址被分为 <Segmentation Number, Offset>，再用数组实现一个 Segmentation Table，其中每一行存储了 Segment 的 Base 和 Limit，以及 Permission Bits
+
+Seg Number 实际上是 Table 的索引，逻辑地址通过索引查找到表中对应的 Entry，Offset 先与 Limit 比较，若大于 Limit 就会发生 Segmentation Fault；否则就加上 Base 得到物理地址（还含有一步和 Perm 的比较）
 
 ### 分页 Paging
 
-一个进程的物理地址空间可能是不连续的，每当有物理内存可用时，就会分配给进程，因此需要考虑
+基本思想就是把进程的逻辑地址空间分为固定大小的块（而不是移动已有进程的地址空间）
+
+每当有物理内存可用时，就会分配给进程，因此需要考虑
 
 - 避免外部碎片化
 - 避免 Varying sized memory chunks
 
 采用分页的方法：
 
-- 物理内存分为固定大小的块，称为页框 Page Frame（大小是 2 的整数次幂）
-- 逻辑地址空间分为相同大小的页 Page
+- **物理地址**分为固定大小的块，称为页框 **Frame**（大小是 2 的整数次幂）
+- **逻辑地址**分为相同大小的页 **Page**
 
 这样一来，为了跑一个 N 页的进程，需要在内存里找到 N 个 Free 的 Page Frame，再加载程序
 
-再建立一个页表 Page Table，用于将逻辑地址转换为物理地址
+再建立一个页表 Page Table，用于将逻辑地址映射为物理地址
 
 逻辑地址被分化为页号和页内偏移量，页号用来索引页表，页表存储了每一页的物理地址
 
@@ -313,15 +319,254 @@ TBD
 
 m 位的逻辑地址，page size 为 n 位
 
-| page number | page offset |
+| page number | page offset within page |
 | --- | --- |
 | p | d |
 | m-n bits | n bits |
 
+!!! note "Structure of Page Table"
+    - 根据 Page Size 先确定 n 的大小：
+        - Page Size = 2^n
+    - 例：
+        - Page Size = 4KB = 2^12 bits
+        - n = 12
+        - 默认 32 位地址 m = 32
+        - 页号位数 = m - n = 32 - 12 = 20
+
 ![Paging](./assets/Sys42.png)
 
 !!! note "分页后不存在外部碎片化"
-    但是有内部碎片化。
+    但是有内部碎片化（但仅在最后一个 Frame）
     
     - worst case internal fragmentation: 1 frame – 1 byte
     - average internal fragmentation: 1 / 2 frame size
+    - Frame Size 大：PTB Entry 数量更少
+    - Frame Size 小：内部碎片化更少了
+
+#### Hardware Support for Paging
+
+- Page Table Base Register (PTBR)
+    - 存储页表的 Base （物理地址）
+- Page Table Length Register (PTLR)
+    - 存储页表的长度（即页表中有多少个 Entry）
+
+那么我们每次翻译逻辑地址的时候就要经过两层 Memory Access（第一次根据页号访问页表，第二次根据页表中的物理地址访问内存），这就导致了性能的下降
+- 解决方案：TLB（Translation Lookaside Buffer）
+    - TLB 是一个 Cache，存储了最近访问的 Page Number
+    - 如果 TLB 中有这个 Page Number，就不用访问页表了
+    - 如果页号不在 TLB 中，就要更新一行 TLB 的 Entry（通过 Accessing Page Table）
+
+!!! definition "Effective Access Time (EAT)"
+    $EAT = (1 - p)(Memory \space access \space time) + p(2 * Memory \space access \space time)$
+
+    - 原理就是如果 TLB miss，就需要两次的访存时间
+    - $p$ 为 TLB miss rate
+
+Memory Protection: 为每个 Entry 设置一个 Valid Bit，表示这 Page 是否有一个有效的 Frame
+
+#### 多级页表
+
+![多级页表](./assets/Sys46.png)
+
+#### Page Sharing
+
+以一个 Program 跑了三次为例，形成三个进程，每个进程有四个 Page，那么理应需要 12 个 Frame
+
+![Page Sharing](./assets/Sys43.png)
+
+但可见只用了 6 个 Frame，.text 段（ed123）是只读，所以共享的，而 .data 段是可读可写的，是每个进程私有的
+
+!!! note "计算 pgtbl 的大小"
+    - 32 位系统，内存为 4 GB(2^32 bit)，假设 Page Size 为 4 KB
+    - 4 GB / 4 KB = 1 M entries
+        - Offset 位数 = $\log_2(4K) = 12$ bits
+        - Index 位数 = $\log_2(4 KB/ 4B(32bits Addr)) = 10$ bits 
+    - 每个 entry（一行）占 4 bytes（32 bits）
+    - 则 pgtbl 的大小为 1 M * 4 B= 4 MB
+    - 注意页表需要在内存中**物理连续**
+    - ![U的解说](./assets/Sys48.png)
+
+#### Hashed Page Table
+
+Virtual Page 被哈希为 Frame
+
+![Hashed Pt](./assets/Sys44.png)
+
+#### Inverted Page Table
+
+是进程号pid 到 Physical Frame 的映射
+
+每一行（entry）对应一个进程&一个 Frame
+
+!!! note "Swapping"
+    - 进程可以暂时被 Swap 到磁盘上，释放内存空间（跑的&上下文切换略慢）
+
+??? note "Page Table Quiz"
+    ![Page Table Quiz](./assets/Sys45.png)
+    
+    ??? answer "Answer"
+        + 见上方“计算 pgtbl 的大小”（PGSIZE 默认 4 KB），大小为 4 MB
+        + 第一层是 4 KB，第二层是 4 MB
+        + 二级页表中某些页表使用不到，不用分配空间
+        + 1. 0xf2015202 = 1111001000 | 0000010101 | 001000000010(分割成 10 bits + 10 bits + 12 bits)
+        + 2. TBD
+
+![Page Table Quiz2](./assets/Sys47.png)
+
+    ??? answer "Answer"
+    - 32 bit
+        - Offset = $\log_2(64KB) = 16$ bits
+        - Page Index = $\log_2(64KB/4B)$ = 14 bits
+        - Others = 32 - 16 - 14 = 2 bits
+    - 64 bit
+        - Offset = $\log_2(64KB) = 16$ bits
+        - Page Index = $\log_2(64KB/8B)$ = 13 bits
+        - For 39-bit VA
+            - Others = 39 - 16 - 13 = 10 bits
+        - For 48-bit VA
+            - Others = 48 - 16 - 13 = 19 bits
+
+## 虚拟内存 Virtual Memory
+
+### Demand Paging
+
+一般来说，对某个 Program 而言，并非所有 code 和 data 都会被用到，因此我们需要 Partially Loading 的能力（因此 Program 的大小可以大于 Physical Memory 的大小，因为只要每次 Load 的部分小于 PM 就行）
+
+- 好处是可以并行运行多个进程，需要的I/O也减少了
+- 虚拟内存只有 Range 的概念，其大小可以比实际的物理内存大
+
+TBD: Where am I?
+
+## File System
+
+### File system layers
+
+### File system implementation
+
+On-disk structure, in-memory structure
+
+### File creation(), open()
+
+### VFS
+
+### 目录实现 Directory
+
+目录包含文件名和文件元信息的映射关系（可用线性表/哈希表实现）
+
+- 线性表容易实现，但是查找时间长
+- 哈希表查找时间短，可能存在碰撞
+
+### 硬盘分配 Disk Block Alloc
+
+TBD
+
+- 连续分配
+- Linked Alloc
+- Indexed Alloc
+
+### Example
+
+以一个包含 Inode，bitmap，superblock 的文件系统为例
+
+- Inode 索引节点，存储文件的一些信息，一个文件对应一个 Inode
+
+![Inode](./assets/Sys49.png)
+
+- Bitmap 索引 Inode 和 data block
+
+- SuperBlock 包含这个文件系统的一些信息：含有多少 Inode/Datablock，Inode Table/Data 从哪里开始，以及一个魔法数字
+
+Read `(root)/foo/bar`
+
+![read](./assets/Sys50.png)
+
+Write `/foo/bar`
+
+![write](./assets/Sys51.png)
+
+在 read /foo data 时，发现不存在 bar 文件，于是有一个创建的过程（修改 inode bitmap，我的理解是先标明文件的创建），在修改 bar 的 inode 后还要 write foo 的 inode（因为这个目录或者说文件也被修改了，新增了一个子文件）
+
+#### Crash
+
+我们发现 Write 的时候 Bitmap, inode, Datablock 都会被修改，如果只有其中一两个被修改了，还有一两类没有被修改（或者说修改过程失败了），就会导致 Garbage Data 之类的 Crash
+
+Solution 1: 日志 Journaling - 对三者的修改先写入一个 Journal（顺序是 Transaction-begin, pending datas, transaction-end），再进行 Checkpoint 的过程：用 Journal 覆写文件系统。
+
+这样只会在 Journal 阶段 Crash，如果写失败直接重写就行了
+
+Solution 2: 在解决方案 1 的基础上，在写完 Journal 后对 Transaction 添加一个 Commit 的操作
+
+### Mass Storage 大容量存储
+
+磁盘 Magnetic Disk
+
+![Disk](./assets/Sys52.png)
+
+- Positioning Time
+    - 指把 Disk Arm 移动到正确的 Sector 的时间
+    - 包含 Seek Time 和 Rotational Latency
+        - Seek Time: Disk Arm 移动到正确的 Cylinder 的时间
+        - Rotational Latency: 正确的 Sector 旋转到 Disk Head 下的时间
+- Average Access Time
+    - Average Seek Time + Average Rotational Latency
+- Average I/O Time
+    - Average Access Time + Data/Transfer Rate + controller overhead
+
+SSD 固态硬盘
+
+- 没有运动的单元，因此没有 Seek Time 和 Rotational Latency，读写更快
+
+- 以 Page 为单元存储信息，若干 Page 组成一个 Block
+
+- 无法覆写内容（需要写入另一个 Page，然后把 Old Page 标记为无效），那么会导致 Pages 最后混合着有效和无效的 Page：控制器维护一个表 Flash translation layer table，当无效的页个数到达某一阈值后执行 Garbage Collection::free 无效的页空间（为 GC 设计并留存了一些额外（over-provisioning）的空间）
+
+Magnetic Tape
+
+- 容量大，访问慢，存储数据时间久
+
+Network-Attached Storage
+
+- 用户可远程访问服务器上的 FS
+
+Storage Area Network
+
+#### Disk Scheduling
+
+目标是最小化 Seek Time（与磁头移动距离成正比）
+
+Algos：
+
+- FCFS
+    - 先进入 Queue 的先访问
+    - 每个 request 的访问可能性是一样的，且不会导致饥饿
+    - 但是并没有最小化 Seek Time
+- SSTF(Shortest Seek Time 1st)
+    - 离当前磁头最近（Seektime最短）的先访问
+    - 优势是减少了 Avg Response Time，提高了吞吐量
+    - 但需要提前计算 Seektime 的开销，且如果某个 Request 离得特别远，会导致 Starvation
+- SCAN
+    - 电梯算法，磁头先向 Disk 一端移动，再向另一端移动
+    - 吞吐量高、Low Variance of Response Time
+    - 但对于 Request 刚刚访问过的位置，需要等待很长时间
+    - ![SCAN](./assets/Sys53.png)
+- C(ircular)-SCAN
+    - 在 SCAN 基础上，在磁头移动到一端的时候，立刻瞬移到 Disk 另一端
+- (C)-LOOK
+    - 对 (C)-SCAN 的改进 ，具体表现为磁头移动的终点不是 **Disk 的两端**，而是 Queue 里最偏远的 Request
+    - 对于 I/O 很多的文件系统效果很好
+
+#### RAID
+
+Redundant Array of Inexpensive Disks
+
+通过冗余性确保可靠性，疑似是备份
+
+RAID 0：把数据平分，存在两个 Disk 上
+
+RAID 1：把一个 Disk 的数据复制一份存在另一个 Disk 上
+
+可用于检测/恢复于 **data failure**，但是 **data corruption** 不行
+
+## I/O Systems
+
+I/O devices is the way computer to interact with user and other systems

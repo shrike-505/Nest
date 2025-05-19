@@ -35,16 +35,16 @@ nav:
     - 人工智能逻辑: notes/AI/AIL.md
     - 自然语言处理相关:
       - notes/AI/NLP/index.md
-      - 自然语言处理导论: notes/AI/NLP/NLPI.md
+      # - 自然语言处理导论: notes/AI/NLP/NLPI.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
     - 计算机系统Ⅲ: notes/ComputerScience/ComputerSystem3.md
-    - 数据结构基础: notes/ComputerScience/FDS.md
+    # - 数据结构基础: notes/ComputerScience/FDS.md
     - 高级数据结构: notes/ComputerScience/ADS.md
     # - Crafting Interpreters: notes/ComputerScience/CraftingInterpreters.md
   - 数学&物理学:
-    - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
+    # - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
     - 普通物理学Ⅰ: notes/MathematicsAndPhysics/Physics1.md
     - 常微分方程: notes/MathematicsAndPhysics/ODE.md
