@@ -1,0 +1,18 @@
+$files = Get-ChildItem -Path . -Filter "课后练习*.docx" | Where-Object {
+    $_.Name -match '^课后练习([1-9]\d*)\.docx$'
+}
+
+foreach ($file in $files) {
+    if ($file.Name -match '^课后练习([1-9]\d*)\.docx$') {
+        $number = $matches[1]
+        $outputName = "3230105892_高玮轩_第${number}次课后练习.typ"
+
+        pandoc $file.FullName -f docx -t typst -o $outputName
+        
+        Write-Host "已转换: $($file.Name) -> $outputName"
+
+        Remove-Item $file.FullName
+    }
+}
+
+Write-Host "`n转换完成！共处理 $($files.Count) 个文件"
