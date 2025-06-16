@@ -11,6 +11,8 @@
 !!! note "Homework"
     - [HW1](./assets/3230105892_sys3_hw1.pdf)
 
+> 比系统二更生硬地把体系和OS的内容捏合了起来，呃
+
 ## 量化研究
 
 !!! note "Amdahl's Law"
@@ -383,7 +385,7 @@ Link: https://rcore-os.cn/rCore-Tutorial-Book-v3/chapter4/3sv39-implementation-1
 !!! note "计算 pgtbl 的大小"
     - 32 位系统，内存为 4 GB(2^32 bit)，假设 Page Size 为 4 KB
     - 4 GB / 4 KB = 1 M entries
-        - Offset 位数 = $\log_2(4K) = 12$ bits
+        - Offset 位数 = $\log_2(4KB/1B) = 12$ bits
         - Index 位数 = $\log_2(4 KB/ 4B(32bits Addr)) = 10$ bits 
     - 每个 entry（一行）占 4 bytes（32 bits）
     - 则 pgtbl 的大小为 1 M * 4 B= 4 MB
@@ -419,11 +421,11 @@ Virtual Page 被哈希为 Frame
 
     ??? answer "Answer"
         - 32 bit
-            - Offset = $\log_2(64KB) = 16$ bits
+            - Offset = $\log_2(64KB/1B) = 16$ bits
             - Page Index = $\log_2(64KB/4B)$ = 14 bits
             - Others = 32 - 16 - 14 = 2 bits
         - 64 bit
-            - Offset = $\log_2(64KB) = 16$ bits
+            - Offset = $\log_2(64KB/1B) = 16$ bits
             - Page Index = $\log_2(64KB/8B)$ = 13 bits
             - For 39-bit VA
                 - Others = 39 - 16 - 13 = 10 bits
