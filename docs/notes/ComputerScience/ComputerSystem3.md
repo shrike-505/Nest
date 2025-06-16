@@ -14,7 +14,7 @@
 ## 量化研究
 
 !!! note "Amdahl's Law"
-    $$\text{Speedup} = \frac{改进前时间}{改进后时间} = \frac{1}{1 - B + \frac{B}{S}} \rightarrow \frac{1}{1-B}$$
+    $\text{Speedup} = \frac{改进前时间}{改进后时间} = \frac{1}{1 - B + \frac{B}{S}} \rightarrow \frac{1}{1-B}$
     $B$ 为并行化（被优化）比例，$S$ 为被优化部分的加速比。也就是说，无论怎么优化，理想加速比都取决于没被优化的部分所占的比例
 
     !!! example "例"
@@ -124,6 +124,8 @@ TBD
 ### Hardware based Speculation: Reorder Buffer(ROB)
 
 以先来先出的顺序（就是被发射的顺序）存储 uncommitted 指令，使指令执行完成的顺序也按发射的顺序来。
+
+指令按程序顺序发射（每周期发射一条），但执行和写回可以乱序。
 
 结果先写到 reorder buffer，在 buffer 里按照指令流出的顺序以此写回寄存器。因此我们在每个指令后面加上一个 commit 状态，当前面的指令都 commit 之后才能 commit。
 
@@ -413,20 +415,20 @@ Virtual Page 被哈希为 Frame
         + 1. 0xf2015202 = 1111001000 | 0000010101 | 001000000010(分割成 10 bits + 10 bits + 12 bits)
         + 2. TBD
 
-![Page Table Quiz2](./assets/Sys47.png)
+    ![Page Table Quiz2](./assets/Sys47.png)
 
     ??? answer "Answer"
-    - 32 bit
-        - Offset = $\log_2(64KB) = 16$ bits
-        - Page Index = $\log_2(64KB/4B)$ = 14 bits
-        - Others = 32 - 16 - 14 = 2 bits
-    - 64 bit
-        - Offset = $\log_2(64KB) = 16$ bits
-        - Page Index = $\log_2(64KB/8B)$ = 13 bits
-        - For 39-bit VA
-            - Others = 39 - 16 - 13 = 10 bits
-        - For 48-bit VA
-            - Others = 48 - 16 - 13 = 19 bits
+        - 32 bit
+            - Offset = $\log_2(64KB) = 16$ bits
+            - Page Index = $\log_2(64KB/4B)$ = 14 bits
+            - Others = 32 - 16 - 14 = 2 bits
+        - 64 bit
+            - Offset = $\log_2(64KB) = 16$ bits
+            - Page Index = $\log_2(64KB/8B)$ = 13 bits
+            - For 39-bit VA
+                - Others = 39 - 16 - 13 = 10 bits
+            - For 48-bit VA
+                - Others = 48 - 16 - 13 = 19 bits
 
 ## 虚拟内存 Virtual Memory
 

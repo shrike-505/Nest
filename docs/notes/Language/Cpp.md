@@ -237,7 +237,7 @@ namespace X {
 
 ## 运算符重载
 
-`+	-	*	/	%	^	&	|	~ =	<	>	+=	-=	*=	/=	%= ^=	&=	|=	<<	>>	>>=	<<=	== !=	<=	>=	!	&&	||	++	-- ,	->*	->	()	[]` 可以重载
+`+	-	*	/	%	^	&	|	~ =	<	>	+=	-=	*=	/=	%= ^=	&=	|=	<<	>>	>>=	<<=	== !=	<=	>=	!	&&	||	++	-- , ->*	->	()	[]` 可以重载
 
 `.	.*	::	?: sizeof	typeid static_cast   dynamic_cast   const_cast  reinterpret_cast` 不行
 
@@ -291,6 +291,8 @@ const Integer Integer::operator++( int ){
 ## Template
 
 ### 模板函数
+
+
 
 ### 模板类
 
