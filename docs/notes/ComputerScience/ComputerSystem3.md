@@ -9,7 +9,7 @@
 > 任课教师：吴磊、周亚金
 
 !!! note "Homework"
-    - [HW1](./assets/3230105892_sys3_hw1.pdf)
+    - [HW1](./assets/sys3_hw1.pdf)
 
 > 比系统二更生硬地把体系和OS的内容捏合了起来，呃
 
