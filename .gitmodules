@@ -1,0 +1,3 @@
+[submodule "docs/notes/Language/OOPlabs"]
+	path = docs/notes/Language/OOPlabs
+	url = git@shrike-505:shrike-505/OOPLabs.git/

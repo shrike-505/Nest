@@ -254,7 +254,7 @@ $[p, q]$ 与 $[\neg p, r]$ 消解得到 $[q, r]$，类比即 $p \lor \neg p \equ
     $H_{i+1} = H_i \cup \{f(t_1, t_2, \cdots, t_n)|f$ 是 $S$ 中的 n 元函词，$t_1, t_2, \cdots, t_n \in H_i$\}$。
 
 !!! definition "赫布兰德基底"
-    赫布兰德基底是一个集合，其所有元素都形如 $c \theta$，$c \in S$ 且 $𝜃$ 给 $𝑐$ 中的变元指派 H-域中的元素。
+    赫布兰德基底是一个集合，其所有元素都形如 $c \theta$，$c \in S$ 且 $\theta$ 给 $c$ 中的变元指派 H-域中的元素。
 
 ## Lec 5: 知识图谱与描述逻辑
 
