@@ -2,12 +2,10 @@
 comments: true
 tags: 
     - Toefl
-    - 大二上笔记
 ---
 
 !!! note
     从各个地方薅的一些托福注意事项，感觉帮助不会很大。  
-    也包含大二春学期修读的托福阅读笔记。  
     参考：[fufu的托福学习帖](https://csfufu.life/article/b38f1367-c7fa-43f0-a523-c8dfe819338d)
 
 # 托福阅读
