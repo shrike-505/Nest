@@ -36,6 +36,10 @@ nav:
     - 自然语言处理相关:
       - notes/AI/NLP/index.md
       # - 自然语言处理导论: notes/AI/NLP/NLPI.md
+    - 机器学习: notes/AI/ML.md
+    - 计算机视觉相关:
+      - notes/AI/CV/index.md
+      - 计算机视觉导论: notes/AI/CV/CVD.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
@@ -43,6 +47,8 @@ nav:
     # - 数据结构基础: notes/ComputerScience/FDS.md
     - 高级数据结构: notes/ComputerScience/ADS.md
     # - Crafting Interpreters: notes/ComputerScience/CraftingInterpreters.md
+    - 理论计算机科学导引: notes/ComputerScience/TCS.md
+    - 计算机网络: notes/ComputerScience/ComputerNetwork.md
   - 数学&物理学:
     # - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
@@ -51,6 +57,8 @@ nav:
     - 离散数学理论基础: notes/MathematicsAndPhysics/DiscreteMath.md
     - 概率论: notes/MathematicsAndPhysics/Probability.md
     - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
+    - 优化基础理论与方法: notes/MathematicsAndPhysics/Optimization.md
+    - 量子计算理论基础与软件系统: notes/MathematicsAndPhysics/Quantum.md
   - 文艺学:
     # - 文学理论: notes/Literature/LiteratureTheory.md
     - 语言学基础: notes/Literature/BasicLinguistics.md

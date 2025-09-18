@@ -3,3 +3,5 @@ tests/
 *.exe
 .vscode/
 test.*
+*.zip
+*.pptx
