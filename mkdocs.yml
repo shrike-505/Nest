@@ -61,7 +61,7 @@ nav:
     - 量子计算理论基础与软件系统: notes/MathematicsAndPhysics/Quantum.md
   - 文艺学:
     # - 文学理论: notes/Literature/LiteratureTheory.md
-    - 语言学基础: notes/Literature/BasicLinguistics.md
+    - 语言学基础: notes/Literature/BasicLinguistics.md # TO BE DONE, i mean it, seriously
   - Language:
     - Python - CS61A: notes/Language/cs61a.md
     - Verilog - HDLBits: notes/Language/Verilog.md # I hate you.

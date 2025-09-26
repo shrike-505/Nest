@@ -4,15 +4,15 @@ statistics: true
 changelog: true
 ---
 
-> 德洛丽丝·黛————人道主义，国际主义和福利国家的无罪女王——转身面向你。  
-> 她手上拖着一只旅行箱，似乎很着急。
-
 # shrike505's Nest
+
 ## 前言
 
-这里保存了一些文字、想法、笔记，说不定未来它们能变成什么赛博文物。敬请期待未来的内容！
+> 巢是动物居住的地方，通常以地洞、树洞、泥土、岩石或建筑物之掩蔽为巢；或以有机物质如小树枝、草、叶和唾液构成，随人类物质利用产生的材料也在利用的范围之内，如绳线、塑胶、布料、纺织品和纸张等。
+
+这里保存了一些文字、想法、笔记，说不定在很远的将来，它们能变成什么赛博文物。敬请期待未来的内容！
   
-这里已经上传了我近年来写的所有文章，参差良莠，不一而同。感谢阅读，望它们对得起你的时间！
+文章作品参差良莠，不一而同。感谢阅读，望它们对得起你的时间。
 
 ***
 
@@ -55,9 +55,3 @@ changelog: true
 
 
 ---
-
-!!! 特别鸣谢
-    [**@TonyCrane**](https://github.com/TonyCrane) :fontawesome-brands-github:  
-    记录样式与数据统计来自 TonyCrane 老师的 [changelog](https://github.com/TonyCrane/mkdocs-changelog-plugin) & [statistics](https://github.com/TonyCrane/mkdocs-statistics-plugin)  
-    [**@HobbitQia**](https://github.com/HobbitQia/) :fontawesome-brands-github:  
-    几乎是照抄了大 Q 老师对 changelog 的配置和一众扩展。大 Q 是超级好的学长！
