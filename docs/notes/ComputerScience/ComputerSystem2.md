@@ -64,7 +64,7 @@
         mul R2, B
         add R2, A
         store R2, D
-        mul R1, D
+        sub R1, D
         store R1, D
         ```
     ??? success "Load-Store"
