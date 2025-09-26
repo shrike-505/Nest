@@ -2605,10 +2605,11 @@
 
 <h1 id="_1">计算机网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1278 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1622 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
 </div>
 <blockquote>
-<p>任课教师：许海涛</p>
+<p>任课教师：许海涛<br />
+参考教材：《深入浅出计算机网络》</p>
 </blockquote>
 <h2 id="_2">绪论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">因特网<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -2629,7 +2630,7 @@
 </ul>
 </li>
 </ul>
-<p>因特网的标准化工作是面向公众的，其任何一个建议标准在成为因特网标准之前都以 RFC（Request for Comments）的技术文档的形式在因特网上发表。</p>
+<p>因特网的标准化工作是面向公众的，其任何一个建议标准在成为因特网标准之前都以 RFC（Request for Comments）的技术文档的形式在因特网上发表，即因特网草案-&gt;建议标准-&gt;因特网标准</p>
 <h3 id="switching-model">交换模型（Switching Model）<a class="headerlink" href="#switching-model" title="Permanent link">&para;</a></h3>
 <ul>
 <li>电路交换：用户设备通过用户线连到各自的电话交换机，交换机间通过中继线互联<ul>
@@ -2637,8 +2638,9 @@
 <li><strong>突发式</strong>数据传送，传送效率很低——传送时间占很小一部分</li>
 </ul>
 </li>
-<li>分组交换：通过<strong>分组交换网</strong>中的<strong>交换节点</strong>传送分组后的数据（报文）<ul>
+<li>分组交换：通过<strong>分组交换网</strong>中的<strong>交换节点</strong>传送分组后的数据（报文，Message）<ul>
 <li><img alt="分组交换" src="../assets/CN1.png" /></li>
+<li>将较长的报文拆分成若干个较短的等长数据段，在每个数据段前加上一些必要的控制信息（称为 Header），例如源地址和目标地址等，这样就形成了一个个分组（Packet）</li>
 <li>pros：没有建立连接和释放连接的过程；分组传输过程中逐段占用通信链路，有较高的通信线路利用率；交换节点可以为每一个分组独立选择转发路由，使得网络有很好的生存性</li>
 <li>cons：分组首部带来了额外的传输开销；交换节点存储转发分组会造成一定的时延；无法确保通信时端到端通信资源全部可用，在通信量较大时可能造成网络拥塞；分组可能会出现失序和丢失等问题。</li>
 <li>注意，分组的首部是额外添加的，并不包含原数据的内容，即分组 = 首部 + 数据</li>
@@ -2720,8 +2722,8 @@
 <summary>时延</summary>
 <p>数据从网络的一端传送到另一端所耗费的时间，也称为延迟或迟延。 </p>
 <ul>
-<li>发送时延 = 分组长度（bits）/ 发送速率（bps）（发送速率就是『带宽』中计算的那个最小值）</li>
-<li>传播时延 = 信道长度（m）/ 信号传播速度（m/s）<ul>
+<li>发送时延 = 分组长度（bits）/ 发送速率（bps）（发送速率就是『带宽』中计算的数据传送速率）</li>
+<li>传播时延 = 链路长度（m）/ 电磁波信号传播速度（m/s）<ul>
 <li>自由空间：3.0 × 108 m/s</li>
 <li>铜线：2.3 × 108 m/s</li>
 <li>光纤：2.0 × 108 m/s</li>
@@ -2743,6 +2745,7 @@
 </li>
 </ul>
 </details>
+<p><img alt="速记" src="../assets/CN7.png" /></p>
 </details>
 <details class="note">
 <summary>时延带宽积</summary>
@@ -2758,12 +2761,29 @@
 </details>
 <details class="note">
 <summary>往返时间</summary>
+<p>RTT（Round Trip Time），即一个分组从发送端发送，到发送端收到从接收端发来的相应确认分组所经历的时间</p>
 </details>
 <details class="note">
 <summary>利用率</summary>
+<ul>
+<li>链路利用率：某条链路有百分之多少时间有数据通过<ul>
+<li>某链路利用率增大时，其引起的时延也会增大（根本是分组在交换节点的排队时延增大了）</li>
+</ul>
+</li>
+<li>网络利用率：所有链路利用率的加权平均</li>
+<li><span class="arithmatex">\(D_0\)</span>: 网络空闲时的时延；<span class="arithmatex">\(D\)</span>: 网络当前时延；<span class="arithmatex">\(U\)</span>: 网络利用率。那么有 <span class="arithmatex">\(D = \frac{D_0}{1-U}\)</span></li>
+</ul>
 </details>
 <details class="note">
 <summary>丢包率</summary>
+<p>一定的时间范围内，传输过程中丢失的分组数量与总分组数量的比值。</p>
+<ul>
+<li>Packet 丢失主要有以下两种原因：<ul>
+<li>分组在传输过程中出现误码，被传输路径中的节点交换机（例如路由器）或目的主机检测出误码而丢弃。</li>
+<li>节点交换机根据丢弃策略主动丢弃分组。</li>
+</ul>
+</li>
+</ul>
 </details>
 </div>
 
@@ -2788,7 +2808,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月18日 21:24:46 CST">2025年9月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月26日 23:44:26 CST">2025年9月26日</span>
   </span>
 
     

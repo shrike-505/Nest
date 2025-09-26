@@ -2605,7 +2605,7 @@
 
 <h1 id="_1">机器学习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 874 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1227 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：赵洲
@@ -2692,6 +2692,23 @@
 </ul>
 <h2 id="_4">线性模型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>对于由 <span class="arithmatex">\(d\)</span> 个属性描述的 Instance <span class="arithmatex">\(x\)</span>，线性模型试图学得一个通过属性的线性组合来进行预测的函数，即 <span class="arithmatex">\(f(x) = w_1 x_1 + w_2 x_2 + ... + w_d x_d + b = w \cdot x + b\)</span>。其中 <span class="arithmatex">\(x_i\)</span> 是 <span class="arithmatex">\(x\)</span> 在第 <span class="arithmatex">\(i\)</span> 个属性上的取值</p>
+<ul>
+<li>线性回归<ul>
+<li>目标：回归任务。最小化均方误差，对于输入属性个数为1的最简单情况，即 <span class="arithmatex">\((w^*, b^*) = \arg\min_{w,b} \sum_{i=1}^{m} (y_i - w x_i - b)^2\)</span>，亦即最小二乘法。对该式求导即可得到最小值点</li>
+<li>对于多元线性回归，数据集 <span class="arithmatex">\(D\)</span> 表示为一个矩阵 <span class="arithmatex">\(X\)</span>，在 <span class="arithmatex">\(X^T X\)</span> 满秩或正定的情况下可学得模型 <span class="arithmatex">\(f(x) = \hat{x}_i^T (X^T X)^{-1} X^T y\)</span>，其中 <span class="arithmatex">\(\hat{x}_i = (x_i, 1)\)</span><ul>
+<li>现实中常见 <span class="arithmatex">\(X^T X\)</span> 不满秩的情况，此时可解出多个 <span class="arithmatex">\(\hat{w}\)</span>，它们都能使均方误差最小化。选择哪个解作为输出将由学习算法的归纳偏好决定，常见的做法是引入正则化 (regularization) 项</li>
+</ul>
+</li>
+<li>命 <span class="arithmatex">\(f(x) = \ln y\)</span>，则为对数线性回归</li>
+</ul>
+</li>
+<li>对数几率回归<ul>
+<li>分类任务。对于二分类任务，输出标记 <span class="arithmatex">\(y \in \{0, 1\}\)</span>，而线性回归模型产生的预测值 <span class="arithmatex">\(z = w^T x + b\)</span> 是实值，于是我们需将实值转换为 0/1，例如 Heaviside 步函数（<span class="arithmatex">\(f(z) = 1\)</span> if <span class="arithmatex">\(z \geq 0\)</span> else <span class="arithmatex">\(0\)</span>），但该函数不可导，不利于优化</li>
+<li>Sigmoid 函数：<span class="arithmatex">\(f(z) = \frac{1}{1 + e^{-z}} = \frac{1}{1+e^{w^T x + b}}\)</span></li>
+<li>此时可得到 <span class="arithmatex">\(\ln \frac{y}{1-y} = w^T x + b\)</span>，<span class="arithmatex">\(\frac{y}{1-y}\)</span> 称为几率（odds），加上对数称为对数几率，即对数几率（logit）是输入属性的线性函数</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2714,7 +2731,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月18日 21:24:46 CST">2025年9月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月26日 23:44:26 CST">2025年9月26日</span>
   </span>
 
     
