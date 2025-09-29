@@ -45,7 +45,7 @@ nav:
     - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
     - 计算机系统Ⅲ: notes/ComputerScience/ComputerSystem3.md
     # - 数据结构基础: notes/ComputerScience/FDS.md
-    - 高级数据结构: notes/ComputerScience/ADS.md
+    - 高级数据结构与算法分析: notes/ComputerScience/ADS.md
     # - Crafting Interpreters: notes/ComputerScience/CraftingInterpreters.md
     - 理论计算机科学导引: notes/ComputerScience/TCS.md
     - 计算机网络: notes/ComputerScience/ComputerNetwork.md
