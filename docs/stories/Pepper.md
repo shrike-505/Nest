@@ -199,4 +199,6 @@ comments: true
 
 [2.踏上滑板车，冲破她空空如也的躯壳。](../thoughts/Gaut.md)
 
+[3.一定有更好的办法。](Smoke.md)
+
 __2022年12月__
