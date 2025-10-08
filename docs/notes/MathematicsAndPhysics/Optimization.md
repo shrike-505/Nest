@@ -8,7 +8,8 @@
 
 # 优化基础理论与方法
 
-> 任课教师：张寅
+> 任课教师：张寅  
+> 参考书籍：陈宝林《最优化理论与算法》，刘浩洋、户将、李勇锋、文再文《最优化计算方法（简化版）》
 
 ## General Formulation
 
@@ -35,3 +36,33 @@ $min f_0 (x) s.t. f_i (x) \leq 0, i=1,...,m$
     - 此时 $f_0 (x^*)$ 称为**最优值**
 - $x^*$ 是局部解，如果 $\forall x \in NBR(x^*, \epsilon) \cap Q, f_0 (x^*) \leq f_0 (x)$
     - 即在一个小邻域内函数值最小
+
+!!! definition "向量范数"
+    称实值函数 $|| · || : \mathbb{R}^n \to \mathbb{R}$ 为 $n$ 维向量空间 $\mathbb{R}^n$ 上的**范数**，如果对 $\forall x,y \in \mathbb{R}^n, \forall \alpha \in \mathbb{R}$ 满足：
+
+    - （正定性）$||x|| \geq 0$，取等仅当 $x=0$
+    - （齐次性）$||\alpha x|| = |\alpha| ||x||, \alpha \in \mathbb{R}$
+    - （三角不等式）$||x+y|| \leq ||x|| + ||y||$
+
+    记 $x = (x_1,...,x_n)^T$，则常用的向量范数有：
+
+    - $L1$ 范数：$||x||_1 = \sum_{i=1}^n |x_i|$
+    - $L2$ 范数：$||x||_2 = (\sum_{i=1}^n x_i^2)^{1/2}$
+    - $L\infty$ 范数：$||x||_\infty = max\{|x_i|: i=1,...,n\}$
+    - 对于 $1 \leq p < \infty$，$Lp$ 范数：$||x||_p = (\sum_{i=1}^n |x_i|^p)^{1/p}$
+
+!!! definition "矩阵范数"
+    $A$ 为 $m \times n$ 矩阵，$|| · ||_\alpha$ 是 $\mathbb{R}^m$ 上的向量范数，$|| · ||_\beta$ 是 $\mathbb{R}^n$ 上的向量范数，则 $A$ 的**矩阵范数**定义为 $||A|| = \max_{||x||_\beta = 1} ||Ax||_\alpha, x \in \mathbb{R}^n$。
+
+    显然 $||I|| = 1$，矩阵范数具有以下性质：
+
+    - （正定性）$||A|| \geq 0$，取等仅当 $A=0$
+    - （齐次性）$||\alpha A|| = |\alpha| ||A||, \alpha \in \mathbb{R}$
+    - （三角不等式）$||A+B|| \leq ||A|| + ||B||$
+    - （子乘性）$||AB|| \leq ||A|| ||B||$
+
+    常用的矩阵范数有：
+
+    - $||A||_1 = \max_{1 \leq j \leq n} \sum_{i=1}^m |a_{ij}|$（列和范数）
+    - $||A||_2 = \sqrt{\lambda_{max} (A^T A)}$（谱范数，$\lambda_{max}$ 是 $A^T A$ 的最大特征值）
+    - $||A||_\infty = \max_{1 \leq i \leq m} \sum_{j=1}^n |a_{ij}|$（行和范数）
