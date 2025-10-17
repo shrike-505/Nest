@@ -173,11 +173,9 @@ N位二进制的加减法是$\mod 2^N$下的加减法。
 ### lab3 - 时序电路
 史
 
-### lab5 - riscvs汇编
+### lab5 - riscv 汇编
 快速入门：https://blog.csdn.net/m0_62730135/article/details/126799687  
 https://zhuanlan.zhihu.com/p/502146080
-
-学长笔记：https://note.tonycrane.cc/cs/pl/riscv/unprivileged/
 
 函数返回值默认存在a0寄存器中，`jr ra`就能返回，`ret`也能返回。
 
