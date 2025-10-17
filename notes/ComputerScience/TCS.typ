@@ -320,3 +320,4 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
     $forall s,n,m, exists "NAND-Circ Program" U_(s,n,m)$ 计算函数 $"EVAL"_(s,m,n)$，且其规模为 $O(s^2 dot log s)$
   ]
 ]
+

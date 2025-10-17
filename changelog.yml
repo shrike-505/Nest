@@ -43,10 +43,6 @@
     - newart:
         text: 🌼诅咒 —— 斟满一朵花的眼泪。
         href: /stories/Curse
-  - "2024.3.3":
-    - newpage:
-        text: 🛜更新博客界面
-        href: /casual/
   - "2024.2.27":
     - newpage:
         text: 📚添加了一堆笔记
@@ -60,7 +56,7 @@
   - "2024.1.20":
     - newpage:
         text: 添加 CS61A 笔记
-        href: /notes/ComputerScience/cs61a
+        href: /notes/Language/cs61a
   - "2024.1.15":
     - newpage:
         text: 📝新增年终总结
