@@ -1,5 +1,7 @@
 #import "@preview/ori:0.2.3": *
 #import "@preview/gentle-clues:1.2.0" : *
+#import "@preview/fletcher:0.5.8" : *
+#import "@preview/finite:0.5.0": automaton
 // #set heading(numbering: numbly("{1:一}、", default: "1.1  "))
 #set math.equation(numbering: "(1)")
 
@@ -321,3 +323,304 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
   ]
 ]
 
+=== 更长的输入：Infinite！
+
+更一般的计算方法无疑是针对任意长度输入的函数 $f: {0,1}^* -> {0,1}^n$，然而这是无法利用已经讲述过的布尔电路/程序来计算的（回顾：我们的方法是，使用一个真值表，记录每组输入 $X[0]-X[n-1]$ 下 $Y[m]$ 的取值）
+
+#theorem([
+    For every $F: {0,1}^* -> {0,1}^*$, $B F = cases(
+        F(x)_i &"if" i < |F(x)| "," b = 0,
+        1 &"if" i < |F(x)| "," b = 1,
+        0 &"if" i >= |F(x)|
+    )$
+
+    使用 $B F$ 计算 $F$ 只需要遍历 $0$ 到 $|F(x)| -1$ 即可，反过来只需要取每一位
+])
+
+= 语言
+
+== DFA 与正则语言
+
+显然一个布尔函数 $f: {0,1}^* -> {0,1}$ 和这样一个集合对应：$A_f = {x in {0,1}^* | f(x) = 1}$，这个集合称为语言（Language）；此时显然有 $f(x) = 1$ 当且仅当 $x in A_f$
+
+于是计算函数的值 $f(x) = ?$ 与判断 $x in? A_f$ 是等价的。
+
+于是来研究语言的性质（自己觉得突兀不（流汗
+
+考虑累加 $x$ 的每一位再模二的 $"XOR"$ 算法，可得到以下流程图：
+
+#figure(
+    automaton(
+        (
+            q0: (q1: 1, q0: 0),
+            q1: (),
+        ),
+        initial: "q0",
+        final: "q1"
+    ),
+    caption: [假设 $q_1$ 为末态]
+)
+
+#definition[
+    这被称作一个确定性有限自动机（Deterministic Finite Automaton, DFA），它可以看作一个四元组 $(K, s, F, delta)$，其中：
+
+    - $K$ - 一组状态的有限集合
+    - $s in K$ - 初始状态
+    - $F subset.eq K$ - 末态（_接受状态_）的集合
+    - $delta: K times {0,1} -> K$ - 状态转移函数
+]
+
+假设有输入字符串 $x_0 x_1 ... x_(n-1)$，DFA 的计算过程为：$s_0 = s, s_1 = delta(s_0, x_0), s_2 = delta(s_1, x_1), dots, s_n = delta(s_(n-1), x_(n-1))$，然后判断 $s_n in F$，如果是则接受（accept），否则拒绝（reject）。
+
+定义 DFA 计算某个函数的方法：$M$ computes $f$ if $M$ accepts x 当且仅当 $f_(x) = 1$
+
+同时定义 DFA Decides 某个语言的方法：$M$ decides $A_f$ if $M$ accepts x 当且仅当 $x in A_f$
+
+被 DFA 决定的语言称为正则语言（Regular Language）。
+
+#theorem[
+    某台 DFA $M$ 可判断的语言有且仅有一个，即 $L(M) = {x in {0,1}^* | M "accepts" x}$
+]
+
+#exercise[证明空集，${0,1}^*$，${e}$, ${w in {0,1}^* | w "有一个字串是 101（何意味）"}}$ 是正则语言 ]
+
+#solution[
+    #figure(
+        automaton(
+            (
+                q0: (q0:(0,1))
+            ),
+            final: none
+        ),
+        caption: [空集，使可接受集为空即可]
+    )
+
+    #figure(
+        automaton(
+            (
+                q0: (q0:(0,1))
+            ),
+            final: "q0"
+        ),
+        caption: [${0,1}^*$，使所有状态均为可接受状态即可]
+    )
+
+    #figure(
+        automaton(
+            (
+                q0: (q1:(0,1)),
+                q1: ()
+            ),
+            initial: "q0",
+            final: "q1"
+        ),
+        caption: [${e}$，使初始状态为唯一可接受状态即可]
+    )
+
+    #figure(
+        automaton(
+            (
+                q0: (q0:0, q1:1),
+                q1: (q2:0, q1:1),
+                q2: (q3:1, q0:0),
+                q3: (q3:(0,1))
+            ),
+            initial: "q0",
+            final: "q3"
+        ),
+        caption: [${w in {0,1}^* | w "有一个字串是 101"}$，设计状态转移使得读到连续的 101 时进入可接受状态即可]
+    )
+]
+
+#theorem([
+    如果 $A$ 和 $B$ 都是正则的，那么 $A union B$ 是正则的。（对新 DFA 的每一个成员进行探究即可）
+])
+
+== NFA
+
+#definition[
+    不确定性有限自动机（Nondeterministic Finite Automaton, NFA），如下是其与 DFA 的区别：
+
+    - 状态转移函数中，下一个状态可以有多个
+    - 读入空串也可导致状态转移
+
+    可见是在状态转移时有所不同；实际上这里的状态转移比“函数”要更一般，即关系。
+
+    $N = {K, s, F, Delta("transition relation")}$, $Delta subset.eq K times {0,1,e} times K$
+
+    NFA 做计算的过程也比 DFA 宽松一些：能读入字符串输入的全部并且“有一条路可以走通并走到可接收状态”（可理解为并行计算的）即可。
+]
+
+#exercise[
+    设计 NFA，计算 $W = {w in {0,1}^* | w "的倒数第二位是 1"}$
+]
+
+#solution[
+    #figure(
+        automaton(
+            (
+                q0: (q0:(0,1), q1: 1),
+                q1: (q2:(0,1)),
+                q2: ()
+            ),
+            initial: "q0",
+            final: "q2"
+        ),
+        caption: [计算 $W = {w in {0,1}^* | w "的倒数第二位是 1"}$]
+    )
+]
+
+DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一些，但实际上两者是等价的。
+
+#theorem(
+    [
+        DFA 能判断一个语言等价于 NFA 也能判断这个语言。
+
+        #proof(
+            [
+                DFA 本身就是一台特殊的 NFA，这个方向是显然的。
+
+                反过来的证明，想法是让 DFA 模拟 NFA 的 tree-like 计算过程。下面先研究一个 NFA 的情况
+
+                对于 $p in K$，定义 $E(p) = {p} union {q | (p, e, q) in Delta}$（即 p 和不读入 symbol 即可到达的状态组成的集合）；假设该 NFA 从某层（tree-like arch）状态集合 $Q$ 接收一个 0 到达下一层 $Q'$，那么 $Q' = union.big_(q in Q) union.big_(p in (q, 0, p)) E(p)$
+
+                接下来用 DFA 模拟这个过程。很明显其每个元素有如下表示：
+
+                - 状态集合 $K' = {Q| Q subset.eq K}$
+                - 初始状态 $s' = E(s)$
+                - accepting states $F' = {Q | Q subset.eq K, Q inter F eq.not emptyset}$
+                - transition function $delta(Q, a) = union.big_(q in Q) union.big_(p in (q, a, p)) E(p)$
+            ]
+        )
+
+        因此正则语言也可以使用 NFA 来判断。
+    ]
+)
+
+#theorem([
+    如果 $A$ 和 $B$ 都是正则的，那么 $A B$ （拼接，Concatenation）是正则的。（构造一个新 DFA，其状态为原两个 DFA 状态的笛卡尔积，且仅当两个状态均为可接受状态时新状态才为可接受状态）
+
+    #proof(
+        [
+            总有一个 A 和 B 的交界处，其前面的字串用 NFA#sub[A] 判断，后面的字串用 NFA#sub[B] 判断。交界处由 NFA“猜测”，通过 e 切换。
+        ]
+    )
+])
+
+#theorem(
+    [
+        如果 $A$ 是正则的，那么 $A^* = {a_1 a_2 ... a_k: k >= 0 "and" a_i in A}$ （即从 A 中选取若干串做拼接）是正则的。
+
+        #proof(
+            [
+                对于 NFA#sub[A]，每次跑完一个字串后利用“猜测”功能返回其初态。
+            ]
+        )
+    ]
+)
+
+== 正则表达式
+
+每种正则语言可以用正则表达式（Regular Expression, RE）表示：
+
+#definition[
+    - Base Case：$0, 1, emptyset$ are REs，分别对应 $L(0) = {0}, L(1) = {1}, L(emptyset) = emptyset$
+    - 如果 $R$ 和 $S$ are REs，那么以下也是 REs：
+        - $(R union S)$，对应 $L(R union S) = L(R) union L(S)$
+        - $(R S)$，对应 $L(R S) = L(R) L(S)$（recall it is concatenation）
+        - $(R^*)$，对应 $L(R^*) = (L(R))^*$
+        - 括号书写时很麻烦，记录一个算数优先级 precedence：$*$ > concatenation > $union$
+]
+
+#example(
+    [
+        #three-line-table(
+            [
+                | Language | RE |
+                | ${e}$ | $emptyset^*$|
+                | ${w in {0,1}^*: w "starts with" 0 "and culminates with" 1}$ | $0 (0 union 1)^* 1$ |
+                | ${w in {0,1}^*: w "至少包含两个" 0}$ | $(0 union 1)^* 0 (0 union 1)^* 0 (0 union 1)^*$ |
+            ]
+        )
+    ]
+)
+
+#theorem(
+    [
+        语言是正则的当且仅当其可以被某个正则表达式表示。
+
+        #exercise(
+            [
+                画出 $(01 union 0)^*$ 对应的 NFA。
+
+                #solution(
+                    [
+                        #three-line-table(
+                            [
+                                | RE | NFA |
+                                | $0$ | #figure(
+                                    automaton(
+                                        (
+                                            q0: (q1:0), q1:()
+                                        ),
+                                        initial: "q0",
+                                        final: "q1"
+                                    )
+                                ) |
+                                | $1$ | #figure(
+                                    automaton(
+                                        (
+                                            q0: (q1:1), q1:()
+                                        ),
+                                        initial: "q0",
+                                        final: "q1"
+                                    )
+                                ) |
+                                | $01$ | #figure(
+                                    automaton(
+                                        (
+                                            q0: (q1:0), q1: (q2:"e"), q2:(q3:1), q3:()
+                                        ),
+                                        initial: "q0",
+                                        final: "q3"
+                                    )
+                                ) |
+                                | ${01 union 0}^*$ | #figure(
+                                    scale(
+                                        automaton(
+                                            (
+                                                q0: (q1:"e"),
+                                                q1: (q2:"e", q3:"e"),
+                                                q2: (q4:0),
+                                                q3: (q5:0),
+                                                q4: (q1:"e"),
+                                                q5: (q6:"e"),
+                                                q6: (q7:1),
+                                                q7: (q1: "e")
+                                            ),
+                                            initial: "q0",
+                                            final: ("q4","q7")
+                                        ),
+                                    x: 70%,
+                                    y: 70%,
+                                    )
+                                )|
+                            ]
+                        )
+                    ]
+                )
+            ]
+        )
+
+        #proof([
+            上面的练习可以总结出正则表达式向 NFA 的转化。从 NFA 向正则表达式的转化采用状态消除法（State Elimination Method）：
+
+            给定 NFA $N = (K, s, F, Delta)$，由以下步骤得到正则表达式 $R$:
+
+            - 将 N 转化为 N'
+                - N'中没有状态指向其的 initial state（新建一个初态，通过 $e "transition"$ 指向原先的初态）
+                - N'的 accepting state 只有一个，且该状态不指向任何状态（新建一个 accepting state，使原先的若干 accepting states 通过 $e "transition"$ 指向它）
+            - 删除 N' 中的非初态非末态状态，直到只剩下初态和末态
+        ])
+    ]
+)

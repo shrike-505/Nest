@@ -15,7 +15,7 @@
 
 令 $x$ 是一个 $n$ 维实向量，$S\subseteq \mathbb{R}^n$，且 $f_0 (x),...,f_m (x)$ 是 $x$ 在 $S$ 上的一些实值函数，一般最小化问题可表示为
 
-$min f_0 (x) s.t. f_i (x) \leq 0, i=1,...,m$
+$$\min f_0(x) \\ \text{subject to: } f_i(x) \leq 0, i=1,...,m$$
 
 其中 $f_0 (x)$ 称为**目标函数**，向量函数 $f(x) = (f_1 (x),...,f_m (x))^T$ 称为**泛函约束向量**，$S$ 称为**基本可行集**，对变量进行**结构化约束**（Structural Constraint），集合 $Q = \{x\in S|f_i (x) \leq 0, i=1,...,m\}$ 称为上述问题的**可行集**。
 
