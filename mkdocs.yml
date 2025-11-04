@@ -49,7 +49,14 @@ nav:
     - 高级数据结构与算法分析: notes/ComputerScience/ADS.md
     # - Crafting Interpreters: notes/ComputerScience/CraftingInterpreters.md
     - 理论计算机科学导引: notes/ComputerScience/TCS.md
-    - 计算机网络: notes/ComputerScience/ComputerNetwork.md
+    - 计算机网络: 
+      - notes/ComputerScience/ComputerNetworks/index.md
+      - 概览: notes/ComputerScience/ComputerNetworks/Overview.md
+      - 物理层: notes/ComputerScience/ComputerNetworks/PhysicalLayer.md
+      - 数据链路层: notes/ComputerScience/ComputerNetworks/DataLinkLayer.md
+      - 网络层: notes/ComputerScience/ComputerNetworks/NetworkLayer.md
+      - 传输层: notes/ComputerScience/ComputerNetworks/TransportLayer.md
+      - 应用层: notes/ComputerScience/ComputerNetworks/ApplicationLayer.md
   - 数学&物理学:
     # - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md

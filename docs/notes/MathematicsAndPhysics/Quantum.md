@@ -13,6 +13,12 @@
 !!! note "Ref"
     https://note.hobbitqia.cc/Quan/
 
+!!! note "作业"
+    - [hw1](./assets/QuantumComputation/hw/hw1.pdf)
+
+!!! note "实验报告"
+    - [lab1](./assets/QuantumComputation/lab/lab1.pdf)
+
 ## 量子态与量子门
 
 !!! note "量子计算机的 DiVincenzo 判据"
@@ -41,7 +47,9 @@ $|0\rangle$ 和 $|1\rangle$ 可以用向量形式表示，即 $|0\rangle = \begi
 
 ### 量子比特的几何表示
 
-Bloch 球可以可视化单个量子比特的状态，由极坐标可得到某个量子态 $|\varphi\rangle = c_0 |0\rangle + c_1 |1\rangle$，系数可表示为 $c_0 = \cos(\theta/2)$，$c_1 = e^{i \phi}\sin(\theta/2)$，$\theta$ 和 $\phi$ 视为球坐标系中的分量，即该量子态表示为 Bloch 球上的某个点
+Bloch 球可以可视化单个量子比特的状态，由极坐标可得到某个量子态 $|\varphi\rangle = c_0 |0\rangle + c_1 |1\rangle$，系数可表示为 $c_0 = \cos(\theta/2)$，$c_1 = e^{i \phi}\sin(\theta/2)$，$\theta$ 和 $\phi$ 视为球坐标系中的分量，即该量子态表示为 Bloch 球上的某个点 $(x,y,z)$，其中 $x = \sin \theta \cos \phi$，$y = \sin \theta \sin \phi$，$z = \cos \theta$
+
+其中 $\theta$ 是极角，$\phi$ 是方位角，当系数（振幅）为实数时，$\phi = 0$
 
 ### 张量积
 
@@ -82,6 +90,16 @@ $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$
 
 酉矩阵：酉矩阵的逆等于它的共轭转置
 
+厄米矩阵：厄米矩阵等于其自身的共轭转置
+
+共轭：$a_{ij} = m + ni$，则共轭为 $a_{ij}^* = m - ni$
+
+转置：矩阵的行列互换
+
+共轭转置：矩阵的每个元素取共轭后再转置
+
+（我去，不早说！）
+
 ### 多量子门
 
 先介绍两个概念
@@ -92,8 +110,8 @@ $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$
 
 - CNOT 门（受控非门）
     - CNOT 门是一个两量子比特门，作用于控制量子比特和目标量子比特上，当控制量子比特为 $|1\rangle$ 时，目标量子比特做非运算，否则保持不变
-    - 矩阵表示为 $CNOT = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0\end{pmatrix}$
-    - CNOT 门可以将两个量子比特纠缠起来，如 $CNOT(H|0\rangle \otimes |0\rangle) = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = |\Phi^+\rangle$
+    - 矩阵表示为 $CNOT_{HIGH} = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0\end{pmatrix}$（控制量子比特为高位），$CNOT_{LOW} = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0\end{pmatrix}$（控制量子比特为低位）
+    - CNOT 门可以将两个量子比特纠缠起来，如 $CNOT_{HIGH}(H|0\rangle \otimes |0\rangle) = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = |\Phi^+\rangle$
 - SWAP 门
     - SWAP 门是一个两量子比特门，作用于两个量子比特上，交换它们的状态
     - 矩阵表示为 $SWAP = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}$
@@ -116,7 +134,9 @@ $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$
 
 ### 量子计算的并行性
 
-判断 $f: \{0,1\}^n \to \{0,1\}^n$ 是平衡函数（$f(x) = 0$ 的数量等于 $f(x) = 1$ 的数量）还是常数函数（$f(x) \equiv 0$ 或 $f(x) \equiv 1$），经典计算机需要计算 $\frac{2^n}{2} + 1$ 次才能确定，而量子计算机只需一次。
+![量子计算并行性](assets/Quan5.png)
+
+Deutsch问题：利用最少且足够的计算次数，判断 $f: \{0,1\}^n \to \{0,1\}^n$ 是平衡函数（$f(x) = 0$ 的数量等于 $f(x) = 1$ 的数量）还是常数函数（$f(x) \equiv 0$ 或 $f(x) \equiv 1$），经典计算机需要计算 $\frac{2^n}{2} + 1$ 次才能确定，而量子计算机只需一次。
 
 Oracle: TBD
 
@@ -127,3 +147,6 @@ Oracle: TBD
 
 ### 量子态演化
 
+### 量子图灵机
+
+## 量子算法
