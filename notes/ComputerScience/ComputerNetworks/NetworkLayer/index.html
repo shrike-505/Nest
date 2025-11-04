@@ -10,28 +10,28 @@
         <meta name="author" content="shrike505">
       
       
-        <link rel="canonical" href="https://nest.shrike505.cc/notes/ComputerScience/ComputerNetwork/">
+        <link rel="canonical" href="https://nest.shrike505.cc/notes/ComputerScience/ComputerNetworks/NetworkLayer/">
       
       
-        <link rel="prev" href="../TCS/">
+        <link rel="prev" href="../DataLinkLayer/">
       
       
-        <link rel="next" href="../../MathematicsAndPhysics/Analysis/">
+        <link rel="next" href="../TransportLayer/">
       
       
-      <link rel="icon" href="../../../img/PP.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <link rel="icon" href="../../../../img/PP.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>计算机网络 - 现实的荒原</title>
+        <title>网络层 - 现实的荒原</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,13 +115,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/print-site.css">
+      <link rel="stylesheet" href="../../../../css/print-site.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-material.css">
+      <link rel="stylesheet" href="../../../../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../../css/timeline.css">
+      <link rel="stylesheet" href="../../../../css/timeline.css">
     
-      <link rel="stylesheet" href="../../../assets/mkdocs_pagetree_plugin.css">
+      <link rel="stylesheet" href="../../../../assets/mkdocs_pagetree_plugin.css">
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif">
     
@@ -137,17 +137,17 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-      <link rel="stylesheet" href="../../../css/changelogs.css">
+      <link rel="stylesheet" href="../../../../css/changelogs.css">
     
-      <link rel="stylesheet" href="../../../css/newcolor.css">
+      <link rel="stylesheet" href="../../../../css/newcolor.css">
     
-      <link rel="stylesheet" href="../../../css/newfonts.css">
+      <link rel="stylesheet" href="../../../../css/newfonts.css">
     
-      <link rel="stylesheet" href="../../../css/newadmonitions.css">
+      <link rel="stylesheet" href="../../../../css/newadmonitions.css">
     
-      <link rel="stylesheet" href="../../../css/cards.css">
+      <link rel="stylesheet" href="../../../../css/cards.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -172,11 +172,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -187,9 +182,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="现实的荒原" class="md-header__button md-logo" aria-label="现实的荒原" data-md-component="logo">
+    <a href="../../../.." title="现实的荒原" class="md-header__button md-logo" aria-label="现实的荒原" data-md-component="logo">
       
-  <img src="../../../img/PP.png" alt="logo">
+  <img src="../../../../img/PP.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -206,7 +201,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              计算机网络
+              网络层
             
           </span>
         </div>
@@ -317,7 +312,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -338,7 +333,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../stories/" class="md-tabs__link">
+        <a href="../../../../stories/" class="md-tabs__link">
           
   
   
@@ -360,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../thoughts/" class="md-tabs__link">
+        <a href="../../../../thoughts/" class="md-tabs__link">
           
   
   
@@ -384,7 +379,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -406,7 +401,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../others/" class="md-tabs__link">
+        <a href="../../../../others/" class="md-tabs__link">
           
   
   
@@ -426,7 +421,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../tags/" class="md-tabs__link">
         
   
   
@@ -445,7 +440,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../friends/" class="md-tabs__link">
+      <a href="../../../../friends/" class="md-tabs__link">
         
   
   
@@ -480,9 +475,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="现实的荒原" class="md-nav__button md-logo" aria-label="现实的荒原" data-md-component="logo">
+    <a href="../../../.." title="现实的荒原" class="md-nav__button md-logo" aria-label="现实的荒原" data-md-component="logo">
       
-  <img src="../../../img/PP.png" alt="logo">
+  <img src="../../../../img/PP.png" alt="logo">
 
     </a>
     现实的荒原
@@ -509,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -576,7 +571,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../stories/" class="md-nav__link ">
+            <a href="../../../../stories/" class="md-nav__link ">
               
   
   
@@ -611,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Smoke/" class="md-nav__link">
+      <a href="../../../../stories/Smoke/" class="md-nav__link">
         
   
   
@@ -634,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/G30/" class="md-nav__link">
+      <a href="../../../../stories/G30/" class="md-nav__link">
         
   
   
@@ -657,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Curse/" class="md-nav__link">
+      <a href="../../../../stories/Curse/" class="md-nav__link">
         
   
   
@@ -680,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Justice/" class="md-nav__link">
+      <a href="../../../../stories/Justice/" class="md-nav__link">
         
   
   
@@ -703,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Fool/" class="md-nav__link">
+      <a href="../../../../stories/Fool/" class="md-nav__link">
         
   
   
@@ -726,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Pepper/" class="md-nav__link">
+      <a href="../../../../stories/Pepper/" class="md-nav__link">
         
   
   
@@ -749,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Protein/" class="md-nav__link">
+      <a href="../../../../stories/Protein/" class="md-nav__link">
         
   
   
@@ -772,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Vanishment/" class="md-nav__link">
+      <a href="../../../../stories/Vanishment/" class="md-nav__link">
         
   
   
@@ -795,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Gunpowdersmoke/" class="md-nav__link">
+      <a href="../../../../stories/Gunpowdersmoke/" class="md-nav__link">
         
   
   
@@ -818,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Newcar/" class="md-nav__link">
+      <a href="../../../../stories/Newcar/" class="md-nav__link">
         
   
   
@@ -841,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Weapon/" class="md-nav__link">
+      <a href="../../../../stories/Weapon/" class="md-nav__link">
         
   
   
@@ -864,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../stories/Mice/" class="md-nav__link">
+      <a href="../../../../stories/Mice/" class="md-nav__link">
         
   
   
@@ -927,7 +922,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../thoughts/" class="md-nav__link ">
+            <a href="../../../../thoughts/" class="md-nav__link ">
               
   
   
@@ -962,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Echo/" class="md-nav__link">
+      <a href="../../../../thoughts/Echo/" class="md-nav__link">
         
   
   
@@ -985,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Gaut/" class="md-nav__link">
+      <a href="../../../../thoughts/Gaut/" class="md-nav__link">
         
   
   
@@ -1008,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Homesick/" class="md-nav__link">
+      <a href="../../../../thoughts/Homesick/" class="md-nav__link">
         
   
   
@@ -1031,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Gut/" class="md-nav__link">
+      <a href="../../../../thoughts/Gut/" class="md-nav__link">
         
   
   
@@ -1054,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Fortune/" class="md-nav__link">
+      <a href="../../../../thoughts/Fortune/" class="md-nav__link">
         
   
   
@@ -1077,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thoughts/Unspoken/" class="md-nav__link">
+      <a href="../../../../thoughts/Unspoken/" class="md-nav__link">
         
   
   
@@ -1145,7 +1140,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -1235,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/AIY/" class="md-nav__link">
+      <a href="../../../AI/AIY/" class="md-nav__link">
         
   
   
@@ -1258,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/DAML/" class="md-nav__link">
+      <a href="../../../AI/DAML/" class="md-nav__link">
         
   
   
@@ -1281,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/AIL/" class="md-nav__link">
+      <a href="../../../AI/AIL/" class="md-nav__link">
         
   
   
@@ -1325,7 +1320,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../AI/NLP/" class="md-nav__link ">
+            <a href="../../../AI/NLP/" class="md-nav__link ">
               
   
   
@@ -1363,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/ML/" class="md-nav__link">
+      <a href="../../../AI/ML/" class="md-nav__link">
         
   
   
@@ -1409,7 +1404,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../AI/CV/" class="md-nav__link ">
+            <a href="../../../AI/CV/" class="md-nav__link ">
               
   
   
@@ -1444,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/CV/CVD/" class="md-nav__link">
+      <a href="../../../AI/CV/CVD/" class="md-nav__link">
         
   
   
@@ -1540,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ComputerSystem1/" class="md-nav__link">
+      <a href="../../ComputerSystem1/" class="md-nav__link">
         
   
   
@@ -1563,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ComputerSystem2/" class="md-nav__link">
+      <a href="../../ComputerSystem2/" class="md-nav__link">
         
   
   
@@ -1586,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ComputerSystem3/" class="md-nav__link">
+      <a href="../../ComputerSystem3/" class="md-nav__link">
         
   
   
@@ -1609,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADS/" class="md-nav__link">
+      <a href="../../ADS/" class="md-nav__link">
         
   
   
@@ -1632,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TCS/" class="md-nav__link">
+      <a href="../../TCS/" class="md-nav__link">
         
   
   
@@ -1656,16 +1651,42 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" checked>
+        
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1674,225 +1695,172 @@
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PhysicalLayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    物理层
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataLinkLayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据链路层
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    计算机网络
+    网络层
     
   </span>
   
 
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="../TransportLayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    传输层
     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      绪论
-    </span>
-  </a>
   
-    <nav class="md-nav" aria-label="绪论">
-      <ul class="md-nav__list">
+  
+    <li class="md-nav__item">
+      <a href="../ApplicationLayer/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      因特网
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#switching-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      交换模型（Switching Model）
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      计算机网络简介
-    </span>
-  </a>
+  <span class="md-ellipsis">
+    应用层
+    
+  </span>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      计算机网络体系结构
-    </span>
-  </a>
+
+      </a>
+    </li>
   
-    <nav class="md-nav" aria-label="计算机网络体系结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      分层的必要性
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      物理层
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="物理层">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      传输媒体
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      传输方式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      编码与调制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      信道的极限容量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      信道复用
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据链路层
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="数据链路层">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 Problems
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ppp" class="md-nav__link">
-    <span class="md-ellipsis">
-      PPP 协议
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ethernet" class="md-nav__link">
-    <span class="md-ellipsis">
-      共享式 Ethernet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      网卡
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      MAC 地址
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1973,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Analysis/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Analysis/" class="md-nav__link">
         
   
   
@@ -1996,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Physics1/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Physics1/" class="md-nav__link">
         
   
   
@@ -2019,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/ODE/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/ODE/" class="md-nav__link">
         
   
   
@@ -2042,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/DiscreteMath/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/DiscreteMath/" class="md-nav__link">
         
   
   
@@ -2065,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Probability/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Probability/" class="md-nav__link">
         
   
   
@@ -2088,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Physics2/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Physics2/" class="md-nav__link">
         
   
   
@@ -2111,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Optimization/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Optimization/" class="md-nav__link">
         
   
   
@@ -2134,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MathematicsAndPhysics/Quantum/" class="md-nav__link">
+      <a href="../../../MathematicsAndPhysics/Quantum/" class="md-nav__link">
         
   
   
@@ -2210,7 +2178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Literature/BasicLinguistics/" class="md-nav__link">
+      <a href="../../../Literature/BasicLinguistics/" class="md-nav__link">
         
   
   
@@ -2294,7 +2262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/cs61a/" class="md-nav__link">
+      <a href="../../../Language/cs61a/" class="md-nav__link">
         
   
   
@@ -2317,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Verilog/" class="md-nav__link">
+      <a href="../../../Language/Verilog/" class="md-nav__link">
         
   
   
@@ -2340,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Cpp/" class="md-nav__link">
+      <a href="../../../Language/Cpp/" class="md-nav__link">
         
   
   
@@ -2363,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Toefl/" class="md-nav__link">
+      <a href="../../../Language/Toefl/" class="md-nav__link">
         
   
   
@@ -2386,7 +2354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Language/Typst/" class="md-nav__link">
+      <a href="../../../Language/Typst/" class="md-nav__link">
         
   
   
@@ -2462,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SummerCourses/CTF/" class="md-nav__link">
+      <a href="../../../SummerCourses/CTF/" class="md-nav__link">
         
   
   
@@ -2527,7 +2495,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../others/" class="md-nav__link ">
+            <a href="../../../../others/" class="md-nav__link ">
               
   
   
@@ -2562,7 +2530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/Quotes/" class="md-nav__link">
+      <a href="../../../../others/Quotes/" class="md-nav__link">
         
   
   
@@ -2585,7 +2553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/final/" class="md-nav__link">
+      <a href="../../../../others/final/" class="md-nav__link">
         
   
   
@@ -2608,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../others/summer_idle/" class="md-nav__link">
+      <a href="../../../../others/summer_idle/" class="md-nav__link">
         
   
   
@@ -2638,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
+      <a href="../../../../tags/" class="md-nav__link">
         
   
   
@@ -2660,7 +2628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../friends/" class="md-nav__link">
+      <a href="../../../../friends/" class="md-nav__link">
         
   
   
@@ -2692,202 +2660,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      绪论
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="绪论">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      因特网
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#switching-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      交换模型（Switching Model）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      计算机网络简介
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      计算机网络体系结构
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="计算机网络体系结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      分层的必要性
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      物理层
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="物理层">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      传输媒体
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      传输方式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      编码与调制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      信道的极限容量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      信道复用
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据链路层
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="数据链路层">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 Problems
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ppp" class="md-nav__link">
-    <span class="md-ellipsis">
-      PPP 协议
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ethernet" class="md-nav__link">
-    <span class="md-ellipsis">
-      共享式 Ethernet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      网卡
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      MAC 地址
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2901,554 +2673,16 @@
                 
                   
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../../tags/#tag:大三上笔记" class="md-tag">大三上笔记</a>
-      
-    
-  </nav>
-
 
   
   
 
 
-<h1 id="_1">计算机网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+  <h1>网络层</h1>
+
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 6035 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 20 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 17 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 0 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
 </div>
-<blockquote>
-<p>任课教师：许海涛<br />
-参考：《深入浅出计算机网络》，<a href="https://zjucomp.net/">https://zjucomp.net/</a>，<a href="https://www.yuque.com/xianyuxuan/coding/gez9yl">https://www.yuque.com/xianyuxuan/coding/gez9yl</a></p>
-</blockquote>
-<details class="note">
-<summary>课程作业</summary>
-<ul>
-<li><a href="../assets/CNhw1.pdf">hw1</a></li>
-<li><a href="../assets/CNhw2.pdf">hw2</a></li>
-</ul>
-</details>
-<h2 id="_2">绪论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">因特网<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">网络vs.互联网vs.因特网</p>
-<ul>
-<li>网络：节点（Node）和节点间通过有线/无线链路（Link）连接而成的系统</li>
-<li>互联网：由多个网络通过路由器互联而成的网络（网络的网络）</li>
-<li>因特网（Internet）：全球最大的互联网</li>
-</ul>
-</div>
-<p>因特网的三个发展阶段：</p>
-<ul>
-<li>ARPANET 向互连网发展</li>
-<li>三级结构因特网</li>
-<li>多层次 ISP 结构的因特网<ul>
-<li>ISP（Internet Service Provider）：因特网服务提供商，例如中国电信/联通/移动</li>
-</ul>
-</li>
-</ul>
-<p>因特网的标准化工作是面向公众的，其任何一个建议标准在成为因特网标准之前都以 RFC（Request for Comments）的技术文档的形式在因特网上发表，即因特网草案-&gt;建议标准-&gt;因特网标准</p>
-<h3 id="switching-model">交换模型（Switching Model）<a class="headerlink" href="#switching-model" title="Permanent link">&para;</a></h3>
-<ul>
-<li>电路交换：用户设备通过用户线连到各自的电话交换机，交换机间通过中继线互联<ul>
-<li>分配资源——占用资源——归还资源</li>
-<li><strong>突发式</strong>数据传送，传送效率很低——传送时间占很小一部分</li>
-</ul>
-</li>
-<li>分组交换：通过<strong>分组交换网</strong>中的<strong>交换节点</strong>传送分组后的数据（报文，Message）<ul>
-<li><img alt="分组交换" src="../assets/CN1.png" /></li>
-<li>将较长的报文拆分成若干个较短的等长数据段，在每个数据段前加上一些必要的控制信息（称为 Header），例如源地址和目标地址等，这样就形成了一个个分组（Packet）</li>
-<li>pros：没有建立连接和释放连接的过程；分组传输过程中逐段占用通信链路，有较高的通信线路利用率；交换节点可以为每一个分组独立选择转发路由，使得网络有很好的生存性</li>
-<li>cons：分组首部带来了额外的传输开销；交换节点存储转发分组会造成一定的时延；无法确保通信时端到端通信资源全部可用，在通信量较大时可能造成网络拥塞；分组可能会出现失序和丢失等问题。</li>
-<li>注意，分组的首部是额外添加的，并不包含原数据的内容，即分组 = 首部 + 数据</li>
-</ul>
-</li>
-<li>报文交换：<ul>
-<li>报文被<strong>整个</strong>地发送，而不是拆分成若干个分组进行发送。</li>
-<li>交换节点将报文整体接收完成后才能查找转发表，将整个报文转发到下一个节点。</li>
-<li>因此，报文交换比分组交换带来的转发时延要长很多，需要交换节点具有的缓存空间也大很多。</li>
-</ul>
-</li>
-</ul>
-<p><img alt="交换技术比较" src="../assets/CN2.png" /></p>
-<h3 id="_4">计算机网络简介<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>分类<ul>
-<li>按照交换方式分类：<ul>
-<li>电路交换</li>
-<li>分组交换</li>
-<li>报文交换</li>
-</ul>
-</li>
-<li>使用者分类<ul>
-<li>公用网（因特网）</li>
-<li>专用网（军队、铁路等）</li>
-</ul>
-</li>
-<li>传输介质分类<ul>
-<li>有线网</li>
-<li>无线网</li>
-</ul>
-</li>
-<li>覆盖范围分类<ul>
-<li>广域网（WAN）：几十-几千公里</li>
-<li>城域网（MAN）：五公里-五十公里</li>
-<li>局域网（LAN）：1km左右</li>
-<li>个域网（PAN）：10m左右</li>
-</ul>
-</li>
-<li>拓扑结构分类<ul>
-<li>总线型</li>
-<li>星型</li>
-<li>环型</li>
-<li>网状型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="admonition definition">
-<p class="admonition-title">CN 的性能指标</p>
-<details class="note">
-<summary>速率</summary>
-<p>即<strong>每秒交换多少个 bit</strong>，亦称为数据率（data rate）或比特率（bit rate），单位是 bps（bits per second, bit/s），也常用 kbps、Mbps、Gbps 等，每两个单位间隔 1000 倍。</p>
-<ul>
-<li>注意，<strong>数据量</strong>的单位常用字节（Byte, B），1B = 8bits，且此处 KB, MB, GB 等中的 K, M, G 是 2^10 的倍数，与速率的进制不同。</li>
-<li><img alt="速率与数据量" src="../assets/CN3.png" /></li>
-</ul>
-<details class="example">
-<summary>例</summary>
-<ul>
-<li>有一个待发送的数据块，大小为100MB，网卡的发送速率为100Mbps，则网卡发送完该数据块需要多长时间？</li>
-<li><span class="arithmatex">\(t = \frac{100MB}{100Mbps} = \frac{MB}{Mbps} =\)</span>（不能直接约掉M！）<span class="arithmatex">\(\frac{2^{20} \times 8 bits}{10^6 bits/s} \approx 8.389s\)</span></li>
-</ul>
-</details>
-</details>
-<details class="note">
-<summary>带宽</summary>
-<p>用来表示网络的通信线路所能传送数据的能力，即在单位时间内从网络中的某一点到另一点所能通过的最高数据率。</p>
-<ul>
-<li>数据传送速率 = min [主机接口速率，线路带宽，交换机或路由器的接口速率]</li>
-</ul>
-</details>
-<details class="note">
-<summary>吞吐量</summary>
-<p>在单位时间内通过某个网络或接口的实际数据量；受网络带宽限制。</p>
-</details>
-<details class="note">
-<summary>时延</summary>
-<p>数据从网络的一端传送到另一端所耗费的时间，也称为延迟或迟延。 </p>
-<ul>
-<li>发送时延 = 分组长度（bits）/ 发送速率（bps）（发送速率就是『带宽』中计算的数据传送速率）</li>
-<li>传播时延 = 链路长度（m）/ 电磁波信号传播速度（m/s）<ul>
-<li>自由空间：<span class="arithmatex">\(3.0 × 10^8\)</span> m/s</li>
-<li>铜线：<span class="arithmatex">\(2.3 × 10^8\)</span> m/s</li>
-<li>光纤：<span class="arithmatex">\(2.0 × 10^8\)</span> m/s</li>
-</ul>
-</li>
-<li>排队时延和处理时延不方便计算</li>
-<li>有点流水线的感觉：<img alt="时延" src="../assets/CN4.png" /></li>
-</ul>
-<details class="example">
-<summary>例</summary>
-<ul>
-<li><img alt="时延例题1" src="../assets/CN5.png" /><ul>
-<li>注意计算分组数量时，分组长度要减去首部长度</li>
-</ul>
-</li>
-<li><img alt="时延例题2" src="../assets/CN6.png" /><ul>
-<li>由此可以看出，分组长度大时，发送时延占主导；否则传播时延占主导</li>
-</ul>
-</li>
-</ul>
-</details>
-<p><img alt="速记" src="../assets/CN7.png" /></p>
-</details>
-<details class="note">
-<summary>时延带宽积</summary>
-<p>传播时延和带宽的乘积，可以形象地理解为某一时刻信道/链路中“充满”的比特数。</p>
-<p>链路的时延带宽积也称为以比特为单位的链路长度</p>
-<details class="example">
-<summary>例</summary>
-<ul>
-<li>主机A和B之间采用光纤链路，链路长1km，链路带宽为1Gb/s，请计算该链路的时延带宽积。</li>
-<li>时延带宽积 = 传播时延 × 带宽 = <span class="arithmatex">\(\frac{1000m}{2.0 \times 10^8 m/s} \times 1Gb/s = 5000 bits\)</span></li>
-</ul>
-</details>
-</details>
-<details class="note">
-<summary>往返时间</summary>
-<p>RTT（Round Trip Time），即一个分组从发送端发送，到发送端收到从接收端发来的相应确认分组所经历的时间</p>
-</details>
-<details class="note">
-<summary>利用率</summary>
-<ul>
-<li>链路利用率：某条链路有百分之多少时间有数据通过<ul>
-<li>某链路利用率增大时，其引起的时延也会增大（根本是分组在交换节点的排队时延增大了）</li>
-</ul>
-</li>
-<li>网络利用率：所有链路利用率的加权平均</li>
-<li><span class="arithmatex">\(D_0\)</span>: 网络空闲时的时延；<span class="arithmatex">\(D\)</span>: 网络当前时延；<span class="arithmatex">\(U\)</span>: 网络利用率。那么有 <span class="arithmatex">\(D = \frac{D_0}{1-U}\)</span></li>
-</ul>
-</details>
-<details class="note">
-<summary>丢包率</summary>
-<p>一定的时间范围内，传输过程中丢失的分组数量与总分组数量的比值。</p>
-<ul>
-<li>Packet 丢失主要有以下两种原因：<ul>
-<li>分组在传输过程中出现误码，被传输路径中的节点交换机（例如路由器）或目的主机检测出误码而丢弃。</li>
-<li>节点交换机根据丢弃策略主动丢弃分组。</li>
-</ul>
-</li>
-</ul>
-</details>
-</div>
-<h3 id="_5">计算机网络体系结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>常见的三种 CN Arch<ul>
-<li>OSI 七层参考模型：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</li>
-<li>TCP/IP 四层参考模型：网络接口层、网际层、传输层、应用层；即物理层和数据链路层合并为网络接口层，会话层到应用层合并为新应用层</li>
-<li>原理参考模型：由于网络接口层在教学意义上比较难以理解，把网络接口层重新拆分为数据链路层和物理层</li>
-</ul>
-</li>
-</ul>
-<h4 id="_6">分层的必要性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>分层可将庞大复杂的问题转化为若干较小的局部问题，各层主要考虑的功能如下：</p>
-<ul>
-<li>物理层：传输媒体（介质）的选择；物理接口选择；0/1 的表示</li>
-<li>数据链路层：标识网络中各主机（主机编址，例如MAC地址）；从比特流中区分出地址和数据（数据封装格式）；协调各主机争用总线（媒体接入控制）；以太网交换机的实现（自学习和转发帧）；检测数据是否误码（差错检测）；出现传输差错如何处理（可靠传输和不可靠传输）</li>
-<li>网络层：标识网络和网络中的各主机（网络和主机共同编址，例如IP地址）；路由器转发分组（路由选择协议、路由表和转发表）；</li>
-<li>运输层：进程之间基于网络的通信（进程的标识，例如端口号）；出现传输差错如何处理（可靠传输和不可靠传输；</li>
-<li>应用层：通过应用进程间的交互来完成特定的网络应用；进行会话管理和数据表示；</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Terminology</p>
-<ul>
-<li>实体（Entity）：任何可发送或接收信息的硬件或软件进程</li>
-<li>协议（Protocol）：对等实体之间通信的规则，包含如下三要素<ul>
-<li>语法（Syntax）：规定数据包的结构，确保信息能够被正确解析</li>
-<li>语义（Semantics）：规定数据包中的每个字段代表什么意义，以及接收设备收到后该如何处理</li>
-<li>同步（Synchronization）：规定发送方和接收方在通信时的时序匹配关系</li>
-</ul>
-</li>
-<li>服务（Service）：对等实体通过协议进行通信，为<strong>上一层</strong>提供服务；实体看得见下层提供的服务，但并不知道实现该服务的具体协议<ul>
-<li>相邻两层实体交换信息的接口称为服务访问点（ASP，Access Service Point），用于区分不同的服务类型</li>
-<li>上层要使用下层所提供的服务，必须通过与下层交换一些命令，这些命令称为<strong>服务原语</strong>。</li>
-</ul>
-</li>
-<li>PDU &amp; SDU<ul>
-<li><img alt="PDU &amp; SDU" src="../assets/CN8.png" /></li>
-</ul>
-</li>
-</ul>
-</div>
-<h2 id="_7">物理层<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">物理层接口特性</p>
-<ul>
-<li>机械特性：规定连接器的形状、尺寸和引脚排列等</li>
-<li>电气特性：规定信号的电压、电流、频率、距离限制等</li>
-<li>功能特性：规定接口电缆的各条信号线的作用</li>
-<li>规程特性：规定在信号线上传输比特流的一组操作过程，包括各信号间的时序关系</li>
-</ul>
-</div>
-<h3 id="_8">传输媒体<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>也称传输媒介，是网络设备间的物理通路，处于物理层之下，不包含在 CN Arch 中</p>
-<ul>
-<li>导向型传输媒体（固体媒体）<ul>
-<li>同轴电缆<ul>
-<li>基带、宽带</li>
-</ul>
-</li>
-<li>双绞线<ul>
-<li>绞合：减少相邻导线间的电磁干扰 &amp; 抵御部分来自外界的电磁干扰</li>
-</ul>
-</li>
-<li>光纤<ul>
-<li>使用发光二极管或半导体激光器将电脉冲转为光脉冲，通过光纤到达接收端后，通过光电二极管或激光检波器输出电脉冲</li>
-<li>多模光纤（全反射 all along）（发光二极管 to 光电二极管）、单模光纤（直线传播）（半导体激光器 to 激光检波器）</li>
-<li>pros：通信容量非常大，抗电磁干扰能力强，传输损耗小，中继距离长，体积小重量轻</li>
-<li>cons：切割光纤需要较贵的专用设备；光纤接口较昂贵</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>非导向型传输媒体（无线媒体）<ul>
-<li><img alt="电波频段" src="../assets/CN9.png" /></li>
-<li>无线电波（长、中、短、米波）<ul>
-<li>低频中频近地传输，高频甚高频通过大气离子层反射远距离传输</li>
-</ul>
-</li>
-<li>微波（分米、厘米、毫米波）<ul>
-<li>地面微波接力通信</li>
-<li>同步卫星、人造卫星</li>
-</ul>
-</li>
-<li>红外线<ul>
-<li>各种遥控器</li>
-<li>频率更高，必须要直线传播，传输距离短，速度较低</li>
-</ul>
-</li>
-<li>激光</li>
-<li>可见光</li>
-</ul>
-</li>
-</ul>
-<h3 id="_9">传输方式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ul>
-<li>串行/并行传输<ul>
-<li>前者：只有一条链路传输一道比特流</li>
-<li>后者：有多条链路同时传输多道比特流</li>
-<li><img alt="串行/并行传输" src="../assets/CN10.png" /></li>
-</ul>
-</li>
-<li>同步/异步传输<ul>
-<li>前者：<ul>
-<li>外同步：在收发双方之间增加一条时钟信号线。</li>
-<li>内同步：发送端将时钟信号编码到发送数据中一起发送（例如曼彻斯特编码）。</li>
-</ul>
-</li>
-<li>后者：<ul>
-<li>按字节进行传输，字节间异步（时间间隔不固定）</li>
-<li>字节中的每个比特仍然要同步，即各比特的持续时间是相同的。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>单向通信（单工通信，Simplex Communication）、双向交替通信（半双工通信，Half-Duplex Communication）和双向同时通信（全双工通信，Full-Duplex Communication）<ul>
-<li>字面意思，即发送端和接收端不能/可以但不能同时/可以且可以同时通信</li>
-<li>分别应用于无线电广播、对讲机、电话</li>
-</ul>
-</li>
-</ul>
-<h3 id="_10">编码与调制<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>网络中所见的各种文字图片视频等称为消息（Message），消息需要转化为二进制数据（Data），接着为了在链路中传播，又要将其转化为电信号（Signal），即数字的电磁表现。计算机发出的信号称作数字基带信号，需要通过<strong>调制</strong>（基带调制（也称编码）（数字信道）、带通调制（模拟信道））迁移到适合传输的频段。</p>
-<p>代表不同离散数值（0/1）的基本波形称为码元。</p>
-<ul>
-<li>
-<p>编码方式</p>
-<ul>
-<li>双极性不归零编码（编码效率高，但存在同步问题）<ul>
-<li>正电平表示1，负电平表示0</li>
-<li>接收方怎么判断相邻的许多同电平码元究竟有多少个？给接收方发送数据的同时，还通过时钟信号线给接收方发送时钟信号。按照接收到的时钟信号的节拍，对数据信号线上的信号进行采样。</li>
-</ul>
-</li>
-<li>双极性归零编码（自同步，但编码效率低）<ul>
-<li>在每个码元的中间时刻信号都会回归到零电平。接收方只要在信号归零后采样即可。</li>
-</ul>
-</li>
-<li>曼彻斯特编码（自同步，传统以太网）<ul>
-<li>码元内部上升沿（正跳变）表示0，下降沿（负跳变）表示1</li>
-</ul>
-</li>
-<li>差分曼彻斯特编码<ul>
-<li>码元中间时刻的电平跳变仅表示时钟信号，而不表示数据。</li>
-<li><strong>每一个码元开始处</strong>无跳变表示1，有跳变表示0。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>带通调制方法</p>
-<ul>
-<li><img alt="调制方法" src="../assets/CN11.png" /></li>
-</ul>
-</li>
-<li>混合调制方法<ul>
-<li>相位和振幅结合起来一起调制，每个码元可看作一个二维平面的点</li>
-<li>正交振幅调制QAM-16<ul>
-<li>类似极坐标，r=振幅，θ=相位</li>
-<li>12种相位</li>
-<li>共16种码元，每种码元表示 <span class="arithmatex">\(\log_2{16} = 4\)</span> 个比特</li>
-<li>每个码元与4个比特的对应关系采用格雷码，即任意两个相邻码元只有1个比特不同：这样就算发生了误码，最多也只有1个比特错误</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="_11">信道的极限容量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>信道会由于码元的传输速率、信号的传输距离、传输媒体质量、噪声干扰导致信号失真；信道上传输的数字信号，可以看做是多个频率的模拟信号进行多次叠加后形成的方波。</p>
-<p>如果数字信号中的高频分量在传输时受到衰减甚至不能通过信道，则接收端接收到的波形前沿和后沿就变得不那么陡峭，每一个码元所占的时间界限也不再明确。这样，在接收端接收到的信号波形就失去了码元之间的清晰界限，这种现象称为<strong>码间串扰</strong>。如果信道的频带越宽，则能够通过的信号的高频分量就越多，那么码元的传输速率就可以更高，而不会导致码间串扰。然而，信道的频率带宽是有上限的，不可能无限大。因此，码元的传输速率也有上限。</p>
-<div class="admonition definition">
-<p class="admonition-title">奈氏准则</p>
-<p>理想低通信道的最高码元传输速率 = 2W Baud = 2W 码元/秒（W 为信道的频率带宽）</p>
-<p>Baud 即码元/秒，1码元携带 n 比特信息时，数据传输速率（比特率） = n × 码元传输速率 = n × Baud (bps)</p>
-<details class="example">
-<summary>例</summary>
-<ul>
-<li>在无噪声情况下，若某通信链路的带宽为3kHz，采用4个相位，每个相位具有4种振幅的QAM调制技术，则该通信链路的最大数据传输速率是多少？</li>
-<li>采用4个相位，每个相位4种振幅的QAM调制技术，可以调制出 4 × 4 = 16个不同的基本波形（码元） 。采用二进制对这16个不同的码元进行编码，需要使用4个比特（<span class="arithmatex">\(\log_2(16)=4\)</span>）。（即每个码元携带4比特信息）</li>
-<li>该通信链路的最大数据传输速率 = 6k（码元/秒）× 4（比特/码元）= 24k（比特/秒）= 24kbps</li>
-</ul>
-</details>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">香农公式</p>
-<p>带宽受限且有高斯白噪声干扰的信道的极限信息传输速率 <span class="arithmatex">\(C = W \log_2(1 + \frac{S}{N}) (bps)\)</span></p>
-<ul>
-<li>S：信道内所传信号的平均功率</li>
-<li>N：信道内的高斯噪声功率</li>
-<li>S/N：由信噪比（SNR）计算出的一个比值</li>
-<li>SNR = <span class="arithmatex">\(10 \log_{10}(\frac{S}{N})\)</span> dB</li>
-</ul>
-</div>
-<h3 id="_12">信道复用<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>Multiplexing:在一条传输媒体上同时传输多路用户的信号</p>
-<ul>
-<li>频分复用（FDM）<ul>
-<li>将信道的频带划分为若干个互不重叠的子信道，每个子信道传输一路用户信号</li>
-<li>每个子信道之间要有隔离频带，防止相邻子信道间的串扰</li>
-</ul>
-</li>
-<li>时分复用（TDM）<ul>
-<li>将信道的时间划分为若干个时隙，每个时隙传输一路用户信号</li>
-<li>各用户时隙周期性出现周期为TDM帧的长度</li>
-<li>时分复用的所有用户在不同的时间占用同样的频带</li>
-</ul>
-</li>
-<li>波分复用（WDM）<ul>
-<li>根据频分复用的设计思想，可在一根光纤上同时传输多个频率（波长）相近的光载波信号</li>
-<li><img alt="波分复用" src="../assets/CN12.png" /></li>
-</ul>
-</li>
-<li>码分复用（CDM）<ul>
-<li>每个用户可以在相同的时间用相同的频带进行通信</li>
-<li>将每个比特时间划分为m个更短的时间片，称为码片（Chip）。</li>
-<li>CDMA中的每个站点都被指派一个唯一的m比特码片序列（Chip Sequence）。</li>
-<li>某个站要发送比特1，则发送它自己的m比特码片序列</li>
-<li>某个站要发送比特0，则发送它自己的m比特码片序列的反码</li>
-<li>码片向量：0记为-1，1记为+1，原始message进行记录</li>
-<li>每个站分配的码片序列必须各不相同且码片向量正交</li>
-<li>例：<img alt="码分复用" src="../assets/CN13.png" /></li>
-<li>又一例：<img alt="码分复用例题" src="../assets/CN14.png" /></li>
-</ul>
-</li>
-</ul>
-<h2 id="_13">数据链路层<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p>链路（Link）定义为从一个节点到相邻节点（中间没有其他节点）的物理线路（有线或无限）。</p>
-<p>数据链路（Data Link）是在链路的基础上添加了一些实现<strong>控制数据传输的协议</strong>的软硬件（例如说网络适配器）</p>
-<h3 id="3-problems">3 Problems<a class="headerlink" href="#3-problems" title="Permanent link">&para;</a></h3>
-<ul>
-<li>封装成帧和透明传输<ul>
-<li>为网络层交付来的分组添加一个首部和一个尾部构成帧（Frame）</li>
-<li>首部的开头有帧开始符，尾部的结尾有帧结束符</li>
-<li>分组长度（数据载荷）最好大于首尾的长度（为保证效率），每种数据链路层协议都规定了其长度上限，称为最大传送单元（MTU，Maximum Transfer Unit）</li>
-<li>透明传输：在数据载荷中如果出现帧结束符，接收方会误以为到达了帧的结尾，从而导致后续的数据被抛弃<ul>
-<li>需要采取措施使数据链路层对 PDU 内容没有任何限制，酷似该层不存在，即透明传输</li>
-<li>Solution：<ul>
-<li>面向字节的透明传输：<strong>字节填充</strong>，在<strong>数据载荷中的</strong>帧定界符和转义字符前插入一个转义字符（ESC）；接收方的数据链路层在把数据载荷上交给传输层时，去掉插入的转义字符</li>
-<li>面向比特的透明传输：<strong>比特填充</strong> <img alt="比特填充" src="../assets/CN15.png" /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>差错检测</p>
-<ul>
-<li>根据帧尾中的检错码检测帧中是否有误码（1变成0，0变成1）</li>
-<li>奇偶校验：在待发送的数据后面添加1个校验位，使得添加该校验位后的整个数据中比特1的个数为奇/偶数<ul>
-<li>如果偶数个位发生误码，则比特1的数量奇偶性不会改变，无法检测出错误</li>
-</ul>
-</li>
-<li>
-<p>循环冗余校验（CRC，Cyclic Redundancy Check）</p>
-<ul>
-<li>发送方和接收方事先约定一个生成多项式 <span class="arithmatex">\(G(x)\)</span>，<span class="arithmatex">\(G(x)\)</span>的最高次幂为<span class="arithmatex">\(r\)</span></li>
-<li>发送方将待发送的比特串通过 <span class="arithmatex">\(G(x)\)</span> 进行计算得到冗余码，添加到数据后一起发送</li>
-<li>接收方收到数据和冗余码后，通过 <span class="arithmatex">\(G(x)\)</span> 来计算收到的数据和冗余码是否产生了误码。</li>
-<li><img alt="发送方CRC" src="../assets/CN16.png" /><ul>
-<li>注意这里的竖式除法，每一步做的不是减法，是异或</li>
-</ul>
-</li>
-<li><img alt="接收方CRC" src="../assets/CN17.png" /></li>
-</ul>
-<details class="example">
-<summary>例</summary>
-<p><img alt="CRC例题1" src="../assets/CN18.png" />
-<img alt="CRC例题2" src="../assets/CN19.png" /></p>
-</details>
-</li>
-<li>
-<p>校验是否有误码是很好实现的，但是判断误码位置很难，有一种海明码：<a href="https://www.bilibili.com/video/BV1P64y1478p">https://www.bilibili.com/video/BV1P64y1478p</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p>可靠传输</p>
-<ul>
-<li>判断到误码后如何处理取决于数据链路层提供的传输服务</li>
-<li>可靠传输：通过某种机制实现发送方发送什么，接收方最终都能正确收到。无线链路误码率较高，必须可靠传输。</li>
-<li>不可靠传输：收到有误码的帧直接丢弃。有线链路误码率较低，可以不可靠传输。</li>
-<li>传输差错分类：误码、分组丢失、分组失序、分组重复</li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">停止-等待协议</p>
-<p>发送方在发送数据分组后等待接收方发来的确认分组（ACK，Acknowledgement）或否定确认分组（NAK，Negative Acknowledgement），收到 ACK 后发送下一个数据分组，收到 NAK 后重发该数据分组。接收方进行差错检测，若无误码则发送 ACK，有误码则发送 NAK。</p>
-<ul>
-<li>Problem 1：如果在发送方发送数据分组后，确认分组丢失了怎么办（接收方一直不回应，因此发送方无法继续发送数据分组）？<ul>
-<li>Solution：发送方设置一个超时定时器（Timeout Timer），在每发送一个数据分组后启动定时器，若在定时时间（RTO，Retransmission Time Out）内没有收到确认分组，则重发该数据分组。</li>
-<li>RTO 一般设为比 RTT 略长一些的时间</li>
-</ul>
-</li>
-<li>Problem 2：如果 ACK 或 NAK 丢失了怎么办（经过 RTO 后，发送方重复发送相同的数据包）<ul>
-<li>Solution：给每个分组带上序号，对于停止-等待协议，只需要 1 位序号即可，0 和 1 交替使用</li>
-<li>接收方收到重复的数据分组后丢弃，发送一个“通知发送方发送新的数据分组”的 ACK</li>
-<li>考虑到确认迟到的情况，ACK 也要带上序号</li>
-</ul>
-</li>
-</ul>
-<details class="note">
-<summary>Stop-and-Wait 的信道利用率</summary>
-<p><img alt="Stop-and-Wait 信道利用率" src="../assets/CN22.png" /></p>
-</details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">回退 n 帧协议（Go-Back-N）</p>
-<p>采用流水线传输，利用发送窗口限制连续发送分组的数量</p>
-<ul>
-<li>使用 n 个比特给分组编序号（范围为 <span class="arithmatex">\(0\)</span> 到 <span class="arithmatex">\(2^n-1\)</span> ），维护一个发送窗口，大小为 <span class="arithmatex">\(W_T \in (1, 2^n - 1]\)</span>。</li>
-<li>在未收到接收方确认分组的情况下，发送方可将序号落入<span class="arithmatex">\(W_T\)</span>内的所有数据分组连续发送出去。</li>
-<li>接收方需要维护一个接收窗口 <span class="arithmatex">\(W_R\)</span> ，只有正确到达接收方（无误码）且序号落入 <span class="arithmatex">\(W_R\)</span> 内的数据分组才被接收方接收。<span class="arithmatex">\(W_R\)</span> 只能为 1。</li>
-<li>窗口滑动协议<ul>
-<li>发送方：收到确认分组后，发送窗口向前滑动，允许发送更多的数据分组</li>
-<li>接收方：收到正确的数据分组后，接收窗口向前滑动，允许接收下一个数据分组；同时发回针对该分组的确认分组</li>
-</ul>
-</li>
-<li>回退 N 帧的情况：看PPT<ul>
-<li>累计确认：接收方不必对收到的每一个数据分组都发送一个确认分组，而是可以在收到几个序号连续的数据分组后，对按序到达的最后一个数据分组发送确认分组。<ul>
-<li>pros：减少向网络中注入确认分组的数量；即使确认分组丢失，也可能不必重传数据分组。</li>
-<li>cons：不能向发送方及时准确地反映出接收方已正确接收的所有数据分组的数量</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<details class="example">
-<summary>例</summary>
-<ul>
-<li>数据链路层使用后退N帧（GBN）协议，发送方已经发送了编号0~7的帧。当计时器超时时，若发送方只收到了0、2、3号帧的确认，则发送方需要重发的帧数是多少？<ul>
-<li>从编号4开始超时，即重发 4 5 6 7 ，共 4 帧</li>
-</ul>
-</li>
-</ul>
-</details>
-</div>
-<div class="admonition note">
-<p class="admonition-title">选择重传协议（Selective Repeat）</p>
-<p>TBD</p>
-</div>
-<h3 id="ppp">PPP 协议<a class="headerlink" href="#ppp" title="Permanent link">&para;</a></h3>
-<p>Point-to-Point Protocol，点对点协议</p>
-<h3 id="ethernet">共享式 Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h3>
-<h3 id="_14">网卡<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<h3 id="mac">MAC 地址<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h3>
 
 
 
@@ -3471,7 +2705,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月26日 21:14:03 CST">2025年10月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月4日 23:29:40 CST">2025年11月4日</span>
   </span>
 
     
@@ -3481,7 +2715,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月16日 20:22:22 CST">2025年6月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月4日 23:29:40 CST">2025年11月4日</span>
   </span>
 
     
@@ -3492,53 +2726,6 @@
 
 
 
-
-  <h2 id="__comments">评论</h2>
-  <script src="https://giscus.app/client.js"
-        data-repo="shrike-505/Nest"
-        data-repo-id="R_kgDOKfuSyA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKfuSyM4Ca9sf"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-  </script>
-
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    /* Set palette on initial load */
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate" ? "dark" : "light"
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    /* Register event handlers after documented loaded */
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate" ? "dark" : "light"
-
-          /* Instruct Giscus to change theme */
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
 
                 
               </article>
@@ -3563,7 +2750,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../TCS/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 理论计算机科学导引">
+          <a href="../DataLinkLayer/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数据链路层">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -3573,20 +2760,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                理论计算机科学导引
+                数据链路层
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../MathematicsAndPhysics/Analysis/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学分析Ⅱ">
+          <a href="../TransportLayer/" class="md-footer__link md-footer__link--next" aria-label="下一页: 传输层">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数学分析Ⅱ
+                传输层
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3647,16 +2834,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../../js/print-site.js"></script>
+        <script src="../../../../js/print-site.js"></script>
       
-        <script src="../../../assets/mkdocs_pagetree_plugin.js"></script>
+        <script src="../../../../assets/mkdocs_pagetree_plugin.js"></script>
       
-        <script src="../../../javascript/katex.js"></script>
+        <script src="../../../../javascript/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       

@@ -611,16 +611,97 @@ DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一�
                 )
             ]
         )
-
-        #proof([
-            上面的练习可以总结出正则表达式向 NFA 的转化。从 NFA 向正则表达式的转化采用状态消除法（State Elimination Method）：
-
-            给定 NFA $N = (K, s, F, Delta)$，由以下步骤得到正则表达式 $R$:
-
-            - 将 N 转化为 N'
-                - N'中没有状态指向其的 initial state（新建一个初态，通过 $e "transition"$ 指向原先的初态）
-                - N'的 accepting state 只有一个，且该状态不指向任何状态（新建一个 accepting state，使原先的若干 accepting states 通过 $e "transition"$ 指向它）
-            - 删除 N' 中的非初态非末态状态，直到只剩下初态和末态
-        ])
     ]
 )
+
+#proof([
+    上面的练习可以总结出正则表达式向 NFA 的转化。从 NFA 向正则表达式的转化采用状态消除法（State Elimination Method）：
+
+    给定 NFA $N = (K, s, F, Delta)$，由以下步骤得到正则表达式 $R$:
+
+    - 将 N 转化为 N'
+        - N'中没有状态指向其的 initial state（新建一个初态，通过 $e "transition"$ 指向原先的初态）
+        - N'的 accepting state 只有一个，且该状态不指向任何状态（新建一个 accepting state，使原先的若干 accepting states 通过 $e "transition"$ 指向它）
+    - 删除 N' 中的非初态非末态状态，直到只剩下初态和末态；删除方法遵循下述规则（$q$ 为将被删除的状态）:
+
+    #figure(
+        three-line-table(
+            [
+                | NFA Component | RE (by State Elimination) |
+                | #figure(
+                    diagram(
+                        node-stroke: 1pt,
+                        node((1,0), $q$),
+                        edge((0,0), (1,0), "-|>", $a$),
+                        edge((1,0), (2,0), "-|>", $b$),
+                    )
+                ) | $a b$ |
+                | #figure(
+                    diagram(
+                        node-stroke: 1pt,
+                        node((1,0), $q$),
+                        edge((0,0), (1,0), "-|>", $a$),
+                        edge((1,0), (2,0), "-|>", $b$),
+                        edge((1,0), (1,0), "-|>", $c$, bend: 130deg),
+                    )
+                ) | $a c^* b$ |
+                | #figure(
+                    diagram(
+                        node-stroke: 1pt,
+                        node((1,0), $q$),
+                        edge((0,0), (1,0), "-|>", $a$),
+                        edge((1,0), (2,0), "-|>", $b$),
+                        edge((1,0), (1,0), "-|>", $c$, bend: 130deg),
+                        edge((1,0), (1,0), "-|>", $d$, bend: -130deg),
+                    )
+                ) | $a (c union d) ^* b$ |
+            ]
+            
+        )
+    )
+])
+
+上述的状态删除法实质上是一个动态规划问题的求解。（我觉得不考）
+
+=== Pumping Theorem
+
+现在要证明某个语言是正则的，可以利用 DFA/NFA/RE 三种等价的方法证明，但要证明某个语言不是正则的，就比较困难了（需要说明所有的FA/RE 都无法表示该语言？）。
+
+于是介绍 Pumping Theorem，其说明了正则语言的一个性质：其中有些 Pattern 是可以重复的。
+
+#definition(
+    [
+        设 $A$ 是一个正则语言，那么存在一个整数（Pumping length） $p >= 1$，使得对于任意字符串 $s in A$ 且 $|s| >= p$，都可以将 $s$ 分解为 $s = x y z$，满足：
+
+        1. $forall i >= 0, x y^i z in A$（重复 Pattern $y$ 任意次，字符串仍在语言中）
+        2. $|y| >= 1$（可重复的 Pattern 非空）
+        3. $|x y| <= p$（可以在前 $p$ 个字符中找到该 Pattern）
+
+        #proof(
+            [
+                由于 $A$ 正则，于是存在 DFA $M$ decides $A$，命 $p = "number of states in" M$
+
+                对于 $w in A, |w| >= p$，考虑其被 DFA 计算的过程：$q_0->q_1->...->q_(n-1)->q_n$，$q_0, q_n$ 分别为初态和接受状态，由于要处理 $w$ 的至少 $p$ 位，必然有 $n >= p$；与此同时，状态的总数只有 $p$ 个，于是一定存在 $i, j$，使得 $0 <= i < j <= p$ 且 $q_i = q_j$（Pigeonhole Principle）
+
+                于是在状态 $q_0$ 到 $q_j$ 部分处理的字符串记为 $x$，在 $q_i$ 到 $q_j$ 部分处理的字符串记为 $y$，在 $q_j$ 到 $q_n$ 部分处理的字符串记为 $z$，则有 $s = x y z$.
+
+                由于 $q_i = q_j$，也就是说处理 $y$ 的状态转换部分可以重复无数次；而 $|x y| = j <= p$，且 $|y| = j - i >= 1$，于是满足 Pumping Theorem 的要求。
+            ]
+        )
+    ],
+    title: "Pumping Theorem"
+)
+
+#exercise([
+    说明 ${0^n 1^n: n>=0}$ 不是正则的。
+])
+
+#proof([
+    假设其是正则的，则存在 pumping length $p$。
+
+    考虑字符串 $w = 0^p 1^p$，它应当可以被分为 $w = x y z$ 且满足三条性质。
+
+    由于 $|x y| <= p$，于是仅有可能 $x y = 0^k, k<=p$，且 $y$ 不为空串，那么 $y = 0^k'$
+
+    但这样一来，$x y^i z = 0^(k-k' + i k') 1^p$，显然对于某些 $i$，新得到的字符串不在该语言中，与第一条性质矛盾。
+])

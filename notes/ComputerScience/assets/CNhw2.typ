@@ -1,6 +1,6 @@
 #import "@preview/ori:0.2.3": *
 #show: ori.with(
-  title: "作业1",
+  title: "作业2",
   subject: "计算机网络",
   semester: "2025-2026 秋冬学期",
 ) 
