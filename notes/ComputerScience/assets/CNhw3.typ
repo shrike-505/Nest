@@ -18,7 +18,7 @@
    
   $50% <= frac("FrameSize"/(4 times 10^3 "bps"),"FrameSize"/(4 times 10^3 "bps") + 2 * 20 times 10^(-3) "s")$
 
-  Solve it and get FrameSize >= 80 bits
+  Solve it and get FrameSize >= 160 bits
 
 4. Consider an error-free 64-kbps satellite channel used to send 512-byte data frames in one direction, with very short acknowledgements coming back the other way. What is the maximum throughput for window sizes of 1, 7, 15? The earth-satellite propagation time is 270 msec. (give your answer as an integer)
   + for window size=1

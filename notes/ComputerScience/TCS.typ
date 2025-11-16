@@ -2,23 +2,30 @@
 #import "@preview/gentle-clues:1.2.0" : *
 #import "@preview/fletcher:0.5.8" : *
 #import "@preview/finite:0.5.0": automaton
-// #set heading(numbering: numbly("{1:一}、", default: "1.1  "))
+#set heading(numbering: numbly("{1:一}、", default: "1.1  "))
 #set math.equation(numbering: "(1)")
 
 #show: ori.with(
-  title: "TCS - 毛宇尘老师班",
-  author: "shrike505",
-  subject: "理论计算机科学导引",
-  semester: "2025-2026 秋冬学期",
-  date: datetime.today(),
-  maketitle: true,
-  makeoutline: true,
-  outline-depth: 3,
-  // theme: "dark",
-  // media: "screen",
+    title: "TCS - 毛宇尘老师班",
+    author: "shrike505",
+    subject: "理论计算机科学导引",
+    semester: "2025-2026 秋冬学期",
+    date: datetime.today(),
+    maketitle: true,
+    makeoutline: true,
+    outline-depth: 3,
+    // theme: "dark",
+    // media: "screen",
 )
 
-#quote-box[Reference: #link("introtcs.org")]
+#quote-box[
+	Reference:
+	
+	- #link("introtcs.org") - 教材（电子书版）
+	- #link("https://fla.cuijiacai.com/") - 南京大学形式语言与自动机课程笔记
+]
+
+#let SAL = ${0,1}^*$ // String of Arbitrary Length
 
 = 问题与编码
 
@@ -41,7 +48,7 @@ $Sigma^* = union.big_(n>=0) Sigma^n$ 即为所有长度的二进制串集合。]
 $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z$\
 类似的可以定义后缀（Suffix），不再赘述]
 
-#fancy-box()[可以将 $Sigma$ 中的 0 和 1 换成任意字符，例如26字母，方框三角圆，以此组建你自己的 Alphabet！] 
+#fancy-box()[可以将 $Sigma$ 中的 0 和 1 换成任意字符，例如26字母，方框三角圆，以此组建你自己的 Alphabet！]
 
 == 编码（Encoding）
 
@@ -69,31 +76,31 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 接下来myc老师突然就这个 prefix-free 证明了两个_寻找另一种编码_的引理，感觉很突兀。
 
 #lemma[
-  假设已经存在一个 prefix-free 的编码 $E: A-> {0,1}^*$，那么对于编码 $dash(E): A^* -> {0,1}^*$（$A^* = union.big_(n>=0) A^n$，我理解为一个由_任意长待映射元素（$a_i in A$）序列_组成的集合，接下来要找到对这些元素序列的编码），命 $dash(E)(a_1a_2...a_n) = cases(E(a_1)E(a_2)...E(a_n) &"if" n >= 1, e &"if" n = 0)$，那么 $dash(E)$ 是 one-to-one 的。
+    假设已经存在一个 prefix-free 的编码 $E: A-> {0,1}^*$，那么对于编码 $dash(E): A^* -> {0,1}^*$（$A^* = union.big_(n>=0) A^n$，我理解为一个由_任意长待映射元素（$a_i in A$）序列_组成的集合，接下来要找到对这些元素序列的编码），命 $dash(E)(a_1a_2...a_n) = cases(E(a_1)E(a_2)...E(a_n) &"if" n >= 1, e &"if" n = 0)$，那么 $dash(E)$ 是 one-to-one 的。
 
-  #proof[
-    假设存在 $(a_1,a_2,...,a_n) eq.not (b_1,b_2,...,b_m)$，使得 $dash(E)(a_1a_2...a_n) = dash(E)(b_1b_2...b_m)$，那么 $E(a_1)E(a_2)...E(a_n) = E(b_1)E(b_2)...E(b_m)$，且 $exists i, s.t. forall j<i, a_j = b_j$，且 $a_i eq.not b_i$（即在第 $i$ 个字符前两个元素序列的每个元素都相同）
+    #proof[
+        假设存在 $(a_1,a_2,...,a_n) eq.not (b_1,b_2,...,b_m)$，使得 $dash(E)(a_1a_2...a_n) = dash(E)(b_1b_2...b_m)$，那么 $E(a_1)E(a_2)...E(a_n) = E(b_1)E(b_2)...E(b_m)$，且 $exists i, s.t. forall j<i, a_j = b_j$，且 $a_i eq.not b_i$（即在第 $i$ 个字符前两个元素序列的每个元素都相同）
 
-    那么 $E(a_1)E(a_2)...E(a_(i-1)) = E(b_1)E(b_2)...E(b_(i-1))$，则 $E(a_i)...E(a_n) = E(b_i)...E(b_m)$，那么对于 $E(a_i)$ 和 $E(b_i)$，要么前者是后者的前缀，要么后者是前者的前缀，又考虑到 $a_i eq.not b_i$，则 $E$ 不是 prefix-free 的，这与题设冲突。
-  ]
+        那么 $E(a_1)E(a_2)...E(a_(i-1)) = E(b_1)E(b_2)...E(b_(i-1))$，则 $E(a_i)...E(a_n) = E(b_i)...E(b_m)$，那么对于 $E(a_i)$ 和 $E(b_i)$，要么前者是后者的前缀，要么后者是前者的前缀，又考虑到 $a_i eq.not b_i$，则 $E$ 不是 prefix-free 的，这与题设冲突。
+    ]
 ]
 
 #lemma[
-  如果存在 one-to-one 的 $E: A-> {0,1}^*$，那么存在 prefix-free 的 $E': A -> {0,1}^*$，且使得 $|E'(a)| <= 2|E(a)|+2, forall a in A$
+    如果存在 one-to-one 的 $E: A-> {0,1}^*$，那么存在 prefix-free 的 $E': A -> {0,1}^*$，且使得 $|E'(a)| <= 2|E(a)|+2, forall a in A$
 
-  #proof[
-    将原编码中的 0 映射为 00，1 映射为 11，该元素再次编码结束后再添加一个 01，例如对于 $E(a) = 010$，$E'(a) = 00110001$
+    #proof[
+        将原编码中的 0 映射为 00，1 映射为 11，该元素再次编码结束后再添加一个 01，例如对于 $E(a) = 010$，$E'(a) = 00110001$
 
-    这种编码显然有性质0：01 不会出现在任何编码的奇数-偶数位置，即 $forall k in N, E'(a_(2k+1))E'(a_(2k+2)) eq.not 01$<性质>
+        这种编码显然有性质0：01 不会出现在任何编码的奇数-偶数位置，即 $forall k in N, E'(a_(2k+1))E'(a_(2k+2)) eq.not 01$<性质>
 
-    试证 prefix-free 性：假设 $E'(a)$ 是 $E'(b)$ 的前缀，由于 01 标识了 $E'(a)$ 和 $E'(b)$ 的结束，且由于 @性质[性质]，很明显有 $E'(a) = E'(b)$，那么 $E(a) = E(b)$，且 $E$ 是单射，则 $a=b$，于是 prefix-free 得证。
-  ]
+        试证 prefix-free 性：假设 $E'(a)$ 是 $E'(b)$ 的前缀，由于 01 标识了 $E'(a)$ 和 $E'(b)$ 的结束，且由于 @性质[性质]，很明显有 $E'(a) = E'(b)$，那么 $E(a) = E(b)$，且 $E$ 是单射，则 $a=b$，于是 prefix-free 得证。
+    ]
 ]
 
 结合两个引理可以得到一个结论：
 
 #conclusion(title:"定理")[
-  如果存在 one-to-one 的 $E: A-> {0,1}^*$，那么便存在 one-to-one 的 $E': A^* -> {0,1}^*$
+    如果存在 one-to-one 的 $E: A-> {0,1}^*$，那么便存在 one-to-one 的 $E': A^* -> {0,1}^*$
 ]
 
 这是很重要的，对于数学元素，如果我们可以给数字做编码，那么就可以编码向量，再运用一次定理就能编码矩阵，然后是更高维的张量。
@@ -101,27 +108,27 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 === 编码与可数的关系
 
 #tip(title:"下面四条等价")[
-  1. $A$ 是可数的
-  2. $A$ 是有限的，要么存在一个双射 $f: A->N$
-  3. 存在单射 $g: A->N$
-  4. 存在满射 $h: N->A$
+    1. $A$ 是可数的
+    2. $A$ 是有限的，要么存在一个双射 $f: A->N$
+    3. 存在单射 $g: A->N$
+    4. 存在满射 $h: N->A$
 ]
 
 #lemma[
-  ${0,1}^*$ 是可数的
+    ${0,1}^*$ 是可数的
 
-  #proof[
-    对 ${0,1}^*$ 的元素进行这样的排序：e,0,1,00,01,10,11...
+    #proof[
+        对 ${0,1}^*$ 的元素进行这样的排序：e,0,1,00,01,10,11...
 
-    即先按长度排序，内部再按二进制数大小排序。
+        即先按长度排序，内部再按二进制数大小排序。
 
-    那么定义从字符串映射到排序后序号的函数 $f: {0,1}^*->N$：$forall x in {0,1}^*, f(x) = cases(
-      0 &"if" x = e,
-      2^(|x|) + (x "对应的二进制数大小")  &"if" |x| >= 1,
-    )$
+        那么定义从字符串映射到排序后序号的函数 $f: {0,1}^*->N$：$forall x in {0,1}^*, f(x) = cases(
+            0 &"if" x = e,
+            2^(|x|) + (x "对应的二进制数大小")  &"if" |x| >= 1,
+        )$
 
-    可理解为组的序号+组内的序号，这是一个单射，于是可数。
-  ]
+        可理解为组的序号+组内的序号，这是一个单射，于是可数。
+    ]
 ]
 
 这个引理也引导出一个定理，即可数性和单射编码的关系：
@@ -152,24 +159,24 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 舒服了，可以利用门电路模拟从输入到输出的计算过程了：对于输入长为 $n$ 的 $x in {0,1}^n$，令其第 $i$ 位即为 input nodes 中的 $X[i-1]$，输出答案 $y in {0,1}^m$ 同理。
 
 #definition[
-  记 $C(X) = (Y[0], Y[1], ..., Y[m-1])$，如果 $forall x in {0,1}^n, C(x) = f(x)$, 则称电路 $C$ 计算了函数 $f$.
+    记 $C(X) = (Y[0], Y[1], ..., Y[m-1])$，如果 $forall x in {0,1}^n, C(x) = f(x)$, 则称电路 $C$ 计算了函数 $f$.
 ]
 
 现在还亟待一种对计算过程的书面化描述，即，这个电路的每一步，信号（或者说数据）流过每一个门时得到了什么中间结果？于是 #link("https://akonjac0.github.io/")[#strike[Anonjac\_]] #strike[Anon-Circ] AON-Circ（AND-OR-NOT Circuit）Program 登场了。
 
 #definition(title: "AND-OR-NOT Circuit Program")[
-  #image("./assets/TCS1.png")\
-  对于图中的电路，将其每个中间逻辑门的输出保存为一个 temp 变量，便得到了下方的多行（Lines），这就是 AON-Circ Program
+    #image("./assets/TCS1.png")\
+    对于图中的电路，将其每个中间逻辑门的输出保存为一个 temp 变量，便得到了下方的多行（Lines），这就是 AON-Circ Program
 
-  不难发现每一行对应一个逻辑门的计算过程，于是 Program 的行数与其对应电路中逻辑门的个数相同。此时 Program 的行数即为电路的 size
+    不难发现每一行对应一个逻辑门的计算过程，于是 Program 的行数与其对应电路中逻辑门的个数相同。此时 Program 的行数即为电路的 size
 
-  AON-C Program 计算了某个函数的定义与上方电路 $C$ 计算函数类似，不再赘述。
+    AON-C Program 计算了某个函数的定义与上方电路 $C$ 计算函数类似，不再赘述。
 ]
 
 实际上程序和电路这种对应关系就是等价的。
 
 #theorem[
-  一个函数可被一个有 $s$ 个逻辑门的布尔电路计算，当且仅当它可以被 $s$ 行的 AON-C Program 计算。
+    一个函数可被一个有 $s$ 个逻辑门的布尔电路计算，当且仅当它可以被 $s$ 行的 AON-C Program 计算。
 ]
 
 === NAND 电路（NAND Circuit）
@@ -177,9 +184,9 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 接下来介绍一种门：NAND，即 NOT(AND)，易知 AON 三者都可以_只_用 NAND 实现，于是可以搭建一个仅由 NAND 门构成的电路。
 
 #three-line-table[
-  | NAND Circuit | $<=>$ | AON Circuit |
-  | s gates | $->$ | $<= 2s$ gates, for NAND decomposes to NOT(AND) |
-  | $<=3s$ gates,for OR(a,b) $equiv$ NAND(NAND(a,a),NAND(b,b)) | $<-$ | s gates |
+    | NAND Circuit | $<=>$ | AON Circuit |
+    | s gates | $->$ | $<= 2s$ gates, for NAND decomposes to NOT(AND) |
+    | $<=3s$ gates,for OR(a,b) $equiv$ NAND(NAND(a,a),NAND(b,b)) | $<-$ | s gates |
 ]
 
 相类似的，有 NAND-Circ Program，其每一行都形如 `foo = NAND(bar,blah)`。
@@ -189,24 +196,24 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 ]
 
 #theorem[
-	$forall n,m, f: {0,1}^n -> {0,1}^m$，都存在一个布尔电路计算这个函数，其含有 $O(m dot n dot 2^n)$ 个逻辑门。
+    $forall n,m, f: {0,1}^n -> {0,1}^m$，都存在一个布尔电路计算这个函数，其含有 $O(m dot n dot 2^n)$ 个逻辑门。
 
-	#proof[
-		对于输出的某一位 $Y[j]$，其计算情况可枚举如下表：
+    #proof[
+        对于输出的某一位 $Y[j]$，其计算情况可枚举如下表：
 
-		#three-line-table[
-			| $X[0]$ | ... | $X[n-1]$ | $Y[j]$ |
-			| 0 | ... | 0 | some value |
-			| 0 | ... | 1 | some value |
-			|...|...|...|...|
-			| 1 | ... | 1 | some value |
-		]
+        #three-line-table[
+            | $X[0]$ | ... | $X[n-1]$ | $Y[j]$ |
+            | 0 | ... | 0 | some value |
+            | 0 | ... | 1 | some value |
+            |...|...|...|...|
+            | 1 | ... | 1 | some value |
+        ]
 
-		写出 $Y[j]$ 的具体计算式，用析取范式表示：
-		$Y[j] = (... and ... and ...) or (... and ... and ...) or ... or (... and ... and ...)$，其中共有 $2^n$ 个括号，对应上表中的 $2^n$ 行，每一行通过合取计算出一种情况下的 $Y[j]$，再析取得到 $Y[j]$ 的具体表达；每个括号中共有 $n$ 项，对应 $X[0]$ 到 $X[n-1]$ 本身或取反再进行合取，于是得到 $n dot 2^n$
+        写出 $Y[j]$ 的具体计算式，用析取范式表示：
+        $Y[j] = (... and ... and ...) or (... and ... and ...) or ... or (... and ... and ...)$，其中共有 $2^n$ 个括号，对应上表中的 $2^n$ 行，每一行通过合取计算出一种情况下的 $Y[j]$，再析取得到 $Y[j]$ 的具体表达；每个括号中共有 $n$ 项，对应 $X[0]$ 到 $X[n-1]$ 本身或取反再进行合取，于是得到 $n dot 2^n$
 
-		而 $Y$ 的长度为 $m$，于是得到 $O(m dot n dot 2^n)$
-	]
+        而 $Y$ 的长度为 $m$，于是得到 $O(m dot n dot 2^n)$
+    ]
 ]
 
 满足上述定理，即可以计算任意函数的电路，称为_通用_（universal）的；要判断一个函数集合（化成的电路）是否是通用的，只需要判断其是否能计算 NAND。
@@ -216,59 +223,59 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 可以可以，已经可以用电路/程序计算某个函数/问题了，那么对于某个函数，我们需要多少个门的电路，多少行的程序，这是可以估量的吗？由上面的定理似乎已经有了上界：$O(m dot n dot 2^n)$（myc 剧透：其实可以把数量打到 $O(frac(m dot 2^n,n))$）。我们来从 NAND 电路入手。
 
 #example(title: "ADD Function")[
-	试设计电路程序，计算 $"ADD": {0,1}^(2n) -> {0,1}^(n+1)$，$"ADD"(x_0, ..., x_(2n-1)) = x_0...x_(n-1) + x_n...x_(2n-1)$
+    试设计电路程序，计算 $"ADD": {0,1}^(2n) -> {0,1}^(n+1)$，$"ADD"(x_0, ..., x_(2n-1)) = x_0...x_(n-1) + x_n...x_(2n-1)$
 
-	#solution[
-		```python
-		def ADD(X[0], ..., X[2n-1]):
-				Result = [0] * (n+1)
-				Carry = [0] * (n+1)
-				for i in range(n):
-						Result[i] = XOR(Carry[i], XOR(X[i], X[i+n]))
-						Carry[i+1] = MAJ(Carry[i], X[i], X[i+n])
-				Result[n] = Carry[n]
-				return Result
-		```
-		XOR 和 MAJ 函数只需要常数行的 NAND-Circ Program 实现，经过 $n$ 次循环，于是该加法函数的规模（行数）即为 $O(n)$
+    #solution[
+        ```python
+        def ADD(X[0], ..., X[2n-1]):
+            Result = [0] * (n+1)
+            Carry = [0] * (n+1)
+            for i in range(n):
+                Result[i] = XOR(Carry[i], XOR(X[i], X[i+n]))
+                Carry[i+1] = MAJ(Carry[i], X[i], X[i+n])
+            Result[n] = Carry[n]
+            return Result
+        ```
+        XOR 和 MAJ 函数只需要常数行的 NAND-Circ Program 实现，经过 $n$ 次循环，于是该加法函数的规模（行数）即为 $O(n)$
 
-		这是很好的，计算规模与输入串的长度成正比。
-	]
+        这是很好的，计算规模与输入串的长度成正比。
+    ]
 
-	#example(title: "MUL Function")[
-		乘法基于加法，摆了。
+    #example(title: "MUL Function")[
+        乘法基于加法，摆了。
 
-		规模可以不断优化：$O(n^2) -> O(n^(log_2 3)) ->$ even better.
-	]
+        规模可以不断优化：$O(n^2) -> O(n^(log_2 3)) ->$ even better.
+    ]
 ]
 
 #example(title: "LOOKUP Function")[
-	试设计电路程序，计算 $"LOOKUP": {0,1}^(2^k + k) -> {0,1}$，具体而言，输入分为两段：$2^k$ 位作为表，$k$ 位视作一个最大可表达 $2^k - 1$ 的二进制数 $i$，输出为表中的第 $i$ 位。
+    试设计电路程序，计算 $"LOOKUP": {0,1}^(2^k + k) -> {0,1}$，具体而言，输入分为两段：$2^k$ 位作为表，$k$ 位视作一个最大可表达 $2^k - 1$ 的二进制数 $i$，输出为表中的第 $i$ 位。
 
-	#solution[
-		利用归纳思想，$k=1$ 时：
+    #solution[
+        利用归纳思想，$k=1$ 时：
 
-		```python
-		def LOOKUP_1(X[0],X[1],i[0]):
-			if i[0] == 0:
-				Y[0] = X[0]
-			else:
-				Y[0] = X[1]
-		```
-		对于 $k$ 时的情形
+        ```python
+        def LOOKUP_1(X[0],X[1],i[0]):
+        if i[0] == 0:
+            Y[0] = X[0]
+        else:
+            Y[0] = X[1]
+        ```
+        对于 $k$ 时的情形
 
-		```python
-		def LOOKUP_k(X[0],X[1],...,X[2^k-1],i[0],...,i[k-1]):
-			if i[0] == 0: # 根据剩下的 i 查 X 的前半段
-				Y[0] = LOOKUP_(k-1)(X[0],...,X[2^(k-1)-1],i[1],...,i[k-1])
-			else:
-				Y[0] = LOOKUP_(k-1)(X[2^(k-1)],...,X[2^k-1],i[1],...,i[k-1])
-		```
+        ```python
+        def LOOKUP_k(X[0],X[1],...,X[2^k-1],i[0],...,i[k-1]):
+        if i[0] == 0: # 根据剩下的 i 查 X 的前半段
+            Y[0] = LOOKUP_(k-1)(X[0],...,X[2^(k-1)-1],i[1],...,i[k-1])
+        else:
+            Y[0] = LOOKUP_(k-1)(X[2^(k-1)],...,X[2^k-1],i[1],...,i[k-1])
+        ```
 
-		于是有规模 $cases(
-			L(k) = C + 2L(k-1),
-			L(1) = O(1)
-		)$，解得 $O(2^k)$
-	]
+        于是有规模 $cases(
+        L(k) = C + 2L(k-1),
+        L(1) = O(1)
+        )$，解得 $O(2^k)$
+    ]
 ]
 
 === 优化效率
@@ -290,11 +297,11 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 例如对如下函数 $g$ 的真值表：
 
 #three-line-table[
-  | $X[0]$ | $X[1]$ | $Y[0]$ |
-  | 0 | 0 | 1 |
-  | 0 | 1 | 0 |
-  | 1 | 0 | 1 |
-  | 1 | 1 | 1 |
+    | $X[0]$ | $X[1]$ | $Y[0]$ |
+    | 0 | 0 | 1 |
+    | 0 | 1 | 0 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 1 |
 ]
 
 命 $G_0 = 1, G_1 = 0, G_2 = 1, G_3 = 1$（即函数输出的 $2^2$ 中情况），那么 $g(X[0],X[1]) = "LOOKUP"_2(G_0,G_1,G_2,G_3,X[0],X[1])$
@@ -316,11 +323,11 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 编码完成了——但是，为什么要做这件事，难道说？没错，有了字符串编码的程序，我们甚至能将这个程序作为另一个程序的输入💀，例如下面这个例子。
 
 #example(title: "EVAL Function")[
-  函数 $"EVAL"_(s,m,n): {0,1}^(3s ceil(log(3s)) + n) -> {0,1}^m$ 是对一个 NAND-Circ Program $p$（含 $s$ 行，计算 $f: {0,1}^n -> {0,1}^m$）和一个输入 $x in {0,1}^n$ 的计算（或者说，_运行_），其输入的前 $3s dot ceil(log(3s))$ 位为 $p$ 的编码，后 $n$ 位为 input $x$，输出为 $f(x)$.
+    函数 $"EVAL"_(s,m,n): {0,1}^(3s ceil(log(3s)) + n) -> {0,1}^m$ 是对一个 NAND-Circ Program $p$（含 $s$ 行，计算 $f: {0,1}^n -> {0,1}^m$）和一个输入 $x in {0,1}^n$ 的计算（或者说，_运行_），其输入的前 $3s dot ceil(log(3s))$ 位为 $p$ 的编码，后 $n$ 位为 input $x$，输出为 $f(x)$.
 
-  #theorem(title: "EVAL 的规模")[
-    $forall s,n,m, exists "NAND-Circ Program" U_(s,n,m)$ 计算函数 $"EVAL"_(s,m,n)$，且其规模为 $O(s^2 dot log s)$
-  ]
+    #theorem(title: "EVAL 的规模")[
+        $forall s,n,m, exists "NAND-Circ Program" U_(s,n,m)$ 计算函数 $"EVAL"_(s,m,n)$，且其规模为 $O(s^2 dot log s)$
+    ]
 ]
 
 === 更长的输入：Infinite！
@@ -470,7 +477,7 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
     )
 ]
 
-DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一些，但实际上两者是等价的。
+NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一些，但实际上两者是等价的。
 
 #theorem(
     [
@@ -519,7 +526,7 @@ DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一�
     ]
 )
 
-== 正则表达式
+== 正则表达式 <Regex>
 
 每种正则语言可以用正则表达式（Regular Expression, RE）表示：
 
@@ -656,7 +663,7 @@ DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一�
                     )
                 ) | $a (c union d) ^* b$ |
             ]
-            
+
         )
     )
 ])
@@ -705,3 +712,298 @@ DFA 看起来可以猜测出一条正确的路径，似乎比 NFA 更强大一�
 
     但这样一来，$x y^i z = 0^(k-k' + i k') 1^p$，显然对于某些 $i$，新得到的字符串不在该语言中，与第一条性质矛盾。
 ])
+
+== Pushdown Automaton
+
+我们已经介绍过 DFA, NFA, Regex 三种等价的计算模型，现在做出的考虑是：向其中添加一些新的 feature，以计算更多的函数，决定更多的语言。
+
+比方说，在 DFA/NFA 中，状态切换时只是单纯地转移到下一个状态，但并没有“记忆”已经处理过的信息；如果除了 FA 的四元组外，能有一个数据结构来存储一些信息，或许能计算更多的函数。（这篇文章介绍了一个 PDA 在实际游戏开发中的例子：#link("https://zhuanlan.zhihu.com/p/575664217")）
+
+#definition(
+	[
+		Pushdown Automaton(PDA) = NFA + stack
+
+		PDA 是一个四元组 $P = (K, s, F, Delta)$其中 $K, s, F$ 和 NFA 中的定义一样，$Delta subset.eq (K times {0,1,e} times {0,1}^*) times (K times {0,1}^*)$（其中第一部分的 ${0,1}^*$ 表示栈顶将被 pop 出来的字符串，第二部分的 ${0,1}^*$ 表示将被 push 到栈内的字符串）（何意味？）
+
+		e.g. 对于 $(q, a, gamma, p, beta) in Delta$，表示 PDA 在状态 $q$ 下读入字符 $a$，且栈顶为 $gamma$ 时，可以转移到状态 $p$，并将栈顶的 $gamma$ pop 出，push 入 $beta$。
+		
+		似乎这么看来，每次进行 transition 时，都需要从栈里 pop 出一些东西，再 push 入一些东西，但实则可以用形如 $(q, a, gamma, p, beta gamma)$ 的 relation 来表示“只 push 入而不 pop 出”的操作。
+	],
+    title: "PDA"
+)
+
+由此可以看出，PDA 中状态的转换通常还伴随着栈的操作，而不仅仅只是先前两种 FA 那样的状态转换；因此方便起见，定义一个新的“配置”（Configuration），PDA 通过 relation 在不同的配置之间进行转换，这个配置也称为_即时描述（Instantaneous Description, ID）_。
+
+这个配置相当于一种新的“状态”，思考一下，其与什么有关？
+
+- 当前 PDA 所处的状态 $q in K$
+- 剩余未处理的输入字符串 $w in {0,1}^*$
+- 栈内当前的字符串 $alpha in {0,1}^*$，栈顶在左侧
+
+#definition(
+	[
+		A Configuration ID $C in K times {0,1}^* times {0,1}^*$, i.e. $C = (q, w, alpha)$
+	],
+    title: "Configuration of PDA"
+)
+
+如果一个 PDA $P$ 从配置 $C_1$ 只通过一步转移到配置 $C_2$，则记作 $C_1 tack_P C_2$；对于不限制次数的转移，记作 $C_1 tack.r^*_P C_2$。
+
+#definition(
+    [
+        PDA $P$ accepts string $w in {0,1}^*$ if $exists q in F$ such that $(s, w, e) tack.r^*_P (q, e, e)$，即走到可接受态 & 栈空 & 输入处理完
+
+        $L(P) = {w in {0,1}^* | P "accepts" w}$, $P$ decides $L(P)$
+
+        $L(P)$ 称为_上下文无关语言（Context-Free Language, CFL）_。
+    ],
+    title: "Decision of PDA"
+)
+
+#example(title: "找出下面 CFL 的 PDA")[
+    + $L = {w in {0,1}^* | "in w, number of 0s is equal to number of 1s"}$
+        - $K = F = {q}$
+        - $s=q$（只有一个状态作为初态和可接受态）
+        - $Delta = {\
+            ((q, 0, e), (q, 0)), "# push 0 onto empty stack when reading"\ 
+            ((q, 0, 0), (q, 00)), "# push another 0 onto stack when reading 0 and stack top is 0"\
+            ((q, 0, 1), (q, e)), "# pop 1 from stack when reading 0 and stack top is 1"\
+            ((q, 1, e), (q, 1)), "# push 1 onto empty stack when reading 1"\
+            ((q, 1, 1), (q, 11)), "# push another 1 onto stack when reading 1 and stack top is 1"\
+            ((q, 1, 0), (q, e)), "# pop 0 from stack when reading 1 and stack top is 0"\
+        }$
+        - 易知，每次在栈顶为 1/0 的情况下读到 0/1 就会抵消掉栈顶的 1/0，于是要达成最终栈空的条件，必然需要 0 和 1 数量相等
+    + $L = {w w_("Reversal") | w in {0,1}^*}$
+        - $K = {l, r}$，l 表示正在读取左半部分，r 表示正在读右半部分
+        - $s = l$
+        - $F = {r}$
+        - $Delta = {\
+            ((l, 0, e), (l, 0)), \
+            ((l, 1, e), (l, 1)), "# Push whatever read while we are on the former half"\
+
+            ((l, e, e), (r, e)), "# NFA guess when we reach the middle and transit to latter"\
+
+            ((r, 0, 0), (r, e)), \
+            ((r, 1, 1), (r, e)), "# Pop out what's there, if we read the same on the latter half"\
+            }$
+]
+
+== 语法（Grammar）
+
+接下来学习一个全新的概念：_语法（Grammar）_。先前的三种 FA 都是用于_判断_某个字符串是否属于某个语言，而语法则是用于_生成（generate）_某个语言中的字符串；主要介绍_上下文无关语法（Context-Free Grammar, CFG）_。
+
+#definition(
+	[
+		A CFG $G = {V, S, R}$, where:
+
+		- $V$ is a finite set of symbols, including 0,1
+		- $S in V - {0,1}$: start symbol
+		- $R in (V-{0,1}) times V^*$: rules (must be finite)
+			- 为表示方便，一般将规则写作 $A -> alpha$，其中 $A in V - {0,1}, alpha in V^*$
+	],
+	title: "CFG"
+)
+
+#quotation(attribution: "https://fla.cuijiacai.com/04-cfg/#_4-1-2-%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%AE%9A%E4%B9%89")[
+	为了推导出一个 CFG 所描述的语言中的字符串，我们从起始符号开始，不断地将变量 $A$ 用它的某一个产生式的体来替代，从而得到所有的字符串。这里，$A$ 的产生式指的是以 $A$ 为头的产生式。
+]
+
+为了解析 rules 的推导过程，定义推导（Derivation）：
+
+#definition(
+	[
+		if $A -> alpha in R$，then $beta A gamma => beta alpha gamma$，其中 $beta, gamma in V^*$
+
+		对于若干次的推导，类似的，表示为 $=>^*$
+	], title: "Derive"
+)
+
+接下来就可以定义 CFG 生成语言的方法：$G$ generates $w in SAL$ if $S =>^* w$ & $L(G) = {w in SAL | G "generates" w}$
+
+#example(
+	[
+		+ ${w in SAL | w = w_("Reversal")}$，即回文句
+			- 考虑到 $w = "0u0 or 1u1 where" u = u_("Reversal")$
+			- R: $S -> e|1|0|1 S 1|0 S 0$
+	], title:"Find CFG for these languages"
+)
+
+== 上下文无关语言（Context-Free Language, CFL）
+
+大的来了：上面两小部分讲述的 PDA 和 CFG 其实是等价的计算模型！即一个语言被某台 PDA 决定当且仅当它可以被某个 CFG 生成。
+#theorem[
+
+	CFG $<=>$ PDA
+]
+#proof(
+    [
+        + 试证 $"CFG" => "PDA"$
+            - Given CFG $G = (V, S, R)$, 构造 PDA $P = (K, p, F, Delta)$, where:
+                - $K = {p, q}$
+                - $F = {q}$
+                - $Delta = {\
+                    ((p, e, e), (q, S)), "# Push start symbol onto empty stack"\
+                    ((q, e, A), (q, alpha)) "for each" A -> alpha in R, "# Replace non-terminal A on top of stack with alpha"\
+                    ((q, a, a), (q, e)) "for each" a in {0,1}, "# Pop out what's on stack if it matches the read input"\
+                }$
+        + 试证 $"PDA" => "CFG"$
+            - Given PDA $P = (K, s, F, Delta)$，先将其转化为 simple 的。
+
+            #definition(
+                title: "Simple PDA",
+                [
+                    A PDA $P = (K, Delta, s, F)$ is simple, if
+
+                    - $|F| = 1$（可接受态只有1个）
+                    - $forall ((p,a,alpha),(q,beta)) in Delta$, either $alpha = e$ & $|beta|=1$, or $|alpha| = 1$ & $beta = e$（每次 transition 要么只 push 一个 symbol，要么只 pop 一个 symbol）
+                ]
+            )
+
+            #theorem(
+                title: "PDA => simple PDA",
+            )[
+                这里介绍通过以下几个步骤如何将 PDA 转化为 simple PDA：
+                
+                + if $|F| > 1$，回忆 @Regex 部分从 NFA 转为 RE 的 proof，创造一个新的可接受态 $f$，$forall q in F$，创造一个新的 transition $((q, e, e), (f, e))$，然后令 $F = {f}$ 即可。
+                + for $((p,a,alpha),(q,beta)) in Delta$,
+                    - if $|alpha|>=1 \& |beta| >=1$, split the transition into two via adding a intermediate state $r$: $((p,a,alpha),(r,beta))$ and $((r,e,e),(q,e))$, then we go to next cases
+                    - if $|alpha| >1 \& beta = e$, split the pop operation into $|alpha|-1$ steps via adding intermediate states $r_1, r_2, ..., r_(|alpha|-1)$: $((p,a,alpha[0]),(r_1,e))$, $((r_1,e,alpha[1]),(r_2,e))$, ..., $((r_(|alpha|-1),e,alpha[|alpha|-1]),(q,e))$
+                    - if $alpha = e \& |beta| >1$, split the push operation just like above
+                    - if $alpha = beta = e$, also split into 2 via adding an intermediate state $r$: $((p,a,0),(r,e))$ and $((r,e,e),(q,0))$（push 0 再 pop 出来）
+            ]
+            - 接下来把 simple PDA 转化为 CFG：Given simple PDA $P = (K, s, {f}, Delta)$，构造 CFG $G = (V, S, R)$
+                - 先定义 $V: "symbol set"$，由于期望中，$G$ 要生成的语言就是 PDA 所决定的，而 $P$ 决定一个语言又是对其中所有的 $w in SAL$ 进行从初态到可接受态的转换，因此 $V$ 中需要包含所有可能的 $"state pairs": (p, q) in K times K$，由于 CFG 处理的是 symbol，需要将这个 pair 表示为 symbol，即 $V = {0,1} union {A_(p q) | (p, q) in K times K}$
+                - 接下来先不着急继续寻找其他两个元素的定义，想一想我们的目标：将这些符号 $A_(p q)$ produce 出某些 $w in SAL$，并且令其与“$w$ 也可通过 $P$ 的判断得到”这个陈述是等价的。严谨阐述就是 $A_(p q) =>^* w "for some" w in SAL <=> w in {u in SAL | (p, u, e) tack.r^*_P (q, e, e)}$
+                - 显然我们会发现一个很特殊的 symbol $A_(s f)$，它对应的语言正是 PDA $P$ 决定的语言，考虑到 CFG 做的本职工作就是把 $S$ 阐释为一种语言，因此使这两种语言相同，令 $S = A_(s f)$ 即可。
+    ]
+)
+
+= 图灵机（Turing Machine）
+
+#let Begin = $▹$ // Biginning Symbol in TM cells
+
+#quotation(
+    [
+        我要提一个以著名计算机科学家名字命名的，一个屈居于以初代校长为名的扫码学院下的神秘班级了。
+    ]
+    ,title: "合味道"
+)
+
+尽管 PDA/CFG 已经比 FA 强大了不少，但它们仍然无法计算所有的函数/决定所有的语言，例如，${0^n 1^n 0^n | n >= 0}$，于是，隆重端出图灵机（Turing Machine, TM）。
+
+#quotation(attribution: "introtcs.org")[
+    The "granddaddy" of all models of computation is the Turing machine.
+]
+
+想象一根从一端开始无限长的纸带（Tape），上面划分为一个个方格（Cell），每个方格中可以写入一个 symbol；同时有一个读写头（Head）可以在纸带上左右移动，并且可以读出/写入当前所在方格的 symbol：Symbol 有四种：$1, 0, Begin, nothing$，最后两种分别是纸带的开头和表示该 Cell 为空的字符
+
+该纸带还附带一个状态控制器（State Controller），读写头每到一个 Cell 时，根据当前状态和该 Cell 中的 symbol，可以完成下面两个操作：
+
+- Write a symbol to the current Cell
+- Move the head one cell to the left or right/Stay/Halt
+
+#definition(
+    [
+        A Turing Machine $M = (K, Sigma, s, delta)$, where:
+
+        - $K$ is a finite set of states
+        - $s in K$ is the initial state
+        - $Sigma$ is a finite set of symbols, ${0, 1, Begin, nothing} subset.eq Sigma$
+        - $delta$ is "Transition Function" 
+            - $delta: K times Sigma -> K times Sigma times {"MoveLeft", "MoveRight", "Stay", "Halt"}$，即根据当前状态和当前 Cell 中的 symbol，输出下一状态、写入的 symbol、读写头的操作。
+    ], title: "Turing Machine"
+)
+
+直接来看该模型是怎么接收字符串的：对于 input $x = x_0 x_1 ... x_(n-1)$，TM 先将纸带的前 $n$ 个 Cell 写为 $Begin x_0 x_1 ... x_(n-1)$（$T[0] = Begin, T[1] = x_0, T[2] = x_1, dots, T[n] = x_(n-1)$），其余 Cell 均为 $nothing$，接下来记初态 $s = 0$，且开始从 #Begin 后的 $i=0$ 位置开始读取字符串，重复以下几步：
+
+- 根据当前 Cell 的内容和当前状态 $q$，通过 $delta(q, T[i]) = (q', a, "Direction")$ 得到下一状态 $q'$、写入 symbol $a$ 和读写头的操作。（对于开头的 #Begin，要求其唯一且不可覆盖，即 $a == Begin$ 当且仅当 $T[i] == Begin$）
+- 写入 Symbol，转移状态：$T[i] = a, q = q'$
+- switch Direction
+    - if Direction = MoveRight, $i = i + 1$
+    - if Direction = MoveLeft, $i = max(0, i - 1)$
+    - if Direction = Stay, $i = i$
+    - if Direction = Halt, stop
+
+停机后，TM 会输出一个东西：$M(x) = T[1] T[2]...T[i]$ where $T[i+1]$ 是第一个 $nothing$。
+
+如果接受完了 input 还没有停机，则记 $M(x) = tack.t$
+
+#definition(
+    [
+        TM $M$ computes function $f: {0,1}^* -> {0,1}^*$ if $forall x in {0,1}^*, M(x) = f(x)$
+
+        注意这要求了 TM 必须对所有输入停机；可被 TM 计算的函数称为_可计算函数（Computable Function）_。
+    ],
+    title: "Computation via TM"
+)
+
+== 图灵完备
+
+使用一些常见的编程语言都可以实现上面介绍的 TM 计算步骤，这些语言被称为_图灵完备（Turing Complete）_的语言，即其可以完成图灵机做的事情。
+
+现在从另一个方向开展研究：图灵机可以做到这些个编程语言能完成的任务吗？
+
+=== NAND-TM
+
+就一种名叫 NAND-TM 的编程语言，其可以看作先前介绍的 NAND-CIRC 的扩展：允许使用数组（Array）存储任意长度的字符串，并且允许使用循环（循环次数与输入长度有关，不一定为常数的 Loop）来处理这些数组。
+
+- NAND-TM 中有两种数据类型：
+    - $i$: integer value
+    - other: boolean value
+- 有两种变量类型：
+    - scalar: boolean variable
+    - array: array of boolean variables (can be infinite long)
+        - All arrays are accessed only and simultaneously by $i$
+- 其输入 $X$ 和 输出 $Y$ 都是 array 类型的变量
+- 程序最后一行是 `MODANDJUMP(a,b)`: modify $i$ and jump back to the first line.
+    - if $a = 1 & b = 1, i = i+1$
+    - if $a = 0 & b = 1, i = i-1$
+    - if $a = 1 & b = 0, i = i$
+    - if $a = 0 & b = 0$, halt
+- 所有变量（除输入 $X$ 外）初始均为 0
+
+于是在程序每轮执行中，对 $A[i], B[i]...$ 等进行 $"NAND"$ 操作，并且通过 `MODANDJUMP` 来控制 $i$ 的变化，进行循环处理。
+
+#theorem(title: "TM & NAND-TM")[
+    TM $<=>$ NAND-TM，并且其元素有如下对应关系
+
+    #figure(three-line-table()[
+        | TM Element | NAND-TM Element |
+        | finite states | scalar variables |
+        | tape | array variables |
+        | head position | integer variable $i$ |
+    ])
+
+    #proof()[
+        - 左推右：
+            - 假设有 TM $M = (K, Sigma, s, delta)$，构造 NAND-TM 程序 $P$：
+                - 使用 $ceil(log_2(|K|))$ 个 scalar 变量来表示 TM 的状态；使用 $ceil(log_2(|Sigma|))$ 个 array 变量来表示 TM 的 tape；两个 scalar 变量表示读写头的四个操作（可编码为 00，01，10，11）
+                - 那么 relation $delta: K times Sigma -> K times Sigma times {"MoveLeft", "MoveRight", "Stay", "Halt"}$ 转化为了 function $delta': {0,1}^(ceil(log_2(|K|)) + ceil(log_2(|Sigma|)) + 2) -> {0,1}^(ceil(log_2(|K|)) + ceil(log_2(|Sigma|)) + 2)$，这是一个有限函数，也就是说，可以被一个 NAND-CIRC program 计算。
+                - 记其计算得到的结果最后两位为 $a, b$，则在程序最后加上 `MODANDJUMP(a,b)`，即得到与原 TM 对应的 NAND-TM。
+        - 右推左：
+            - 假设有 NAND-TM 程序 $P$，构造 TM
+            - $k$ 个 scalar 变量，对应 TM 的 $2^k$ 个状态
+            - $l$ 个 array 变量，那么字符集数量 $|Sigma| = 2^l$
+            - 对于 $f: {0,1}^(k+l) -> {0,1}^(k+l)$ 的这个 NAND-TM Program，可转化为 $g: {0,1}^(k+l) -> {0,1}^(k+l) times {"MoveLeft", "MoveRight", "Stay", "Halt"}$ 的 TM Transition Function
+    ]
+]
+
+再加一点语法糖：
+
+- GOTO 语句：`GOTO L`，表示跳转到 `line` 为 L 的行继续执行。
+- Multi-Indexing：允许使用多个 index 来访问不同 array 的不同位置
+- Multi-Dimensional Arrays：允许使用多维数组
+
+=== NAND-RAM
+
+TM 可以再次进化为 RAM，实际上现代编程语言一般都基于 RAM 模型。
+
+纸带记为 Memory，每个 Cell 可以存储一个整数而非一个字符，并且有 k 个寄存器（Register），每个寄存器可以存储一个 integer value。
+
+1. 可以 Write/Read Memory Cell，并且是指哪就能访问哪，不需要读写头
+2. 可以对寄存器进行加减乘除等算术运算
+3. 可以根据判断结果进行下一步操作
+
+同样，RAM 也对应一种 NAND-RAM 编程语言，其有 integer 变量（有最大值）和 index 访问的 array；还有许多算术运算指令。
+
+可以证明 NAND-TM $<=>$ NAND-RAM
