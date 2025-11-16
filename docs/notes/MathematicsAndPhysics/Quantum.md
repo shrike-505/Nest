@@ -15,9 +15,11 @@
 
 !!! note "作业"
     - [hw1](./assets/QuantumComputation/hw/hw1.pdf)
+    - [hw2](./assets/QuantumComputation/hw/hw2.pdf)
 
 !!! note "实验报告"
     - [lab1](./assets/QuantumComputation/lab/lab1.pdf)
+    - [lab2](./assets/QuantumComputation/lab/lab2.pdf)
 
 ## 量子态与量子门
 
@@ -150,3 +152,64 @@ Oracle: TBD
 ### 量子图灵机
 
 ## 量子算法
+
+### Quantum Fourier Transform
+
+使用 $n$ 给量子比特进行量子傅里叶变换，共有 $2^n$ 个基态，量子傅里叶变换将基态 $|j\rangle$ 映射为：
+$$QFT|j\rangle = \frac{1}{\sqrt{2^n}} \sum_{k=0}^{2^n-1} e^{\frac{2\pi i}{2^n}jk} |k\rangle$$
+
+基态 $|j\rangle$ 可表示为 $|\overline{j_1 j_2 ... j_n}\rangle$，其中 $j_1$ 是高位，$j_n$ 是低位，即 $j = j_1 2^{n-1} + j_2 2^{n-2} + ... + j_n 2^0$；同时小数 $2^{-1} j_1 + 2^{-2} j_2 + ... + 2^{-n} j_n$ 可表示为 $\overline{0.j_1 j_2 ... j_n}$，则 QFT 可表示为张量积形式：
+
+$$ QFT|\overline{j_1 j_2 ... j_n}\rangle = \frac{1}{\sqrt{2^n}} (|0\rangle + e^{2\pi i \overline{0.j_n}} |1\rangle) (|0\rangle + e^{2\pi i \overline{0.j_{n-1} j_n}} |1\rangle) ... (|0\rangle + e^{2\pi i \overline{0.j_1 j_2 ... j_n}} |1\rangle) $$
+
+#### 单比特系统下的 QFT
+
+#### 双比特系统下的 QFT
+
+### 量子相位估计 QPE
+
+用于估计给定量子态的相位信息，基本目标是：**对于一个酉矩阵 $U$，已知其本征态 $|\mu\rangle$，对应本征值为 $e^{2\pi i \phi}$，那么有 $U|\mu\rangle = e^{2\pi i \phi} |\mu\rangle$：给定 $U$ 和 $|\mu\rangle$，估计相位 $\phi$ 的值，其中 $\phi \in (0,1]$**
+
+算法流程：
+
+- 初始化：准备两个量子寄存器，一个存储相位估计结果，另一个存储本征态 $|\mu\rangle$
+- 作用 H 门：对用于存储相位的量子比特施加 H 门
+- 作用受控 U 门：对每个量子比特执行受控 U 门操作（第 𝑗 个量子比特执行受控 $U^{2^{j-1}}$ 门）
+- 逆 QFT：对相位寄存器进行逆 QFT 操作，将相位信息转为位信息
+- 测量：获得相位估计值
+
+![QPE](./assets/Quan6.png)
+
+TBD
+
+### Shor 算法
+
+- 同余：若整数 $a$ 和 $b$ 除以正整数 $m$ 后余数相同，则称 $a$ 与 $b$ 对模 $m$ 同余，记作 $a \equiv b \mod m$
+- 欧拉函数：对于正整数 $n$，小于等于 $n$ 且与 $n$ 互质的正整数的个数，记作 $\varphi(n)$
+    - 如果 $n$ 为质数，则 $\varphi(n) = n - 1$
+    - 若 $a, b$ 互质，则 $\varphi(ab) = \varphi(a) \varphi(b)$
+    - 若 $ab \equiv 1 (\mod m)$，则称 $a$ 是 $b$ 关于模 $m$ 的乘法逆元
+    - 令 $a^r \equiv 1 (\mod n)$ 成立的最小正整数 $r$ 称为 $a$ 关于模 $n$ 的阶
+- RSA 非对称加密
+    - 获得两个大质数 $p_1, p_2$，计算 $n = p_1 p_2$ 和 $\varphi(n) = (p_1 - 1)(p_2 - 1)$
+    - 取和 $\varphi(n)$ 互质的整数 $e$，满足 $e \neq p_1, p_2$
+    - 求 $e$ 模 $\varphi(n)$ 的乘法逆元 $d$，即满足 $ed \equiv 1 (\mod \varphi(n))$ 的整数 $d$
+    - 公钥为 $(e, n)$，私钥为 $(d)$
+    - 因此，要破解 RSA，就先要分解 $n$，得到 $p_1, p_2$，再计算 $\varphi(n)$，最后求出 $d$
+
+Shor Algorithm: ![Shor Algorithm](./assets/Quan7.png)
+
+### Grover 算法
+
+找出未排序数据库中的特定元素，经典计算机需要 $O(N)$ 次查询（遍历），而 Grover 算法只需 $O(\sqrt{N})$ 次查询。（例如找 N 的所有因子）
+
+## 量子纠错
+
+### 基本概念
+
+### 基础量子纠错码
+
+### 稳定子框架与主流量子纠错码
+
+### 容错量子计算
+

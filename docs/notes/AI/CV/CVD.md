@@ -137,3 +137,11 @@ decompose projection matrix
 minimize reprojection error
 
 epipolar geometry
+
+## 08. Depth Estimation & 3D Reconstruction
+
+稠密的三维重建
+
+Depth：目标点到相机平面的距离；有很多应用：避障、人脸识别
+
+- A主动发射信号到环境中，通过接收反射信号计算距离，如雷达

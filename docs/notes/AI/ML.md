@@ -9,6 +9,9 @@
 > 任课教师：赵洲
 > 参考：《机器学习》（周志华），https://note.gopoux.cc/cs/ml/review/
 
+!!! note "Homework"
+    [HW1](./assets/MLhw1.pdf)
+
 ## Terminology
 
 - 特征（Feature）：又称属性（Attribute）

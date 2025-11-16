@@ -36,9 +36,9 @@ Why does the professor/teacher say this? + 一段语音 —— 这个感觉就�
 
 ## Speaking
 
-> Oh no.
+> Ohno
 
-### 独立口语
+### Task1 独立口语
 
 一般是二选一/多选一的开放式问题，作答后阐述理由（Prefer 电子书/纸质书，网课/线下课，城市/乡村生活等）
 
@@ -50,3 +50,10 @@ Why does the professor/teacher say this? + 一段语音 —— 这个感觉就�
 2. 思考理由（两个，或者一个细节特别满的）
 3. 补充细节
    1. 技巧：用记叙文六要素（时间地点人物起因发展结果）（选四个就够）模拟一个场景再现，补充细节
+
+语料积累记录：
+
+- 11.07：Some people prefer to discuss important matters in public places such as cafes, while others prefer to have these discussions at home or in private offices. Which approach do you prefer? Use specific reasons and examples to support your answer.
+    - Private
+        - No worrying about others' listening
+        - Quiet environment helps to focus

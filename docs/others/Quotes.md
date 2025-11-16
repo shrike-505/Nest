@@ -42,6 +42,10 @@
 
 <p align=right>双雪涛《预感》</p>
 
+孙叔叔的诊所离那片高粱地很近，我可以想办法下车，跑去用汽油给你放一场焰火，一片火做的圣诞树，烧得高高的。我答应你的。
+
+<p align=right>双雪涛《平原上的摩西》</p>
+
 ---
 
 The Figurines Won't Win Her Back: they do nothing.
