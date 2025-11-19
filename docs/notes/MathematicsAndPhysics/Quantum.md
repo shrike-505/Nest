@@ -145,9 +145,29 @@ Oracle: TBD
 !!! note "Oracle 电路简化"
     $HH = I$，$XHX = Z$，$(H \otimes H) CNOT_{low} (H \otimes H) = CNOT_{high}$
 
-## 状态空间演化和量子测量
+## 量子测量
 
-### 量子态演化
+### 线性代数回顾
+
+谱分解：$n$ 阶复数域正规矩阵 $A = Q \Lambda Q^{\dagger} = \Sigma_i^n \lambda_i |e_i\rangle \langle e_i|$，其中 $Q$ 是酉矩阵，$\Lambda$ 是对角矩阵，对角线上的元素（$\lambda_i$）为 $A$ 的特征值，$Q = [|v_1\rangle, |v_2\rangle, ..., |v_n\rangle]$，$|v_i\rangle$ 是 $A$ 的特征向量，$|e_i\rangle$ 是标准正交基
+
+完备性方程：$\Sigma_i |e_i\rangle \langle e_i| = I$
+
+对于 $k$ 个基向量，定义 $k$ 个投影算符 $P_i = |e_i\rangle \langle e_i|$，则有：
+
+- $\Sigma_i P_i = I$
+- $P_i P_j = 0$ for $i \neq j$
+- $P_i^2 = P_i = P_i P_i^{\dagger}$
+
+### Measurement
+
+投影测量采用一个可观测量矩阵 $A$ 来表示，是一个待观测系统的状态空间上的厄米算子，可被谱分解为 $A = \Sigma_i \lambda_i P_i$，其中 $\lambda_i$ 是 $A$ 的特征值，$P_i$ 是对应的投影算符；在对结果 $|\psi\rangle$ 测量后，得到结果 $i$ 的概率为 $p_i = p(\lambda = \lambda_i) = \langle \psi|P_i|\psi\rangle$，测量后系统状态坍缩为 $\frac{P_i |\psi\rangle}{\sqrt{p_i}}$
+
+观测量的平均值为 $\langle A \rangle = \langle \psi|A|\psi\rangle = \Sigma_i \lambda_i p(\lambda = \lambda_i)$；标准差为 $\Delta A = \sqrt{\langle A^2 \rangle - \langle A \rangle^2}$
+
+#### 单比特测量
+
+对单量子比特 $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ 进行测量，使用投影算子 $P_0 = |0\rangle \langle 0| = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix}$ 和 $P_1 = |1\rangle \langle 1| = \begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}$，作用于态矢量时，得到 0 态的概率为 $p_0 = \langle \psi|P_0|\psi\rangle = |\alpha|^2$，测量后状态为 $\frac{\alpha}{|\alpha|} |0\rangle$；得到 1 态的概率为 $p_1 = \langle \psi|P_1|\psi\rangle = |\beta|^2$，测量后状态为 $\frac{\beta}{|\beta|} |1\rangle$
 
 ### 量子图灵机
 
