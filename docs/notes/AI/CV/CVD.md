@@ -145,3 +145,83 @@ epipolar geometry
 Depth：目标点到相机平面的距离；有很多应用：避障、人脸识别
 
 - A主动发射信号到环境中，通过接收反射信号计算距离，如雷达
+
+
+## 09. Deep Learning
+
+### Linear Classifier
+
+$x$ 和权重 $w$ 相似时，得到的 score $w^T x$ 越大
+
+loss function for regression: MSE: $\Sum_i (f(x_i) - y_i)^2$
+
+不能用于 score based 分类问题，因为 score 是连续值(-inf, +inf)，需要把 score 转化为概率分布(0-1)
+
+softmax function: $S_j = \frac{e^{f_j}}{\Sum_k e^{f_k}}$
+
+cross-entropy loss: $D(groundtruth, prediction) = -\Sum_i y_i \log S_i$
+
+### Neural Networks
+
+线性 -> 非线性（激活函数）：Sigmoid，Relu... 即每个 perceptron：$f(x) = \sigma(w^T x + b)$
+
+multi-layer NN: $f(x) = \sigma(W_n \sigma(W_{n-1} ... \sigma(W_1 x + b_1) ... + b_{n-1}) + b_n)$
+
+- Fully connected layers
+
+### Convolutional Neural Networks
+
+## 10. Recognition
+
+### 语义分割（Semantic Segmentation）
+
+![semantic segmentation](../assets/CVD3.png)
+
+仅区分**不同类别**的像素并标注，例如说图片中有许多个同种物体（许多只猫），这时语义分割只标注哪些像素是猫，而不区分该像素属于哪只猫（Do not differentiate instances）
+
+如何实现语义分割？
+
+- 早期的方法是利用 sliding window，在图像上滑动一个窗口，对窗口内的像素利用 CNN 进行分类，得到该窗口内像素的类别标签，这样太慢了，并且 receptive field 太小
+- Fully Convolutional Network (FCN)：make all predictions at once，输出一张预测图（语义图），损失函数是每个像素的交叉熵。
+    - High-resolution ->(via down-sampling) Low-resolution ->(via up-sampling) High-resolution
+    - Upsampling(Unpooling)
+        - ![upsampling](../assets/CVD4.png)
+        - ![upsampling2](../assets/CVD5.png)
+        - 称为 Transposed Convolution
+    - U-Net
+        - skip connection: combine low-level features with high-level features to get better prediction（从下采样阶段中的某一层直接skip到上采样阶段的某个层，使得某些可能在下采样过程中丢失的细节信息得以保留）
+    - DeepLab
+        - FCN + Atrous Convolution + CRF(Conditional Random Field)
+
+Evaluation Metrics: IOU(Intersection over Union) = area(预测面积 $\cap$ 真实面积)/area(预测面积 $\cup$ 真实面积)
+
+### Object Detection
+
+Input: single RGB image
+
+Output: A set of bounding boxes that denote objects
+
+- Region Proposal: generate a set of candidate object bounding boxes - R-CNN
+    - Bounding box 的质量也通过 IOU 来衡量
+
+TBD
+
+### Instance Segmentation
+
+### Human Pose Estimation
+
+在人体上定义一系列关键点（keypoints），如头顶、肩膀、肘部、手腕、臀部、膝盖、脚踝等
+
+- 单人
+- 多人
+    - Top-down：在每个 bounding box 内进行单人 pose estimation（Mask R-CNN）
+    - Bottom-up：先检测所有关键点，再将关键点组装成不同的人（OpenPose）
+
+### Others
+
+光流（Optical Flow）：描述图像中像素点的运动
+
+- FlowNet
+- Raft
+
+Video Classification：识别 actions

@@ -57,3 +57,34 @@ Why does the professor/teacher say this? + 一段语音 —— 这个感觉就�
     - Private
         - No worrying about others' listening
         - Quiet environment helps to focus
+
+## Writing
+
+> 何意味？
+
+### Integrated Writing
+
+!!! note "Useful phrases"
+    - The Professor challenges the statement by pointing out that...
+    - cannot be considered as a feasible solution
+    - while the reading passage asserts that..., the professor presents a dissenting view by stating that...
+    - In summary, the lecture effectively challenges all three arguments in the reading by providing more plausible alternative explanations.
+
+### Academic Writing
+
+让步型提纲：
+
+1. 第1句：让步认可一位同学的观点 (1, 12-15词, 短句)
+2. 第2句：让步认可的理由 (1, 12-15词, 短句)
+3. 第3句：转折提出自己的观点 (1, 12-20词, 短句)
+4. 第4句：给予新的支持理由 (1, 12-20词, 短句)
+5. 第5句：解释陈述 (1, 20-25词, 长句)
+6. 第6句：例证细节 (1, 25-35词, 长句)
+7. 第7句：总结观点 (1, 12-20词, 短句)
+
+!!! note "Useful Examples"
+    - an assortment of factors
+    - a compelling conterpoint
+    - well-structured arguments
+    - the primary driver of...
+    - the multifaceted utility of...

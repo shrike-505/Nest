@@ -18,6 +18,10 @@
     // media: "screen",
 )
 
+#align(horizon + center)[泱泱猩热血，/汩若风袭泉，/起落樱唇际，/往来兰气间。]
+
+#pagebreak()
+
 #quote-box[
 	Reference:
 	
@@ -956,10 +960,10 @@ NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一�
         - All arrays are accessed only and simultaneously by $i$
 - 其输入 $X$ 和 输出 $Y$ 都是 array 类型的变量
 - 程序最后一行是 `MODANDJUMP(a,b)`: modify $i$ and jump back to the first line.
-    - if $a = 1 & b = 1, i = i+1$
-    - if $a = 0 & b = 1, i = i-1$
-    - if $a = 1 & b = 0, i = i$
-    - if $a = 0 & b = 0$, halt
+    - if $a = 1 "and" b = 1, i = i+1$
+    - if $a = 0 "and" b = 1, i = i-1$
+    - if $a = 1 "and" b = 0, i = i$
+    - if $a = 0 "and" b = 0$, halt
 - 所有变量（除输入 $X$ 外）初始均为 0
 
 于是在程序每轮执行中，对 $A[i], B[i]...$ 等进行 $"NAND"$ 操作，并且通过 `MODANDJUMP` 来控制 $i$ 的变化，进行循环处理。
@@ -1007,3 +1011,176 @@ TM 可以再次进化为 RAM，实际上现代编程语言一般都基于 RAM �
 同样，RAM 也对应一种 NAND-RAM 编程语言，其有 integer 变量（有最大值）和 index 访问的 array；还有许多算术运算指令。
 
 可以证明 NAND-TM $<=>$ NAND-RAM
+
+#theorem(title: "Church-Turing Thesis")[
+	图灵机是终极的计算模型。
+]
+
+== 通用图灵机（Universal Turing Machine）
+
+#quotation(attribution: [#link("introtcs.org")])[
+	The universal machine/program - "one program to rule them all".
+]
+
+现在已经有了最强最厉害的计算模型了，我们希望找到一台能够完成_所有_任务的图灵机（这被称为 Universality），而非对每个函数都寻找一个专用的 TM。
+
+命这样的一台图灵机为 $U(M,x) = cases(
+	M(x) &"if M is encoding of a TM",
+	M","x &"Otherwise"
+)$
+
+为了证明 $U$ 的存在性，需要先说明如何对图灵机（$M = (K, Sigma, s, delta)$）进行编码：
+
+- 状态集 $K -> 0, 1, ..., |K| - 1$，命编码为 0 的为初态 $s$
+- 字符集 $Sigma -> 0, 1, ..., |Sigma| - 1$
+- 转移函数 $delta: K times Sigma -> K times Sigma times {"MoveLeft", "MoveRight", "Stay", "Halt"}$，表示为五元组的集合 ${("CurrentState", "CurrentSymbol", "NextState", "WrittenSymbol", "Direction")}$，这集合里的元组数量为 $|K| times |Sigma|$，对每个元组中的每个元素进行编码即可。
+
+em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 relation 的查询，即可利用输入的图灵机进行计算；也就是说，$U$ 是存在的。
+
+== 函数的可计算性（Computability）<Uncomputability>
+
+现在，不止有最强的计算模型，我们甚至有 rule them all 的通用图灵机了——那么，世界上所有的问题，都可以被图灵机解决吗？
+
+#theorem(title: "Uncomputability of some functions")[
+	存在一个布尔函数 $F: SAL -> {0,1}$，其无法被任何图灵机计算。
+
+	#proof()[
+		- 理论上由如下两点即可证明
+			- set of boolean functions: uncountable
+			- set of Turing machines: countable (because TMs can be coded)
+		- 尝试构造该 $F$: $F(x) = cases(
+			0 &"if" x "is encoding of a TM" M "and" M(x) = 1,
+			1 &"otherwise"
+  		)$
+		- 即 $F(x) = 0$ 时，有一 TM 将自己的编码作为自己的输入且输出 1
+		- 则 $forall "TM" M$，记其编码为 $m$
+			- 如果 $M(m) = 1$,则 $F(m) = 0$
+			- 如果 $M(m) eq.not 1$,则 $F(m) = 1$
+		- 由于 $M$ 并不是在所有相同的输入下都和 $F$ 有相同的输出，那么 $F$ 无法被 $M$ 计算，即无法被任何图灵机计算。
+	]
+]
+
+呃呃，这会不会有种钦定的感觉？感觉这个函数是专门找出来驳倒图灵机似的——然而，确实有很多有价值的、但是被发现是不可计算的函数。
+
+=== 停机问题
+
+#definition(
+	[
+		Given a TM $M$ and input $x in {0,1}^*$, does $M$ halt on $x$?
+
+		该问题对应函数为 $"Halt"(M,x) = cases(
+			1 "if M is a TM that halts on x",
+			0 "otherwise"
+		)$
+	],
+	title: "Halting Problem"
+)
+
+#theorem(title: "Uncomputability of Halt")[
+	$"Halt"(M,x)$ is uncomputable.
+
+	#proof()[
+		在@Uncomputability 部分已经构造出了一个不可计算的函数 $F$，因此利用反证法，试证下面这个陈述成立：“如果 $"Halt"(M,x)$ 可被某个 TM $M_("Halt")$ 计算，那么 $F$ 也可计算”。
+
+		即：利用已知的神秘 Oracle TM $M_("Halt")$ 来计算 $F$。
+
+		这台 TM $M_F$ 的工作流程如下：
+
+		1. 对输入 $x$，先利用 $M_("Halt")$ 计算 $"Halt"(x, x)$
+		2. if $"Halt"(M_x, x) = 0$，说明 TM $M_x$ 在输入 $x$ 时不会停机/$x$ 根本就不是一台 TM 的编码，于是 $F(x) = 1$
+		3. if $"Halt"(M_x, x) = 1$，说明 TM $M_x$ 在输入 $x$ 时会停机，于是
+			1. run $x$ on TM $M_x$ until it halts
+			2. if $M_x (x) == 1$，由 $F$ 的定义可知 $F(x) = 0$；else $F(x) = 1$
+
+		综上，TM $M_F$ 可以计算 $F$，与 $F$ 不可计算矛盾，因此 $"Halt"(M,x)$ 也是不可计算的。
+	]
+]
+
+证明停机问题无法计算后，可以通过其证明更多不可计算的函数/问题了。
+
+#example(title: "Halt zeto")[
+	Given a TM $M$, does $M$ halt on input 0?
+
+	该问题对应函数 $"HALTONZERO"(M) = cases(
+		1 "if" M "is a TM that halts on 0",
+		0 "otherwise"
+	)$
+
+	#proof()[
+        类似上一个定理证明中采用的反证法，只需要证明：“如果这个函数可计算，那么停机问题也可计算”（由于已知 Halt 是不可计算的，那么可以直接得到这个函数的不可计算性）。
+
+        类似的，假设神秘 Oracle TM $M_("HALTONZERO")$ 可以计算 $"HALTONZERO"(M)$，那么可以构造 TM $M_("HALT")$ 来计算停机问题，具体而言，通过下面几步证明：
+
+        1. 构造 TM $N$ 使得 $M$ 在 $x$ 上停机当且仅当 $N$ 在输入 0 上停机，其中 $M, x$ 是 $M_("HALT")$ 的输入
+            1. $N$ 是这样的：忽略输入，直接 run $M$ on input $x$；易验证 $M$ 在 $x$ 上停机当且仅当 $N$ 在 0 上停机
+        2. 运行 $M_("HALTONZERO")(N)$ 就可以判断 $N$ 是否在输入 0 上停机；且 $M_("HALT")(M,x) = M_("HALTONZERO")(N)$，于是可以计算停机问题。
+        3. 但由于停机问题不可计算，因此 $"HALTONZERO"$ 也是不可计算的。
+	]
+]
+
+#example(title: "Zero Function")[
+    Given a TM $M$, is $M(x) = 0 forall x in SAL$?
+
+    该问题对应函数 $"ZEROFUNC"(M) = cases(
+        1 "if" M "is a TM that computes the zero function",
+        0 "otherwise"
+    )$
+
+    #proof()[
+        依旧，假设 $M_("ZERO")$ 可以计算 $"ZEROFUNC"(M)$，那么试构造 TM $M_("HALT")$ 来计算停机问题：
+
+        1. 构造 TM $N$ 使得 $M$ 在 $x$ 上停机当且仅当 $N$ 计算 ZERO 函数
+            1. $N$: run $M$ on input $x$; return 0.
+        2. Run $M_("ZEROFUNC")(N)$ 来判断 $N$ 是否计算 ZERO 函数；且 $M_("HALT")(M,x) = M_("ZEROFUNC")(N)$，于是可以计算停机问题。
+        3. 但由于停机问题不可计算，因此 $"ZEROFUNC"$ 也是不可计算的。
+    ]
+]
+
+上面两个例子中采用的证明过程是类似的：构造新问题涉及的中间件 TM $N$ 使得 $"HALT"(M, x) = "TargetTM"(N)$，即从停机问题转换为目标问题的图灵机，这被称为_归约（reduction）_。
+
+#definition(
+    [
+        A Reduction from $F$ to $G$ is a _computable_ function $R: SAL -> SAL$ such that $forall x in SAL, F(x) = G(R(x))$. 
+
+        #lemma()[
+            If $G$ is computable, then $F$ is computable.
+
+            #figure[$<=>$]
+
+            If $F$ is uncomputable, then $G$ is uncomputable. 
+
+        ]
+    ],
+    title: "Reduction"
+)
+
+#example(title: "Rice's Theorem")[
+    Given a TM $M$, does $M$ have property P?（$P$ 是一个布尔函数）
+
+    该问题对应函数 $"P"(M) = cases(
+        1 "if" M "is a TM that has property P",
+        0 "otherwise"
+    )$
+
+    Rice's theorem: 如果 $P$ 是 semantic & non-trivial 的，那么 $"P"$ 是不可计算的。
+
+    两台图灵机 $M_1, M_2$ 是 functionally equivalent 的，如果 $forall x in SAL, M_1(x) = M_2(x)$。
+
+    一个性质 $P: SAL -> {0, 1}$ 是 semantic 的，如果对于任意两台 functionally equivalent 的图灵机 $M_1, M_2$，有 $"P"(M_1) = "P"(M_2)$
+
+    一个性质 $P$ 是 trivial 的，如果 $P$ 是 constant function
+
+    #proof[TBD]
+]
+
+=== Recursion Theorem
+
+#definition(
+    [
+		For any TM $T$ that takes input $<M>$(the encoding of a TM) and $x$, there exists a TM $R$ such that $forall x in SAL, R(x) = T(<R>, x)$
+    ],
+    title: "Recursion Theorem"
+)
+
+=== Godel's Incompleteness Theorem
+
