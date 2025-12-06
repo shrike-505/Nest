@@ -348,7 +348,7 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
     使用 $B F$ 计算 $F$ 只需要遍历 $0$ 到 $|F(x)| -1$ 即可，反过来只需要取每一位
 ])
 
-= 语言
+= 语言与自动机
 
 == DFA 与正则语言
 
@@ -1184,3 +1184,14 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
 === Godel's Incompleteness Theorem
 
+= 运行时间
+
+在纠结完“所有问题的可计算性”后，接下来我们着手于“可计算问题的计算效率”——即运行时间（Running Time）。
+
+#definition(
+    [
+        $T: N->N$ is a function and the Running Time of TM $M$ is $T(n)$ if
+		- 对于任意充分大的 $n$ 和任意长度为 $n$ 的输入 $x in {0,1}^n$，TM $M$ 都在 $T(n)$ 步内停机
+    ],
+    title: "Running Time of TM"
+)
