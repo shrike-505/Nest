@@ -116,3 +116,18 @@ Fairy tales are more than true: not because they tell us that dragons exist, but
 “小马们都是要做些什么，才可以被铭记。我靠弹音乐——你靠拯救全国。”我举杯示意，微笑道，“说到底咱俩都一样的。”
 
 <p align=right><i>Background Pony</i>,  shortskirtsandexplosions</p>
+
+---
+
+你看看 网上人都说  
+玩潮肤浅不如搞文艺  
+不如搞文艺 搞文艺也很容易  
+买把吉他穿件海魂再弄双回力  
+你瞧那个范儿哎 是清新又爱国哎  
+使那单反一拍出来效果是没说地  
+
+<p align=right>巴主席与yumbi《浮生记》</p>
+
+有些人渴求一滴水，他就敢尿脏一片海；他说只摘一片枫叶，却捞走整片枫林和云彩；如果他要一个微笑，就有人敞开火热的胸怀；如果他摇一摇微信，就有人解开腰带。
+
+<p align=right>巴主席与yumbi《勇敢的肺》</p>
