@@ -231,3 +231,20 @@ Video Classification：识别 actions
 ### DL4 Feature Mapping
 
 ### DL4 Object Pose Estimation
+
+## Computational Photography
+
+在成像过程中利用计算技术（算法）提升图像质量或实现特殊效果
+
+### HDR(High Dynamic Range)
+
+Dynamic Range：图像中最亮和最暗部分的比值
+
+DR 过低就导致很亮或很暗的地方拍出来没有层次，细节丢失（黑糊糊一片）
+
+### Deblurring
+
+### Colorization
+
+- Sample-based methods：对目标图像使用源图像的颜色进行着色
+    - 

@@ -66,6 +66,16 @@ Why does the professor/teacher say this? + 一段语音 —— 这个感觉就�
 
 ### Integrated Writing
 
+Although the reading passage asserts that [summarize the main points of the reading passage], the professor casts doubt on these claims by presenting several counterarguments.
+
+First, the reading passage states that [summarize the first point from the reading passage]. However, the professor challenges this assertion by pointing out that [summarize the professor's counterargument]. One source suggests that..., undermining the reading's claim.
+
+Second, the reading passage argues that [summarize the second point from the reading passage], which indicates... . The professor, however, refutes this argument by explaining that [summarize the professor's counterargument]. According to the professor, while the reading suggests that..., recent studies have shown that...
+
+Finally, the reading passage claims that [summarize the third point from the reading passage]. In contrast, the professor presents a dissenting view by stating that [summarize the professor's counterargument]. The professor emphasizes that..., which contradicts the reading's assertion.
+
+Overall, the lecture effectively challenges all three arguments in the reading by providing more plausible alternative explanations.
+
 !!! note "Useful phrases"
     - The Professor challenges the statement by pointing out that...
     - cannot be considered as a feasible solution
@@ -100,6 +110,7 @@ Some people may feel that [mention a potential challenge], but [respond to this 
     - the multifaceted utility of...
     - grant unlimited access to...
     - interdisciplinary collaborations 跨学科合作
+    - the primary value of... lies in... 
 
 #### 练习记录
 
@@ -130,3 +141,15 @@ Megan: Personally, I think AI is a threat. As AI advances, many jobs may become 
 David: I disagree with Megan. I’m of the opinion that AI has the potential to solve many of the world’s problems, from climate change to disease. Additionally, AI can help us make better decisions by analyzing vast amounts of data and identifying patterns that humans may miss. That said, I agree with Megan that we must ensure that AI is developed and used in a responsible way that benefits society as a whole.
 
 Ans: Megan presents a compelling view that AI is a threat. Admittedly, if not developed and researched in a safe way, AI will cause severe upheavel in the job market and society. However, I am inclined to agree with David's argument that AI may be a solution to many worldwide problems. In my view, due to its unprecented capability to analyse large amount of data, AI is able to make highly valued predictions in many fields. The predictions will be more precise compared with those made by humans in the past, the latter using only personal experiences and expectations. For example, for those who work in financial departments and deal with economic problems, they can utilize AI to make a better prediction toward the situation of finance. Therefore, I firmly believe that AI will be a useful tool for tackling the problems faced by all people.
+
+--- 
+
+12.6
+
+Professor: As you know, governments have a responsibility to improve the lives of residents. In today’s class we’re going to discuss the best way for them to do that. What strategy do you think governments should use to improve the overall quality of life of residents? Why do you think it’s important?
+
+Maria: I think investing in transportation should be the main priority for every local government. This could include things like repairing roads and bridges, expanding bus and train services, and even building bike lanes. When cities have good infrastructure it’s easier for residents to get around, and new businesses come to town.
+
+Tom: While I agree that infrastructure is important, I think that social programs should also be a major focus. The government could invest in things like education, affordable housing, and healthcare. All of these sorts of programs can help address issues like poverty, inequality, and access to basic needs. By providing these types of services, the government can help improve people’s well-being.
+
+Ans: Tom presents a compelling opinion that social programs should be considered with the highest priority to improve the quality of residents' life. Admittedly, basic social services do provide solutions to many problems such as poverty. However, I am inclined to agree with Maria's idea, stating that public transportation should be at the first place. Highly developed transportation system undoubtly facilitate the daily commution and travel of people, by means of introducing new bike and vehicle lanes and fixing avenues. Additively, stronger transportation also grants people living in the city with higher safety. Take those who must commute by bus to go to work as an example. With the developed transportation, there will be less accidents occuring along the way. Thus residents enjoy a more happy and safe life. That's why I firmly believe that the government should focus on public transportation to improve the life of residents.
