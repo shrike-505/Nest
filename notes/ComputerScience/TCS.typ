@@ -928,9 +928,11 @@ NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一�
     - if Direction = Stay, $i = i$
     - if Direction = Halt, stop
 
-停机后，TM 会输出一个东西：$M(x) = T[1] T[2]...T[i]$ where $T[i+1]$ 是第一个 $nothing$。
+#tip-box()[
+    停机后，TM 会输出一个东西：$M(x) = T[1] T[2]...T[i]$ where $T[i+1]$ 是第一个 $nothing$。
 
-如果接受完了 input 还没有停机，则记 $M(x) = tack.t$
+    如果接受完了 input 还没有停机，则记 $M(x) = tack.t$
+]
 
 #definition(
     [
@@ -941,7 +943,7 @@ NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一�
     title: "Computation via TM"
 )
 
-== 图灵完备
+== 图灵完备 <TuringComplete>
 
 使用一些常见的编程语言都可以实现上面介绍的 TM 计算步骤，这些语言被称为_图灵完备（Turing Complete）_的语言，即其可以完成图灵机做的事情。
 
@@ -1186,12 +1188,266 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
 = 运行时间
 
+// Polynomial Time Class
+#let Poly = math.cal("P")
+
+// Exponential Time Class
+#let Exp = math.cal("EXP")
+
+// Polynomial Size Class
+#let Ppoly = $bold(P)_("/poly")$
+
+// Polynomial-time verifiable Class
+#let NonPoly = $cal("NP")$
+
 在纠结完“所有问题的可计算性”后，接下来我们着手于“可计算问题的计算效率”——即运行时间（Running Time）。
 
 #definition(
     [
         $T: N->N$ is a function and the Running Time of TM $M$ is $T(n)$ if
 		- 对于任意充分大的 $n$ 和任意长度为 $n$ 的输入 $x in {0,1}^n$，TM $M$ 都在 $T(n)$ 步内停机
+
+        注意：$T(n)$ 只界定了该图灵机的运行时间上界
     ],
-    title: "Running Time of TM"
+    title: "Running Time of a TM"
+)
+
+有了运行时间，就可以得到某个问题/函数的计算时间，并据此对函数进行分类。
+
+#definition(
+    [
+        $"Time"_("TM")(T(n)) = {"boolean function F: F is computable by some TM with running time T(n)"}$
+    ],
+    title: [满足计算时间为 $T(n)$ 的函数集合]
+)
+
+例如说，显然有 $"Time"_("TM")(10 times n^3) subset.eq "Time"_("TM")(2^n)$
+
+通过图灵机的运行时间界定函数，在图灵机离现代语言差距太远的情况下是很没有意义的，考虑到在@TuringComplete 中提到的 $"TM" <=> "NAND-TM" <=> "NAND-RAM"$，而 NAND-RAM Program 的运行更类似现代语言，下面定义 NAND-RAM Program 的运行时间：
+
+#definition(
+    [
+        $T: N->N$ is a function and the Running Time of NAND-RAM Program $P$ is $T(n)$ if
+        - 对于任意充分大的 $n$ 和任意长度为 $n$ 的输入 $x in {0,1}^n$，NAND-RAM Program halts on input $x$ after executing $T(n)$ lines.
+
+        $"TIME"_("RAM")(T(n)) \ = {"boolean function F: F is computable by some NAND-RAM Program with running time T(n)"}$
+    ],
+    title: "Running Time of a NAND-RAM Program and a function set"
+)
+
+事实上“等价”的关系是 roughly 的，有如下定理：
+
+#theorem(title: "Time_TM vs Time_RAM")[
+    For any function $T: N->N$ where $T(n) >= n$,
+
+    $"TIME"_("TM")(T(n)) subset.eq "TIME"_("RAM")(10 times T(n)) subset.eq "TIME"_("TM")(T(n)^4)$
+
+    证明可以通过对比 TM 和 NAND-RAM Program 的运行步骤数/行数来完成。
+]
+
+接下来的 $"TIME"$ 全都默认为 $"TIME"_("RAM")$。
+
+哦对了，这里还有两个比较特别的函数类：在多项式时间内可计算的函数类 $Poly = union.big_(c in N) "TIME"(n^c)$ 和在指数时间内可计算的函数类 $Exp = union.big_(c in N) "TIME"(2^n^c)$。显然有 $Poly subset.eq Exp$。
+
+== TIME Hierarchy Theorem
+
+先来一个在之后的证明中会用到的妙妙工具：
+
+#theorem(
+    [
+        我们已经知道有了通用图灵机 $U(M,x)$，可以模拟任意图灵机 $M$ 在输入 $x$ 上的计算过程并得到相同的结果，即 $U(M,x) = M(x)$；类似能自然的想到肯定也存在（由于 TM 和 NAND-RAM Program 是等价的）通用 NAND-RAM Program $U_("RAM")(P,x)$，使得 $U_("RAM")(P,x) = P(x)$。可以证明（课上没讲怎么证明）如果 $P$ 的运行时间为 $T(n)$，那么 $U_("RAM")$ 的运行时间为 $a|P|^b T(n)$，其中 $a$ 和 $b$ 是神秘常数。
+    ],
+    title: "Running Time of universal NAND-RAM Program"
+)
+
+接下来来个有关 Running Time 的定理，如果时间长了，能计算的函数必然多了。
+
+#theorem(title: "TIME Hierarchy Theorem")[
+    For every nice function $T: N->N$, 在函数集合 $"TIME"(T(n) log(n)) \\ "TIME"(T(n))$ 中都存在一个布尔函数 $F$。
+
+    即，将函数的计算时间从 $T(n)$ 提升到 $T(n) log(n)$，必定可以多计算至少一个函数 $F$。
+
+    #proof()[
+        固定一个 nice 函数 $T: N->N$，定义 $"HALT"_T (P,x) = cases(
+            1 ", if" |P| <= log log |x| "and" P "is a NAND-RAM Program which halts on" x "in" 100 T(|P|+|x|) "steps",
+            0 ", otherwise",
+        )$
+
+        这是一个 bounded halting problem（里面的 $100$ 和 $log log |x|$ 可以调，此处为了方便而取这么奇怪的值），即计算程序 P 是否能在 $100 T(|P|+|x|)$ 这么长的时间内停机
+
+        接下来证明：这个函数 $"HALT"_T$ 就是我们想要的 $F$。即证：
+
+        - $"HALT"_T in "TIME"(T(n) log(n))$
+        - $"HALT"_T in.not "TIME"(T(n))$
+
+        证明 $"HALT"_T in "TIME"(T(n) log(n))$：
+
+        - 直接写一个程序/函数来计算 $"HALT"_T$：
+            1. if $|P| > log log |x|$, return 0 \# 花费 $O(|P|)$ 时间
+            2. 计算 $T_0 = T(|P|+|x|)$ \# 花费 $O(T(|P|+|x|))$ 时间
+            3. Simulate $P$ on input $x$ for $100 T_0$ steps \# 即利用 Universal NAND-RAM Program 来模拟 $P$ 的运行，花费 $a|P|^b 100 T_0$ 时间
+            4. if $P$ halts during the simulation, return 1; else return 0
+
+            Total Time = $O(|P| + T(|P|+|x|) + a |P|^b 100 T_0) = O(|P|^b T_0)$
+
+            由于 $|P| <= log log |x| <= log log(|P|+|x|)$，那么 $O(|P|^b T_0) <= O(T(|P|+|x|) (log log(|P|+|x|))^b) = o(T(|P|+|x|) log(|P|+|x|))$，命 $n = |P|+|x|$ 即证。
+
+        证明 $"HALT"_T in.not "TIME"(T(n))$：
+
+        我他妈真懒得写了
+    ]
+]
+
+== 从有穷函数到无穷函数（运行空间）
+
+#tip-box()[在计算模型章节中，有穷函数（布尔函数）与 NAND-CIRC 程序是一一对应的，且前者的规模由其中的逻辑门数量决定，后者的规模由其中的行数决定。刚刚介绍的无穷函数与 NAND-RAM 程序也是一一对应的，且后者的规模由更抽象的 \#steps 决定。回忆如果（计算布尔函数 $F$ 的）程序有 $S$ 行，那么其规模为 $S$，记为 $F in"SIZE"(S)$。]
+
+现在我们试图从运行时间开始探究无穷函数的规模，这可以从构建其与有穷函数的联系入手：
+
+对于 $F in SAL -> {0,1}$ 规定 $F_(arrow.t n): {0,1}^n -> {0,1}$ where $F_(arrow.t n)(x) = F(x)$ for all $x in {0,1}^n$。
+
+定义如下两点：
+
+- $F_(arrow.t n) in "SIZE"(T(n))$，如果计算 $F_(arrow.t n)$ 的布尔电路所需的逻辑门数量为 $T(n)$（That is，计算其的 NAND-CIRC program 的行数最多为 $T(n)$）
+- $F in "SIZE"(T(n))$，如果 $forall n, F_(arrow.t n) in "SIZE"(T(n))$
+
+#tip-box()[
+    注意，$F in "SIZE"(T(n))$ 并不代表 $F$ 可以被某个图灵机计算。
+]
+
+一个自然的想法是比对一下 $F in "SIZE"(T(n))$ 和 $F in "TIME"(T(n))$ 的异同：前者是，对于每个可能的输入大小，都用 $T(n)$ 行程序运算，后者是，图灵机计算 $T(n)$ 步后停机；难道说，这两者是一个意思吗？
+
+哈哈，不是这样的。
+
+#figure(
+    image(
+        "./assets/TCS3.png"
+    ),
+    caption: "Difference between Size and Time"
+)
+
+可以看到，二者定义最大的区别是 $forall n$ 和 $exists "NAND-CIRC"\/"TM"$ 的先后顺序，即 Size 对每一个 $n$ 都可以有不同的机器/程序来计算，而 Time 则要求对特定的一台机器/程序，对它而言 $n$ 的选择可以是任意的。
+
+误会解除了，那么，$"SIZE"(T(n))$ 和 $"TIME"(T(n))$ 这两个函数集合之间有什么大小关系吗？还真有！你可以看到，由于前者中的函数对于每个 $n$，都有各自的独属的神秘程序来计算，而后者中的函数只能用一台（或一些）神秘机器来计算，即，要加入后者集合，对函数的要求更高，因此其中的函数更少：$"TIME"(T(n)) subset.eq "SIZE"(T(n))$
+
+实则这个包含关系可以更紧（紧，紧吗？）有 $"TIME"(T(n)) subset.eq "SIZE"(T(n)^3)$。合味道？我没听懂这块是啥情况，不应该是变松了吗？因为显然 $"SIZE"(T(n)) subset.eq "SIZE"(T(n)^3)$，不清楚啥情况，留待后人勘误。证明也略。
+
+接下来趁着 SIZE 的余味，再介绍一个函数类：$Ppoly = union.big_(c in N) "SIZE"(n^c)$，由 TIME 和 SIZE 的关系可知 $Poly subset Ppoly$（真包含是因为，后者中存在一些不可计算的函数）。
+
+下面是一个属于 $Ppoly$ 但不属于 $Poly$ 的函数例子：
+
+#definition(
+    [
+        $"UH"(x) = "HALTONZERO"(S(|x|))$；其中 $S: N->N$ 将输入的数转化为二进制表示再删去最高位的1最后返回。
+
+        UH is uncomputable，证明通过把 HALTONZERO 归约到 UH 完成。
+    ],
+    title: "Unary Halting Function"
+)
+
+== Difficulty Levels of Functions
+
+我们有了一堆从里到外包着的 $"TIME"$ 函数类（由其 running time $T(n)$ 划分界限）；然而现实是，没有可行的方法来判断，某个函数究竟属于哪一层，即，无法判断某个问题究竟有多难。
+
+#definition(
+    [
+        Given a 3 CNF formula $phi$，$phi$ 可满足吗？
+
+        该问题对应函数 $"3SAT"(phi) = cases(
+            1 "if" phi "is satisfiable",
+            0 "otherwise"
+        )$
+    ],
+    title: "3 SAT Problem"
+)
+
+#definition(
+    [
+        给定一系列线性等式（方程），问该方程组是否有可行解
+
+        该问题对应函数 $"01EQ"(A,B) = cases(
+            1 "if" A "has a row equal to a row in" B,
+            0 "otherwise"
+        )$
+    ],
+    title: "01 EQ Problem"
+)
+
+#definition(
+    [
+        Given $n$ integers $a_1, a_2, ..., a_n$ and a target integer $B$，is there a subset of ${a_1, a_2, ..., a_n}$ that sums to $B$？
+    ],
+    title: "Subset Sum"
+)
+
+这三个问题就是典型的看起来很难但是没法用 TIME 划分难度的函数。退而求其次，我们尝试找一个很难的函数，然后证明这些函数都比那个函数简单，或者说差不多难度。
+
+有关“证明”，考虑到我们之前用过的归约（Reduction）工具，其可以判断不同函数之间的难度，但是那个难度指的是“是否可计算”，而现在我们划分难度用的是 Running Time，因此需要对归约进行改进，加一些条件。
+
+#definition(
+    [
+        Polynomial-time Reduction 相比于前面的 Reduction 只多了一个条件：$R$ 是可以在多项式时间内计算的。此时 $F(x) = G(R(x))$ 也记作 $F <=_P G$。
+    ],
+    title: "Polynomial-time Reduction"
+)
+
+#lemma(
+    [
+        If $F <=_P G$ and $G in Poly$, then $F in Poly$.
+
+        If $F <=_P G$ and $G <=_P H$, then $F <=_P H$.
+    ],
+    title: "Polynomial-time Reduction Lemma"
+)
+
+接下来对上面提到的三个问题试着规约到一些已知的神秘函数。
+
+#theorem()[
+    3SAT $<=_P$ 01EQ
+
+    #proof()[
+        TBD
+    ]
+
+    3SAT $<=_P$ Subset Sum
+
+    #proof()[
+        TBD
+    ]
+]
+
+#definition(
+    [
+        TBD
+    ],
+    title: "polynomial-time verifiability"
+)
+
+#lemma(
+    [
+        $Poly subset.eq NonPoly subset.eq Exp$
+
+        #proof()[
+            TBD
+        ]
+    ],
+)
+
+#definition(
+    [
+        A function $F: SAL -> {0,1}$.
+
+        如果 $forall G in NonPoly, G <=_P F$，那么 $F$ 是 NP-Hard 的。
+
+        如果 $F$ 既是 NP-Hard 的又 $in NonPoly$，那么 $F$ 是 NP-Complete 的。
+    ],
+    title: "NP-Completeness ＆ NP-Hardness"
+)
+
+#theorem(
+    [
+        3SAT $in Poly <=> Poly = NonPoly$
+
+        Cook-Levin Theorem: 3SAT is NP-Complete
+    ],
 )
