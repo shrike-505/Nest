@@ -81,7 +81,6 @@
 - 分别求出如下论辩框架的不动点
   - 1) 论辩框架的特征函数：从论证集合到论证集合的映射 $F_{A F}(E) = {a | E "可防御" a}$
   - 2) 函数的不动点
-  - TBD
 
 - #strong[用结构化论辩框架表示如下缺省理论（本书第六章内容）表示的知识，并写出该结构化论辩框架产生的抽象论辩框架。]
 
@@ -97,6 +96,3 @@
   #let republican = text("republican")
 
   则 $s_1$ 通过基代换可得到 $quaker(Nixon) => pacifist(Nixon)$, $s_2$ 通过基代换可得到 $republican(Nixon) => not pacifist(Nixon)$，这里 $=>$ 代表“可缺省地推出”
-
-  TBD
-
