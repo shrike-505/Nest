@@ -15,6 +15,8 @@ tags:
     - [hw1](./../assets/CNhw1.pdf)
     - [hw2](./../assets/CNhw2.pdf)
     - [hw3](./../assets/CNhw3.pdf)
+    - [hw4](./../assets/CNhw4.pdf)
+    - [hw5](./../assets/CNhw5.pdf)
 
 ??? note "labs"
     TBD

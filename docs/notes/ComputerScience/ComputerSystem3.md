@@ -112,7 +112,7 @@ RAW/WAR/WAW 导致数据冲突，需要使用动态调度重排指令顺序
         - 一条指令能否写回，要看是否有指令需要读即将被改写的这个寄存器，具体一点来说，就是要观察标记 Yes 的 Rj、Rk 对应的寄存器里是否有当前指令的目的寄存器，如果有，就说明有指令需要读取寄存器的旧值，这样一来我们就要等指令读完旧值之后再写回，观察这个信息是为了解决 WAR 冒险。
 
 !!! note "Tomasulo Algo"
-    TBD
+    https://zhuanlan.zhihu.com/p/499978902
 
 Exception vs. Interrupt
 
@@ -120,8 +120,6 @@ Exception vs. Interrupt
 | --- | --- | --- |
 | Cause | 由程序引起 | 由外部设备引起 |
 | When to Handle | When Detected | When Convinient |
-
-TBD
 
 ### Hardware based Speculation: Reorder Buffer(ROB)
 
@@ -221,12 +219,10 @@ cache容量较小，所以数据需要按照一定的规则从主存映射到cac
     - Which block should be replaced on a miss?
         - Block 的替换问题
         - LRU、FIFO、Random 算法
-        - TBD
     - What happens on a write?
         - 写策略问题
         - Write-through、Write-back (both with write Buffer)
-        - TBD
-    - I'll finish this at the end of the semester :(
+    - ~~I'll finish this at the end of the semester :(~~ seemingly never...
 
 ## 主存 Main Memory
 
@@ -781,8 +777,6 @@ on-disk for data storage, in-memory for data access
 
 ### 硬盘分配 Disk Block Alloc
 
-TBD
-
 - 连续分配
 - Linked Alloc
 - Indexed Alloc
@@ -897,8 +891,6 @@ RAID 1：把一个 Disk 的数据复制一份存在另一个 Disk 上
 ## I/O Systems
 
 I/O devices is the way computer to interact with user and other systems
-
-TBD
 
 ## DLP
 

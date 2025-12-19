@@ -39,13 +39,29 @@ idea1：直接将一片可以接收物体反射光的薄膜放在物体前面：
 !!! note "FOV"
     ![FOV](../assets/CVD1.png)
 
+    Also depends on focal length $f$ and sensor size $s$
+
 Aperture 的尺寸由镜片的直径刻画，记为 $D$
 
 一种更好的描述方式是 f-number：$N = f/D$，其中 $f$ 是焦距，即镜片焦距与直径的比值
 
+How to blur background? Large aperture, Long focal length, Near Foreground, Far Background
+
 ### Geometric image formation
 
 ![pinhole](../assets/CVD2.png)
+
+TBD: 齐次坐标下的 Perspective Projection 公式
+
+- Vanishing Point：三维空间内平行线在二维图像上投影后相交的点
+- Vanishing Line：一组平行平面在二维图像上投影后相交的直线，例如地平线
+- Radial Distortion：镜头畸变，靠近图像边缘的部分会被拉伸或压缩；由有瑕疵的镜片导致
+
+### Photometric d
+
+- Shutter Speed：快门速度，控制光线进入相机的时间长度
+
+RGB, HSV
 
 ## 03. Image Processing
 
@@ -75,11 +91,13 @@ $\begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix}$：提取�
 
 $\begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}$：提取垂直方向的 Gradient
 
-Bilateral filter：在保持边缘的同时进行模糊
+Bilateral filter：在保持边缘的同时进行模糊（不考）
 
 ### Image Sampling
 
 TBD
+
+Aliasing
 
 ## 04. Model fitting & Optimization
 

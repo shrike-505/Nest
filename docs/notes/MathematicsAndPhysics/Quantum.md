@@ -200,8 +200,6 @@ $$ QFT|\overline{j_1 j_2 ... j_n}\rangle = \frac{1}{\sqrt{2^n}} (|0\rangle + e^{
 
 ![QPE](./assets/Quan6.png)
 
-TBD
-
 ### Shor 算法
 
 - 同余：若整数 $a$ 和 $b$ 除以正整数 $m$ 后余数相同，则称 $a$ 与 $b$ 对模 $m$ 同余，记作 $a \equiv b \mod m$
