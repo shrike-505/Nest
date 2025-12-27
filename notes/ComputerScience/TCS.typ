@@ -18,18 +18,24 @@
     // media: "screen",
 )
 
-#align(horizon + center)[泱泱猩热血，/汩若风袭泉，/起落樱唇际，/往来兰气间。]
+#let Occupy1Page(x) = [#pagebreak() #x #pagebreak()]
 
-#pagebreak()
+#Occupy1Page(align(horizon + center)[泱泱猩热血，/汩若风袭泉，/起落樱唇际，/往来兰气间。])
 
 #quote-box[
 	Reference:
 	
 	- #link("introtcs.org") - 教材（电子书版）
 	- #link("https://fla.cuijiacai.com/") - 南京大学形式语言与自动机课程笔记
+	- #link("https://williamhoza.com/teaching/spring2025-intro-to-complexity/") - UChicago: CMSC 28100: Introduction to Complexity Theory
 ]
 
 #let SAL = ${0,1}^*$ // String of Arbitrary Length
+
+#show heading.where(level: 1): it => [
+  #set align(center)
+  #block(it.body)
+]
 
 = 问题与编码
 
@@ -448,6 +454,8 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
 ])
 
 == NFA
+
+#quote-box[你和雪有一个共同点。]
 
 #definition[
     不确定性有限自动机（Nondeterministic Finite Automaton, NFA），如下是其与 DFA 的区别：
@@ -1100,7 +1108,7 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
 证明停机问题无法计算后，可以通过其证明更多不可计算的函数/问题了。
 
-#example(title: "Halt zeto")[
+#example(title: "Halt Zero")[
 	Given a TM $M$, does $M$ halt on input 0?
 
 	该问题对应函数 $"HALTONZERO"(M) = cases(
@@ -1172,7 +1180,7 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
     一个性质 $P$ 是 trivial 的，如果 $P$ 是 constant function
 
-    #proof[TBD]
+    #proof[https://introtcs.org/public/lec_08_uncomputability.html#ricethmsec]
 ]
 
 === Recursion Theorem
@@ -1185,6 +1193,10 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 )
 
 === Godel's Incompleteness Theorem
+
+我赌不考
+
+哦对了，接下来的部分是本课程最混沌的环节
 
 = 运行时间
 
@@ -1207,7 +1219,7 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
         $T: N->N$ is a function and the Running Time of TM $M$ is $T(n)$ if
 		- 对于任意充分大的 $n$ 和任意长度为 $n$ 的输入 $x in {0,1}^n$，TM $M$ 都在 $T(n)$ 步内停机
 
-        注意：$T(n)$ 只界定了该图灵机的运行时间上界
+        注意：$T(n)$ 只界定了该图灵机的运行时间上界，可以理解为 $T(n)$ 实际上表示的是 DS 课程里那个 $O(T(n))$。
     ],
     title: "Running Time of a TM"
 )
@@ -1247,7 +1259,7 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
 接下来的 $"TIME"$ 全都默认为 $"TIME"_("RAM")$。
 
-哦对了，这里还有两个比较特别的函数类：在多项式时间内可计算的函数类 $Poly = union.big_(c in N) "TIME"(n^c)$ 和在指数时间内可计算的函数类 $Exp = union.big_(c in N) "TIME"(2^n^c)$。显然有 $Poly subset.eq Exp$。
+哦对了，这里还有两个比较特别的函数类：在多项式时间内可计算的函数类 $Poly = union.big_(c in N) "TIME"(n^c)$ 和在指数时间内可计算的函数类 $Exp = union.big_(c in N) "TIME"(2^n^c)$。显然有 $Poly subset.neq Exp$。
 
 == TIME Hierarchy Theorem
 
@@ -1326,13 +1338,13 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
     caption: "Difference between Size and Time"
 )
 
-可以看到，二者定义最大的区别是 $forall n$ 和 $exists "NAND-CIRC"\/"TM"$ 的先后顺序，即 Size 对每一个 $n$ 都可以有不同的机器/程序来计算，而 Time 则要求对特定的一台机器/程序，对它而言 $n$ 的选择可以是任意的。
+可以看到，二者定义最大的区别是 $forall n$ 和 $exists "NAND-CIRC"\/"TM"$ 的先后顺序，即 Size 对某个 $n$，对于固定长度为 $n$ 的输入都可以有不同的机器/程序来计算，而 Time 则要求对特定的一台机器/程序，对它而言所有长度的输入都可以计算。
 
 误会解除了，那么，$"SIZE"(T(n))$ 和 $"TIME"(T(n))$ 这两个函数集合之间有什么大小关系吗？还真有！你可以看到，由于前者中的函数对于每个 $n$，都有各自的独属的神秘程序来计算，而后者中的函数只能用一台（或一些）神秘机器来计算，即，要加入后者集合，对函数的要求更高，因此其中的函数更少：$"TIME"(T(n)) subset.eq "SIZE"(T(n))$
 
-实则这个包含关系可以更紧（紧，紧吗？）有 $"TIME"(T(n)) subset.eq "SIZE"(T(n)^3)$。合味道？我没听懂这块是啥情况，不应该是变松了吗？因为显然 $"SIZE"(T(n)) subset.eq "SIZE"(T(n)^3)$，不清楚啥情况，留待后人勘误。证明也略。
+// 实则这个包含关系可以更紧（紧，紧吗？）有 $"TIME"(T(n)) subset.eq "SIZE"(T(n)^3)$。合味道？我没听懂这块是啥情况，不应该是变松了吗？因为显然 $"SIZE"(T(n)) subset.eq "SIZE"(T(n)^3)$，不清楚啥情况，留待后人勘误。证明也略。
 
-接下来趁着 SIZE 的余味，再介绍一个函数类：$Ppoly = union.big_(c in N) "SIZE"(n^c)$，由 TIME 和 SIZE 的关系可知 $Poly subset Ppoly$（真包含是因为，后者中存在一些不可计算的函数）。
+接下来趁着 SIZE 的余味，再介绍一个函数类：$Ppoly = union.big_(c in N) "SIZE"(n^c)$，由 TIME 和 SIZE 的关系可知 $Poly subset.neq Ppoly$（真包含是因为，后者中存在一些不可计算的函数）。
 
 下面是一个属于 $Ppoly$ 但不属于 $Poly$ 的函数例子：
 
@@ -1375,7 +1387,7 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 
 #definition(
     [
-        Given $n$ integers $a_1, a_2, ..., a_n$ and a target integer $B$，is there a subset of ${a_1, a_2, ..., a_n}$ that sums to $B$？
+        Given $n$ integers $x_1, x_2, ..., x_n$ and a target integer $B$，is there a subset of ${x_1, x_2, ..., x_n}$ that sums to $B$？
     ],
     title: "Subset Sum"
 )
@@ -1406,48 +1418,232 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
     3SAT $<=_P$ 01EQ
 
     #proof()[
-        TBD
+        https://introtcs.org/public/lec_12_NP.html#reducing-3sat-to-zero-one-and-quadratic-equations
     ]
 
     3SAT $<=_P$ Subset Sum
 
     #proof()[
-        TBD
+        https://introtcs.org/public/lec_12_NP.html#the-subset-sum-problem
     ]
 ]
 
+=== Verifiability
+
+在可计算性之外，这里介绍一个_可验证性_。关注上面的三个问题（3SAT, 01EQ, Subset Sum），如果说它们可以被计算，即 {存在一串赋值使得 $phi ("from 3SAT")$ 可被满足，使得 01EQ 的方程组成立，使得 Subset Sum 的子集和为 $B$}，那么我们该如何说明，这些赋值，或者说*解*，是什么？答案显而易见：直接把这些 $x_i$ 的赋值写出来就是了，然后对于 3SAT，直接把赋值代入 $phi$ 看是否成立；对于 01EQ，直接把对应的行列写出来看是否相等；对于 Subset Sum，直接把解加起来看是否等于 $B$。并且，如上的这些操作都是多项式时间内可以完成的，我们说这些问题是_多项式时间可验证_的。
+
 #definition(
     [
-        TBD
+        $F: SAL -> {0,1}$ 是多项式时间内可验证的，如果存在一个 Running Time 是 Polynomial 的 TM $V$ 使得 $forall x in SAL, F(x) = 1 <=> exists t in SAL, s.t. cases(V(x,t) = 1, |t| <= |x|^a)$
+
+        $V$ 又称作验证机（Verifier），$t$ 称作证据（Proof/Certificate）。
+
+        可以这么理解，$F(x) equiv 1$ 也就说明这是一个“真”的 statement，那么存在一个长度合适的证据 $t$ 能够被多项式时间验证机 $V$ 调用，完成证明（得到输出 1）（证明的过程就类似上面举例的那些，什么代入赋值比较，什么把解加和比较），且如果能够证明，那么 $F(x) = 1$ 也是 genuine 的。满足这个性质的函数就是多项式时间可验证的函数。
     ],
-    title: "polynomial-time verifiability"
+    title: "Polynomial-time Verifiability"
 )
+
+来个例子：如果 $F$ 是 3SAT，那么 $V(x,t)$ 是这样的（作为证据，很明显 $t$ 应当是一组赋值；且 $x$ 应当是一个 3-CNF formula）：
+
++ if $x$ 不是一个 3-CNF formula 或者 $t$ 不是一组合法的 assignment，return 0
++ else，把 $t$ 代入 $x$ 算一下，如果 $x$ 在这个 assignment 下成立，return 1；else return 0
+- 显然 $V$ has a polynomial running time，并且 $V$ 输出 1 确实和 3SAT 可被满足等价。
+
+接着，隆重介绍迄今最神秘的函数类：
+
+$NonPoly = {"boolean function F: F is polynomial-time verifiable"}$。
 
 #lemma(
     [
         $Poly subset.eq NonPoly subset.eq Exp$
 
         #proof()[
-            TBD
+            先证明前半部分。
+
+            $forall F in Poly$ 都存在一台图灵机 $M$ 在多项式时间内计算 $F$，那么目标是构造一台验证机 $V$。
+
+            idea：注意验证机最显著的特点就是它要在 Proof 的协助下对 $x$ 输出 1（即进行验证），而我们现在的 $M$ 直接能扛住计算这个任务（而根本不需要 Proof）。因此，我们可以让验证机 $V(x,t)$ 忽略 Proof：
+
+            + Run $M$ on input $x$ \# Polynomial Time
+            + return $M(x)$ \# Constant Time
+
+            于是得到多项式时间验证机 $V$，那么 $F in NonPoly$，那么 $Poly subset.eq NonPoly$。
+
+            接下来证明后半部分。
+
+            $forall F in NonPoly$ 都存在一台验证机 $V$ 在多项式时间内验证 $F$，那么目标是构造一台图灵机 $M$。
+
+            idea：枚举所有可能的 Proof $t$，并利用验证机 $V$ 来验证 $F(x)$ 是否为 1：
+
+            M(x):
+
+            + enumerate all strings $t$ where $|t| <= |x|^a$ (formally, $forall t in SAL "with" |t| <= |x|^a$) \# Exponential Time, specifically $O(2^(|x|^a))$
+                + Run $V(x,t)$ \# Polynomial Time
+                + if _some_ $V(x,t) = 1$, return 1 \# Constant Time
+            + return 0 \# Constant Time
+
+            于是得到 Exponential Time 计算机 $M$，那么 $F in Exp$，那么 $NonPoly subset.eq Exp$。
         ]
     ],
 )
+
+并且我们已经知道 $Poly subset.neq Exp$，那么上面两个包含关系至少有一个是真包含——就这了，我们只能得到这么多了，对于 $Poly$ 是否_等于_$NonPoly$，以及 $NonPoly$ 是否_等于_ $Exp$，我们无从得知。
+
+#tip-box(title: "Conjecture")[如今的猜测是：$Poly eq.not NonPoly$ 且 $NonPoly eq.not Exp$，如果相等的话，那么计算和验证的难度就相等了，这是反直觉的。]
+
+——至少，证明 $Poly eq NonPoly$ 是很难的一件事，在下面的 Theorem 中我们会提到：这件事的难度堪比证明 3SAT $in Poly$。
+
+先来点开胃小定义。
 
 #definition(
     [
         A function $F: SAL -> {0,1}$.
 
-        如果 $forall G in NonPoly, G <=_P F$，那么 $F$ 是 NP-Hard 的。
+        如果 $forall G in NonPoly, G <=_P F$，那么 $F$ 是 NP-Hard 的，即满足所有 NP 问题都可以被规约到它。
 
-        如果 $F$ 既是 NP-Hard 的又 $in NonPoly$，那么 $F$ 是 NP-Complete 的。
+        如果 $F$ 既是 NP-Hard 的又 $in NonPoly$，那么 $F$ 是 NP-Complete 的（即 $F$ 在 NP 问题中是最难的那一档）。
     ],
-    title: "NP-Completeness ＆ NP-Hardness"
+    title: "Prelude: NP-Completeness ＆ NP-Hardness"
+)
+
+由 NPC 的定义可立刻得到下面的引论：
+
+#lemma()[
+    $F$ 是一个 NPC 问题，那么如果 $F in Poly$，那么 $Poly = NonPoly$。
+]
+
+接下来这节课智云没有画面（只能赌这块不考了）😀其实有画面我也觉得世界上没有人能听得懂呃呃
+
+Cook-Levin Theorem: 3SAT is NP-Complete
+
+proof：https://zhuanlan.zhihu.com/p/73234959
+
+#figure(
+    image(
+        "./assets/TCS4.png"
+    ),
+    caption: "理解在哪？"
 )
 
 #theorem(
     [
         3SAT $in Poly <=> Poly = NonPoly$
-
-        Cook-Levin Theorem: 3SAT is NP-Complete
     ],
 )
+
+== Probability: Randomized Computation
+
+#quote-box[
+    哎呦我去，这不是我最擅长、最喜欢、荣誉课里最宜人的概率论（括弧H括回）吗？
+
+    其实我这一章本来打算直接不学了，myc搁这胡加新东西呢。但是考虑到上面的 Cook-Levin Theorem 智云没画面，还是在这记点什么，聊以自慰。
+]
+
+对某些问题，使用随机的计算方法，在允许出错概率不超过某个值的情况下，可以以更低的时间复杂度来完成计算。
+
+现在要如何将随机性 apply 到已经介绍过的那些计算模型上呢？下面考虑 polynomial-running-time 的 NAND-TM Program：
+
+```python
+? = NAND(?, ?)
+...
+? = NAND(?, ?)
+MODANDJUMP(?, ?) # total num of lines is poly(|x|)
+```
+
+给普通的 NAND-TM Program 添加一条新指令：`? = RAND()`（RAND 函数等概率返回 0 或 1，然后将其赋值给某个变量），得到 RNAND-TM Program。
+
+相对应的，我们熟知的图灵机可以根据当前状态 $p$ 和读入 symbol $a$ 来唯一确定下一状态 $q$、写入 symbol $b$ 和读写头移动方向 $d$，即 $delta(p,a) = (q,b,d)$；那么现在我们可以让图灵机的转移函数变为 $delta(p,a) = cases((q_1,b_1,d_1), (q_2,b_2,d_2))$，即对于某个状态和读入 symbol，可以有两个以_等概率_选取的的转移结果，然后通过掷硬币来决定采用哪个转移结果，得到 Probablistic Turing Machine。
+
+#let BPP = $"BPP"$  // Bounded-error Probabilistic Polynomial time
+
+有了 PTM，接下来可以定义函数类了：
+
+$
+BPP = {F: SAL -> {0,1} | exists "an RNAND-TM Program" P \ s.t. forall x in SAL, P "halts within" a|x|^b "steps and Pr"(P(x) = F(x)) >= 2/3}
+$
+
+即，计算该类函数的概率图灵机在输入长度的多项式时间内停机，且输出正确结果的概率至少为 $2/3$。这里的 $2/3$ 其实可以取任何在 $(1/2, 1)$ 之间的数值，下面这个引理说明了原因：只要是大于 $1/2$ 的概率，就可以通过一种办法放大这个数值直到逼近 1.
+
+#lemma(title: "Amplification")[
+    $forall F: SAL -> {0,1}$，如果存在一个多项式时间的随机算法（即 RNAND-TM Program）$P$ 使得 $forall x in SAL, Pr(P(x) = F(x)) >= p$ for some $p in (1/2, 1)$，那么一定存在另一个多项式时间的随机算法 $Q$ 使得 $forall x in SAL "and for every" n in NN, Pr(Q(x) = F(x)) >= 1 - 1/(2^n^m))$。
+
+    #proof[
+        $Q$: 
+
+        1. run $P$ on input $x$ for $2k$ times
+        2. return the majority value among these $2k$ outputs
+
+        这样构造 $Q$，我们可以获悉：如果 $Q$ 失败，那么超过半数（即至少 $k$ 次）$P$ 的输出都是错误的。注意到每次跑 $P$ 都是一次独立重复试验，那么有
+        
+        $
+        "Pr"("Q Fails") &= "Pr"("P Fails at least k times")\
+                        &= sum_(i=k)^(2k)"Pr"("P Fails" i "times")\
+                        &= sum_(i=k)^(2k) C_(2k)^(i) p^(2k-i) (1-p)^i\
+                        &<= sum_(i=k)^(2k) C_(2k)^(i) p^k (1-p)^(k) ("since" p > 1/2 "and" i >= k)\
+                        &= p^k (1-p)^k sum_(i=k)^(2k) C_(2k)^(i) \
+                        &<= p^k (1-p)^k 2^(2k) \
+                        &= (4p(1-p))^k \
+                        &->_(k->oo)0 ("since" 1 >p> 1/2 "and thus" 4p(1-p) < 1)\
+        $
+
+        命 $k = n^m / (-log_2(4p(1-p)))$ 即得到 $"Pr"("Q Fails") < 1/(2^n^m)$，那么 $"Pr"(Q(x) = F(x)) >= 1 - 1/(2^n^m)$。
+    ]
+]
+
+Another aspect of BPP: 现在，以一个全新的角度考虑 RNAND-TM Program 的那条新指令：`? = RAND()`，其在每次执行该函数时都随机生成一个随机的 0 或 1.但我们也可以这样操作：在整个程序开始前先生成一个随机 01 串 $r$，然后每次执行 `? = RAND()` 时都从 $r$ 中依次取出一个 bit 来使用。这种方法和之前是等价的，可以看作是某个更大的程序同时接受了原先的输入 $x$ 和一个随机字符串 $r$ 作为输入然后进行计算；于是得到 $BPP$ 的另一个定义：
+
+$
+BPP = {F: SAL -> {0,1} | exists "a polynomial-running-time TM" G \ s.t. forall x in SAL, Pr_(r in {0,1}^(a|x|^b)) (G(x r) = F(x)) >= 2/3}
+$
+
+这里限定了 $r$ 的长度为 $a|x|^b$，也是因为规定 RNAND-TM Program 在多项式时间内运行，那么其最多执行多项式次数的 `RAND()` 指令，因此只需要这么长的随机串就够了。
+
+=== Field of Probabilistic Turing Machines
+
+接下来看看 BPP 和之前介绍过的函数类之间的关系。
+
+首先，由于计算 $BPP$ 函数的 RNAND-TM Program 的 Running Time 是 Polynomial 的，那么计算 $Poly$ 函数的 NAND-TM Program 就是其的一种特殊情况（不用 RAND 指令），于是
+
+$
+Poly subset BPP
+$
+
+其次，对于某个函数 $F in BPP$，我们尝试去除其中的随机性（Derandomization），从而得到一个确定性的计算方法（Deterministic Algorithm）（这个过程也被称为 Brute-Force Derandomization）：
+
+- 令 $M$ 为一台计算 $F$ 的 Probabilistic TM，其输入长度为 $n$，时间复杂度为 $T(n^k)$，错误率不超过 $1/3$；
+- 构造图灵机 $M'$：
+    + 输入 $x in {0,1}^n$
+    + 对于所有可能的随机字符串 $r in {0,1}^(n^k)$
+        + 运行 $M$ on input $(x, r)$
+        + 记录 $M$ 的输出
+    + 输出出现次数最多的结果
+
+『所有可能的』说明这个算法的时间复杂度是 $2^(n^k)$，即 $F in Exp$，于是
+
+$
+BPP subset Exp
+$
+
+目前（迄 2025 年 12 月 27 日）0 人知道上面这两个包含关系是否为真包含；注意到 Brute-Force Derandomization 中主要影响结果复杂度的就是 $r$ 的长度，如果能证明只需要 $|r| <= log |x|$ 这么长的随机串就够用，那就能说明 $Poly = BPP$ 了——可惜人们还在探索如何证明。
+
+回顾：$Ppoly$ 是指对于固定长度的输入，都有规模为输入长度多项式的布尔电路来计算的函数类，有
+
+$
+BPP subset Ppoly
+$
+
+证明通过对 BPP 中的函数输入固定长度后 Derandomization，最后可以得到存在一个长度固定的 $r$，固定该 $r$（这一步可看作是把 $r$ hardcode 进一个 NAND-TM 电路中）后使用 TM 计算输入 $(x r)$ 即可。（这东西又叫作 Adleman's Theorem）
+
+还有一个引理：如果 $Poly = NonPoly$ 那么 $BPP = Poly$。
+
+=== Pesudo-random Generators
+
+这一节如果考的话就真过了——已放弃。
+
+于是，理论计算机科学导引的故事就这么结束了……吗？
+
+#pagebreak()
+
+#align(horizon + center)[
+    一定有更好的办法。
+]
