@@ -22,7 +22,7 @@ TCP: Transmission Control Protocol（传输控制协议），仅支持单播；U
 
 - 源端口、目的端口
 - 序号：32比特，是数据载荷中第一个字节的序号
-- 确认号：32比特，是期望收到的下一个报文的数据载荷的第一个字节的序号
+- 确认号 ack（小写）：32比特，是期望收到的下一个报文的数据载荷的第一个字节的序号
     - 只有 ACK 标志位置 1 时，确认号字段才有效
 - 数据偏移：标明首部长度
 - 窗口：发送报文者接收窗口大小
@@ -82,9 +82,11 @@ TCP 采用隐式反馈算法：源点自身通过对网络行为的观察（例�
 
 swnd = min(rwnd, cwnd)
 
+上文中，slow start + congestion avoidance + fast retransmit 称为 TCP Tahoe；添加 fast recovery 后称为 TCP Reno。
+
 ## TCP 可靠传输
 
-下列推算只考虑 swnd 和 rwnd
+下列推算只考虑 swnd 和 rwnd，即假设不发生拥塞
 
 发送方向接收方发送 TCP 数据报文段，接收方发回 TCP 确认报文段，包含 ack（期望收到的下一个字节序号）（同时表明序号到 ack-1 的数据都已经收到）和 rwnd（接收窗口大小）
 
@@ -124,4 +126,35 @@ RTT_{S1} = RTT_{1} \\
 RTT_{Si} = (1 - \alpha) * RTT_{S(i-1)} + \alpha * RTT_{i}(新的 RTT 样本) \quad (i > 1)
 $$
 
+已成为建议标准的[RFC 6298]推荐的α值为1/8。
+
+RTO应略大于 RTTs，[RFC 6298] 使用下面这个公式计算 RTO:
+
+$$
+RTO = RTT_{S} + 4 * RTT_{D}
+$$
+
+其中 $RTT_{D}$ 如下计算得到：
+
+$$
+RTT_{D1} = RTT_{1} / 2 \\
+RTT_{Di} = (1 - \beta) * RTT_{D(i-1)} + \beta * |RTT_{i}(新的 RTT 样本) - RTT_{S(i)}| \quad (i > 1)
+$$
+
+[RFC 6298]推荐的β值为1/4
+
+- Karn 算法：在计算加权平均RTTs时，只要报文段重传了，就不采用其RTT样本。换句话说，出现重传时，不重新计算RTTs ，进而RTO也不会重新计算。
+- 修正 Karn 算法：报文段每重传一次，就把RTO增大一些。典型的做法是将新RTO的值取为旧RTO的2倍
+
+!!! example "计算 RTO"
+    假设要进行五次TCP往返时间RTT的测量，从第一次开始，依次测得RTT为30ms，26ms，32ms，24ms，而第五次测量RTT时出现了超时重传。设α = β = 0.1，请计算每次测量后所计算出的超时重传时间RTO
+
+    ![RTO计算](../assets/CN47.png)
+
+    ![RTO计算过程](../assets/CN48.png)
+
 ## TCP 选择确认
+
+设法只传送**缺少**的数据，而**不重传**已经正确到达、只是未按序到达的数据。（Selective Acknowledgment, SACK）
+
+![选择确认](../assets/CN49.png)

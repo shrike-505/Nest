@@ -17,6 +17,8 @@ tags:
     - [hw3](./../assets/CNhw3.pdf)
     - [hw4](./../assets/CNhw4.pdf)
     - [hw5](./../assets/CNhw5.pdf)
+    - [hw6](./../assets/CNhw6.pdf)
+    - [hw7](./../assets/CNhw7.pdf)
 
 ??? note "labs"
     TBD
@@ -29,3 +31,4 @@ tags:
 - [网络层](./NetworkLayer.md)
 - [传输层](./TransportLayer.md)
 - [应用层](./ApplicationLayer.md)
+- [网络安全](./NetworkSecurity.md)

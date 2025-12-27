@@ -159,7 +159,7 @@ worst-case time $\geq$ **amortized time** $\geq$ average time
     === "Case 1"
         找到其后继节点，将其值复制到当前节点，删除后继节点
 
-~~TBD~~ 不补了
+不补了
 
 ## B+树
 

@@ -140,8 +140,6 @@ $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$
 
 Deutsch问题：利用最少且足够的计算次数，判断 $f: \{0,1\}^n \to \{0,1\}^n$ 是平衡函数（$f(x) = 0$ 的数量等于 $f(x) = 1$ 的数量）还是常数函数（$f(x) \equiv 0$ 或 $f(x) \equiv 1$），经典计算机需要计算 $\frac{2^n}{2} + 1$ 次才能确定，而量子计算机只需一次。
 
-Oracle: TBD
-
 !!! note "Oracle 电路简化"
     $HH = I$，$XHX = Z$，$(H \otimes H) CNOT_{low} (H \otimes H) = CNOT_{high}$
 

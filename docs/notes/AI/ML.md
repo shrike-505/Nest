@@ -12,7 +12,8 @@
 > 参考：《机器学习》（周志华），https://note.gopoux.cc/cs/ml/review/
 
 !!! note "Homework"
-    [HW1](./assets/MLhw1.pdf)
+    - [HW1](./assets/MLhw1.pdf)
+    - [HW2](./assets/MLhw2.pdf)
 
 ## Terminology
 
