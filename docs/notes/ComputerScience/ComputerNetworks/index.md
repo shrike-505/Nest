@@ -9,7 +9,7 @@ tags:
 # 计算机网络
 
 > 任课教师：许海涛  
-> 参考：《深入浅出计算机网络》，<https://zjucomp.net/>，<https://www.yuque.com/xianyuxuan/coding/gez9yl>
+> 参考：《深入浅出计算机网络》，<https://zjucomp.net/>，<https://www.yuque.com/xianyuxuan/coding/gez9yl>，以及上课的 PPT（这 PPT 是个贼肉）
 
 ??? note "课程作业"
     - [hw1](./../assets/CNhw1.pdf)

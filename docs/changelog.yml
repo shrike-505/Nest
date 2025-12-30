@@ -1,4 +1,12 @@
 - "2025":
+  - "2025.12.30":
+    - newpage:
+        text: 计算机网络笔记完结：别别别
+        href: /notes/ComputerScience/ComputerNetworks/index
+  - "2025.12.27":
+    - newpage:
+        text: TCS 笔记完结：你和非确定性有穷自动机有一个共同点
+        href: /notes/ComputerScience/TCS
   - "2025.10.3":
     - newart:
         text: 🚬香烟 —— 一定有更好的办法。
