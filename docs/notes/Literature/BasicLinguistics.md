@@ -9,7 +9,7 @@
 > 任课教师：彭利贞
 
 !!! note "Link"
-    <https://socralin.github.io/2025/02/12/Basic-Linguistics-Learning/>
+    <https://socralin.github.io/2025/02/12/Basic-Linguistics-Learning/>  
     <https://file.cc98.org/v4-upload/d/2025/0116/eui35e2j.pdf>
 
 !!! definition "语言学是什么"

@@ -1,7 +1,7 @@
 site_name: 现实的荒原
 site_author: shrike505
 site_url: https://nest.shrike505.cc/
-repo_name: shrike505
+repo_name: Nest
 repo_url: https://github.com/shrike-505/Nest
 copyright: Copyright &copy; 2024 - 2025 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
@@ -66,7 +66,7 @@ nav:
     - 离散数学理论基础: notes/MathematicsAndPhysics/DiscreteMath.md
     - 概率论: notes/MathematicsAndPhysics/Probability.md
     - 普通物理学Ⅱ: notes/MathematicsAndPhysics/Physics2.md
-    - 优化基础理论与方法: notes/MathematicsAndPhysics/Optimization.md
+    # - 优化基础理论与方法: notes/MathematicsAndPhysics/Optimization.md
   - 文艺学:
     # - 文学理论: notes/Literature/LiteratureTheory.md
     - 语言学基础: notes/Literature/BasicLinguistics.md # TO BE DONE, i mean it, seriously
@@ -151,7 +151,7 @@ plugins:
 #       post_date_format: full
 #       blog_toc: true
 #       post_excerpt_separator: <!-- more -->
-# blog switched to eridanus.shrike505.cc
+# blog migrated to eridanus.shrike505.cc
   - pagetree
   - changelog
   - statistics:

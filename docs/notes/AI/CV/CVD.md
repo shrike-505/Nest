@@ -7,7 +7,9 @@
 # 计算机视觉导论
 
 > 任课教师：周晓巍  
-> Reference: Umich EECS 498/598 Deep Learning for Computer Vision
+> Reference: Umich EECS 498/598 Deep Learning for Computer Vision, https://note.noughtq.top/ai/cv/, https://you-ao.github.io/AI/CV/
+
+少数大三下一丁点没学的课之一，呃呃呃
 
 ## 01. intro
 

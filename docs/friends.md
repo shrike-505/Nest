@@ -8,7 +8,7 @@
 - title: PampasEagle
   content: Quadratic Reciprocity.
   image: img/Pampaseagle.jpg
-  url: https://pampaseagle1.github.io/
+  url: https://jsy-yyy.github.io/
 
 - title: memset0
   content: mem 的小站
@@ -20,10 +20,10 @@
   image: img/dgzs.jpg
   url: https://zjyinzju.github.io/
 
-- title: Kailqq
+- title: 0xka1
   content: Man!
   image: img/kailqq.png
-  url: https://www.kailqq.cc/
+  url: https://the0xka1.cc/
 
 - title: JazZyzJ
   content: 滚烫的人生 即使辛苦

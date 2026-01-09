@@ -21,3 +21,8 @@
 ![bilibili2024](../img/bilibili2024.jpg)
 ![qq2024](../img/qq2024.jpg)
 ![bbdc2024](../img/bbdc2024.jpg)
+
+## 2025
+
+![bilibili2025](../img/bilibili2025.jpg)
+![netease2025](../img/netease2025.jpg)
