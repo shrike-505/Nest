@@ -370,12 +370,12 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
     automaton(
         (
             q0: (q1: 1, q0: 0),
-            q1: (),
+            q1: (q1: 0, q0: 1),
         ),
         initial: "q0",
         final: "q1"
     ),
-    caption: [假设 $q_1$ 为末态]
+    caption: [假设 $q_1$ 为末态，表示输出为 1]
 )
 
 #definition[
@@ -419,7 +419,7 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
             ),
             final: "q0"
         ),
-        caption: [${0,1}^*$，使所有状态均为可接受状态即可]
+        caption: [${0,1}^*$，使所有状态均为可接受状态即可，这里简洁起见就弄一个状态]
     )
 
     #figure(
@@ -429,7 +429,7 @@ $x$ 是 $y$ 的一个前缀（Prefix），当对于某些 $z in Sigma^*, y = x z
                 q1: ()
             ),
             initial: "q0",
-            final: "q1"
+            final: "q0"
         ),
         caption: [${e}$，使初始状态为唯一可接受状态即可]
     )
@@ -698,9 +698,9 @@ NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一�
 
         #proof(
             [
-                由于 $A$ 正则，于是存在 DFA $M$ decides $A$，命 $p = "number of states in" M$
+                由于 $A$ 正则，于是存在 DFA $M$ decides $A$，命 $p = "number of states in" M$，即状态总数
 
-                对于 $w in A, |w| >= p$，考虑其被 DFA 计算的过程：$q_0->q_1->...->q_(n-1)->q_n$，$q_0, q_n$ 分别为初态和接受状态，由于要处理 $w$ 的至少 $p$ 位，必然有 $n >= p$；与此同时，状态的总数只有 $p$ 个，于是一定存在 $i, j$，使得 $0 <= i < j <= p$ 且 $q_i = q_j$（Pigeonhole Principle）
+                对于 $w in A, |w| >= p$，考虑其被 DFA 计算的过程：$q_0->q_1->...->q_(n-1)->q_n$，$q_0, q_n$ 分别为初态和接受状态，由于要处理 $w$ 的至少 $p$ 位，必然有 $n >= p$，即_计算经过的状态数_ 至少为 $p$；与此同时，_不同状态的总数_只有 $p$ 个，于是由鸽巢原理，在经过的状态中，一定存在 $i, j$，使得 $0 <= i < j <= p$ 且 $q_i = q_j$
 
                 于是在状态 $q_0$ 到 $q_j$ 部分处理的字符串记为 $x$，在 $q_i$ 到 $q_j$ 部分处理的字符串记为 $y$，在 $q_j$ 到 $q_n$ 部分处理的字符串记为 $z$，则有 $s = x y z$.
 
@@ -889,6 +889,15 @@ NFA 看起来可以猜测出一条正确的路径，似乎比 DFA 更强大一�
                 - 显然我们会发现一个很特殊的 symbol $A_(s f)$，它对应的语言正是 PDA $P$ 决定的语言，考虑到 CFG 做的本职工作就是把 $S$ 阐释为一种语言，因此使这两种语言相同，令 $S = A_(s f)$ 即可。
     ]
 )
+
+#tip(title: "构造 PDA/CFG 的小技巧")[
+	- 来自助教复习课
+	- 一般而言，题目都形如：证明某个语言 $L = {w in {0,1}^* | "some property on w"}$ 是 上下文无关的。解题过程就是构造判定/生成这种语言的 PDA/CFG。
+	- 可以先写出语言中串的特殊形式，例如 $w = u square.stroked 101 u^r square.stroked$，其中方框表示为任意串；然后套用下面的模板：
+	- 任意串对应的操作：
+		- PDA：不修改栈，利用非确定性只随便读字符且不改变状态：$Delta += {((q,0,e),(q,e)), ((q,1,e), (q,e))}$
+		- CFG：$A-> 1A|0A|e$
+]
 
 = 图灵机（Turing Machine）
 
@@ -1452,6 +1461,10 @@ em，然后对于任意的输入 $x$，只需要就上面的编码方式进行 r
 接着，隆重介绍迄今最神秘的函数类：
 
 $NonPoly = {"boolean function F: F is polynomial-time verifiable"}$。
+
+#quotation(attribution: link("https://complexityzoo.net/Complexity_Zoo"))[
+	The class of dashed hopes and idle dreams.
+]
 
 #lemma(
     [
