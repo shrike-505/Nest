@@ -58,6 +58,7 @@ nav:
       - 网络层: notes/ComputerScience/ComputerNetworks/NetworkLayer.md
       - 传输层: notes/ComputerScience/ComputerNetworks/TransportLayer.md
       - 应用层: notes/ComputerScience/ComputerNetworks/ApplicationLayer.md
+      - 网络安全: notes/ComputerScience/ComputerNetworks/NetworkSecurity.md
   - 数学&物理学:
     # - 线性代数Ⅱ: notes/MathematicsAndPhysics/LinearAlgebra.md
     - 数学分析Ⅱ: notes/MathematicsAndPhysics/Analysis.md
