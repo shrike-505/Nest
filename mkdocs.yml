@@ -41,6 +41,7 @@ nav:
     - 计算机视觉相关:
       - notes/AI/CV/index.md
       - 计算机视觉导论: notes/AI/CV/CVD.md
+    - LangChain: notes/AI/RAG.md
   - Computer Science:
     - 计算机系统Ⅰ: notes/ComputerScience/ComputerSystem1.md
     - 计算机系统Ⅱ: notes/ComputerScience/ComputerSystem2.md
