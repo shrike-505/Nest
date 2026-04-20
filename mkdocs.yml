@@ -167,8 +167,7 @@ plugins:
       exclude: 
         - casual/*
         - index.md
-  - tags:
-      tags_file: tags.md
+  - tags
   - print-site
 
 markdown_extensions:
@@ -194,8 +193,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.smartsymbols  
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tasklist:

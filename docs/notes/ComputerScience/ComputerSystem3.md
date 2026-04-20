@@ -146,7 +146,7 @@ Exception vs. Interrupt
 
 ### 多发射 MultiIssue
 
-见 [系统2笔记](./ComputerSystem2.md#multiple-issue-多发射)
+见 [系统2笔记](./ComputerSystem2.md)
 
 为了使 CPI < 1，需要在一个时钟内完成多条指令
 

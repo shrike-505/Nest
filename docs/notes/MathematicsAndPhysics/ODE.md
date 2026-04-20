@@ -151,8 +151,8 @@ $M(x,y)dx + N(x,y)dy = 0$是全微分方程 $\leftrightarrow \frac{\partial M(x,
             - 得通解$x^{3} + y^{4} + 3x^{2}y^{2} = C$
     - 求解$(\cos x + \frac{1}{y})dx + (\frac{1}{y} - \frac{x}{y^{2}})dy = 0$
         - 分离一下，得$\cos x dx + \frac{1}{y}dy + \frac{ydx-xdy}{y^{2}} = 0$
-        - 凑微分得$d(\sin x + \ln |y| - \frac{x}{y}) = 0$
-        - 得通解$\sin x + \ln |y| - \frac{x}{y} = C$
+        - 凑微分得$d(\sin x + \ln |y| + \frac{x}{y}) = 0$
+        - 得通解$\sin x + \ln |y| + \frac{x}{y} = C$
 
 - 解法3: 积分因子
     - 若微分方程不是全微分方程，可以乘以一个函数$\mu(x,y)$，使得$\mu(x,y)M(x,y)dx + \mu(x,y)N(x,y)dy = 0$是全微分方程
