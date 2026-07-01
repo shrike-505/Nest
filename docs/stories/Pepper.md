@@ -3,8 +3,6 @@ comments: true
 ---
 # 花椒
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Princess+Sofia&weight=600&size=30&pause=700&color=9821B5&center=true&multiline=true&repeat=false&width=1070&height=160&lines=The+Greatest+Innocence+%E2%80%93+Her+colours+are+silver%2C+white%2C+and+apricot.;And+when+you+think+her+name%2C+Dolores%2C+stomach+acid+rises+to+the+back+of+your+throat+and+it+hurts.;--+you+see+a+flash+silver%2C+a+wreath%2C+an+airport+bag.+And+blonde+hair%2C+you+don't+know+why.;Another+choice%2C+perhaps%3F)](https://git.io/typing-svg)
-
 >__五感发达[成功]__：什么味道？一丝渐强，像乐曲合奏时循序渐进地加进新的乐器。
 
 >__天人感应[成功]__：花椒，你想起奶奶拿手的红彤彤的水煮肉片，广场旁夜幕中热气腾腾的火锅店。雪花在外面纷纷落下。你正在走近红油瓢泼的料碗，投身辛辣与苦痛的怀抱。
@@ -132,11 +130,11 @@ comments: true
 ??? success "**典谟训诰[成功]**"
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1837818274&auto=1&height=66"></iframe>
 
->__内陆帝国[成功]__：我们大声谈笑，路过的风也为咱俩的欢乐驻足。你说红色象征热情奔放与速度，我说我最爱吃纳宝帝的芝士奶酪味威化饼干，你说诗经里的风雅颂美得难以言喻，我说参变分离是解决导数不等式证明的不二法门。
+>__内陆帝国[成功]__：我们大声谈笑，路过的风也为咱俩的欢乐驻足。你说[红色象征热情奔放与速度](Newcar.md)，我说我最爱吃纳宝帝的芝士奶酪味威化饼干，你说诗经里的风雅颂美得难以言喻，我说参变分离是解决导数不等式证明的不二法门。
 
 >__内陆帝国[成功]__：我们谈论我的童年和你的童年，谈论席卷整个北部的寒潮，谈论你异国的口音，谈论身畔流连的口琴声，谈论你绿色瞳孔中夹杂的一抹蓝，谈论贸易逆差导致通货膨胀，谈论被土地噎死的农民，谈论自愿调低薪金的工人，谈论一个疯狂的却被付诸于行动的想法，谈论爱，谈论死亡，谈论双手合十满心祈祷的可怜人，谈论染色完却忘记漂洗的临时装片，谈论一架越走越窄的独木桥，谈论一面有不少星星的旗帜，谈论我写过的每一篇文章，谈论笼罩在人们心头的无法驱散的雾霾，谈论永不回返的太阳的背影，谈论一片白茫茫的无垠。
 
->__典谟训诰[成功]__：[\*现实的荒原\*](https://shrike-505.github.io/)。
+>__典谟训诰[成功]__：[\*现实的荒原\*](https://nest.shrike505.cc/)。
 
 <br><center>[德洛莉丝•黛](https://www.vgbaike.com/disco_elysium/baike7385)：那么，你都明白了吗？</center><br>
 

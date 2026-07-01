@@ -5,7 +5,9 @@ repo_name: Nest
 repo_url: https://github.com/shrike-505/Nest
 copyright: Copyright &copy; 2024 - 2025 <a href="https://github.com/shrike-505" target="_blank">shrike505</a>
 nav: 
-- shrike505's Nest: index.md
+- shrike505's Nest: 
+  - index.md
+  - 更新记录: changelog.md
 - 小说:
   - stories/index.md
   - 香烟: stories/Smoke.md
@@ -135,14 +137,10 @@ theme:
     - navigation.footer
     - navigation.path
     - navigation.indexes
-    # - navigation.path
-    # - toc.integrate 
     - navigation.top
     - navigation.tabs
-    # - navigation.tabs.sticky
-    # - toc.follow
-    # - header.autohide
-    # - announce.dismiss
+    - navigation.instant
+    - navigation.instant.prefetch
   custom_dir: overrides
   
 plugins:
@@ -204,8 +202,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - neoteroi.cards
-  # - hbfm.inline_coloring
-  # - hbfm.inline_list
 
 extra_css:
   - https://fonts.loli.net/css2?family=Noto+Serif

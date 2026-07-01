@@ -1,7 +1,6 @@
 ---
 comments: true
 statistics: true
-changelog: true
 ---
 
 # shrike505's Nest
@@ -12,46 +11,48 @@ changelog: true
 
 这里保存了一些文字、想法、笔记，说不定在很远的将来，它们能变成什么赛博文物。敬请期待未来的内容！
   
-部分界面含有大量图片，全部显示需要很久很久，观感不佳时可考虑使用代理；文章作品参差良莠，不一而同。感谢阅读，望它们对得起你的时间。
+文章作品参差良莠，不一而同。感谢阅读，望它们对得起你的时间。
 
-***
+目前共 {{ pages }} 个页面，约 {{ words }} 字，{{ codes }} 行代码。
 
-:fireworks: [点击这里返回我的主页](https://shrike505.cc/) :fireworks:
+<div class="grid cards" markdown>
 
-***
+-   🖋️ __小说__
 
-## 更新记录
+    ---
 
-新增文章时间均为 __创作时间__  
-目前共 {{ pages }} 个页面，约 {{ words }} 字，{{ codes }} 行代码。  
+    > 本栏目内容按时间排序
 
-### 2025
-{{2025}}
+    真心与传说的故事
 
----
+    [:octicons-arrow-right-24: 开始阅读](stories/index.md)
 
-### 2024  
-{{2024}}
+-   🖌️ __散文__
 
----  
+    ---
 
-### 2023
-{{2023}}
+    > 本栏目内容按时间排序
 
----
+    思忖与忧虑的念想
 
-### 2022
-{{2022}}
+    [:octicons-arrow-right-24: 开始阅读](thoughts/index.md)
 
----
+-   📓 __笔记__
 
-### 2021
-{{2021}}
+    ---
 
----
+    > 部分界面含有大量图片，全部显示需要很久很久，观感不佳时可考虑使用代理
 
-### 2020
-{{2020}}
+    知识与平庸的记录
 
+    [:octicons-arrow-right-24: 开始阅读](notes/index.md)
 
----
+-   🏠 __回到主页__
+    
+    ---
+
+    悲伤如瀑般倾泻，这里是天堂吗？
+
+    [:octicons-arrow-right-24: Sorrow cascading paradise](https://shrike505.cc)
+
+</div>
