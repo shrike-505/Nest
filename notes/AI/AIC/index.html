@@ -314,17 +314,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
   
   
     
   
   shrike505's Nest
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -504,9 +507,32 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -520,7 +546,59 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    shrike505's Nest
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新记录
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3069,6 +3147,408 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amdahls-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amdahl's Law
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roofline-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roofline Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#littles-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Little's Law
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        冯诺依曼模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CPU Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reorder-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reorder Buffer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        并行
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="并行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tomasulos-algorithminter-instruction-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tomasulo's Algorithm(Inter-instruction parallelism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superscalarinter-instruction-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Superscalar(Inter-instruction parallelism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simdintra-instruction-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIMD(Intra-instruction parallelism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SRAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard-Disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache 基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三种Cache映射方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三种Cache Miss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替换策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        写策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cachecache-coherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache一致性（Cache Coherence）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache一致性（Cache Coherence）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snoop-vs-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snoop vs Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalidate-vs-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalidate vs Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSI协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesiillinois-protocol-isca-1984" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MESI协议（Illinois Protocol, ISCA 1984）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存一致性（Memory Consistency）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-chips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Chips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3081,8 +3561,6 @@
                 
 
 
-
-  
 
 
               
@@ -3100,11 +3578,572 @@
 </blockquote>
 <h1 id="_1">人工智能芯片与系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 22 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1997 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <blockquote>
 <p>任课教师：王则可</p>
 </blockquote>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="amdahls-law">Amdahl's Law<a class="headerlink" href="#amdahls-law" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+Speedup = \frac{1}{1-f + \frac{f}{n}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(f\)</span> 是程序中可并行化的比例，<span class="arithmatex">\(n\)</span> 是处理器数量。</li>
+</ul>
+<h3 id="roofline-model">Roofline Model<a class="headerlink" href="#roofline-model" title="Permanent link">&para;</a></h3>
+<p>模型（或程序）的实际表现受制于硬件固有的计算能力上限（Roofline 中由性能上限与带宽上限计算得出）</p>
+<ul>
+<li>性能上限（峰值算力）：<span class="arithmatex">\(\pi\)</span>，指一个计算硬件单位时间内（每秒）能够执行的最大浮点运算次数（FLOPS）（单位为 FLOP/秒）。</li>
+<li>带宽上限（内存带宽）：<span class="arithmatex">\(\beta\)</span>，指一个计算硬件单位时间内（每秒）能够进行的内存交换量（单位为 Bytes/秒）。</li>
+</ul>
+<p>计算能力（AI，Arithmetic Intensity）：<span class="arithmatex">\(AI = \frac{\pi}{\beta}\)</span>，指在这个计算硬件上，每字节内存交换最多能用来做多少次浮点运算。</p>
+<ul>
+<li>Large AI: Computation bound，计算受限于算力。</li>
+<li>Small AI: Memory bound，计算受限于内存带宽。</li>
+</ul>
+<p><img alt="Roofline Model" src="../assets/AIC1.png" /></p>
+<p>图像中，横轴为计算能力（AI），纵轴为吞吐量（Throughput），红色区域吞吐量由带宽上限决定（也就是斜率），绿色区域吞吐量由性能上限决定，此时 <span class="arithmatex">\(Throughput = \pi\)</span>；两个区域交点的横坐标就是最大计算能力：<span class="arithmatex">\(\max AI = \frac{\pi}{\beta}\)</span>。</p>
+<div class="admonition example">
+<p class="admonition-title">Roofline example</p>
+<p><img alt="Roofline Example" src="../assets/AIC2.png" /></p>
+</div>
+<h3 id="littles-law">Little's Law<a class="headerlink" href="#littles-law" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+L(buffer \space size / Concurrency) = \lambda(throughput) W(Latency)
+\]</div>
+<h3 id="_2">冯诺依曼模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stored Program<ul>
+<li>指令存储在线性内存序列中</li>
+<li>数据和指令在内存中是 <strong>Unified</strong> 的<ul>
+<li>即，由控制信号决定读到的 value 是指令还是数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sequential instruction processing<ul>
+<li>同一时间只有一条指令在执行</li>
+<li>Program Counter（PC）指向当前的指令</li>
+<li>除了控制转移（Control Transfer）指令外，PC 每次 Sequentially 地向前更新</li>
+</ul>
+</li>
+</ul>
+<h2 id="cpu-design">CPU Design<a class="headerlink" href="#cpu-design" title="Permanent link">&para;</a></h2>
+<p>定义一个计算机的 Architectural State（架构状态）（程序员可见），下面是 CPU 的设计逻辑：</p>
+<ul>
+<li>单周期（每个指令消耗一个时钟周期）<ul>
+<li>AS -&gt; Process inst in 1 cycle -&gt; AS'</li>
+</ul>
+</li>
+<li>多周期<ul>
+<li>减短时钟周期</li>
+<li>每条指令消耗多个时钟周期，多次更改 AS</li>
+<li>AS -&gt; AS + MS1 -&gt; AS + MS2 -&gt; ... -&gt; AS'</li>
+<li>但从 ISA 的角度，AS 仍然是从 AS -&gt; AS'，中间的 MS1, MS2, ... 是不可见的<ul>
+<li>ISA 由指令和 AS 直接决定 AS'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流水线 CPU（For higher throughput）<ul>
+<li>我想我兄弟计算机系统了</li>
+<li>Instructions consecutive in program order are processed in consecutive stages</li>
+</ul>
+</li>
+</ul>
+<p>流水线 CPU 会遇到数据依赖问题</p>
+<ul>
+<li>Flow Dependence（RAW，True data dependence）<ul>
+<li>硬件 Stall<ul>
+<li>插入 nop 等到寄存器中值可用时继续流动</li>
+</ul>
+</li>
+<li>软件 Stall（Static Scheduling）<ul>
+<li>由编译器编排指令，硬件按这个顺序执行指令<ul>
+<li>区别于动态调度（Dynamic Scheduling），在动态调度中硬件可以不按编译器指定的顺序执行指令</li>
+</ul>
+</li>
+<li>在运行时决定的信息（Variable-length operation latency, memory addr, branch direction），编译器不知道，导致静态调度的实现困难<ul>
+<li>通过 Profiling 解决</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Forwarding（有时候无法 Forwarding）<ul>
+<li><code>// Forwarding logic for ForwardAE (pseudo code):
+    if ((rsE != 0) AND (rsE == WriteRegM) AND RegWriteM) then
+        ForwardAE = 10  # forward from Memory stage
+    else if ((rsE != 0) AND (rsE == WriteRegW) AND RegWriteW) then
+        ForwardAE = 01  # forward from Writeback stage
+    else
+        ForwardAE = 00  # no forwarding</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Output Dependence（WAW）</li>
+<li>Anti Dependence（WAR）</li>
+</ul>
+<p>后两种依赖可以通过寄存器重命名（Register Renaming）来解决，亦即接下来介绍的 ROB（Reorder Buffer）。</p>
+<h3 id="reorder-buffer">Reorder Buffer<a class="headerlink" href="#reorder-buffer" title="Permanent link">&para;</a></h3>
+<ol>
+<li>不同的指令需要不一定相同的时钟周期数进行执行<ul>
+<li>Ans：设置不同的 Function Unit（FU），每种 FU 以不同的时钟周期数执行不同的指令</li>
+</ul>
+</li>
+<li>如何处理 Exceptions/Interrupts<ul>
+<li>Exceptions：内部原因导致</li>
+<li>Interrupts：外部原因导致</li>
+</ul>
+</li>
+</ol>
+<p>总的来说分为以下三步：</p>
+<ol>
+<li>In-Order Decode：指令解码后在 ROB 中记录下顺序的 Entry</li>
+<li>Out-of-Order Execution：指令在 FU 中可乱序执行，ROB 中的 Entry 记录下执行结果</li>
+<li>In-Order Commit：ROB 中最早的指令完成且没有异常时，才将结果写回寄存器堆</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">ROB Entry</p>
+<p><img alt="ROB Entry" src="../assets/AIC3.png" /></p>
+</div>
+<p>每次访问寄存器堆时，如果其不可用，就记录下当前需要的寄存器值在 ROB 中的位置。</p>
+<p>ROB 可彻底解决 WAW 和 WAR</p>
+<h3 id="performance-analysis">Performance Analysis<a class="headerlink" href="#performance-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CPI：Cycles Per Instruction，每条指令平均消耗的时钟周期数。</li>
+<li>每条指令的执行时间：CPI * Clock Cycle Time</li>
+<li>整个程序的执行时间：CPI * AVG Clock Cycle Time * Instruction Count</li>
+</ul>
+<p>单周期 CPU 的 CPI = 1，时钟周期很长；多周期 CPU 的 CPI &gt; 1，时钟周期较短；</p>
+<h2 id="_3">并行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="tomasulos-algorithminter-instruction-parallelism">Tomasulo's Algorithm(Inter-instruction parallelism)<a class="headerlink" href="#tomasulos-algorithminter-instruction-parallelism" title="Permanent link">&para;</a></h3>
+<p>面对 RAW 时，即便利用 ROB 乱序执行顺序写入的特性，有些情况下也需要 Stall；Tomasulo 算法引入 Out-of-Order Dispatch（Dispatch：将一条指令发送到 FU）</p>
+<blockquote>
+<p>Independent inst 被与 Dependent inst 分开执行</p>
+</blockquote>
+<p>引入 Reservation Station（RS）来解决这个问题，每个 FU 对应一个 RS，RS 记录下指令的操作数，在 FU 可用且操作数可用时，指令就可以被发送到 FU 执行。</p>
+<h3 id="superscalarinter-instruction-parallelism">Superscalar(Inter-instruction parallelism)<a class="headerlink" href="#superscalarinter-instruction-parallelism" title="Permanent link">&para;</a></h3>
+<p>Superscalar：在一个时钟周期 Fetch、Decode、Execute、Retire 多条指令（N-wide superscalar = N instructions per cycle）</p>
+<ul>
+<li>Pros：Higher IPC</li>
+<li>Cons：More hardware; 检测 Dependence 更复杂</li>
+</ul>
+<h3 id="simdintra-instruction-parallelism">SIMD(Intra-instruction parallelism)<a class="headerlink" href="#simdintra-instruction-parallelism" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SISD：Single Instruction operates on Single Data elem</li>
+<li>SIMD：Single Instruction operates on Multiple Data elems<ul>
+<li>Array/Vector Processor</li>
+</ul>
+</li>
+<li>MISD：Multiple Instruction operates on Single Data elem<ul>
+<li>Systolic Array</li>
+</ul>
+</li>
+<li>MIMD：Multiple Instruction operates on Multiple Data elems<ul>
+<li>Multi-core Processor</li>
+<li>Multithreaded Processor</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Warp-based SIMD vs. Traditional SIMD</p>
+<ul>
+<li>Traditional SIMD:<ul>
+<li>只包含一个线程</li>
+<li>指令线性执行</li>
+<li>Programming Model：SIMD</li>
+<li>ISA 含有 SIMD 指令</li>
+</ul>
+</li>
+<li>Warp-based SIMD:<ul>
+<li>包括多个 scalar 线程，以 SIMD 方式执行</li>
+<li>每个线程可被单独处理</li>
+<li>ISA 指令是 Scalar 的：SIMD 指令被动态构造</li>
+<li>SPMD Model based on SIMD Hardware</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
+<h3 id="sram">SRAM<a class="headerlink" href="#sram" title="Permanent link">&para;</a></h3>
+<p>Relatively fast, only one data word at a time; expensive</p>
+<h4 id="memory-arrays">Memory Arrays<a class="headerlink" href="#memory-arrays" title="Permanent link">&para;</a></h4>
+<p>如何高效地利用 Memory 存储大量数据</p>
+<p><img alt="Memory Arrays" src="../assets/AIC4.png" /></p>
+<p>即每行存储一个长度为 M 比特的数据字（Data Word）</p>
+<h3 id="dram">DRAM<a class="headerlink" href="#dram" title="Permanent link">&para;</a></h3>
+<p>DRAM访问的三种状态</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+<th>延迟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Page Hit</strong></td>
+<td>访问已打开的行</td>
+<td>最小</td>
+</tr>
+<tr>
+<td><strong>Page Closed</strong></td>
+<td>访问关闭的bank中的行</td>
+<td>中等（需ACTIVATE）</td>
+</tr>
+<tr>
+<td><strong>Page Miss</strong></td>
+<td>访问的行不是bank中当前打开的行</td>
+<td>最大（需PRECHARGE + ACTIVATE）</td>
+</tr>
+</tbody>
+</table>
+<p>64位数据进入一个Rank，一个 Rank 包含八个 Chip（每 8 位数据进入一个 Chip），每个 Chip 包含八个 Bank（八位数据进入每个 Bank）</p>
+<div class="admonition note">
+<p class="admonition-title">DRAM Refresh</p>
+<p>DRAM 电容随时间会漏电，Memory Controller 需要定期刷新每一行来充电（Activate each row every N ms），否则数据会丢失。</p>
+<ul>
+<li>Refresh 的缺点：<ul>
+<li>Refresh 期间无法访问 DRAM 的 rank/bank</li>
+<li>Refresh 耗能</li>
+<li>Long pause time in DRAM refresh</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="ssd">SSD<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h3>
+<h3 id="hard-disk">Hard-Disk<a class="headerlink" href="#hard-disk" title="Permanent link">&para;</a></h3>
+<h2 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>本段内容由 AI 生成</p>
+</blockquote>
+<p>两种局部性</p>
+<ul>
+<li><strong>时间局部性 (Temporal Locality)</strong>: 刚访问的数据很可能再次被访问</li>
+<li><strong>空间局部性 (Spatial Locality)</strong>: 刚访问数据附近的数据很可能被访问</li>
+</ul>
+<h3 id="cache_1">Cache 基本概念<a class="headerlink" href="#cache_1" title="Permanent link">&para;</a></h3>
+<p><strong>Cache Block（缓存行/块）</strong>: Cache中存储的基本单元</p>
+<p><strong>关键设计决策</strong>:
+1. <strong>Placement</strong>: 块放在哪里？（映射方式）
+2. <strong>Replacement</strong>: 替换哪个块？（替换策略）
+3. <strong>Granularity</strong>: 块多大？
+4. <strong>Write Policy</strong>: 写操作怎么处理？
+5. <strong>Instructions/Data</strong>: 指令和数据是否分开？</p>
+<h3 id="cache_2">三种Cache映射方式<a class="headerlink" href="#cache_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>映射方式</th>
+<th>N（路数）</th>
+<th>S（组数）</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>直接映射 (Direct-mapped)</strong></td>
+<td>N=1</td>
+<td>S=B</td>
+<td>每块只有1个位置，冲突多</td>
+</tr>
+<tr>
+<td><strong>组相联 (Set-associative)</strong></td>
+<td>1&lt;N&lt;B</td>
+<td>S=B/N</td>
+<td>每组N个位置，最常用</td>
+</tr>
+<tr>
+<td><strong>全相联 (Fully-associative)</strong></td>
+<td>N=B</td>
+<td>S=1</td>
+<td>任意位置可放，最灵活最贵</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cache参数</strong>:</p>
+<div class="highlight"><pre><span></span><code>```
+C = 总容量
+b = 块大小
+B = C/b = 总块数
+N = 相联度（每组块数）
+S = B/N = 组数
+```
+</code></pre></div>
+<p><strong>地址划分</strong>: <code>[tag | index | byte offset]</code></p>
+<ul>
+<li>index: 选择哪个组</li>
+<li>tag: 在组中匹配</li>
+<li>byte offset: 块内偏移</li>
+</ul>
+<h3 id="cache-miss">三种Cache Miss<a class="headerlink" href="#cache-miss" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Miss类型</th>
+<th>含义</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compulsory Miss</strong></td>
+<td>首次访问某块，必然不命中</td>
+<td>增大块大小（预取）</td>
+</tr>
+<tr>
+<td><strong>Capacity Miss</strong></td>
+<td>Cache容量不够</td>
+<td>增大Cache</td>
+</tr>
+<tr>
+<td><strong>Conflict Miss</strong></td>
+<td>多个块映射到同一位置</td>
+<td>提高相联度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">替换策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>先替换无效块</li>
+<li>若全有效: Random / FIFO / <strong>LRU</strong>（最近最少使用）/ 混合策略</li>
+</ol>
+<h3 id="_5">写策略<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Step1：如果数据不在 Cache 中，以下两种策略选其一：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Write-allocate</th>
+<th>Write-no-allocate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>写操作</strong></td>
+<td>先将数据块读入 Cache，再写</td>
+<td>直接写内存，不分配 Cache 数据</td>
+</tr>
+</tbody>
+</table>
+<p>Step2：如果数据在 Cache 中，以下两种策略选其一：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Write-back</th>
+<th>Write-through</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>写操作</strong></td>
+<td>只写Cache</td>
+<td>同时写Cache和内存</td>
+</tr>
+<tr>
+<td><strong>优点</strong></td>
+<td>节省带宽，可合并多次写</td>
+<td>简单，一致性更好</td>
+</tr>
+<tr>
+<td><strong>缺点</strong></td>
+<td>需要dirty bit</td>
+<td>更多内存带宽，不能合并写</td>
+</tr>
+<tr>
+<td><strong>分配策略</strong></td>
+<td>Write-allocate（默认）</td>
+<td>Write-no-allocate（PCIe/IO）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cachecache-coherence">Cache一致性（Cache Coherence）<a class="headerlink" href="#cachecache-coherence" title="Permanent link">&para;</a></h3>
+<p><strong>问题</strong>: 多个处理器核心各自有Cache，如何保证同一地址的数据一致？</p>
+<p><strong>三个组件</strong>:
+1. <strong>Interconnect（互联）</strong>: Snoop（总线监听） vs Directory（目录）
+2. <strong>Updating Policy（更新策略）</strong>: Invalidate（作废） vs Update（更新）
+3. <strong>Cache Tags（标签协议）</strong>: MSI → MESI → MOESI</p>
+<h4 id="snoop-vs-directory">Snoop vs Directory<a class="headerlink" href="#snoop-vs-directory" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Snoop（监听）</th>
+<th>Directory（目录）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>序列化点</strong></td>
+<td>总线（全局单点）</td>
+<td>每块一个（分布在各节点）</td>
+</tr>
+<tr>
+<td><strong>通信方式</strong></td>
+<td>广播</td>
+<td>点对点</td>
+</tr>
+<tr>
+<td><strong>扩展性</strong></td>
+<td>差（总线瓶颈）</td>
+<td>好</td>
+</tr>
+<tr>
+<td><strong>代表</strong></td>
+<td>小规模多核系统</td>
+<td>大规模多核/多路系统</td>
+</tr>
+</tbody>
+</table>
+<h4 id="invalidate-vs-update">Invalidate vs Update<a class="headerlink" href="#invalidate-vs-update" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Invalidate</th>
+<th>Update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>操作</strong></td>
+<td>使其他副本失效</td>
+<td>更新所有副本</td>
+</tr>
+<tr>
+<td><strong>带宽</strong></td>
+<td>更少（一次失效+后续本地访问）</td>
+<td>更多（每次写都广播新值）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="msi">MSI协议<a class="headerlink" href="#msi" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+<th>读</th>
+<th>写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M (Modified)</strong></td>
+<td>仅1个Cache有，已修改</td>
+<td>本地读，无需总线</td>
+<td>本地写，无需总线</td>
+</tr>
+<tr>
+<td><strong>S (Shared)</strong></td>
+<td>多个Cache有，干净的</td>
+<td>本地读，无需总线</td>
+<td>需总线Invalidate</td>
+</tr>
+<tr>
+<td><strong>I (Invalid)</strong></td>
+<td>不在Cache中</td>
+<td>需从内存/其他Cache读</td>
+<td>需获取M状态</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mesiillinois-protocol-isca-1984">MESI协议（Illinois Protocol, ISCA 1984）<a class="headerlink" href="#mesiillinois-protocol-isca-1984" title="Permanent link">&para;</a></h4>
+<p>在MSI基础上增加<strong>E (Exclusive)</strong>状态:</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M</strong></td>
+<td>仅1个Cache有，已修改，可本地读写</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>仅1个Cache有，干净，可本地读写</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>多个Cache有，干净，只能本地读</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>不在Cache中</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MESI优于MSI的关键</strong>: 
+- 从E→M不需要总线Invalidate（因为只有一份副本！）
+- 减少了不必要的总线流量</p>
+<h3 id="memory-consistency">内存一致性（Memory Consistency）<a class="headerlink" href="#memory-consistency" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Coherence ≠ Consistency!</p>
+</blockquote>
+<p><strong>Cache Coherence</strong>: 不同处理器对<strong>同一内存地址</strong>的操作排序</p>
+<p><strong>Memory Consistency</strong>: 不同处理器对<strong>所有内存地址</strong>的操作的全局排序</p>
+<p><strong>四种内存屏障（Memory Barrier / Fence）</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>屏障类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Load-Load</strong></td>
+<td>屏障前的Load不能排到屏障后的Load之后</td>
+</tr>
+<tr>
+<td><strong>Load-Store</strong></td>
+<td>屏障前的Load不能排到屏障后的Store之后</td>
+</tr>
+<tr>
+<td><strong>Store-Store</strong></td>
+<td>屏障前的Store不能排到屏障后的Store之后</td>
+</tr>
+<tr>
+<td><strong>Store-Load</strong></td>
+<td>屏障前的Store不能排到屏障后的Load之后</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一致性与屏障的关系</strong>:
+| 模型 | Load-Load | Load-Store | Store-Store | Store-Load | 代表CPU |
+|------|-----------|------------|-------------|------------|---------|
+| <strong>Sequential Consistency</strong> | ✓ | ✓ | ✓ | ✓ | Dual 386 |
+| <strong>Total Store Order (TSO)</strong> | ✓ | ✓ | ✓ | ✗ | x86/64 |
+| <strong>Partial Store Order (PSO)</strong> | ✓ | ✓ | ✗ | ✗ | ARM |
+| <strong>Relaxed/Weak</strong> | ✗ | ✗ | ✗ | ✗ | DEC Alpha |</p>
+<ul>
+<li>越强的内存模型 → 性能越低/开销越大，但程序员生活越简单</li>
+</ul>
+<h2 id="ai-chips">AI Chips<a class="headerlink" href="#ai-chips" title="Permanent link">&para;</a></h2>
+<h2 id="parallel-training">Parallel Training<a class="headerlink" href="#parallel-training" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Model Parallelism<ul>
+<li><img alt="Model Parallelism" src="../assets/AIC5.png" /></li>
+</ul>
+</li>
+<li>Data Parallelism<ul>
+<li>Forward Pass: 每个 GPU 计算不同数据的 Forward Pass<ul>
+<li><img alt="Data Parallelism Forward Pass" src="../assets/AIC6.png" /></li>
+<li>权重更新：每个 Worker 根据从 N-1 个 Peers 那里收集到的梯度加和，并更新自己 Model Copy 的权重</li>
+</ul>
+</li>
+<li><strong>Strong Scaling</strong>（固定batch size增加Worker）: Batch Normalization需要最小batch size（如16+）</li>
+<li><strong>Weak Scaling</strong>（增加Worker和batch size）: 大batch训练需调整超参数</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -3127,7 +4166,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月11日 20:10:04 CST">2026年4月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月1日 22:13:26 CST">2026年7月1日</span>
   </span>
 
     
@@ -3266,7 +4305,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
