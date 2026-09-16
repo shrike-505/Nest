@@ -162,10 +162,10 @@ plugins:
       locale: zh
       type: date
       timezone: Asia/Shanghai
-      exclude: 
-        - casual/*
+      exclude:
         - index.md
-  - tags
+  - tags:
+      tags_hierarchy: true
   - print-site
 
 markdown_extensions:

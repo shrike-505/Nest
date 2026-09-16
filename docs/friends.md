@@ -22,7 +22,7 @@
 
 - title: 0xka1
   content: Man!
-  image: img/kailqq.png
+  image: img/kai.png
   url: https://the0xka1.cc/
 
 - title: JazZyzJ
